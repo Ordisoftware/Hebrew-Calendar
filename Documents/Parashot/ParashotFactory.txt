@@ -2,12 +2,12 @@ Bereshit : 1 - בראשית - Bereshit - 1.1 - 6.8 - False
 Bereshit : 2 - נח - Noa'h - 6.9 - 11.32 - False
 Bereshit : 3 - לך לך - Lek Leka - 12.1 - 17.27 - False
 Bereshit : 4 - וירא - Vayera - 18.1 - 22.24 - False
-Bereshit : 5 - חיי שרה - 'Haye Sarah - 23.1 - 25.18 - False
+Bereshit : 5 - חיי שרה - 'Haye Sharah - 23.1 - 25.18 - False
 Bereshit : 6 - תולדות - Toledot - 25.19 - 28.9 - False
 Bereshit : 7 - ויצא - Vayetse - 28.10 - 32.3 - False
 Bereshit : 8 - וישלח - Vayishla'h - 32.4 - 36.43 - False
 Bereshit : 9 - וישב - Vayeshev - 37.1 - 40.23 - False
-Bereshit : 10 - מקץ - Mikets - 41.1 - 44.17 - False
+Bereshit : 10 - מקץ - Miqets - 41.1 - 44.17 - False
 Bereshit : 11 - ויגש - Vayigash - 44.18 - 47.27 - False
 Bereshit : 12 - ויחי - Vaye'hi - 47.28 - 50.26 - False
 
@@ -23,13 +23,13 @@ Shemot : 9 - כי תשא - Ki Tisha - 30.11 - 34.35 - False
 Shemot : 10 - ויקהל - Vayaqhel - 35.1 - 38.20 - True
 Shemot : 11 - פקודי - Peqoudei - 38.21 - 40.38 - False
 
-Vayiqra : 1 - ויקרא - Vayikra - 1.1 - 5.26 - False
+Vayiqra : 1 - ויקרא - Vayiqra - 1.1 - 5.26 - False
 Vayiqra : 2 - צו - Tsav - 6.1 - 8.36 - False
 Vayiqra : 3 - שמיני - Shemini - 9.1 - 11.47 - False
 Vayiqra : 4 - תזריע - Tazriah' - 12.1 - 13.59 - True
 Vayiqra : 5 - מצורע - Metsorah' - 14.1 - 15.33 - False
 Vayiqra : 6 - אחרי מות - A'harei Mot - 16.1 - 18.30 - True
-Vayiqra : 7 - קדושים - Kedoshim - 19.1 - 20.27 - False
+Vayiqra : 7 - קדושים - Qedoshim - 19.1 - 20.27 - False
 Vayiqra : 8 - אמור - Emor - 21.1 - 24.23 - False
 Vayiqra : 9 - בהר - Behar - 25.1 - 26.2 - True
 Vayiqra : 10 - בחוקותי - Be'houqotaï - 26.3 - 27.34 - False
@@ -37,7 +37,7 @@ Vayiqra : 10 - בחוקותי - Be'houqotaï - 26.3 - 27.34 - False
 Bamidbar : 1 - במדבר - Bamidbar - 1.1 - 4.20 - False
 Bamidbar : 2 - נשא - Nasho - 4.21 - 7.89 - False
 Bamidbar : 3 - בהעלותך - Behah'alotka - 8.1 - 12.16 - False
-Bamidbar : 4 - שלח לך - Shela'h leka - 13.1 - 15.41 - False
+Bamidbar : 4 - שלח לך - Shela'h Leka - 13.1 - 15.41 - False
 Bamidbar : 5 - קרח - Qora'h - 16.1 - 18.32 - False
 Bamidbar : 6 - חקת - 'Houqat - 19.1 - 22.1 - True
 Bamidbar : 7 - בלק - Balaq - 22.2 - 25.9 - False
@@ -53,6 +53,6 @@ Devarim : 5 - שופטים - Shoft'im - 16.18 - 21.9 - False
 Devarim : 6 - כי תצא - Ki Tetse - 21.10 - 25.19 - False
 Devarim : 7 - כי תבוא - Ki Tavo - 26.1 - 29.8 - False
 Devarim : 8 - ניצבים - Nitsavim - 29.9 - 30.20 - True
-Devarim : 9 - וילך - Vayeleq - 31.1 - 31.30 - False
+Devarim : 9 - וילך - Vayelek - 31.1 - 31.30 - False
 Devarim : 10 - האזינו - Haazinou - 32.1 - 32.52 - False
 Devarim : 11 - וזאת הברכה - Vezot HaBerakah - 33.1 - 34.12 - False

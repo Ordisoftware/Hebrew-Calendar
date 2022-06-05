@@ -46,7 +46,7 @@ static class TorahCelebrationSettings
   static public readonly int PessahEndDay = PessahStartDay + PessahLenght - 1;
 
   /// <summary>
-  /// Shavou'ot length.
+  /// Shavouh'ot length.
   /// </summary>
   static public readonly int ChavouotLenght = 50;
 
@@ -61,7 +61,7 @@ static class TorahCelebrationSettings
   static public readonly int YomsMonth = 7;
 
   /// <summary>
-  /// Yom Terou'ah day.
+  /// Yom Terouh'ah day.
   /// </summary>
   static public readonly int YomTerouahDay = 1;
 
