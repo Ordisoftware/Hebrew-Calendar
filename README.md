@@ -379,13 +379,12 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### 2022.06.12 - Version 9.29
 
->- Add option to use two days for Shevih'i Shel Pessa'h outside of Israël.
-
 - Optimize populating monthly view and thus startup time.
 - Add open system calculator button in DatesDiffCalculator form.
 - Add parashah name in the title bar of description box.
 - Add menu for transcription guide in Tools and others windows.
 - Add menu for grammar guide in Tools menu and others windows.
+- Add option to use two days for Shebih'i Shel Pessa'h outside of Israël.
 - Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise.
 - Fix shavouh'ot 1 and 2 times to be solar like shabat even using moon omer.
 - Fix reset settings crashes the monthly view until restart.
