@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -126,6 +126,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditWeeklyParashahShowAtNewWeek.Checked = Settings.WeeklyParashahShowAtNewWeek);
     SystemManager.TryCatch(() => EditCustomWebSearch.Text = Settings.CustomWebSearch);
     SystemManager.TryCatch(() => EditAutoSortBookmarks.Checked = Settings.AutoSortBookmarks);
+    SystemManager.TryCatch(() => EditUseTwoDaysForLastPessahDayOutside.Checked = Settings.UseTwoDaysForLastPessahDayOutside);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);

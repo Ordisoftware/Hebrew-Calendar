@@ -157,6 +157,7 @@
       this.ActionParashahHelp = new System.Windows.Forms.Button();
       this.ActionCountAsMoonHelp = new System.Windows.Forms.Button();
       this.EditMaxYearsInterval = new System.Windows.Forms.NumericUpDown();
+      this.EditUseTwoDaysForLastPessahDayOutside = new System.Windows.Forms.CheckBox();
       this.EditUseSimhatTorahOutside = new System.Windows.Forms.CheckBox();
       this.ActionGetGPS = new System.Windows.Forms.LinkLabel();
       this.SelectAutoGenerateYearsInterval = new System.Windows.Forms.Button();
@@ -346,7 +347,6 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
-      this.checkBox1 = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1325,7 +1325,7 @@
       this.TabPageGeneration.Controls.Add(this.ActionParashahHelp);
       this.TabPageGeneration.Controls.Add(this.ActionCountAsMoonHelp);
       this.TabPageGeneration.Controls.Add(this.EditMaxYearsInterval);
-      this.TabPageGeneration.Controls.Add(this.checkBox1);
+      this.TabPageGeneration.Controls.Add(this.EditUseTwoDaysForLastPessahDayOutside);
       this.TabPageGeneration.Controls.Add(this.EditUseSimhatTorahOutside);
       this.TabPageGeneration.Controls.Add(this.ActionGetGPS);
       this.TabPageGeneration.Controls.Add(this.SelectAutoGenerateYearsInterval);
@@ -1447,6 +1447,12 @@
             0,
             0});
       this.EditMaxYearsInterval.ValueChanged += new System.EventHandler(this.EditMaxYearsInterval_ValueChanged);
+      // 
+      // EditUseTwoDaysForLastPessahDayOutside
+      // 
+      resources.ApplyResources(this.EditUseTwoDaysForLastPessahDayOutside, "EditUseTwoDaysForLastPessahDayOutside");
+      this.EditUseTwoDaysForLastPessahDayOutside.Name = "EditUseTwoDaysForLastPessahDayOutside";
+      this.EditUseTwoDaysForLastPessahDayOutside.UseVisualStyleBackColor = true;
       // 
       // EditUseSimhatTorahOutside
       // 
@@ -2953,12 +2959,6 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
-      // checkBox1
-      // 
-      resources.ApplyResources(this.checkBox1, "checkBox1");
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.UseVisualStyleBackColor = true;
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3358,6 +3358,6 @@
     private TabPage TabPagePrinting;
     private Label LabelPrintingMarginInfo;
     private Label label7;
-    private CheckBox checkBox1;
+    private CheckBox EditUseTwoDaysForLastPessahDayOutside;
   }
 }

@@ -391,9 +391,6 @@
   <data name="TabPageGeneration.Text" xml:space="preserve">
     <value>Génération</value>
   </data>
-  <data name="SelectUseSodHaibour.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 17</value>
-  </data>
   <data name="SelectUseSodHaibour.Text" xml:space="preserve">
     <value>Utiliser le Sod HaH'ibour avec le omer du soleil</value>
   </data>
@@ -431,7 +428,7 @@
     <value>211, 17</value>
   </data>
   <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
-    <value>Utiliser Sim'hat Torah en dehors d'Israël</value>
+    <value>Utiliser Shim'hat Torah en dehors d'Israël</value>
   </data>
   <data name="ActionGetGPS.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>
@@ -945,5 +942,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
+  </data>
+  <data name="EditUseTwoDaysForLastPessahDayOutside.Text" xml:space="preserve">
+    <value>Utilisez deux jours pour Shebih'i Shel Pessa'h en dehors d'Israël</value>
   </data>
 </root>

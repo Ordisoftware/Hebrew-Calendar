@@ -185,7 +185,9 @@ partial class ApplicationDatabase
         calculate(dayDate, 0, TorahCelebrationDay.NewYearD1, false);
         calculate(dayDate, TorahCelebrationSettings.NewLambDay - 1, TorahCelebrationDay.NewYearD10, false);
         dayDate = calculate(dayDate, TorahCelebrationSettings.PessahStartDay - 1 + delta, TorahCelebrationDay.PessahD1, false);
-        calculate(dayDate, TorahCelebrationSettings.PessahLenght - 1, TorahCelebrationDay.PessahD7, false);
+        int lengthPessah = TorahCelebrationSettings.PessahLenght;
+        if ( !Settings.UseTwoDaysForLastPessahDayOutside ) lengthPessah--;
+        calculate(dayDate, lengthPessah, TorahCelebrationDay.PessahD7, false);
         dayDate = calculate(dayDate, TorahCelebrationSettings.ChavouotLenght - 1 - delta, TorahCelebrationDay.ChavouotDiet, true);
         var shabatDay = (DayOfWeek)Settings.ShabatDay;
         while ( dayDate.DayOfWeek != shabatDay )
