@@ -38,11 +38,11 @@ static partial class AppTranslations
 
     ["9.29"] = new TranslationsDictionary
     {
-      [Language.EN] = "• Optimize populating monthly view and thus startup time." + Globals.NL +
-                      "• Add open system calculator button in DatesDiffCalculator form." + Globals.NL +
+      [Language.EN] = "• Optimize populating monthly view and startup time." + Globals.NL +
                       "• Add parashah name in the title bar of description box." + Globals.NL +
                       "• Add menu for transcription guide in Tools menu and others windows." + Globals.NL +
                       "• Add menu for grammar guide in Tools and others windows." + Globals.NL +
+                      "• Add open system calculator button in dates difference calculator form." + Globals.NL +
                       "• Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise." + Globals.NL +
                       "• Fix shavouh'ot 1 and 2 hours to be solar like shabat even using moon omer." + Globals.NL +
                       "• Fix reset settings crashes the monthly view until restart." + Globals.NL +
@@ -54,11 +54,11 @@ static partial class AppTranslations
                       "• Some UI/UX improvements and fixes." + Globals.NL +
                       "• Reorganize and add some web links",
 
-      [Language.FR] = "• Optimisation du remplissage de la vue mensuelle et donc du temps de démarrage." + Globals.NL +
-                      "• Ajout d'un bouton pour ouvrir la calculatrice système dans le formulaire DatesDiffCalculator." + Globals.NL +
+      [Language.FR] = "• Optimisation du remplissage de la vue par mois et du temps de démarrage." + Globals.NL +
                       "• Ajout du nom de la parashah dans la barre de titre de la fenêtre de description." + Globals.NL +
-                      "• Ajout d'un menu pour un guide de transcription dans le menu Outils et les autres fenêtres." + Globals.NL +
-                      "• Ajout d'un menu pour un guide de grammaire dans le menu Outils et les autres fenêtres." + Globals.NL +
+                      "• Ajout d'un menu guide de transcription dans le menu Outils et les autres fenêtres." + Globals.NL +
+                      "• Ajout d'un menu guide de grammaire dans le menu Outils et les autres fenêtres." + Globals.NL +
+                      "• Ajout d'un bouton pour ouvrir la calculatrice système dans le formulaire de calcul de différence de dates." + Globals.NL +
                       "• Correction du jour de shavouh'ot 2 en cas de omer de la lune erroné en raison de jours sans lever de lune." + Globals.NL +
                       "• Correction des heures de shavouh'ot 1 et 2 pour être solaires comme le shabat même en utilisant le omer de la lune." + Globals.NL +
                       "• Correction de la réinitialisation des paramètres qui plante la vue mensuelle jusqu'au redémarrage." + Globals.NL +
@@ -66,9 +66,9 @@ static partial class AppTranslations
                       "• Correction de l'enregistrement dans le tableau des parashot qui provoque une null exception en cas de cellules vides dans la grille." + Globals.NL +
                       "• Correction des noms des jours intermédiaires des célébrations hebdomadaires en cas de lever de lune survenant le lendemain (omer de la lune)." + Globals.NL +
                       "• Correction du bouton de désactivation du rappeleur non désactivé si la désactivation n'est pas autorisée dans les préférences." + Globals.NL +
-                      "• Amélioration les transcriptions suite à un changement pour mieux distinguer He, 'Het, H'ayin, T'et et Tav." + Globals.NL +
+                      "• Amélioration des transcriptions suite à un changement pour mieux distinguer He, 'Het, H'ayin, T'et et Tav." + Globals.NL +
                       "• Quelques améliorations et corrections UI/UX." + Globals.NL +
-                      "• Réorganiser et ajout des liens Web."
+                      "• Réorganisation et ajout de quelques liens Web."
     },
 
     ["9.28"] = new TranslationsDictionary

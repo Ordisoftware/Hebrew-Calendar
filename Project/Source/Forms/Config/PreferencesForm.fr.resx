@@ -395,7 +395,7 @@
     <value>232, 17</value>
   </data>
   <data name="SelectUseSodHaibour.Text" xml:space="preserve">
-    <value>Utiliser le sod ha'ibour avec le omer du soleil</value>
+    <value>Utiliser le Sod HaH'ibour avec le omer du soleil</value>
   </data>
   <data name="SelectOmerSun.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 17</value>

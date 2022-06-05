@@ -236,7 +236,7 @@ It can also happen that over 10 or 20 years there is a lag of one month due to A
 
 But even with these lags, Pesach, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesach Sheni, or vice versa, and within a few hours which generally remain within the 3% universal margin.
 
-The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod Ha'ibur or science of moving stars.
+The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod HaH'ibur or science of moving stars.
 
 #### What are the times of celebration?
 
@@ -278,7 +278,7 @@ Israël is the conceptual worldwide land of the righteous benevolent whose body+
 
 The number of Parashot is 54 that is to say נד which is the Power of the Student, and that root means Passing from the world of malevolence to that of benevolence.
 
-The generation of parashot relating to Shabatot with the omer of the moon or the sun without the sod ha'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
+The generation of parashot relating to Shabatot with the omer of the moon or the sun without the Sod HaH'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
 
 ## Keyboard shortcuts
 
@@ -362,7 +362,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add user reminders for personal solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
 - Add reminders for 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.
-- Add option to generate calendar using the rules of the Sod Ha'ibur instead of the strict astronomical moon or sun omer.
+- Add option to generate calendar using the rules of the Sod HaH'ibur instead of the strict astronomical moon or sun omer.
 
 ## Changelog
 
@@ -378,6 +378,8 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Improve weekly parashah description box to have a screenshot button.
 
 #### 2022.06.12 - Version 9.29
+
+>- Add option to use two days for Shevih'i Shel Pessa'h outside of Israël.
 
 - Optimize populating monthly view and thus startup time.
 - Add open system calculator button in DatesDiffCalculator form.

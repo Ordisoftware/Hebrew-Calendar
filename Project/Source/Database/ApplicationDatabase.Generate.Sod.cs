@@ -18,7 +18,7 @@ partial class ApplicationDatabase
 {
 
   /// <summary>
-  /// Creates the calendar items using Sod Ha'ibur (Knowledge on the cycle of stars).
+  /// Creates the calendar items using Sod HaH'ibur (Knowledge on the cycle of stars).
   /// </summary>
   /// <remarkl>
   /// Omer is implicitly as sun and there is no difference between north and south hemisphere.
