@@ -44,6 +44,7 @@ static partial class AppTranslations
                       "• Add menu for transcription guide in Tools menu and others windows." + Globals.NL +
                       "• Add menu for grammar guide in Tools and others windows." + Globals.NL +
                       "• Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise." + Globals.NL +
+                      "• Fix shavouh'ot 1 and 2 hours to be solar like shabat even using moon omer." + Globals.NL +
                       "• Fix reset settings crashes the monthly view until restart." + Globals.NL +
                       "• Fix multiple parashah description boxes at the same time which only displays the first one opened until closed." + Globals.NL +
                       "• Fix save in parashot board causes a null exception in case of empty cells in the grid." + Globals.NL +
@@ -59,6 +60,7 @@ static partial class AppTranslations
                       "• Ajout d'un menu pour un guide de transcription dans le menu Outils et les autres fenêtres." + Globals.NL +
                       "• Ajout d'un menu pour un guide de grammaire dans le menu Outils et les autres fenêtres." + Globals.NL +
                       "• Correction du jour de shavouh'ot 2 en cas de omer de la lune erroné en raison de jours sans lever de lune." + Globals.NL +
+                      "• Correction des heures de shavouh'ot 1 et 2 pour être solaires comme le shabat même en utilisant le omer de la lune." + Globals.NL +
                       "• Correction de la réinitialisation des paramètres qui plante la vue mensuelle jusqu'au redémarrage." + Globals.NL +
                       "• Correction de plusieurs boîtes de description de parashah ouvertes en même temps qui n'affichent que la première ouverte jusqu'à la fermeture." + Globals.NL +
                       "• Correction de l'enregistrement dans le tableau des parashot qui provoque une null exception en cas de cellules vides dans la grille." + Globals.NL +
