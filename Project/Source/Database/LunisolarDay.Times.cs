@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class LunisolarDay
@@ -75,7 +75,9 @@ partial class LunisolarDay
     var rowNext = Table.Find(d => d.Date == dayNext);
     if ( rowPrevious is null || rowNext is null )
       return null;
-    if ( Settings.TorahEventsCountAsMoon )
+    // TODO check verses : is ChavouotDiet lunar or solar ?
+    bool isShavouot = TorahEvent == TorahCelebrationDay.Chavouot1 || TorahEvent == TorahCelebrationDay.Chavouot2;
+    if ( Settings.TorahEventsCountAsMoon && !isShavouot )
     {
       if ( rowNext.Date == DateTime.Today )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);

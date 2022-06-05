@@ -385,6 +385,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add menu for transcription guide in Tools and others windows.
 - Add menu for grammar guide in Tools menu and others windows.
 - Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise.
+- Fix shavouh'ot 1 and 2 times to be solar like shabat even using moon omer.
 - Fix reset settings crashes the monthly view until restart.
 - Fix multiple parashah description boxes at the same time which only displays the first one opened until closed.
 - Fix save in parashot board causes a null exception in case of empty cells in the grid.
