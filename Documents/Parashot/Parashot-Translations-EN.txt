@@ -3,12 +3,12 @@ Bereshit = At the beginning
 Noa'h = He (HaShem) deposited [the Torah within you]
 Lek Leka = Go for you (Shabat) {do whatever you want according to the law of the country and the Torah without harming}
 Vayera = He will have revealed [the good and what is right]
-Haye Sarah = Existence of Sarah
+'Haye Sharah = Existence of Sharah
 Toledot = Generations
 Vayetse = He will bring out [from Mitsraïm]
 Vayishla'h = He will have freed [ignorance and shenanigans]
 Vayeshev = He will give a home
-Mikets = When end of process
+Miqets = When end of process
 Vayigash = He will have offered
 Vaye'hi = He will have preserved life
 // BOOK SHEMOT
@@ -24,13 +24,13 @@ Ki Tisha = Since she will carry
 Vayaqhel = He will have assembled
 Peqoudei = They allocated for me
 // BOOK VAYIQRA
-Vayikra = He will have chosen
+Vayiqra = He will have chosen
 Tsav = Recommendation
 Shemini = Shine for me
 Tazriah' = She will give birth from me
 Metsorah' = In case of infection terminated
 A'harei Mot = He improved me, He stopped the evil [that was killing me]
-Kedoshim = Benevolent [the children of Israel will be]
+Qedoshim = Benevolent [the children of Israel will be]
 Emor = They will talk [about HaShem and His Torah]
 Behar = He clarified {[via Torah] land of white soil (Sinaï, in Sanskrit: Payaga = payas + ga "moving milk")}
 Be'houqotaï = I would write according to Him
@@ -38,7 +38,7 @@ Be'houqotaï = I would write according to Him
 Bamidbar = Despite loneliness
 Nasho = He supported
 Behah'alotka = When you brought forth [light = luminous flux = photons = cloud-grains] of you {with the seven lamps (great plexus-chakras)}
-Shela'h leka = Free [some slave victims] according to you {your understanding of the Doctrine and your abilities}
+Shela'h Leka = Free [some slave victims] according to you {your understanding of the Doctrine and your abilities}
 Qora'h = One who is cold (without heart {without love for others and the law to protect people's life and property})
 'Houqat = Legislation
 Balaq = The one who robs [the victims, of their health and their property]
@@ -54,6 +54,6 @@ Shoft'im = Judges (governors, decision makers)
 Ki Tetse = Because you will produce [{the prescribed works and the testimony of affliction} for combat against enemies to Me (HaShem) and to you {who attack out of hatred of good, kindness, justice and compassion} in order to deliver them to Me for justice to be done and reparation to be done, by HaShem in Heaven and by the Judges of the Tribunal on Earth, and not by personal vengeance]
 Ki Tavo = When you enter [in the country given by HaShem as an inheritance {your body made by your DNA, and that you will have driven out the illegitimate and criminal enemies who possessed it in your place because being born in Mitsraïm}]
 Nitsavim = You take a stand [for the Doctrine of the Torah of HaShem of Elohim] {you act according to the highest laws of good, kindness, justice and compassion aimed at protecting people's lives and possessions without harming even to criminals and fools}
-Vayeleq = He (Mosheh) will have guided [the people of Israel via the Torah {at all times and in every generation}]
+Vayelek = He (Mosheh) will have guided [the people of Israel via the Torah {at all times and in every generation}]
 Haazinou = They were compensated by me (Mosheh) {Heavens [afflicted]}
 Vezot HaBerakah = Because this one (the Torah) [is] the blessing (prosperity, survival)
