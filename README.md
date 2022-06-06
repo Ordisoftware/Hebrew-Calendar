@@ -366,15 +366,13 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 ## Changelog
 
-#### In progress for 2022 - Version 10.0
+#### In progress for the end of 2022 or the beginning of 2023 - Version 10.0
 
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add comments to bookmarks.
-
-#### In progress - Version 9.30
-
 - Add menu for celebrations food notice in Tools.
+- Improve notices to be in only one window having a page control like preferences.
 - Improve weekly parashah description box to have access to the tools for the study.
 - Improve weekly parashah description box to have a screenshot button.
 

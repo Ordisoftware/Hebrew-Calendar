@@ -542,12 +542,17 @@ partial class MainForm : Form
                MessageBoxEx.DefaultWidthMedium);
   }
 
+  /// <summary>
+  /// Event handler. Called by ActionShowFoodNotice for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
   private void ActionShowFoodNotice_Click(object sender, EventArgs e)
   {
     ShowNotice(sender,
                AppTranslations.NoticeCelebrationsFoodTitle,
                AppTranslations.NoticeCelebrationsFood,
-               MessageBoxEx.DefaultWidthSmall);
+               MessageBoxEx.DefaultWidthLarge);
   }
 
   /// <summary>
