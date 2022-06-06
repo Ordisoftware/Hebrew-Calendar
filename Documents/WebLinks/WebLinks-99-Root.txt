@@ -23,5 +23,5 @@ URL = https://asherhaimhalevi.ordisoftware.com/works/bibliography/
 
 -
 
-Name = (FR) Archive GitHub
-URL = https://github.com/Ordisoftware/Torah-Physicalist-Exegesis-Books
+Name = (FR/EN) GitHub Archive (Software and Books)
+URL = https://github.com/Ordisoftware
