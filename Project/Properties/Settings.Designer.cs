@@ -2876,5 +2876,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["UseTwoDaysForLastPessahDayOutside"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReminderBoxRetakeFocusAfterDateClick {
+            get {
+                return ((bool)(this["ReminderBoxRetakeFocusAfterDateClick"]));
+            }
+            set {
+                this["ReminderBoxRetakeFocusAfterDateClick"] = value;
+            }
+        }
     }
 }

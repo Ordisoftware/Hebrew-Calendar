@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Core;
 
 partial class MessageBoxEx : Form
@@ -39,6 +39,8 @@ partial class MessageBoxEx : Form
   public const int DefaultHeightVeryHuge = 600;
 
   private const int WidthDeltaMargin = 55;
+
+  static public readonly List<Type> ForceTopMostExcludedForms = new();
 
   static public readonly List<MessageBoxEx> Instances = new();
 
@@ -181,7 +183,10 @@ partial class MessageBoxEx : Form
     if ( ForceTopMost )
       TopMost = true;
     else
-      TopMost = LoadingForm.Instance.Visible || Application.OpenForms.GetAll().Any(f => f.Visible && f.TopMost);
+      TopMost = LoadingForm.Instance.Visible
+             || Application.OpenForms.GetAll().Any(f => f.Visible
+                                                     && f.TopMost
+                                                     && !ForceTopMostExcludedForms.Contains(f.GetType()));
     if ( DoShownSound ) DisplayManager.DoSound(IconStyle);
     this.Popup();
     this.ForceBringToFront();

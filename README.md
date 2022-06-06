@@ -374,6 +374,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### In progress - Version 9.30
 
+- Add menu for celebrations food notice in Tools.
 - Improve weekly parashah description box to have access to the tools for the study.
 - Improve weekly parashah description box to have a screenshot button.
 
@@ -385,6 +386,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Add menu for transcription guide in Tools and others windows.
 - Add menu for grammar guide in Tools menu and others windows.
 - Add option to use two days for Shebih'i Shel Pessa'h outside of Israël.
+- Add option to retake or not the focus when clicking date in reminder box.
 - Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise.
 - Fix shavouh'ot 1 and 2 times to be solar like shabat even using moon omer.
 - Fix reset settings crashes the monthly view until restart.
