@@ -183,7 +183,6 @@
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.EditConfirmShutdown = new System.Windows.Forms.CheckBox();
       this.EditReminderShowLockoutIcon = new System.Windows.Forms.CheckBox();
-      this.EditReminderBoxRetakeFocusAfterDateClick = new System.Windows.Forms.CheckBox();
       this.EditAutoLockSession = new System.Windows.Forms.CheckBox();
       this.EditAutoLockSessionTimeOut = new System.Windows.Forms.NumericUpDown();
       this.EditCloseReminderFormOnClick = new System.Windows.Forms.CheckBox();
@@ -348,6 +347,7 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditReminderBoxRetakeFocusAfterDateClick = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -685,6 +685,7 @@
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
+      this.TabPageApplication.Controls.Add(this.EditReminderBoxRetakeFocusAfterDateClick);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.LabelChangeLangNotice);
       this.TabPageApplication.Controls.Add(this.label7);
@@ -1568,7 +1569,6 @@
       this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.TabPageReminder.Controls.Add(this.EditConfirmShutdown);
       this.TabPageReminder.Controls.Add(this.EditReminderShowLockoutIcon);
-      this.TabPageReminder.Controls.Add(this.EditReminderBoxRetakeFocusAfterDateClick);
       this.TabPageReminder.Controls.Add(this.EditAutoLockSession);
       this.TabPageReminder.Controls.Add(this.EditAutoLockSessionTimeOut);
       this.TabPageReminder.Controls.Add(this.EditCloseReminderFormOnClick);
@@ -1642,13 +1642,6 @@
       this.EditReminderShowLockoutIcon.Name = "EditReminderShowLockoutIcon";
       this.EditReminderShowLockoutIcon.UseVisualStyleBackColor = true;
       this.EditReminderShowLockoutIcon.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
-      // 
-      // EditReminderBoxRetakeFocusAfterDateClick
-      // 
-      resources.ApplyResources(this.EditReminderBoxRetakeFocusAfterDateClick, "EditReminderBoxRetakeFocusAfterDateClick");
-      this.EditReminderBoxRetakeFocusAfterDateClick.Name = "EditReminderBoxRetakeFocusAfterDateClick";
-      this.EditReminderBoxRetakeFocusAfterDateClick.UseVisualStyleBackColor = true;
-      this.EditReminderBoxRetakeFocusAfterDateClick.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // EditAutoLockSession
       // 
@@ -2967,6 +2960,13 @@
       this.EditWeatherAppPath.Name = "EditWeatherAppPath";
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
+      // 
+      // EditReminderBoxRetakeFocusAfterDateClick
+      // 
+      resources.ApplyResources(this.EditReminderBoxRetakeFocusAfterDateClick, "EditReminderBoxRetakeFocusAfterDateClick");
+      this.EditReminderBoxRetakeFocusAfterDateClick.Name = "EditReminderBoxRetakeFocusAfterDateClick";
+      this.EditReminderBoxRetakeFocusAfterDateClick.UseVisualStyleBackColor = true;
+      this.EditReminderBoxRetakeFocusAfterDateClick.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // PreferencesForm
       // 

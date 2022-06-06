@@ -129,7 +129,7 @@ partial class PreferencesForm
     Settings.CustomWebSearch = EditCustomWebSearch.Text;
     Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     Settings.UseTwoDaysForLastPessahDayOutside = EditUseTwoDaysForLastPessahDayOutside.Checked;
-    Settings.ReminderBoxRetakeFocusAfterDateClick = EditReminderBoxRetakeFocusAfterDateClick.Checked;
+    Settings.BoxesRetakeFocusAfterDateClick = EditReminderBoxRetakeFocusAfterDateClick.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;

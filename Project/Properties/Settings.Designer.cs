@@ -2880,12 +2880,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ReminderBoxRetakeFocusAfterDateClick {
+        public bool BoxesRetakeFocusAfterDateClick {
             get {
-                return ((bool)(this["ReminderBoxRetakeFocusAfterDateClick"]));
+                return ((bool)(this["BoxesRetakeFocusAfterDateClick"]));
             }
             set {
-                this["ReminderBoxRetakeFocusAfterDateClick"] = value;
+                this["BoxesRetakeFocusAfterDateClick"] = value;
             }
         }
     }

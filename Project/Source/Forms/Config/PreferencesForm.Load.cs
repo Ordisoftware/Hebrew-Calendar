@@ -127,7 +127,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditCustomWebSearch.Text = Settings.CustomWebSearch);
     SystemManager.TryCatch(() => EditAutoSortBookmarks.Checked = Settings.AutoSortBookmarks);
     SystemManager.TryCatch(() => EditUseTwoDaysForLastPessahDayOutside.Checked = Settings.UseTwoDaysForLastPessahDayOutside);
-    SystemManager.TryCatch(() => EditReminderBoxRetakeFocusAfterDateClick.Checked = Settings.ReminderBoxRetakeFocusAfterDateClick);
+    SystemManager.TryCatch(() => EditReminderBoxRetakeFocusAfterDateClick.Checked = Settings.BoxesRetakeFocusAfterDateClick);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);
