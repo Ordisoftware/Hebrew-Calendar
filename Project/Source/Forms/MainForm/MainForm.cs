@@ -542,6 +542,14 @@ partial class MainForm : Form
                MessageBoxEx.DefaultWidthMedium);
   }
 
+  private void ActionShowFoodNotice_Click(object sender, EventArgs e)
+  {
+    ShowNotice(sender,
+               AppTranslations.NoticeCelebrationsFoodTitle,
+               AppTranslations.NoticeCelebrationsFood,
+               MessageBoxEx.DefaultWidthSmall);
+  }
+
   /// <summary>
   /// Event handler. Called by ActionShowShabatNotice for click events.
   /// </summary>

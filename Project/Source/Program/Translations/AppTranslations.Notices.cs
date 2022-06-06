@@ -22,8 +22,8 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary NoticeMonthsAndDaysTitle = new()
   {
-    [Language.EN] = "Months and days notice",
-    [Language.FR] = "Notice des mois et des jours"
+    [Language.EN] = "Notice on the generation of months and days",
+    [Language.FR] = "Notice sur la génération des mois et des jours"
   };
 
   // TODO update notice when sod will be ready
@@ -46,8 +46,8 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary NoticeCelebrationsTitle = new()
   {
-    [Language.EN] = "Celebrations notice",
-    [Language.FR] = "Notice des célébrations"
+    [Language.EN] = "Notice on the occurrence of celebrations",
+    [Language.FR] = "Notice sur la survenue des célébrations"
   };
 
   static public readonly TranslationsDictionary NoticeCelebrations = new()
@@ -65,10 +65,31 @@ static partial class AppTranslations
                     "Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option du générateur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant."
   };
 
+  static public readonly TranslationsDictionary NoticeCelebrationsFoodTitle = new()
+  {
+    [Language.EN] = "Notice on the food during celebrations",
+    [Language.FR] = "Notice sur la nourriture lors des célébrations"
+  };
+
+  static public readonly TranslationsDictionary NoticeCelebrationsFood = new()
+  {
+    [Language.EN] = "A description of Torah recipes for celebrations will be available with version 9.30: " + Globals.NL2 +
+                    "• Grilled Lamb for Pessa'h." + Globals.NL2 +
+                    "• Lamb burger with wine for Shavuh'ot 1 after the first Omer of seven weeks." + Globals.NL2 +
+                    "• Lamb and veal hotpot with a kind of white beer for Shavouh'ot 2 after the second Omer." + Globals.NL2 +
+                    "• Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot.",
+
+    [Language.FR] = "Une description des recettes de la Torah pour les célébrations sera disponible avec la version 9.30 :" + Globals.NL2 +
+                    "• Agneau grillé non saignant sans os coupé et non bouilli pour Pessa'h." + Globals.NL2 +
+                    "• Burger d'agneau au vin pour Shavouh'ot 1 après le premier Omer de sept semaines." + Globals.NL2 +
+                    "• Potée d'agneau et de veau avec une sorte de bière blanche pour Shavouh'ot 2 après le deuxième Omer." + Globals.NL2 +
+                    "• Burgers d'agneau, de veau et de cerf pour Terouh'ah, HaKipourim et Soukot."
+  };
+
   static public readonly TranslationsDictionary NoticeShabatTitle = new()
   {
-    [Language.EN] = "Shabat notice",
-    [Language.FR] = "Notice du Shabat"
+    [Language.EN] = "Notice on the Shabbat day",
+    [Language.FR] = "Notice sur le jour du Shabat"
   };
 
   static public readonly TranslationsDictionary NoticeShabat = new()
@@ -88,8 +109,8 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary NoticeParashahTitle = new()
   {
-    [Language.EN] = "Parashot notice",
-    [Language.FR] = "Notice des Parashot"
+    [Language.EN] = "Notice on the study of Parashot",
+    [Language.FR] = "Notice sur l'étude des Parashot"
   };
 
   static public readonly TranslationsDictionary NoticeParashah = new()
