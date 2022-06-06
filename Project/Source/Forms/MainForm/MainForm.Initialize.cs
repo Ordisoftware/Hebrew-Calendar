@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -51,6 +51,7 @@ partial class MainForm
     SystemEvents.PowerModeChanged += PowerModeChanged;
     MenuTray.Enabled = false;
     Globals.AllowClose = false;
+    MessageBoxEx.ForceTopMostExcludedForms.Add(typeof(ReminderForm));
     foreach ( var value in Enums.GetValues<TorahCelebrationDay>() )
       LastCelebrationReminded.Add(value, null);
     if ( !ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when lunar months ready
