@@ -374,6 +374,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 
 #### In progress - Version 9.30
 
+- Add menu for celebrations food notice in Tools.
 - Improve weekly parashah description box to have access to the tools for the study.
 - Improve weekly parashah description box to have a screenshot button.
 
