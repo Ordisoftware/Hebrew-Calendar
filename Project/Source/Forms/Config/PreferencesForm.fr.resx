@@ -947,6 +947,6 @@
     <value>Utilisez deux jours pour Shebih'i Shel Pessa'h en dehors d'Israël</value>
   </data>
   <data name="EditReminderBoxRetakeFocusAfterDateClick.Text" xml:space="preserve">
-    <value>Reprendre le focus après un clic sur la date (clic droit pour faire le contraire)</value>
+    <value>Les boites de rappel et de navigation reprennent le focus après clic sur date (clic droit pour le contraire)</value>
   </data>
 </root>

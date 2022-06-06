@@ -355,7 +355,7 @@ partial class ReminderForm : Form
   private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
     if ( LabelDate.Tag is null ) return;
-    bool useLeftClick = Settings.ReminderBoxRetakeFocusAfterDateClick;
+    bool useLeftClick = Settings.BoxesRetakeFocusAfterDateClick;
     bool retakeFocus = ( useLeftClick && e.Button == MouseButtons.Left )
                     || ( !useLeftClick && e.Button == MouseButtons.Right );
     MainForm.Instance.GoToDate((DateTime)LabelDate.Tag, true, false, false, retakeFocus ? this : null);
