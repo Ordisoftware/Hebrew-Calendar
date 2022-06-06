@@ -39,10 +39,12 @@ static partial class AppTranslations
     ["9.29"] = new TranslationsDictionary
     {
       [Language.EN] = "• Optimize populating monthly view and startup time." + Globals.NL +
+                      "• Add open system calculator button in dates difference calculator form." + Globals.NL +
                       "• Add parashah name in the title bar of description box." + Globals.NL +
                       "• Add menu for transcription guide in Tools menu and others windows." + Globals.NL +
                       "• Add menu for grammar guide in Tools and others windows." + Globals.NL +
-                      "• Add open system calculator button in dates difference calculator form." + Globals.NL +
+                      "• Add option to use two days for Shebih'i Shel Pessa'h outside of Israël." + Globals.NL +
+                      "• Add option to retake or not the focus when clicking date in reminder box." + Globals.NL +
                       "• Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise." + Globals.NL +
                       "• Fix shavouh'ot 1 and 2 hours to be solar like shabat even using moon omer." + Globals.NL +
                       "• Fix reset settings crashes the monthly view until restart." + Globals.NL +
@@ -55,10 +57,12 @@ static partial class AppTranslations
                       "• Reorganize and add some web links",
 
       [Language.FR] = "• Optimisation du remplissage de la vue par mois et du temps de démarrage." + Globals.NL +
+                      "• Ajout d'un bouton pour ouvrir la calculatrice système dans le formulaire de calcul de différence de dates." + Globals.NL +
                       "• Ajout du nom de la parashah dans la barre de titre de la fenêtre de description." + Globals.NL +
                       "• Ajout d'un menu guide de transcription dans le menu Outils et les autres fenêtres." + Globals.NL +
                       "• Ajout d'un menu guide de grammaire dans le menu Outils et les autres fenêtres." + Globals.NL +
-                      "• Ajout d'un bouton pour ouvrir la calculatrice système dans le formulaire de calcul de différence de dates." + Globals.NL +
+                      "• Ajout d'une option pour utiliser deux jours pour Shebih'i Shel Pessa'h en dehors d'Israël." + Globals.NL +
+                      "• Ajout d'une option pour reprendre ou non le focus en cliquant sur la date dans la boîte de rappel." + Globals.NL +
                       "• Correction du jour de shavouh'ot 2 en cas de omer de la lune erroné en raison de jours sans lever de lune." + Globals.NL +
                       "• Correction des heures de shavouh'ot 1 et 2 pour être solaires comme le shabat même en utilisant le omer de la lune." + Globals.NL +
                       "• Correction de la réinitialisation des paramètres qui plante la vue mensuelle jusqu'au redémarrage." + Globals.NL +

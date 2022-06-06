@@ -40,7 +40,7 @@ partial class MessageBoxEx : Form
 
   private const int WidthDeltaMargin = 55;
 
-  static public readonly List<Type> ForceTopMostExcludedForms = new List<Type>();
+  static public readonly List<Type> ForceTopMostExcludedForms = new();
 
   static public readonly List<MessageBoxEx> Instances = new();
 

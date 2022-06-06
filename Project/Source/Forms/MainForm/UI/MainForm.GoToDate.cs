@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -72,8 +72,7 @@ partial class MainForm
                 bool needScroll = line.IndexOf(strDatePattern, StringComparison.Ordinal) == -1;
                 TextReport.SelectionStart = position - 6;
                 TextReport.SelectionLength = 119;
-                if ( needScroll )
-                  TextReport.ScrollToCaret();
+                if ( needScroll ) TextReport.ScrollToCaret();
               }
             }
             finally
@@ -96,7 +95,10 @@ partial class MainForm
           else
           if ( Visible && !this.IsVisibleOnTop(Globals.WindowDetectionMargin) )
             this.Popup();
-          regetFocus?.Popup();
+          if ( regetFocus is not null )
+            regetFocus.Popup();
+          else
+            this.Popup();
         });
       GoToDateMutex = false;
     }

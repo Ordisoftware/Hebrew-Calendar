@@ -716,5 +716,8 @@
     <Setting Name="UseTwoDaysForLastPessahDayOutside" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="ReminderBoxRetakeFocusAfterDateClick" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ReminderForm : Form
@@ -355,7 +355,10 @@ partial class ReminderForm : Form
   private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
     if ( LabelDate.Tag is null ) return;
-    MainForm.Instance.GoToDate((DateTime)LabelDate.Tag, true, false, false, this);
+    bool useLeftClick = Settings.ReminderBoxRetakeFocusAfterDateClick;
+    bool retakeFocus = ( useLeftClick && e.Button == MouseButtons.Left )
+                    || ( !useLeftClick && e.Button == MouseButtons.Right );
+    MainForm.Instance.GoToDate((DateTime)LabelDate.Tag, true, false, false, retakeFocus ? this : null);
   }
 
   private void ActionSetupSound_Click(object sender, EventArgs e)

@@ -183,6 +183,7 @@
       this.LabelRemindAutoLockTimeOut = new System.Windows.Forms.Label();
       this.EditConfirmShutdown = new System.Windows.Forms.CheckBox();
       this.EditReminderShowLockoutIcon = new System.Windows.Forms.CheckBox();
+      this.EditReminderBoxRetakeFocusAfterDateClick = new System.Windows.Forms.CheckBox();
       this.EditAutoLockSession = new System.Windows.Forms.CheckBox();
       this.EditAutoLockSessionTimeOut = new System.Windows.Forms.NumericUpDown();
       this.EditCloseReminderFormOnClick = new System.Windows.Forms.CheckBox();
@@ -1567,6 +1568,7 @@
       this.TabPageReminder.Controls.Add(this.LabelRemindAutoLockTimeOut);
       this.TabPageReminder.Controls.Add(this.EditConfirmShutdown);
       this.TabPageReminder.Controls.Add(this.EditReminderShowLockoutIcon);
+      this.TabPageReminder.Controls.Add(this.EditReminderBoxRetakeFocusAfterDateClick);
       this.TabPageReminder.Controls.Add(this.EditAutoLockSession);
       this.TabPageReminder.Controls.Add(this.EditAutoLockSessionTimeOut);
       this.TabPageReminder.Controls.Add(this.EditCloseReminderFormOnClick);
@@ -1640,6 +1642,13 @@
       this.EditReminderShowLockoutIcon.Name = "EditReminderShowLockoutIcon";
       this.EditReminderShowLockoutIcon.UseVisualStyleBackColor = true;
       this.EditReminderShowLockoutIcon.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
+      // 
+      // EditReminderBoxRetakeFocusAfterDateClick
+      // 
+      resources.ApplyResources(this.EditReminderBoxRetakeFocusAfterDateClick, "EditReminderBoxRetakeFocusAfterDateClick");
+      this.EditReminderBoxRetakeFocusAfterDateClick.Name = "EditReminderBoxRetakeFocusAfterDateClick";
+      this.EditReminderBoxRetakeFocusAfterDateClick.UseVisualStyleBackColor = true;
+      this.EditReminderBoxRetakeFocusAfterDateClick.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // EditAutoLockSession
       // 
@@ -3359,5 +3368,6 @@
     private Label LabelPrintingMarginInfo;
     private Label label7;
     private CheckBox EditUseTwoDaysForLastPessahDayOutside;
+    private CheckBox EditReminderBoxRetakeFocusAfterDateClick;
   }
 }
