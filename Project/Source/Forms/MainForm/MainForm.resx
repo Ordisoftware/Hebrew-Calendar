@@ -2152,334 +2152,6 @@
   <data name="ToolStripTopSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 49</value>
   </data>
-  <data name="ActionWeeklyParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAWxJREFUOE+tUMsuA2EYnRewxMJLSLwLiURZeA8VvECDCNFIWzZqLhXaaaczJa3a
-        WHgE6cpKtLQEPb7ztdNLBHE5ycnJP+fy/xnjX9DenLCxMQ6sjwlHu/oZu77kpVfRAcRGgOqycAm4jH5P
-        5piXng4EhzG8PNzB2orC2V7B8c6acFU1IzpI+swxz54OpJ1TvLaB3XgGrUcgmfBQu3lWfdJzoaf0mWOe
-        PR0w7QzwBszsGYgkDSzsC1MdnacKQ6XPHPPs6YDFAVmcFSN1bWBRigeDKsVQ6TPHPHs6oC8QTMcNzCXk
-        NrklZKR7DpU+c0TvBaZl64fsSRnNe6DoXuG21lRt1QEv11f6zBHs6cCRZekHzz+HXyojOLvos1QZoh+U
-        NUewNzSQdYuqeS9Ao9FQJdzCsIa5DwO5vCehohZDup4v6vdVfOaI3oBpd/7BT8FeZ8Bx6jykZTFtmqJf
-        UH1Ly+zpgGBSOPULsvcXGMY7KaVcuTYAtfkAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionWeeklyParashah.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionWeeklyParashah.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionWeeklyParashah.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+P</value>
-  </data>
-  <data name="ActionWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionWeeklyParashah.Text" xml:space="preserve">
-    <value>Weekly parashah</value>
-  </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
-  </data>
-  <data name="ActionParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
-        TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
-        MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
-        I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
-        qQiX2OHBS4ZsoS+vszFnNlTS9Ok+V90AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionParashotBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionParashotBoard.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionParashotBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F1</value>
-  </data>
-  <data name="ActionParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionParashotBoard.Text" xml:space="preserve">
-    <value>Parashot board</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAcNJREFUOE+lk8FL22AYxnN1urH7ji1V2WUwBmoVj2NzDlk3in+Adw+C/0Mvnloo
-        PY8dvKnoYcg2PHpx2NKWpLQsJYZ8fAkJiVRS+vi+X3UzmMPm3vDke76XPL+8XyBarVbzqtUqKpXKP4kz
-        nNXYPLQ4qzGNq9Goo6s3sfvtDO1WE+f1Rqp+nrPqKsPZ34Bep40XW8eYKh7BNg0YHR26wetYt143dDTb
-        LZVJArpdRMLEk/Uj+LaJfr+PC9uBIyRsRyix516390tlEgDT7CGSfZrgEJFrQUoH2dw05hYW8fbde6yu
-        fUB+aRkzs88JYqtMAmBZFkJpY6KwTwAHQgi4ng8/COH5gRJ77lkXKQAhbAwCAQwk4lDClTzyfdmOkz5B
-        4Ln0EX/g084pZjePcRX59DYP0k1KSI9AUmUSgMsooHsEwxR4XDwgP8BoNMSI3Fh8AVfDGEEYkrsBlMtl
-        tUEcYftLHc82vuLzialamWwOr+YW8PrNClZW1zCfX0JuegZDgnBx9g8AMR4V9vB0/QCTH/dveukVx0O1
-        KsDtEcaD3i3aj2jsVI0B6gj//S+USqXvbJhWoZH+SvQsZzirUWVILx8mLXMNYJks6JMA880AAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F2</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
-    <value>Celebration verses board</value>
-  </data>
-  <data name="ActionViewCelebrationsBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAn1JREFUOE+dkstPE2EUxWfnK8aVYeMfQeIWTcSF/5ELd6gQoDPtlEILlhiUiNsW
-        LB06bXkaY0RU2pnysm+UlvJoEW2RcjzfV3RnYvySM797b++5vfNQbnRHNtoeGrjeFaam/1FhCA+9AaXt
-        kYGJRAX+lb2/SPz2W618lHxJj/AqV7tmcPdFAbeeZdAhlUbHWBq3yTvj1PPP1BY6yc5x6pz3JnK4Rq9y
-        X/Whvl9CrbyNt/NRVEtFVHcKOC4X0RdcRTBVQ8CqSaqTq5i0DhFMHiC0dowHmheKx6XiW3Uf1UoZb+bj
-        ONzdwQF1VN1DdySHQAEI5IEg2WdmMbVZx1TqCKHNBny6A8qAS0NvaAM9wSR6J5PoCSTwmHG3mUfssoLo
-        FeqSghg5y7wvmkP/VBLq9DoGdU0MUBHPNxHP/IDzVQKx9HeYmToiu4BJk3EMGAcUKYaZrEezDekRXjng
-        9RdgqdCAHkpiMV/HQv4EczSJAfEGED+iSJGL+kLhJ5bo+TPAY27BE7YxaNgYmE7CzVifLyJ6UUGE6xsX
-        WhS5qLvDKemRA9xOFZ/2gY+7TXgNCx9Kp1jZofYAz+I23n8H3nF9QZGL+kqpKT3Cq+i88A3BZsE3Y8Oq
-        nCHBYRYbvZF18I1hlbGgzBkn2GNXAeGVG/jn0ngSTcFPjZg2hmcsSZH7IjaGuJmXw4fNNckhamQ23Rrg
-        0lQUT4A8VxyNryHHdTN8aIL+2DrEOT0DmuTy8rLkqawCmipugd9BhUmZTWOLWfD28JUdgk8Xsq3O82Pb
-        1nnUOk6N34Fb12u6U4NLc0DnNoJOtV9SbKepDjgc/ZQDKv9RUEijWadX4Wmnbv6flPZfYGzwKZiwNXoA
-        AAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionViewCelebrationsBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionViewCelebrationsBoard.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionViewCelebrationsBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F3</value>
-  </data>
-  <data name="ActionViewCelebrationsBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionViewCelebrationsBoard.Text" xml:space="preserve">
-    <value>Celebrations dates board</value>
-  </data>
-  <data name="ActionViewNewMoonsBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAdpJREFUOE99k1eKKmEQhV3BXcLsYbh7mL3oPKq7UVFMGDEHMAdUzNkH04soiCD4
-        4OO5nrK7vT3MTEHR+nedr9Lfhq9msVjwkysh35vT6fywWq3odru4XC643++43W44Ho8Yj8fIZDICcblc
-        H4rkZTyk+Hw+43q9Yr/fo9/vo1aroVAooNlsYjAYoNfrfQ+heDab4XQ6YTqdotPpoFKpIJfLIRqNIhKJ
-        IBaLoVqtotVq6duhOB6P43A4YDKZSIAqDofDcLvd8Pl8zCqgRqOBZDIJs9n8hBBQr9clM8XFYlF6Hg6H
-        8Hg8yGazCAQCeMwIfr9fZkGIVoUKoJj9ks6e2T8BzPx/JWwlnU7rAewtn8/LS2ahiAJ6uVxGqVSSKpiE
-        caFQSA9gECHskaXS7XY75vO5tMPpe71eDaSuVAOwb7602WxIpVIIBoMy/dVqpUEo5HAdDocMXQfgQbvd
-        lt2zGg6UWdfrtUD45GqZiJUkEonXFh72ps6BAIp3ux02mw22260A+JuXi5eJcUr2t6f8YSaT6ZMQTp/l
-        8lJRSF8sFgIdjUayLYoZr0g1+2M0GgXCvTMThcvlUp78PnhOMeMY/5TpjYd/CfnJ+V6J+9XY2/vDGaw6
-        /7961sxg+AfTN0jhcSZoNgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionViewNewMoonsBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionViewNewMoonsBoard.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionViewNewMoonsBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
-  </data>
-  <data name="ActionViewNewMoonsBoard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionViewNewMoonsBoard.Text" xml:space="preserve">
-    <value>New moons dates board</value>
-  </data>
-  <data name="ActionViewLunarMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAlVJREFUOE+NUkloE2EYDT14Vm8WqQvoSQsuN0+KJzfwpOACRY3JTKo9uCNCalUq
-        2mqlMTZpJkkTSjFpJZnJZLGmpm1slmpiusaYCKZuwR5Eqcvh+c04RWyb4oPHP8t77/v+//9UC8Fvrw0T
-        4bMyEDgNeE4T9HHMIeX3f2G9y3Ai9qKvDaWpNMaTD/H0kR6CRVMUudOrFc3iWLNy6UYyYCLhRDEXxvSH
-        UYxEHeAtavAOZpUiWxQVHc01grSN8SEjJhMcPr2NY2LYTSGaGUWzOEyNR64IFJCJtCDma6AOjCgVk4jQ
-        dnxWtl6Rlce9hoP7I92XIFhZqSri/uvIJq3Ij4jwcprviqw83EZ1g8/GIuCokyoi7LqAVN8dCvDQuxaK
-        rDwEjvkm2nV4k7JTF4wcEhWu4knXOUjBimxhCDbtgVDnWfz6Mol0722aBS2ZdLJxkNdDpDlRpPMRNLOV
-        HvNxlOjUS3kRr5MW2fyMr5fXoLMOok33Q5H/C5o81kvmV6kefJ6Ko0Dtj0cN8JjVdJ0muQNpSk2Nh9tk
-        g99Ruz1oY7f6bFrG237ya6RHj6lcP6bfpfA+F0IxKyCbsCDsvoh0fyvEjlNUnZWqV8oB9OEntYNEqAWF
-        sQBN3BgKozwyA/dRyHQj/9IlP2cGWuUDlLS7d27YJZsVbLY1HXVJVzUcfoBY4CbxBgXewvO+Zgz3NmHQ
-        W4/HnWfgaWc+7tlRvZc8S/5Y/6KqasWybc67NUHeop2Rxle6stm1y3Bs6Nr5fZdJV02cZ55FBXEtcRNx
-        yxyuIy4nzoFK9RvYPYoPa481xAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionViewLunarMonths.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionViewLunarMonths.ShortcutKeyDisplayString" xml:space="preserve">
-    <value />
-  </data>
-  <data name="ActionViewLunarMonths.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F5</value>
-  </data>
-  <data name="ActionViewLunarMonths.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionViewLunarMonths.Text" xml:space="preserve">
-    <value>Lunar month names board</value>
-  </data>
-  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
-  </data>
-  <data name="ActionCalculateDateDiff.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAadJREFUOE+VkssvA1EYxb8VG+wQKxJ/goU1iRAr/hAhKq1WPdJEW0QjEo+muhCx
-        JfXoRiSWLGjSWFONVyXKDEaj0znuvb3amUlDneQkc3O+73fuZIb+q8PTBBa3Y5DH6pQcHUShtwboIsTP
-        EhiaWwV6yAr5jax0EvL7UWBnBfHzS/SPzAB74fIsuq1ko68WScdgaeChjZAdGsBdI+GojnDcQLhvMd0A
-        u6uIX0hybB36QRQqa5Ux+Te2YABIvbwjrXwgrWpIKVoZcNcsyfWM3FRse2w1AULLAnCbyVgsYyJOS0un
-        Xj/EcCCyWRqYnVuAXigg8/RksYyJ7GQOCIaWxEBwIcROQD7/heds1mKxzGUnFwwDPn8Qs4F5seyd8jGo
-        AfXtDYqqlizXiexkXdexFo7g6vqGgQJwuScFKJfLQdO0kuU6+84mqsJa+Pvy52mfnw91uNxeATDYzTj8
-        x8VtJjM19/kphp3jE2KZ505P8QZ28UzITOUtXC62JGMaHh07cbg8GHE4MWyyjNmPVEFmAFM7M7+N3UWZ
-        qbyFt/FWGVelSnTe+oeIvgFtgfbvBvdr+gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionCalculateDateDiff.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionCalculateDateDiff.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Maj+D</value>
-  </data>
-  <data name="ActionCalculateDateDiff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionCalculateDateDiff.Text" xml:space="preserve">
-    <value>Dates difference calculator</value>
-  </data>
-  <data name="ActionOpenSystemDateAndTime.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIXSURBVDhPlZFNaxNRFIaPIBa0a9Gd4loQ3LhWxC5EUPwd
-        xhpoibRWA42RqEFarWBbbTJNWwRtUmPQ2pqguFPRSpZTm+hMY76nzUg+Jq/33t4wqaYLDzwM98z7vDPM
-        0N+jRBdxf2oWd+aiR+VKTODlEvyhCORx+3x1nkezZw9wkjAdewOndwQ/Lh4GzuxGo6cLOEVQYku45BsD
-        ThPLdoE7Uicqn9iF+sIE8PwBlNdxnOu9jmRgBFbkEWqRcWB+DMpiAmd7bwDhh2i8mAB3pE6kHyIUHRfw
-        cz8hvJew0E3IHCSkDxBSDI0R3keIMHSW4VnuSJ3o1ngQFgA1b2CttIm0YWLN+I3VkgmV8b1sIlWuiHtq
-        wRBZ7kidyOcfRZMtU5oGLZNBrlQS106kNV1kuSN1Iq/vLqxmE5q+jmyu0FFsoa9nRJY7UifyeH1osuWv
-        bBaFYrGjyCkbBnL5PHs+4PHetgvcHq9YFgo7yxwuVzYrMCsm3MM37YIh97Ao4E8wNjZYgId25tl8BEpo
-        1i4YHHKLAtPcCjQajX+kdpbjCURjr+wC18A1UVCr1VCtVlGv1zuKLVaSSfEWUifqcw2KAj6WZYkPymkf
-        Lmq6jo+fPos/MTP31C7odw3IWOd59/4Dlt8m8GXlG1R1VeyC0zN2geOKM+7sv4rLzj442mid/fdGEVBC
-        eBJQMDkVxOMtDKmLOcI4/p8cIyL6AwIrmtXCzvMhAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionOpenSystemDateAndTime.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionOpenSystemDateAndTime.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionOpenSystemDateAndTime.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+D</value>
-  </data>
-  <data name="ActionOpenSystemDateAndTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionOpenSystemDateAndTime.Text" xml:space="preserve">
-    <value>Windows date and time</value>
-  </data>
-  <data name="ActionOpenCalculator.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIVSURBVDhPlZE/b9NQFMXfNwGVlY3PwsSCiqhoEwrMhSYw
-        0bRpVYZstpukIQywItgQIwMCpJa2KGkT2bGd2o7/pC5OnRzuffVACqjiSUc+vu/8bm6uBZ/Gdn3QqGlo
-        VFWScokow1liJMyHC29/jPHu4CfeXyLOcJaZDBfiZU3F9pcEt5sWZpsm7rz6u/iOM5xlJsOFaNa3sPoJ
-        WP6YoEAq/kN8xxnOMpPh9BfqNRSWH6P4ZAlFej6VWsKzTOy5xnec4SwzGS5EtboF3w/gDgI4QQwnjDEI
-        QoRBgCgMpecay6UcZ5nJcCE0TUPfcfF55wAoXAHmZvB1r4W1jRfIP3iEb3ttoHgVuDsjM33HAzMZft7A
-        oeLOfgu7bR3fDw3st47Qah+hfdgh35G1XRJnHPePBipcKjJQWt9Ejn612zVogk3kFx+S16VfIM8NPdng
-        t6+gqio8z5dB07RhW330ehaszJtGD8c9g6RD73ZllpkMP2/ghxFMy0ZpbR0L+UUc005K5Q3kyPuOjdnX
-        vpRjGQhosRcaKAijoYR83n4UYeD7FIwQkY8DF3NvPNyq6QhdG9FwSA2U6Qni+FTCz0tl3Mvdxwm9r6yW
-        MZ/LI4lD3NR0qZPQwyndTU3AG51MgNHoDOPxRCpNx/I54ff0DEgTqXSUyOzUV6hUKh+4wF1ZvOGLXqOR
-        WTw6ZxVF6WS4PNdIN/5T14UQ4hf26qh5syVyPAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionOpenCalculator.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionOpenCalculator.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionOpenCalculator.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+C</value>
-  </data>
-  <data name="ActionOpenCalculator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionOpenCalculator.Text" xml:space="preserve">
-    <value>Windows calculator</value>
-  </data>
-  <data name="SeparatorMenuWeather.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
-  </data>
-  <data name="ActionLocalWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVDhPzY5PSFRRFIfvqmgVwkBIEAySIAlZWU21i5ZG
-        BWITgRTootlERG0HirJNTRSZIdT4txlBadL+OWo93QVOYVbzhMiZtAQpJzVRmefXuTM3KsUk2vTBxz33
-        nPN776r/B+dKznX8apXTuLNGm6mlZ8YrM1PvGWTgEgzXZpVa98x4eZxAzrV0sKifVxcg7oPXx7PqWnrp
-        hi2xP77Ev29NMdGDECsHaxc8253V8kD/UYiWsGGtcpv1paSr81qxyqCzGJ5sF3eIW+HxJjGP+EMfzq3V
-        AbO+lImA+xGRPXBvs7EQ2tw0tVykNDLFyZ5JfJEhDoQTh03kd9wulU9dPoQLILQRmtdjNVVw/vkc80BK
-        XBCr+j7iDcf3mthP0ldd/qnL6+zR2tx5bruwgscoabB5Nwfdku78Ak/lHJpeYP+dgfHSu29jR1rschPP
-        kCsWpKrUi/c3PJzqm2VM/tgzAa1S/LBX7oNfHeTgXO8oZaE3hdm44VDInj7RlaIt6RD6BMEk1P1i4wjc
-        lw/pWXtiljPRJN56+7OJK3W6e4zYjAzH4eYw1CxS97TVot55+Q3Odo1g4kp5m+3JygcfqOhIULmCmR3Z
-        1RkTz1AkbvtLdeZfUOo7ZsaTkJna09EAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionLocalWeather.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionLocalWeather.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionLocalWeather.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+M</value>
-  </data>
-  <data name="ActionLocalWeather.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionLocalWeather.Text" xml:space="preserve">
-    <value>Windows weather</value>
-  </data>
-  <data name="ActionOnlineWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJuSURBVDhPzY9bSNNhGIf/V0VXYSglUrZMURI00zQzIrA7
-        oSKLsIxEJRK6EKMrQ8PMs5M8tPCQ5lxbHtI851bNDh5Io2niIs+tNCOlpencevpPB0WS3fbAAy+/9/3e
-        7/uE/wdLtl0uCcI6i9xfZnW5FjNb+9/M3wnoR5cKo4UrirU1s7X/jkVqd8Nc6t1DXzIMxsCbiBWttZiZ
-        y3f3rvmShOANvrQdhd6zoN0HTwJX1AZAz2loC2HbRkFiG1+NucClGu1JeOgLrX6ie0V9oGWXqAuDTTFY
-        bq2X2sZXMyOVNFO3H2q9bHpCjYSKe9cJrTNi/D5HYfcEgbIO3DMacMuoZUdy5UCaZjjPuGB+IUjsBTfK
-        3EDlAUpXUDihrYgiqXsRE1DU3M4B2XOU78roMhYhN4RxuSsQv8zMuWztcIFgzrFPMGZt1hsKHU2U2KMt
-        PUdIuZ6hRdDMgu8VJVkvjfTNqWn9fI2i8UPEdl0iQh3GzhTVa+svHEU9ZlOEVyP5AcQ+XWBSvPnRDFSL
-        hXNKJ4X6HzR+KqHqixP5Yw6c0cgJ18TjnlmBdcEyx5T6bxfUs9SMW1B+hNJxKBPdmtpEoq6D1IFiSqc3
-        kfbWh+CqSYJUnWxPUf9aEKeZpHce6qfh5ijIbG5JrJ868kDHiZb3xOsiSeg/zMWO8xxUKnASe7bjgnBK
-        of8a3ThBVMMY0b8ZLmu77SB9vBgo/4C/Yo64nuNc1bkSlJe5GFmsuWs7voy36J4/1Y8YVKHSWpVzksYg
-        yejBK68Sz+xsgzUbGp9SizNrs7S0NDxsmNIomtpzc+T303PkdemKpme51sxkMo39BJySyQvR2EryAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionOnlineWeather.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionOnlineWeather.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="ActionOnlineWeather.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+W</value>
-  </data>
-  <data name="ActionOnlineWeather.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
-  </data>
-  <data name="ActionOnlineWeather.Text" xml:space="preserve">
-    <value>Online weather</value>
-  </data>
-  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
-  </data>
   <data name="ActionShowMonthsAndDaysNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -2502,6 +2174,9 @@
   </data>
   <data name="ActionShowMonthsAndDaysNotice.Text" xml:space="preserve">
     <value>Notice on the generation of months and days</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 6</value>
   </data>
   <data name="ActionShowCelebrationsNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2530,7 +2205,7 @@
   <data name="ActionShowFoodNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAqhJREFUOE+tkltIU3Ecx3/Va9BTUiGoSZCkkUqhm/bioBcjH6MLganzvj0oRYmm
+        vAAADrwBlbxySQAAAqhJREFUOE+tkltIU3Ecx3/Va9BTUiGoSZCkkUqhm/bioBcjH6MLganzvj0oRYmm
         oZkTpXKburm7myVpKmVe5o3KaxfUQKbpFE0TxSXOYUXffkcHXR56qR98+P3POd/fl+85v0P/tYxpdMaQ
         Qja9lNy6JIIukaDnbpAyyeQ28rNa1njlP8uSSn46KW213jmMqTY5Vt4p8W3Rjq2FTrjn7Fh3dsH5Solh
         Wzwe3/SBKZXmbTLy3x7W88EqJ3x8kQusdODLlA6fB+RwO+9i9XUWJh7GYtx6Fp/GyuBxdWDZ0YUhWwI4
@@ -2552,6 +2227,9 @@
   </data>
   <data name="ActionShowFoodNotice.Text" xml:space="preserve">
     <value>Notice on the food during celebrations</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 6</value>
   </data>
   <data name="ActionShowShabatNotice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2650,8 +2328,360 @@
   <data name="ActionShowGrammarGuide.Text" xml:space="preserve">
     <value>Grammar guide</value>
   </data>
+  <data name="toolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAf5JREFUOE+VkN1LU3EYx/fH+B9YSDinm9vuIlpNCSwIDIIG3Ri9aNucelFdh7dF
+        F81tBufMnXNGEbqbihhERm9IL9ssme7YdNoy69vzrXU6k1PQDz7wO8/3+X2eh+MC4PImDFUA8cQ1uKM5
+        dP8FZp64zl6Vb38KescNLG0DXaNZvKh/x6K5i6e1r44we7kBeMZ1edoScGqx9g2d5xU8rn7B2bsfcCZf
+        wWlD0FvInTVmxbUduGO5dkFhZRf7RDBfbuJUbpmh42FWWG6ixy7oFYFe2sH+iwq0N1s4qVYYOh5mxttt
+        eGIaP3//Aw2ZpSa6RDD7qoETShlH0+9xKPkOB1vwzhqzO6+3wKGWoE8EN55/xoFLKm4ubuLYbJmh42F2
+        61mjXeBN6Lj+pIHuURXTxToGM7JBqoTQTAmHk7/gnTVm08UNeGWoJfCJ4MqjTfSMqbj6YB0DqQoG084w
+        u/bwE3x2Qb8Ixgp1eKIqLs+bCCVlAyE80w5rzKILJnwJm8A/oWPk/jr6RDByr4bQ7TKOtCR2WGN2Tnr6
+        9woieRPeWBYRvWpt4ASziLEK/4RNEJjUMazV4ItnMTxXlUkVaXaGGXsCMtQSBKcMHJ8z4U/kMKSsIpxZ
+        QTj9EQN7YI3ZkLKGwKTxR+C+kFoITuVBGHCjfxGUHr6xBHI6hM7/pAOA6wfQ9s+dUAMvEAAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="toolStripMenuItem1.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Notices</value>
+  </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
+    <value>281, 6</value>
+  </data>
+  <data name="ActionWeeklyParashah.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAWxJREFUOE+tUMsuA2EYnRewxMJLSLwLiURZeA8VvECDCNFIWzZqLhXaaaczJa3a
+        WHgE6cpKtLQEPb7ztdNLBHE5ycnJP+fy/xnjX9DenLCxMQ6sjwlHu/oZu77kpVfRAcRGgOqycAm4jH5P
+        5piXng4EhzG8PNzB2orC2V7B8c6acFU1IzpI+swxz54OpJ1TvLaB3XgGrUcgmfBQu3lWfdJzoaf0mWOe
+        PR0w7QzwBszsGYgkDSzsC1MdnacKQ6XPHPPs6YDFAVmcFSN1bWBRigeDKsVQ6TPHPHs6oC8QTMcNzCXk
+        NrklZKR7DpU+c0TvBaZl64fsSRnNe6DoXuG21lRt1QEv11f6zBHs6cCRZekHzz+HXyojOLvos1QZoh+U
+        NUewNzSQdYuqeS9Ao9FQJdzCsIa5DwO5vCehohZDup4v6vdVfOaI3oBpd/7BT8FeZ8Bx6jykZTFtmqJf
+        UH1Ly+zpgGBSOPULsvcXGMY7KaVcuTYAtfkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionWeeklyParashah.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionWeeklyParashah.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionWeeklyParashah.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+P</value>
+  </data>
+  <data name="ActionWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionWeeklyParashah.Text" xml:space="preserve">
+    <value>Weekly parashah</value>
+  </data>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
+  </data>
+  <data name="ActionParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
+        TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
+        MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
+        I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
+        qQiX2OHBS4ZsoS+vszFnNlTS9Ok+V90AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionParashotBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionParashotBoard.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionParashotBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F1</value>
+  </data>
+  <data name="ActionParashotBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionParashotBoard.Text" xml:space="preserve">
+    <value>Parashot board</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAcNJREFUOE+lk8FL22AYxnN1urH7ji1V2WUwBmoVj2NzDlk3in+Adw+C/0Mvnloo
+        PY8dvKnoYcg2PHpx2NKWpLQsJYZ8fAkJiVRS+vi+X3UzmMPm3vDke76XPL+8XyBarVbzqtUqKpXKP4kz
+        nNXYPLQ4qzGNq9Goo6s3sfvtDO1WE+f1Rqp+nrPqKsPZ34Bep40XW8eYKh7BNg0YHR26wetYt143dDTb
+        LZVJArpdRMLEk/Uj+LaJfr+PC9uBIyRsRyix516390tlEgDT7CGSfZrgEJFrQUoH2dw05hYW8fbde6yu
+        fUB+aRkzs88JYqtMAmBZFkJpY6KwTwAHQgi4ng8/COH5gRJ77lkXKQAhbAwCAQwk4lDClTzyfdmOkz5B
+        4Ln0EX/g084pZjePcRX59DYP0k1KSI9AUmUSgMsooHsEwxR4XDwgP8BoNMSI3Fh8AVfDGEEYkrsBlMtl
+        tUEcYftLHc82vuLzialamWwOr+YW8PrNClZW1zCfX0JuegZDgnBx9g8AMR4V9vB0/QCTH/dveukVx0O1
+        KsDtEcaD3i3aj2jsVI0B6gj//S+USqXvbJhWoZH+SvQsZzirUWVILx8mLXMNYJks6JMA880AAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F2</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionShowCelebrationVersesBoard.Text" xml:space="preserve">
+    <value>Celebration verses board</value>
+  </data>
+  <data name="ActionViewCelebrationsBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAn1JREFUOE+dkstPE2EUxWfnK8aVYeMfQeIWTcSF/5ELd6gQoDPtlEILlhiUiNsW
+        LB06bXkaY0RU2pnysm+UlvJoEW2RcjzfV3RnYvySM797b++5vfNQbnRHNtoeGrjeFaam/1FhCA+9AaXt
+        kYGJRAX+lb2/SPz2W618lHxJj/AqV7tmcPdFAbeeZdAhlUbHWBq3yTvj1PPP1BY6yc5x6pz3JnK4Rq9y
+        X/Whvl9CrbyNt/NRVEtFVHcKOC4X0RdcRTBVQ8CqSaqTq5i0DhFMHiC0dowHmheKx6XiW3Uf1UoZb+bj
+        ONzdwQF1VN1DdySHQAEI5IEg2WdmMbVZx1TqCKHNBny6A8qAS0NvaAM9wSR6J5PoCSTwmHG3mUfssoLo
+        FeqSghg5y7wvmkP/VBLq9DoGdU0MUBHPNxHP/IDzVQKx9HeYmToiu4BJk3EMGAcUKYaZrEezDekRXjng
+        9RdgqdCAHkpiMV/HQv4EczSJAfEGED+iSJGL+kLhJ5bo+TPAY27BE7YxaNgYmE7CzVifLyJ6UUGE6xsX
+        WhS5qLvDKemRA9xOFZ/2gY+7TXgNCx9Kp1jZofYAz+I23n8H3nF9QZGL+kqpKT3Cq+i88A3BZsE3Y8Oq
+        nCHBYRYbvZF18I1hlbGgzBkn2GNXAeGVG/jn0ngSTcFPjZg2hmcsSZH7IjaGuJmXw4fNNckhamQ23Rrg
+        0lQUT4A8VxyNryHHdTN8aIL+2DrEOT0DmuTy8rLkqawCmipugd9BhUmZTWOLWfD28JUdgk8Xsq3O82Pb
+        1nnUOk6N34Fb12u6U4NLc0DnNoJOtV9SbKepDjgc/ZQDKv9RUEijWadX4Wmnbv6flPZfYGzwKZiwNXoA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionViewCelebrationsBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewCelebrationsBoard.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionViewCelebrationsBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F3</value>
+  </data>
+  <data name="ActionViewCelebrationsBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionViewCelebrationsBoard.Text" xml:space="preserve">
+    <value>Celebrations dates board</value>
+  </data>
+  <data name="ActionViewNewMoonsBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAdpJREFUOE99k1eKKmEQhV3BXcLsYbh7mL3oPKq7UVFMGDEHMAdUzNkH04soiCD4
+        4OO5nrK7vT3MTEHR+nedr9Lfhq9msVjwkysh35vT6fywWq3odru4XC643++43W44Ho8Yj8fIZDICcblc
+        H4rkZTyk+Hw+43q9Yr/fo9/vo1aroVAooNlsYjAYoNfrfQ+heDab4XQ6YTqdotPpoFKpIJfLIRqNIhKJ
+        IBaLoVqtotVq6duhOB6P43A4YDKZSIAqDofDcLvd8Pl8zCqgRqOBZDIJs9n8hBBQr9clM8XFYlF6Hg6H
+        8Hg8yGazCAQCeMwIfr9fZkGIVoUKoJj9ks6e2T8BzPx/JWwlnU7rAewtn8/LS2ahiAJ6uVxGqVSSKpiE
+        caFQSA9gECHskaXS7XY75vO5tMPpe71eDaSuVAOwb7602WxIpVIIBoMy/dVqpUEo5HAdDocMXQfgQbvd
+        lt2zGg6UWdfrtUD45GqZiJUkEonXFh72ps6BAIp3ux02mw22260A+JuXi5eJcUr2t6f8YSaT6ZMQTp/l
+        8lJRSF8sFgIdjUayLYoZr0g1+2M0GgXCvTMThcvlUp78PnhOMeMY/5TpjYd/CfnJ+V6J+9XY2/vDGaw6
+        /7961sxg+AfTN0jhcSZoNgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionViewNewMoonsBoard.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewNewMoonsBoard.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionViewNewMoonsBoard.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F4</value>
+  </data>
+  <data name="ActionViewNewMoonsBoard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionViewNewMoonsBoard.Text" xml:space="preserve">
+    <value>New moons dates board</value>
+  </data>
+  <data name="ActionViewLunarMonths.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAlVJREFUOE+NUkloE2EYDT14Vm8WqQvoSQsuN0+KJzfwpOACRY3JTKo9uCNCalUq
+        2mqlMTZpJkkTSjFpJZnJZLGmpm1slmpiusaYCKZuwR5Eqcvh+c04RWyb4oPHP8t77/v+//9UC8Fvrw0T
+        4bMyEDgNeE4T9HHMIeX3f2G9y3Ai9qKvDaWpNMaTD/H0kR6CRVMUudOrFc3iWLNy6UYyYCLhRDEXxvSH
+        UYxEHeAtavAOZpUiWxQVHc01grSN8SEjJhMcPr2NY2LYTSGaGUWzOEyNR64IFJCJtCDma6AOjCgVk4jQ
+        dnxWtl6Rlce9hoP7I92XIFhZqSri/uvIJq3Ij4jwcprviqw83EZ1g8/GIuCokyoi7LqAVN8dCvDQuxaK
+        rDwEjvkm2nV4k7JTF4wcEhWu4knXOUjBimxhCDbtgVDnWfz6Mol0722aBS2ZdLJxkNdDpDlRpPMRNLOV
+        HvNxlOjUS3kRr5MW2fyMr5fXoLMOok33Q5H/C5o81kvmV6kefJ6Ko0Dtj0cN8JjVdJ0muQNpSk2Nh9tk
+        g99Ruz1oY7f6bFrG237ya6RHj6lcP6bfpfA+F0IxKyCbsCDsvoh0fyvEjlNUnZWqV8oB9OEntYNEqAWF
+        sQBN3BgKozwyA/dRyHQj/9IlP2cGWuUDlLS7d27YJZsVbLY1HXVJVzUcfoBY4CbxBgXewvO+Zgz3NmHQ
+        W4/HnWfgaWc+7tlRvZc8S/5Y/6KqasWybc67NUHeop2Rxle6stm1y3Bs6Nr5fZdJV02cZ55FBXEtcRNx
+        yxyuIy4nzoFK9RvYPYoPa481xAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionViewLunarMonths.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionViewLunarMonths.ShortcutKeyDisplayString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ActionViewLunarMonths.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F5</value>
+  </data>
+  <data name="ActionViewLunarMonths.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionViewLunarMonths.Text" xml:space="preserve">
+    <value>Lunar month names board</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
+  </data>
+  <data name="ActionCalculateDateDiff.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAadJREFUOE+VkssvA1EYxb8VG+wQKxJ/goU1iRAr/hAhKq1WPdJEW0QjEo+muhCx
+        JfXoRiSWLGjSWFONVyXKDEaj0znuvb3amUlDneQkc3O+73fuZIb+q8PTBBa3Y5DH6pQcHUShtwboIsTP
+        EhiaWwV6yAr5jax0EvL7UWBnBfHzS/SPzAB74fIsuq1ko68WScdgaeChjZAdGsBdI+GojnDcQLhvMd0A
+        u6uIX0hybB36QRQqa5Ux+Te2YABIvbwjrXwgrWpIKVoZcNcsyfWM3FRse2w1AULLAnCbyVgsYyJOS0un
+        Xj/EcCCyWRqYnVuAXigg8/RksYyJ7GQOCIaWxEBwIcROQD7/heds1mKxzGUnFwwDPn8Qs4F5seyd8jGo
+        AfXtDYqqlizXiexkXdexFo7g6vqGgQJwuScFKJfLQdO0kuU6+84mqsJa+Pvy52mfnw91uNxeATDYzTj8
+        x8VtJjM19/kphp3jE2KZ505P8QZ28UzITOUtXC62JGMaHh07cbg8GHE4MWyyjNmPVEFmAFM7M7+N3UWZ
+        qbyFt/FWGVelSnTe+oeIvgFtgfbvBvdr+gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionCalculateDateDiff.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionCalculateDateDiff.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Maj+D</value>
+  </data>
+  <data name="ActionCalculateDateDiff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionCalculateDateDiff.Text" xml:space="preserve">
+    <value>Dates difference calculator</value>
+  </data>
+  <data name="ActionOpenSystemDateAndTime.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIXSURBVDhPlZFNaxNRFIaPIBa0a9Gd4loQ3LhWxC5EUPwd
+        xhpoibRWA42RqEFarWBbbTJNWwRtUmPQ2pqguFPRSpZTm+hMY76nzUg+Jq/33t4wqaYLDzwM98z7vDPM
+        0N+jRBdxf2oWd+aiR+VKTODlEvyhCORx+3x1nkezZw9wkjAdewOndwQ/Lh4GzuxGo6cLOEVQYku45BsD
+        ThPLdoE7Uicqn9iF+sIE8PwBlNdxnOu9jmRgBFbkEWqRcWB+DMpiAmd7bwDhh2i8mAB3pE6kHyIUHRfw
+        cz8hvJew0E3IHCSkDxBSDI0R3keIMHSW4VnuSJ3o1ngQFgA1b2CttIm0YWLN+I3VkgmV8b1sIlWuiHtq
+        wRBZ7kidyOcfRZMtU5oGLZNBrlQS106kNV1kuSN1Iq/vLqxmE5q+jmyu0FFsoa9nRJY7UifyeH1osuWv
+        bBaFYrGjyCkbBnL5PHs+4PHetgvcHq9YFgo7yxwuVzYrMCsm3MM37YIh97Ao4E8wNjZYgId25tl8BEpo
+        1i4YHHKLAtPcCjQajX+kdpbjCURjr+wC18A1UVCr1VCtVlGv1zuKLVaSSfEWUifqcw2KAj6WZYkPymkf
+        Lmq6jo+fPos/MTP31C7odw3IWOd59/4Dlt8m8GXlG1R1VeyC0zN2geOKM+7sv4rLzj442mid/fdGEVBC
+        eBJQMDkVxOMtDKmLOcI4/p8cIyL6AwIrmtXCzvMhAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOpenSystemDateAndTime.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOpenSystemDateAndTime.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOpenSystemDateAndTime.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+D</value>
+  </data>
+  <data name="ActionOpenSystemDateAndTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionOpenSystemDateAndTime.Text" xml:space="preserve">
+    <value>Windows date and time</value>
+  </data>
+  <data name="ActionOpenCalculator.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIVSURBVDhPlZE/b9NQFMXfNwGVlY3PwsSCiqhoEwrMhSYw
+        0bRpVYZstpukIQywItgQIwMCpJa2KGkT2bGd2o7/pC5OnRzuffVACqjiSUc+vu/8bm6uBZ/Gdn3QqGlo
+        VFWScokow1liJMyHC29/jPHu4CfeXyLOcJaZDBfiZU3F9pcEt5sWZpsm7rz6u/iOM5xlJsOFaNa3sPoJ
+        WP6YoEAq/kN8xxnOMpPh9BfqNRSWH6P4ZAlFej6VWsKzTOy5xnec4SwzGS5EtboF3w/gDgI4QQwnjDEI
+        QoRBgCgMpecay6UcZ5nJcCE0TUPfcfF55wAoXAHmZvB1r4W1jRfIP3iEb3ttoHgVuDsjM33HAzMZft7A
+        oeLOfgu7bR3fDw3st47Qah+hfdgh35G1XRJnHPePBipcKjJQWt9Ejn612zVogk3kFx+S16VfIM8NPdng
+        t6+gqio8z5dB07RhW330ehaszJtGD8c9g6RD73ZllpkMP2/ghxFMy0ZpbR0L+UUc005K5Q3kyPuOjdnX
+        vpRjGQhosRcaKAijoYR83n4UYeD7FIwQkY8DF3NvPNyq6QhdG9FwSA2U6Qni+FTCz0tl3Mvdxwm9r6yW
+        MZ/LI4lD3NR0qZPQwyndTU3AG51MgNHoDOPxRCpNx/I54ff0DEgTqXSUyOzUV6hUKh+4wF1ZvOGLXqOR
+        WTw6ZxVF6WS4PNdIN/5T14UQ4hf26qh5syVyPAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionOpenCalculator.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOpenCalculator.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOpenCalculator.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+C</value>
+  </data>
+  <data name="ActionOpenCalculator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionOpenCalculator.Text" xml:space="preserve">
+    <value>Windows calculator</value>
+  </data>
+  <data name="SeparatorMenuWeather.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
+  </data>
+  <data name="ActionLocalWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVDhPzY5PSFRRFIfvqmgVwkBIEAySIAlZWU21i5ZG
+        BWITgRTootlERG0HirJNTRSZIdT4txlBadL+OWo93QVOYVbzhMiZtAQpJzVRmefXuTM3KsUk2vTBxz33
+        nPN776r/B+dKznX8apXTuLNGm6mlZ8YrM1PvGWTgEgzXZpVa98x4eZxAzrV0sKifVxcg7oPXx7PqWnrp
+        hi2xP77Ev29NMdGDECsHaxc8253V8kD/UYiWsGGtcpv1paSr81qxyqCzGJ5sF3eIW+HxJjGP+EMfzq3V
+        AbO+lImA+xGRPXBvs7EQ2tw0tVykNDLFyZ5JfJEhDoQTh03kd9wulU9dPoQLILQRmtdjNVVw/vkc80BK
+        XBCr+j7iDcf3mthP0ldd/qnL6+zR2tx5bruwgscoabB5Nwfdku78Ak/lHJpeYP+dgfHSu29jR1rschPP
+        kCsWpKrUi/c3PJzqm2VM/tgzAa1S/LBX7oNfHeTgXO8oZaE3hdm44VDInj7RlaIt6RD6BMEk1P1i4wjc
+        lw/pWXtiljPRJN56+7OJK3W6e4zYjAzH4eYw1CxS97TVot55+Q3Odo1g4kp5m+3JygcfqOhIULmCmR3Z
+        1RkTz1AkbvtLdeZfUOo7ZsaTkJna09EAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionLocalWeather.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionLocalWeather.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionLocalWeather.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+M</value>
+  </data>
+  <data name="ActionLocalWeather.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionLocalWeather.Text" xml:space="preserve">
+    <value>Windows weather</value>
+  </data>
+  <data name="ActionOnlineWeather.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJuSURBVDhPzY9bSNNhGIf/V0VXYSglUrZMURI00zQzIrA7
+        oSKLsIxEJRK6EKMrQ8PMs5M8tPCQ5lxbHtI851bNDh5Io2niIs+tNCOlpencevpPB0WS3fbAAy+/9/3e
+        7/uE/wdLtl0uCcI6i9xfZnW5FjNb+9/M3wnoR5cKo4UrirU1s7X/jkVqd8Nc6t1DXzIMxsCbiBWttZiZ
+        y3f3rvmShOANvrQdhd6zoN0HTwJX1AZAz2loC2HbRkFiG1+NucClGu1JeOgLrX6ie0V9oGWXqAuDTTFY
+        bq2X2sZXMyOVNFO3H2q9bHpCjYSKe9cJrTNi/D5HYfcEgbIO3DMacMuoZUdy5UCaZjjPuGB+IUjsBTfK
+        3EDlAUpXUDihrYgiqXsRE1DU3M4B2XOU78roMhYhN4RxuSsQv8zMuWztcIFgzrFPMGZt1hsKHU2U2KMt
+        PUdIuZ6hRdDMgu8VJVkvjfTNqWn9fI2i8UPEdl0iQh3GzhTVa+svHEU9ZlOEVyP5AcQ+XWBSvPnRDFSL
+        hXNKJ4X6HzR+KqHqixP5Yw6c0cgJ18TjnlmBdcEyx5T6bxfUs9SMW1B+hNJxKBPdmtpEoq6D1IFiSqc3
+        kfbWh+CqSYJUnWxPUf9aEKeZpHce6qfh5ijIbG5JrJ868kDHiZb3xOsiSeg/zMWO8xxUKnASe7bjgnBK
+        of8a3ThBVMMY0b8ZLmu77SB9vBgo/4C/Yo64nuNc1bkSlJe5GFmsuWs7voy36J4/1Y8YVKHSWpVzksYg
+        yejBK68Sz+xsgzUbGp9SizNrs7S0NDxsmNIomtpzc+T303PkdemKpme51sxkMo39BJySyQvR2EryAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionOnlineWeather.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOnlineWeather.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOnlineWeather.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+W</value>
+  </data>
+  <data name="ActionOnlineWeather.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionOnlineWeather.Text" xml:space="preserve">
+    <value>Online weather</value>
+  </data>
+  <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
   </data>
   <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2680,13 +2710,13 @@
     <value>Alt+E</value>
   </data>
   <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionOpenExportFolder.Text" xml:space="preserve">
     <value>Open export folder</value>
   </data>
   <data name="toolStripSeparator26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
+    <value>281, 6</value>
   </data>
   <data name="ActionGenerate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2710,13 +2740,13 @@
     <value>Alt+G</value>
   </data>
   <data name="ActionGenerate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionGenerate.Text" xml:space="preserve">
     <value>Generate calendar</value>
   </data>
   <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 6</value>
+    <value>281, 6</value>
   </data>
   <data name="ActionVacuumDB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2742,7 +2772,7 @@
     <value>Magenta</value>
   </data>
   <data name="ActionVacuumDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 22</value>
+    <value>284, 22</value>
   </data>
   <data name="ActionVacuumDB.Text" xml:space="preserve">
     <value>Optimize database</value>
@@ -3970,7 +4000,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAcABAgHAAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAeABAgHgAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -4479,6 +4509,78 @@
   <data name="&gt;&gt;ActionTools.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowMonthsAndDaysNotice.Name" xml:space="preserve">
+    <value>ActionShowMonthsAndDaysNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionShowMonthsAndDaysNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
+    <value>toolStripSeparator7</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowCelebrationsNotice.Name" xml:space="preserve">
+    <value>ActionShowCelebrationsNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionShowCelebrationsNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowFoodNotice.Name" xml:space="preserve">
+    <value>ActionShowFoodNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionShowFoodNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowShabatNotice.Name" xml:space="preserve">
+    <value>ActionShowShabatNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionShowShabatNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowParashahNotice.Name" xml:space="preserve">
+    <value>ActionShowParashahNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionShowParashahNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowTranscriptionGuide.Name" xml:space="preserve">
+    <value>ActionShowTranscriptionGuide</value>
+  </data>
+  <data name="&gt;&gt;ActionShowTranscriptionGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
+    <value>ActionShowGrammarGuide</value>
+  </data>
+  <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
+    <value>toolStripSeparator10</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionWeeklyParashah.Name" xml:space="preserve">
     <value>ActionWeeklyParashah</value>
   </data>
@@ -4603,60 +4705,6 @@
     <value>toolStripSeparator9</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionShowMonthsAndDaysNotice.Name" xml:space="preserve">
-    <value>ActionShowMonthsAndDaysNotice</value>
-  </data>
-  <data name="&gt;&gt;ActionShowMonthsAndDaysNotice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionShowCelebrationsNotice.Name" xml:space="preserve">
-    <value>ActionShowCelebrationsNotice</value>
-  </data>
-  <data name="&gt;&gt;ActionShowCelebrationsNotice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionShowFoodNotice.Name" xml:space="preserve">
-    <value>ActionShowFoodNotice</value>
-  </data>
-  <data name="&gt;&gt;ActionShowFoodNotice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionShowShabatNotice.Name" xml:space="preserve">
-    <value>ActionShowShabatNotice</value>
-  </data>
-  <data name="&gt;&gt;ActionShowShabatNotice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionShowParashahNotice.Name" xml:space="preserve">
-    <value>ActionShowParashahNotice</value>
-  </data>
-  <data name="&gt;&gt;ActionShowParashahNotice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionShowTranscriptionGuide.Name" xml:space="preserve">
-    <value>ActionShowTranscriptionGuide</value>
-  </data>
-  <data name="&gt;&gt;ActionShowTranscriptionGuide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionShowGrammarGuide.Name" xml:space="preserve">
-    <value>ActionShowGrammarGuide</value>
-  </data>
-  <data name="&gt;&gt;ActionShowGrammarGuide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator10.Name" xml:space="preserve">
-    <value>toolStripSeparator10</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionOpenExportFolder.Name" xml:space="preserve">

@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMainOuter1 = new System.Windows.Forms.Panel();
       this.PanelMainOuter2 = new System.Windows.Forms.Panel();
@@ -128,6 +128,18 @@
       this.ActionEnableReminder = new System.Windows.Forms.ToolStripButton();
       this.ToolStripTopSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
+      this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowMonthsAndDaysNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowFoodNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowParashahNotice = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWeeklyParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWeeklyParashahDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -149,15 +161,6 @@
       this.ActionLocalWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOnlineWeather = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionShowMonthsAndDaysNotice = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowCelebrationsNotice = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowFoodNotice = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowShabatNotice = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowParashahNotice = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenExportFolder = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionGenerate = new System.Windows.Forms.ToolStripMenuItem();
@@ -382,14 +385,14 @@
       this.DataGridView.AllowUserToDeleteRows = false;
       this.DataGridView.AllowUserToResizeRows = false;
       this.DataGridView.AutoGenerateColumns = false;
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
       this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridColumnDate,
@@ -988,6 +991,8 @@
       // 
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripSeparator10,
             this.ActionWeeklyParashah,
             this.toolStripSeparator11,
             this.ActionParashotBoard,
@@ -1003,15 +1008,6 @@
             this.ActionLocalWeather,
             this.ActionOnlineWeather,
             this.toolStripSeparator9,
-            this.ActionShowMonthsAndDaysNotice,
-            this.ActionShowCelebrationsNotice,
-            this.ActionShowFoodNotice,
-            this.ActionShowShabatNotice,
-            this.ActionShowParashahNotice,
-            this.toolStripSeparator4,
-            this.ActionShowTranscriptionGuide,
-            this.ActionShowGrammarGuide,
-            this.toolStripSeparator10,
             this.ActionOpenExportFolder,
             this.toolStripSeparator26,
             this.ActionGenerate,
@@ -1020,6 +1016,84 @@
       resources.ApplyResources(this.ActionTools, "ActionTools");
       this.ActionTools.Name = "ActionTools";
       this.ActionTools.Padding = new System.Windows.Forms.Padding(5);
+      // 
+      // toolStripMenuItem1
+      // 
+      this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionShowMonthsAndDaysNotice,
+            this.toolStripSeparator7,
+            this.ActionShowCelebrationsNotice,
+            this.ActionShowFoodNotice,
+            this.toolStripSeparator5,
+            this.ActionShowShabatNotice,
+            this.ActionShowParashahNotice,
+            this.toolStripSeparator4,
+            this.ActionShowTranscriptionGuide,
+            this.ActionShowGrammarGuide});
+      resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+      this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+      // 
+      // ActionShowMonthsAndDaysNotice
+      // 
+      resources.ApplyResources(this.ActionShowMonthsAndDaysNotice, "ActionShowMonthsAndDaysNotice");
+      this.ActionShowMonthsAndDaysNotice.Name = "ActionShowMonthsAndDaysNotice";
+      this.ActionShowMonthsAndDaysNotice.Click += new System.EventHandler(this.ActionShowMonthsAndDaysNotice_Click);
+      // 
+      // toolStripSeparator7
+      // 
+      this.toolStripSeparator7.Name = "toolStripSeparator7";
+      resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+      // 
+      // ActionShowCelebrationsNotice
+      // 
+      resources.ApplyResources(this.ActionShowCelebrationsNotice, "ActionShowCelebrationsNotice");
+      this.ActionShowCelebrationsNotice.Name = "ActionShowCelebrationsNotice";
+      this.ActionShowCelebrationsNotice.Click += new System.EventHandler(this.ActionShowCelebrationsNotice_Click);
+      // 
+      // ActionShowFoodNotice
+      // 
+      resources.ApplyResources(this.ActionShowFoodNotice, "ActionShowFoodNotice");
+      this.ActionShowFoodNotice.Name = "ActionShowFoodNotice";
+      this.ActionShowFoodNotice.Click += new System.EventHandler(this.ActionShowFoodNotice_Click);
+      // 
+      // toolStripSeparator5
+      // 
+      this.toolStripSeparator5.Name = "toolStripSeparator5";
+      resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+      // 
+      // ActionShowShabatNotice
+      // 
+      resources.ApplyResources(this.ActionShowShabatNotice, "ActionShowShabatNotice");
+      this.ActionShowShabatNotice.Name = "ActionShowShabatNotice";
+      this.ActionShowShabatNotice.Click += new System.EventHandler(this.ActionShowShabatNotice_Click);
+      // 
+      // ActionShowParashahNotice
+      // 
+      resources.ApplyResources(this.ActionShowParashahNotice, "ActionShowParashahNotice");
+      this.ActionShowParashahNotice.Name = "ActionShowParashahNotice";
+      this.ActionShowParashahNotice.Click += new System.EventHandler(this.ActionShowParashahNotice_Click);
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
+      // ActionShowTranscriptionGuide
+      // 
+      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
+      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
+      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
+      // 
+      // ActionShowGrammarGuide
+      // 
+      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
+      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
+      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
+      // 
+      // toolStripSeparator10
+      // 
+      this.toolStripSeparator10.Name = "toolStripSeparator10";
+      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // ActionWeeklyParashah
       // 
@@ -1148,58 +1222,6 @@
       // 
       this.toolStripSeparator9.Name = "toolStripSeparator9";
       resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
-      // 
-      // ActionShowMonthsAndDaysNotice
-      // 
-      resources.ApplyResources(this.ActionShowMonthsAndDaysNotice, "ActionShowMonthsAndDaysNotice");
-      this.ActionShowMonthsAndDaysNotice.Name = "ActionShowMonthsAndDaysNotice";
-      this.ActionShowMonthsAndDaysNotice.Click += new System.EventHandler(this.ActionShowMonthsAndDaysNotice_Click);
-      // 
-      // ActionShowCelebrationsNotice
-      // 
-      resources.ApplyResources(this.ActionShowCelebrationsNotice, "ActionShowCelebrationsNotice");
-      this.ActionShowCelebrationsNotice.Name = "ActionShowCelebrationsNotice";
-      this.ActionShowCelebrationsNotice.Click += new System.EventHandler(this.ActionShowCelebrationsNotice_Click);
-      // 
-      // ActionShowFoodNotice
-      // 
-      resources.ApplyResources(this.ActionShowFoodNotice, "ActionShowFoodNotice");
-      this.ActionShowFoodNotice.Name = "ActionShowFoodNotice";
-      this.ActionShowFoodNotice.Click += new System.EventHandler(this.ActionShowFoodNotice_Click);
-      // 
-      // ActionShowShabatNotice
-      // 
-      resources.ApplyResources(this.ActionShowShabatNotice, "ActionShowShabatNotice");
-      this.ActionShowShabatNotice.Name = "ActionShowShabatNotice";
-      this.ActionShowShabatNotice.Click += new System.EventHandler(this.ActionShowShabatNotice_Click);
-      // 
-      // ActionShowParashahNotice
-      // 
-      resources.ApplyResources(this.ActionShowParashahNotice, "ActionShowParashahNotice");
-      this.ActionShowParashahNotice.Name = "ActionShowParashahNotice";
-      this.ActionShowParashahNotice.Click += new System.EventHandler(this.ActionShowParashahNotice_Click);
-      // 
-      // toolStripSeparator4
-      // 
-      this.toolStripSeparator4.Name = "toolStripSeparator4";
-      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-      // 
-      // ActionShowTranscriptionGuide
-      // 
-      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
-      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
-      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
-      // 
-      // ActionShowGrammarGuide
-      // 
-      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
-      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
-      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
-      // 
-      // toolStripSeparator10
-      // 
-      this.toolStripSeparator10.Name = "toolStripSeparator10";
-      resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
       // ActionOpenExportFolder
       // 
@@ -1840,8 +1862,6 @@
     private System.Windows.Forms.ToolStripButton ActionEnableReminder;
     private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator5;
     private System.Windows.Forms.ToolStripDropDownButton ActionTools;
-    private System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsNotice;
-    private System.Windows.Forms.ToolStripMenuItem ActionShowShabatNotice;
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     internal System.Windows.Forms.ToolStripMenuItem ActionOpenCalculator;
     private System.Windows.Forms.ToolStripMenuItem ActionOpenSystemDateAndTime;
@@ -1877,19 +1897,16 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator1;
     private System.Windows.Forms.ToolStripSeparator ToolStripTopSeparator6;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
     public System.Windows.Forms.ToolStripSeparator SeparatorMenuWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
     public System.Windows.Forms.SaveFileDialog SaveDataBoardDialog;
-    public System.Windows.Forms.ToolStripMenuItem ActionShowParashahNotice;
     private System.Windows.Forms.Timer TimerUpdateTitles;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewLunarMonths;
     internal System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewNewMoonsBoard;
     internal System.Windows.Forms.ToolStripMenuItem ActionParashotBoard;
-    public System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
     internal System.Windows.Forms.ToolStripButton ActionNavigate;
     internal System.Windows.Forms.ToolStripButton ActionViewNextCelebrations;
     private System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashah;
@@ -1953,7 +1970,6 @@
     private Label LabelSubTitleGPS;
     private Label LabelSubTitleOmer;
     internal Label LabelSubTitleCalendar;
-    private ToolStripMenuItem ActionShowMonthsAndDaysNotice;
     private ToolStripMenuItem ContextMenuOpenWithHebrewWords;
     private ToolStripMenuItem ActionWeeklyParashahOpenWithHebrewWords;
     private ToolStripSeparator toolStripSeparator1;
@@ -1975,10 +1991,19 @@
     private DataGridViewTextBoxColumn GridColumnTorahEvent;
     private ToolStripSeparator toolStripSeparator26;
     private ToolStripSeparator toolStripSeparator27;
+    private ToolStripMenuItem toolStripMenuItem1;
+    private ToolStripMenuItem ActionShowMonthsAndDaysNotice;
+    private ToolStripSeparator toolStripSeparator7;
+    private ToolStripMenuItem ActionShowCelebrationsNotice;
+    private ToolStripMenuItem ActionShowFoodNotice;
+    private ToolStripSeparator toolStripSeparator5;
+    private ToolStripMenuItem ActionShowShabatNotice;
+    public ToolStripMenuItem ActionShowParashahNotice;
     private ToolStripSeparator toolStripSeparator4;
     private ToolStripMenuItem ActionShowTranscriptionGuide;
     private ToolStripMenuItem ActionShowGrammarGuide;
-    private ToolStripMenuItem ActionShowFoodNotice;
+    private ToolStripSeparator toolStripSeparator9;
+    private ToolStripSeparator toolStripSeparator10;
   }
 }
 
