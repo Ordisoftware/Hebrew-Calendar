@@ -65,7 +65,7 @@ URL = https://www.youtube.com/playlist?list=PLpdDsB2B_6jrWj42MLmUqnh8REQLzEcZ3
 Name = (FR) [Rav Azriel Cohen-Arazi] Le chalom baït
 URL = https://www.youtube.com/playlist?list=PLpdDsB2B_6joUZJB0Y38aEJImgYPVeFTc
 
-Name = (FR) [Rav Azriel Cohen-Arazi] Lois de pureté
+Name = (FR) [Rav Azriel Cohen-Arazi] Les lois de pureté
 URL = https://www.youtube.com/playlist?list=PLpdDsB2B_6jq60rmp9hew8NO8KdfmyBFJ
 
 Name = (FR) [Rav Azriel Cohen-Arazi] L'éducation
