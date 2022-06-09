@@ -14,7 +14,7 @@ Lang/EN = YouTube playlists Judaism
 Lang/FR = Playlists YouTube de Judaïsme
 
 Name = (FR) [Torah-Box] Pourquoi les Juifs ne croient pas en Jésus ? {NDR: tel qu'interprété des traductions}
-URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSTuMCHBn5sc5moEnHXB3Yr
+URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0jDkTOMnTheFKu37_M9yOz3
 
 Name = (FR) [Torah-Box] Torah Basics
 URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0jRDktHjmLIfeiwBu6Y0C41
@@ -43,28 +43,34 @@ Name = (FR) [Israel Torah] Juger bien
 URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4KkW9K5MerdWgPKRqyKWI_S
 
 Name = (FR) [Israel Torah] Les personnages de la Torah et du Tanah
-URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4jdcmpxa07qertxfesizuzo
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4JdcMpXA07qeRtXFEsIZUzO
 
 Name = (FR) [Israel Torah] Est-ce que vous êtes juif
-URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4lec2pcxghxgdck5ktrp6if
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4LeC2PCXGHxGDCK5ktrp6IF
 
 Name = (FR) [Israel Torah] Les grands moments d'une vie
-URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4iaqgrq1we91h5akyhw_dbn
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4IAqgRq1WE91h5Akyhw_Dbn
 
 Name = (FR) [Israel Torah] Le couple
-URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4krgweu2ecnmss84ffmtzt5
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4KRGwEU2ECnmSS84ffMtZT5
 
 Name = (FR) [Israel Torah] Un homme, une femme, un couple
-URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4lp_xwburdur-t1iegpqkmf
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4Lp_xWburdUR-T1ieGPqkMf
 
 Name = (FR) [Israel Torah] Construisons le nous
-URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4ih4ilpnrujrxkar1gu2d0n
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4Ih4ILPnRUjRXKar1gU2D0N
 
 Name = (FR) [Israel Torah] On va sauver notre couple
-URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4lijxbd0f2usxtdx4cutpdi
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4LIjxBD0f2USXtDx4cutPdi
 
 Name = (FR) [Israel Torah] Tanya
-URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4ke5k_tqkh7jodxszhk9mpm
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4Ke5K_TqKh7jodXSzhk9mpM
+
+Name = (FR) [Israel Torah] Parachat
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4LvZgtax4J4zhUl1LFuDSRm
+
+Name = (FR) [Israel Torah] Les 613 Commandements
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4JU-Fzk35sLraFAraj5RsEm
 
 -
 
