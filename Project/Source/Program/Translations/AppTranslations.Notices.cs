@@ -78,14 +78,16 @@ static partial class AppTranslations
                     "• Diet without grains nor seeds nor fruits nor vegetables from orchard between the end of the first seven-week Omer and the day after the next Shabat." + Globals.NL2 +
                     "• Lamb stew or burger with wine for Shavuh'ot 1 after the first Omer of seven weeks." + Globals.NL2 +
                     "• Lamb and veal hotpot with a kind of white beer for Shavouh'ot 2 after the second Omer." + Globals.NL2 +
-                    "• Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot.",
+                    "• Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot." + Globals.NL2 +
+                    "Regarding the author's current understanding of the main themes, the Torah describing many other more complex things.",
 
     [Language.FR] = "Une description des recettes de la Torah pour les célébrations sera disponible avec la version 9.30 :" + Globals.NL2 +
                     "• Agneau grillé non saignant sans os coupé et non bouilli pour Pessa'h." + Globals.NL2 +
                     "• Diète sans céréales ni graines ni fruits ni légumes du verger entre la fin du premier Omer de sept semaines et le lendemain du shabat suivant." + Globals.NL2 +
                     "• Ragoût ou burger d'agneau au vin pour Shavouh'ot 1 après le premier Omer." + Globals.NL2 +
                     "• Potée d'agneau et veau avec une sorte de bière blanche pour Shavouh'ot 2 après le deuxième Omer." + Globals.NL2 +
-                    "• Burgers d'agneau, de veau et de cerf pour Terouh'ah, HaKipourim et Soukot."
+                    "• Burgers d'agneau, de veau et de cerf pour Terouh'ah, HaKipourim et Soukot." + Globals.NL2 +
+                    "Concernant la compréhension actuelle de l'auteur au sujet des thèmes principaux, la Torah décrivant beaucoup d'autres choses plus complexes."
   };
 
   static public readonly TranslationsDictionary NoticeShabatTitle = new()
