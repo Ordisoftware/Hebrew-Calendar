@@ -10,6 +10,8 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
+FOLDER-SEPARATOR
+
 Lang/EN = YouTube playlists Torah
 Lang/FR = Playlistes YouTube de Torah
 
@@ -96,3 +98,8 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BXLU4KFZcH1c80NHuqZ7PL
 
 Name = (FR) Rav Moshé Pinto
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Be8oTVSRFPNr8bB9HjdHyx
+
+-
+
+Name = (FR) Autres playlists enregistrées
+URL = https://www.youtube.com/user/Ordisoftware/playlists?view=52&sort=dd&shelf_id=0
