@@ -32,5 +32,5 @@ URL = https://asherhaimhalevi.ordisoftware.com/works/epitaph/
 
 -
 
-Name = (FR) Playliste YouTube - Exposés tirés des ouvrages
+Name = (FR) Playlist YouTube - Exposés tirés des ouvrages
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk

@@ -13,7 +13,7 @@
 FOLDER-SEPARATOR
 
 Lang/EN = YouTube playlists Torah
-Lang/FR = Playlistes YouTube de Torah
+Lang/FR = Playlists YouTube de Torah
 
 Name = (IW) Bénédictions
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DYtUXE9aE_WIuaGlCU08RN
