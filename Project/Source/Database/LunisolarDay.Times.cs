@@ -75,29 +75,51 @@ partial class LunisolarDay
     var rowNext = Table.Find(d => d.Date == dayNext);
     if ( rowPrevious is null || rowNext is null )
       return null;
-    // TODO check verses : is ChavouotDiet lunar or solar ?
+    // TODO check verses: is ChavouotDiet (lunar or) solar like shabat because of shavouh'ot linked to shabat ?
     bool isShavouot = TorahEvent == TorahCelebrationDay.Chavouot1 || TorahEvent == TorahCelebrationDay.Chavouot2;
     if ( Settings.TorahEventsCountAsMoon && !isShavouot )
     {
-      if ( rowNext.Date == DateTime.Today )
+      bool isPreviousNotNull = rowPrevious is not null && rowPrevious.Moonset.HasValue;
+      bool isCurrentNotNull = Moonset is not null && Moonset.HasValue;
+      bool isNextNotNull = rowNext is not null && rowNext.Moonset.HasValue;
+      bool isNotNullCurrentAndPrevious = isCurrentNotNull && isPreviousNotNull;
+      bool isNotNullCurrentAndNext = isCurrentNotNull && isNextNotNull;
+      bool isNotNullPreviousAndNext = isCurrentNotNull && isPreviousNotNull && isNextNotNull;
+      if ( isNotNullCurrentAndNext && rowNext.Date == DateTime.Today )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( Moonset is not null && MoonriseOccuring == MoonriseOccurring.AfterSet )
+      if ( isNotNullCurrentAndNext && MoonriseOccuring == MoonriseOccurring.AfterSet )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( Moonset is not null && MoonriseOccuring == MoonriseOccurring.NextDay )
+      if ( isNotNullCurrentAndNext && MoonriseOccuring == MoonriseOccurring.NextDay )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( Moonset is not null && MoonriseOccuring == MoonriseOccurring.BeforeSet )
+      if ( isNotNullCurrentAndPrevious && MoonriseOccuring == MoonriseOccurring.BeforeSet )
         times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, Moonset.Value.TimeOfDay, -1, 0, delta3);
       else
-      if ( Moonset is null )
+      if ( isNotNullPreviousAndNext )
         times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, -1, 1, delta3);
       else
-        throw new Exception("Error on calculating celebration dates and times.");
+        // TODO translate to CelebrationMoonDatesAndTimesError
+        throw new Exception($"Error on calculating moon celebration dates and times:{Globals.NL2}" +
+                            $"    {nameof(isPreviousNotNull)}: {isPreviousNotNull}{Globals.NL}" +
+                            $"    {nameof(isCurrentNotNull)}: {isCurrentNotNull}{Globals.NL}" +
+                            $"    {nameof(isNextNotNull)}: {isNextNotNull}{Globals.NL}" +
+                            $"    {nameof(isNotNullCurrentAndPrevious)}: {isNotNullCurrentAndPrevious}{Globals.NL}" +
+                            $"    {nameof(isNotNullCurrentAndNext)}: {isNotNullCurrentAndNext}{Globals.NL}" +
+                            $"    {nameof(isNotNullPreviousAndNext)}: {isNotNullPreviousAndNext}{Globals.NL2}" +
+                            $"    Previous.{nameof(rowPrevious.Moonset)}: {rowPrevious.Moonset}{Globals.NL}" +
+                            $"    Current.{nameof(Moonset)}: {Moonset}{Globals.NL}" +
+                            $"    Next.{nameof(rowNext.Moonset)}: {rowNext.Moonset}");
     }
     else
+    if ( rowPrevious.Sunset.HasValue && Sunset.HasValue )
       times.Set(dateRow, rowPrevious.Sunset.Value.TimeOfDay, Sunset.Value.TimeOfDay, -1, 0, delta3);
+    else
+      // TODO translate to CelebrationSunDatesAndTimesError
+      throw new Exception($"Error on calculating sun celebration dates and times:{Globals.NL2}" +
+                          $"    Previous.{nameof(rowPrevious.Sunset)}: {rowPrevious.Sunset}{Globals.NL}" +
+                          $"    Current.{nameof(Sunset)}: {Sunset}");
     return times;
   }
 }
