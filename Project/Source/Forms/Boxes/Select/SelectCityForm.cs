@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SelectCityForm : Form
@@ -227,8 +227,8 @@ partial class SelectCityForm : Form
         ListBoxCities.SelectedIndex = index;
       if ( FoundCountry && FoundCity )
         for ( index = 0; index < EditTimeZone.Items.Count; index++ )
-          if ( EditTimeZone.Items[index].ToString().Contains(strCountry)
-            || EditTimeZone.Items[index].ToString().Contains(strCity) )
+          if ( EditTimeZone.Items[index].ToString().RawContains(strCountry)
+            || EditTimeZone.Items[index].ToString().RawContains(strCity) )
             EditTimeZone.SelectedIndex = index;
     }
     finally
