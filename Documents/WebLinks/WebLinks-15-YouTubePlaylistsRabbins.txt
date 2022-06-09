@@ -104,6 +104,12 @@ URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4ke5k_tqkh7jodxszhk9mpm
 
 -
 
+Name = (FR) Éducation et enfants
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF_f4o7BaXZHc6k0C2hRwiRV
+
+Name = (FR) Pirké Avot
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF_L_bvxuy6sv0unGAN1jCnd
+
 Name = (FR) Le Temple (Rav Menahem Altabe)
 URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF9wFYkteCXu3MXMBWSexmQ2
 
