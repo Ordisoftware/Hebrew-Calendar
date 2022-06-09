@@ -11,7 +11,7 @@
 ; --------------------------------------------------------------------------------------------------
 
 Lang/EN = YouTube playlists Sciences
-Lang/FR = Playlistes YouTube de Sciences
+Lang/FR = Playlists YouTube de Sciences
 
 Name = (FR) Mathématiques et physiques
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Boo3Ss5OZSYCNHEGpFXcPc
