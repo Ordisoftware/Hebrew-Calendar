@@ -102,10 +102,10 @@ URL = https://www.youtube.com/playlist?list=plwbyfmsjhb4ke5k_tqkh7jodxszhk9mpm
 
 -
 
-Name = (FR) Éducation et enfants
+Name = (FR) Éducation et enfants (Rav Menahem Altabe)
 URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF_f4o7BaXZHc6k0C2hRwiRV
 
-Name = (FR) Pirké Avot
+Name = (FR) Pirké Avot (Rav Menahem Altabe)
 URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF_L_bvxuy6sv0unGAN1jCnd
 
 Name = (FR) Tanya (Rav Menahem Altabe)
