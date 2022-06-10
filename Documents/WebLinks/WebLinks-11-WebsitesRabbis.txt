@@ -13,6 +13,9 @@
 Lang/EN = Rabbis websites
 Lang/FR = Sites Web de rabbins
 
+Name = (FR) Rav Daniel Abdelhak
+URL = https://ravabdelhak.com
+
 Name = (FR) Rav Yehia Benchetrit
 URL = http://ravbenchetrit.com
 
