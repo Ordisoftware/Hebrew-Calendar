@@ -75,6 +75,9 @@ URL = https://www.aish.co.il/h/%AISH-IW%/
 
 -
 
+Name = (FR) Rav Daniel Abdelhak
+URL = https://ravabdelhak.com/category/fetes-juives/%RAVABDELHAK%/
+
 Name = (FR) Rav David Pinto **
 URL = https://www.youtube.com/playlist?list=PL7L6Q1h8wVHylddP-42rZ53xBAUu3mdCp
 
