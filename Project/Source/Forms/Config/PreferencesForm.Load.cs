@@ -143,6 +143,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => OldUseMoonDays = Settings.TorahEventsCountAsMoon);
     SystemManager.TryCatch(() => OldUseSod = Settings.UseSodHaibour);
     SystemManager.TryCatch(() => OldUseSimhat = Settings.UseSimhatTorahOutside);
+    SystemManager.TryCatch(() => OldUseTwoDaysForLastPessahDayOutside = Settings.UseTwoDaysForLastPessahDayOutside);
     // Moon/Sun/Sod
     if ( Settings.UseSodHaibour )
       SelectUseSodHaibour.Checked = true;

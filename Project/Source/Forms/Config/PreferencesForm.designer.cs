@@ -74,6 +74,7 @@
       this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
+      this.EditReminderBoxRetakeFocusAfterDateClick = new System.Windows.Forms.CheckBox();
       this.LabelDateBookmarksCount = new System.Windows.Forms.Label();
       this.LabelChangeLangNotice = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
@@ -347,7 +348,6 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditReminderBoxRetakeFocusAfterDateClick = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -752,6 +752,13 @@
       this.EditVolume.TickFrequency = 10;
       this.EditVolume.Value = 100;
       this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
+      // 
+      // EditReminderBoxRetakeFocusAfterDateClick
+      // 
+      resources.ApplyResources(this.EditReminderBoxRetakeFocusAfterDateClick, "EditReminderBoxRetakeFocusAfterDateClick");
+      this.EditReminderBoxRetakeFocusAfterDateClick.Name = "EditReminderBoxRetakeFocusAfterDateClick";
+      this.EditReminderBoxRetakeFocusAfterDateClick.UseVisualStyleBackColor = true;
+      this.EditReminderBoxRetakeFocusAfterDateClick.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // LabelDateBookmarksCount
       // 
@@ -2961,13 +2968,6 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
-      // EditReminderBoxRetakeFocusAfterDateClick
-      // 
-      resources.ApplyResources(this.EditReminderBoxRetakeFocusAfterDateClick, "EditReminderBoxRetakeFocusAfterDateClick");
-      this.EditReminderBoxRetakeFocusAfterDateClick.Name = "EditReminderBoxRetakeFocusAfterDateClick";
-      this.EditReminderBoxRetakeFocusAfterDateClick.UseVisualStyleBackColor = true;
-      this.EditReminderBoxRetakeFocusAfterDateClick.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3231,7 +3231,6 @@
     private System.Windows.Forms.Label LabelVolumeValue;
     private System.Windows.Forms.Label LabelWeatherAppPath;
     private System.Windows.Forms.LinkLabel ActionGetGPS;
-    private System.Windows.Forms.LinkLabel ActionMonthViewThemeDark;
     private System.Windows.Forms.LinkLabel ActionMonthViewThemeLight;
     private System.Windows.Forms.LinkLabel ActionResetSettings;
     private System.Windows.Forms.LinkLabel ActionUseBlackAndWhiteColors;
@@ -3369,5 +3368,6 @@
     private Label label7;
     private CheckBox EditUseTwoDaysForLastPessahDayOutside;
     private CheckBox EditReminderBoxRetakeFocusAfterDateClick;
+    internal LinkLabel ActionMonthViewThemeDark;
   }
 }

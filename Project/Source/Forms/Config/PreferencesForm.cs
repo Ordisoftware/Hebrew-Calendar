@@ -29,6 +29,7 @@ partial class PreferencesForm : Form
   private bool IsReady;
   private bool InitialHotKeyEnabled;
 
+  // TODO refactor in a class or dictionary
   public int OldShabatDay { get; private set; }
   public string OldLatitude { get; private set; }
   public string OldLongitude { get; private set; }
@@ -36,6 +37,7 @@ partial class PreferencesForm : Form
   public bool OldUseMoonDays { get; private set; }
   public bool OldUseSod { get; private set; }
   public bool OldUseSimhat { get; private set; }
+  public bool OldUseTwoDaysForLastPessahDayOutside { get; private set; }
   public bool MustRefreshMonthView { get; private set; }
 
   #endregion

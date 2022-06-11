@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2020-12 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -66,6 +66,28 @@ static partial class SysTranslations
 
     [Language.FR] = "Cette action va restaurer la position de la fenêtre." + Globals.NL2 +
                      AskToContinue[Language.FR]
+  };
+
+  static public readonly TranslationsDictionary PreviewModeNotice = new()
+  {
+    [Language.EN] = "If preview mode is enabled, features under development such as the following will be available but only for viewing." + Globals.NL2 +
+                    "{0}" + Globals.NL2 +
+                    "Data modification is discouraged and any saves may be lost in the final release if the database structure is changed or factory data is updated.",
+
+    [Language.FR] = "Si le mode aperçu est activé, des fonctionnalités en cours de développement telles que les suivantes seront disponibles mais uniquement pour la visualisation." + Globals.NL2 +
+                    "{0}" + Globals.NL2 +
+                    "La modification des données est déconseillés et toute sauvegarde pourrait être perdue lors de la version finale en cas de changement de la structure de la base de données ou de la mise à jour des données d'usine. "
+  };
+
+  static public readonly TranslationsDictionary AskForPreviewMode = new()
+  {
+    [Language.EN] = PreviewModeNotice[Language.EN] + Globals.NL2 +
+                    "Click Yes to continue with this mode." + Globals.NL2 +
+                    "Click No to disable it.",
+
+    [Language.FR] = PreviewModeNotice[Language.EN] + Globals.NL2 +
+                    "Cliquez sur Oui pour continuer avec ce mode." + Globals.NL2 +
+                    "Cliquez sur Non pour le désactiver."
   };
 
 }

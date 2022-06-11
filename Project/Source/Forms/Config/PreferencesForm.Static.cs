@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -140,6 +140,7 @@ partial class PreferencesForm
                || form.OldShabatDay != Settings.ShabatDay
                || form.OldTimeZone != Settings.TimeZone
                || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
+               || form.OldUseTwoDaysForLastPessahDayOutside != Settings.UseTwoDaysForLastPessahDayOutside
                || form.OldUseSimhat != Settings.UseSimhatTorahOutside
                || form.OldUseSod != Settings.UseSodHaibour;
     if ( !result && form.MustRefreshMonthView )
