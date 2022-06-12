@@ -377,7 +377,7 @@ The generation of parashot relating to Shabatot with the omer of the moon or the
 - Improve weekly parashah description box to have access to the tools for the study.
 - Improve weekly parashah description box to have a screenshot button.
 
-#### 2022.06.12 - Version 9.29
+#### 2022.06.14 - Version 9.29
 
 - Optimize populating monthly view and thus startup time.
 - Add open system calculator button in DatesDiffCalculator form.
