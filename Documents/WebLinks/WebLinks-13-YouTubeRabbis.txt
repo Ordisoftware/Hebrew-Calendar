@@ -15,6 +15,9 @@ FOLDER-SEPARATOR
 Lang/EN = Rabbis YouTube channels
 Lang/FR = Chaînes YouTube de rabbins
 
+Name = (FR) Rav Daniel Abdlehak
+URL = https://www.youtube.com/c/RavDanielAbdelhak
+
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ
 

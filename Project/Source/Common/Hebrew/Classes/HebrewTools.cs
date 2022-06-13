@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -260,7 +260,8 @@ static class HebrewTools
                        .Replace("%AISH-FR%", OnlineCelebration.AishFR[celebration])
                        .Replace("%AISH-IW%", OnlineCelebration.AishIW[celebration])
                        .Replace("%REFORMJUDAISM%", OnlineCelebration.ReformJudaism[celebration])
-                       .Replace("%THETORAHCOM%", OnlineCelebration.TheTorahCom[celebration]);
+                       .Replace("%THETORAHCOM%", OnlineCelebration.TheTorahCom[celebration])
+                       .Replace("%RAVABDELHAK%", OnlineCelebration.RavAbdelhak[celebration]);
       SystemManager.OpenWebLink(link);
     });
   }

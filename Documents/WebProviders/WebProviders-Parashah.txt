@@ -67,6 +67,9 @@ URL = https://www.aish.co.il/tp/%AISH-IW%
 
 -
 
+Name = (FR) Rav Daniel Abdelhak **
+URL = https://ravabdelhak.com/category/paracha/
+
 Name = (EN) HevratPinto.org *
 URL = https://www.hevratpinto.org/parsha/path_to_follow.html
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew;
 
 static class OnlineCelebration
@@ -168,6 +168,15 @@ static class OnlineCelebration
     { TorahCelebration.YomTerouah, "rosh-hashanah" },
     { TorahCelebration.YomHaKipourim, "kippur" },
     { TorahCelebration.Soukot, "sukkot" }
+  };
+
+  static public readonly Dictionary<TorahCelebration, string> RavAbdelhak = new()
+  {
+    { TorahCelebration.Pessah, "pessah" },
+    { TorahCelebration.Chavouot, "chavouoth" },
+    { TorahCelebration.YomTerouah, "roch-hachana" },
+    { TorahCelebration.YomHaKipourim, "kippour" },
+    { TorahCelebration.Soukot, "souccoth" }
   };
 
 }

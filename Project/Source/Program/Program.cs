@@ -129,6 +129,31 @@ static partial class Program
         else
         if ( File.Exists(pathWordsDefault) )
           Settings.HebrewWordsExe = pathWordsDefault;
+      // Preview mode
+      TranslationsDictionary PreviewFunctions = new()
+      {
+        [Language.EN] = "    • Lunar month names board" + Globals.NL +
+                        "    • Dark theme",
+        [Language.FR] = "    • Tableau des noms des mois lunaires" + Globals.NL +
+                        "    • Theme sombre",
+      };
+      if ( SystemManager.CommandLineOptions.IsPreviewEnabled && !Settings.PreviewModeNotified )
+      {
+        string msg = SysTranslations.AskForPreviewMode.GetLang(PreviewFunctions[Settings.LanguageSelected]);
+        if ( !DisplayManager.QueryYesNo(msg) )
+        {
+          SystemManager.CommandLineOptions.WithPreview = false;
+          SystemManager.CommandLineOptions.NoPreview = true;
+        }
+        Settings.PreviewModeNotified = true;
+      }
+      if ( SystemManager.CommandLineOptions.IsPreviewEnabled )
+        Settings.PreviewMode = true;
+      else
+      {
+        SystemManager.CommandLineOptions.WithPreview = Settings.PreviewMode;
+        SystemManager.CommandLineOptions.NoPreview = !Settings.PreviewMode;
+      }
       // Save settings
       SystemManager.TryCatch(Settings.Save);
     }
