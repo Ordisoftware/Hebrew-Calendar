@@ -77,7 +77,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added context menu for days in monthly view.
 - Added bookmarks to context menu in monthly view.
 - Added some options and colors for monthly view.
-- Added option to show current celebration in the title bar
+- Added option to show current celebration in the title bar.
 - Added option to set active day by click in monthly view.
 - Added option for double-click in visual month to set active or select.
 - Added some keyboard shortcuts to change and select day in monthly view.
@@ -230,13 +230,13 @@ The dates generated with the strict omer of the moon or the sun can differ from 
 
 The software calculates the days according to the moon or the sun and various parameters relating to the stars and the seasons which mean that the dates can sometimes differ at certain points of the calendar established according to traditional standards.
 
-Thus the software can sometimes indicate the same days as the official calendar, and sometimes one to two or three days of shift, because of this new moon date which is sometimes not in astronomical correspondence, and the same goes for the calculation of holidays.
+Thus the software can sometimes indicate the same days as the official calendar, and sometimes one to two or three days of shift, because of the new moon date which is sometimes not in astronomical correspondence, and the same goes for the calculation of holidays.
 
 It can also happen that over 10 or 20 years there is a lag of one month due to Adar II due to the calculation rule used to determine the 1st Nissan and Pesa'h which is that Pesa'h is the 14th day of the first seasonal month in the first full moon following the spring equinox.
 
 But even with these lags, Pesa'h, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pesa'h Sheni, or vice versa, and within a few hours which generally remain within the 3% universal margin.
 
-The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod HaH'ibur or science of moving stars.
+The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod HaH'ibur סוד העיבר or science of the moving stars.
 
 #### What are the times of celebration?
 
@@ -248,7 +248,19 @@ The application uses by default moon omer for celebrations.
 
 If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set.
 
-You can use traditional sun days by modifying the option in the reminder, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.
+You can use traditional sun days by modifying the option of the generator, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.
+
+#### What food for the celebrations?
+
+A description of Torah recipes for celebrations will be available with version 9.30:
+
+Grilled Lamb for Pessa'h.
+Diet without grains nor seeds nor fruits nor vegetables from orchard between the end of the first seven-week Omer and the day after the next Shabat.
+Lamb stew or burger with wine for Shavuh'ot 1 after the first Omer of seven weeks.
+Lamb and veal hotpot with a kind of white beer for Shavouh'ot 2 after the second Omer.
+Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot.
+
+Regarding the author's current understanding of the main themes, the Torah describing many other more complex things.
 
 #### What is Shabat?
 
@@ -256,15 +268,9 @@ The Shabat is the "day of rest" where one do not work for a livelihood. Unless t
 
 The tradition attributes this day to Saturday. We can however think according to Bereshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Bereshit 1.5 and 1.16 as well as from Shemot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.
 
-The personal Shabat of a married or concubin or divorced man is the previous day of the birth. A son follows his father's Shabat. The Shabat of a woman is the Shabat of her father or her husband or her concubin.
+The personal Shabat of a married or concubin or divorced man is the previous day of the birth. A son follows his father's Shabat. The Shabat of a woman is the Shabat of her father or her husband or her concubin. So the man and the woman respect their mutual cycles. Indeed, during the period when the married or concubine or divorced woman is Nidah from the beginning to the end of the blood flow, her vital field is dissonant and the couple avoid touching each other (the virgin girl is not concerned as long as she had no relations through the openings of the begetting) to avoid to increase as well as to transmit this state to things and people (otherwise we follow the rules of the Torah about that).
 
-So the man and the woman respect their mutual cycles. Indeed, during the period when the married or concubine or divorced woman is Nidah from the beginning to the end of the blood flow, her vital field is dissonant and the couple avoid touching each other (the virgin girl is not concerned as long as she had no relations through the openings of the begetting) to avoid to increase as well as to transmit this state to things and people (otherwise we follow the rules of the Torah about that).
-
-If the man were born between midnight and the sunset, the Shabat is the day before. Between sunset and midnight, the Shabat is that day. This day is from previous day (or previous previous day) at sunset to this day (or previous day) at sunset.
-
-The day of the Shabat goes from sunset on the previous calendar day to sunset of that day, with 3% of natural margin that to say about one hour.
-
-The day before, either the man keeps without going out and strengthens the couple during the Shabat, or he goes out and lights up the couple for Shabat, but on Shabat he does not go out of his temple, and except in case of emergency we do not produce, transform and destroys nothing, we don't plan anything, we don't work, we don't cook, we don't shave, we don't cut, we don't make fire, we don't care about information, etc. But we can for example take part in sports, study science and play with children.
+If the man were born between midnight and the sunset, the Shabat is the day before. Between sunset and midnight, the Shabat is that day. This day is from previous day (or previous previous day) at sunset to this day (or previous day) at sunset. The day of the Shabat goes from sunset on the previous calendar day to sunset of that day, with 3% of natural margin that to say about one hour. The day before, either the man keeps without going out and strengthens the couple during the Shabat, or he goes out and lights up the couple for Shabat, but on Shabat he does not go out of his temple, and except in case of emergency we do not produce, transform and destroys nothing, we don't plan anything, we don't work, we don't cook, we don't shave, we don't cut, we don't make fire, we don't care about information, etc. But we can for example take part in sports, study science and play with children.
 
 If you prefer to use the traditional group Shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
 
@@ -272,13 +278,13 @@ If you prefer to use the traditional group Shabat, select for example Saturday f
 
 The study of the Weekly Torah portion begins at Shim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day.
 
-It ends with full reading on Shabat, or the next Shabat if Shim'hat Torah occurs on Shabat. The day after Shabat we move on to the next parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavuh'ot, Teruh'ah, Kipurim, and Sukot.
+It ends with full reading on Shabat, or the next Shabat if Shim'hat Torah occurs on Shabat. The day after Shabat we move on to the next Parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pesa'h, Shavuh'ot, Teruh'ah, Kipurim, and Sukot.
 
-Israël is the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil. Shim'hat Torah means 'Joy [bestowed by the] Torah' and a Lettriq of Shim'hat is 'Sharing of the Service which Sustains the Matter': it is therefore the joy resulting from the beneficial help of the Torah and those which follow the laws of the country where one lives and the Doctrine of YHVH which have for one and only fundamental purpose to protect the life and the goods of the people without harming even the wicked and the criminals.
+Israël is the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil. Shim'hat Torah means "Joy [bestowed by the] Torah" and a Lettriq of Shim'hat is "Sharing of the Service which Sustains the Matter": it is therefore the joy resulting from the beneficial help of the Torah and those which follow the laws of the country where one lives and the Doctrine of YHVH which have for one and only fundamental purpose to protect the life and the goods of the people without harming even the wicked and the criminals.
 
 The number of Parashot is 54 that is to say נד which is the Power of the Student, and that root means Passing from the world of malevolence to that of benevolence.
 
-The generation of parashot relating to Shabatot with the omer of the moon or the sun without the Sod HaH'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
+The generation of Parashot relating to Shabatot with the omer of the moon or the sun without the Sod HaH'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
 
 ## Keyboard shortcuts
 
