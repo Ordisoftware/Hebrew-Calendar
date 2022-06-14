@@ -25,10 +25,11 @@ A libre and open-source software written in C# that allows to generate a calenda
 4. [Download](#download)
 5. [Screenshots](#screenshots)
 6. [Videos](#videos)
-7. [Frequently asked questions](#frequently-asked-questions)
-8. [Keyboard shortcuts](#keyboard-shortcuts)
-9. [Future improvements](#future-improvements)
-10. [Changelog](#changelog)
+7. [System Frequently asked questions](#system-frequently-asked-questions)
+8. [Application Frequently asked questions](#application-frequently-asked-questions)
+9. [Keyboard shortcuts](#keyboard-shortcuts)
+10. [Future improvements](#future-improvements)
+11. [Changelog](#changelog)
 
 ## Functionalities
 
@@ -119,7 +120,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 [![Monthly view showing video](https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg)](https://www.youtube.com/watch?v=EJni1fiXpMk)&nbsp;&nbsp;&nbsp;&nbsp;[![Showing video](https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg)](https://www.youtube.com/watch?v=u9LD-0u3wdE)
 
-## Frequently asked questions
+## System Frequently asked questions
 
 #### What code analyzers are used in addition to Visual Studio?
 
@@ -223,6 +224,8 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
   Run %appPath%%appExe% --parashot
   return
 ```
+
+## Application Frequently asked questions
 
 #### Why do the dates generated differ from those in the Hebrew authorities' calendar?
 
