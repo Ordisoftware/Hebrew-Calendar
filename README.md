@@ -254,11 +254,11 @@ You can use traditional sun days by modifying the option of the generator, hence
 
 A description of Torah recipes for celebrations will be available with version 9.30:
 
-Grilled Lamb for Pessa'h.
-Diet without grains nor seeds nor fruits nor vegetables from orchard between the end of the first seven-week Omer and the day after the next Shabat.
-Lamb stew or burger with wine for Shavuh'ot 1 after the first Omer of seven weeks.
-Lamb and veal hotpot with a kind of white beer for Shavouh'ot 2 after the second Omer.
-Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot.
+- Grilled Lamb for Pessa'h.
+- Diet without grains nor seeds nor fruits nor vegetables from orchard between the end of the first seven-week Omer and the day after the next Shabat.
+- Lamb stew or burger with wine for Shavuh'ot 1 after the first Omer of seven weeks.
+- Lamb and veal hotpot with a kind of white beer for Shavouh'ot 2 after the second Omer.
+- Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot.
 
 Regarding the author's current understanding of the main themes, the Torah describing many other more complex things.
 
