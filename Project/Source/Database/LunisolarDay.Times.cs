@@ -75,7 +75,6 @@ partial class LunisolarDay
     var rowNext = Table.Find(d => d.Date == dayNext);
     if ( rowPrevious is null || rowNext is null )
       return null;
-    // TODO check verses: is ChavouotDiet (lunar or) solar like shabat because of shavouh'ot linked to shabat ?
     bool isShavouot = TorahEvent == TorahCelebrationDay.Chavouot1 || TorahEvent == TorahCelebrationDay.Chavouot2;
     if ( Settings.TorahEventsCountAsMoon && !isShavouot )
     {
@@ -100,8 +99,7 @@ partial class LunisolarDay
       if ( isNotNullPreviousAndNext )
         times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, -1, 1, delta3);
       else
-        // TODO translate to CelebrationMoonDatesAndTimesError
-        throw new Exception($"Error on calculating moon celebration dates and times:{Globals.NL2}" +
+        throw new Exception(AppTranslations.CelebrationMoonDatesAndTimesError.GetLang() + Globals.NL2 +
                             $"    {nameof(isPreviousNotNull)}: {isPreviousNotNull}{Globals.NL}" +
                             $"    {nameof(isCurrentNotNull)}: {isCurrentNotNull}{Globals.NL}" +
                             $"    {nameof(isNextNotNull)}: {isNextNotNull}{Globals.NL}" +
@@ -116,8 +114,7 @@ partial class LunisolarDay
     if ( rowPrevious.Sunset.HasValue && Sunset.HasValue )
       times.Set(dateRow, rowPrevious.Sunset.Value.TimeOfDay, Sunset.Value.TimeOfDay, -1, 0, delta3);
     else
-      // TODO translate to CelebrationSunDatesAndTimesError
-      throw new Exception($"Error on calculating sun celebration dates and times:{Globals.NL2}" +
+      throw new Exception(AppTranslations.CelebrationSunDatesAndTimesError.GetLang() + Globals.NL2 +
                           $"    Previous.{nameof(rowPrevious.Sunset)}: {rowPrevious.Sunset}{Globals.NL}" +
                           $"    Current.{nameof(Sunset)}: {Sunset}");
     return times;
