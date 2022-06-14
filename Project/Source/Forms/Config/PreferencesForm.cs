@@ -51,9 +51,9 @@ partial class PreferencesForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    ActionMonthViewThemeDark.Visible = ApplicationCommandLine.Instance.IsPreviewEnabled; // TODO remove when dark theme will be ready
+    ActionMonthViewThemeDark.Visible = SystemManager.CommandLineOptions.IsPreviewEnabled; // TODO remove when dark theme will be ready
     this.InitDropDowns();
-    if ( !ApplicationCommandLine.Instance.IsPreviewEnabled ) // TODO remove when sod will be ready
+    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO remove when sod will be ready
       SelectUseSodHaibour.Enabled = false;
   }
 

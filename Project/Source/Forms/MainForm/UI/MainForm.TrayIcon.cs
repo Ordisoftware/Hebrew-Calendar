@@ -130,7 +130,7 @@ partial class MainForm
       return;
     }
     if ( ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )
-      || ( e is null && !ApplicationCommandLine.Instance.IsPreviewEnabled ) )
+      || ( e is null && !SystemManager.CommandLineOptions.IsPreviewEnabled ) )
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToExitApplication.GetLang()) )
         return;
     Globals.AllowClose = true;
