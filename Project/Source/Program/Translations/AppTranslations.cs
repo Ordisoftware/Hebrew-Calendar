@@ -123,6 +123,12 @@ static partial class AppTranslations
     [Language.FR] = "Voulez-vous utiliser le dernier jour de Soukot pour Shim'hat Torah, sinon en dehors ?"
   };
 
+  static public readonly TranslationsDictionary AskToSetupPessahLastDayForTwo = new()
+  {
+    [Language.EN] = "Do you want to use two days for the last day of Pesach, or just one in Israel ?",
+    [Language.FR] = "Voulez-vous utiliser deux jours pour le dernier jour de Pessa'h, sinon un seul en Israël ?"
+  };
+
   static public readonly TranslationsDictionary WorldCitiesUpdated = new()
   {
     [Language.EN] = $"The World Cities Database has been updated.{Globals.NL2}Please re-validate the city.",
