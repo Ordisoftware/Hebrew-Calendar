@@ -1300,4 +1300,8 @@ partial class MainForm : Form
 
   #endregion
 
+  private void MenuInformation_Click(object sender, EventArgs e)
+  {
+
+  }
 }

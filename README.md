@@ -229,6 +229,10 @@ The generation of Parashot relating to Shabatot with the omer of the moon or the
 
   `Ordisoftware.Hebrew.Calendar.exe --lang [en|fr]`
 
+- Enable or disable future functionnalities preview:
+
+  `Ordisoftware.Hebrew.Calendar.exe --withpreview | --nopreview`
+
 - Show the main window:
 
   `Ordisoftware.Hebrew.Calendar.exe --show`
@@ -278,6 +282,8 @@ The generation of Parashot relating to Shabatot with the omer of the moon or the
   `Ordisoftware.Hebrew.Calendar.exe --parashah`
 
 These options are cumulative, and can be used to control the software when it is already running, but if this case this only works for administrator users.
+
+### How to configure AutoHotkey?
 
 It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to define for example this `Shift + Ctrl + Alt + P` command:
 

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Core;
 
 using Markdig;
@@ -25,6 +25,8 @@ partial class CommonMenusControl : UserControl
   private const int WidthButtonMedium = 55;
 
   static public CommonMenusControl Instance { get; private set; }
+
+  static public TranslationsDictionary PreviewFunctions;
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
@@ -65,6 +67,7 @@ partial class CommonMenusControl : UserControl
     ActionSoftpedia.Visible = enableSofpedia;
     ActionAlternativeTo.Visible = enableAlternativeTo;
     SeparatorOnlineArchive.Visible = enableSofpedia || enableAlternativeTo;
+    ActionPreviewModeNotice.Visible = SystemManager.CommandLineOptions.IsPreviewEnabled;
     check(ActionHebrewCalendar);
     check(ActionHebrewLetters);
     check(ActionHebrewWords);
@@ -253,6 +256,12 @@ partial class CommonMenusControl : UserControl
       AboutBox.Instance.BringToFront();
     else
       AboutBox.Instance.ShowDialog();
+  }
+
+  private void ActionShowPreviewModeNotice_Click(object sender, EventArgs e)
+  {
+    if ( PreviewFunctions is not null )
+      DisplayManager.Show(SysTranslations.PreviewModeNotice.GetLang(PreviewFunctions[Languages.Current]));
   }
 
 }

@@ -29,6 +29,16 @@ static partial class Program
   [STAThread]
   static void Main(string[] args)
   {
+    CommonMenusControl.PreviewFunctions = new()
+    {
+      [Language.EN] = "    • Lunar month names board" + Globals.NL +
+                      "    • Web links edition" + Globals.NL +
+                      "    • Dark theme",
+
+      [Language.FR] = "    • Tableau des noms des mois lunaires" + Globals.NL +
+                      "    • Edition des liens web" + Globals.NL +
+                      "    • Theme sombre",
+    };
     try
     {
       Application.EnableVisualStyles();
@@ -129,30 +139,30 @@ static partial class Program
         else
         if ( File.Exists(pathWordsDefault) )
           Settings.HebrewWordsExe = pathWordsDefault;
-      // Preview mode
-      TranslationsDictionary PreviewFunctions = new()
-      {
-        [Language.EN] = "    • Lunar month names board" + Globals.NL +
-                        "    • Dark theme",
-        [Language.FR] = "    • Tableau des noms des mois lunaires" + Globals.NL +
-                        "    • Theme sombre",
-      };
-      if ( SystemManager.CommandLineOptions.IsPreviewEnabled && !Settings.PreviewModeNotified )
-      {
-        string msg = SysTranslations.AskForPreviewMode.GetLang(PreviewFunctions[Settings.LanguageSelected]);
-        if ( !DisplayManager.QueryYesNo(msg) )
-        {
-          SystemManager.CommandLineOptions.WithPreview = false;
-          SystemManager.CommandLineOptions.NoPreview = true;
-        }
-      }
       // Save settings
+      CheckPreviewNotice();
       SystemManager.TryCatch(Settings.Save);
     }
     catch ( Exception ex )
     {
       ex.Manage();
     }
+  }
+
+  /// <summary>
+  /// Checks if the app is in preview mode or not and display a notice if needed.
+  /// </summary>
+  static internal void CheckPreviewNotice()
+  {
+    if ( CommonMenusControl.PreviewFunctions is null ) return;
+    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled || Settings.PreviewModeNotified ) return;
+    string msg = SysTranslations.AskForPreviewMode.GetLang(CommonMenusControl.PreviewFunctions[Languages.Current]);
+    if ( !DisplayManager.QueryYesNo(msg) )
+    {
+      SystemManager.CommandLineOptions.WithPreview = false;
+      SystemManager.CommandLineOptions.NoPreview = true;
+    }
+    Settings.PreviewModeNotified = true;
   }
 
   /// <summary>

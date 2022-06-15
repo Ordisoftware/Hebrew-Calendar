@@ -65,6 +65,7 @@
       this.ActionHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionPreviewModeNotice = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewLog = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewStats = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -90,6 +91,7 @@
             this.ActionReleaseNotes,
             this.ActionReadme,
             this.toolStripSeparator1,
+            this.ActionPreviewModeNotice,
             this.ActionCheckUpdate,
             this.Separator3,
             this.MenuApplication,
@@ -348,6 +350,12 @@
       this.toolStripSeparator10.Name = "toolStripSeparator10";
       resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
       // 
+      // ActionPreviewModeNotice
+      // 
+      resources.ApplyResources(this.ActionPreviewModeNotice, "ActionPreviewModeNotice");
+      this.ActionPreviewModeNotice.Name = "ActionPreviewModeNotice";
+      this.ActionPreviewModeNotice.Click += new System.EventHandler(this.ActionShowPreviewModeNotice_Click);
+      // 
       // ActionViewLog
       // 
       resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
@@ -426,5 +434,6 @@
     private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     public System.Windows.Forms.ToolStripMenuItem ActionHelp;
     public ToolStripMenuItem ActionGitHub;
+    public ToolStripMenuItem ActionPreviewModeNotice;
   }
 }
