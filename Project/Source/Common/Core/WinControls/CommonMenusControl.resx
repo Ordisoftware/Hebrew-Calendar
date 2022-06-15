@@ -230,14 +230,14 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVDhPY6AJaO/sbmpt7/zf0tYBxiB2R1dPM1QaP2hp
-        aX2+YcOG/+gAJNbQ3vkCqgw7aG7tbFqzdg1YQ+68g/+tatb+t65d+79g/iGw2FqgHNA1TVDlCBARGf0f
+        aXm+YcOG/+gAJFbf3vkCqgw7aG7tbFqzdg1YQ+68g/+tatb+t65d+79g/iGw2FqgHNA1TVDlCBARGf0f
         RDc0Nv///ePr/8Klp/7vuvn+v629839DC8f/hZvu/S9Zdhos19jcAlYbFR0DphkCAoJADGMQu6auHmxT
         wMzz/02Mzf6vOPvo/6STj/5Laxn/D5p1HixXV98A0QjUA9br7OQCE2CorK79///vr/8Ja579V1DR+C+t
         ovVfRlP3v5S69v9EoBhIrrqmHq4eptfYQN8AzAAZ8PLFs/99J7/+Z2Dj/T/14f//q3/9/8/MyQcWe/n8
         2f/qumawWn0DExANdjkIgBkp6ZmzZ8+Z8//tu/f/p1z4/7/0KBAf+f9/MpD9Big2bcbs/81dk2EugGtG
         BlLFJWVvZ8yY+f/enZv/37x4AsYg9tRpM/+XVbf+//fr3f8zk21ghmAFeglJqXOKikr/FxYWQzCQXVBS
         /f/AwrL//7do/P///cT/U1Oc8RoiBcQgJ6LgDY3O//8skPv/f7vh/yMT3fEagAsYr2rw+r+y3vv/5elW
-        B6BiJAOYi5TBvAEGDAwAO34uz6RPyyQAAAAASUVORK5CYII=
+        B6BiJAOYi5TBvAEGDAwANKIuzVELYJQAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ActionPreviewModeNotice.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -759,7 +759,7 @@
   <data name="ActionHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAQxJREFUOE+lkb0NgzAQhb0FDT0SJVI2oKNC6ekYgJYBkJiAinRkAtLQJU3IBDQs
+        vgAADr4B6kKxwAAAAQxJREFUOE+lkb0NgzAQhb0FDT0SJVI2oKNC6ekYgJYBkJiAinRkAtLQJU3IBDQs
         QElFOifvsPk1+X3SSeaZ+/x8ZlAQBNz3/a8KPUPzryLIPwAkWQGapuFt24qvUVVVidWoFQCNpmnyMAyF
         08vzPG7b9gqsvIJl7TAcHsexcMSPT89xHEoopbzC+XLhhmFQQxRF5BVFQcngpemBPEgJgJIkGRqwj6rr
         mlK9TZBlRzrxWpYziGqw8GcA0HVdp5hoKMvbMJPlQZASgAZN0yhJ191fQlYACPEBQMn7TiF5fiIP2nwF
@@ -1042,6 +1042,12 @@
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ActionPreviewModeNotice.Name" xml:space="preserve">
+    <value>ActionPreviewModeNotice</value>
+  </data>
+  <data name="&gt;&gt;ActionPreviewModeNotice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ActionCheckUpdate.Name" xml:space="preserve">
     <value>ActionCheckUpdate</value>
   </data>
@@ -1215,12 +1221,6 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator10.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionPreviewModeNotice.Name" xml:space="preserve">
-    <value>ActionPreviewModeNotice</value>
-  </data>
-  <data name="&gt;&gt;ActionPreviewModeNotice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionViewLog.Name" xml:space="preserve">
     <value>ActionViewLog</value>
