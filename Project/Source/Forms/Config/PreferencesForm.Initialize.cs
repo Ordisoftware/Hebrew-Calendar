@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Text;
@@ -93,6 +93,8 @@ partial class PreferencesForm
       MainForm.Instance.ActionShowShabatNotice_Click(null, null);
       if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
         ActionUsePersonalShabat_LinkClicked(null, null);
+      string msg = AppTranslations.AskToSetupPessahLastDayForTwo.GetLang();
+      Settings.UseTwoDaysForLastPessahDayOutside = DisplayManager.QueryYesNo(msg);
     }
     if ( changed || Settings.FirstLaunchV7_0 || Settings.FirstLaunchV9_14 )
     {
@@ -117,7 +119,6 @@ partial class PreferencesForm
       SystemManager.TryCatch(Settings.Store);
     }
   }
-
 
   /// <summary>
   /// Does form closing.
