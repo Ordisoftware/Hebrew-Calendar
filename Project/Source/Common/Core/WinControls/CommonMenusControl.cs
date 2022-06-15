@@ -26,7 +26,7 @@ partial class CommonMenusControl : UserControl
 
   static public CommonMenusControl Instance { get; private set; }
 
-  static public TranslationsDictionary PreviewFunctions;
+  static public TranslationsDictionary PreviewFunctions { get; set; }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
