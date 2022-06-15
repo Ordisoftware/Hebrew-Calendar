@@ -199,4 +199,7 @@
   <data name="ActionViewVersionNews.Text" xml:space="preserve">
     <value>Nouveautés</value>
   </data>
+  <data name="ActionPreviewModeNotice.Text" xml:space="preserve">
+    <value>Notice du mode aperçu</value>
+  </data>
 </root>
