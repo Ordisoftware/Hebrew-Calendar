@@ -1,4 +1,4 @@
-	[![License MPL 2.0](https://img.shields.io/github/license/ordisoftware/hebrew-calendar)](LICENSE)&nbsp;
+[![License MPL 2.0](https://img.shields.io/github/license/ordisoftware/hebrew-calendar)](LICENSE)&nbsp;
 [![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-calendar/total)](https://github.com/Ordisoftware/Hebrew-Calendar/releases)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar)](#)&nbsp;
