@@ -209,14 +209,14 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary CelebrationMoonDatesAndTimesError = new()
   {
-    [Language.EN] = $"Error on calculating moon celebration dates and times.",
-    [Language.FR] = $"Erreur lors du calcul des dates et heures de célébration pour la lune."
+    [Language.EN] = "Error on calculating moon celebration dates and times.",
+    [Language.FR] = "Erreur lors du calcul des dates et heures de célébration pour la lune."
   };
 
   static public readonly TranslationsDictionary CelebrationSunDatesAndTimesError = new()
   {
-    [Language.EN] = $"Error on calculating sun celebration dates and times.",
-    [Language.FR] = $"Erreur lors du calcul des dates et heures de célébration pour le soleil."
+    [Language.EN] = "Error on calculating sun celebration dates and times.",
+    [Language.FR] = "Erreur lors du calcul des dates et heures de célébration pour le soleil."
   };
 
   static public readonly NullSafeDictionary<bool, TranslationsDictionary> BoardTimingsTitle = new()
