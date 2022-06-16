@@ -229,7 +229,7 @@ The generation of Parashot relating to Shabatot with the omer of the moon or the
 
   `Ordisoftware.Hebrew.Calendar.exe --lang [en|fr]`
 
-- Enable or disable future functionnalities preview:
+- Enable or disable future functionalities preview:
 
   `Ordisoftware.Hebrew.Calendar.exe --withpreview | --nopreview`
 
