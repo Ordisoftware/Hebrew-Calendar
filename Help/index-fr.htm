@@ -92,16 +92,32 @@ Souccot.</p>
     <p><iframe src="https://www.youtube.com/embed/EJni1fiXpMk" allowfullscreen="allowfullscreen" data-mce-fragment="1" width="500" height="280"></iframe></p>
     <h3>Questions fr&eacute;quemment pos&eacute;es</h3>
     <h4 id="what-code-analyzers-are-used-in-addition-to-visual-studio">Quels analyseurs de code sont utilis&eacute;s en plus de Visual Studio&nbsp;?</h4>
-    <ul>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022">SonarLint</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022">Roslynator</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS">F0.Analyzers</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper">Parallel Helper</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker">Parallel Checker</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019">Security Code Scan</a></li>
-        <li><a href="https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan">Puma Scan</a></li>
-    </ul>
-    <h4>Que faire si la v&eacute;rification de mise &agrave; jour indique que le certificat SSL est incorrect ou expir&eacute; ?        </h4>
+    <table>
+        <tbody>
+        <tr>
+            <td><a href="https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022">SonarLint</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022">Roslynator</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS">F0.Analyzers</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper">Parallel Helper</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker">Parallel Checker</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=SemihOkur.AsyncFixer2022">AsyncFixer</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=PRIYANSHUAGRAWAL92.AsyncMethodNameFixer">Async Method Name Fixer</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=vs-publisher-363830.U2UConsultPerformanceCodeAnalyzersforC7">U2U Consult Performance Analyzers</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019">Security Code Scan</a><br>
+<a href="https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan">Puma Scan</a></td>
+            <td><a href="https://github.com/dotnet/roslyn-analyzers">Microsoft.CodeAnalysis.NetAnalyzers</a><br>
+<a href="https://github.com/microsoft/vs-threading">Microsoft.VisualStudio.Threading.Analyzers</a><br>
+<a href="https://github.com/cezarypiatek/MultithreadingAnalyzer">MultithreadingAnalyzer</a><br>
+<a href="https://github.com/meziantou/Meziantou.Analyzer">Meziantou.Analyzer</a><br>
+<a href="https://github.com/Geeksltd/GCop">GCop.All.Common</a><br>
+<a href="https://github.com/DotNetAnalyzers/ReflectionAnalyzers">ReflectionAnalyzers</a><br>
+<a href="https://github.com/DotNetAnalyzers/IDisposableAnalyzers">IDisposableAnalyzers</a><br>
+<a href="https://github.com/SergeyTeplyakov/ErrorProne.NET">ErrorProne.NET.CoreAnalyzers</a><br>
+<a href="https://github.com/SergeyTeplyakov/ErrorProne.NET">ErrorProne.NET.Structs</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <h4>Que faire si la v&eacute;rification de mise &agrave; jour indique que le certificat SSL est incorrect ou expir&eacute; ?</h4>
     <p>Le logiciel v&eacute;rifie la validit&eacute; du certificat du serveur de mise &agrave; jour en plus de la somme de contr&ocirc;le SHA-512 du fichier d'installation avant de le t&eacute;l&eacute;charger et de l'ex&eacute;cuter.</p>
     <p>Ce certificat est normalement mis &agrave; jour dans les deux mois avant son expiration annuelle. Vous pouvez v&eacute;rifier manuellement la derni&egrave;re version disponible en ligne en cas de probl&egrave;me.</p>
     <h4>Que faire si l'application ne fonctionne pas normalement malgr&eacute; la restauration des param&egrave;tres&nbsp;?</h4>
@@ -119,7 +135,74 @@ Souccot.</p>
     <h4>Quels sont les probl&egrave;mes connus ?</h4>
     <p>Les donn&eacute;es g&eacute;n&eacute;r&eacute;es pour les villes proches des p&ocirc;les peuvent &ecirc;tre incoh&eacute;rentes &agrave; mesure qu'on s'en rapproche, en particulier avec le omer de la lune, en raison de certaines &eacute;ph&eacute;m&eacute;rides &eacute;tranges.</p>
     <p>Ainsi, les dates de c&eacute;l&eacute;bration peuvent &ecirc;tre fausses.</p>
-    <h4>Quelles sont les options de ligne de commande ?</h4>
+    <h4>Pourquoi les dates g&eacute;n&eacute;r&eacute;es diff&egrave;rent de celles du calendrier des autorit&eacute;s h&eacute;bra&iuml;ques ?</h4>
+    <p>Les dates g&eacute;n&eacute;r&eacute;es avec le omer strict de la lune ou du soleil peuvent diff&eacute;rer de celles du calendrier des autorit&eacute;s h&eacute;bra&iuml;ques, mais astronomiquement parlant, il n'y a pas d'erreur, &agrave; moins d'un probl&egrave;me &agrave; corriger.</p>
+    <p>Le logiciel calcule en effet les jours selon la lune ou le soleil et divers param&egrave;tres relatifs aux astres et aux saisons qui font que les dates peuvent parfois diff&eacute;rer en certains points du calendrier &eacute;tablit selon les normes traditionnelles.</p>
+    <p>Ainsi le logiciel peut indiquer parfois les m&ecirc;mes jours que le calendrier officiel, et parfois un &agrave; deux ou trois jours de d&eacute;calage, en raison de la&nbsp;date de nouvelle lune qui n'est parfois pas en correspondance astronomique, et il en va de m&ecirc;me pour le calcul des f&ecirc;tes.</p>
+    <p>Il peut &eacute;galement arriver que sur 10 ou 20 ans il y ait un d&eacute;calage d'un mois &agrave; cause du Adar II en raison de la r&egrave;gle de calcul utilis&eacute;e pour d&eacute;terminer le 1er Nissan et Pessa'h qui est que Pessa'h est le 14&egrave;me jour du premier mois saisonnier en premi&egrave;re pleine lune qui suit l'&eacute;quinoxe de printemps.</p>
+    <p>Mais m&ecirc;me avec ces d&eacute;calages, Pessa'h, selon le logiciel, est toujours la premi&egrave;re nouvelle lune qui suit l'&eacute;quinoxe de printemps, et en cas de d&eacute;calage il tombe au pire en tant que Pessa'h Sheni du calendrier traditionnel, ou vice versa, et &agrave; quelques heures pr&egrave;s qui restent g&eacute;n&eacute;ralement dans les 3% de marge universelle.</p>
+    <p>Le logiciel ne propose pas encore d'option pour g&eacute;n&eacute;rer un calendrier conforme &agrave; la Halakha du Sod HaH'ibour ou science des astres en mouvement.</p>
+    <h4>Que sont les temps de c&eacute;l&eacute;bration ?</h4>
+    <p>Les temps de c&eacute;l&eacute;bration de la Torah sont Pessa'h ou P&acirc;ques qui est la lib&eacute;ration des illusions, Shavou'ot ou Semaines qui est le don de la connaissance, Terou'ah ou Sonnerie qui est la joie d'&ecirc;tre lib&eacute;r&eacute;,
+Kipourim ou P&eacute;nitence qui est les peines des pertes, et Soukot ou Cabanes qui est la construction du futur.</p>
+    <p>Ce sont les moments importants de l'ann&eacute;e lunaire au sein du cycle solaire dont la finalit&eacute; est de procurer une &eacute;volution bienveillante de la conscience par la connaissance des lois de l'univers et de la vie. La Torah indique
+de compter ces jours selon la lune, par opposition au Shabat qui se compte selon le soleil.</p>
+    <p>L'application utilise par d&eacute;faut un omer selon la lune pour les c&eacute;l&eacute;brations.</p>
+    <p>Si vous utilisez le omer de la lune alors les dates des c&eacute;l&eacute;brations seront calcul&eacute;es selon les saisons et il y aura une inversion entre les h&eacute;misph&egrave;res nord et sud. Dans ce cas, un jour est du coucher de la lune au suivant.</p>
+    <p>Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les c&eacute;l&eacute;brations seront les m&ecirc;mes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant.</p>
+    <h4>Quelle nourriture pour les c&eacute;l&eacute;brations ?</h4>
+    <p>Une description des recettes de la Torah pour les c&eacute;l&eacute;brations sera disponible avec la version 9.30 :</p>
+    <ul>
+        <li>Agneau grill&eacute; non saignant sans os coup&eacute; et non bouilli pour Pessa'h.</li>
+    </ul>
+    <ul>
+        <li>Di&egrave;te sans c&eacute;r&eacute;ales ni graines ni fruits ni l&eacute;gumes du verger entre 
+la fin du premier Omer de sept semaines et le lendemain du shabat 
+suivant.</li>
+    </ul>
+    <ul>
+        <li>Rago&ucirc;t ou burger d'agneau au vin pour Shavouh'ot 1 apr&egrave;s le premier Omer.</li>
+    </ul>
+    <ul>
+        <li>Pot&eacute;e d'agneau et veau avec une sorte de bi&egrave;re blanche pour Shavouh'ot 2 apr&egrave;s le deuxi&egrave;me Omer.</li>
+    </ul>
+    <ul>
+        <li>Burgers d'agneau, de veau et de cerf pour Terouh'ah, HaKipourim et Soukot.</li>
+    </ul>
+    <p>Concernant la compr&eacute;hension actuelle de l'auteur au sujet des th&egrave;mes 
+principaux, la Torah d&eacute;crivant beaucoup d'autres choses plus complexes.</p>
+    <h4>Qu'est-ce que le Shabat ?</h4>
+    <p>Le shabat est le &quot;jour du repos&quot; o&ugrave; l'on ne travaille pas pour obtenir un 
+moyen de subsistance&nbsp;et o&ugrave; l'on exerce aucune activit&eacute; cr&eacute;atrice. A moins d'une urgence vitale, on y repose le 
+corps, les &eacute;motions et l'esprit. L'&eacute;tude de la Torah y est une activit&eacute; 
+privil&eacute;gi&eacute;e.</p>
+    <p>La tradition attribue ce jour au samedi.On peut cependant 
+penser d'apr&egrave;s B&eacute;r&eacute;shit 1.1 que dans le cas o&ugrave; le premier jour est le 
+jour de la naissance en tant que corolaire &agrave; la fusion des gam&egrave;tes alors
+ il a lieu la veille : ainsi une personne venue au monde un dimanche 
+aura son Shabat le samedi. De B&eacute;r&eacute;shit 1.5 et 1.16 ainsi que de Sh&eacute;mot 
+20.8 on peut d&eacute;duire qu'il dure depuis le coucher du soleil la veille du
+ jour calendaire au coucher du soleil de ce m&ecirc;me jour. Par exemple, pour
+ une personne n&eacute;e &agrave; Paris, le Shabat du 19 f&eacute;vrier 2019 a lieu du 
+vendredi 18 &agrave; 17h25 au samedi &agrave; 17h25 environ.</p>
+    <p>Le shabat personnel d'un homme mari&eacute; ou concubin ou divorc&eacute; est la veille du jour de la naissance. Un fils suit le shabat de son p&egrave;re. Le shabat d'une femme est celui de son p&egrave;re ou de son mari ou de son concubin. Ainsi l'homme et la femme respectent leurs cycles mutuels. En effet, durant la p&eacute;riode o&ugrave; la femme mari&eacute;e ou concubine ou divorc&eacute;e est Nidah du d&eacute;but &agrave; la fin de l'&eacute;coulement de sang, son champ vital est dissonant et
+le couple &eacute;vite de se toucher (la fille vierge n'est pas concern&eacute;e tant qu'elle
+n'a pas eu de rapports par les ouvertures de l'engendrement) tant pour ne pas augmenter que transmettre cet &eacute;tat aux choses et aux gens (sinon on suit les r&egrave;gles de la Torah &agrave; ce sujet).</p>
+    <p>Si l'homme est n&eacute; entre minuit et le coucher du soleil, le shabat est la veille. Entre le coucher du soleil et minuit, le shabat est ce jour. Ce jour est de la veille (ou veille veille) au coucher &agrave; ce jour (ou veille) au coucher. Le jour du shabat va du coucher du soleil lors du jour calendaire pr&eacute;c&eacute;dent au coucher de ce jour, avec 3% de marge naturelle soit environ plus ou moins une heure. La veille, soit l'homme garde sans sortir et renforce le couple lors du shabat, soit
+il sort et illumine le couple
+pour shabat, mais &agrave; shabat il ne sort pas de son temple, et sauf cas d'urgence on ne produit, transforme et d&eacute;truit rien, on ne planifie rien, on ne travaille pas, on ne cuisine pas, on ne rase pas, on ne coupe pas, on ne fait pas de feu, on ne s'interesse pas aux informations, etc. Mais on peut par exemple faire du sport, &eacute;tudier la science et jouer avec les enfants.</p>
+    <p>Si vous pr&eacute;f&eacute;rez utiliser le shabat de groupe traditionnel, s&eacute;lectionnez par exemple le samedi pour le Juda&iuml;sme, le dimanche pour le Christianisme ou le vendredi pour l'Islam.</p>
+    <h4>Que sont les Parashot?</h4>
+    <p>L'&eacute;tude de la Parashah de la semaine d&eacute;bute &agrave; Shim'hat Torah avec la section Bereshit le 22 Tishri en Terre d'Isra&euml;l, ou le 23 en Mitsra&iuml;m et dans le d&eacute;sert, soit le dernier jour de Soukot, ou le lendemain. Elle se termine par la lecture compl&egrave;te lors du Shabat, ou le Shabat suivant si Shim'hat Torah a lieu un Shabat.</p>
+    <p>Le lendemain du Shabat on passe &agrave; la Parashah suivante qu'on &eacute;tudie durant la semaine en lisant des commentaires, en &eacute;coutant des conf&eacute;rences, en s'informant sur les sciences, et en examinant les lettres, les mots et les versets, pour la lire en int&eacute;gralit&eacute; lors du Shabat. Et ainsi de suite de semaines en semaines afin de parcourir la Torah en un an pour de construire un monde futur meilleur pour soi, pour sa famille, pour sa communaut&eacute;, pour son pays, pour
+les Nations, et pour l'esp&egrave;ce, gr&acirc;ce &agrave; Pessa'h,
+Shavou'ot, Terou'ah, Kipourim, et Soukot.</p>
+    <p>Isra&euml;l est le pays conceptuel mondial des justes bienveillants dont le corps+esprit, et donc l'ADN, est dans une certaine mesure notable lib&eacute;r&eacute; de l'ignorance et du mal. Shim'hat Torah signifie &quot;Joie [prodigu&eacute;e par la] Torah&quot; et une lettrique de Shim'hat est &quot;Partage du Service qui Soutien la Mati&egrave;re&quot; : c'est donc la joie r&eacute;sultant de l'aide b&eacute;n&eacute;fique de la Torah et de ceux qui suivent les lois du pays o&ugrave; l'on vit et de la Doctrine
+de YHVH qui ont pour seul et unique but fondamental de
+prot&eacute;ger la vie et les biens des personnes sans nuire m&ecirc;me aux m&eacute;chants et aux criminels.</p>
+    <p>Le nombre de Parashot est 54 soit נד qui est le Pouvoir de l'&Eacute;tudiant, et cette&nbsp;racine signifie Passer du monde de la malveillance &agrave; celui de la bienveillance.</p>
+    <p>La g&eacute;n&eacute;ration des Parashot relatives aux Shabatot avec le omer de la lune ou du soleil sans le Sod HaH'ibour n'est pas garantie pour &ecirc;tre traditionnelle d'autant que l'application g&eacute;n&egrave;re des dates, quoi que bas&eacute; sur le cycle lunaire, pouvant parfois un peu varier des calendriers officiels, surtout si on utilise le omer de la lune et encore plus avec le shabat personnel.</p>
+    <h3>Options de ligne de commande</h3>
     <ul>
         <li>
             <p>Changer la langue de l'interface (ne change pas les donn&eacute;es &agrave; moins d'utiliser <code>--generate</code>) :</p>
@@ -194,404 +277,252 @@ Souccot.</p>
     </ul>
     <p>Ces options sont cumulatives et peuvent &ecirc;tre utilis&eacute;es pour contr&ocirc;ler le logiciel lorsqu'il est d&eacute;j&agrave; en cours d'ex&eacute;cution, mais dans ce cas, cela ne fonctionne que pour les utilisateurs administrateurs.</p>
     <p>Il est donc possible d'utiliser <a href="https://www.autohotkey.com" target="_blank">AutoHotKey</a> pour d&eacute;finir par exemple cette commande Maj + Ctrl + Alt + P&nbsp;:</p>
-    <p><code>
-!^+P::
-  <br>
+    <p><code>!^+P::
+<br>
 &nbsp;&nbsp;appPath := &quot;C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\&quot;<br>
 &nbsp;&nbsp;appExe := &quot;Ordisoftware.Hebrew.Calendar.exe&quot;<br>
 &nbsp;&nbsp;sleep 500</code><code><br>
 &nbsp;&nbsp;Run %appPath%%appExe% --parashot<br>
 &nbsp;&nbsp;return
 </code></p>
-    <h4>Pourquoi les dates g&eacute;n&eacute;r&eacute;es diff&egrave;rent de celles du calendrier des autorit&eacute;s h&eacute;bra&iuml;ques ?</h4>
-    <p>Les dates g&eacute;n&eacute;r&eacute;es avec le omer strict de la lune ou du soleil peuvent diff&eacute;rer de celles du calendrier des autorit&eacute;s h&eacute;bra&iuml;ques, mais astronomiquement parlant, il n'y a pas d'erreur, &agrave; moins d'un probl&egrave;me &agrave; corriger.</p>
-    <p>Le logiciel calcule en effet les jours selon la lune ou le soleil et divers param&egrave;tres relatifs aux astres et aux saisons qui font que les dates peuvent parfois diff&eacute;rer en certains points du calendrier &eacute;tablit selon les normes traditionnelles.</p>
-    <p>Ainsi le logiciel peut indiquer parfois les m&ecirc;mes jours que le calendrier officiel, et parfois un &agrave; deux ou trois jours de d&eacute;calage, en raison de la&nbsp;date de nouvelle lune qui n'est parfois pas en correspondance astronomique, et il en va de m&ecirc;me pour le calcul des f&ecirc;tes.</p>
-    <p>Il peut &eacute;galement arriver que sur 10 ou 20 ans il y ait un d&eacute;calage d'un mois &agrave; cause du Adar II en raison de la r&egrave;gle de calcul utilis&eacute;e pour d&eacute;terminer le 1er Nissan et Pessa'h qui est que Pessa'h est le 14&egrave;me jour du premier mois saisonnier en premi&egrave;re pleine lune qui suit l'&eacute;quinoxe de printemps.</p>
-    <p>Mais m&ecirc;me avec ces d&eacute;calages, Pessa'h, selon le logiciel, est toujours la premi&egrave;re nouvelle lune qui suit l'&eacute;quinoxe de printemps, et en cas de d&eacute;calage il tombe au pire en tant que Pessa'h Sheni du calendrier traditionnel, ou vice versa, et &agrave; quelques heures pr&egrave;s qui restent g&eacute;n&eacute;ralement dans les 3% de marge universelle.</p>
-    <p>Le logiciel ne propose pas encore d'option pour g&eacute;n&eacute;rer un calendrier conforme &agrave; la Halakha du Sod HaH'ibour ou science des astres en mouvement.</p>
-    <h4>Que sont les temps de c&eacute;l&eacute;bration ?</h4>
-    <p>Les temps de c&eacute;l&eacute;bration de la Torah sont Pessa'h ou P&acirc;ques qui est la lib&eacute;ration des illusions, Shavou'ot ou Semaines qui est le don de la connaissance, Terou'ah ou Sonnerie qui est la joie d'&ecirc;tre lib&eacute;r&eacute;,
-Kipourim ou P&eacute;nitence qui est les peines des pertes, et Soukot ou Cabanes qui est la construction du futur.</p>
-    <p>Ce sont les moments importants de l'ann&eacute;e lunaire au sein du cycle solaire dont la finalit&eacute; est de procurer une &eacute;volution bienveillante de la conscience par la connaissance des lois de l'univers et de la vie. La Torah indique
-de compter ces jours selon la lune, par opposition au Shabat qui se compte selon le soleil.</p>
-    <p>L'application utilise par d&eacute;faut un omer selon la lune pour les c&eacute;l&eacute;brations.</p>
-    <p>Si vous utilisez le omer de la lune alors les dates des c&eacute;l&eacute;brations seront calcul&eacute;es selon les saisons et il y aura une inversion entre les h&eacute;misph&egrave;res nord et sud. Dans ce cas, un jour est du coucher de la lune au suivant.</p>
-    <p>Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option dans le rappeleur, alors les c&eacute;l&eacute;brations seront les m&ecirc;mes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant.</p>
-    <h4>Qu'est-ce que le Shabat ?</h4>
-    <p>Le shabat est le &quot;jour du repos&quot; o&ugrave; l'on ne travaille pas pour obtenir un 
-moyen de subsistance&nbsp;et o&ugrave; l'on exerce aucune activit&eacute; cr&eacute;atrice. A moins d'une urgence vitale, on y repose le 
-corps, les &eacute;motions et l'esprit. L'&eacute;tude de la Torah y est une activit&eacute; 
-privil&eacute;gi&eacute;e.</p>
-    <p>La tradition attribue ce jour au samedi.On peut cependant 
-penser d'apr&egrave;s B&eacute;r&eacute;shit 1.1 que dans le cas o&ugrave; le premier jour est le 
-jour de la naissance en tant que corolaire &agrave; la fusion des gam&egrave;tes alors
- il a lieu la veille : ainsi une personne venue au monde un dimanche 
-aura son Shabat le samedi. De B&eacute;r&eacute;shit 1.5 et 1.16 ainsi que de Sh&eacute;mot 
-20.8 on peut d&eacute;duire qu'il dure depuis le coucher du soleil la veille du
- jour calendaire au coucher du soleil de ce m&ecirc;me jour. Par exemple, pour
- une personne n&eacute;e &agrave; Paris, le Shabat du 19 f&eacute;vrier 2019 a lieu du 
-vendredi 18 &agrave; 17h25 au samedi &agrave; 17h25 environ.</p>
-    <p>Le shabat personnel d'un homme mari&eacute; ou concubin ou divorc&eacute; est la veille du jour de la naissance. Un fils suit le shabat de son p&egrave;re. Le shabat d'une femme est celui de son p&egrave;re ou de son mari ou de son concubin. Ainsi l'homme et la femme respectent leurs cycles mutuels. En effet, durant la p&eacute;riode o&ugrave; la femme mari&eacute;e ou concubine ou divorc&eacute;e est Nidah du d&eacute;but &agrave; la fin de l'&eacute;coulement de sang, son champ vital est dissonant et
-le couple &eacute;vite de se toucher (la fille vierge n'est pas concern&eacute;e tant qu'elle
-n'a pas eu de rapports par les ouvertures de l'engendrement) tant pour ne pas augmenter que transmettre cet &eacute;tat aux choses et aux gens (sinon on suit les r&egrave;gles de la Torah &agrave; ce sujet).</p>
-    <p>Si l'homme est n&eacute; entre minuit et le coucher du soleil, le shabat est la veille. Entre le coucher du soleil et minuit, le shabat est ce jour. Ce jour est de la veille (ou veille veille) au coucher &agrave; ce jour (ou veille) au coucher. Le jour du shabat va du coucher du soleil lors du jour calendaire pr&eacute;c&eacute;dent au coucher de ce jour, avec 3% de marge naturelle soit environ plus ou moins une heure. La veille, soit l'homme garde sans sortir et renforce le couple lors du shabat, soit
-il sort et illumine le couple
-pour shabat, mais &agrave; shabat il ne sort pas de son temple, et sauf cas d'urgence on ne produit, transforme et d&eacute;truit rien, on ne planifie rien, on ne travaille pas, on ne cuisine pas, on ne rase pas, on ne coupe pas, on ne fait pas de feu, on ne s'interesse pas aux informations, etc. Mais on peut par exemple faire du sport, &eacute;tudier la science et jouer avec les enfants.</p>
-    <p>Si vous pr&eacute;f&eacute;rez utiliser le shabat de groupe traditionnel, s&eacute;lectionnez par exemple le samedi pour le Juda&iuml;sme, le dimanche pour le Christianisme ou le vendredi pour l'Islam.</p>
-    <h4>Que sont les Parashot?</h4>
-    <p>L'&eacute;tude de la Parashah de la semaine d&eacute;bute &agrave; Shim'hat Torah avec la section Bereshit le 22 Tishri en Terre d'Isra&euml;l, ou le 23 en Mitsra&iuml;m et dans le d&eacute;sert, soit le dernier jour de Soukot, ou le lendemain. Elle se termine par la lecture compl&egrave;te lors du Shabat, ou le Shabat suivant si Shim'hat Torah a lieu un Shabat.</p>
-    <p>Le lendemain du Shabat on passe &agrave; la Parashah suivante qu'on &eacute;tudie durant la semaine en lisant des commentaires, en &eacute;coutant des conf&eacute;rences, en s'informant sur les sciences, et en examinant les lettres, les mots et les versets, pour la lire en int&eacute;gralit&eacute; lors du Shabat. Et ainsi de suite de semaines en semaines afin de parcourir la Torah en un an pour de construire un monde futur meilleur pour soi, pour sa famille, pour sa communaut&eacute;, pour son pays, pour
-les Nations, et pour l'esp&egrave;ce, gr&acirc;ce &agrave; Pessa'h,
-Shavou'ot, Terou'ah, Kipourim, et Soukot.</p>
-    <p>Isra&euml;l est le pays conceptuel mondial des justes bienveillants dont le corps+esprit, et donc l'ADN, est dans une certaine mesure notable lib&eacute;r&eacute; de l'ignorance et du mal. Shim'hat Torah signifie &quot;Joie [prodigu&eacute;e par la] Torah&quot; et une lettrique de Shim'hat est &quot;Partage du Service qui Soutien la Mati&egrave;re&quot; : c'est donc la joie r&eacute;sultant de l'aide b&eacute;n&eacute;fique de la Torah et de ceux qui suivent les lois du pays o&ugrave; l'on vit et de la Doctrine
-de YHVH qui ont pour seul et unique but fondamental de
-prot&eacute;ger la vie et les biens des personnes sans nuire m&ecirc;me aux m&eacute;chants et aux criminels.</p>
-    <p>Le nombre de Parashot est 54 soit נד qui est le Pouvoir de l'&Eacute;tudiant, et cette&nbsp;racine signifie Passer du monde de la malveillance &agrave; celui de la bienveillance.</p>
-    <p>La g&eacute;n&eacute;ration des Parashot relatives aux Shabatot avec le omer de la lune ou du soleil sans le Sod HaH'ibour n'est pas garantie pour &ecirc;tre traditionnelle d'autant que l'application g&eacute;n&egrave;re des dates, quoi que bas&eacute; sur le cycle lunaire, pouvant parfois un peu varier des calendriers officiels, surtout si on utilise le omer de la lune et encore plus avec le shabat personnel.</p>
-    <h3>Raccourcis clavier</h3>
-    <table width="650">
+    <h3><span id="Raccourcis_clavier">Raccourcis clavier</span></h3>
+    <table>
+        <tbody>
         <tr>
-            <td width="180">Ctrl + Tab</td>
-            <td width="460">
-                Vue suivante
-            </td>
+            <td>Ctrl + Tab</td>
+            <td>Next view</td>
         </tr>
         <tr>
-            <td width="180">Maj + Ctrl + Tab</td>
-            <td width="460">
-                Vue pr&eacute;c&eacute;dente
-            </td>
+            <td>Shift + Ctrl + Tab</td>
+            <td>Previous view</td>
         </tr>
         <tr>
-            <td width="180">F1</td>
-            <td width="460">
-                Vue du rapport textuel
-            </td>
+            <td>F1</td>
+            <td>Text report view</td>
         </tr>
         <tr>
-            <td width="180">F2</td>
-            <td width="460">
-                Vue du mois
-            </td>
+            <td>F2</td>
+            <td>Month view</td>
         </tr>
         <tr>
-            <td width="180">F3</td>
-            <td width="460">
-                Vue de la grille de donn&eacute;es
-            </td>
+            <td>F3</td>
+            <td>Database grid view</td>
         </tr>
         <tr>
-            <td width="180">F4</td>
-            <td width="460">
-                Fen&ecirc;tre des prochaines c&eacute;l&eacute;brations
-            </td>
+            <td>F4</td>
+            <td>Next celebrations window</td>
         </tr>
         <tr>
-            <td width="180">F5</td>
-            <td width="460">
-                Fen&ecirc;tre de recherche de c&eacute;l&eacute;bration
-            </td>
+            <td>F5</td>
+            <td>Search a celebration window</td>
         </tr>
         <tr>
-            <td width="180">F6</td>
-            <td width="460">
-                Fen&ecirc;tre de recherche de mois lunaire
-            </td>
+            <td>F6</td>
+            <td>Search a moon month window</td>
         </tr>
         <tr>
-            <td width="180">F7</td>
-            <td width="460">
-                Fen&ecirc;tre de recherche de mois gr&eacute;gorien 
-            </td>
+            <td>F7</td>
+            <td>Search a gregorian month window</td>
         </tr>
         <tr>
-            <td width="180">F8 (ou Ctrl + N)</td>
-            <td width="460">
-                Fen&ecirc;tre de navigation
-            </td>
+            <td>F8 (or Ctrl + N)</td>
+            <td>Navigation window</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + T (ou Numpad0)</td>
-            <td width="460">
-                Aller &agrave; aujourd'hui
-            </td>
+            <td>Ctrl + T (or Numpad0)</td>
+            <td>Go to today</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + B&nbsp;(ou Decimal)</td>
-            <td width="460">
-                Aller au jour s&eacute;lectionn&eacute;
-            </td>
+            <td>Ctrl + B (or Decimal)</td>
+            <td>Go to selected day</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + D</td>
-            <td width="460">
-                Chercher un jour
-            </td>
+            <td>Ctrl + D</td>
+            <td>Search a day</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + S</td>
-            <td width="460">
-                Sauvegarde la vue en cours dans un fichier texte
-            </td>
+            <td>Ctrl + S</td>
+            <td>Save current view to a file</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + C</td>
-            <td width="460">
-                Copie la vue en cours dans le presse-papier
-            </td>
+            <td>Ctrl + C</td>
+            <td>Copy current view to clipboard</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + P</td>
-            <td width="460">
-                Imprime la vue en cours
-            </td>
+            <td>Ctrl + P</td>
+            <td>Print current view</td>
         </tr>
         <tr>
-            <td width="180">
-Ctrl + Maj + C</td>
-            <td width="460">
-                Copie la s&eacute;lection du rapport textuel dans le presse-papier
-            </td>
+            <td>Ctrl + Shift + C</td>
+            <td>Copy the text report selection to clipboard</td>
         </tr>
         <tr>
-            <td width="180">
-                Alt + V
-            </td>
-            <td width="460">
-                Menu des vues
-            </td>
+            <td>Alt + V</td>
+            <td>Show view menu</td>
         </tr>
         <tr>
-            <td width="180">
-                Alt + T
-            </td>
-            <td width="460">
-                Menu des outils
-            </td>
+            <td>Alt + T</td>
+            <td>Tools menu</td>
         </tr>
         <tr>
-            <td width="180">
-                Alt + L
-            </td>
-            <td width="460">
-                Menu des liens web
-            </td>
+            <td>Alt + L</td>
+            <td>Web links menu</td>
         </tr>
         <tr>
-            <td width="180">
-                Alt + S
-            </td>
-            <td width="460">
-                Menu des param&egrave;tres
-            </td>
+            <td>Alt + S</td>
+            <td>Settings menu</td>
         </tr>
         <tr>
-            <td width="180">
-                Alt + I
-            </td>
-            <td width="460">
-                Menu des informations
-            </td>
+            <td>Alt + I</td>
+            <td>Information menu</td>
         </tr>
         <tr>
-            <td width="180">
-                Alt + E
-            </td>
-            <td width="460">
-                Dossier d'export
-            </td>
+            <td>Alt + E</td>
+            <td>Export folder</td>
         </tr>
         <tr>
-            <td width="180">Alt + C</td>
-            <td width="460">
-                Calculatrice Windows
-            </td>
+            <td>Alt + C</td>
+            <td>Windows calculator</td>
         </tr>
         <tr>
-            <td width="180">Alt + D</td>
-            <td width="460">
-                Param&egrave;tres de date et heure de Windows
-            </td>
+            <td>Alt + D</td>
+            <td>Windows date and time settings</td>
         </tr>
         <tr>
-            <td width="180">Alt + M</td>
-            <td width="460">M&eacute;t&eacute;o Windows</td>
+            <td>Alt + M</td>
+            <td>Windows weather</td>
         </tr>
         <tr>
-            <td width="180">Alt + W</td>
-            <td width="460">M&eacute;t&eacute;o en ligne</td>
+            <td>Alt + W</td>
+            <td>Online weather</td>
         </tr>
         <tr>
-            <td width="180">
-                Alt + G
-            </td>
-            <td width="460">
-                G&eacute;n&egrave;re le calendrier
-            </td>
+            <td>Alt + G</td>
+            <td>Generate calendar</td>
         </tr>
         <tr>
-            <td width="180">Alt + P</td>
-            <td width="420">
-                <p>Affiche le menu de la parashah en ligne</p>
-            </td>
+            <td>Alt + P</td>
+            <td>Show online parashah menu</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + F1</td>
-            <td width="420">
-Tableau des parashot</td>
+            <td>Ctrl + F1</td>
+            <td>Parashot board</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + F2</td>
-            <td width="460">
-Tableau des versets des c&eacute;l&eacute;brations</td>
+            <td>Ctrl + F2</td>
+            <td>Celebration verses board</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + F3</td>
-            <td width="460">
-Tableau des c&eacute;l&eacute;brations</td>
+            <td>Ctrl + F3</td>
+            <td>Celebrations board</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + F4</td>
-            <td width="460">
-Tableau des lunes</td>
+            <td>Ctrl + F4</td>
+            <td>New moons board</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + F5</td>
-            <td width="460">Tableau des mois lunaires</td>
+            <td>Ctrl + F5</td>
+            <td>Lunar months board</td>
         </tr>
         <tr>
-            <td width="180">
-                <p>Ctrl + Maj + D</p>
-            </td>
-            <td width="460">Calculateur de diff&eacute;rence de dates</td>
+            <td>Ctrl + Shift + D</td>
+            <td>Dates difference calculator</td>
         </tr>
         <tr>
-            <td width="180">D&eacute;but</td>
-            <td width="460">
-                Premier mois disponible dans la base de donn&eacute;es
-            </td>
+            <td>Home</td>
+            <td>First month available in the database</td>
         </tr>
         <tr>
-            <td width="180">Fin</td>
-            <td width="460">
-                Dernier mois disponible dans la base de donn&eacute;es
-            </td>
+            <td>End</td>
+            <td>Last month available in the database</td>
         </tr>
         <tr>
-            <td width="180">Haut (ou PagePrec)</td>
-            <td width="460">
-                Ann&eacute;e pr&eacute;c&eacute;dente
-            </td>
+            <td>Up (or PageUp)</td>
+            <td>Previous year</td>
         </tr>
         <tr>
-            <td width="180">Bas (ou PageSuiv)</td>
-            <td width="460">
-                Ann&eacute;e suivante
-            </td>
+            <td>Down (or PageDown)</td>
+            <td>Next year</td>
         </tr>
         <tr>
-            <td width="180">Gauche</td>
-            <td width="460">
-                Mois pr&eacute;c&eacute;dent
-            </td>
+            <td>Left</td>
+            <td>Previous month</td>
         </tr>
         <tr>
-            <td width="180">Droite</td>
-            <td width="460">
-                Mois suivant
-            </td>
+            <td>Right</td>
+            <td>Next month</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + Gauche</td>
-            <td width="420">
-                <p>Mois pr&eacute;c&eacute;dent ayant une c&eacute;l&eacute;bration</p>
-            </td>
+            <td>Ctrl + Left</td>
+            <td>Previous month having a celebration</td>
         </tr>
         <tr>
-            <td width="180" height="24">Ctrl + Droite</td>
-            <td width="420" height="24">
-                <p>Mois suivant ayant une c&eacute;l&eacute;bration</p>
-            </td>
+            <td>Ctrl + Right</td>
+            <td>Next month having a celebration</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + D&eacute;but</td>
-            <td width="420">
-Premier mois ayant une c&eacute;l&eacute;bration</td>
+            <td>Ctrl + Home</td>
+            <td>First month having a celebration</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + Fin</td>
-            <td width="420">
-Dernier mois ayant une c&eacute;l&eacute;bration</td>
+            <td>Ctrl + End</td>
+            <td>Last month having a celebration</td>
         </tr>
         <tr>
-            <td width="180">Maj + Haut</td>
-            <td width="460">Semaine pr&eacute;c&eacute;dente</td>
+            <td>Shit + Up</td>
+            <td>Semaine pr&eacute;c&eacute;dente</td>
         </tr>
         <tr>
-            <td width="180">Maj + Bas</td>
-            <td width="460">Semaine suivante</td>
+            <td>Shit + Down</td>
+            <td>Previous week</td>
         </tr>
         <tr>
-            <td width="180">Maj + Gauche</td>
-            <td width="460">Jour pr&eacute;c&eacute;dent</td>
+            <td>Shit + Left</td>
+            <td>Previous day</td>
         </tr>
         <tr>
-            <td width="180">Maj + Droite</td>
-            <td width="460">Jour suivant</td>
+            <td>Shit + Right</td>
+            <td>Next day</td>
         </tr>
         <tr>
-            <td width="180">Plus ou Moins</td>
-            <td width="460">Changer le jour actif</td>
+            <td>Add or Sub</td>
+            <td>Change active day</td>
         </tr>
         <tr>
-            <td width="180">Maj + Clic</td>
-            <td width="460">D&eacute;finir jour actif</td>
+            <td>Shift + Click</td>
+            <td>Set active day</td>
         </tr>
         <tr>
-            <td width="180">Ctrl + Clic</td>
-            <td width="460">S&eacute;lectionner jour</td>
+            <td>Ctrl + Click</td>
+            <td>Select day</td>
         </tr>
         <tr>
-            <td width="180">F9</td>
-            <td width="460">
-                Pr&eacute;f&eacute;rences
-            </td>
+            <td>F9</td>
+            <td>Preferences</td>
         </tr>
         <tr>
-            <td width="180">F10</td>
-            <td width="460">
-                Fen&ecirc;tre du fichier log
-            </td>
+            <td>F10</td>
+            <td>Log file window</td>
         </tr>
         <tr>
-            <td width="180">F11</td>
-            <td width="460">
-                Fen&ecirc;tre des statistiques d'utilisation
-            </td>
+            <td>F11</td>
+            <td>Usage statistics window</td>
         </tr>
         <tr>
-            <td width="180">F12</td>
-            <td width="460">
-                A propos
-            </td>
+            <td>F12</td>
+            <td>About</td>
         </tr>
         <tr>
-            <td width="180">Alt + F4 (ou Echap)</td>
-            <td width="460">
-                Ferme la fen&ecirc;tre
-            </td>
+            <td>Alt + F4 (or Escape)</td>
+            <td>Close window</td>
         </tr>
         <tr>
-            <td width="180">
-                Ctrl + Alt + F4
-            </td>
-            <td width="460">
-                Ferme l'application
-            </td>
+            <td>Ctrl + Alt + F4</td>
+            <td>Exit application</td>
         </tr>
+        </tbody>
     </table>
-    <h3>Plus d'informations</h3>
+    <h2 id="future-improvements">Plus d'informations</h2>
     <p><a href="https://github.com/Ordisoftware/Hebrew-Calendar" target="_blank" rel="noopener">GitHub repository</a></p>
 </div>
 </body>
