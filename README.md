@@ -384,6 +384,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress for the end of 2022 or the beginning of 2023 - Version 10.0
 
+- Add option to generate a fixed interval (if the current year is within).
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add comments to bookmarks.
