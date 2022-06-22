@@ -87,7 +87,8 @@ partial class MainForm
       if ( bringToFront )
         SystemManager.TryCatch(() =>
         {
-          if ( !Visible && !onlyIfOpened )
+          if ( onlyIfOpened ) return;
+          if ( !Visible )
             MenuShowHide_Click(null, null);
           else
           if ( WindowState == FormWindowState.Minimized && !onlyIfNotMinimized )

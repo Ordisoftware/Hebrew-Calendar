@@ -63,9 +63,9 @@ partial class NavigationForm : Form
         LabelMoonriseValue.Text = row.MoonriseAsString;
         LabelMoonsetValue.Text = row.MoonsetAsString;
         LabelMoonriseValue.Visible = row.Moonrise is not null;
-        LabelMoonrise.Visible = LabelMoonriseValue.Visible;
+        LabelMoonrise.Visible = row.Moonrise is not null;
         LabelMoonsetValue.Visible = row.Moonset is not null;
-        LabelMoonset.Visible = LabelMoonsetValue.Visible;
+        LabelMoonset.Visible = row.Moonset is not null;
         //
         LabelEventSeasonValue.Text = AppTranslations.SeasonChanges.GetLang(row.SeasonChange);
         if ( LabelEventSeasonValue.Text.Length == 0 )
