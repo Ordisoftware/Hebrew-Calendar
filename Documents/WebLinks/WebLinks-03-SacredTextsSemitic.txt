@@ -85,6 +85,9 @@ URL = https://biblehub.com/interlinear/
 
 -
 
+Name = (FR) Bible comparatif multi-version @ djep.hd.free.fr
+URL = http://djep.hd.free.fr/LaReferenceBiblique/
+
 Name = (FR) Bible en hébreu @ lexilogos.com
 URL = https://www.lexilogos.com/bible_hebreu.htm
 
