@@ -65,6 +65,7 @@ partial class LunisolarDay
     return times;
   }
 
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   internal ReminderTimes GetTimesForCelebration(decimal delta3)
   {
     var times = new ReminderTimes();
