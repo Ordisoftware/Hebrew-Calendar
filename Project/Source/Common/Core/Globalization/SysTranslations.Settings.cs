@@ -87,7 +87,7 @@ static partial class SysTranslations
                     "Click Yes to continue with this mode." + Globals.NL2 +
                     "Click No to disable it.",
 
-    [Language.FR] = PreviewModeNotice[Language.EN] + Globals.NL2 +
+    [Language.FR] = PreviewModeNotice[Language.FR] + Globals.NL2 +
                     "Cliquez sur Oui pour continuer avec ce mode." + Globals.NL2 +
                     "Cliquez sur Non pour le désactiver."
   };
