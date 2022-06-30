@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-06 </edited>
 namespace Ordisoftware.Core;
 
 using SQLite;
@@ -170,11 +170,33 @@ public class SQLiteNetORM : SQLiteConnection
     if ( tableNewName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(tableNewName));
     try
     {
-      Execute($"ALTER TABLE [{tableOldName}] RENAME TO [{tableNewName}];");
+      Execute($"ALTER TABLE IF EXISTS [{tableOldName}] RENAME TO [{tableNewName}];");
     }
     catch ( Exception ex )
     {
       throw new SQLiteException(SysTranslations.DBRenameTableError.GetLang(tableOldName, tableNewName), ex);
+    }
+  }
+
+  /// <summary>
+  /// Renames a column if exists.
+  /// </summary>
+  /// <param name="tableName">Table name.</param>
+  /// <param name="columnOldName">Old name.</param>
+  /// <param name="columnNewName">New name.</param>
+  public void RenameColumnIfExists(string tableName, string columnOldName, string columnNewName)
+  {
+    if ( tableName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(tableName));
+    if ( columnOldName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(columnOldName));
+    if ( columnNewName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(columnNewName));
+    try
+    {
+      if ( CheckColumn(tableName, columnOldName) )
+        Execute($"ALTER TABLE [{tableName}] RENAME COLUMN [{columnOldName}] TO [{columnNewName}];");
+    }
+    catch ( Exception ex )
+    {
+      throw new SQLiteException(SysTranslations.DBRenameTableError.GetLang(tableName, columnOldName, columnNewName), ex);
     }
   }
 
