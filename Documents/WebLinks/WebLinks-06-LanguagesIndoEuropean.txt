@@ -51,6 +51,9 @@ URL = https://fr.wikipedia.org/wiki/Grec
 Name = (FR) Précis de grammaire grecque @ bcs.fltr.ucl.ac.be
 URL = http://bcs.fltr.ucl.ac.be/GraGre/00.Plan.htm
 
+Name = (FR) Dico Latin @ dicolatin.com
+URL = https://www.dicolatin.com
+
 -
 
 Name = (EN) Proto-Germanic @ en.wikipedia.org
