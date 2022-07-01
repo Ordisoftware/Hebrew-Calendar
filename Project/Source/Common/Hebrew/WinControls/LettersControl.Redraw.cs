@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-07 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>

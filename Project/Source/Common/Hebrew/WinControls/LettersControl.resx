@@ -144,30 +144,6 @@
   <data name="&gt;&gt;PanelLetters.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="PanelSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 160</value>
-  </data>
-  <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 8</value>
-  </data>
-  <data name="PanelSeparator.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;PanelSeparator.Name" xml:space="preserve">
-    <value>PanelSeparator</value>
-  </data>
-  <data name="&gt;&gt;PanelSeparator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelSeparator.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="ContextMenuLetter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>25, 19</value>
   </metadata>
@@ -188,7 +164,7 @@
   <data name="ActionLetterAddAtEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAOBJREFUOE9jGAXYwabNWza3tHX+h3LBoL6+7n99ff0HKBc/WLdh0//6xha4AVVV
+        vAAADrwBlbxySQAAAOBJREFUOE9jGAXYwabNWza3tHX+h3LBoL6+7n99ff0HKBc/WLdh0//6xha4AVVV
         Vf8fPX7yv66uDsVQnGD12vX/q2vqwYorKyv+P3v+/P/CxUv/19bWEmfAitVr/5dV1Pyvqa7+/+Hjp/+r
         gAZu2LSFeAOWrVj1v7ik/H9NTc3/t+/e/t+5Z+//vQcPgflQJfjB4qXL/+cXFIMUG4O88ODR4//nL14i
         3oAFS5b+z84thCk2BgXi0WPHiQ/ECZOnHMrIzEFWbAyMQlAYfIbyCQIVIDaGMOEAxDeAMIcRYGAAAHbg
@@ -204,7 +180,7 @@
   <data name="ActionLetterAddAtStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAOBJREFUOE9jGAXYQX19/Qcg/g/lgkFLW+f/TZu3bIZy8YO6urr/9+8/+F9VVQU3
+        vAAADrwBlbxySQAAAOBJREFUOE9jGAXYQX19/Qcg/g/lgkFLW+f/TZu3bIZy8YO6urr/9+8/+F9VVQU3
         pL6x5f+6DZtQDMUJamtr/y9cvPT/o8dP/ldWVoA1VdfU/1+9dj3xBmzYtAWs4e279/9rqqv/l1XU/F+x
         ei1xBtTU1Pzfd/DQ/5179/1/9fr1fxC/uKT8/7IVq4g34PzFS//v3rsP9EIlSJNxfkHx/8VLlxNnACgQ
         Dxw69L8aEojGILHs3ML/C5YsJc6A0tLSg9BoBGsGgYzMnP8TJk85BOUSBCpADNcMBSA+SHx4AQYGABFB
@@ -252,6 +228,165 @@
   <data name="&gt;&gt;ContextMenuLetter.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="EditCopyWithFinalLetter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 5</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.Text" xml:space="preserve">
+    <value>Copy with final letter</value>
+  </data>
+  <data name="&gt;&gt;EditCopyWithFinalLetter.Name" xml:space="preserve">
+    <value>EditCopyWithFinalLetter</value>
+  </data>
+  <data name="&gt;&gt;EditCopyWithFinalLetter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCopyWithFinalLetter.Parent" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;EditCopyWithFinalLetter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionDelFirst.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionDelFirst.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionDelFirst.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ActionDelFirst.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionDelFirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>478, 1</value>
+  </data>
+  <data name="ActionDelFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 24</value>
+  </data>
+  <data name="ActionDelFirst.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="ActionDelFirst.Text" xml:space="preserve">
+    <value>&gt; -</value>
+  </data>
+  <data name="&gt;&gt;ActionDelFirst.Name" xml:space="preserve">
+    <value>ActionDelFirst</value>
+  </data>
+  <data name="&gt;&gt;ActionDelFirst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionDelFirst.Parent" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;ActionDelFirst.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionDelLast.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionDelLast.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionDelLast.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ActionDelLast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionDelLast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>418, 1</value>
+  </data>
+  <data name="ActionDelLast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 24</value>
+  </data>
+  <data name="ActionDelLast.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="ActionDelLast.Text" xml:space="preserve">
+    <value>- &lt;</value>
+  </data>
+  <data name="&gt;&gt;ActionDelLast.Name" xml:space="preserve">
+    <value>ActionDelLast</value>
+  </data>
+  <data name="&gt;&gt;ActionDelLast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionDelLast.Parent" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;ActionDelLast.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ActionReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionReset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ActionReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>451, 1</value>
+  </data>
+  <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="ActionReset.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="ActionReset.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;ActionReset.Name" xml:space="preserve">
+    <value>ActionReset</value>
+  </data>
+  <data name="&gt;&gt;ActionReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionReset.Parent" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="PanelSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 160</value>
+  </data>
+  <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 28</value>
+  </data>
+  <data name="PanelSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Name" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="TextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -259,7 +394,7 @@
     <value>Hebrew, 18pt</value>
   </data>
   <data name="TextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 168</value>
+    <value>0, 188</value>
   </data>
   <data name="TextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>510, 42</value>
@@ -274,7 +409,7 @@
     <value>TextBox</value>
   </data>
   <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.13.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.14.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
     <value>$this</value>
@@ -289,7 +424,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 210</value>
+    <value>510, 230</value>
   </data>
   <data name="&gt;&gt;ActionLetterAddAtCaret.Name" xml:space="preserve">
     <value>ActionLetterAddAtCaret</value>
