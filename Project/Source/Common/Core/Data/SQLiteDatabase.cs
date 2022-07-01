@@ -90,7 +90,7 @@ abstract class SQLiteDatabase : IDisposable
   protected virtual void Dispose(bool disposing)
   {
     if ( Disposed ) return;
-    if ( disposing ) Connection.Dispose();
+    if ( disposing ) Connection?.Dispose();
     Disposed = true;
   }
 
