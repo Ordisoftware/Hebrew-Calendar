@@ -148,4 +148,7 @@
   <data name="ContextMenuLetter.Size" type="System.Drawing.Size, System.Drawing">
     <value>375, 98</value>
   </data>
+  <data name="EditCopyWithFinalLetter.Text" xml:space="preserve">
+    <value>Copier avec lettre finale</value>
+  </data>
 </root>
