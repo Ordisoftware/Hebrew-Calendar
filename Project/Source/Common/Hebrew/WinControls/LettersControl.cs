@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-07 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -56,9 +56,17 @@ partial class LettersControl : UserControl
   }
 
   /// <summary>
+  /// Indicates the initial word.
+  /// </summary>
+  public string InititialWord
+  {
+    get;
+    set;
+  }
+
+  /// <summary>
   /// Indicates Input Text property.
   /// </summary>
-  /// <value>The input text.</value>
   [DefaultValue("")]
   public string InputText
   {
@@ -468,6 +476,30 @@ partial class LettersControl : UserControl
   private void ActionLetterViewDetails_VisibleChanged(object sender, EventArgs e)
   {
     ContextMenuDetailsVisible = ActionLetterViewDetails.Visible;
+  }
+
+  private void ActionDelFirst_Click(object sender, EventArgs e)
+  {
+    if ( TextBox.Text.Length < 1 ) return;
+    TextBox.SelectionStart = TextBox.TextLength - 1;
+    TextBox.SelectionLength = 1;
+    Focus(LettersControlFocusSelect.Keep);
+    TextBoxEx.ActionDelete.PerformClick();
+  }
+
+  private void ActionDelLast_Click(object sender, EventArgs e)
+  {
+    if ( TextBox.Text.Length < 1 ) return;
+    TextBox.SelectionStart = 0;
+    TextBox.SelectionLength = 1;
+    Focus(LettersControlFocusSelect.Keep);
+    TextBoxEx.ActionDelete.PerformClick();
+  }
+
+  private void ActionReset_Click(object sender, EventArgs e)
+  {
+    TextBox.Text = InititialWord;
+    Focus(LettersControlFocusSelect.None);
   }
 
 }

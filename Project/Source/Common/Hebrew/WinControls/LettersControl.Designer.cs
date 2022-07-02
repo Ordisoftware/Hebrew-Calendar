@@ -31,15 +31,20 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LettersControl));
       this.PanelLetters = new System.Windows.Forms.Panel();
-      this.PanelSeparator = new System.Windows.Forms.Panel();
       this.ContextMenuLetter = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionLetterAddAtCaret = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLetterAddAtEnd = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionLetterAddAtStart = new System.Windows.Forms.ToolStripMenuItem();
       this.MenuItemSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionLetterViewDetails = new System.Windows.Forms.ToolStripMenuItem();
+      this.PanelSeparator = new System.Windows.Forms.Panel();
+      this.EditCopyWithFinalLetter = new System.Windows.Forms.CheckBox();
+      this.ActionDelFirst = new System.Windows.Forms.Button();
+      this.ActionDelLast = new System.Windows.Forms.Button();
+      this.ActionReset = new System.Windows.Forms.Button();
       this.TextBox = new Ordisoftware.Core.TextBoxEx();
       this.ContextMenuLetter.SuspendLayout();
+      this.PanelSeparator.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelLetters
@@ -47,11 +52,6 @@
       this.PanelLetters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       resources.ApplyResources(this.PanelLetters, "PanelLetters");
       this.PanelLetters.Name = "PanelLetters";
-      // 
-      // PanelSeparator
-      // 
-      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
-      this.PanelSeparator.Name = "PanelSeparator";
       // 
       // ContextMenuLetter
       // 
@@ -95,11 +95,52 @@
       this.ActionLetterViewDetails.Click += new System.EventHandler(this.ActionLetterViewDetails_Click);
       this.ActionLetterViewDetails.VisibleChanged += new System.EventHandler(this.ActionLetterViewDetails_VisibleChanged);
       // 
+      // PanelSeparator
+      // 
+      this.PanelSeparator.Controls.Add(this.EditCopyWithFinalLetter);
+      this.PanelSeparator.Controls.Add(this.ActionDelFirst);
+      this.PanelSeparator.Controls.Add(this.ActionDelLast);
+      this.PanelSeparator.Controls.Add(this.ActionReset);
+      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
+      this.PanelSeparator.Name = "PanelSeparator";
+      // 
+      // EditCopyWithFinalLetter
+      // 
+      resources.ApplyResources(this.EditCopyWithFinalLetter, "EditCopyWithFinalLetter");
+      this.EditCopyWithFinalLetter.Checked = true;
+      this.EditCopyWithFinalLetter.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditCopyWithFinalLetter.Name = "EditCopyWithFinalLetter";
+      // 
+      // ActionDelFirst
+      // 
+      resources.ApplyResources(this.ActionDelFirst, "ActionDelFirst");
+      this.ActionDelFirst.FlatAppearance.BorderSize = 0;
+      this.ActionDelFirst.Name = "ActionDelFirst";
+      this.ActionDelFirst.UseVisualStyleBackColor = true;
+      this.ActionDelFirst.Click += new System.EventHandler(this.ActionDelFirst_Click);
+      // 
+      // ActionDelLast
+      // 
+      resources.ApplyResources(this.ActionDelLast, "ActionDelLast");
+      this.ActionDelLast.FlatAppearance.BorderSize = 0;
+      this.ActionDelLast.Name = "ActionDelLast";
+      this.ActionDelLast.UseVisualStyleBackColor = true;
+      this.ActionDelLast.Click += new System.EventHandler(this.ActionDelLast_Click);
+      // 
+      // ActionReset
+      // 
+      this.ActionReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.Name = "ActionReset";
+      this.ActionReset.UseVisualStyleBackColor = true;
+      this.ActionReset.Click += new System.EventHandler(this.ActionReset_Click);
+      // 
       // TextBox
       // 
       this.TextBox.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Beginning;
       resources.ApplyResources(this.TextBox, "TextBox");
       this.TextBox.Name = "TextBox";
+      this.TextBox.SpellCheckAllowed = false;
       this.TextBox.InsertingText += new Ordisoftware.Core.InsertingTextEventHandler(this.Input_TextChanging);
       this.TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_KeyPress);
       this.TextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_KeyUp);
@@ -117,13 +158,14 @@
       this.SizeChanged += new System.EventHandler(this.LettersControl_SizeChanged);
       this.Paint += new System.Windows.Forms.PaintEventHandler(this.LettersControl_Paint);
       this.ContextMenuLetter.ResumeLayout(false);
+      this.PanelSeparator.ResumeLayout(false);
+      this.PanelSeparator.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
     }
 
     #endregion
-    private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Panel PanelLetters;
     public Ordisoftware.Core.TextBoxEx TextBox;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterAddAtStart;
@@ -132,5 +174,10 @@
     private System.Windows.Forms.ToolStripSeparator MenuItemSeparator;
     private System.Windows.Forms.ToolStripMenuItem ActionLetterViewDetails;
     private ContextMenuStrip ContextMenuLetter;
+    private Panel PanelSeparator;
+    public CheckBox EditCopyWithFinalLetter;
+    public Button ActionDelFirst;
+    public Button ActionDelLast;
+    public Button ActionReset;
   }
 }

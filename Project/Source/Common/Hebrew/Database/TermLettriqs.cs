@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-08 </edited>
+/// <edited> 2022-07 </edited>
 namespace Ordisoftware.Hebrew;
 
 using SQLite;
@@ -24,8 +24,10 @@ public class TermLettriq
   public string ID { get; set; }
   public string TermID { get; set; }
   public string ConcordanceID { get; set; }
+  public string ConcordanceIDRoot { get; set; }
   public string Transcription { get; set; }
   public string Dictionary { get; set; }
+  public string Title { get; set; }
   public string Sentence { get; set; }
   public string Memo { get; set; }
   public List<TermAnalysis> Analyzes
