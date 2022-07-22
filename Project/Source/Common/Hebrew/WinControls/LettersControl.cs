@@ -496,10 +496,99 @@ partial class LettersControl : UserControl
     TextBoxEx.ActionDelete.PerformClick();
   }
 
+  public event EventHandler Cleared;
+
+  private void ActionClear_Click(object sender, EventArgs e)
+  {
+    TextBox.SelectAll();
+    TextBox.Paste("");
+    EditGematriaSimple.Text = "";
+    EditGematriaFull.Text = "";
+    Focus();
+    Cleared?.Invoke(this, EventArgs.Empty);
+  }
+
   private void ActionReset_Click(object sender, EventArgs e)
   {
     TextBox.Text = InititialWord;
     Focus(LettersControlFocusSelect.None);
+  }
+
+  private void ActionCopyToHebrew_Click(object sender, EventArgs e)
+  {
+    if ( TextBox.Text.Length == 0 ) return;
+    string str = TextBox.Text;
+    if ( EditCopyWithFinalLetter.Checked )
+      str = HebrewAlphabet.SetFinal(str, true);
+    Clipboard.SetText(str);
+    DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(),
+                                      Globals.ClipboardSoundFilePath);
+    Focus(LettersControlFocusSelect.All);
+
+  }
+
+  private void ActionCopyToUnicode_Click(object sender, EventArgs e)
+  {
+    if ( TextBox.Text.Length == 0 ) return;
+    string str = TextBox.Text;
+    if ( EditCopyWithFinalLetter.Checked )
+      str = HebrewAlphabet.SetFinal(str, true);
+    Clipboard.SetText(HebrewAlphabet.ToUnicode(str));
+    DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(), Globals.ClipboardSoundFilePath);
+    Focus(LettersControlFocusSelect.All);
+
+  }
+
+  private void ActionPaste_Click(object sender, EventArgs e)
+  {
+    Focus(LettersControlFocusSelect.All);
+    TextBoxEx.ActionPaste.PerformClick();
+  }
+
+  private void ActionSearchOnline_Click(object sender, EventArgs e)
+  {
+    ContextMenuSearchOnline.Show(ActionSearchOnline, new Point(0, ActionSearchOnline.Height));
+  }
+
+  private void LabelClipboardContentType_MouseHover(object sender, EventArgs e)
+  {
+    ToolTipClipboard.Show(Clipboard.GetText(), LabelClipboardContentType);
+  }
+
+  private void EditGematria_TextChanged(object sender, EventArgs e)
+  {
+    var textbox = sender as TextBox;
+    if ( textbox.Text == "0" ) textbox.Text = "";
+  }
+
+  public bool UpdateControls()
+  {
+    bool enabled = TextBox.Text.Length >= 1;
+    ActionReset.Enabled = !InititialWord.IsNullOrEmpty();
+    ActionClear.Enabled = enabled;
+    ActionDelFirst.Enabled = enabled;
+    ActionDelLast.Enabled = enabled;
+    ActionCopyToHebrew.Enabled = enabled;
+    ActionCopyToUnicode.Enabled = enabled;
+    ActionSearchOnline.Enabled = enabled;
+    return enabled;
+  }
+
+  internal void CheckClipboardContentType()
+  {
+    string strContent = Clipboard.GetText();
+    ActionPaste.Enabled = !strContent.IsNullOrEmpty() /* TODO && strContent.Length <= Settings.HebrewTextBoxMaxLength*/;
+    if ( ActionPaste.Enabled )
+    {
+      var strLabel = HebrewAlphabet.IsValidUnicode(strContent)
+        ? HebrewTranslations.Unicode.GetLang()
+        : HebrewAlphabet.IsValidHebrew(strContent)
+          ? HebrewTranslations.Hebrew.GetLang()
+          : SysTranslations.Uncertain.GetLang();
+      LabelClipboardContentType.Text = $"{strLabel}{Globals.NL}({strContent.Length})";
+    }
+    else
+      LabelClipboardContentType.Text = SysTranslations.UnknownSlot.GetLang().TrimFirstLast().Titleize();
   }
 
 }
