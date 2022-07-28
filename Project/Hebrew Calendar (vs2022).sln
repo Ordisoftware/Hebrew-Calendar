@@ -20,6 +20,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		color = Green
 		SolutionGuid = {AE6FDCAE-3810-4D65-84FE-F724A8C28D1C}
 	EndGlobalSection
 EndGlobal
