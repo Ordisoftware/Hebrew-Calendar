@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Core;
 
 [SuppressMessage("Performance", "U2U1003:Avoid declaring methods used in delegate constructors static", Justification = "N/A")]
@@ -124,6 +124,7 @@ partial class TextBoxEx
         else
           Clipboard.Clear();
       }
+      Application.DoEvents();
       textbox.Paste();
       if ( textbox.CaretAfterPaste == CaretPositionAfterPaste.Beginning )
         textbox.SelectionStart = pos;

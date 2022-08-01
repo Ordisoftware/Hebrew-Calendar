@@ -28,7 +28,7 @@ static partial class BookInfos
       { TanakBook.Bamidbar, "Bamidbar" },
       { TanakBook.Devarim, "Devarim" },
       // Nevi'im 
-      { TanakBook.Yehoshoua, "Yehoshouah''" },
+      { TanakBook.Yehoshoua, "Yehoshouah'" },
       { TanakBook.Shoftim, "Shoftim" },
       { TanakBook.Shemouel_I, "Shemouel I" },
       { TanakBook.Shemouel_II, "Shemouel II" },
