@@ -45,9 +45,7 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.PanelGematria = new System.Windows.Forms.Panel();
       this.LabelGematriaSimple = new System.Windows.Forms.Label();
-      this.EditGematriaFull = new Ordisoftware.Core.TextBoxEx();
       this.LabelGematriaFull = new System.Windows.Forms.Label();
-      this.EditGematriaSimple = new Ordisoftware.Core.TextBoxEx();
       this.LabelClipboardContentType = new System.Windows.Forms.Label();
       this.ActionPaste = new System.Windows.Forms.Button();
       this.ActionCopyToHebrew = new System.Windows.Forms.Button();
@@ -60,6 +58,8 @@
       this.ToolTipClipboard = new System.Windows.Forms.ToolTip(this.components);
       this.panel2 = new System.Windows.Forms.Panel();
       this.TextBox = new Ordisoftware.Core.TextBoxEx();
+      this.EditGematriaFull = new Ordisoftware.Core.TextBoxEx();
+      this.EditGematriaSimple = new Ordisoftware.Core.TextBoxEx();
       this.ContextMenuLetter.SuspendLayout();
       this.PanelSeparator.SuspendLayout();
       this.PanelBottom.SuspendLayout();
@@ -183,32 +183,10 @@
       resources.ApplyResources(this.LabelGematriaSimple, "LabelGematriaSimple");
       this.LabelGematriaSimple.Name = "LabelGematriaSimple";
       // 
-      // EditGematriaFull
-      // 
-      resources.ApplyResources(this.EditGematriaFull, "EditGematriaFull");
-      this.EditGematriaFull.BackColor = System.Drawing.Color.LavenderBlush;
-      this.EditGematriaFull.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditGematriaFull.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditGematriaFull.Name = "EditGematriaFull";
-      this.EditGematriaFull.ReadOnly = true;
-      this.EditGematriaFull.SpellCheckAllowed = false;
-      this.EditGematriaFull.TextChanged += new System.EventHandler(this.EditGematria_TextChanged);
-      // 
       // LabelGematriaFull
       // 
       resources.ApplyResources(this.LabelGematriaFull, "LabelGematriaFull");
       this.LabelGematriaFull.Name = "LabelGematriaFull";
-      // 
-      // EditGematriaSimple
-      // 
-      resources.ApplyResources(this.EditGematriaSimple, "EditGematriaSimple");
-      this.EditGematriaSimple.BackColor = System.Drawing.Color.LavenderBlush;
-      this.EditGematriaSimple.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditGematriaSimple.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditGematriaSimple.Name = "EditGematriaSimple";
-      this.EditGematriaSimple.ReadOnly = true;
-      this.EditGematriaSimple.SpellCheckAllowed = false;
-      this.EditGematriaSimple.TextChanged += new System.EventHandler(this.EditGematria_TextChanged);
       // 
       // LabelClipboardContentType
       // 
@@ -288,6 +266,28 @@
       this.TextBox.InsertingText += new Ordisoftware.Core.InsertingTextEventHandler(this.Input_TextChanging);
       this.TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_KeyPress);
       this.TextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_KeyUp);
+      // 
+      // EditGematriaFull
+      // 
+      resources.ApplyResources(this.EditGematriaFull, "EditGematriaFull");
+      this.EditGematriaFull.BackColor = System.Drawing.Color.LavenderBlush;
+      this.EditGematriaFull.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditGematriaFull.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditGematriaFull.Name = "EditGematriaFull";
+      this.EditGematriaFull.ReadOnly = true;
+      this.EditGematriaFull.SpellCheckAllowed = false;
+      this.EditGematriaFull.TextChanged += new System.EventHandler(this.EditGematria_TextChanged);
+      // 
+      // EditGematriaSimple
+      // 
+      resources.ApplyResources(this.EditGematriaSimple, "EditGematriaSimple");
+      this.EditGematriaSimple.BackColor = System.Drawing.Color.LavenderBlush;
+      this.EditGematriaSimple.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditGematriaSimple.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditGematriaSimple.Name = "EditGematriaSimple";
+      this.EditGematriaSimple.ReadOnly = true;
+      this.EditGematriaSimple.SpellCheckAllowed = false;
+      this.EditGematriaSimple.TextChanged += new System.EventHandler(this.EditGematria_TextChanged);
       // 
       // LettersControl
       // 

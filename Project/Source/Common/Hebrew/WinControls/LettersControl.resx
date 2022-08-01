@@ -484,7 +484,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="EditGematriaFull.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 18</value>
+    <value>112, 18</value>
   </data>
   <data name="EditGematriaFull.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -496,7 +496,7 @@
     <value>EditGematriaFull</value>
   </data>
   <data name="&gt;&gt;EditGematriaFull.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.14.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGematriaFull.Parent" xml:space="preserve">
     <value>PanelGematria</value>
@@ -517,7 +517,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGematriaFull.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 0</value>
+    <value>110, 0</value>
   </data>
   <data name="LabelGematriaFull.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -556,7 +556,7 @@
     <value>EditGematriaSimple</value>
   </data>
   <data name="&gt;&gt;EditGematriaSimple.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.14.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGematriaSimple.Parent" xml:space="preserve">
     <value>PanelGematria</value>
@@ -571,7 +571,7 @@
     <value>0, 8</value>
   </data>
   <data name="PanelGematria.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 42</value>
+    <value>227, 42</value>
   </data>
   <data name="PanelGematria.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -1000,7 +1000,7 @@
     <value>TextBox</value>
   </data>
   <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.14.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
     <value>panel2</value>
@@ -1054,7 +1054,7 @@
     <value>TextBox</value>
   </data>
   <data name="&gt;&gt;TextBox.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Words, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=6.14.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;TextBox.Parent" xml:space="preserve">
     <value>panel2</value>
