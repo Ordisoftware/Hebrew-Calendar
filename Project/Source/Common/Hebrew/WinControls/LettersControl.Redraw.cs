@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-07 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -127,7 +127,8 @@ partial class LettersControl
         }
       }
       Height = posY + deltaBetweenLines + deltaY + deltaValues + deltaKeys + deltaValue5
-             + PanelSeparator.Height + TextBox.Height + PanelBottom.Height;
+             + PanelSeparator.Height + TextBox.Height;
+      if ( PanelBottom.Visible ) Height += PanelBottom.Height;
       PanelLetters.Controls.AddRange(controls);
     }
     catch ( Exception ex )

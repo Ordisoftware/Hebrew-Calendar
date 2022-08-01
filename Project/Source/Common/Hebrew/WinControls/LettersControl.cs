@@ -65,6 +65,26 @@ partial class LettersControl : UserControl
   }
 
   /// <summary>
+  /// Indicates if the bottom panel is visible
+  /// </summary>
+  [DefaultValue(true)]
+  public bool ShowBottomPanel
+  {
+    get => PanelBottom.Visible;
+    set => PanelBottom.Visible = value;
+  }
+
+  /// <summary>
+  /// Indicates if gematria is visible
+  /// </summary>
+  [DefaultValue(true)]
+  public bool ShowGematria
+  {
+    get => PanelGematria.Visible;
+    set => PanelGematria.Visible = value;
+  }
+
+  /// <summary>
   /// Indicates Input Text property.
   /// </summary>
   [DefaultValue("")]
@@ -542,7 +562,8 @@ partial class LettersControl : UserControl
   private void ActionPaste_Click(object sender, EventArgs e)
   {
     Focus(LettersControlFocusSelect.All);
-    TextBoxEx.ActionPaste.PerformClick();
+    TextBox.Text = Clipboard.GetText();
+    //TextBoxEx.ActionPaste.PerformClick();
   }
 
   private void ActionSearchOnline_Click(object sender, EventArgs e)
