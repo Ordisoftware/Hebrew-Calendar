@@ -303,7 +303,6 @@ partial class LettersControl : UserControl
     PanelLetters.BackColor = Color.FromKnownColor(DefaultPanelLettersBackColor);
   }
 
-
   /// <summary>
   /// Control load event.
   /// </summary>
@@ -311,6 +310,7 @@ partial class LettersControl : UserControl
   {
     ActionLetterViewDetails_VisibleChanged(null, null);
     Redraw();
+    UpdateControls();
   }
 
   /// <summary>
@@ -586,6 +586,7 @@ partial class LettersControl : UserControl
   {
     bool enabled = TextBox.Text.Length >= 1;
     ActionReset.Enabled = !InititialWord.IsNullOrEmpty();
+    ActionReset.Text = ActionReset.Enabled ? "-" : "";
     ActionClear.Enabled = enabled;
     ActionDelFirst.Enabled = enabled;
     ActionDelLast.Enabled = enabled;
