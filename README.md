@@ -382,14 +382,13 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Changelog
 
-#### In progress for the end of 2022 or the beginning of 2023 - Version 10.0
+#### In progress - Version 10.0
 
-- Add option to generate a fixed interval (if the current year is within).
+- Add comments to bookmarks.
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
-- Add comments to bookmarks.
-- Add menu for celebrations food notice in Tools.
 - Add import button to the GPS box on the first start.
+- Add option to generate a fixed interval (if the current year is within).
 - Improve notices to be in only one window having a page control like preferences.
 - Improve weekly parashah description box to have access to the tools for the study.
 - Improve weekly parashah description box to have a screenshot button.
@@ -400,6 +399,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Optimize populating monthly view and thus startup time.
 - Add open system calculator button in DatesDiffCalculator form.
 - Add parashah name in the title bar of description box.
+- Add menu for celebrations food notice in Tools.
 - Add menu for transcription guide in Tools and others windows.
 - Add menu for grammar guide in Tools menu and others windows.
 - Add option to use two days for Shebih'i Shel Pessa'h outside of Israël.
