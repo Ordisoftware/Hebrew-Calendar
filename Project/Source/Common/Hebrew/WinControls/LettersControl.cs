@@ -67,12 +67,12 @@ partial class LettersControl : UserControl
   /// <summary>
   /// Indicates if the bottom panel is visible
   /// </summary>
-  [DefaultValue(true)]
-  public bool ShowBottomPanel
-  {
-    get => PanelBottom.Visible;
-    set => PanelBottom.Visible = value;
-  }
+  //[DefaultValue(true)]
+  //public bool ShowBottomPanel
+  //{
+  //  get => PanelBottom.Visible;
+  //  set => PanelBottom.Visible = value;
+  //}
 
   /// <summary>
   /// Indicates if gematria is visible

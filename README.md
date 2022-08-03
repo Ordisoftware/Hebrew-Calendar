@@ -393,6 +393,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Improve notices to be in only one window having a page control like preferences.
 - Improve weekly parashah description box to have access to the tools for the study.
 - Improve weekly parashah description box to have a screenshot button.
+- Update AASharp dependency.
 
 #### 2022.06.21 - Version 9.29
 
