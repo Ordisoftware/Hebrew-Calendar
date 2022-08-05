@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -736,13 +736,23 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by ActionOpenExportFolder for click events.
+  /// Event handler. Called by ActionOpenFolderExport for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionOpenExportFolder_Click(object sender, EventArgs e)
+  private void ActionOpenFolderExport_Click(object sender, EventArgs e)
   {
     SystemManager.RunShell(Settings.GetExportDirectory());
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionOpenFolderDatabase for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionOpenFolderDatabase_Click(object sender, EventArgs e)
+  {
+    SystemManager.RunShell(Globals.DatabaseFolderPath);
   }
 
   /// <summary>
@@ -1139,7 +1149,6 @@ partial class MainForm : Form
     MenuEnableReminder.PerformClick();
   }
 
-
   /// <summary>
   /// Event handler. Called by TimerMidnight for tick events.
   /// </summary>
@@ -1299,5 +1308,21 @@ partial class MainForm : Form
   }
 
   #endregion
+
+  private void ActionTakeScreenshotWindow_Click(object sender, EventArgs e)
+  {
+    using var bitmap = this.GetBitmap();
+    Clipboard.SetImage(bitmap);
+    DisplayManager.ShowSuccessOrSound(SysTranslations.ScreenshotDone.GetLang(),
+                                      Globals.ScreenshotSoundFilePath);
+  }
+
+  private void ActionTakeScreenshotView_Click(object sender, EventArgs e)
+  {
+    using var bitmap = PanelMainOuter1.GetBitmap();
+    Clipboard.SetImage(bitmap);
+    DisplayManager.ShowSuccessOrSound(SysTranslations.ScreenshotDone.GetLang(),
+                                      Globals.ScreenshotSoundFilePath);
+  }
 
 }

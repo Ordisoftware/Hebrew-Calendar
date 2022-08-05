@@ -229,7 +229,7 @@
     <value>MonthlyCalendar</value>
   </data>
   <data name="&gt;&gt;MonthlyCalendar.Type" xml:space="preserve">
-    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=9.30.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;MonthlyCalendar.Parent" xml:space="preserve">
     <value>PanelViewMonthlyCalendar</value>
@@ -950,13 +950,13 @@
 </value>
   </data>
   <data name="MenuShowHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuShowHide.Text" xml:space="preserve">
     <value>Restore</value>
   </data>
   <data name="SeparatorTrayMenu1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuNavigate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1004,7 +1004,7 @@
 </value>
   </data>
   <data name="MenuNavigate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuNavigate.Text" xml:space="preserve">
     <value>Navigate</value>
@@ -1045,13 +1045,13 @@
 </value>
   </data>
   <data name="MenuCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuCelebrations.Text" xml:space="preserve">
     <value>Celebrations</value>
   </data>
   <data name="SeparatorTrayMenu3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuResetReminder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1069,7 +1069,7 @@
 </value>
   </data>
   <data name="MenuResetReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuResetReminder.Text" xml:space="preserve">
     <value>Reset reminder</value>
@@ -1094,7 +1094,7 @@
 </value>
   </data>
   <data name="MenuEnableReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuEnableReminder.Text" xml:space="preserve">
     <value>Enable reminder</value>
@@ -1117,13 +1117,13 @@
 </value>
   </data>
   <data name="MenuDisableReminder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuDisableReminder.Text" xml:space="preserve">
     <value>Disable reminder</value>
   </data>
   <data name="SeparatorTrayMenu2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuTools.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1145,7 +1145,7 @@
 </value>
   </data>
   <data name="MenuTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuTools.Text" xml:space="preserve">
     <value>Tools</value>
@@ -1167,13 +1167,13 @@
 </value>
   </data>
   <data name="MenuWebLinks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuWebLinks.Text" xml:space="preserve">
     <value>Web links</value>
   </data>
   <data name="SeparatorTrayMenu5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuInformation.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1192,7 +1192,7 @@
 </value>
   </data>
   <data name="MenuInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuInformation.Text" xml:space="preserve">
     <value>Information</value>
@@ -1210,13 +1210,13 @@
 </value>
   </data>
   <data name="MenuPreferences.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuPreferences.Text" xml:space="preserve">
     <value>Preferences</value>
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>160, 6</value>
   </data>
   <data name="MenuExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1237,13 +1237,13 @@
 </value>
   </data>
   <data name="MenuExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="MenuExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="MenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 298</value>
+    <value>164, 276</value>
   </data>
   <data name="&gt;&gt;MenuTray.Name" xml:space="preserve">
     <value>MenuTray</value>
@@ -2088,7 +2088,7 @@
   <data name="toolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAf5JREFUOE+VkN1LU3EYx/fH+B9YSDinm9vuIlpNCSwIDIIG3Ri9aNucelFdh7dF
+        vAAADrwBlbxySQAAAf5JREFUOE+VkN1LU3EYx/fH+B9YSDinm9vuIlpNCSwIDIIG3Ri9aNucelFdh7dF
         F81tBufMnXNGEbqbihhERm9IL9ssme7YdNoy69vzrXU6k1PQDz7wO8/3+X2eh+MC4PImDFUA8cQ1uKM5
         dP8FZp64zl6Vb38KescNLG0DXaNZvKh/x6K5i6e1r44we7kBeMZ1edoScGqx9g2d5xU8rn7B2bsfcCZf
         wWlD0FvInTVmxbUduGO5dkFhZRf7RDBfbuJUbpmh42FWWG6ixy7oFYFe2sH+iwq0N1s4qVYYOh5mxttt
@@ -2471,6 +2471,69 @@
   <data name="ActionOpenCalculator.Text" xml:space="preserve">
     <value>Windows calculator</value>
   </data>
+  <data name="toolStripSeparator29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
+  </data>
+  <data name="ActionTakeScreenshotWindow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAArNJREFUOE+dk9lPE1EUxkffQKPEiOCb8cX4pImP/hEm/gMuCI2IJmpJo5SmZevG
+        0pZCWQoFgtDiA9NSuiCUTUzUsElZuoBsMQhTwlIjWODz3tuC8c14kl++OXfO983JZIajdbnQs55W4MYl
+        iiJOqsKVgF7/4SLVAg/SCr3rCbP7bY4zAPNEBOZxAfWE2jEBNaMbMJ0goJpQRTCMbUI/uQORM4z0Ak8H
+        RxPtwV1w4hGcUnxCqnYS143TuN0Ywh3bIrKcazgtscM6vQVO4kDzbBTCjStoD/3EBYUH3HlZNwaW9nDX
+        toD7nUsQda0gx7UKcc83vPZ9R9GQAEnfGnJ74zzvW8czXwTjwhHOyVzgkqXd+N+iXi4pLx4QDAYQDIUQ
+        CocJ85hfWICx2gRtmY4p7ek5nQkGAsxDvVxSYgOed0BXWQ39MUYTZmbnEBEEprSn93WGKvCdDuah3pMA
+        Q6WR6dERcHh4CL/fD95uh51A1T/lRyx2gNivGMrLdWw2EeBizb0HGRBLXqFIqUavr58YHXC7uuF1O5ny
+        PA+314vobhRabTnzsIDk/HhARmYWWtus0JRVwGJpxoeRYTw0TULUusr0/fAQamrrIEQiUKm0zPNXwKNM
+        EfJkcpRW6FFLBgMzU5B27aB+cJ/p3PQXGAxGLK+sokSpYh66PXdG5mZNZpYIbe02FlChr8Ty4jxybRuQ
+        vdlmuvQ1DA1ZfZq80OLieAB9OJei8AIHUWQ/zoY0sUFLaxssTc3Y3tzA3o8tphZLExosLfj4eRRqpRLY
+        30aKnHyJ6fn8xNmifrx4+gRWawcL6PUNot7cCHlBMeSKIqZ15gZ43/XD5xtAhVqJZEUf0gu92/R/uka4
+        JRW/7FGp1OwlqjRaQmkcbUIJSjU5V2tQIsvroR7CTRpwXFcJ9PBfoLOkOO43327AKRyZZp8AAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="ActionTakeScreenshotWindow.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionTakeScreenshotWindow.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F12</value>
+  </data>
+  <data name="ActionTakeScreenshotWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionTakeScreenshotWindow.Text" xml:space="preserve">
+    <value>Screenshot of the window</value>
+  </data>
+  <data name="ActionTakeScreenshotView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAArNJREFUOE+dk9lPE1EUxkffQKPEiOCb8cX4pImP/hEm/gMuCI2IJmpJo5SmZevG
+        0pZCWQoFgtDiA9NSuiCUTUzUsElZuoBsMQhTwlIjWODz3tuC8c14kl++OXfO983JZIajdbnQs55W4MYl
+        iiJOqsKVgF7/4SLVAg/SCr3rCbP7bY4zAPNEBOZxAfWE2jEBNaMbMJ0goJpQRTCMbUI/uQORM4z0Ak8H
+        RxPtwV1w4hGcUnxCqnYS143TuN0Ywh3bIrKcazgtscM6vQVO4kDzbBTCjStoD/3EBYUH3HlZNwaW9nDX
+        toD7nUsQda0gx7UKcc83vPZ9R9GQAEnfGnJ74zzvW8czXwTjwhHOyVzgkqXd+N+iXi4pLx4QDAYQDIUQ
+        CocJ85hfWICx2gRtmY4p7ek5nQkGAsxDvVxSYgOed0BXWQ39MUYTZmbnEBEEprSn93WGKvCdDuah3pMA
+        Q6WR6dERcHh4CL/fD95uh51A1T/lRyx2gNivGMrLdWw2EeBizb0HGRBLXqFIqUavr58YHXC7uuF1O5ny
+        PA+314vobhRabTnzsIDk/HhARmYWWtus0JRVwGJpxoeRYTw0TULUusr0/fAQamrrIEQiUKm0zPNXwKNM
+        EfJkcpRW6FFLBgMzU5B27aB+cJ/p3PQXGAxGLK+sokSpYh66PXdG5mZNZpYIbe02FlChr8Ty4jxybRuQ
+        vdlmuvQ1DA1ZfZq80OLieAB9OJei8AIHUWQ/zoY0sUFLaxssTc3Y3tzA3o8tphZLExosLfj4eRRqpRLY
+        30aKnHyJ6fn8xNmifrx4+gRWawcL6PUNot7cCHlBMeSKIqZ15gZ43/XD5xtAhVqJZEUf0gu92/R/uka4
+        JRW/7FGp1OwlqjRaQmkcbUIJSjU5V2tQIsvroR7CTRpwXFcJ9PBfoLOkOO43327AKRyZZp8AAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="ActionTakeScreenshotView.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionTakeScreenshotView.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Shift + F12</value>
+  </data>
+  <data name="ActionTakeScreenshotView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionTakeScreenshotView.Text" xml:space="preserve">
+    <value>Screenshot of the view</value>
+  </data>
   <data name="SeparatorMenuWeather.Size" type="System.Drawing.Size, System.Drawing">
     <value>281, 6</value>
   </data>
@@ -2538,7 +2601,7 @@
   <data name="toolStripSeparator9.Size" type="System.Drawing.Size, System.Drawing">
     <value>281, 6</value>
   </data>
-  <data name="ActionOpenExportFolder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionOpenFolderExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVDhPhZJbSJNxGMb/d7UiL4OuowgiPIwVlufpugsi
@@ -2555,20 +2618,50 @@
         aj9R/h8R8QvYyZvV54yKzwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionOpenExportFolder.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="ActionOpenFolderExport.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="ActionOpenExportFolder.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="ActionOpenFolderExport.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="ActionOpenExportFolder.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="ActionOpenFolderExport.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+E</value>
   </data>
-  <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOpenFolderExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 22</value>
   </data>
-  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+  <data name="ActionOpenFolderExport.Text" xml:space="preserve">
     <value>Open export folder</value>
+  </data>
+  <data name="ActionOpenFolderDatabase.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALNSURBVDhPfZLZTxNRFMbnzUT/Al9NNEYeSMBikFW2VyVG
+        o8ZEeWR5UAE1EX3QF6NIoGyl4AZa2SwCDbJGhKKkpe1My5QuTAEpSEoqstoW2s8zHazEGE7ym7vMOd89
+        59zLmGvTV9iqJJjkp8OIc06e5DYpz0RxirQYc01WbIT6rFhekXmK2WtiAHamgV82iYAThjIZjBXxEdG9
+        iP7m2jTPbjjDmOQJFMjDz12Hj81BcFkDbNkBn0PCL+KUxgARmgmLWOrSZX8FtnTw87lEAfyTeYQ4z0XA
+        modtWz527PkIOkRyQR+wlYloLomL3hVIBNaHsW2/gW1HIVEUZsdZhKDrNoTWs9CXyjBRGkvEwPAsBqby
+        OMoiEZwiVU0C1IP1XsrsDkKz9xCaKwFEvt3HbPs5eAeygW0LpW+iMowSAZZKmYKlOgGMqTKZSuiCqz0b
+        uieyMHrC8PQkPENXoB2qQp1KjcqmDoLGRjWUzZ0YGe7A8ON4LcNWp8InlMP2KoNuQ5AaJRK0Q939FpoR
+        DvzsMhxubwR+1oMeLQt5UxfHcDVp8GhvYnGwAFgboLqLqZxiYL6QHDSYXviJcYuAMZMtgrh2fV9BQ8sH
+        MFxtOoT2i9h0lAHeRoQWHgKLjwDPA1S+0YAXFvBjw4c1fxDeTT/WfEFa+2GbWSQBNRhzXQZ1NIUa1UbN
+        rAdW5RIbpahW9UDzaRzD4xz0FhesriUYrXMYnZhE36gOL1opA1aRsmpWpJNIKr20ZBgJlm6Gl8ugaO3H
+        xxEdRvQWGPgZ2Kh21jaPMaMVA2MTkgBZ9N1Lx68VXTh29Q+3zh+9nJN5OFv5fhC9o3po6UTxZPvcMswO
+        N76yUxj8YsDLts6wgGiHiIP/cKBGpXGquvvxWWcJBwruFViFJWgNPN5p+uh6mwXy29dOVChfD4qpPm/p
+        QEOzOtw4cS3u0/8oyW1/O0LE/gfaZ5jflq+abaxZrf8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionOpenFolderDatabase.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionOpenFolderDatabase.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="ActionOpenFolderDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
+    <value>Open database folder</value>
   </data>
   <data name="toolStripSeparator26.Size" type="System.Drawing.Size, System.Drawing">
     <value>281, 6</value>
@@ -3757,7 +3850,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAegBAgHoAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAQgBAwEIAQMBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -3994,7 +4087,7 @@
     <value>EditExportDataEnumsAsTranslations</value>
   </data>
   <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ToolStripCheckBoxItem, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ToolStripCheckBoxItem, Ordisoftware.Hebrew.Calendar, Version=9.30.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;LabelEnumsAsTranslations.Name" xml:space="preserve">
     <value>LabelEnumsAsTranslations</value>
@@ -4440,6 +4533,24 @@
   <data name="&gt;&gt;ActionOpenCalculator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator29.Name" xml:space="preserve">
+    <value>toolStripSeparator29</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator29.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionTakeScreenshotWindow.Name" xml:space="preserve">
+    <value>ActionTakeScreenshotWindow</value>
+  </data>
+  <data name="&gt;&gt;ActionTakeScreenshotWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionTakeScreenshotView.Name" xml:space="preserve">
+    <value>ActionTakeScreenshotView</value>
+  </data>
+  <data name="&gt;&gt;ActionTakeScreenshotView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;SeparatorMenuWeather.Name" xml:space="preserve">
     <value>SeparatorMenuWeather</value>
   </data>
@@ -4464,10 +4575,16 @@
   <data name="&gt;&gt;toolStripSeparator9.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpenExportFolder.Name" xml:space="preserve">
-    <value>ActionOpenExportFolder</value>
+  <data name="&gt;&gt;ActionOpenFolderExport.Name" xml:space="preserve">
+    <value>ActionOpenFolderExport</value>
   </data>
-  <data name="&gt;&gt;ActionOpenExportFolder.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenFolderExport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderDatabase.Name" xml:space="preserve">
+    <value>ActionOpenFolderDatabase</value>
+  </data>
+  <data name="&gt;&gt;ActionOpenFolderDatabase.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator26.Name" xml:space="preserve">
