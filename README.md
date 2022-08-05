@@ -189,7 +189,7 @@ You can use traditional sun days by modifying the option of the generator, hence
 
 #### What food for the celebrations?
 
-A description of Torah recipes for celebrations will be available with version 9.30:
+A description of Torah recipes for celebrations will be available soon:
 
 - Grilled Lamb for Pessa'h.
 - Diet without grains nor seeds nor fruits nor vegetables from orchard between the end of the first seven-week Omer and the day after the next Shabat.
@@ -393,6 +393,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Improve notices to be in only one window having a page control like preferences.
 - Improve weekly parashah description box to have access to the tools for the study.
 - Improve weekly parashah description box to have a screenshot button.
+- Improve food notice with details.
 
 #### 2022.08.05 - Version 9.30
 
