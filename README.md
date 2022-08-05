@@ -364,7 +364,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### Application
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
-- Add auto sort bookmarks.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
 - Add option to set primary source for check update between author's website or GitHub.
 - Add preference tab to setup keyboard shortcuts.
@@ -384,7 +383,9 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 10.0
 
+- Add import parashot board.
 - Add comments to bookmarks.
+- Add auto sort bookmarks.
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add import button to the GPS box on the first start.
