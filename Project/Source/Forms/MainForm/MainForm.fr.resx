@@ -424,7 +424,7 @@
   <data name="ActionOpenExportFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 22</value>
   </data>
-  <data name="ActionOpenExportFolder.Text" xml:space="preserve">
+  <data name="ActionOpenFolderExport.Text" xml:space="preserve">
     <value>Ouvrir le dossier d'export</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
@@ -661,5 +661,14 @@
   </data>
   <data name="ActionShowFoodNotice.Text" xml:space="preserve">
     <value>Notice sur la nourriture lors des célébrations</value>
+  </data>
+  <data name="ActionOpenFolderDatabase.Text" xml:space="preserve">
+    <value>Ouvrir le dossier de la base de données</value>
+  </data>
+  <data name="ActionTakeScreenshotView.Text" xml:space="preserve">
+    <value>Copie écran de la vue</value>
+  </data>
+  <data name="ActionTakeScreenshotWindow.Text" xml:space="preserve">
+    <value>Copie écran de la fenêtre</value>
   </data>
 </root>

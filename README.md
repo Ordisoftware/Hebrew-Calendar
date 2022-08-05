@@ -189,7 +189,7 @@ You can use traditional sun days by modifying the option of the generator, hence
 
 #### What food for the celebrations?
 
-A description of Torah recipes for celebrations will be available with version 9.30:
+A description of Torah recipes for celebrations will be available soon:
 
 - Grilled Lamb for Pessa'h.
 - Diet without grains nor seeds nor fruits nor vegetables from orchard between the end of the first seven-week Omer and the day after the next Shabat.
@@ -364,7 +364,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### Application
 
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
-- Add auto sort bookmarks.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
 - Add option to set primary source for check update between author's website or GitHub.
 - Add preference tab to setup keyboard shortcuts.
@@ -384,7 +383,9 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 10.0
 
+- Add import parashot board.
 - Add comments to bookmarks.
+- Add auto sort bookmarks.
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 - Add import button to the GPS box on the first start.
@@ -392,6 +393,12 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Improve notices to be in only one window having a page control like preferences.
 - Improve weekly parashah description box to have access to the tools for the study.
 - Improve weekly parashah description box to have a screenshot button.
+- Improve food notice with details.
+
+#### 2022.08.05 - Version 9.30
+
+- Add menu items in Tools to take a screenshot of the window or the current view.
+- Add menu item in Tools to open the database folder.
 - Update AASharp dependency.
 
 #### 2022.06.21 - Version 9.29
