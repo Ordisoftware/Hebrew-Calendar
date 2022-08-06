@@ -190,6 +190,7 @@ partial class MessageBoxEx : Form
     if ( DoShownSound ) DisplayManager.DoSound(IconStyle);
     this.Popup();
     this.ForceBringToFront();
+    Refresh();
   }
 
   private void MessageBoxEx_FormClosing(object sender, FormClosingEventArgs e)
