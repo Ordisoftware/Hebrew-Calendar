@@ -16,6 +16,9 @@ Lang/FR = Sites Web sur le judaïsme
 Name = (EN) Judaism 101 (Jew FAQ)
 URL = https://www.jewfaq.org
 
+Name = (EN) Mussar Center (Books and middot lists)
+URL = https://mussar.center/books.html
+
 -
 
 Name = (FR) Beit HaZohar
