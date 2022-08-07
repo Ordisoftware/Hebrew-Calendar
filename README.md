@@ -395,6 +395,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Improve weekly parashah description box to have a screenshot button.
 - Improve food notice with details.
 
+#### In progress - Version 9.31
+
+- Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.
+
 #### 2022.08.05 - Version 9.30
 
 - Add menu items in Tools to take a screenshot of the window or the current view.
