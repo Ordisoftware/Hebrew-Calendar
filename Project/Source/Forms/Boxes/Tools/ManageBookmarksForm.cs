@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ManageBookmarksForm : Form
@@ -47,7 +47,7 @@ partial class ManageBookmarksForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    SaveBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
+    SaveBookmarksDialog.InitialDirectory = Settings.GetExportSettingsDirectory();
     OpenBookmarksDialog.InitialDirectory = SaveBookmarksDialog.InitialDirectory;
     SaveBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
     OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
@@ -63,7 +63,8 @@ partial class ManageBookmarksForm : Form
     ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
     ActionClear.Enabled = ListBox.Items.Count > 0;
-    ActionSort.Enabled = ListBox.Items.Count > 0; // TODO add when ready : && !Settings.AutoSortBookmarks;
+    ActionSort.Enabled = ListBox.Items.Count > 0;
+    // TODO add when ready : && !Settings.AutoSortBookmarks;
     // TODO add when ready : ActionUp.Enabled = !Settings.AutoSortBookmarks;
     // TODO add when ready : ActionDown.Enabled = !Settings.AutoSortBookmarks;
   }
