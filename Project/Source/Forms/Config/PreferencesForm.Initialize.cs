@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Text;
@@ -29,7 +29,7 @@ partial class PreferencesForm
   /// </summary>
   private void DoFormLoad()
   {
-    SaveSettingsDialog.InitialDirectory = Program.Settings.GetExportDirectory();
+    SaveSettingsDialog.InitialDirectory = Program.Settings.GetExportSettingsDirectory();
     OpenSettingsDialog.InitialDirectory = SaveSettingsDialog.InitialDirectory;
     SaveSettingsDialog.Filter = ExportTarget.CreateFilters();
     OpenSettingsDialog.Filter = SaveSettingsDialog.Filter;

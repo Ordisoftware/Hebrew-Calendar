@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -69,7 +69,7 @@ partial class PreferencesForm
 
   private void OpenTheme()
   {
-    SystemManager.TryCatch(() => OpenThemeDialog.InitialDirectory = Settings.GetExportDirectory());
+    SystemManager.TryCatch(() => OpenThemeDialog.InitialDirectory = Settings.GetExportSettingsDirectory());
     if ( OpenThemeDialog.ShowDialog() != DialogResult.OK ) return;
     var items = new NullSafeOfStringDictionary<string>();
     if ( !items.LoadKeyValuePairs(OpenThemeDialog.FileName, "=") ) return;
@@ -91,7 +91,7 @@ partial class PreferencesForm
   {
     SystemManager.TryCatch(() =>
     {
-      SaveThemeDialog.InitialDirectory = Settings.GetExportDirectory();
+      SaveThemeDialog.InitialDirectory = Settings.GetExportSettingsDirectory();
       SaveThemeDialog.FileName = "Theme.ini";
     });
     if ( SaveThemeDialog.ShowDialog() != DialogResult.OK ) return;
