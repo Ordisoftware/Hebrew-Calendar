@@ -363,16 +363,24 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### Application
 
-- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Add auto-backup bookmarks.
+- Add import button to the GPS box on the first start.
 - Add option to indicate parashah and Torah reference in upper or sentence case.
 - Add option to set primary source for check update between author's website or GitHub.
 - Add preference tab to setup keyboard shortcuts.
 - Add dark theme for monthly view.
 - Add print boards.
+- Add option to generate a fixed interval (if the current year is within).
+- Improve weekly parashah description box to have access to the tools for the study.
+- Improve weekly parashah description box to have a screenshot button.
+- Improve notices to be in only one window having a page control like preferences.
+- Improve food notice with details and cooking recipes.
+- Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 - Rewrite the reminder.
 
 #### Data
 
+- Add import parashot board.
 - Add user reminders for other people's events like birthday and yahrzeit.
 - Add user reminders for personal solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -383,20 +391,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 10.0
 
-- Add import parashot board.
-- Add comments to bookmarks.
 - Add auto sort bookmarks.
+- Add comments to bookmarks.
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
-- Add import button to the GPS box on the first start.
-- Add option to generate a fixed interval (if the current year is within).
-- Improve notices to be in only one window having a page control like preferences.
-- Improve weekly parashah description box to have access to the tools for the study.
-- Improve weekly parashah description box to have a screenshot button.
-- Improve food notice with details.
-
-#### In progress - Version 9.31
-
 - Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.
 
 #### 2022.08.05 - Version 9.30
