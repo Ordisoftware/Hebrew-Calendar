@@ -341,9 +341,7 @@ partial class PreferencesForm : Form
 
   private void EditMaxYearsInterval_ValueChanged(object sender, EventArgs e)
   {
-    YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
-                                     Program.AutoGenerateYearsIntervalMax,
-                                     PredefinedYearsItem_Click);
+    YearsIntervalItem.InitializeMenu(MenuPredefinedYears, PredefinedYearsItem_Click);
   }
 
   private void EditAutoRegenerate_CheckedChanged(object sender, EventArgs e)
