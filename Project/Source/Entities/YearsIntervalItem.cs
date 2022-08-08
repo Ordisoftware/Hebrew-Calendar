@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -43,24 +43,23 @@ class YearsIntervalItem
     }
   }
 
-  static public void InitializeMenu(ContextMenuStrip menu, int max, EventHandler handler)
+  static public void InitializeMenu(ContextMenuStrip menu, EventHandler handler)
   {
     menu.Items.Clear();
+    int max = Program.Settings.GenerateIntervalMaximum;
     foreach ( int value in Program.PredefinedYearsIntervals )
     {
       var interval = new YearsIntervalItem(value);
-      if ( interval.Length <= max && interval.Length <= Program.Settings.GenerateIntervalMaximum )
+      if ( interval.Length > max ) continue;
+      var item = new ToolStripMenuItem
       {
-        var item = new ToolStripMenuItem
-        {
-          Text = value >= 0
-            ? AppTranslations.PredefinedYearsIntervalAfter.GetLang(value)
-            : AppTranslations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value),
-          Tag = interval
-        };
-        item.Click += handler;
-        menu.Items.Add(item);
-      }
+        Text = value >= 0
+          ? AppTranslations.PredefinedYearsIntervalAfter.GetLang(value)
+          : AppTranslations.PredefinedYearsIntervalBeforeAndAfter.GetLang(-value),
+        Tag = interval
+      };
+      item.Click += handler;
+      menu.Items.Add(item);
     }
 
   }

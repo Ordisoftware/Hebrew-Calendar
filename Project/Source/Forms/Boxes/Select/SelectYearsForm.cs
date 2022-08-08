@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SelectYearsForm : Form
@@ -40,9 +40,7 @@ partial class SelectYearsForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    YearsIntervalItem.InitializeMenu(MenuPredefinedYears,
-                                     Settings.GenerateIntervalMaximum,
-                                     PredefinedYearsItem_Click);
+    YearsIntervalItem.InitializeMenu(MenuPredefinedYears, PredefinedYearsItem_Click);
   }
 
   private void SelectYearsRangeForm_Load(object sender, EventArgs e)

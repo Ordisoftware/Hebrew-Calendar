@@ -86,11 +86,6 @@ static partial class Program
   public const int GenerateIntervalMinimum = 2;
 
   /// <summary>
-  /// Indicates the automatic generate years maximum interval
-  /// </summary>
-  public const int AutoGenerateYearsIntervalMax = 50;
-
-  /// <summary>
   /// Indicates the generate interval previous years
   /// </summary>
   public const int GenerateIntervalPreviousYears = 2;

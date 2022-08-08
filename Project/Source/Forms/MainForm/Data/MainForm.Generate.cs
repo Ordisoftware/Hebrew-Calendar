@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -29,7 +29,10 @@ partial class MainForm
         && YearsInterval > Settings.AutoGenerateYearsInternal
         && Settings.AskRegenerateIfIntervalGreater )
       {
-        string msg = AppTranslations.AskToRegenerate.GetLang(Settings.AutoGenerateYearsInternal, YearsInterval);
+        int value = Settings.AutoGenerateYearsInternal < 0
+          ? -Settings.AutoGenerateYearsInternal * 2
+          : Settings.AutoGenerateYearsInternal;
+        string msg = AppTranslations.AskToRegenerate.GetLang(value, YearsInterval);
         DisplayManager.QueryYesNoCancel(msg,
         () => force = true,
         null,
