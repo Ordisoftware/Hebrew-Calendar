@@ -49,8 +49,6 @@ URL = https://en.wikipedia.org/wiki/Modern_Hebrew_phonology
 Name = (FR) Prononciation de l'hébreu @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Prononciation_de_l%27h%C3%A9breu
 
--
-
 Name = (EN) Hebrew Alphabet@ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_alphabet
 
@@ -87,6 +85,24 @@ URL = https://en.wikipedia.org/wiki/Sumerian_language
 Name = (FR) Sumérien @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Sum%C3%A9rien
 
+Name = (EN) Cuneiform @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Cuneiform
+
+Name = (FR) Cunéiforme @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Cun%C3%A9iforme
+
+Name = (EN) Elamite @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Elamite_language
+
+Name = (FR) Élamite @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/%C3%89lamite
+
+Name = (EN) Linear Elamite @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Linear_Elamite
+
+Name = (FR) Élamite linéaire @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/%C3%89lamite_lin%C3%A9aire
+
 -
 
 Name = (EN) Akkadian @ en.wikipedia.org
@@ -95,10 +111,9 @@ URL = https://en.wikipedia.org/wiki/Akkadian_language
 Name = (FR) Akkadien @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Akkadien
 
--
-
 Name = (EN) Akkadian Dictionary @ assyrianlanguages.org
 URL = http://www.assyrianlanguages.org/akkadian/index_en.php?langui=english
 
 Name = (FR) Dictionnaire Akkadien @ assyrianlanguages.org
 URL = http://www.assyrianlanguages.org/akkadian/index_fr.php?langui=french
+

@@ -15,6 +15,7 @@
 namespace Ordisoftware.Core;
 
 using System;
+using System.Windows.Forms;
 using SQLite;
 
 public delegate void LoadingDataEventHandler(string caption);
@@ -219,10 +220,11 @@ abstract class SQLiteDatabase : IDisposable
   protected void ProcessTableUpgrade<TRow, TRowTemp>(
     string nameTable,
     string nameTableTemp,
-    Action<TRowTemp, TRow> doCopy!!)
+    Action<TRowTemp, TRow> doCopy)
   where TRow : new()
   where TRowTemp : new()
   {
+    if ( doCopy is null ) throw new ArgumentNullException(nameof(doCopy));
     if ( nameTable.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(nameTable));
     if ( nameTableTemp.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(nameTableTemp));
     if ( Connection.CheckTable(nameTableTemp) )
