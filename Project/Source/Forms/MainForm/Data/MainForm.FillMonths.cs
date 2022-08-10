@@ -158,8 +158,7 @@ partial class MainForm
           if ( color3 is not null )
             color1 = color3;
           else
-          if ( color1 is null )
-            color1 = Settings.MonthViewBackColor;
+            color1 ??= Settings.MonthViewBackColor;
           DayBrushes[YearLast - date.Year, date.Month, date.Day] = SolidBrushesPool.Get(color1.Value);
           if ( isCelebrationWeekEnd )
             isCelebrationWeekStart = false;

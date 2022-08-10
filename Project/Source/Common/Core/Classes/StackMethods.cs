@@ -221,7 +221,7 @@ static class StackMethods
   /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
   static public void SetDropDownOpening(this ToolStrip toolstrip, EventHandler action = null)
   {
-    if ( action is null ) action = MenuItemDropDownOpening;
+    action ??= MenuItemDropDownOpening;
     var items1 = toolstrip.Items.OfType<ToolStripDropDownButton>();
     var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>());
     var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>());
@@ -230,14 +230,13 @@ static class StackMethods
     items3.ForEach(item => { if ( item.HasDropDownItems ) item.DropDownOpening += action; });
   }
 
-
   /// <summary>
   /// Ensure drop down menu items are displayed on the same screen.
   /// </summary>
   /// From https://stackoverflow.com/questions/26587843/prevent-toolstripmenuitems-from-jumping-to-second-screen
   static public void SetDropDownOpening(this ContextMenuStrip menu, EventHandler action = null)
   {
-    if ( action is null ) action = MenuItemDropDownOpening;
+    action ??= MenuItemDropDownOpening;
     var items1 = menu.Items.OfType<ToolStripMenuItem>();
     var items2 = items1.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>());
     var items3 = items2.SelectMany(item => item.DropDownItems.OfType<ToolStripMenuItem>());

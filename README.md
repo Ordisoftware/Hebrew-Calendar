@@ -395,8 +395,12 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add comments to bookmarks.
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
+
+#### 2022.08.10 - Version 9.31
+
 - Fix auto-generate years interval.
 - Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.
+- Update web links with Elamite language.
 
 #### 2022.08.05 - Version 9.30
 

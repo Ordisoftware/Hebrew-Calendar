@@ -83,7 +83,7 @@ public partial class TextBoxEx : TextBox
     set
     {
       InsertingText?.Invoke(this, TextUpdating.Text, ref value);
-      if ( value is null ) value = string.Empty;
+      value ??= string.Empty;
       if ( value == Text ) return;
       if ( value.Length > MaxLength ) return;
       base.Text = value;
@@ -112,7 +112,7 @@ public partial class TextBoxEx : TextBox
     set
     {
       InsertingText?.Invoke(this, TextUpdating.Selected, ref value);
-      if ( value is null ) value = string.Empty;
+      value ??= string.Empty;
       if ( value == base.SelectedText ) return;
       if ( Text.Length + value.Length - SelectionLength > MaxLength ) return;
       base.SelectedText = value;
