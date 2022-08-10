@@ -85,7 +85,7 @@ static partial class SystemManager
 
   static public bool IsForegroundFullScreen(Screen screen = null)
   {
-    if ( screen is null ) screen = Screen.PrimaryScreen;
+    screen ??= Screen.PrimaryScreen;
     var rect = new NativeMethods.RECT();
     NativeMethods.GetWindowRect(new HandleRef(null, NativeMethods.GetForegroundWindow()), ref rect);
     var rectangle = new Rectangle(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
