@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-08 </edited>
 namespace Ordisoftware.Core;
 
 using Markdig;
@@ -40,6 +40,7 @@ partial class CommonMenusControl : UserControl
     Instance = new CommonMenusControl();
     int index = toolStrip.Items.IndexOf(buttonToReplace);
     toolStrip.SuspendLayout();
+    Instance.ActionInformation.Padding = buttonToReplace.Padding;
     toolStrip.Items.Remove(buttonToReplace);
     toolStrip.Items.Insert(index, Instance.ActionInformation);
     toolStrip.ResumeLayout();
