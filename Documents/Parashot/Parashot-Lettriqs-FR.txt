@@ -48,7 +48,7 @@ Maceh'i = Chemin de l'Alliance de la Vision de la Paix
 // BOOK DEVARIM
 Devarim = Manifestation Créatrice du Mental pour la Paix et le Progrès
 Vaet'hanan = Direction de l'Enseignement qui Soutient la Créature par le Pouvoir de la Vie
-Eiqev = Vision de la Vérité sur la Création
+H'eqev = Vision de la Vérité sur la Création
 Reeh = Mental Potentiel du Mouvement
 Shoft'im = Force de Liaison de la Parole qui Agglomère l'Énergie de la Matrice
 Ki Tetse = Puissance de l'Impulsion de Réussite du Juste Concept

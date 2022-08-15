@@ -47,7 +47,7 @@ Bamidbar : 10 - מסעי - Maceh'i - 33.1 - 36.13 - False
 
 Devarim : 1 - דברים - Devarim - 1.1 - 3.22 - False
 Devarim : 2 - ואתחנן - Vaet'hanan - 3.23 - 7.11 - False
-Devarim : 3 - עקב - Eiqev - 7.12 - 11.25 - False
+Devarim : 3 - עקב - H'eqev - 7.12 - 11.25 - False
 Devarim : 4 - ראה - Reeh - 11.26 - 16.17 - False
 Devarim : 5 - שופטים - Shoft'im - 16.18 - 21.9 - False
 Devarim : 6 - כי תצא - Ki Tetse - 21.10 - 25.19 - False
