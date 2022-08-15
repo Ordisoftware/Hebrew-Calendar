@@ -48,7 +48,7 @@ Maceh'i = Évolution (trajets, cheminements, étapes, degrés)
 // BOOK DEVARIM
 Devarim = Mots (déclarations, consignes, recommandations, promesses)
 Vaet'hanan = J'aurais imploré
-Eiqev = Compensation (rétribution, résultat)
+H'eqev = Compensation (rétribution, résultat)
 Reeh = Choisit ! {entre la bénédiction et la prospérité de la Torah des compatissants qui font le bien, aident, soignent, jugent et font vivre, ou la malédiction et la haine des méchants hors-la-loi qui font le mal, abandonnent, blessent, volent et tuent}
 Shoft'im = Juges (gouverneurs, décideurs)
 Ki Tetse = Parce que tu produiras [{les oeuvres prescrites et le témoignage de l'affliction} pour combat contre ennemis à Moi (HaShem) et à toi {qui agressent par haine du bien, de la bonté, de la justice et de la compassion} afin de Me les livrer pour que justice soit rendu et que réparation soit faite, par HaShem dans les Cieux et sur Terre par les Juges du Tribunal, et non par vengeance personnelle]
