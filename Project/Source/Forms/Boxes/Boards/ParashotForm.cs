@@ -331,8 +331,7 @@ partial class ParashotForm : Form
   {
     DataGridView.Font = new Font("Microsoft Sans Serif", (float)EditFontSize.Value);
     ColumnHebrew.DefaultCellStyle.Font = new Font("Hebrew", (float)EditFontSize.Value + 5);
-    if ( DataGridView.Rows.Count > 0 )
-      DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
+    // TODO remove if ( DataGridView.Rows.Count > 0 ) DataGridView.ColumnHeadersHeight = DataGridView.Rows[0].Height + 5;
   }
 
   private void BindingSource_DataSourceChanged(object sender, EventArgs e)
