@@ -39,7 +39,7 @@ Name = (FR) Editions Loubavitch
 URL = http://www.editions-loubavitch.fr
 
 Name = (FR) Editions Torah-Box
-URL = https://www.torah-box.com/editions
+URL = https://boutique.torah-box.com
 
 Name = (FR/IW) Ramhal Institute
 URL = http://www.frramhal.com/Beit-Ramhal.html
