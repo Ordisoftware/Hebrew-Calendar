@@ -391,10 +391,13 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 10.0
 
->- Add auto sort bookmarks.
->- Add comments to bookmarks.
+- Add auto sort bookmarks.
+- Add comments to bookmarks.
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
+
+#### 2022.08.28 - Version 9.32
+
 - Fix parashot board header growing on changing font size.
 - Fix H'eqev parashah transcription.
 
