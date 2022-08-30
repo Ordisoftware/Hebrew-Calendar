@@ -51,6 +51,9 @@ URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
 Name = (FR) Rav Nathan Mrejen
 URL = https://www.youtube.com/channel/UCx3wvPI8c-AHsRMjorGIWSw
 
+Name = (FR) Rav Réphael Sadin
+URL = https://www.youtube.com/user/koltora
+
 -
 
 Name = (FR) Rav Raphaël Pinto
