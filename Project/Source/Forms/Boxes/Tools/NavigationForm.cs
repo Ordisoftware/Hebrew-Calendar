@@ -79,7 +79,7 @@ partial class NavigationForm : Form
             torahEventText = NoDataField;
           else
           {
-            var (torahEvent, index, text) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
+            var (torahEvent, _, text) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
             torahEventText = torahEvent != TorahCelebration.None ? text : NoDataField;
           }
         }
