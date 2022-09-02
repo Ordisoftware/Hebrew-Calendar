@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -19,6 +19,17 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// </summary>
 static partial class AppTranslations
 {
+
+  static public readonly TranslationsDictionary PreviewFunctions = new()
+  {
+    [Language.EN] = "    • Lunar month names board" + Globals.NL +
+                    "    • Web links edition" + Globals.NL +
+                    "    • Dark theme",
+
+    [Language.FR] = "    • Tableau des noms des mois lunaires" + Globals.NL +
+                    "    • Edition des liens web" + Globals.NL +
+                    "    • Theme sombre",
+  };
 
   static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
   {
