@@ -16,7 +16,7 @@ namespace Ordisoftware.Core;
 
 using Serilog;
 using Serilog.Formatting.Display;
-using Serilog.Sinks.WinForms;
+using Serilog.Sinks.WinForms.Base;
 
 public delegate void DebugManagerHandler(bool value);
 

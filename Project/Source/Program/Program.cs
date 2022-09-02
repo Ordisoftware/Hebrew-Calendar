@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.IO.Pipes;
@@ -29,23 +29,16 @@ static partial class Program
   [STAThread]
   static void Main(string[] args)
   {
-    CommonMenusControl.PreviewFunctions = new()
-    {
-      [Language.EN] = "    • Lunar month names board" + Globals.NL +
-                      "    • Web links edition" + Globals.NL +
-                      "    • Dark theme",
-
-      [Language.FR] = "    • Tableau des noms des mois lunaires" + Globals.NL +
-                      "    • Edition des liens web" + Globals.NL +
-                      "    • Theme sombre",
-    };
     try
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+      //
       Globals.ChronoStartingApp.Start();
       Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml";
       Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
+      CommonMenusControl.PreviewFunctions = AppTranslations.PreviewFunctions;
+      //
       var lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(args, ref lang);
       if ( !SystemManager.CheckApplicationOnlyOneInstance(IPCRequests) ) return;
@@ -58,13 +51,21 @@ static partial class Program
       if ( lang != Language.None ) Settings.LanguageSelected = lang;
       SystemManager.TryCatch(Settings.Save);
       Globals.Settings = Settings;
+      //
+      //Globals.SpellCheckEnabled = Settings.SpellCheckEnabled;
+      //TextBoxEx.InstanceCreated += TextBox_UpdateSpellChecker;
+      //TextBoxEx.UpdateSpellChecker += TextBox_UpdateSpellChecker;
+      //TextBoxEx.Relocalized += TextBox_Relocalized;
+      //TextBox_Relocalized();
       Globals.MainForm = MainForm.Instance;
       DebugManager.TraceEnabled = Settings.TraceEnabled;
       DebugManager.Enabled = Settings.DebuggerEnabled;
+      //
       HebrewGlobals.GetHebrewCalendarExePath = () => Globals.ApplicationExeFullPath;
       HebrewGlobals.GetHebrewLettersExePath = () => Settings.HebrewLettersExe;
       HebrewGlobals.GetHebrewWordsExePath = () => Settings.HebrewWordsExe;
       HebrewGlobals.GetCustomWebSearchPattern = () => Settings.CustomWebSearch;
+      //
       Globals.ChronoStartingApp.Stop();
       ProcessCommandLineOptions();
       Globals.ChronoStartingApp.Start();
