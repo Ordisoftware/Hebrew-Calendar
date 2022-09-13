@@ -396,10 +396,11 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
-#### 2022.08.28 - Version 9.32
+#### 2022.09.20 - Version 9.32
 
 - Fix parashot board header growing on changing font size.
 - Fix H'eqev parashah transcription.
+- Update nugets SQLitePCL.raw, FileHelpers, Serilog and Serilog.Sinks.WinForms.
 
 #### 2022.08.10 - Version 9.31
 
