@@ -99,7 +99,7 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Clbv_vfSf0pNcGcbZjbgDS
 Name = (FR) Rav Raphaël Pinto
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BXLU4KFZcH1c80NHuqZ7PL
 
-Name = (FR) Rav Moshé Pinto
+Name = (FR) Rav Moché Pinto
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Be8oTVSRFPNr8bB9HjdHyx
 
 -

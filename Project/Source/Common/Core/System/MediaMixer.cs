@@ -1,16 +1,4 @@
-﻿/// <license>
-/// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2022 Olivier Rogier.
-/// See www.ordisoftware.com for more information.
-/// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-/// If a copy of the MPL was not distributed with this file, You can obtain one at
-/// https://mozilla.org/MPL/2.0/.
-/// If it is not possible or desirable to put the notice in a particular file,
-/// then You may include the notice in a location(such as a LICENSE file in a
-/// relevant directory) where a recipient would be likely to look for such a notice.
-/// You may add additional accurate notices of copyright ownership.
-/// </license>
-namespace Ordisoftware.Core;
+﻿namespace Ordisoftware.Core;
 
 using System.Runtime.InteropServices;
 
@@ -69,7 +57,7 @@ static class MediaMixer
     if ( volume is null )
       return null;
 
-    volume.GetMasterVolume(out var level);
+    volume.GetMainVolume(out var level);
     Marshal.ReleaseComObject(volume);
     return level * 100;
   }
@@ -92,7 +80,7 @@ static class MediaMixer
       return false;
 
     Guid guid = Guid.Empty;
-    volume.SetMasterVolume(level / 100f, ref guid);
+    volume.SetMainVolume(level / 100f, ref guid);
     Marshal.ReleaseComObject(volume);
     return true;
   }
@@ -222,10 +210,10 @@ public interface IAudioSessionEnumerator
 public interface ISimpleAudioVolume
 {
   [PreserveSig]
-  int SetMasterVolume(float fLevel, ref Guid EventContext);
+  int SetMainVolume(float fLevel, ref Guid EventContext);
 
   [PreserveSig]
-  int GetMasterVolume(out float pfLevel);
+  int GetMainVolume(out float pfLevel);
 
   [PreserveSig]
   int SetMute(bool bMute, ref Guid EventContext);
