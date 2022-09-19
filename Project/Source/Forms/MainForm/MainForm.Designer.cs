@@ -2039,6 +2039,6 @@
     private ToolStripSeparator toolStripSeparator29;
     private ToolStripMenuItem ActionTakeScreenshotView;
     private ToolStripMenuItem ActionTakeScreenshotWindow;
-  }
+    }
 }
 

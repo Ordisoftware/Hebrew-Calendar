@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -253,11 +253,10 @@ partial class MainForm
   private void DoFormClosing(object sender, FormClosingEventArgs e)
   {
     if ( !Globals.IsReady ) return;
+    if ( Globals.AllowClose ) return;
     if ( Globals.IsExiting ) return;
-    if ( e.CloseReason != CloseReason.None && e.CloseReason != CloseReason.UserClosing )
-      Globals.IsExiting = true;
-    else
-    if ( !Globals.AllowClose )
+    if ( Globals.IsSessionEnding ) return;
+    if ( e.CloseReason == CloseReason.None || e.CloseReason == CloseReason.UserClosing )
     {
       e.Cancel = true;
       MenuShowHide.PerformClick();
@@ -270,11 +269,11 @@ partial class MainForm
   private void DoFormClosed(object sender, FormClosedEventArgs e)
   {
     DebugManager.Trace(LogTraceEvent.Data, e.CloseReason.ToStringFull());
-    Globals.IsExiting = true;
-    Globals.IsSessionEnding = true;
-    Globals.AllowClose = true;
     SystemManager.TryCatch(Settings.Store);
+    Globals.AllowClose = true;
+    Globals.IsExiting = true;
     Interlocks.Release();
+    DebugManager.Stop();
     TimerTooltip.Stop();
     TimerBalloon.Stop();
     TimerTrayMouseMove.Stop();
@@ -287,6 +286,19 @@ partial class MainForm
   }
 
   /// <summary>
+  /// Does Session Ending event.
+  /// </summary>
+  public void SessionEnding(object sender, SessionEndingEventArgs e)
+  {
+    if ( Globals.IsExiting ) return;
+    if ( Globals.IsSessionEnding ) return;
+    DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(NativeMethods.WM_QUERYENDSESSION));
+    Globals.AllowClose = true;
+    Globals.IsSessionEnding = true;
+    Close();
+  }
+
+  /// <summary>
   /// Power mode changed event handler.
   /// </summary>
   private void PowerModeChanged(object sender, PowerModeChangedEventArgs e)
@@ -295,24 +307,6 @@ partial class MainForm
     {
       Thread.Sleep(10000);
       DoTimerMidnight();
-    }
-  }
-
-  /// <summary>
-  /// Does Session Ending event.
-  /// </summary>
-  public void SessionEnding(object sender, SessionEndingEventArgs e)
-  {
-    if ( Globals.IsExiting || Globals.IsSessionEnding ) return;
-    DebugManager.Enter();
-    try
-    {
-      DebugManager.Trace(LogTraceEvent.Data, e?.Reason.ToStringFull() ?? nameof(NativeMethods.WM_QUERYENDSESSION));
-      Close();
-    }
-    finally
-    {
-      DebugManager.Leave();
     }
   }
 
