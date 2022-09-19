@@ -65,6 +65,7 @@ partial class MainForm
 
   public void DoMenuShowHide_Click(object sender, EventArgs e)
   {
+    if ( Globals.IsExiting ) return;
     SystemManager.TryCatchManage(() =>
     {
       if ( Visible && WindowState == FormWindowState.Minimized && ( sender is null or NotifyIcon ) )
