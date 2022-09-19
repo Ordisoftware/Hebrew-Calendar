@@ -349,7 +349,7 @@ partial class ReminderForm : Form
 
   private void PictureBox_Click(object sender, EventArgs e)
   {
-    LabelDate_LinkClicked(sender, null);
+    LabelDate_LinkClicked(sender, new LinkLabelLinkClickedEventArgs(null, MouseButtons.Left));
   }
 
   private void LabelDate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
