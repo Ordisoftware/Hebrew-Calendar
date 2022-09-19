@@ -69,7 +69,7 @@ static class MediaMixer
     if ( volume is null )
       return null;
 
-    volume.GetMasterVolume(out var level);
+    volume.GetMainVolume(out var level);
     Marshal.ReleaseComObject(volume);
     return level * 100;
   }
@@ -92,7 +92,7 @@ static class MediaMixer
       return false;
 
     Guid guid = Guid.Empty;
-    volume.SetMasterVolume(level / 100f, ref guid);
+    volume.SetMainVolume(level / 100f, ref guid);
     Marshal.ReleaseComObject(volume);
     return true;
   }
@@ -222,10 +222,10 @@ public interface IAudioSessionEnumerator
 public interface ISimpleAudioVolume
 {
   [PreserveSig]
-  int SetMasterVolume(float fLevel, ref Guid EventContext);
+  int SetMainVolume(float fLevel, ref Guid EventContext);
 
   [PreserveSig]
-  int GetMasterVolume(out float pfLevel);
+  int GetMainVolume(out float pfLevel);
 
   [PreserveSig]
   int SetMute(bool bMute, ref Guid EventContext);
