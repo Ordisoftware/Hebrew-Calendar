@@ -398,7 +398,8 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### 2022.09.25 - Version 9.33
 
-- Fix an exception can occur on session ending.
+- Fix null exception when clicking on image in reminder box.
+- Fix null exception can occur on session ending.
 
 #### 2022.09.14 - Version 9.32
 
