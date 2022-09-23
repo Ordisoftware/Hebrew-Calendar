@@ -8,2897 +8,3621 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ordisoftware.Hebrew.Calendar.Properties {
-    
-    
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Center")]
-        public global::Ordisoftware.Core.ControlLocation MainFormPosition {
-            get {
-                return ((global::Ordisoftware.Core.ControlLocation)(this["MainFormPosition"]));
-            }
-            set {
-                this["MainFormPosition"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int MainFormLeft {
-            get {
-                return ((int)(this["MainFormLeft"]));
-            }
-            set {
-                this["MainFormLeft"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int MainFormTop {
-            get {
-                return ((int)(this["MainFormTop"]));
-            }
-            set {
-                this["MainFormTop"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int MainFormWidth {
-            get {
-                return ((int)(this["MainFormWidth"]));
-            }
-            set {
-                this["MainFormWidth"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int MainFormHeight {
-            get {
-                return ((int)(this["MainFormHeight"]));
-            }
-            set {
-                this["MainFormHeight"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public global::System.Windows.Forms.FormWindowState MainFormState {
-            get {
-                return ((global::System.Windows.Forms.FormWindowState)(this["MainFormState"]));
-            }
-            set {
-                this["MainFormState"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ESCtoExit {
-            get {
-                return ((bool)(this["ESCtoExit"]));
-            }
-            set {
-                this["ESCtoExit"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ConfirmClosing {
-            get {
-                return ((bool)(this["ConfirmClosing"]));
-            }
-            set {
-                this["ConfirmClosing"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Courier New")]
-        public string FontName {
-            get {
-                return ((string)(this["FontName"]));
-            }
-            set {
-                this["FontName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int FontSize {
-            get {
-                return ((int)(this["FontSize"]));
-            }
-            set {
-                this["FontSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ShowTips {
-            get {
-                return ((bool)(this["ShowTips"]));
-            }
-            set {
-                this["ShowTips"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6")]
-        public int ShabatDay {
-            get {
-                return ((int)(this["ShabatDay"]));
-            }
-            set {
-                this["ShabatDay"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Month")]
-        public global::Ordisoftware.Hebrew.Calendar.ViewMode CurrentView {
-            get {
-                return ((global::Ordisoftware.Hebrew.Calendar.ViewMode)(this["CurrentView"]));
-            }
-            set {
-                this["CurrentView"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string GPSLatitude {
-            get {
-                return ((string)(this["GPSLatitude"]));
-            }
-            set {
-                this["GPSLatitude"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string GPSLongitude {
-            get {
-                return ((string)(this["GPSLongitude"]));
-            }
-            set {
-                this["GPSLongitude"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color TextColor {
-            get {
-                return ((global::System.Drawing.Color)(this["TextColor"]));
-            }
-            set {
-                this["TextColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color TextBackground {
-            get {
-                return ((global::System.Drawing.Color)(this["TextBackground"]));
-            }
-            set {
-                this["TextBackground"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("LemonChiffon")]
-        public global::System.Drawing.Color NavigateTopColor {
-            get {
-                return ((global::System.Drawing.Color)(this["NavigateTopColor"]));
-            }
-            set {
-                this["NavigateTopColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
-        public global::System.Drawing.Color NavigateMiddleColor {
-            get {
-                return ((global::System.Drawing.Color)(this["NavigateMiddleColor"]));
-            }
-            set {
-                this["NavigateMiddleColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Honeydew")]
-        public global::System.Drawing.Color NavigateBottomColor {
-            get {
-                return ((global::System.Drawing.Color)(this["NavigateBottomColor"]));
-            }
-            set {
-                this["NavigateBottomColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MainForm")]
-        public global::Ordisoftware.Hebrew.Calendar.TrayIconClickOpen TrayIconClickOpen {
-            get {
-                return ((global::Ordisoftware.Hebrew.Calendar.TrayIconClickOpen)(this["TrayIconClickOpen"]));
-            }
-            set {
-                this["TrayIconClickOpen"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool StartupHide {
-            get {
-                return ((bool)(this["StartupHide"]));
-            }
-            set {
-                this["StartupHide"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("14")]
-        public decimal ReminderCelebrationsInterval {
-            get {
-                return ((decimal)(this["ReminderCelebrationsInterval"]));
-            }
-            set {
-                this["ReminderCelebrationsInterval"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ReminderCelebrationsEnabled {
-            get {
-                return ((bool)(this["ReminderCelebrationsEnabled"]));
-            }
-            set {
-                this["ReminderCelebrationsEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TorahEventRemindNewYearD1 {
-            get {
-                return ((bool)(this["TorahEventRemindNewYearD1"]));
-            }
-            set {
-                this["TorahEventRemindNewYearD1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindNewYearD10 {
-            get {
-                return ((bool)(this["TorahEventRemindNewYearD10"]));
-            }
-            set {
-                this["TorahEventRemindNewYearD10"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindPessahD1 {
-            get {
-                return ((bool)(this["TorahEventRemindPessahD1"]));
-            }
-            set {
-                this["TorahEventRemindPessahD1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TorahEventRemindPessahD7 {
-            get {
-                return ((bool)(this["TorahEventRemindPessahD7"]));
-            }
-            set {
-                this["TorahEventRemindPessahD7"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindChavouotDiet {
-            get {
-                return ((bool)(this["TorahEventRemindChavouotDiet"]));
-            }
-            set {
-                this["TorahEventRemindChavouotDiet"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindChavouot1 {
-            get {
-                return ((bool)(this["TorahEventRemindChavouot1"]));
-            }
-            set {
-                this["TorahEventRemindChavouot1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindChavouot2 {
-            get {
-                return ((bool)(this["TorahEventRemindChavouot2"]));
-            }
-            set {
-                this["TorahEventRemindChavouot2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindYomTerouah {
-            get {
-                return ((bool)(this["TorahEventRemindYomTerouah"]));
-            }
-            set {
-                this["TorahEventRemindYomTerouah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindYomHaKipourim {
-            get {
-                return ((bool)(this["TorahEventRemindYomHaKipourim"]));
-            }
-            set {
-                this["TorahEventRemindYomHaKipourim"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindSoukotD1 {
-            get {
-                return ((bool)(this["TorahEventRemindSoukotD1"]));
-            }
-            set {
-                this["TorahEventRemindSoukotD1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TorahEventRemindSoukotD8 {
-            get {
-                return ((bool)(this["TorahEventRemindSoukotD8"]));
-            }
-            set {
-                this["TorahEventRemindSoukotD8"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ReminderShabatEnabled {
-            get {
-                return ((bool)(this["ReminderShabatEnabled"]));
-            }
-            set {
-                this["ReminderShabatEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UpgradeRequired {
-            get {
-                return ((bool)(this["UpgradeRequired"]));
-            }
-            set {
-                this["UpgradeRequired"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color CurrentDayForeColor {
-            get {
-                return ((global::System.Drawing.Color)(this["CurrentDayForeColor"]));
-            }
-            set {
-                this["CurrentDayForeColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DarkRed")]
-        public global::System.Drawing.Color CalendarColorTorahEvent {
-            get {
-                return ((global::System.Drawing.Color)(this["CalendarColorTorahEvent"]));
-            }
-            set {
-                this["CalendarColorTorahEvent"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DarkGreen")]
-        public global::System.Drawing.Color CalendarColorSeason {
-            get {
-                return ((global::System.Drawing.Color)(this["CalendarColorSeason"]));
-            }
-            set {
-                this["CalendarColorSeason"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DarkBlue")]
-        public global::System.Drawing.Color CalendarColorMoon {
-            get {
-                return ((global::System.Drawing.Color)(this["CalendarColorMoon"]));
-            }
-            set {
-                this["CalendarColorMoon"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("150, 100, 0")]
-        public global::System.Drawing.Color CalendarColorFullMoon {
-            get {
-                return ((global::System.Drawing.Color)(this["CalendarColorFullMoon"]));
-            }
-            set {
-                this["CalendarColorFullMoon"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool RemindShabatOnlyLight {
-            get {
-                return ((bool)(this["RemindShabatOnlyLight"]));
-            }
-            set {
-                this["RemindShabatOnlyLight"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6")]
-        public decimal RemindShabatHoursBefore {
-            get {
-                return ((decimal)(this["RemindShabatHoursBefore"]));
-            }
-            set {
-                this["RemindShabatHoursBefore"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
-        public decimal RemindShabatEveryMinutes {
-            get {
-                return ((decimal)(this["RemindShabatEveryMinutes"]));
-            }
-            set {
-                this["RemindShabatEveryMinutes"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CheckUpdateAtStartup {
-            get {
-                return ((bool)(this["CheckUpdateAtStartup"]));
-            }
-            set {
-                this["CheckUpdateAtStartup"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("None")]
-        public global::Ordisoftware.Core.Language LanguageSelected {
-            get {
-                return ((global::Ordisoftware.Core.Language)(this["LanguageSelected"]));
-            }
-            set {
-                this["LanguageSelected"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("24")]
-        public decimal RemindCelebrationHoursBefore {
-            get {
-                return ((decimal)(this["RemindCelebrationHoursBefore"]));
-            }
-            set {
-                this["RemindCelebrationHoursBefore"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15")]
-        public decimal RemindCelebrationEveryMinutes {
-            get {
-                return ((decimal)(this["RemindCelebrationEveryMinutes"]));
-            }
-            set {
-                this["RemindCelebrationEveryMinutes"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TorahEventRemindDayNewYearD1 {
-            get {
-                return ((bool)(this["TorahEventRemindDayNewYearD1"]));
-            }
-            set {
-                this["TorahEventRemindDayNewYearD1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TorahEventRemindDayNewYearD10 {
-            get {
-                return ((bool)(this["TorahEventRemindDayNewYearD10"]));
-            }
-            set {
-                this["TorahEventRemindDayNewYearD10"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindDayPessahD1 {
-            get {
-                return ((bool)(this["TorahEventRemindDayPessahD1"]));
-            }
-            set {
-                this["TorahEventRemindDayPessahD1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindDayPessahD7 {
-            get {
-                return ((bool)(this["TorahEventRemindDayPessahD7"]));
-            }
-            set {
-                this["TorahEventRemindDayPessahD7"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TorahEventRemindDayChavouotDiet {
-            get {
-                return ((bool)(this["TorahEventRemindDayChavouotDiet"]));
-            }
-            set {
-                this["TorahEventRemindDayChavouotDiet"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindDayChavouot1 {
-            get {
-                return ((bool)(this["TorahEventRemindDayChavouot1"]));
-            }
-            set {
-                this["TorahEventRemindDayChavouot1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindDayChavouot2 {
-            get {
-                return ((bool)(this["TorahEventRemindDayChavouot2"]));
-            }
-            set {
-                this["TorahEventRemindDayChavouot2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindDayYomTerouah {
-            get {
-                return ((bool)(this["TorahEventRemindDayYomTerouah"]));
-            }
-            set {
-                this["TorahEventRemindDayYomTerouah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindDayYomHaKipourim {
-            get {
-                return ((bool)(this["TorahEventRemindDayYomHaKipourim"]));
-            }
-            set {
-                this["TorahEventRemindDayYomHaKipourim"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindDaySoukotD1 {
-            get {
-                return ((bool)(this["TorahEventRemindDaySoukotD1"]));
-            }
-            set {
-                this["TorahEventRemindDaySoukotD1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventRemindDaySoukotD8 {
-            get {
-                return ((bool)(this["TorahEventRemindDaySoukotD8"]));
-            }
-            set {
-                this["TorahEventRemindDaySoukotD8"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string GPSCountry {
-            get {
-                return ((string)(this["GPSCountry"]));
-            }
-            set {
-                this["GPSCountry"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string GPSCity {
-            get {
-                return ((string)(this["GPSCity"]));
-            }
-            set {
-                this["GPSCity"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool BalloonEnabled {
-            get {
-                return ((bool)(this["BalloonEnabled"]));
-            }
-            set {
-                this["BalloonEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ShowReminderInTaskBar {
-            get {
-                return ((bool)(this["ShowReminderInTaskBar"]));
-            }
-            set {
-                this["ShowReminderInTaskBar"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool BalloonAutoHide {
-            get {
-                return ((bool)(this["BalloonAutoHide"]));
-            }
-            set {
-                this["BalloonAutoHide"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("255, 255, 230")]
-        public global::System.Drawing.Color EventColorTorah {
-            get {
-                return ((global::System.Drawing.Color)(this["EventColorTorah"]));
-            }
-            set {
-                this["EventColorTorah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UseColors {
-            get {
-                return ((bool)(this["UseColors"]));
-            }
-            set {
-                this["UseColors"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("240, 240, 240")]
-        public global::System.Drawing.Color EventColorShabat {
-            get {
-                return ((global::System.Drawing.Color)(this["EventColorShabat"]));
-            }
-            set {
-                this["EventColorShabat"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("245, 255, 240")]
-        public global::System.Drawing.Color EventColorSeason {
-            get {
-                return ((global::System.Drawing.Color)(this["EventColorSeason"]));
-            }
-            set {
-                this["EventColorSeason"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point NextCelebrationsFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["NextCelebrationsFormLocation"]));
-            }
-            set {
-                this["NextCelebrationsFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UpgradeResetRequiredV3_0 {
-            get {
-                return ((bool)(this["UpgradeResetRequiredV3_0"]));
-            }
-            set {
-                this["UpgradeResetRequiredV3_0"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Firebrick")]
-        public global::System.Drawing.Color CurrentDayBackColor {
-            get {
-                return ((global::System.Drawing.Color)(this["CurrentDayBackColor"]));
-            }
-            set {
-                this["CurrentDayBackColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("240, 240, 240")]
-        public global::System.Drawing.Color EventColorNext {
-            get {
-                return ((global::System.Drawing.Color)(this["EventColorNext"]));
-            }
-            set {
-                this["EventColorNext"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
-        public global::System.Drawing.Color EventColorMonth {
-            get {
-                return ((global::System.Drawing.Color)(this["EventColorMonth"]));
-            }
-            set {
-                this["EventColorMonth"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TorahEventsCountAsMoon {
-            get {
-                return ((bool)(this["TorahEventsCountAsMoon"]));
-            }
-            set {
-                this["TorahEventsCountAsMoon"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FirstLaunch {
-            get {
-                return ((bool)(this["FirstLaunch"]));
-            }
-            set {
-                this["FirstLaunch"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
-        public int BalloonLoomingDelay {
-            get {
-                return ((int)(this["BalloonLoomingDelay"]));
-            }
-            set {
-                this["BalloonLoomingDelay"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point SearchLunarMonthFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["SearchLunarMonthFormLocation"]));
-            }
-            set {
-                this["SearchLunarMonthFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point SearchCelebrationFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["SearchCelebrationFormLocation"]));
-            }
-            set {
-                this["SearchCelebrationFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string TimeZone {
-            get {
-                return ((string)(this["TimeZone"]));
-            }
-            set {
-                this["TimeZone"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UpgradeResetRequiredV3_6 {
-            get {
-                return ((bool)(this["UpgradeResetRequiredV3_6"]));
-            }
-            set {
-                this["UpgradeResetRequiredV3_6"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool AutoLockSession {
-            get {
-                return ((bool)(this["AutoLockSession"]));
-            }
-            set {
-                this["AutoLockSession"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
-        public int AutoLockSessionTimeOut {
-            get {
-                return ((int)(this["AutoLockSessionTimeOut"]));
-            }
-            set {
-                this["AutoLockSessionTimeOut"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool LockSessionMediaStop {
-            get {
-                return ((bool)(this["LockSessionMediaStop"]));
-            }
-            set {
-                this["LockSessionMediaStop"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.Hebrew.Letters.exe")]
-        public string HebrewLettersExe {
-            get {
-                return ((string)(this["HebrewLettersExe"]));
-            }
-            set {
-                this["HebrewLettersExe"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Pastel")]
-        public global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColor LunarMonthsFormUseColors {
-            get {
-                return ((global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColor)(this["LunarMonthsFormUseColors"]));
-            }
-            set {
-                this["LunarMonthsFormUseColors"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point LunarMonthsFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["LunarMonthsFormLocation"]));
-            }
-            set {
-                this["LunarMonthsFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("9")]
-        public int MonthViewFontSize {
-            get {
-                return ((int)(this["MonthViewFontSize"]));
-            }
-            set {
-                this["MonthViewFontSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AutoOpenExportFolder {
-            get {
-                return ((bool)(this["AutoOpenExportFolder"]));
-            }
-            set {
-                this["AutoOpenExportFolder"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool VacuumAtStartup {
-            get {
-                return ((bool)(this["VacuumAtStartup"]));
-            }
-            set {
-                this["VacuumAtStartup"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FirstLaunchV4 {
-            get {
-                return ((bool)(this["FirstLaunchV4"]));
-            }
-            set {
-                this["FirstLaunchV4"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DebuggerEnabled {
-            get {
-                return ((bool)(this["DebuggerEnabled"]));
-            }
-            set {
-                this["DebuggerEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime VacuumLastDone {
-            get {
-                return ((global::System.DateTime)(this["VacuumLastDone"]));
-            }
-            set {
-                this["VacuumLastDone"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color MonthViewBackColor {
-            get {
-                return ((global::System.Drawing.Color)(this["MonthViewBackColor"]));
-            }
-            set {
-                this["MonthViewBackColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
-        public global::System.Drawing.Color MonthViewTextColor {
-            get {
-                return ((global::System.Drawing.Color)(this["MonthViewTextColor"]));
-            }
-            set {
-                this["MonthViewTextColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("250, 250, 250")]
-        public global::System.Drawing.Color MonthViewNoDaysBackColor {
-            get {
-                return ((global::System.Drawing.Color)(this["MonthViewNoDaysBackColor"]));
-            }
-            set {
-                this["MonthViewNoDaysBackColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("%MONTHNAME% [%MONTHNUM%] #%DAYNUM%")]
-        public string MoonDayTextFormat {
-            get {
-                return ((string)(this["MoonDayTextFormat"]));
-            }
-            set {
-                this["MoonDayTextFormat"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60")]
-        public int LastSuspendDelaySelected {
-            get {
-                return ((int)(this["LastSuspendDelaySelected"]));
-            }
-            set {
-                this["LastSuspendDelaySelected"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UpgradeResetRequiredV4_1 {
-            get {
-                return ((bool)(this["UpgradeResetRequiredV4_1"]));
-            }
-            set {
-                this["UpgradeResetRequiredV4_1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool WebLinksMenuEnabled {
-            get {
-                return ((bool)(this["WebLinksMenuEnabled"]));
-            }
-            set {
-                this["WebLinksMenuEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AllowSuspendReminder {
-            get {
-                return ((bool)(this["AllowSuspendReminder"]));
-            }
-            set {
-                this["AllowSuspendReminder"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point SearchGregorianMonthFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["SearchGregorianMonthFormLocation"]));
-            }
-            set {
-                this["SearchGregorianMonthFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime CheckUpdateLastDone {
-            get {
-                return ((global::System.DateTime)(this["CheckUpdateLastDone"]));
-            }
-            set {
-                this["CheckUpdateLastDone"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool AutoRegenerate {
-            get {
-                return ((bool)(this["AutoRegenerate"]));
-            }
-            set {
-                this["AutoRegenerate"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("120")]
-        public int GenerateIntervalMaximum {
-            get {
-                return ((int)(this["GenerateIntervalMaximum"]));
-            }
-            set {
-                this["GenerateIntervalMaximum"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkLoadData {
-            get {
-                return ((long)(this["BenchmarkLoadData"]));
-            }
-            set {
-                this["BenchmarkLoadData"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkFillCalendar {
-            get {
-                return ((long)(this["BenchmarkFillCalendar"]));
-            }
-            set {
-                this["BenchmarkFillCalendar"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkGenerateYears {
-            get {
-                return ((long)(this["BenchmarkGenerateYears"]));
-            }
-            set {
-                this["BenchmarkGenerateYears"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkStartingApp {
-            get {
-                return ((long)(this["BenchmarkStartingApp"]));
-            }
-            set {
-                this["BenchmarkStartingApp"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point StatisticsFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["StatisticsFormLocation"]));
-            }
-            set {
-                this["StatisticsFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int AutoGenerateYearsInternal {
-            get {
-                return ((int)(this["AutoGenerateYearsInternal"]));
-            }
-            set {
-                this["AutoGenerateYearsInternal"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.DateTime LastGenerated {
-            get {
-                return ((global::System.DateTime)(this["LastGenerated"]));
-            }
-            set {
-                this["LastGenerated"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool StatisticsFormAlwaysOnTop {
-            get {
-                return ((bool)(this["StatisticsFormAlwaysOnTop"]));
-            }
-            set {
-                this["StatisticsFormAlwaysOnTop"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkPopulateDays {
-            get {
-                return ((long)(this["BenchmarkPopulateDays"]));
-            }
-            set {
-                this["BenchmarkPopulateDays"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkAnalyseDays {
-            get {
-                return ((long)(this["BenchmarkAnalyseDays"]));
-            }
-            set {
-                this["BenchmarkAnalyseDays"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkGenerateTextReport {
-            get {
-                return ((long)(this["BenchmarkGenerateTextReport"]));
-            }
-            set {
-                this["BenchmarkGenerateTextReport"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ReminderFormCloseOnClick {
-            get {
-                return ((bool)(this["ReminderFormCloseOnClick"]));
-            }
-            set {
-                this["ReminderFormCloseOnClick"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool BigCalendarWarningEnabled {
-            get {
-                return ((bool)(this["BigCalendarWarningEnabled"]));
-            }
-            set {
-                this["BigCalendarWarningEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point TraceFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["TraceFormLocation"]));
-            }
-            set {
-                this["TraceFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("884, 661")]
-        public global::System.Drawing.Size TraceFormSize {
-            get {
-                return ((global::System.Drawing.Size)(this["TraceFormSize"]));
-            }
-            set {
-                this["TraceFormSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8")]
-        public int TraceFormTextBoxFontSize {
-            get {
-                return ((int)(this["TraceFormTextBoxFontSize"]));
-            }
-            set {
-                this["TraceFormTextBoxFontSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TraceEnabled {
-            get {
-                return ((bool)(this["TraceEnabled"]));
-            }
-            set {
-                this["TraceEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SoundsEnabled {
-            get {
-                return ((bool)(this["SoundsEnabled"]));
-            }
-            set {
-                this["SoundsEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool AdvancedDialogBoxes {
-            get {
-                return ((bool)(this["AdvancedDialogBoxes"]));
-            }
-            set {
-                this["AdvancedDialogBoxes"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ReminderBoxSoundPath {
-            get {
-                return ((string)(this["ReminderBoxSoundPath"]));
-            }
-            set {
-                this["ReminderBoxSoundPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Dialog")]
-        public global::Ordisoftware.Core.SoundSource ReminderBoxSoundSource {
-            get {
-                return ((global::Ordisoftware.Core.SoundSource)(this["ReminderBoxSoundSource"]));
-            }
-            set {
-                this["ReminderBoxSoundSource"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Asterisk")]
-        public global::System.Windows.Forms.MessageBoxIcon ReminderBoxSoundDialog {
-            get {
-                return ((global::System.Windows.Forms.MessageBoxIcon)(this["ReminderBoxSoundDialog"]));
-            }
-            set {
-                this["ReminderBoxSoundDialog"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ReminderBoxSoundWindows {
-            get {
-                return ((string)(this["ReminderBoxSoundWindows"]));
-            }
-            set {
-                this["ReminderBoxSoundWindows"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int PreferencesFormSelectedTabIndex {
-            get {
-                return ((int)(this["PreferencesFormSelectedTabIndex"]));
-            }
-            set {
-                this["PreferencesFormSelectedTabIndex"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("calc.exe")]
-        public string CalculatorExe {
-            get {
-                return ((string)(this["CalculatorExe"]));
-            }
-            set {
-                this["CalculatorExe"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool DatesDiffCalculatorFormAutoSetRightToToday {
-            get {
-                return ((bool)(this["DatesDiffCalculatorFormAutoSetRightToToday"]));
-            }
-            set {
-                this["DatesDiffCalculatorFormAutoSetRightToToday"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7")]
-        public int VacuumAtStartupDaysInterval {
-            get {
-                return ((int)(this["VacuumAtStartupDaysInterval"]));
-            }
-            set {
-                this["VacuumAtStartupDaysInterval"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7")]
-        public int CheckUpdateAtStartupDaysInterval {
-            get {
-                return ((int)(this["CheckUpdateAtStartupDaysInterval"]));
-            }
-            set {
-                this["CheckUpdateAtStartupDaysInterval"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CheckUpdateEveryWeekWhileRunning {
-            get {
-                return ((bool)(this["CheckUpdateEveryWeekWhileRunning"]));
-            }
-            set {
-                this["CheckUpdateEveryWeekWhileRunning"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("%USER_APP_DOCUMENTS%")]
-        public string ExportFolder {
-            get {
-                return ((string)(this["ExportFolder"]));
-            }
-            set {
-                this["ExportFolder"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ShowSuccessDialogs {
-            get {
-                return ((bool)(this["ShowSuccessDialogs"]));
-            }
-            set {
-                this["ShowSuccessDialogs"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ReminderBoxSoundApplication {
-            get {
-                return ((string)(this["ReminderBoxSoundApplication"]));
-            }
-            set {
-                this["ReminderBoxSoundApplication"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int ApplicationVolume {
-            get {
-                return ((int)(this["ApplicationVolume"]));
-            }
-            set {
-                this["ApplicationVolume"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool BalloonOnlyIfMainFormIsHidden {
-            get {
-                return ((bool)(this["BalloonOnlyIfMainFormIsHidden"]));
-            }
-            set {
-                this["BalloonOnlyIfMainFormIsHidden"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UsageStatisticsEnabled {
-            get {
-                return ((bool)(this["UsageStatisticsEnabled"]));
-            }
-            set {
-                this["UsageStatisticsEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        public int DateBookmarksCount {
-            get {
-                return ((int)(this["DateBookmarksCount"]));
-            }
-            set {
-                this["DateBookmarksCount"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("264, 311")]
-        public global::System.Drawing.Size ManageDateBookmarksFormClientSize {
-            get {
-                return ((global::System.Drawing.Size)(this["ManageDateBookmarksFormClientSize"]));
-            }
-            set {
-                this["ManageDateBookmarksFormClientSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool AutoOpenExportedFile {
-            get {
-                return ((bool)(this["AutoOpenExportedFile"]));
-            }
-            set {
-                this["AutoOpenExportedFile"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool RestoreLastViewAtStartup {
-            get {
-                return ((bool)(this["RestoreLastViewAtStartup"]));
-            }
-            set {
-                this["RestoreLastViewAtStartup"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ShowPrintPreviewDialog {
-            get {
-                return ((bool)(this["ShowPrintPreviewDialog"]));
-            }
-            set {
-                this["ShowPrintPreviewDialog"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("50")]
-        public int PrintingMargin {
-            get {
-                return ((int)(this["PrintingMargin"]));
-            }
-            set {
-                this["PrintingMargin"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UpgradeResetRequiredV5_10 {
-            get {
-                return ((bool)(this["UpgradeResetRequiredV5_10"]));
-            }
-            set {
-                this["UpgradeResetRequiredV5_10"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        public int PrintPageCountWarning {
-            get {
-                return ((int)(this["PrintPageCountWarning"]));
-            }
-            set {
-                this["PrintPageCountWarning"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CSV")]
-        public global::Ordisoftware.Core.DataExportTarget ExportDataPreferredTarget {
-            get {
-                return ((global::Ordisoftware.Core.DataExportTarget)(this["ExportDataPreferredTarget"]));
-            }
-            set {
-                this["ExportDataPreferredTarget"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool PrintImageInLandscape {
-            get {
-                return ((bool)(this["PrintImageInLandscape"]));
-            }
-            set {
-                this["PrintImageInLandscape"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ExportDataEnumsAsTranslations {
-            get {
-                return ((bool)(this["ExportDataEnumsAsTranslations"]));
-            }
-            set {
-                this["ExportDataEnumsAsTranslations"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("50")]
-        public int SaveImageCountWarning {
-            get {
-                return ((int)(this["SaveImageCountWarning"]));
-            }
-            set {
-                this["SaveImageCountWarning"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PNG")]
-        public global::Ordisoftware.Core.ImageExportTarget ExportImagePreferredTarget {
-            get {
-                return ((global::Ordisoftware.Core.ImageExportTarget)(this["ExportImagePreferredTarget"]));
-            }
-            set {
-                this["ExportImagePreferredTarget"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8")]
-        public decimal CelebrationsBoardFormFontSize {
-            get {
-                return ((decimal)(this["CelebrationsBoardFormFontSize"]));
-            }
-            set {
-                this["CelebrationsBoardFormFontSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CelebrationsBoardFormUseLongDateFormat {
-            get {
-                return ((bool)(this["CelebrationsBoardFormUseLongDateFormat"]));
-            }
-            set {
-                this["CelebrationsBoardFormUseLongDateFormat"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("67")]
-        public int GlobalHotKeyPopupMainFormKey {
-            get {
-                return ((int)(this["GlobalHotKeyPopupMainFormKey"]));
-            }
-            set {
-                this["GlobalHotKeyPopupMainFormKey"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7")]
-        public int GlobalHotKeyPopupMainFormModifiers {
-            get {
-                return ((int)(this["GlobalHotKeyPopupMainFormModifiers"]));
-            }
-            set {
-                this["GlobalHotKeyPopupMainFormModifiers"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool GlobalHotKeyPopupMainFormEnabled {
-            get {
-                return ((bool)(this["GlobalHotKeyPopupMainFormEnabled"]));
-            }
-            set {
-                this["GlobalHotKeyPopupMainFormEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point CelebrationsBoardFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["CelebrationsBoardFormLocation"]));
-            }
-            set {
-                this["CelebrationsBoardFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public global::System.Windows.Forms.FormWindowState CelebrationsBoardFormWindowState {
-            get {
-                return ((global::System.Windows.Forms.FormWindowState)(this["CelebrationsBoardFormWindowState"]));
-            }
-            set {
-                this["CelebrationsBoardFormWindowState"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("984, 461")]
-        public global::System.Drawing.Size CelebrationsBoardFormClientSize {
-            get {
-                return ((global::System.Drawing.Size)(this["CelebrationsBoardFormClientSize"]));
-            }
-            set {
-                this["CelebrationsBoardFormClientSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CelebrationsBoardFormUseTitleUpperCase {
-            get {
-                return ((bool)(this["CelebrationsBoardFormUseTitleUpperCase"]));
-            }
-            set {
-                this["CelebrationsBoardFormUseTitleUpperCase"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MainFormShownGoToToday {
-            get {
-                return ((bool)(this["MainFormShownGoToToday"]));
-            }
-            set {
-                this["MainFormShownGoToToday"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CelebrationsBoardFormUseAbbreviatedNames {
-            get {
-                return ((bool)(this["CelebrationsBoardFormUseAbbreviatedNames"]));
-            }
-            set {
-                this["CelebrationsBoardFormUseAbbreviatedNames"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8")]
-        public decimal NewMoonsBoardFormFontSize {
-            get {
-                return ((decimal)(this["NewMoonsBoardFormFontSize"]));
-            }
-            set {
-                this["NewMoonsBoardFormFontSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool NewMoonsBoardFormUseTitleUpperCase {
-            get {
-                return ((bool)(this["NewMoonsBoardFormUseTitleUpperCase"]));
-            }
-            set {
-                this["NewMoonsBoardFormUseTitleUpperCase"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool NewMoonsBoardFormUseLongDateFormat {
-            get {
-                return ((bool)(this["NewMoonsBoardFormUseLongDateFormat"]));
-            }
-            set {
-                this["NewMoonsBoardFormUseLongDateFormat"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool NewMoonsBoardFormUseAbbreviatedNames {
-            get {
-                return ((bool)(this["NewMoonsBoardFormUseAbbreviatedNames"]));
-            }
-            set {
-                this["NewMoonsBoardFormUseAbbreviatedNames"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool NewMoonsBoardFormUseRealDays {
-            get {
-                return ((bool)(this["NewMoonsBoardFormUseRealDays"]));
-            }
-            set {
-                this["NewMoonsBoardFormUseRealDays"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CelebrationsBoardFormUseRealDays {
-            get {
-                return ((bool)(this["CelebrationsBoardFormUseRealDays"]));
-            }
-            set {
-                this["CelebrationsBoardFormUseRealDays"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool NewMoonsBoardFormHideHours {
-            get {
-                return ((bool)(this["NewMoonsBoardFormHideHours"]));
-            }
-            set {
-                this["NewMoonsBoardFormHideHours"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool CelebrationsBoardFormHideHours {
-            get {
-                return ((bool)(this["CelebrationsBoardFormHideHours"]));
-            }
-            set {
-                this["CelebrationsBoardFormHideHours"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point NewMoonsBoardFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["NewMoonsBoardFormLocation"]));
-            }
-            set {
-                this["NewMoonsBoardFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public global::System.Windows.Forms.FormWindowState NewMoonsBoardFormWindowState {
-            get {
-                return ((global::System.Windows.Forms.FormWindowState)(this["NewMoonsBoardFormWindowState"]));
-            }
-            set {
-                this["NewMoonsBoardFormWindowState"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("984, 461")]
-        public global::System.Drawing.Size NewMoonsBoardFormClientSize {
-            get {
-                return ((global::System.Drawing.Size)(this["NewMoonsBoardFormClientSize"]));
-            }
-            set {
-                this["NewMoonsBoardFormClientSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool WindowsDoubleBufferingEnabled {
-            get {
-                return ((bool)(this["WindowsDoubleBufferingEnabled"]));
-            }
-            set {
-                this["WindowsDoubleBufferingEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("msnweather:")]
-        public string WeatherAppPath {
-            get {
-                return ((string)(this["WeatherAppPath"]));
-            }
-            set {
-                this["WeatherAppPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool WeatherMenuItemsEnabled {
-            get {
-                return ((bool)(this["WeatherMenuItemsEnabled"]));
-            }
-            set {
-                this["WeatherMenuItemsEnabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Fixed")]
-        public global::Ordisoftware.Core.ControlLocation ReminderBoxDesktopLocation {
-            get {
-                return ((global::Ordisoftware.Core.ControlLocation)(this["ReminderBoxDesktopLocation"]));
-            }
-            set {
-                this["ReminderBoxDesktopLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MeteoblueDotCom")]
-        public global::Ordisoftware.Hebrew.Calendar.WeatherProvider WeatherOnlineProvider {
-            get {
-                return ((global::Ordisoftware.Hebrew.Calendar.WeatherProvider)(this["WeatherOnlineProvider"]));
-            }
-            set {
-                this["WeatherOnlineProvider"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool WeatherOnlineUseDay {
-            get {
-                return ((bool)(this["WeatherOnlineUseDay"]));
-            }
-            set {
-                this["WeatherOnlineUseDay"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Indigo")]
-        public global::System.Drawing.Color CalendarColorParashah {
-            get {
-                return ((global::System.Drawing.Color)(this["CalendarColorParashah"]));
-            }
-            set {
-                this["CalendarColorParashah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CalendarShowParashah {
-            get {
-                return ((bool)(this["CalendarShowParashah"]));
-            }
-            set {
-                this["CalendarShowParashah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Words\\Bin\\Ordisoftware.Hebrew.Words.exe")]
-        public string HebrewWordsExe {
-            get {
-                return ((string)(this["HebrewWordsExe"]));
-            }
-            set {
-                this["HebrewWordsExe"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point GrammarGuideFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["GrammarGuideFormLocation"]));
-            }
-            set {
-                this["GrammarGuideFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("542, 666")]
-        public global::System.Drawing.Size GrammarGuideFormSize {
-            get {
-                return ((global::System.Drawing.Size)(this["GrammarGuideFormSize"]));
-            }
-            set {
-                this["GrammarGuideFormSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point ParashotFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["ParashotFormLocation"]));
-            }
-            set {
-                this["ParashotFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("984, 676")]
-        public global::System.Drawing.Size ParashotFormClientSize {
-            get {
-                return ((global::System.Drawing.Size)(this["ParashotFormClientSize"]));
-            }
-            set {
-                this["ParashotFormClientSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public global::System.Windows.Forms.FormWindowState ParashotFormWindowState {
-            get {
-                return ((global::System.Windows.Forms.FormWindowState)(this["ParashotFormWindowState"]));
-            }
-            set {
-                this["ParashotFormWindowState"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
-        public int ParashotFormColumnTranslationWidth {
-            get {
-                return ((int)(this["ParashotFormColumnTranslationWidth"]));
-            }
-            set {
-                this["ParashotFormColumnTranslationWidth"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TrayIconUseSpecialDayIcon {
-            get {
-                return ((bool)(this["TrayIconUseSpecialDayIcon"]));
-            }
-            set {
-                this["TrayIconUseSpecialDayIcon"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8")]
-        public decimal ParashotFormFontSize {
-            get {
-                return ((decimal)(this["ParashotFormFontSize"]));
-            }
-            set {
-                this["ParashotFormFontSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool CelebrationsBoardFormEnglishColumns {
-            get {
-                return ((bool)(this["CelebrationsBoardFormEnglishColumns"]));
-            }
-            set {
-                this["CelebrationsBoardFormEnglishColumns"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool NewMoonsBoardFormShowMonthNumbers {
-            get {
-                return ((bool)(this["NewMoonsBoardFormShowMonthNumbers"]));
-            }
-            set {
-                this["NewMoonsBoardFormShowMonthNumbers"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FirstLaunchV7_0 {
-            get {
-                return ((bool)(this["FirstLaunchV7_0"]));
-            }
-            set {
-                this["FirstLaunchV7_0"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UseSimhatTorahOutside {
-            get {
-                return ((bool)(this["UseSimhatTorahOutside"]));
-            }
-            set {
-                this["UseSimhatTorahOutside"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MainFormTitleBarShowWeeklyParashah {
-            get {
-                return ((bool)(this["MainFormTitleBarShowWeeklyParashah"]));
-            }
-            set {
-                this["MainFormTitleBarShowWeeklyParashah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ShowLastNewInVersionAfterUpdate {
-            get {
-                return ((bool)(this["ShowLastNewInVersionAfterUpdate"]));
-            }
-            set {
-                this["ShowLastNewInVersionAfterUpdate"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MainFormTitleBarShowToday {
-            get {
-                return ((bool)(this["MainFormTitleBarShowToday"]));
-            }
-            set {
-                this["MainFormTitleBarShowToday"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int CalendarLineSpacing {
-            get {
-                return ((int)(this["CalendarLineSpacing"]));
-            }
-            set {
-                this["CalendarLineSpacing"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ReminderShabatShowParashah {
-            get {
-                return ((bool)(this["ReminderShabatShowParashah"]));
-            }
-            set {
-                this["ReminderShabatShowParashah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public long BenchmarkTranslate {
-            get {
-                return ((long)(this["BenchmarkTranslate"]));
-            }
-            set {
-                this["BenchmarkTranslate"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("LockSession")]
-        public global::Ordisoftware.Core.PowerAction LockSessionDefaultAction {
-            get {
-                return ((global::Ordisoftware.Core.PowerAction)(this["LockSessionDefaultAction"]));
-            }
-            set {
-                this["LockSessionDefaultAction"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool LockSessionConfirmLogOffOrMore {
-            get {
-                return ((bool)(this["LockSessionConfirmLogOffOrMore"]));
-            }
-            set {
-                this["LockSessionConfirmLogOffOrMore"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool AskRegenerateIfIntervalGreater {
-            get {
-                return ((bool)(this["AskRegenerateIfIntervalGreater"]));
-            }
-            set {
-                this["AskRegenerateIfIntervalGreater"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool WeeklyParashahShowAtStartup {
-            get {
-                return ((bool)(this["WeeklyParashahShowAtStartup"]));
-            }
-            set {
-                this["WeeklyParashahShowAtStartup"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool WeeklyParashahShowAtNewWeek {
-            get {
-                return ((bool)(this["WeeklyParashahShowAtNewWeek"]));
-            }
-            set {
-                this["WeeklyParashahShowAtNewWeek"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ReminderShowLockoutIcon {
-            get {
-                return ((bool)(this["ReminderShowLockoutIcon"]));
-            }
-            set {
-                this["ReminderShowLockoutIcon"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool LoadingFormHidden {
-            get {
-                return ((bool)(this["LoadingFormHidden"]));
-            }
-            set {
-                this["LoadingFormHidden"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool NavigationWindowCloseOnShowMainForm {
-            get {
-                return ((bool)(this["NavigationWindowCloseOnShowMainForm"]));
-            }
-            set {
-                this["NavigationWindowCloseOnShowMainForm"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ParashahCaptionWithBookAndRef {
-            get {
-                return ((bool)(this["ParashahCaptionWithBookAndRef"]));
-            }
-            set {
-                this["ParashahCaptionWithBookAndRef"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool NavigationWindowUseUnicodeIcons {
-            get {
-                return ((bool)(this["NavigationWindowUseUnicodeIcons"]));
-            }
-            set {
-                this["NavigationWindowUseUnicodeIcons"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point CelebrationVersesBoardFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["CelebrationVersesBoardFormLocation"]));
-            }
-            set {
-                this["CelebrationVersesBoardFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("384, 306")]
-        public global::System.Drawing.Size CelebrationVersesBoardFormClientSize {
-            get {
-                return ((global::System.Drawing.Size)(this["CelebrationVersesBoardFormClientSize"]));
-            }
-            set {
-                this["CelebrationVersesBoardFormClientSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MonthViewChangeDayOnClick {
-            get {
-                return ((bool)(this["MonthViewChangeDayOnClick"]));
-            }
-            set {
-                this["MonthViewChangeDayOnClick"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Brown")]
-        public global::System.Drawing.Color SelectedDayBoxColor {
-            get {
-                return ((global::System.Drawing.Color)(this["SelectedDayBoxColor"]));
-            }
-            set {
-                this["SelectedDayBoxColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CalendarUseHoverEffect {
-            get {
-                return ((bool)(this["CalendarUseHoverEffect"]));
-            }
-            set {
-                this["CalendarUseHoverEffect"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
-        public global::System.Drawing.Color CalendarColorHoverEffect {
-            get {
-                return ((global::System.Drawing.Color)(this["CalendarColorHoverEffect"]));
-            }
-            set {
-                this["CalendarColorHoverEffect"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool CalendarShowSelectedBox {
-            get {
-                return ((bool)(this["CalendarShowSelectedBox"]));
-            }
-            set {
-                this["CalendarShowSelectedBox"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SelectedDayBoxColorOnlyCurrent {
-            get {
-                return ((bool)(this["SelectedDayBoxColorOnlyCurrent"]));
-            }
-            set {
-                this["SelectedDayBoxColorOnlyCurrent"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("LightSlateGray")]
-        public global::System.Drawing.Color CalendarColorActiveDay {
-            get {
-                return ((global::System.Drawing.Color)(this["CalendarColorActiveDay"]));
-            }
-            set {
-                this["CalendarColorActiveDay"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SetActive")]
-        public global::Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction CalendarDoubleClickAction {
-            get {
-                return ((global::Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction)(this["CalendarDoubleClickAction"]));
-            }
-            set {
-                this["CalendarDoubleClickAction"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool MainFormTitleBarShowCelebration {
-            get {
-                return ((bool)(this["MainFormTitleBarShowCelebration"]));
-            }
-            set {
-                this["MainFormTitleBarShowCelebration"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool TraceFormShowOnlyErrors {
-            get {
-                return ((bool)(this["TraceFormShowOnlyErrors"]));
-            }
-            set {
-                this["TraceFormShowOnlyErrors"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FirstLaunchV9_14 {
-            get {
-                return ((bool)(this["FirstLaunchV9_14"]));
-            }
-            set {
-                this["FirstLaunchV9_14"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FirstLaunchV9_17 {
-            get {
-                return ((bool)(this["FirstLaunchV9_17"]));
-            }
-            set {
-                this["FirstLaunchV9_17"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FirstLaunchV9_18 {
-            get {
-                return ((bool)(this["FirstLaunchV9_18"]));
-            }
-            set {
-                this["FirstLaunchV9_18"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UseSodHaibour {
-            get {
-                return ((bool)(this["UseSodHaibour"]));
-            }
-            set {
-                this["UseSodHaibour"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("584, 361")]
-        public global::System.Drawing.Size ManageAcquaintanceEventsForm {
-            get {
-                return ((global::System.Drawing.Size)(this["ManageAcquaintanceEventsForm"]));
-            }
-            set {
-                this["ManageAcquaintanceEventsForm"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://www.google.com/search?q=studybible.info+Strong+Hebrew+Lexicon+KJV+Usage+%" +
-            "WORD%")]
-        public string CustomWebSearch {
-            get {
-                return ((string)(this["CustomWebSearch"]));
-            }
-            set {
-                this["CustomWebSearch"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point EditMemoFormLastLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["EditMemoFormLastLocation"]));
-            }
-            set {
-                this["EditMemoFormLastLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Size EditMemoFormLastSize {
-            get {
-                return ((global::System.Drawing.Size)(this["EditMemoFormLastSize"]));
-            }
-            set {
-                this["EditMemoFormLastSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point TranscriptionGuideFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["TranscriptionGuideFormLocation"]));
-            }
-            set {
-                this["TranscriptionGuideFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("633, 668")]
-        public global::System.Drawing.Size TranscriptionGuideFormSize {
-            get {
-                return ((global::System.Drawing.Size)(this["TranscriptionGuideFormSize"]));
-            }
-            set {
-                this["TranscriptionGuideFormSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
-        public global::System.Drawing.Point MethodGuideFormLocation {
-            get {
-                return ((global::System.Drawing.Point)(this["MethodGuideFormLocation"]));
-            }
-            set {
-                this["MethodGuideFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("622; 666")]
-        public string MethodGuideFormSize {
-            get {
-                return ((string)(this["MethodGuideFormSize"]));
-            }
-            set {
-                this["MethodGuideFormSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool AutoSortBookmarks {
-            get {
-                return ((bool)(this["AutoSortBookmarks"]));
-            }
-            set {
-                this["AutoSortBookmarks"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UseTwoDaysForLastPessahDayOutside {
-            get {
-                return ((bool)(this["UseTwoDaysForLastPessahDayOutside"]));
-            }
-            set {
-                this["UseTwoDaysForLastPessahDayOutside"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool BoxesRetakeFocusAfterDateClick {
-            get {
-                return ((bool)(this["BoxesRetakeFocusAfterDateClick"]));
-            }
-            set {
-                this["BoxesRetakeFocusAfterDateClick"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool PreviewModeNotified {
-            get {
-                return ((bool)(this["PreviewModeNotified"]));
-            }
-            set {
-                this["PreviewModeNotified"] = value;
-            }
-        }
+namespace Ordisoftware.Hebrew.Calendar.Properties
+{
+
+
+  [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+  [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
+  internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+  {
+
+    private static Settings defaultInstance = ( (Settings)( global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings()) ) );
+
+    public static Settings Default
+    {
+      get
+      {
+        return defaultInstance;
+      }
     }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Center")]
+    public global::Ordisoftware.Core.ControlLocation MainFormPosition
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Core.ControlLocation)( this["MainFormPosition"] ) );
+      }
+      set
+      {
+        this["MainFormPosition"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public int MainFormLeft
+    {
+      get
+      {
+        return ( (int)( this["MainFormLeft"] ) );
+      }
+      set
+      {
+        this["MainFormLeft"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public int MainFormTop
+    {
+      get
+      {
+        return ( (int)( this["MainFormTop"] ) );
+      }
+      set
+      {
+        this["MainFormTop"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public int MainFormWidth
+    {
+      get
+      {
+        return ( (int)( this["MainFormWidth"] ) );
+      }
+      set
+      {
+        this["MainFormWidth"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public int MainFormHeight
+    {
+      get
+      {
+        return ( (int)( this["MainFormHeight"] ) );
+      }
+      set
+      {
+        this["MainFormHeight"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+    public global::System.Windows.Forms.FormWindowState MainFormState
+    {
+      get
+      {
+        return ( (global::System.Windows.Forms.FormWindowState)( this["MainFormState"] ) );
+      }
+      set
+      {
+        this["MainFormState"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ESCtoExit
+    {
+      get
+      {
+        return ( (bool)( this["ESCtoExit"] ) );
+      }
+      set
+      {
+        this["ESCtoExit"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ConfirmClosing
+    {
+      get
+      {
+        return ( (bool)( this["ConfirmClosing"] ) );
+      }
+      set
+      {
+        this["ConfirmClosing"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Courier New")]
+    public string FontName
+    {
+      get
+      {
+        return ( (string)( this["FontName"] ) );
+      }
+      set
+      {
+        this["FontName"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("10")]
+    public int FontSize
+    {
+      get
+      {
+        return ( (int)( this["FontSize"] ) );
+      }
+      set
+      {
+        this["FontSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ShowTips
+    {
+      get
+      {
+        return ( (bool)( this["ShowTips"] ) );
+      }
+      set
+      {
+        this["ShowTips"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("6")]
+    public int ShabatDay
+    {
+      get
+      {
+        return ( (int)( this["ShabatDay"] ) );
+      }
+      set
+      {
+        this["ShabatDay"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Month")]
+    public global::Ordisoftware.Hebrew.Calendar.ViewMode CurrentView
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Hebrew.Calendar.ViewMode)( this["CurrentView"] ) );
+      }
+      set
+      {
+        this["CurrentView"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("")]
+    public string GPSLatitude
+    {
+      get
+      {
+        return ( (string)( this["GPSLatitude"] ) );
+      }
+      set
+      {
+        this["GPSLatitude"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("")]
+    public string GPSLongitude
+    {
+      get
+      {
+        return ( (string)( this["GPSLongitude"] ) );
+      }
+      set
+      {
+        this["GPSLongitude"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+    public global::System.Drawing.Color TextColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["TextColor"] ) );
+      }
+      set
+      {
+        this["TextColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("White")]
+    public global::System.Drawing.Color TextBackground
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["TextBackground"] ) );
+      }
+      set
+      {
+        this["TextBackground"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("LemonChiffon")]
+    public global::System.Drawing.Color NavigateTopColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["NavigateTopColor"] ) );
+      }
+      set
+      {
+        this["NavigateTopColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
+    public global::System.Drawing.Color NavigateMiddleColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["NavigateMiddleColor"] ) );
+      }
+      set
+      {
+        this["NavigateMiddleColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Honeydew")]
+    public global::System.Drawing.Color NavigateBottomColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["NavigateBottomColor"] ) );
+      }
+      set
+      {
+        this["NavigateBottomColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("MainForm")]
+    public global::Ordisoftware.Hebrew.Calendar.TrayIconClickOpen TrayIconClickOpen
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Hebrew.Calendar.TrayIconClickOpen)( this["TrayIconClickOpen"] ) );
+      }
+      set
+      {
+        this["TrayIconClickOpen"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool StartupHide
+    {
+      get
+      {
+        return ( (bool)( this["StartupHide"] ) );
+      }
+      set
+      {
+        this["StartupHide"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("14")]
+    public decimal ReminderCelebrationsInterval
+    {
+      get
+      {
+        return ( (decimal)( this["ReminderCelebrationsInterval"] ) );
+      }
+      set
+      {
+        this["ReminderCelebrationsInterval"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ReminderCelebrationsEnabled
+    {
+      get
+      {
+        return ( (bool)( this["ReminderCelebrationsEnabled"] ) );
+      }
+      set
+      {
+        this["ReminderCelebrationsEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool TorahEventRemindNewYearD1
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindNewYearD1"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindNewYearD1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindNewYearD10
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindNewYearD10"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindNewYearD10"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindPessahD1
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindPessahD1"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindPessahD1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool TorahEventRemindPessahD7
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindPessahD7"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindPessahD7"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindChavouotDiet
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindChavouotDiet"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindChavouotDiet"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindChavouot1
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindChavouot1"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindChavouot1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindChavouot2
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindChavouot2"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindChavouot2"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindYomTerouah
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindYomTerouah"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindYomTerouah"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindYomHaKipourim
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindYomHaKipourim"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindYomHaKipourim"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindSoukotD1
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindSoukotD1"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindSoukotD1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool TorahEventRemindSoukotD8
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindSoukotD8"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindSoukotD8"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ReminderShabatEnabled
+    {
+      get
+      {
+        return ( (bool)( this["ReminderShabatEnabled"] ) );
+      }
+      set
+      {
+        this["ReminderShabatEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool UpgradeRequired
+    {
+      get
+      {
+        return ( (bool)( this["UpgradeRequired"] ) );
+      }
+      set
+      {
+        this["UpgradeRequired"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("White")]
+    public global::System.Drawing.Color CurrentDayForeColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CurrentDayForeColor"] ) );
+      }
+      set
+      {
+        this["CurrentDayForeColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("DarkRed")]
+    public global::System.Drawing.Color CalendarColorTorahEvent
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CalendarColorTorahEvent"] ) );
+      }
+      set
+      {
+        this["CalendarColorTorahEvent"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("DarkGreen")]
+    public global::System.Drawing.Color CalendarColorSeason
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CalendarColorSeason"] ) );
+      }
+      set
+      {
+        this["CalendarColorSeason"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("DarkBlue")]
+    public global::System.Drawing.Color CalendarColorMoon
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CalendarColorMoon"] ) );
+      }
+      set
+      {
+        this["CalendarColorMoon"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("150, 100, 0")]
+    public global::System.Drawing.Color CalendarColorFullMoon
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CalendarColorFullMoon"] ) );
+      }
+      set
+      {
+        this["CalendarColorFullMoon"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool RemindShabatOnlyLight
+    {
+      get
+      {
+        return ( (bool)( this["RemindShabatOnlyLight"] ) );
+      }
+      set
+      {
+        this["RemindShabatOnlyLight"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("6")]
+    public decimal RemindShabatHoursBefore
+    {
+      get
+      {
+        return ( (decimal)( this["RemindShabatHoursBefore"] ) );
+      }
+      set
+      {
+        this["RemindShabatHoursBefore"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("15")]
+    public decimal RemindShabatEveryMinutes
+    {
+      get
+      {
+        return ( (decimal)( this["RemindShabatEveryMinutes"] ) );
+      }
+      set
+      {
+        this["RemindShabatEveryMinutes"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CheckUpdateAtStartup
+    {
+      get
+      {
+        return ( (bool)( this["CheckUpdateAtStartup"] ) );
+      }
+      set
+      {
+        this["CheckUpdateAtStartup"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("None")]
+    public global::Ordisoftware.Core.Language LanguageSelected
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Core.Language)( this["LanguageSelected"] ) );
+      }
+      set
+      {
+        this["LanguageSelected"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("24")]
+    public decimal RemindCelebrationHoursBefore
+    {
+      get
+      {
+        return ( (decimal)( this["RemindCelebrationHoursBefore"] ) );
+      }
+      set
+      {
+        this["RemindCelebrationHoursBefore"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("15")]
+    public decimal RemindCelebrationEveryMinutes
+    {
+      get
+      {
+        return ( (decimal)( this["RemindCelebrationEveryMinutes"] ) );
+      }
+      set
+      {
+        this["RemindCelebrationEveryMinutes"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool TorahEventRemindDayNewYearD1
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayNewYearD1"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayNewYearD1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool TorahEventRemindDayNewYearD10
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayNewYearD10"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayNewYearD10"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindDayPessahD1
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayPessahD1"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayPessahD1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindDayPessahD7
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayPessahD7"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayPessahD7"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool TorahEventRemindDayChavouotDiet
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayChavouotDiet"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayChavouotDiet"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindDayChavouot1
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayChavouot1"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayChavouot1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindDayChavouot2
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayChavouot2"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayChavouot2"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindDayYomTerouah
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayYomTerouah"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayYomTerouah"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindDayYomHaKipourim
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDayYomHaKipourim"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDayYomHaKipourim"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindDaySoukotD1
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDaySoukotD1"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDaySoukotD1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventRemindDaySoukotD8
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventRemindDaySoukotD8"] ) );
+      }
+      set
+      {
+        this["TorahEventRemindDaySoukotD8"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("")]
+    public string GPSCountry
+    {
+      get
+      {
+        return ( (string)( this["GPSCountry"] ) );
+      }
+      set
+      {
+        this["GPSCountry"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("")]
+    public string GPSCity
+    {
+      get
+      {
+        return ( (string)( this["GPSCity"] ) );
+      }
+      set
+      {
+        this["GPSCity"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool BalloonEnabled
+    {
+      get
+      {
+        return ( (bool)( this["BalloonEnabled"] ) );
+      }
+      set
+      {
+        this["BalloonEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool ShowReminderInTaskBar
+    {
+      get
+      {
+        return ( (bool)( this["ShowReminderInTaskBar"] ) );
+      }
+      set
+      {
+        this["ShowReminderInTaskBar"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool BalloonAutoHide
+    {
+      get
+      {
+        return ( (bool)( this["BalloonAutoHide"] ) );
+      }
+      set
+      {
+        this["BalloonAutoHide"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("255, 255, 230")]
+    public global::System.Drawing.Color EventColorTorah
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["EventColorTorah"] ) );
+      }
+      set
+      {
+        this["EventColorTorah"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool UseColors
+    {
+      get
+      {
+        return ( (bool)( this["UseColors"] ) );
+      }
+      set
+      {
+        this["UseColors"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("240, 240, 240")]
+    public global::System.Drawing.Color EventColorShabat
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["EventColorShabat"] ) );
+      }
+      set
+      {
+        this["EventColorShabat"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("245, 255, 240")]
+    public global::System.Drawing.Color EventColorSeason
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["EventColorSeason"] ) );
+      }
+      set
+      {
+        this["EventColorSeason"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point NextCelebrationsFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["NextCelebrationsFormLocation"] ) );
+      }
+      set
+      {
+        this["NextCelebrationsFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool UpgradeResetRequiredV3_0
+    {
+      get
+      {
+        return ( (bool)( this["UpgradeResetRequiredV3_0"] ) );
+      }
+      set
+      {
+        this["UpgradeResetRequiredV3_0"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Firebrick")]
+    public global::System.Drawing.Color CurrentDayBackColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CurrentDayBackColor"] ) );
+      }
+      set
+      {
+        this["CurrentDayBackColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("240, 240, 240")]
+    public global::System.Drawing.Color EventColorNext
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["EventColorNext"] ) );
+      }
+      set
+      {
+        this["EventColorNext"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("AliceBlue")]
+    public global::System.Drawing.Color EventColorMonth
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["EventColorMonth"] ) );
+      }
+      set
+      {
+        this["EventColorMonth"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TorahEventsCountAsMoon
+    {
+      get
+      {
+        return ( (bool)( this["TorahEventsCountAsMoon"] ) );
+      }
+      set
+      {
+        this["TorahEventsCountAsMoon"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool FirstLaunch
+    {
+      get
+      {
+        return ( (bool)( this["FirstLaunch"] ) );
+      }
+      set
+      {
+        this["FirstLaunch"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+    public int BalloonLoomingDelay
+    {
+      get
+      {
+        return ( (int)( this["BalloonLoomingDelay"] ) );
+      }
+      set
+      {
+        this["BalloonLoomingDelay"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point SearchLunarMonthFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["SearchLunarMonthFormLocation"] ) );
+      }
+      set
+      {
+        this["SearchLunarMonthFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point SearchCelebrationFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["SearchCelebrationFormLocation"] ) );
+      }
+      set
+      {
+        this["SearchCelebrationFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("")]
+    public string TimeZone
+    {
+      get
+      {
+        return ( (string)( this["TimeZone"] ) );
+      }
+      set
+      {
+        this["TimeZone"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool UpgradeResetRequiredV3_6
+    {
+      get
+      {
+        return ( (bool)( this["UpgradeResetRequiredV3_6"] ) );
+      }
+      set
+      {
+        this["UpgradeResetRequiredV3_6"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool AutoLockSession
+    {
+      get
+      {
+        return ( (bool)( this["AutoLockSession"] ) );
+      }
+      set
+      {
+        this["AutoLockSession"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("30")]
+    public int AutoLockSessionTimeOut
+    {
+      get
+      {
+        return ( (int)( this["AutoLockSessionTimeOut"] ) );
+      }
+      set
+      {
+        this["AutoLockSessionTimeOut"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool LockSessionMediaStop
+    {
+      get
+      {
+        return ( (bool)( this["LockSessionMediaStop"] ) );
+      }
+      set
+      {
+        this["LockSessionMediaStop"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Letters\\Bin\\Ordisoftware.Hebrew.Letters.exe")]
+    public string HebrewLettersExe
+    {
+      get
+      {
+        return ( (string)( this["HebrewLettersExe"] ) );
+      }
+      set
+      {
+        this["HebrewLettersExe"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Pastel")]
+    public global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColor LunarMonthsFormUseColors
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Hebrew.Calendar.LunarMonthsListColor)( this["LunarMonthsFormUseColors"] ) );
+      }
+      set
+      {
+        this["LunarMonthsFormUseColors"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point LunarMonthsFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["LunarMonthsFormLocation"] ) );
+      }
+      set
+      {
+        this["LunarMonthsFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("9")]
+    public int MonthViewFontSize
+    {
+      get
+      {
+        return ( (int)( this["MonthViewFontSize"] ) );
+      }
+      set
+      {
+        this["MonthViewFontSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool AutoOpenExportFolder
+    {
+      get
+      {
+        return ( (bool)( this["AutoOpenExportFolder"] ) );
+      }
+      set
+      {
+        this["AutoOpenExportFolder"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool VacuumAtStartup
+    {
+      get
+      {
+        return ( (bool)( this["VacuumAtStartup"] ) );
+      }
+      set
+      {
+        this["VacuumAtStartup"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool FirstLaunchV4
+    {
+      get
+      {
+        return ( (bool)( this["FirstLaunchV4"] ) );
+      }
+      set
+      {
+        this["FirstLaunchV4"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool DebuggerEnabled
+    {
+      get
+      {
+        return ( (bool)( this["DebuggerEnabled"] ) );
+      }
+      set
+      {
+        this["DebuggerEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public global::System.DateTime VacuumLastDone
+    {
+      get
+      {
+        return ( (global::System.DateTime)( this["VacuumLastDone"] ) );
+      }
+      set
+      {
+        this["VacuumLastDone"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("White")]
+    public global::System.Drawing.Color MonthViewBackColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["MonthViewBackColor"] ) );
+      }
+      set
+      {
+        this["MonthViewBackColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+    public global::System.Drawing.Color MonthViewTextColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["MonthViewTextColor"] ) );
+      }
+      set
+      {
+        this["MonthViewTextColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("250, 250, 250")]
+    public global::System.Drawing.Color MonthViewNoDaysBackColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["MonthViewNoDaysBackColor"] ) );
+      }
+      set
+      {
+        this["MonthViewNoDaysBackColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("%MONTHNAME% [%MONTHNUM%] #%DAYNUM%")]
+    public string MoonDayTextFormat
+    {
+      get
+      {
+        return ( (string)( this["MoonDayTextFormat"] ) );
+      }
+      set
+      {
+        this["MoonDayTextFormat"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("60")]
+    public int LastSuspendDelaySelected
+    {
+      get
+      {
+        return ( (int)( this["LastSuspendDelaySelected"] ) );
+      }
+      set
+      {
+        this["LastSuspendDelaySelected"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool UpgradeResetRequiredV4_1
+    {
+      get
+      {
+        return ( (bool)( this["UpgradeResetRequiredV4_1"] ) );
+      }
+      set
+      {
+        this["UpgradeResetRequiredV4_1"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool WebLinksMenuEnabled
+    {
+      get
+      {
+        return ( (bool)( this["WebLinksMenuEnabled"] ) );
+      }
+      set
+      {
+        this["WebLinksMenuEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool AllowSuspendReminder
+    {
+      get
+      {
+        return ( (bool)( this["AllowSuspendReminder"] ) );
+      }
+      set
+      {
+        this["AllowSuspendReminder"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point SearchGregorianMonthFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["SearchGregorianMonthFormLocation"] ) );
+      }
+      set
+      {
+        this["SearchGregorianMonthFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public global::System.DateTime CheckUpdateLastDone
+    {
+      get
+      {
+        return ( (global::System.DateTime)( this["CheckUpdateLastDone"] ) );
+      }
+      set
+      {
+        this["CheckUpdateLastDone"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool AutoRegenerate
+    {
+      get
+      {
+        return ( (bool)( this["AutoRegenerate"] ) );
+      }
+      set
+      {
+        this["AutoRegenerate"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("120")]
+    public int GenerateIntervalMaximum
+    {
+      get
+      {
+        return ( (int)( this["GenerateIntervalMaximum"] ) );
+      }
+      set
+      {
+        this["GenerateIntervalMaximum"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public long BenchmarkLoadData
+    {
+      get
+      {
+        return ( (long)( this["BenchmarkLoadData"] ) );
+      }
+      set
+      {
+        this["BenchmarkLoadData"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public long BenchmarkFillCalendar
+    {
+      get
+      {
+        return ( (long)( this["BenchmarkFillCalendar"] ) );
+      }
+      set
+      {
+        this["BenchmarkFillCalendar"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public long BenchmarkGenerateYears
+    {
+      get
+      {
+        return ( (long)( this["BenchmarkGenerateYears"] ) );
+      }
+      set
+      {
+        this["BenchmarkGenerateYears"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public long BenchmarkStartingApp
+    {
+      get
+      {
+        return ( (long)( this["BenchmarkStartingApp"] ) );
+      }
+      set
+      {
+        this["BenchmarkStartingApp"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point StatisticsFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["StatisticsFormLocation"] ) );
+      }
+      set
+      {
+        this["StatisticsFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("10")]
+    public int AutoGenerateYearsInternal
+    {
+      get
+      {
+        return ( (int)( this["AutoGenerateYearsInternal"] ) );
+      }
+      set
+      {
+        this["AutoGenerateYearsInternal"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public global::System.DateTime LastGenerated
+    {
+      get
+      {
+        return ( (global::System.DateTime)( this["LastGenerated"] ) );
+      }
+      set
+      {
+        this["LastGenerated"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool StatisticsFormAlwaysOnTop
+    {
+      get
+      {
+        return ( (bool)( this["StatisticsFormAlwaysOnTop"] ) );
+      }
+      set
+      {
+        this["StatisticsFormAlwaysOnTop"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public long BenchmarkPopulateDays
+    {
+      get
+      {
+        return ( (long)( this["BenchmarkPopulateDays"] ) );
+      }
+      set
+      {
+        this["BenchmarkPopulateDays"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public long BenchmarkAnalyseDays
+    {
+      get
+      {
+        return ( (long)( this["BenchmarkAnalyseDays"] ) );
+      }
+      set
+      {
+        this["BenchmarkAnalyseDays"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public long BenchmarkGenerateTextReport
+    {
+      get
+      {
+        return ( (long)( this["BenchmarkGenerateTextReport"] ) );
+      }
+      set
+      {
+        this["BenchmarkGenerateTextReport"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool ReminderFormCloseOnClick
+    {
+      get
+      {
+        return ( (bool)( this["ReminderFormCloseOnClick"] ) );
+      }
+      set
+      {
+        this["ReminderFormCloseOnClick"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool BigCalendarWarningEnabled
+    {
+      get
+      {
+        return ( (bool)( this["BigCalendarWarningEnabled"] ) );
+      }
+      set
+      {
+        this["BigCalendarWarningEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point TraceFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["TraceFormLocation"] ) );
+      }
+      set
+      {
+        this["TraceFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("884, 661")]
+    public global::System.Drawing.Size TraceFormSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["TraceFormSize"] ) );
+      }
+      set
+      {
+        this["TraceFormSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("8")]
+    public int TraceFormTextBoxFontSize
+    {
+      get
+      {
+        return ( (int)( this["TraceFormTextBoxFontSize"] ) );
+      }
+      set
+      {
+        this["TraceFormTextBoxFontSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool TraceEnabled
+    {
+      get
+      {
+        return ( (bool)( this["TraceEnabled"] ) );
+      }
+      set
+      {
+        this["TraceEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool SoundsEnabled
+    {
+      get
+      {
+        return ( (bool)( this["SoundsEnabled"] ) );
+      }
+      set
+      {
+        this["SoundsEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool AdvancedDialogBoxes
+    {
+      get
+      {
+        return ( (bool)( this["AdvancedDialogBoxes"] ) );
+      }
+      set
+      {
+        this["AdvancedDialogBoxes"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("")]
+    public string ReminderBoxSoundPath
+    {
+      get
+      {
+        return ( (string)( this["ReminderBoxSoundPath"] ) );
+      }
+      set
+      {
+        this["ReminderBoxSoundPath"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Dialog")]
+    public global::Ordisoftware.Core.SoundSource ReminderBoxSoundSource
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Core.SoundSource)( this["ReminderBoxSoundSource"] ) );
+      }
+      set
+      {
+        this["ReminderBoxSoundSource"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Asterisk")]
+    public global::System.Windows.Forms.MessageBoxIcon ReminderBoxSoundDialog
+    {
+      get
+      {
+        return ( (global::System.Windows.Forms.MessageBoxIcon)( this["ReminderBoxSoundDialog"] ) );
+      }
+      set
+      {
+        this["ReminderBoxSoundDialog"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("")]
+    public string ReminderBoxSoundWindows
+    {
+      get
+      {
+        return ( (string)( this["ReminderBoxSoundWindows"] ) );
+      }
+      set
+      {
+        this["ReminderBoxSoundWindows"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public int PreferencesFormSelectedTabIndex
+    {
+      get
+      {
+        return ( (int)( this["PreferencesFormSelectedTabIndex"] ) );
+      }
+      set
+      {
+        this["PreferencesFormSelectedTabIndex"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("calc.exe")]
+    public string CalculatorExe
+    {
+      get
+      {
+        return ( (string)( this["CalculatorExe"] ) );
+      }
+      set
+      {
+        this["CalculatorExe"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool DatesDiffCalculatorFormAutoSetRightToToday
+    {
+      get
+      {
+        return ( (bool)( this["DatesDiffCalculatorFormAutoSetRightToToday"] ) );
+      }
+      set
+      {
+        this["DatesDiffCalculatorFormAutoSetRightToToday"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("7")]
+    public int VacuumAtStartupDaysInterval
+    {
+      get
+      {
+        return ( (int)( this["VacuumAtStartupDaysInterval"] ) );
+      }
+      set
+      {
+        this["VacuumAtStartupDaysInterval"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("7")]
+    public int CheckUpdateAtStartupDaysInterval
+    {
+      get
+      {
+        return ( (int)( this["CheckUpdateAtStartupDaysInterval"] ) );
+      }
+      set
+      {
+        this["CheckUpdateAtStartupDaysInterval"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CheckUpdateEveryWeekWhileRunning
+    {
+      get
+      {
+        return ( (bool)( this["CheckUpdateEveryWeekWhileRunning"] ) );
+      }
+      set
+      {
+        this["CheckUpdateEveryWeekWhileRunning"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("%USER_APP_DOCUMENTS%")]
+    public string ExportFolder
+    {
+      get
+      {
+        return ( (string)( this["ExportFolder"] ) );
+      }
+      set
+      {
+        this["ExportFolder"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool ShowSuccessDialogs
+    {
+      get
+      {
+        return ( (bool)( this["ShowSuccessDialogs"] ) );
+      }
+      set
+      {
+        this["ShowSuccessDialogs"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("")]
+    public string ReminderBoxSoundApplication
+    {
+      get
+      {
+        return ( (string)( this["ReminderBoxSoundApplication"] ) );
+      }
+      set
+      {
+        this["ReminderBoxSoundApplication"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("100")]
+    public int ApplicationVolume
+    {
+      get
+      {
+        return ( (int)( this["ApplicationVolume"] ) );
+      }
+      set
+      {
+        this["ApplicationVolume"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool BalloonOnlyIfMainFormIsHidden
+    {
+      get
+      {
+        return ( (bool)( this["BalloonOnlyIfMainFormIsHidden"] ) );
+      }
+      set
+      {
+        this["BalloonOnlyIfMainFormIsHidden"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool UsageStatisticsEnabled
+    {
+      get
+      {
+        return ( (bool)( this["UsageStatisticsEnabled"] ) );
+      }
+      set
+      {
+        this["UsageStatisticsEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("20")]
+    public int DateBookmarksCount
+    {
+      get
+      {
+        return ( (int)( this["DateBookmarksCount"] ) );
+      }
+      set
+      {
+        this["DateBookmarksCount"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("264, 311")]
+    public global::System.Drawing.Size ManageDateBookmarksFormClientSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["ManageDateBookmarksFormClientSize"] ) );
+      }
+      set
+      {
+        this["ManageDateBookmarksFormClientSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool AutoOpenExportedFile
+    {
+      get
+      {
+        return ( (bool)( this["AutoOpenExportedFile"] ) );
+      }
+      set
+      {
+        this["AutoOpenExportedFile"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool RestoreLastViewAtStartup
+    {
+      get
+      {
+        return ( (bool)( this["RestoreLastViewAtStartup"] ) );
+      }
+      set
+      {
+        this["RestoreLastViewAtStartup"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ShowPrintPreviewDialog
+    {
+      get
+      {
+        return ( (bool)( this["ShowPrintPreviewDialog"] ) );
+      }
+      set
+      {
+        this["ShowPrintPreviewDialog"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("50")]
+    public int PrintingMargin
+    {
+      get
+      {
+        return ( (int)( this["PrintingMargin"] ) );
+      }
+      set
+      {
+        this["PrintingMargin"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool UpgradeResetRequiredV5_10
+    {
+      get
+      {
+        return ( (bool)( this["UpgradeResetRequiredV5_10"] ) );
+      }
+      set
+      {
+        this["UpgradeResetRequiredV5_10"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("20")]
+    public int PrintPageCountWarning
+    {
+      get
+      {
+        return ( (int)( this["PrintPageCountWarning"] ) );
+      }
+      set
+      {
+        this["PrintPageCountWarning"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("CSV")]
+    public global::Ordisoftware.Core.DataExportTarget ExportDataPreferredTarget
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Core.DataExportTarget)( this["ExportDataPreferredTarget"] ) );
+      }
+      set
+      {
+        this["ExportDataPreferredTarget"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool PrintImageInLandscape
+    {
+      get
+      {
+        return ( (bool)( this["PrintImageInLandscape"] ) );
+      }
+      set
+      {
+        this["PrintImageInLandscape"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ExportDataEnumsAsTranslations
+    {
+      get
+      {
+        return ( (bool)( this["ExportDataEnumsAsTranslations"] ) );
+      }
+      set
+      {
+        this["ExportDataEnumsAsTranslations"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("50")]
+    public int SaveImageCountWarning
+    {
+      get
+      {
+        return ( (int)( this["SaveImageCountWarning"] ) );
+      }
+      set
+      {
+        this["SaveImageCountWarning"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("PNG")]
+    public global::Ordisoftware.Core.ImageExportTarget ExportImagePreferredTarget
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Core.ImageExportTarget)( this["ExportImagePreferredTarget"] ) );
+      }
+      set
+      {
+        this["ExportImagePreferredTarget"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("8")]
+    public decimal CelebrationsBoardFormFontSize
+    {
+      get
+      {
+        return ( (decimal)( this["CelebrationsBoardFormFontSize"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormFontSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CelebrationsBoardFormUseLongDateFormat
+    {
+      get
+      {
+        return ( (bool)( this["CelebrationsBoardFormUseLongDateFormat"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormUseLongDateFormat"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("67")]
+    public int GlobalHotKeyPopupMainFormKey
+    {
+      get
+      {
+        return ( (int)( this["GlobalHotKeyPopupMainFormKey"] ) );
+      }
+      set
+      {
+        this["GlobalHotKeyPopupMainFormKey"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("7")]
+    public int GlobalHotKeyPopupMainFormModifiers
+    {
+      get
+      {
+        return ( (int)( this["GlobalHotKeyPopupMainFormModifiers"] ) );
+      }
+      set
+      {
+        this["GlobalHotKeyPopupMainFormModifiers"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool GlobalHotKeyPopupMainFormEnabled
+    {
+      get
+      {
+        return ( (bool)( this["GlobalHotKeyPopupMainFormEnabled"] ) );
+      }
+      set
+      {
+        this["GlobalHotKeyPopupMainFormEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point CelebrationsBoardFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["CelebrationsBoardFormLocation"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+    public global::System.Windows.Forms.FormWindowState CelebrationsBoardFormWindowState
+    {
+      get
+      {
+        return ( (global::System.Windows.Forms.FormWindowState)( this["CelebrationsBoardFormWindowState"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormWindowState"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("984, 461")]
+    public global::System.Drawing.Size CelebrationsBoardFormClientSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["CelebrationsBoardFormClientSize"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormClientSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CelebrationsBoardFormUseTitleUpperCase
+    {
+      get
+      {
+        return ( (bool)( this["CelebrationsBoardFormUseTitleUpperCase"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormUseTitleUpperCase"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool MainFormShownGoToToday
+    {
+      get
+      {
+        return ( (bool)( this["MainFormShownGoToToday"] ) );
+      }
+      set
+      {
+        this["MainFormShownGoToToday"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CelebrationsBoardFormUseAbbreviatedNames
+    {
+      get
+      {
+        return ( (bool)( this["CelebrationsBoardFormUseAbbreviatedNames"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormUseAbbreviatedNames"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("8")]
+    public decimal NewMoonsBoardFormFontSize
+    {
+      get
+      {
+        return ( (decimal)( this["NewMoonsBoardFormFontSize"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormFontSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool NewMoonsBoardFormUseTitleUpperCase
+    {
+      get
+      {
+        return ( (bool)( this["NewMoonsBoardFormUseTitleUpperCase"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormUseTitleUpperCase"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool NewMoonsBoardFormUseLongDateFormat
+    {
+      get
+      {
+        return ( (bool)( this["NewMoonsBoardFormUseLongDateFormat"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormUseLongDateFormat"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool NewMoonsBoardFormUseAbbreviatedNames
+    {
+      get
+      {
+        return ( (bool)( this["NewMoonsBoardFormUseAbbreviatedNames"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormUseAbbreviatedNames"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool NewMoonsBoardFormUseRealDays
+    {
+      get
+      {
+        return ( (bool)( this["NewMoonsBoardFormUseRealDays"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormUseRealDays"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CelebrationsBoardFormUseRealDays
+    {
+      get
+      {
+        return ( (bool)( this["CelebrationsBoardFormUseRealDays"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormUseRealDays"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool NewMoonsBoardFormHideHours
+    {
+      get
+      {
+        return ( (bool)( this["NewMoonsBoardFormHideHours"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormHideHours"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool CelebrationsBoardFormHideHours
+    {
+      get
+      {
+        return ( (bool)( this["CelebrationsBoardFormHideHours"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormHideHours"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point NewMoonsBoardFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["NewMoonsBoardFormLocation"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+    public global::System.Windows.Forms.FormWindowState NewMoonsBoardFormWindowState
+    {
+      get
+      {
+        return ( (global::System.Windows.Forms.FormWindowState)( this["NewMoonsBoardFormWindowState"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormWindowState"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("984, 461")]
+    public global::System.Drawing.Size NewMoonsBoardFormClientSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["NewMoonsBoardFormClientSize"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormClientSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool WindowsDoubleBufferingEnabled
+    {
+      get
+      {
+        return ( (bool)( this["WindowsDoubleBufferingEnabled"] ) );
+      }
+      set
+      {
+        this["WindowsDoubleBufferingEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("msnweather:")]
+    public string WeatherAppPath
+    {
+      get
+      {
+        return ( (string)( this["WeatherAppPath"] ) );
+      }
+      set
+      {
+        this["WeatherAppPath"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool WeatherMenuItemsEnabled
+    {
+      get
+      {
+        return ( (bool)( this["WeatherMenuItemsEnabled"] ) );
+      }
+      set
+      {
+        this["WeatherMenuItemsEnabled"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Fixed")]
+    public global::Ordisoftware.Core.ControlLocation ReminderBoxDesktopLocation
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Core.ControlLocation)( this["ReminderBoxDesktopLocation"] ) );
+      }
+      set
+      {
+        this["ReminderBoxDesktopLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("MeteoblueDotCom")]
+    public global::Ordisoftware.Hebrew.Calendar.WeatherProvider WeatherOnlineProvider
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Hebrew.Calendar.WeatherProvider)( this["WeatherOnlineProvider"] ) );
+      }
+      set
+      {
+        this["WeatherOnlineProvider"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool WeatherOnlineUseDay
+    {
+      get
+      {
+        return ( (bool)( this["WeatherOnlineUseDay"] ) );
+      }
+      set
+      {
+        this["WeatherOnlineUseDay"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Indigo")]
+    public global::System.Drawing.Color CalendarColorParashah
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CalendarColorParashah"] ) );
+      }
+      set
+      {
+        this["CalendarColorParashah"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CalendarShowParashah
+    {
+      get
+      {
+        return ( (bool)( this["CalendarShowParashah"] ) );
+      }
+      set
+      {
+        this["CalendarShowParashah"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\Ordisoftware\\Hebrew Words\\Bin\\Ordisoftware.Hebrew.Words.exe")]
+    public string HebrewWordsExe
+    {
+      get
+      {
+        return ( (string)( this["HebrewWordsExe"] ) );
+      }
+      set
+      {
+        this["HebrewWordsExe"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point GrammarGuideFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["GrammarGuideFormLocation"] ) );
+      }
+      set
+      {
+        this["GrammarGuideFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("542, 666")]
+    public global::System.Drawing.Size GrammarGuideFormSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["GrammarGuideFormSize"] ) );
+      }
+      set
+      {
+        this["GrammarGuideFormSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point ParashotFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["ParashotFormLocation"] ) );
+      }
+      set
+      {
+        this["ParashotFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("984, 676")]
+    public global::System.Drawing.Size ParashotFormClientSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["ParashotFormClientSize"] ) );
+      }
+      set
+      {
+        this["ParashotFormClientSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+    public global::System.Windows.Forms.FormWindowState ParashotFormWindowState
+    {
+      get
+      {
+        return ( (global::System.Windows.Forms.FormWindowState)( this["ParashotFormWindowState"] ) );
+      }
+      set
+      {
+        this["ParashotFormWindowState"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+    public int ParashotFormColumnTranslationWidth
+    {
+      get
+      {
+        return ( (int)( this["ParashotFormColumnTranslationWidth"] ) );
+      }
+      set
+      {
+        this["ParashotFormColumnTranslationWidth"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TrayIconUseSpecialDayIcon
+    {
+      get
+      {
+        return ( (bool)( this["TrayIconUseSpecialDayIcon"] ) );
+      }
+      set
+      {
+        this["TrayIconUseSpecialDayIcon"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("8")]
+    public decimal ParashotFormFontSize
+    {
+      get
+      {
+        return ( (decimal)( this["ParashotFormFontSize"] ) );
+      }
+      set
+      {
+        this["ParashotFormFontSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool CelebrationsBoardFormEnglishColumns
+    {
+      get
+      {
+        return ( (bool)( this["CelebrationsBoardFormEnglishColumns"] ) );
+      }
+      set
+      {
+        this["CelebrationsBoardFormEnglishColumns"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool NewMoonsBoardFormShowMonthNumbers
+    {
+      get
+      {
+        return ( (bool)( this["NewMoonsBoardFormShowMonthNumbers"] ) );
+      }
+      set
+      {
+        this["NewMoonsBoardFormShowMonthNumbers"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool FirstLaunchV7_0
+    {
+      get
+      {
+        return ( (bool)( this["FirstLaunchV7_0"] ) );
+      }
+      set
+      {
+        this["FirstLaunchV7_0"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool UseSimhatTorahOutside
+    {
+      get
+      {
+        return ( (bool)( this["UseSimhatTorahOutside"] ) );
+      }
+      set
+      {
+        this["UseSimhatTorahOutside"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool MainFormTitleBarShowWeeklyParashah
+    {
+      get
+      {
+        return ( (bool)( this["MainFormTitleBarShowWeeklyParashah"] ) );
+      }
+      set
+      {
+        this["MainFormTitleBarShowWeeklyParashah"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ShowLastNewInVersionAfterUpdate
+    {
+      get
+      {
+        return ( (bool)( this["ShowLastNewInVersionAfterUpdate"] ) );
+      }
+      set
+      {
+        this["ShowLastNewInVersionAfterUpdate"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool MainFormTitleBarShowToday
+    {
+      get
+      {
+        return ( (bool)( this["MainFormTitleBarShowToday"] ) );
+      }
+      set
+      {
+        this["MainFormTitleBarShowToday"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("5")]
+    public int CalendarLineSpacing
+    {
+      get
+      {
+        return ( (int)( this["CalendarLineSpacing"] ) );
+      }
+      set
+      {
+        this["CalendarLineSpacing"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ReminderShabatShowParashah
+    {
+      get
+      {
+        return ( (bool)( this["ReminderShabatShowParashah"] ) );
+      }
+      set
+      {
+        this["ReminderShabatShowParashah"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0")]
+    public long BenchmarkTranslate
+    {
+      get
+      {
+        return ( (long)( this["BenchmarkTranslate"] ) );
+      }
+      set
+      {
+        this["BenchmarkTranslate"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("LockSession")]
+    public global::Ordisoftware.Core.PowerAction LockSessionDefaultAction
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Core.PowerAction)( this["LockSessionDefaultAction"] ) );
+      }
+      set
+      {
+        this["LockSessionDefaultAction"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool LockSessionConfirmLogOffOrMore
+    {
+      get
+      {
+        return ( (bool)( this["LockSessionConfirmLogOffOrMore"] ) );
+      }
+      set
+      {
+        this["LockSessionConfirmLogOffOrMore"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool AskRegenerateIfIntervalGreater
+    {
+      get
+      {
+        return ( (bool)( this["AskRegenerateIfIntervalGreater"] ) );
+      }
+      set
+      {
+        this["AskRegenerateIfIntervalGreater"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool WeeklyParashahShowAtStartup
+    {
+      get
+      {
+        return ( (bool)( this["WeeklyParashahShowAtStartup"] ) );
+      }
+      set
+      {
+        this["WeeklyParashahShowAtStartup"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool WeeklyParashahShowAtNewWeek
+    {
+      get
+      {
+        return ( (bool)( this["WeeklyParashahShowAtNewWeek"] ) );
+      }
+      set
+      {
+        this["WeeklyParashahShowAtNewWeek"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ReminderShowLockoutIcon
+    {
+      get
+      {
+        return ( (bool)( this["ReminderShowLockoutIcon"] ) );
+      }
+      set
+      {
+        this["ReminderShowLockoutIcon"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool LoadingFormHidden
+    {
+      get
+      {
+        return ( (bool)( this["LoadingFormHidden"] ) );
+      }
+      set
+      {
+        this["LoadingFormHidden"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool NavigationWindowCloseOnShowMainForm
+    {
+      get
+      {
+        return ( (bool)( this["NavigationWindowCloseOnShowMainForm"] ) );
+      }
+      set
+      {
+        this["NavigationWindowCloseOnShowMainForm"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool ParashahCaptionWithBookAndRef
+    {
+      get
+      {
+        return ( (bool)( this["ParashahCaptionWithBookAndRef"] ) );
+      }
+      set
+      {
+        this["ParashahCaptionWithBookAndRef"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool NavigationWindowUseUnicodeIcons
+    {
+      get
+      {
+        return ( (bool)( this["NavigationWindowUseUnicodeIcons"] ) );
+      }
+      set
+      {
+        this["NavigationWindowUseUnicodeIcons"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point CelebrationVersesBoardFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["CelebrationVersesBoardFormLocation"] ) );
+      }
+      set
+      {
+        this["CelebrationVersesBoardFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("384, 306")]
+    public global::System.Drawing.Size CelebrationVersesBoardFormClientSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["CelebrationVersesBoardFormClientSize"] ) );
+      }
+      set
+      {
+        this["CelebrationVersesBoardFormClientSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool MonthViewChangeDayOnClick
+    {
+      get
+      {
+        return ( (bool)( this["MonthViewChangeDayOnClick"] ) );
+      }
+      set
+      {
+        this["MonthViewChangeDayOnClick"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Brown")]
+    public global::System.Drawing.Color SelectedDayBoxColor
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["SelectedDayBoxColor"] ) );
+      }
+      set
+      {
+        this["SelectedDayBoxColor"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CalendarUseHoverEffect
+    {
+      get
+      {
+        return ( (bool)( this["CalendarUseHoverEffect"] ) );
+      }
+      set
+      {
+        this["CalendarUseHoverEffect"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("Silver")]
+    public global::System.Drawing.Color CalendarColorHoverEffect
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CalendarColorHoverEffect"] ) );
+      }
+      set
+      {
+        this["CalendarColorHoverEffect"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool CalendarShowSelectedBox
+    {
+      get
+      {
+        return ( (bool)( this["CalendarShowSelectedBox"] ) );
+      }
+      set
+      {
+        this["CalendarShowSelectedBox"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool SelectedDayBoxColorOnlyCurrent
+    {
+      get
+      {
+        return ( (bool)( this["SelectedDayBoxColorOnlyCurrent"] ) );
+      }
+      set
+      {
+        this["SelectedDayBoxColorOnlyCurrent"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("LightSlateGray")]
+    public global::System.Drawing.Color CalendarColorActiveDay
+    {
+      get
+      {
+        return ( (global::System.Drawing.Color)( this["CalendarColorActiveDay"] ) );
+      }
+      set
+      {
+        this["CalendarColorActiveDay"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("SetActive")]
+    public global::Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction CalendarDoubleClickAction
+    {
+      get
+      {
+        return ( (global::Ordisoftware.Hebrew.Calendar.CalendarDoubleClickAction)( this["CalendarDoubleClickAction"] ) );
+      }
+      set
+      {
+        this["CalendarDoubleClickAction"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool MainFormTitleBarShowCelebration
+    {
+      get
+      {
+        return ( (bool)( this["MainFormTitleBarShowCelebration"] ) );
+      }
+      set
+      {
+        this["MainFormTitleBarShowCelebration"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool TraceFormShowOnlyErrors
+    {
+      get
+      {
+        return ( (bool)( this["TraceFormShowOnlyErrors"] ) );
+      }
+      set
+      {
+        this["TraceFormShowOnlyErrors"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool FirstLaunchV9_14
+    {
+      get
+      {
+        return ( (bool)( this["FirstLaunchV9_14"] ) );
+      }
+      set
+      {
+        this["FirstLaunchV9_14"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool FirstLaunchV9_17
+    {
+      get
+      {
+        return ( (bool)( this["FirstLaunchV9_17"] ) );
+      }
+      set
+      {
+        this["FirstLaunchV9_17"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool FirstLaunchV9_18
+    {
+      get
+      {
+        return ( (bool)( this["FirstLaunchV9_18"] ) );
+      }
+      set
+      {
+        this["FirstLaunchV9_18"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool UseSodHaibour
+    {
+      get
+      {
+        return ( (bool)( this["UseSodHaibour"] ) );
+      }
+      set
+      {
+        this["UseSodHaibour"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("584, 361")]
+    public global::System.Drawing.Size ManageAcquaintanceEventsForm
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["ManageAcquaintanceEventsForm"] ) );
+      }
+      set
+      {
+        this["ManageAcquaintanceEventsForm"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("https://www.google.com/search?q=studybible.info+Strong+Hebrew+Lexicon+KJV+Usage+%" +
+        "WORD%")]
+    public string CustomWebSearch
+    {
+      get
+      {
+        return ( (string)( this["CustomWebSearch"] ) );
+      }
+      set
+      {
+        this["CustomWebSearch"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+    public global::System.Drawing.Point EditMemoFormLastLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["EditMemoFormLastLocation"] ) );
+      }
+      set
+      {
+        this["EditMemoFormLastLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+    public global::System.Drawing.Size EditMemoFormLastSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["EditMemoFormLastSize"] ) );
+      }
+      set
+      {
+        this["EditMemoFormLastSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point TranscriptionGuideFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["TranscriptionGuideFormLocation"] ) );
+      }
+      set
+      {
+        this["TranscriptionGuideFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("633, 668")]
+    public global::System.Drawing.Size TranscriptionGuideFormSize
+    {
+      get
+      {
+        return ( (global::System.Drawing.Size)( this["TranscriptionGuideFormSize"] ) );
+      }
+      set
+      {
+        this["TranscriptionGuideFormSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
+    public global::System.Drawing.Point MethodGuideFormLocation
+    {
+      get
+      {
+        return ( (global::System.Drawing.Point)( this["MethodGuideFormLocation"] ) );
+      }
+      set
+      {
+        this["MethodGuideFormLocation"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("622; 666")]
+    public string MethodGuideFormSize
+    {
+      get
+      {
+        return ( (string)( this["MethodGuideFormSize"] ) );
+      }
+      set
+      {
+        this["MethodGuideFormSize"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("True")]
+    public bool AutoSortBookmarks
+    {
+      get
+      {
+        return ( (bool)( this["AutoSortBookmarks"] ) );
+      }
+      set
+      {
+        this["AutoSortBookmarks"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool UseTwoDaysForLastPessahDayOutside
+    {
+      get
+      {
+        return ( (bool)( this["UseTwoDaysForLastPessahDayOutside"] ) );
+      }
+      set
+      {
+        this["UseTwoDaysForLastPessahDayOutside"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool BoxesRetakeFocusAfterDateClick
+    {
+      get
+      {
+        return ( (bool)( this["BoxesRetakeFocusAfterDateClick"] ) );
+      }
+      set
+      {
+        this["BoxesRetakeFocusAfterDateClick"] = value;
+      }
+    }
+
+    [global::System.Configuration.UserScopedSettingAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Configuration.DefaultSettingValueAttribute("False")]
+    public bool PreviewModeNotified
+    {
+      get
+      {
+        return ( (bool)( this["PreviewModeNotified"] ) );
+      }
+      set
+      {
+        this["PreviewModeNotified"] = value;
+      }
+    }
+  }
 }

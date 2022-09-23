@@ -81,7 +81,7 @@
       this.PanelMiddle.SuspendLayout();
       this.PanelAllExceptParashah.SuspendLayout();
       this.ContextMenuParashah.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PictureMoon ) ).BeginInit();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -421,7 +421,7 @@
       this.PanelAllExceptParashah.ResumeLayout(false);
       this.PanelAllExceptParashah.PerformLayout();
       this.ContextMenuParashah.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.PictureMoon)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PictureMoon ) ).EndInit();
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
 

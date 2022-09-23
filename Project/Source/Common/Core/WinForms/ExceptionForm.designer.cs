@@ -47,7 +47,7 @@ namespace Ordisoftware.Core
       this.ActionViewInner = new System.Windows.Forms.Button();
       this.ActionSendToGitHub = new System.Windows.Forms.Button();
       this.ActionViewLog = new System.Windows.Forms.Button();
-      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).BeginInit();
       this.SuspendLayout();
       // 
       // EditMessage
@@ -118,9 +118,9 @@ namespace Ordisoftware.Core
       // 
       resources.ApplyResources(this.ActionSendToGitHub, "ActionSendToGitHub");
       this.ActionSendToGitHub.FlatAppearance.BorderSize = 0;
-      this.ActionSendToGitHub.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.ActionSendToGitHub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.ActionSendToGitHub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionSendToGitHub.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ));
+      this.ActionSendToGitHub.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ));
+      this.ActionSendToGitHub.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ));
       this.ActionSendToGitHub.Name = "ActionSendToGitHub";
       this.ActionSendToGitHub.UseVisualStyleBackColor = true;
       this.ActionSendToGitHub.Click += new System.EventHandler(this.ActionSendToGitHub_Click);
@@ -128,9 +128,9 @@ namespace Ordisoftware.Core
       // ActionViewLog
       // 
       this.ActionViewLog.FlatAppearance.BorderSize = 0;
-      this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-      this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-      this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+      this.ActionViewLog.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ));
+      this.ActionViewLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 192 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ));
+      this.ActionViewLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 255 ) ) ) ), ( (int)( ( (byte)( 192 ) ) ) ));
       resources.ApplyResources(this.ActionViewLog, "ActionViewLog");
       this.ActionViewLog.Name = "ActionViewLog";
       this.ActionViewLog.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@ namespace Ordisoftware.Core
       this.MinimizeBox = false;
       this.Name = "ExceptionForm";
       this.Shown += new System.EventHandler(this.ExceptionForm_Shown);
-      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

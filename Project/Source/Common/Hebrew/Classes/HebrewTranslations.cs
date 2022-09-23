@@ -137,7 +137,7 @@ static partial class HebrewTranslations
 
   static public readonly TranslationsDictionary ParashahNotFound = new()
   {
-    [Language.EN] = "Parashah not found : it's Pesa'h or data are not generated.",
+    [Language.EN] = "Parashah not found : it's Pessa'h or data are not generated.",
     [Language.FR] = "Parashah non trouvée : c'est Pessa'h ou les données n'ont pas été générées."
   };
 
@@ -145,7 +145,7 @@ static partial class HebrewTranslations
   {
     [TorahCelebration.Pessah] = new TranslationsDictionary
     {
-      [Language.EN] = "Pesa'h",
+      [Language.EN] = "Pessa'h",
       [Language.FR] = "Pessa'h"
     },
     [TorahCelebration.Chavouot] = new TranslationsDictionary

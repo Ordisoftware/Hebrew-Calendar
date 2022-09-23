@@ -48,7 +48,7 @@
       this.ActionRefreshFiles = new System.Windows.Forms.Button();
       this.ActionDeleteFile = new System.Windows.Forms.Button();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.TrackBarFontSize ) ).BeginInit();
       this.TabControl.SuspendLayout();
       this.TabPageCurrent.SuspendLayout();
       this.TabPagePrevious.SuspendLayout();
@@ -223,7 +223,7 @@
       this.Load += new System.EventHandler(this.LogForm_Load);
       this.Shown += new System.EventHandler(this.TraceForm_Shown);
       this.PanelBottom.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.TrackBarFontSize)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.TrackBarFontSize ) ).EndInit();
       this.TabControl.ResumeLayout(false);
       this.TabPageCurrent.ResumeLayout(false);
       this.TabPagePrevious.ResumeLayout(false);

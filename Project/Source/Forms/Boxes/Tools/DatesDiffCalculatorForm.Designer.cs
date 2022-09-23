@@ -73,7 +73,7 @@
       this.PanelBottom.SuspendLayout();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DatesDiffItemBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // lunationsLabel
@@ -354,7 +354,7 @@
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DatesDiffItemBindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DatesDiffItemBindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }
