@@ -41,6 +41,8 @@
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionClearSearch = new System.Windows.Forms.Button();
+      this.EditSearch = new System.Windows.Forms.TextBox();
       this.EditFontSize = new System.Windows.Forms.NumericUpDown();
       this.ActionCheckLockers = new System.Windows.Forms.LinkLabel();
       this.ActionViewLockers = new System.Windows.Forms.LinkLabel();
@@ -75,6 +77,7 @@
       this.ActionSearchOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewWordsSearch = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenHebrewLetters = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -97,7 +100,6 @@
       this.verseEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.isLinkedToNextDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
       this.Timer = new System.Windows.Forms.Timer(this.components);
-      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelBottom.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
       this.PanelMain.SuspendLayout();
@@ -108,6 +110,8 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionClearSearch);
+      this.PanelBottom.Controls.Add(this.EditSearch);
       this.PanelBottom.Controls.Add(this.EditFontSize);
       this.PanelBottom.Controls.Add(this.ActionCheckLockers);
       this.PanelBottom.Controls.Add(this.ActionViewLockers);
@@ -122,10 +126,24 @@
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
+      // ActionClearSearch
+      // 
+      resources.ApplyResources(this.ActionClearSearch, "ActionClearSearch");
+      this.ActionClearSearch.FlatAppearance.BorderSize = 0;
+      this.ActionClearSearch.Name = "ActionClearSearch";
+      this.ActionClearSearch.UseVisualStyleBackColor = true;
+      this.ActionClearSearch.Click += new System.EventHandler(this.ActionClearSearch_Click);
+      // 
+      // EditSearch
+      // 
+      resources.ApplyResources(this.EditSearch, "EditSearch");
+      this.EditSearch.Name = "EditSearch";
+      this.EditSearch.TextChanged += new System.EventHandler(this.EditSearch_TextChanged);
+      // 
       // EditFontSize
       // 
-      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
       resources.ApplyResources(this.EditFontSize, "EditFontSize");
+      this.EditFontSize.BackColor = System.Drawing.SystemColors.Window;
       this.EditFontSize.Maximum = new decimal(new int[] {
             20,
             0,
@@ -186,8 +204,8 @@
       // ActionReset
       // 
       this.ActionReset.AllowDrop = true;
-      this.ActionReset.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionReset, "ActionReset");
+      this.ActionReset.FlatAppearance.BorderSize = 0;
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.UseVisualStyleBackColor = true;
       this.ActionReset.Click += new System.EventHandler(this.ActionReset_Click);
@@ -204,8 +222,8 @@
       // ActionErase
       // 
       this.ActionErase.AllowDrop = true;
-      this.ActionErase.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionErase, "ActionErase");
+      this.ActionErase.FlatAppearance.BorderSize = 0;
       this.ActionErase.Name = "ActionErase";
       this.ActionErase.UseVisualStyleBackColor = true;
       this.ActionErase.Click += new System.EventHandler(this.ActionEmpty_Click);
@@ -492,6 +510,12 @@
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
+      // ActionShowTranscriptionGuide
+      // 
+      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
+      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
+      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
+      // 
       // ActionShowGrammarGuide
       // 
       resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
@@ -625,12 +649,6 @@
       this.Timer.Interval = 3000;
       this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
       // 
-      // ActionShowTranscriptionGuide
-      // 
-      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
-      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
-      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
-      // 
       // ParashotForm
       // 
       resources.ApplyResources(this, "$this");
@@ -712,5 +730,7 @@
     private ToolStripMenuItem ActionEditMemo;
     private ToolStripSeparator toolStripSeparator5;
     private ToolStripMenuItem ActionShowTranscriptionGuide;
-  }
+        private TextBox EditSearch;
+        internal Button ActionClearSearch;
+    }
 }

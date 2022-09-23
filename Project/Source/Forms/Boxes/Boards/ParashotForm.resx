@@ -117,16 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionClearSearch.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ActionClearSearch.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ActionClearSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ActionClearSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAchJREFUOE+Nkl9v0lAYh/ksfoDd8KG8UDNjYsIFmQmF4L2OXcxoZKJzWZaYuEwT
+        UWEIWib/t0XnDGaFWda1K5uwMuXxnFJmyDDjSX45p+15znt68vomJXEztpiYjiFH79XkxG/cB6NNX7fc
+        UT57ny7Hlc0TWo+S6CKth2/EJsfEr9+7fBNXPupgLKQwEutuDh6ncDQDDmyWb88nvaUXeXptFuwu9rMs
+        1vMc1pKImPd0k8bcqnuKJ9Oz40+hhBXszi92X3zgZHkDW2ZJxRF30HzwCjORhmOH2NW7rz3lH4qi0O10
+        eZfOkMxk2FvboLNSPJetxQy9l2Xig+pXBpZHKBTi1HHIflTJfcqTVfOkVZXe/hHN+bWBvFpm4daclP0D
+        y0PKZ2e/KRRLFGVKZfKfCxxaFtWVpPj/QeX/yn/6fWqbW2xubbupVGuYpsnb9ykKlSr1hoZsJLF8VI5E
+        IjUEO992z/Pl6w6HnlwsVdlrNAlFlYuy5M7MjNEyDLGowQ9N43u9jmkN5QqakMPh8HjZYyoQCGC32/zU
+        9ZHKk8hD/MFgkK5zyno2J+5im0Zzf2J5iF8IejQaRUZsKJtkYnnIlIiUZEabZCw+31/sTadbuGqyLQAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionClearSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionClearSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, -3</value>
+  </data>
+  <data name="ActionClearSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionClearSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ActionClearSearch.Name" xml:space="preserve">
+    <value>ActionClearSearch</value>
+  </data>
+  <data name="&gt;&gt;ActionClearSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionClearSearch.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionClearSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="EditSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 20</value>
+  </data>
+  <data name="EditSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditSearch.Name" xml:space="preserve">
+    <value>EditSearch</value>
+  </data>
+  <data name="&gt;&gt;EditSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditSearch.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;EditSearch.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditFontSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="EditFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>3, 26</value>
   </data>
   <data name="EditFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="EditFontSize.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;EditFontSize.Name" xml:space="preserve">
     <value>EditFontSize</value>
@@ -138,23 +210,25 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;EditFontSize.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
+  </data>
+  <data name="ActionCheckLockers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="ActionCheckLockers.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionCheckLockers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ActionCheckLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 8</value>
+    <value>335, 30</value>
   </data>
   <data name="ActionCheckLockers.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
   </data>
   <data name="ActionCheckLockers.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="ActionCheckLockers.Text" xml:space="preserve">
     <value>Check</value>
@@ -169,7 +243,10 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionCheckLockers.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
+  </data>
+  <data name="ActionViewLockers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="ActionViewLockers.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -178,13 +255,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionViewLockers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 8</value>
+    <value>285, 30</value>
   </data>
   <data name="ActionViewLockers.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
   </data>
   <data name="ActionViewLockers.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="ActionViewLockers.Text" xml:space="preserve">
     <value>Details</value>
@@ -199,7 +276,10 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionViewLockers.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
+  </data>
+  <data name="LabelTableLocked.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="LabelTableLocked.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -208,13 +288,13 @@
     <value>NoControl</value>
   </data>
   <data name="LabelTableLocked.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 8</value>
+    <value>187, 30</value>
   </data>
   <data name="LabelTableLocked.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
   </data>
   <data name="LabelTableLocked.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>10</value>
   </data>
   <data name="LabelTableLocked.Text" xml:space="preserve">
     <value>Table is readonly</value>
@@ -229,7 +309,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;LabelTableLocked.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="ActionSaveAsDefaults.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -238,7 +318,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSaveAsDefaults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>667, 2</value>
+    <value>667, 24</value>
   </data>
   <data name="ActionSaveAsDefaults.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 24</value>
@@ -262,7 +342,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionSaveAsDefaults.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="ActionExport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -271,7 +351,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionExport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>808, 2</value>
+    <value>808, 24</value>
   </data>
   <data name="ActionExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -292,7 +372,10 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
+  </data>
+  <data name="ActionReset.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="ActionReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -317,13 +400,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 1</value>
+    <value>118, 23</value>
   </data>
   <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionReset.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;ActionReset.Name" xml:space="preserve">
     <value>ActionReset</value>
@@ -335,7 +418,10 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="ActionUndo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="ActionUndo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -359,13 +445,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUndo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 1</value>
+    <value>86, 23</value>
   </data>
   <data name="ActionUndo.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionUndo.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;ActionUndo.Name" xml:space="preserve">
     <value>ActionUndo</value>
@@ -377,7 +463,10 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionUndo.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
+  </data>
+  <data name="ActionErase.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="ActionErase.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -403,13 +492,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionErase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 1</value>
+    <value>150, 23</value>
   </data>
   <data name="ActionErase.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionErase.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ActionErase.Name" xml:space="preserve">
     <value>ActionErase</value>
@@ -421,7 +510,10 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionErase.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
+  </data>
+  <data name="ActionSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="ActionSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -450,13 +542,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 1</value>
+    <value>54, 23</value>
   </data>
   <data name="ActionSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionSave.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;ActionSave.Name" xml:space="preserve">
     <value>ActionSave</value>
@@ -468,7 +560,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionSave.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -477,7 +569,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>889, 2</value>
+    <value>889, 24</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -498,16 +590,16 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 638</value>
+    <value>10, 616</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 28</value>
+    <value>964, 50</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -753,8 +845,8 @@
         DAowsCZoTMAMAcUOiL/+5MP/Ji1n/2vUnvqvWXf6f+nKG/9B4nCACHmIK6DegRugXnPqv+/Ei//////6
         37j5zH+tulMIAyAuWBeKHmDI6cKk5cx/38kX/8/Y9+C/WevZ/7oNp1FdAAIbjs/fDMJQLgp49ubjfy+g
         C7q33QMboIfNALtWmUeObTKPQOzM+d6bQXywBBA49Zz/HzPnCtAL//+bAl2D0wD7Ntm/Lp1KH2w6FN/A
-        MEhOvebkf6Pm0/8T5l4DG6DfiBQGMAAywLZJ+odzh+J3x3rJX/btYj+d6hW+geT8p1wCx0D64hv/Mxbf
-        /K8GNNBz4iVMQ958fSNz+dEpU5AXrBsUv9x/fUkDKkULwMAAAFns7puNOZNeAAAAAElFTkSuQmCC
+        MEhOvebkf6Pm0/8T5l4DG6DfiBQGMAAywLpB8odzh+J3x3rJX/btoj+d6hW+geT8p1wCx0D64hv/Mxbf
+        /K8GNNBz4iVMQ958fSNz+dEpU5AXLOsVv9x/fUkDKkULwMAAAFP07pEEcjd6AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionShowTranscriptionGuide.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -800,7 +892,7 @@
   <data name="ActionOpenHebrewLetters.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAQxJREFUOE+lkb0NgzAQhb0FDT0SJVI2oKNC6ekYgJYBkJiAinRkAtLQJU3IBDQs
+        vAAADrwBlbxySQAAAQxJREFUOE+lkb0NgzAQhb0FDT0SJVI2oKNC6ekYgJYBkJiAinRkAtLQJU3IBDQs
         QElFOifvsPk1+X3SSeaZ+/x8ZlAQBNz3/a8KPUPzryLIPwAkWQGapuFt24qvUVVVidWoFQCNpmnyMAyF
         08vzPG7b9gqsvIJl7TAcHsexcMSPT89xHEoopbzC+XLhhmFQQxRF5BVFQcngpemBPEgJgJIkGRqwj6rr
         mlK9TZBlRzrxWpYziGqw8GcA0HVdp5hoKMvbMJPlQZASgAZN0yhJ191fQlYACPEBQMn7TiF5fiIP2nwF
@@ -820,7 +912,7 @@
   <data name="ActionCopyName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAgVJREFUOE+Vks+LEmEYx/1fAv+BfphbRnToIv4FIuGClFQUCNsPD52spEvr7jg1
+        vAAADrwBlbxySQAAAgVJREFUOE+Vks+LEmEYx/1fAv+BfphbRnToIv4FIuGClFQUCNsPD52spEvr7jg1
         GxUltAfbadbGbcfZbS+1thdB8eDBS4Qggp70oOC3+b7vOy5L7KEPPLzzPu/n+/AOM4HTKOo6NE0DV9U6
         nY+Prn8pPbyG0oMr+LSyhMdPnsK2v6FSscXKPfs8p0dfRSUfVq6icfQD5o4La6eG5y9e4rB+hJ+Hv8TK
         Pfs8p0dfRSXvM5exVXXhU9BeQ3u1gXXdECv3PvToq6jk3f1L+PzVEcJ8Pv/NdTQaodVqYTqdij7hGT36
@@ -841,7 +933,7 @@
   <data name="ActionCopyHebrewChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAaRJREFUOE+VkktOwlAYhdmLS/BZNMY4cMIijCREjYomJviYOFODEwFLVYyaSiIT
+        vAAADrwBlbxySQAAAaRJREFUOE+VkktOwlAYhdmLS/BZNMY4cMIijCREjYomJviYOFODEwFLVYyaSiIT
         qYDl0QIyURQG7oCBG2AH/N5zHw2NMvBL/vQ+vnPSBgKjSBsG6bpOeMqj0TwcLD1n9xcpuzdPj7EgHR4d
         k21XqVSy+RN7nOMeHnwZFZixBfrqvJFVqVOh4tLp2Tm1Pzr03v7kT+xxjnt48GVUcL87R/lynRRJ/Yr0
         y4w32CvgwZdRwd3OLD29OFwYDAbfvV6PrxX9fp+fYw0PvowKbreDlLdrXEaYHfEQiMfjFI1G+RrAgy+S
@@ -860,7 +952,7 @@
   <data name="ActionCopyUnicodeChars.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAZlJREFUOE+Vkk1LAlEUhv0v/YQ+bCwiWvQ3IkGaqCgI7GPTroIW5tg4lVFRQm5y
+        vAAADrwBlbxySQAAAZlJREFUOE+Vkk1LAlEUhv0v/YQ+bCwiWvQ3IkGaqCgI7GPTroIW5tg4lVFRQm5y
         UhvNmdHcpOWmretW/gpP970foxYGPXC499z7vMerGBpF2rLINE3CKo9Gc7+3+JTdXaDszhw9xCO0f3BI
         jvNCpZLDV/Q4xz08+DIquIvP02f7jeyKT4WKR8cnp9R6b1Oz9cFX9DjHPTz4Miq43Z6lfNknhWFekHme
         CQq9Ah58GRXcbM3Q47Mrlb+BB19GBdebEco7VS50u11cUqfT4T3QdZ2azSbfw4MvkpKrDY1sp/8CyOxY
@@ -966,7 +1058,7 @@
     <value>Edit memo</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 420</value>
+    <value>245, 398</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -984,7 +1076,7 @@
     <value>0, 0</value>
   </data>
   <data name="DataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 618</value>
+    <value>964, 596</value>
   </data>
   <data name="DataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1011,7 +1103,7 @@
     <value>0, 0, 0, 10</value>
   </data>
   <data name="PanelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 628</value>
+    <value>964, 606</value>
   </data>
   <data name="PanelMain.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
