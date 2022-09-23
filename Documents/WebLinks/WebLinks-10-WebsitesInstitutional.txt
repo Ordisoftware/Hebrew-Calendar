@@ -40,6 +40,9 @@ URL = https://www.loubavitchfrance.fr
 
 -
 
+Name = (EN) Agudath Israel of America
+URL = https://agudah.org
+
 Name = (EN) The Rabbinical Assembly
 URL = https://www.rabbinicalassembly.org
 
