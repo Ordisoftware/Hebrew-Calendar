@@ -496,8 +496,7 @@ partial class ParashotForm : Form
     if ( match.Length <= 2 ) return;
     var row = DataGridView.Rows
                           .AsIEnumerable()
-                          .Where(row => ( (string)row.Cells[ColumnName.Index].Value ).RawContains(match))
-                          .FirstOrDefault();
+                          .FirstOrDefault(row => ( (string)row.Cells[ColumnName.Index].Value ).RawContains(match));
     if ( row is not null )
     {
       row.Selected = true;

@@ -32,9 +32,8 @@ static class ObjectHelper
   }
 
   /// <summary>
-  /// Gets an IEnumerable<DataGridViewRow> from a DataGridView.DataGridViewRowCollection.
+  /// Gets an IEnumerable<DataGridViewRow/> from a DataGridView.DataGridViewRowCollection.
   /// </summary>
-  /// <typeparam name="T">Generic type parameter.</typeparam>
   /// <param name="collection">The collection.</param>
   static public IEnumerable<DataGridViewRow> AsIEnumerable(this DataGridViewRowCollection collection)
   {
