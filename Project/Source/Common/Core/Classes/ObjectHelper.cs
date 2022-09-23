@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -28,6 +28,16 @@ static class ObjectHelper
   static public IEnumerable<T> AsIEnumerable<T>(this ComboBox.ObjectCollection collection)
   {
     foreach ( T item in collection )
+      yield return item;
+  }
+
+  /// <summary>
+  /// Gets an IEnumerable<DataGridViewRow/> from a DataGridView.DataGridViewRowCollection.
+  /// </summary>
+  /// <param name="collection">The collection.</param>
+  static public IEnumerable<DataGridViewRow> AsIEnumerable(this DataGridViewRowCollection collection)
+  {
+    foreach ( DataGridViewRow item in collection )
       yield return item;
   }
 

@@ -31,7 +31,7 @@ partial class MainForm
       var date = Program.DateBookmarks[(int)menuitem.Tag].ToLongDateString();
       if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
         return;
-      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. { SysTranslations.EmptySlot.GetLang()}";
+      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {SysTranslations.EmptySlot.GetLang()}";
       ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Text = menuitem.Text;
       ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Enabled = false;
       Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;

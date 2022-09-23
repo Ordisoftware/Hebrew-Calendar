@@ -3330,7 +3330,7 @@
     <value>8</value>
   </data>
   <data name="EditUseTwoDaysForLastPessahDayOutside.Text" xml:space="preserve">
-    <value>Use two days for Shebih'i Shel Pesa'h outside of Israël</value>
+    <value>Use two days for Shebih'i Shel Pessa'h outside of Israël</value>
   </data>
   <data name="EditUseTwoDaysForLastPessahDayOutside.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopLeft</value>

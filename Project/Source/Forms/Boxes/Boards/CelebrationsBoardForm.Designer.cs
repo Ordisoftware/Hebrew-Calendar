@@ -48,9 +48,9 @@
       this.LabelStart = new System.Windows.Forms.Label();
       this.LabelFontSize = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).BeginInit();
       this.PanelOptions.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -245,10 +245,10 @@
       this.Shown += new System.EventHandler(this.CelebrationsBoardForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.DataGridView ) ).EndInit();
       this.PanelOptions.ResumeLayout(false);
       this.PanelOptions.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditFontSize)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditFontSize ) ).EndInit();
       this.ResumeLayout(false);
 
     }
