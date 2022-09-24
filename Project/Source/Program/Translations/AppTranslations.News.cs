@@ -47,6 +47,13 @@ static partial class AppTranslations
 
     // TODO delete all 9.x without changing 9.x
 
+    ["9.33"] = new TranslationsDictionary
+    {
+      [Language.EN] = "• Add search parashah text box in parashot board.",
+
+      [Language.FR] = "• Ajout d'une zone de texte de recherche de parashah dans le tableau des parashot."
+    },
+
     ["9.29"] = new TranslationsDictionary
     {
       [Language.EN] = "• Optimize populating monthly view and startup time." + Globals.NL +
