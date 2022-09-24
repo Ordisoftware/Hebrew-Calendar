@@ -83,6 +83,9 @@ URL = https://studybible.info/IGNT
 Name = (EN) Interlinear Bible @ biblehub.com
 URL = https://biblehub.com/interlinear/
 
+Name = (FR/IW) Tehilim Online @ tehilim-online.com
+URL = https://tehilim-online.com
+
 -
 
 Name = (FR) Bible comparatif multi-version @ djep.hd.free.fr

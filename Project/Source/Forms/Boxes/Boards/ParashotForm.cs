@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew;
 using Program = Calendar.Program;
 using Properties = Calendar.Properties;
 using MainForm = Calendar.MainForm;
+using System.Windows.Forms;
 
 partial class ParashotForm : Form
 {
@@ -346,6 +347,8 @@ partial class ParashotForm : Form
     e.ThrowException = false;
   }
 
+  private KeysConverter KeysConverter = new();
+
   private void DataGridView_KeyDown(object sender, KeyEventArgs e)
   {
     if ( e.Control && e.KeyCode == Keys.S )
@@ -353,6 +356,12 @@ partial class ParashotForm : Form
     else
     if ( e.KeyCode == Keys.F2 || ( e.KeyCode == Keys.Enter && !DataGridView.IsCurrentCellInEditMode ) )
       DataGridView.BeginEdit(false);
+    else
+    if ( !DataGridView.IsCurrentCellInEditMode && e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z )
+    {
+      EditSearch.Focus();
+      EditSearch.AppendText(KeysConverter.ConvertToString(e.KeyValue));
+    }
     else
       return;
     e.Handled = true;
@@ -502,6 +511,17 @@ partial class ParashotForm : Form
       row.Selected = true;
       DataGridView.CurrentCell = row.Cells[0];
       DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
+    }
+  }
+
+  private void EditSearch_KeyDown(object sender, KeyEventArgs e)
+  {
+    if ( e.KeyCode == Keys.Escape )
+    {
+      EditSearch.Clear();
+      DataGridView.Focus();
+      e.Handled = true;
+      e.SuppressKeyPress = true;
     }
   }
 

@@ -85,6 +85,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BtjVoIn7xLBlPJbUsNcc3Z
 Name = (FR) Rav Yves Marciano
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BYiFkGEEVWJit3dAj1qGDR
 
+Name = (FR) Rav Baroukh Rosenblum
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbVVE9N2yVMwb4_NzMmFRn
+
 Name = (FR) Rav Raphaël Sadin
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AryezXSAL8QUeyImAGzaPF
 
