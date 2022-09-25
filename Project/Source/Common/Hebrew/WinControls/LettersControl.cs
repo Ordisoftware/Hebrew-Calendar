@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-07 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -563,7 +563,6 @@ partial class LettersControl : UserControl
   {
     Focus(LettersControlFocusSelect.All);
     TextBox.Text = Clipboard.GetText();
-    //TextBoxEx.ActionPaste.PerformClick();
   }
 
   private void ActionSearchOnline_Click(object sender, EventArgs e)
@@ -599,7 +598,7 @@ partial class LettersControl : UserControl
   internal void CheckClipboardContentType()
   {
     string strContent = Clipboard.GetText();
-    ActionPaste.Enabled = !strContent.IsNullOrEmpty() /* TODO && strContent.Length <= Settings.HebrewTextBoxMaxLength*/;
+    ActionPaste.Enabled = !strContent.IsNullOrEmpty();
     if ( ActionPaste.Enabled )
     {
       var strLabel = HebrewAlphabet.IsValidUnicode(strContent)

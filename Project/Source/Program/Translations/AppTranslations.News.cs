@@ -45,104 +45,11 @@ static partial class AppTranslations
                       "• Quelques améliorations et corrections."
     },*/
 
-    // TODO delete all 9.x without changing 9.x
-
-    ["9.29"] = new TranslationsDictionary
+    ["9.33"] = new TranslationsDictionary
     {
-      [Language.EN] = "• Optimize populating monthly view and startup time." + Globals.NL +
-                      "• Add open system calculator button in dates difference calculator form." + Globals.NL +
-                      "• Add parashah name in the title bar of description box." + Globals.NL +
-                      "• Add menu for transcription guide in Tools menu and others windows." + Globals.NL +
-                      "• Add menu for grammar guide in Tools and others windows." + Globals.NL +
-                      "• Add option to use two days for Shebih'i Shel Pessa'h outside of Israël." + Globals.NL +
-                      "• Add option to retake or not the focus when clicking date in reminder box." + Globals.NL +
-                      "• Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise." + Globals.NL +
-                      "• Fix shavouh'ot 1 and 2 hours to be solar like shabat even using moon omer." + Globals.NL +
-                      "• Fix reset settings crashes the monthly view until restart." + Globals.NL +
-                      "• Fix multiple parashah description boxes at the same time which only displays the first one opened until closed." + Globals.NL +
-                      "• Fix save in parashot board causes a null exception in case of empty cells in the grid." + Globals.NL +
-                      "• Fix intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer)." + Globals.NL +
-                      "• Fix disable reminder button not disabled if disabling is not allowed in preferences." + Globals.NL +
-                      "• Improve transcriptions following a change to better distinguish between He, 'Het, H'ayin, T'et and Tav." + Globals.NL +
-                      "• Some UI/UX improvements and fixes." + Globals.NL +
-                      "• Reorganize and add some web links",
+      [Language.EN] = "• Add search parashah text box in parashot board.",
 
-      [Language.FR] = "• Optimisation du remplissage de la vue par mois et du temps de démarrage." + Globals.NL +
-                      "• Ajout d'un bouton pour ouvrir la calculatrice système dans le formulaire de calcul de différence de dates." + Globals.NL +
-                      "• Ajout du nom de la parashah dans la barre de titre de la fenêtre de description." + Globals.NL +
-                      "• Ajout d'un menu guide de transcription dans le menu Outils et les autres fenêtres." + Globals.NL +
-                      "• Ajout d'un menu guide de grammaire dans le menu Outils et les autres fenêtres." + Globals.NL +
-                      "• Ajout d'une option pour utiliser deux jours pour Shebih'i Shel Pessa'h en dehors d'Israël." + Globals.NL +
-                      "• Ajout d'une option pour reprendre ou non le focus en cliquant sur la date dans la boîte de rappel." + Globals.NL +
-                      "• Correction du jour de shavouh'ot 2 en cas de omer de la lune erroné en raison de jours sans lever de lune." + Globals.NL +
-                      "• Correction des heures de shavouh'ot 1 et 2 pour être solaires comme le shabat même en utilisant le omer de la lune." + Globals.NL +
-                      "• Correction de la réinitialisation des paramètres qui plante la vue mensuelle jusqu'au redémarrage." + Globals.NL +
-                      "• Correction de plusieurs boîtes de description de parashah ouvertes en même temps qui n'affichent que la première ouverte jusqu'à la fermeture." + Globals.NL +
-                      "• Correction de l'enregistrement dans le tableau des parashot qui provoque une null exception en cas de cellules vides dans la grille." + Globals.NL +
-                      "• Correction des noms des jours intermédiaires des célébrations hebdomadaires en cas de lever de lune survenant le lendemain (omer de la lune)." + Globals.NL +
-                      "• Correction du bouton de désactivation du rappeleur non désactivé si la désactivation n'est pas autorisée dans les préférences." + Globals.NL +
-                      "• Amélioration des transcriptions suite à un changement pour mieux distinguer He, 'Het, H'ayin, T'et et Tav." + Globals.NL +
-                      "• Quelques améliorations et corrections UI/UX." + Globals.NL +
-                      "• Réorganisation et ajout de quelques liens Web."
-    },
-
-    ["9.28"] = new TranslationsDictionary
-    {
-      [Language.EN] = "• Add current day change when cursor changes line in text report." + Globals.NL +
-                      "• Improve lunar month names by adding English transcription in addition to French." + Globals.NL +
-                      "• Improve context menu of monthly view by disabling empty bookmarks in the Go To menu item." + Globals.NL +
-                      "• Improve the setting of the number of bookmarks by limiting it to the last index defined." + Globals.NL +
-                      "• Improve bookmark import to automatically extend the length to match." + Globals.NL +
-                      "• Fix copy weekly parashah to clipboard to remove empty lines at the end." + Globals.NL +
-                      "• Some data generation improvements and fixes." + Globals.NL +
-                      "• Some UI/UX improvements and fixes." + Globals.NL +
-                      "• Some fixes." + Globals.NL +
-                      "• Some optimizations." + Globals.NL +
-                      "• Massive refactorings with new code analyzers." + Globals.NL +
-                      "• Improve setup to select hebrew font version." + Globals.NL +
-                      "• Update Aish web links for parashot study.",
-
-      [Language.FR] = "• Ajout du changement de jour actuel lorsque le curseur change de ligne dans le rapport texte." + Globals.NL +
-                      "• Amélioration des noms des mois lunaires en ajoutant la transcription en anglais en plus du français." + Globals.NL +
-                      "• Amélioration du menu contextuel de la vue mensuelle en désactivant les signets vides dans l'élément de menu Aller." + Globals.NL +
-                      "• Amélioration du paramétrage du nombre de signets en le limitant au dernier index défini." + Globals.NL +
-                      "• Amélioration de l'importation des signets pour étendre automatiquement la longueur pour correspondre." + Globals.NL +
-                      "• Correction de la copie de la parashah hebdomadaire dans le presse-papiers pour supprimer les lignes vides à la fin." + Globals.NL +
-                      "• Quelques améliorations et corrections de la génération des données." + Globals.NL +
-                      "• Quelques améliorations et corrections de l'UI/UX." + Globals.NL +
-                      "• Quelques correctifs." + Globals.NL +
-                      "• Quelques optimisations." + Globals.NL +
-                      "• Refactorisations massive avec de nouveaux analyseurs de code." + Globals.NL +
-                      "• Amélioration du setup pour sélectionner la version de la fonte hébreu." + Globals.NL +
-                      "• Mise à jour des liens Web Aish pour l'étude parashot."
-    },
-
-    ["9.27"] = new TranslationsDictionary
-    {
-      [Language.EN] = "• Code refactoring." + Globals.NL +
-                      "• Fix open navigation window from calendar's context menu." + Globals.NL +
-                      "• Fix order of controls in generation tab of preferences." + Globals.NL +
-                      "• Disable IPC intercom for non-administrator users." + Globals.NL +
-                      "• Update web links with more resources on Loubavitch." + Globals.NL +
-                      "• Update web links with several changes." + Globals.NL +
-                      "• Update FAQ and Help." + Globals.NL +
-                      "• Add Hebrew font version available on Fonts2u(can be manually installed).",
-
-      [Language.FR] = "• Refactorisation du code." + Globals.NL +
-                      "• Correction de l'ouverture de la fenêtre de navigation depuis le menu contextuel du calendrier." + Globals.NL +
-                      "• Correction de l'ordre des contrôles dans l'onglet génération des préférences." + Globals.NL +
-                      "• Désactivation de l'inter-com IPC pour les utilisateurs non administrateurs." + Globals.NL +
-                      "• Mise à jour les liens Web avec plus de ressources sur Loubavitch." + Globals.NL +
-                      "• Mise à jour les liens Web avec plusieurs modifications." + Globals.NL +
-                      "• Mise à jour la FAQ et l'aide." + Globals.NL +
-                      "• Ajout de la version de police Hebrew disponible sur Fonts2u (peut être installée manuellement)."
-    },
-
-    ["9.24"] = new TranslationsDictionary
-    {
-      [Language.EN] = "• Fix Tetsaveh hebrew name and lettriq: parashot board need to be restored or edited, see ParashotFactory.txt and Parashot-Lettriqs.txt in application's document folder.",
-
-      [Language.FR] = "• Correction du nom hébreu de Tetsaveh et de la lettrique : le tableau des parashot doit être restaurée ou édité, voir ParashotFactory.txt et Parashot-Lettriqs.txt dans le dossier de documents de l'application."
+      [Language.FR] = "• Ajout d'une zone de texte de recherche de parashah dans le tableau des parashot."
     },
 
     ["9.x"] = new TranslationsDictionary

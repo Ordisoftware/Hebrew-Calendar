@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -125,9 +125,9 @@ partial class MainForm
 
   private void DoMenuExit_Click(object sender, EventArgs e)
   {
-    if ( Globals.IsGenerating )
+    if ( Globals.IsProcessingData )
     {
-      DisplayManager.ShowInformation(SysTranslations.CantExitWhileGenerating.GetLang());
+      DisplayManager.ShowInformation(SysTranslations.CantExitWhileProcessing.GetLang());
       return;
     }
     if ( ( EditConfirmClosing.Checked && !Globals.IsSessionEnding )

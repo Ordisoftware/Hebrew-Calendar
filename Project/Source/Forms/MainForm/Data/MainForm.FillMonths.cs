@@ -11,10 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using CodeProjectCalendar.NET;
+using CommandLine;
 
 partial class MainForm
 {
@@ -236,12 +237,15 @@ partial class MainForm
         catch ( Exception ex )
         {
           if ( ApplicationDatabase.Instance.AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
+          {
+            if ( !Globals.IsGenerating && ApplicationDatabase.Instance.LastGenerationErrors.Count != 0 )
+              ApplicationDatabase.Instance.ShowLastGenerationErrors(Text);
             return;
+          }
         }
     }
     finally
     {
-      // TODO show errors like with generate days
       Globals.ChronoShowData.Stop();
       Settings.BenchmarkFillCalendar = Globals.ChronoShowData.ElapsedMilliseconds;
       SystemManager.TryCatch(Settings.Store);

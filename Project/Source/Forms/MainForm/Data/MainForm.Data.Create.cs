@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -92,23 +92,7 @@ partial class MainForm
       UpdateButtons();
     }
     if ( ApplicationDatabase.Instance.LastGenerationErrors.Count != 0 )
-    {
-      string errors = ApplicationDatabase.Instance.LastGenerationErrors.AsMultiLine();
-      ApplicationDatabase.Instance.LastGenerationErrors.Clear();
-      errors = Settings.GetGPSText() + Globals.NL2 + errors;
-      DebugManager.Trace(LogTraceEvent.Error, errors);
-      using ( var form = new ShowTextForm(Text, errors,
-                                          false, true,
-                                          MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
-                                          false, false) )
-      {
-        form.TextBox.Font = new Font("Courier new", 8);
-        form.ShowDialog();
-      }
-      if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )
-        ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
-      return errors;
-    }
+      return ApplicationDatabase.Instance.ShowLastGenerationErrors(Text);
     return null;
   }
 

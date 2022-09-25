@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -44,6 +44,11 @@ static partial class Globals
   /// Indicates if the application is in loading data stage.
   /// </summary>
   static public bool IsLoadingData { get; set; }
+
+  /// <summary>
+  /// Indicates if the application is in loading or rendering or generating data stage.
+  /// </summary>
+  static public bool IsProcessingData => IsLoadingData || IsRendering || IsGenerating;
 
   /// <summary>
   /// Indicates if the application is ready to interact with the user or do its purpose.

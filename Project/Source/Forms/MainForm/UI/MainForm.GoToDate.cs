@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -28,7 +28,8 @@ partial class MainForm
                        Form regetFocus = null,
                        ViewScrollOverride scroll = ViewScrollOverride.None)
   {
-    if ( !Globals.IsReady || Globals.IsGenerating ) return;
+    if ( !Globals.IsReady ) return;
+    if ( Globals.IsProcessingData ) return;
     if ( GoToDateMutex ) return;
     if ( date < DateFirst ) date = DateFirst;
     if ( date > DateLast ) date = DateLast;
