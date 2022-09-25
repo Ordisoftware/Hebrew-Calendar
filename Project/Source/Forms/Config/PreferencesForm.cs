@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -29,7 +29,6 @@ partial class PreferencesForm : Form
   private bool IsReady;
   private bool InitialHotKeyEnabled;
 
-  // TODO refactor in a class or dictionary
   public int OldShabatDay { get; private set; }
   public string OldLatitude { get; private set; }
   public string OldLongitude { get; private set; }

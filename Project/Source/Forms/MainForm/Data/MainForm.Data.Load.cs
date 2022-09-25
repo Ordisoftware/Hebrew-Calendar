@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -21,7 +21,7 @@ partial class MainForm
   {
     bool formEnabled = Enabled;
     ToolStrip.Enabled = false;
-    Globals.IsGenerating = true;
+    Globals.IsLoadingData = true;
     try
     {
       PanelTitleInner.Visible = true;
@@ -50,7 +50,7 @@ partial class MainForm
     }
     finally
     {
-      Globals.IsGenerating = false;
+      Globals.IsLoadingData = false;
       LabelSubTitleGPS.Text = string.Empty;
       ToolStrip.Enabled = formEnabled;
       LoadDataEnd();

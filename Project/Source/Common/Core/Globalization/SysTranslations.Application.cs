@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -129,10 +129,10 @@ static partial class SysTranslations
     [Language.FR] = "Quitter l'application ?"
   };
 
-  static public readonly TranslationsDictionary CantExitWhileGenerating = new()
+  static public readonly TranslationsDictionary CantExitWhileProcessing = new()
   {
-    [Language.EN] = "Can't exit application while generating data.",
-    [Language.FR] = "Impossible de quitter l'application durant la génération des données."
+    [Language.EN] = "Can't exit application while processing data.",
+    [Language.FR] = "Impossible de quitter l'application durant le traitement des données."
   };
 
   static public readonly TranslationsDictionary AskToShutdownComputer = new()

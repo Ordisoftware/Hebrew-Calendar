@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using static Ordisoftware.Hebrew.HebrewTranslations;
@@ -126,7 +126,7 @@ static partial class AppTranslations
       [Language.EN] = TorahCelebrations[TorahCelebration.Soukot][Language.EN] + " " + End[Language.EN],
       [Language.FR] = TorahCelebrations[TorahCelebration.Soukot][Language.FR] + " " + End[Language.FR]
     }
-    // TODO Manage as user custom remind list
+    // TODO manage as user custom remind list
     /*[TorahCelebrationDay.HanoukaD1] = new TranslationsDictionary
     {
       [Language.EN] = "'Hanouka start",

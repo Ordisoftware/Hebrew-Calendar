@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 [Serializable]
@@ -46,6 +46,26 @@ partial class ApplicationDatabase
                              $"{einfo.SingleLineText}");
     return LastGenerationErrors.Count >= MaxGenerateErrors;
   }
+
+  public string ShowLastGenerationErrors(string title)
+  {
+    string errors = LastGenerationErrors.AsMultiLine();
+    LastGenerationErrors.Clear();
+    errors = Settings.GetGPSText() + Globals.NL2 + errors;
+    DebugManager.Trace(LogTraceEvent.Error, errors);
+    using ( var form = new ShowTextForm(title, errors,
+                                        false, true,
+                                        MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
+                                        false, false) )
+    {
+      form.TextBox.Font = new Font("Courier new", 8);
+      form.ShowDialog();
+    }
+    if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )
+      ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
+    return errors;
+  }
+
 
   /// <summary>
   /// Creates the days.

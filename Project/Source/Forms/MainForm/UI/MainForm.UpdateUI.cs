@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -89,7 +89,8 @@ public partial class MainForm
   /// </summary>
   private void UpdateTitles(bool force = false)
   {
-    if ( !Globals.IsReady || Globals.IsGenerating ) return;
+    if ( !Globals.IsReady ) return;
+    if ( Globals.IsProcessingData ) return;
     if ( UpdateTitlesMutex ) return;
     UpdateTitlesMutex = true;
     try
@@ -179,8 +180,8 @@ public partial class MainForm
     SystemManager.TryCatchManage(() =>
     {
       if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
-      MenuTray.Enabled = Globals.IsReady && !Globals.IsGenerating;
-      ToolStrip.Enabled = !Globals.IsGenerating;
+      MenuTray.Enabled = Globals.IsReady && !Globals.IsProcessingData;
+      ToolStrip.Enabled = !Globals.IsProcessingData;
       ActionSaveToFile.Enabled = LunisolarDays.Count > 0;
       ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
       ActionPrint.Enabled = ActionSaveToFile.Enabled && Settings.CurrentView != ViewMode.Grid;
@@ -198,7 +199,7 @@ public partial class MainForm
   /// </summary>
   public void UpdateCalendarMonth(bool doFill)
   {
-    Globals.IsGenerating = true;
+    Globals.IsRendering = true;
     var cursor = Cursor;
     Cursor = Cursors.WaitCursor;
     bool formEnabled = Enabled;
@@ -213,7 +214,7 @@ public partial class MainForm
     {
       ToolStrip.Enabled = formEnabled;
       Cursor = cursor;
-      Globals.IsGenerating = false;
+      Globals.IsRendering = false;
       SetView(Settings.CurrentView, true);
       UpdateButtons();
     }
