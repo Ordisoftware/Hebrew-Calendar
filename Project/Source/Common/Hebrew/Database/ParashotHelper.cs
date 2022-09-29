@@ -61,7 +61,7 @@ static class ParashotHelper
     // Button Open memo
     form.ActionNo.Visible = !parashah.Memo.IsNullOrEmpty() || ( !linked?.Memo.IsNullOrEmpty() ?? false );
     form.ActionNo.Text = SysTranslations.Memo.GetLang();
-    form.ActionNo.Click += (_, _) => DisplayManager.Show(string.Join(Globals.NL2, parashah.Memo, linked?.Memo ?? ""));
+    form.ActionNo.Click += showParashah;
     // Button Copy to clipboard
     form.ActionRetry.Visible = true;
     form.ActionRetry.Text = SysTranslations.ActionCopy.GetLang();
@@ -76,6 +76,9 @@ static class ParashotHelper
     // Show
     form.Show();
     return true;
+    //
+    void showParashah(object sender, EventArgs e)
+      => DisplayManager.Show(string.Join(Globals.NL2, parashah.Memo, linked?.Memo ?? string.Empty));
   }
 
 }

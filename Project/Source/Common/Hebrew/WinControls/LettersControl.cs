@@ -521,9 +521,9 @@ partial class LettersControl : UserControl
   private void ActionClear_Click(object sender, EventArgs e)
   {
     TextBox.SelectAll();
-    TextBox.Paste("");
-    EditGematriaSimple.Text = "";
-    EditGematriaFull.Text = "";
+    TextBox.Paste(string.Empty);
+    EditGematriaSimple.Text = string.Empty;
+    EditGematriaFull.Text = string.Empty;
     Focus();
     Cleared?.Invoke(this, EventArgs.Empty);
   }
@@ -578,14 +578,14 @@ partial class LettersControl : UserControl
   private void EditGematria_TextChanged(object sender, EventArgs e)
   {
     var textbox = sender as TextBox;
-    if ( textbox.Text == "0" ) textbox.Text = "";
+    if ( textbox.Text == "0" ) textbox.Text = string.Empty;
   }
 
   public bool UpdateControls()
   {
     bool enabled = TextBox.Text.Length >= 1;
     ActionReset.Enabled = !InititialWord.IsNullOrEmpty();
-    ActionReset.Text = ActionReset.Enabled ? "-" : "";
+    ActionReset.Text = ActionReset.Enabled ? "-" : string.Empty;
     ActionClear.Enabled = enabled;
     ActionDelFirst.Enabled = enabled;
     ActionDelLast.Enabled = enabled;

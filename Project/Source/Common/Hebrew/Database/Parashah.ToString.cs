@@ -35,7 +35,7 @@ public partial class Parashah
        $"{( useHebrewFont ? Hebrew : Unicode )} : " +
        $"{Translation.GetOrEmpty()} ; " +
        $"{Lettriq.GetOrEmpty()}" +
-       ( Memo.IsNullOrEmpty() ? "" : $" ; {Memo.GetOrEmpty()}" );
+       ( Memo.IsNullOrEmpty() ? string.Empty : $" ; {Memo.GetOrEmpty()}" );
 
   public string ToStringReadable()
     => $"• Torah Sefer {Book} {VerseBegin} - {VerseEnd}" + Globals.NL +
