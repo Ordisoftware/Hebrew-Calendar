@@ -323,7 +323,7 @@ public class SQLiteNetORM : SQLiteConnection
     if ( type.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(type));
     if ( !valueDefault.IsNullOrEmpty() ) valueDefault = " DEFAULT " + valueDefault;
     if ( valueNotNull ) valueDefault += " NOT NULL";
-    string primary = isPrimary ? "PRIMARY KEY" : "";
+    string primary = isPrimary ? "PRIMARY KEY" : string.Empty;
     if ( isAutoInc ) primary += " AUTOINCREMENT ";
     string sql = $"ALTER TABLE %TABLE% ADD COLUMN %COLUMN% {type} {primary} {valueDefault}";
     return CheckColumn(table, column, sql);

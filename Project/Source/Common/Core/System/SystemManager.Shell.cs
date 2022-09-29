@@ -223,7 +223,7 @@ static partial class SystemManager
     {
       using var stream = File.OpenRead(filePath);
       using var sha = System.Security.Cryptography.SHA512.Create();
-      return BitConverter.ToString(sha.ComputeHash(stream)).Replace("-", "").ToLower();
+      return BitConverter.ToString(sha.ComputeHash(stream)).Replace("-", string.Empty).ToLower();
     }
     catch ( Exception ex )
     {

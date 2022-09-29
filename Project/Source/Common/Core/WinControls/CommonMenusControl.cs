@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2022-09 </edited>
 namespace Ordisoftware.Core;
 
 using Markdig;
@@ -119,6 +119,8 @@ partial class CommonMenusControl : UserControl
         DoShownSound = false,
         ShowInTaskbar = true
       };
+      if ( !Globals.MainForm.Visible || Globals.MainForm.WindowState == FormWindowState.Minimized )
+        form.StartPosition = FormStartPosition.CenterScreen;
       form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
       form.ActionOK.KeyUp += onKeyUp;
       form.ActionYes.DialogResult = DialogResult.None;
