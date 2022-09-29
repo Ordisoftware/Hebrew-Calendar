@@ -396,7 +396,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 - Add command-line option `--lunarmonths` to show the lunar months board.
 
-#### 2022.09.25 - Version 9.34
+#### In progress - Version 9.34
 
 - Fix screen location of the show new in version box when starting minimized.
 
