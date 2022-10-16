@@ -33,6 +33,7 @@ partial class ApplicationDatabase : SQLiteDatabase
       else
       {
         var (Event, Index, _) = today.GetWeekLongCelebrationIntermediateDay();
+        // TODO fix weekly parashah generation and soukot no parashah during and after, else bereshit
         if ( Event == TorahCelebration.Soukot )
           if ( Index < TorahCelebrationSettings.SoukotLenght
             || ( Index == TorahCelebrationSettings.SoukotLenght && Settings.UseSimhatTorahOutside ) )

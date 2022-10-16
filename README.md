@@ -399,6 +399,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### In progress - Version 9.34
 
 - Fix screen location of the show new in version box when starting minimized.
+- Fix weekly parashah generation parashot and soukot.
 
 #### 2022.09.25 - Version 9.33
 
