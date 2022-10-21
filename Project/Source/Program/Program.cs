@@ -196,7 +196,8 @@ static partial class Program
       if ( cmd.OpenNewMoonsBoard ) action = form.ActionViewNewMoonsBoard.PerformClick;
       if ( cmd.OpenParashotBoard ) action = form.ActionParashotBoard.PerformClick;
       if ( cmd.OpenWeeklyParashahBox ) action = form.ActionWeeklyParashahDescription.PerformClick;
-      if ( cmd.OpenLunarMonthsBoard ) action = SystemManager.CommandLineOptions.IsPreviewEnabled // TODO remove when lunar months ready
+      // TODO update when lunar months ready
+      if ( cmd.OpenLunarMonthsBoard ) action = SystemManager.CommandLineOptions.IsPreviewEnabled
                                                ? form.ActionViewLunarMonths.PerformClick
                                                : null;
       if ( action is not null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));

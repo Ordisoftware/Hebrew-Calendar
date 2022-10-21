@@ -25,6 +25,8 @@ using Microsoft.Win32;
 static partial class SystemManager
 {
 
+  private const int FilePathTruncatePosition = 25;
+
   public const string RegistryKeyRun = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
 
   static public readonly InputSimulator InputSimulator = new();
@@ -32,12 +34,11 @@ static partial class SystemManager
   /// <summary>
   /// Deletes all app settings folders in User\AppData\Local.
   /// </summary>
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   static public void CleanAllLocalAppSettingsFolders()
   {
     try
     {
-      string filter = Globals.ApplicationExeFileName.Substring(0, 25) + "*";
+      string filter = Globals.ApplicationExeFileName.Substring(0, FilePathTruncatePosition) + "*";
       string filterold = filter.Replace("Hebrew.", "Hebrew");
       var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, filter)
                           .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, filterold));

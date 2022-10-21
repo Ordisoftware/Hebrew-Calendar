@@ -39,18 +39,22 @@ static partial class DebugManager
     }
   }
 
-  static public readonly TraceForm TraceForm;
-  static public readonly string IdWidth = "D6";
+  private const int SeparatorWidth = 120;
+
+  static private readonly string Separator = new('-', SeparatorWidth);
+
   static public int MarginSize { get; set; } = 4;
   static public int EnterCountSkip { get; set; } = 2;
 
   static private int StackSkip = 1;
   static private int EnterCount;
   static private int CurrentMargin;
+
   static private readonly int TraceEventMaxLength;
 
-  [SuppressMessage("Design", "GCop139:Use constant instead of field.", Justification = "Analysis error")]
-  static private readonly string Separator = new('-', 120);
+  static public readonly string IdWidth = "D6";
+
+  static public readonly TraceForm TraceForm;
 
   static DebugManager()
   {

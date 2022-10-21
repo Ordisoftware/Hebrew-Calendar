@@ -1,5 +1,7 @@
 namespace Meziantou.Framework.Win32;
 
+[SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
+[SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
 public enum WellKnownSidType
 {
   WinNullSid = 0,

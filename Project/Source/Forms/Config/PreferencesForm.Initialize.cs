@@ -287,7 +287,6 @@ partial class PreferencesForm
   /// <summary>
   /// Loads Hot-Keys.
   /// </summary>
-  [SuppressMessage("Roslynator", "RCS1235:Optimize method call.", Justification = "Analysis error")]
   private void LoadHotKeys()
   {
     SelectGlobalHotKeyPopupMainFormKey.Items.Clear();

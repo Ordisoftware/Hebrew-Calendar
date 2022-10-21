@@ -108,7 +108,13 @@ partial class HebrewDatabase : SQLiteDatabase
             memos?.AddRange(Parashot.Select(p => p.Memo));
             DeleteParashot(true);
             var list = ParashotFactory.Instance.All.Select(p => p.Clone()).Cast<Parashah>().ToList();
-            if ( noText ) list.ForEach(p => { p.Translation = string.Empty; p.Lettriq = string.Empty; p.Memo = string.Empty; });
+            if ( noText )
+              list.ForEach(p =>
+              {
+                p.Translation = string.Empty;
+                p.Lettriq = string.Empty;
+                p.Memo = string.Empty;
+              });
             if ( memos is not null )
               for ( int index = 0, indexCheck = 0; index < list.Count && indexCheck < memos.Count; index++ )
                 list[index].Memo = memos[index];

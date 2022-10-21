@@ -505,23 +505,19 @@ partial class ParashotForm : Form
     var row = DataGridView.Rows
                           .AsIEnumerable()
                           .FirstOrDefault(row => ( (string)row.Cells[ColumnName.Index].Value ).RawContains(match));
-    if ( row is not null )
-    {
-      row.Selected = true;
-      DataGridView.CurrentCell = row.Cells[0];
-      DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
-    }
+    if ( row is null ) return;
+    row.Selected = true;
+    DataGridView.CurrentCell = row.Cells[0];
+    DataGridView.FirstDisplayedScrollingRowIndex = DataGridView.SelectedRows[0].Index;
   }
 
   private void EditSearch_KeyDown(object sender, KeyEventArgs e)
   {
-    if ( e.KeyCode == Keys.Escape )
-    {
-      EditSearch.Clear();
-      DataGridView.Focus();
-      e.Handled = true;
-      e.SuppressKeyPress = true;
-    }
+    if ( e.KeyCode != Keys.Escape ) return;
+    EditSearch.Clear();
+    DataGridView.Focus();
+    e.Handled = true;
+    e.SuppressKeyPress = true;
   }
 
 }
