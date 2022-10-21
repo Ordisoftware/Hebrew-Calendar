@@ -22,7 +22,6 @@ partial class MainForm
   /// </summary>
   /// <param name="yearFirst">The first year.</param>
   /// <param name="yearLast">The last year.</param>
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   private string CreateData(int yearFirst, int yearLast)
   {
     Globals.IsGenerating = true;

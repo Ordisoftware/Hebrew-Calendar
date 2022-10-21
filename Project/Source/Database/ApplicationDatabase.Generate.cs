@@ -36,6 +36,8 @@ partial class ApplicationDatabase
 
   static public int MaxGenerateErrors { get; set; } = Globals.MaxErrorsAllowed;
 
+  private const int ErrorFontSize = 8;
+
   public readonly List<string> LastGenerationErrors = new();
 
   public bool AddGenerateErrorAndCheckIfTooMany(string method, string date, Exception ex)
@@ -58,7 +60,7 @@ partial class ApplicationDatabase
                                         MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
                                         false, false) )
     {
-      form.TextBox.Font = new Font("Courier new", 8);
+      form.TextBox.Font = new Font("Courier new", ErrorFontSize);
       form.ShowDialog();
     }
     if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )
