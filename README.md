@@ -400,6 +400,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 - Fix screen location of the show new in version box when starting minimized.
 - Fix weekly parashah generation parashot and soukot.
+- Fix reminder and Sim'hat Torah.
 
 #### 2022.09.25 - Version 9.33
 
