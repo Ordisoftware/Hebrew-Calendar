@@ -404,7 +404,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### In progress - Version 9.34
 
 - Fix screen location of the show "new in version" box when app starts minimized.
-- Fix auto web check update shows some message (must not).
+- Fix auto web check update shows some error message (must not).
 
 #### 2022.09.25 - Version 9.33
 
