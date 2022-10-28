@@ -406,7 +406,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 9.34
 
->- Add option to have the Hebrew date on a single line before the ephemeris in the month view.
+- Add option to have the Hebrew date on a single line before the ephemeris in the month view.
 >- Add option to display hebrew month names in Latin Transcription or in Hebrew Unicode or both.
 >- Add option to display celebration names in Latin Transcription or in Hebrew Unicode or both.
 >- Add option to display parashah names in Latin Transcription or in Hebrew Unicode or both.
