@@ -129,6 +129,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditUseTwoDaysForLastPessahDayOutside.Checked = Settings.UseTwoDaysForLastPessahDayOutside);
     SystemManager.TryCatch(() => EditReminderBoxRetakeFocusAfterDateClick.Checked = Settings.BoxesRetakeFocusAfterDateClick);
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLine.Checked = Settings.CalendarHebrewDateSingleLine);
+    SystemManager.TryCatch(() => EditCalendarParashahWithBookAndRef.Checked = Settings.CalendarParashahWithBookAndFullRef);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);

@@ -217,6 +217,7 @@
       this.EditRemindCelebrationsDaysBefore = new System.Windows.Forms.NumericUpDown();
       this.LabelRemindCelebrationDaysBefore = new System.Windows.Forms.Label();
       this.TabPageParashah = new System.Windows.Forms.TabPage();
+      this.EditCalendarParashahWithBookAndRef = new System.Windows.Forms.CheckBox();
       this.EditMainFormTitleBarShowWeeklyParashah = new System.Windows.Forms.CheckBox();
       this.EditReminderShabatShowParashah = new System.Windows.Forms.CheckBox();
       this.EditParashahCaptionWithBookAndRef = new System.Windows.Forms.CheckBox();
@@ -278,6 +279,7 @@
       this.LabelCalendarLineSpacingInfo = new System.Windows.Forms.Label();
       this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
       this.EditCalendarShowSelectedBox = new System.Windows.Forms.CheckBox();
+      this.EditCalendarHebrewDateSingleLine = new System.Windows.Forms.CheckBox();
       this.EditCalendarUseHoverEffect = new System.Windows.Forms.CheckBox();
       this.EditMonthViewChangeDayOnClick = new System.Windows.Forms.CheckBox();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
@@ -348,7 +350,6 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditCalendarHebrewDateSingleLine = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -1921,6 +1922,7 @@
       // 
       this.TabPageParashah.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageParashah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageParashah.Controls.Add(this.EditCalendarParashahWithBookAndRef);
       this.TabPageParashah.Controls.Add(this.EditMainFormTitleBarShowWeeklyParashah);
       this.TabPageParashah.Controls.Add(this.EditReminderShabatShowParashah);
       this.TabPageParashah.Controls.Add(this.EditParashahCaptionWithBookAndRef);
@@ -1929,6 +1931,13 @@
       this.TabPageParashah.Controls.Add(this.EditWeeklyParashahShowAtStartup);
       resources.ApplyResources(this.TabPageParashah, "TabPageParashah");
       this.TabPageParashah.Name = "TabPageParashah";
+      // 
+      // EditCalendarParashahWithBookAndRef
+      // 
+      resources.ApplyResources(this.EditCalendarParashahWithBookAndRef, "EditCalendarParashahWithBookAndRef");
+      this.EditCalendarParashahWithBookAndRef.Name = "EditCalendarParashahWithBookAndRef";
+      this.EditCalendarParashahWithBookAndRef.UseVisualStyleBackColor = true;
+      this.EditCalendarParashahWithBookAndRef.CheckedChanged += new System.EventHandler(this.EditCalendarParashahWithBook_CheckedChanged);
       // 
       // EditMainFormTitleBarShowWeeklyParashah
       // 
@@ -2396,6 +2405,13 @@
       this.EditCalendarShowSelectedBox.Name = "EditCalendarShowSelectedBox";
       this.EditCalendarShowSelectedBox.UseVisualStyleBackColor = true;
       this.EditCalendarShowSelectedBox.CheckedChanged += new System.EventHandler(this.EditMonthViewOption_Changed);
+      // 
+      // EditCalendarHebrewDateSingleLine
+      // 
+      resources.ApplyResources(this.EditCalendarHebrewDateSingleLine, "EditCalendarHebrewDateSingleLine");
+      this.EditCalendarHebrewDateSingleLine.Name = "EditCalendarHebrewDateSingleLine";
+      this.EditCalendarHebrewDateSingleLine.UseVisualStyleBackColor = true;
+      this.EditCalendarHebrewDateSingleLine.CheckedChanged += new System.EventHandler(this.EditMonthViewOption_Changed);
       // 
       // EditCalendarUseHoverEffect
       // 
@@ -2970,13 +2986,6 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
-      // EditCalendarHebrewDateSingleLine
-      // 
-      resources.ApplyResources(this.EditCalendarHebrewDateSingleLine, "EditCalendarHebrewDateSingleLine");
-      this.EditCalendarHebrewDateSingleLine.Name = "EditCalendarHebrewDateSingleLine";
-      this.EditCalendarHebrewDateSingleLine.UseVisualStyleBackColor = true;
-      this.EditCalendarHebrewDateSingleLine.CheckedChanged += new System.EventHandler(this.EditMonthViewOption_Changed);
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3379,5 +3388,6 @@
     private CheckBox EditReminderBoxRetakeFocusAfterDateClick;
     internal LinkLabel ActionMonthViewThemeDark;
         private CheckBox EditCalendarHebrewDateSingleLine;
+        private CheckBox EditCalendarParashahWithBookAndRef;
     }
 }

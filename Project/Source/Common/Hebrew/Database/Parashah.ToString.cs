@@ -11,8 +11,18 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-10 </edited>
 namespace Ordisoftware.Hebrew;
+
+//public enum ParashahToStringStyle
+//{
+//  OnlyParashah,
+//  ParashahAndLinked,
+//  WithBookAndRef,
+//  WithBookAndFullRef,
+//  OnlyBookAndRef,
+//  OnlyBookAndFullRef
+//}
 
 public partial class Parashah
 {
@@ -24,6 +34,23 @@ public partial class Parashah
     if ( withBookAndref ) result += $" ({Book} {VerseBegin})";
     return result;
   }
+
+  public string ToStringOnlyBookAndFullRef()
+  {
+    return $"{Book} {VerseBegin} - {VerseEnd}";
+  }
+
+  //public string ToStringShort(ParashahToStringStyle style)
+  //  => style switch
+  //  {
+  //    ParashahToStringStyle.OnlyParashah => Name,
+  //    ParashahToStringStyle.ParashahAndLinked => $"{Name} - {GetLinked().Name}",
+  //    ParashahToStringStyle.WithBookAndRef => $"{Name} ({Book} {VerseBegin})",
+  //    ParashahToStringStyle.WithBookAndFullRef => $"{Name} ({Book} {VerseBegin} - {VerseEnd})",
+  //    ParashahToStringStyle.OnlyBookAndRef => $"{Book} {VerseBegin}",
+  //    ParashahToStringStyle.OnlyBookAndFullRef => $"{Book} {VerseBegin} - {VerseEnd}",
+  //    _ => throw new AdvNotImplementedException(style)
+  //  };
 
   public override string ToString()
     => ToString(false);

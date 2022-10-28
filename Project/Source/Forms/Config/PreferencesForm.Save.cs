@@ -131,6 +131,7 @@ partial class PreferencesForm
     Settings.UseTwoDaysForLastPessahDayOutside = EditUseTwoDaysForLastPessahDayOutside.Checked;
     Settings.BoxesRetakeFocusAfterDateClick = EditReminderBoxRetakeFocusAfterDateClick.Checked;
     Settings.CalendarHebrewDateSingleLine = EditCalendarHebrewDateSingleLine.Checked;
+    Settings.CalendarParashahWithBookAndFullRef = EditCalendarParashahWithBookAndRef.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;

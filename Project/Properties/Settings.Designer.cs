@@ -2912,5 +2912,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalendarHebrewDateSingleLine"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CalendarParashahWithBookAndFullRef {
+            get {
+                return ((bool)(this["CalendarParashahWithBookAndFullRef"]));
+            }
+            set {
+                this["CalendarParashahWithBookAndFullRef"] = value;
+            }
+        }
     }
 }

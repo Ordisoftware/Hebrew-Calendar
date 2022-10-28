@@ -215,7 +215,17 @@ partial class MainForm
             add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange));
           // Parashah
           if ( Settings.CalendarShowParashah && !string.IsNullOrEmpty(row.ParashahID) )
-            add(Settings.CalendarColorParashah, row.GetParashahText(false));
+          {
+            var parashah = ParashotFactory.Instance.Get(row.ParashahID);
+            if ( parashah is null )
+              add(Settings.CalendarColorParashah, SysTranslations.UndefinedSlot.GetLang());
+            else
+            {
+              add(Settings.CalendarColorParashah, parashah.ToStringShort(false, row.HasLinkedParashah));
+              if ( Settings.CalendarParashahWithBookAndFullRef )
+                add(Settings.CalendarColorParashah, $"{parashah.ToStringOnlyBookAndFullRef()}");
+            }
+          }
           // Add info
           void add(Color color, string text)
           {
