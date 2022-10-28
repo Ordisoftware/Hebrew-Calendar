@@ -405,6 +405,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update shows some error message (must not).
+- Fix Hebrew date template for the month view that is capitalized on rendering.
 
 #### 2022.09.25 - Version 9.33
 
