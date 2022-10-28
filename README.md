@@ -408,6 +408,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 >- Add option to choose font type in the month view.
 >- Add option to have the Hebrew date on a single line before the ephemeris in the month view.
+>- Add option to display hebrew month names in Latin Transcription or in Hebrew Unicode or both.
+>- Add option to display celebration names in Latin Transcription or in Hebrew Unicode or both.
+>- Add option to display parashah names in Latin Transcription or in Hebrew Unicode or both.
+>- Add option to display book names in Latin Transcription or in Hebrew Unicode or both.
 - Fix Hebrew date template for the month view that is capitalized on rendering.
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update shows some error message (must not).
