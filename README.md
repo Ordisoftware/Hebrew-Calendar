@@ -392,7 +392,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Add auto-backup bookmarks.
 >- Add comments to bookmarks.
 >- Add option to choose information order in the month view.
->- Add options to display and format additional parashah information in the month view (book name, hebrew names, references...)
 >- Add option to indicate parashah and Torah reference in upper or sentence case.
 >- Add import button to the GPS box on the first start.
 >- Improve weekly parashah description box to have access to the tools for the study.
@@ -401,17 +400,19 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### In progress - Version 9.35
 
 >- Add option to display only omer ephemeris or sun and moon the same time in the month view
+>- Add option to choose font type in the month view.
 >- Fix weekly parashah generation parashot and soukot.
 >- Fix reminder and Sim'hat Torah.
 
 #### In progress - Version 9.34
 
->- Add option to choose font type in the month view.
 >- Add option to have the Hebrew date on a single line before the ephemeris in the month view.
 >- Add option to display hebrew month names in Latin Transcription or in Hebrew Unicode or both.
 >- Add option to display celebration names in Latin Transcription or in Hebrew Unicode or both.
 >- Add option to display parashah names in Latin Transcription or in Hebrew Unicode or both.
 >- Add option to display book names in Latin Transcription or in Hebrew Unicode or both.
+>- Add option to display book name with parashah in the month view.
+>- Add option to display parashah references in the month view.
 - Fix Hebrew date template for the month view that is capitalized on rendering.
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update shows some error message (must not).
