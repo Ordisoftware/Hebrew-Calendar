@@ -949,4 +949,10 @@
   <data name="EditReminderBoxRetakeFocusAfterDateClick.Text" xml:space="preserve">
     <value>Les boites de rappel et de navigation reprennent le focus après clic sur date (clic droit pour le contraire)</value>
   </data>
+  <data name="EditCalendarHebrewDateSingleLine.Text" xml:space="preserve">
+    <value>Date hébraïque sur une seule ligne, sinon après le lever du soleil ou de la lune</value>
+  </data>
+  <data name="EditCalendarParashahWithBookAndRef.Text" xml:space="preserve">
+    <value>Afficher le livre et les références de la parashah dans la vue mensuelle</value>
+  </data>
 </root>

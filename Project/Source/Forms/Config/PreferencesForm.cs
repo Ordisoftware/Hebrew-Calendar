@@ -485,6 +485,11 @@ partial class PreferencesForm : Form
     EditWeeklyParashahShowAtNewWeek.Enabled = EditCalendarShowParashah.Checked;
   }
 
+  private void EditCalendarParashahWithBook_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( IsReady ) MustRefreshMonthView = true;
+  }
+
   #endregion
 
   #region Text Report
@@ -800,6 +805,7 @@ partial class PreferencesForm : Form
     MainForm.Instance.SeparatorMenuWeather.Enabled = enabled;
     PanelWeatherOnline.Enabled = enabled;
   }
+
 
   #endregion
 

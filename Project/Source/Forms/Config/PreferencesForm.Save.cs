@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-10 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Base.Hotkeys;
@@ -130,6 +130,8 @@ partial class PreferencesForm
     Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     Settings.UseTwoDaysForLastPessahDayOutside = EditUseTwoDaysForLastPessahDayOutside.Checked;
     Settings.BoxesRetakeFocusAfterDateClick = EditReminderBoxRetakeFocusAfterDateClick.Checked;
+    Settings.CalendarHebrewDateSingleLine = EditCalendarHebrewDateSingleLine.Checked;
+    Settings.CalendarParashahWithBookAndFullRef = EditCalendarParashahWithBookAndRef.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;
