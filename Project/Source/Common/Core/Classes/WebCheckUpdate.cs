@@ -85,16 +85,22 @@ static class WebCheckUpdate
     catch ( UnauthorizedAccessException ex )
     {
       CleanTemp();
-      DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
-      if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
-        SystemManager.OpenGitHupRepo();
+      if ( !auto )
+      {
+        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
+        if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
+          SystemManager.OpenGitHupRepo();
+      }
     }
     catch ( IOException ex )
     {
       CleanTemp();
-      DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
-      if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
-        SystemManager.OpenGitHupRepo();
+      if ( !auto )
+      {
+        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
+        if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
+          SystemManager.OpenGitHupRepo();
+      }
     }
     catch ( WebException ex )
     {
@@ -114,12 +120,14 @@ static class WebCheckUpdate
         else
           return Run(ref lastdone, interval, auto, checkAtStartup, true);
       }
-      DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), msg);
+      if ( !auto )
+        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), msg);
     }
     catch ( Exception ex )
     {
       CleanTemp();
-      DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
+      if ( !auto )
+        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
     }
     finally
     {

@@ -363,16 +363,11 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### Application
 
-- Add auto-backup bookmarks.
-- Add import button to the GPS box on the first start.
-- Add option to indicate parashah and Torah reference in upper or sentence case.
 - Add option to set primary source for check update between author's website or GitHub.
 - Add preference tab to setup keyboard shortcuts.
 - Add dark theme for monthly view.
 - Add print boards.
 - Add option to generate a fixed interval (if the current year is within).
-- Improve weekly parashah description box to have access to the tools for the study.
-- Improve weekly parashah description box to have a screenshot button.
 - Improve notices to be in only one window having a page control like preferences.
 - Improve food notice with details and cooking recipes.
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
@@ -391,16 +386,31 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 10.0
 
-- Add auto sort bookmarks.
-- Add comments to bookmarks.
-- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
-- Add command-line option `--lunarmonths` to show the lunar months board.
+>- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
+>- Add command-line option `--lunarmonths` to show the lunar months board.
+>- Add auto sort bookmarks.
+>- Add auto-backup bookmarks.
+>- Add comments to bookmarks.
+>- Add option to choose information order in the month view.
+>- Add options to display and format additional parashah information in the month view (book name, hebrew names, references...)
+>- Add option to indicate parashah and Torah reference in upper or sentence case.
+>- Add import button to the GPS box on the first start.
+>- Improve weekly parashah description box to have access to the tools for the study.
+>- Improve weekly parashah description box to have a screenshot button.
+
+#### In progress - Version 9.35
+
+>- Add option to display only omer ephemeris or sun and moon the same time in the month view
+>- Fix weekly parashah generation parashot and soukot.
+>- Fix reminder and Sim'hat Torah.
 
 #### In progress - Version 9.34
 
-- Fix screen location of the show new in version box when starting minimized.
-- Fix weekly parashah generation parashot and soukot.
-- Fix reminder and Sim'hat Torah.
+- Add option to choose font type in the month view.
+- Add option to have the Hebrew date on a single line before the ephemeris in the month view.
+- Fix screen location of the show "new in version" box when app starts minimized.
+- Fix auto web check update shows some error message (must not).
+- Fix Hebrew date template for the month view that is capitalized on rendering.
 
 #### 2022.09.25 - Version 9.33
 
