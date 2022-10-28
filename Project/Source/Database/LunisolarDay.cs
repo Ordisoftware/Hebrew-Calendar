@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-10 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using SQLite;
@@ -69,7 +69,6 @@ public partial class LunisolarDay
 
   public string DayAndMonthFormattedText
     => Settings.MoonDayTextFormat
-               .ToUpper()
                .Replace("%MONTHNAME%", HebrewMonths.Transcriptions.GetLang()[LunarMonth])
                .Replace("%MONTHNUM%", LunarMonth.ToString())
                .Replace("%DAYNUM%", LunarDay.ToString());
