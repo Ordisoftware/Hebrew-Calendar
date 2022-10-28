@@ -11,11 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2022-10 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using CodeProjectCalendar.NET;
-using CommandLine;
 
 partial class MainForm
 {
@@ -98,6 +97,9 @@ partial class MainForm
     try
     {
       InitializeYearsInterval();
+      bool dateSingleLine = Settings.CalendarHebrewDateSingleLine;
+      bool omerSun = !Settings.TorahEventsCountAsMoon;
+      bool omerSunAndNotDateSingleLine = omerSun && !dateSingleLine;
       bool isCelebrationWeekStart = false;
       bool isCelebrationWeekEnd = false;
       if ( LunisolarDays.Count == 0 ) return;
@@ -164,17 +166,23 @@ partial class MainForm
           if ( isCelebrationWeekEnd )
             isCelebrationWeekStart = false;
           int rank = 0;
-          // Moon phase
-          Color colorMoon;
-          string strMonthDay = row.DayAndMonthFormattedText;
-          colorMoon = row.IsNewMoon
+          // Moon/Sun ephemeris and date
+          Color colorEphemeris = row.IsNewMoon
             ? Settings.CalendarColorTorahEvent
             : row.IsFullMoon
               ? Settings.CalendarColorFullMoon
               : Settings.CalendarColorMoon;
-          if ( !Settings.TorahEventsCountAsMoon )
+          string strDate = string.Empty;
+          if ( dateSingleLine && ( omerSun || row.Moonrise != null ) )
           {
-            add(colorMoon, $"{strRise}{row.SunriseAsString} {strMonthDay}");
+            var color = row.IsNewMoon ? Settings.CalendarColorTorahEvent : Settings.MonthViewTextColor;
+            add(color, row.DayAndMonthFormattedText);
+          }
+          else
+            strDate = " " + row.DayAndMonthFormattedText;
+          if ( omerSun )
+          {
+            add(colorEphemeris, $"{strRise}{row.SunriseAsString}{strDate}");
             add(Settings.MonthViewTextColor, strSet + row.SunsetAsString);
           }
           else
@@ -184,18 +192,18 @@ partial class MainForm
               if ( row.Moonset is not null )
                 add(Settings.MonthViewTextColor, strSet + row.MoonsetAsString);
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, $"{strRise}{row.MoonriseAsString} {strMonthDay}");
+                add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}");
               else
-              if ( !Settings.TorahEventsCountAsMoon )
-                add(colorMoon, strMonthDay);
+              if ( omerSunAndNotDateSingleLine )
+                add(colorEphemeris, row.DayAndMonthFormattedText);
             }
             else
             {
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorMoon, $"{strRise}{row.MoonriseAsString} {strMonthDay}");
+                add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}");
               else
-              if ( !Settings.TorahEventsCountAsMoon )
-                add(colorMoon, strMonthDay);
+              if ( omerSunAndNotDateSingleLine )
+                add(colorEphemeris, row.DayAndMonthFormattedText);
               if ( row.Moonset is not null )
                 add(Settings.MonthViewTextColor, strSet + row.MoonsetAsString);
             }

@@ -3736,7 +3736,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3766,7 +3766,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3790,7 +3790,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3817,7 +3817,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -6711,7 +6711,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalendarDoubleClickAction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 90</value>
+    <value>20, 110</value>
   </data>
   <data name="LabelCalendarDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -6744,7 +6744,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 150</value>
+    <value>23, 170</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 17</value>
@@ -6777,7 +6777,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectCalendarDoubleClickActionNothing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 110</value>
+    <value>23, 130</value>
   </data>
   <data name="SelectCalendarDoubleClickActionNothing.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 17</value>
@@ -6810,7 +6810,7 @@
     <value>NoControl</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSetActive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 130</value>
+    <value>23, 150</value>
   </data>
   <data name="SelectCalendarDoubleClickActionSetActive.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 17</value>
@@ -6843,7 +6843,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMonthViewFontSizeInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 208</value>
+    <value>66, 228</value>
   </data>
   <data name="LabelMonthViewFontSizeInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -6873,7 +6873,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 300</value>
+    <value>20, 320</value>
   </data>
   <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 13</value>
@@ -6918,7 +6918,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 315</value>
+    <value>354, 335</value>
   </data>
   <data name="ActionMoonDayTextFormatReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -6948,7 +6948,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalendarLineSpacingInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 263</value>
+    <value>66, 283</value>
   </data>
   <data name="LabelCalendarLineSpacingInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -6994,7 +6994,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 315</value>
+    <value>384, 335</value>
   </data>
   <data name="ActionMoonDayTextFormatHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
@@ -7024,7 +7024,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCalendarShowSelectedBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 40</value>
+    <value>23, 60</value>
   </data>
   <data name="EditCalendarShowSelectedBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 17</value>
@@ -7047,6 +7047,39 @@
   <data name="&gt;&gt;EditCalendarShowSelectedBox.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="EditCalendarHebrewDateSingleLine.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLine.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLine.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 17</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLine.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLine.Text" xml:space="preserve">
+    <value>Hebrew date on a single line, else after sun or moon rise</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarHebrewDateSingleLine.Name" xml:space="preserve">
+    <value>EditCalendarHebrewDateSingleLine</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarHebrewDateSingleLine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarHebrewDateSingleLine.Parent" xml:space="preserve">
+    <value>TabPageMonthView</value>
+  </data>
+  <data name="&gt;&gt;EditCalendarHebrewDateSingleLine.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="EditCalendarUseHoverEffect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7057,7 +7090,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditCalendarUseHoverEffect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
+    <value>23, 40</value>
   </data>
   <data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>
@@ -7078,7 +7111,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditCalendarUseHoverEffect.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="EditMonthViewChangeDayOnClick.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7090,7 +7123,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMonthViewChangeDayOnClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 60</value>
+    <value>23, 80</value>
   </data>
   <data name="EditMonthViewChangeDayOnClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 17</value>
@@ -7111,7 +7144,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewChangeDayOnClick.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="LabelMonthViewFontSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7123,7 +7156,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelMonthViewFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 185</value>
+    <value>20, 205</value>
   </data>
   <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
@@ -7144,13 +7177,13 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="EditCalendarLineSpacing.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditCalendarLineSpacing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 259</value>
+    <value>23, 279</value>
   </data>
   <data name="EditCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -7168,13 +7201,13 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditCalendarLineSpacing.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="EditMonthViewFontSize.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMonthViewFontSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 204</value>
+    <value>23, 224</value>
   </data>
   <data name="EditMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -7192,7 +7225,7 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMonthViewFontSize.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="LabelCalendarLineSpacing.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7204,7 +7237,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelCalendarLineSpacing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 240</value>
+    <value>20, 260</value>
   </data>
   <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -7225,13 +7258,13 @@
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;LabelCalendarLineSpacing.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="EditMoonDayTextFormat.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditMoonDayTextFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 319</value>
+    <value>23, 339</value>
   </data>
   <data name="EditMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 20</value>
@@ -7243,13 +7276,13 @@
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthView</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="TabPageMonthView.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 49</value>
@@ -8716,7 +8749,7 @@
     <value>EditCustomWebSearch</value>
   </data>
   <data name="&gt;&gt;EditCustomWebSearch.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCustomWebSearch.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8737,7 +8770,7 @@
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8758,7 +8791,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8779,7 +8812,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -8800,7 +8833,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -9180,7 +9213,7 @@
     <value>EditWeatherAppPath</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.29.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=9.34.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
     <value>TabPageWeather</value>
