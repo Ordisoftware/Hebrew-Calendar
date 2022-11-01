@@ -58,7 +58,7 @@ partial class ApplicationDatabase
           day.LunarDay -= delta;
           checkParashah(day);
           if ( day.TorahEvent != TorahCelebrationDay.None )
-            day.TorahEventText = AppTranslations.TorahCelebrationDays[day.TorahEvent].GetLang();
+            day.TorahEventText = AppTranslations.GetCelebrationDisplayText(day.TorahEvent);
           else
             day.TorahEventText = day.GetWeekLongCelebrationIntermediateDay().Text;
         }

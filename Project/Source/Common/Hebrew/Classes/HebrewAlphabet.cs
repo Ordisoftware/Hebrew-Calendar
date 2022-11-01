@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -49,6 +49,16 @@ static class HebrewAlphabet
   {
     111, 412, 83, 434, 6, 12, 67, 418, 419, 20, 100,
     74, 90, 106, 120, 130, 81, 104, 186, 510, 360, 406
+  };
+
+  /// <summary>
+  /// Indicates letters names in Unicode chars.
+  /// </summary>
+  static public readonly string[] Unicode =
+  {
+    "",
+    "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל",
+    "מ", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ק", "ר", "ש", "ת",
   };
 
   /// <summary>

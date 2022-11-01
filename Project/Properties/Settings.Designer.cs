@@ -2924,5 +2924,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalendarParashahWithBookAndFullRef"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HebrewNamesInUnicode {
+            get {
+                return ((bool)(this["HebrewNamesInUnicode"]));
+            }
+            set {
+                this["HebrewNamesInUnicode"] = value;
+            }
+        }
     }
 }

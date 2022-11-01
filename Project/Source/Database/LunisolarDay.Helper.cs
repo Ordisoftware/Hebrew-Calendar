@@ -28,7 +28,7 @@ partial class LunisolarDay
           ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
           : -1;
         if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
-          return (TorahCelebration.Pessah, day, AppTranslations.PessahDay.GetLang(day));
+          return (TorahCelebration.Pessah, day, AppTranslations.GetPessahDisplayText(day));
       }
       else
       if ( !onlyPessah && LunarMonth == TorahCelebrationSettings.YomsMonth )
@@ -37,7 +37,7 @@ partial class LunisolarDay
           ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
           : -1;
         if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
-          return (TorahCelebration.Soukot, day, AppTranslations.SoukotDay.GetLang(day));
+          return (TorahCelebration.Soukot, day, AppTranslations.GetSoukotDisplayText(day));
       }
       else
       if ( !onlyPessah && LunarMonth == TorahCelebrationSettings.ChavouotMonth )
@@ -72,7 +72,7 @@ partial class LunisolarDay
           && Date >= first.Date
           && Date <= last.Date )
         {
-          string str = AppTranslations.TorahCelebrationDays[TorahCelebrationDay.ChavouotDiet].GetLang();
+          string str = AppTranslations.GetCelebrationDisplayText(TorahCelebrationDay.ChavouotDiet);
           return (TorahCelebration.Chavouot, (int)( Date - first.Date ).TotalDays + 1, str);
         }
       }

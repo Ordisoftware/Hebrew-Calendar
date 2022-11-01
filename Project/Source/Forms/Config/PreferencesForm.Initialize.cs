@@ -252,7 +252,7 @@ partial class PreferencesForm
         {
           var item = new TorahEventItem
           {
-            Text = AppTranslations.TorahCelebrationDays.GetLang(value),
+            Text = AppTranslations.GetCelebrationDisplayText(value),
             Event = value
           };
           int index = SelectRemindEventsBefore.Items.Add(item);

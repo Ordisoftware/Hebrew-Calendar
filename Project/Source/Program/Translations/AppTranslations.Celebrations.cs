@@ -64,6 +64,37 @@ static partial class AppTranslations
     [Language.FR] = TorahCelebrations[TorahCelebration.Soukot][Language.FR] + " Jour {0}"
   };
 
+  static public string GetPessahDisplayText(int day)
+    => /*Program.Settings.HebrewNamesInUnicode
+       ? "פסח" + " " + HebrewAlphabet.Unicode[day]
+       : */PessahDay.GetLang(day);
+
+  static public string GetSoukotDisplayText(int day)
+    => /*Program.Settings.HebrewNamesInUnicode
+       ? "סכות" + " " + HebrewAlphabet.Unicode[day]
+       : */PessahDay.GetLang(day);
+
+  static public string GetCelebrationDisplayText(TorahCelebrationDay value)
+    => /*Program.Settings.HebrewNamesInUnicode
+       ? UnicodeCelebrations[value]
+       : */TorahCelebrationDays.GetLang(value);
+
+  static public readonly Dictionary<TorahCelebrationDay, string> UnicodeCelebrations = new()
+  {
+    [TorahCelebrationDay.None] = "",
+    [TorahCelebrationDay.NewYearD1] = "שנה חדשה",
+    [TorahCelebrationDay.NewYearD10] = "לקחת שה",
+    [TorahCelebrationDay.PessahD1] = "פסח תחלה",
+    [TorahCelebrationDay.PessahD7] = "פסח סוף",
+    [TorahCelebrationDay.ChavouotDiet] = "שבועות דיאטה",
+    [TorahCelebrationDay.Chavouot1] = "שבועות שה",
+    [TorahCelebrationDay.Chavouot2] = "שבועות סוף",
+    [TorahCelebrationDay.YomTerouah] = "יומ תרועה",
+    [TorahCelebrationDay.YomHaKipourim] = "יומ הכיפורים",
+    [TorahCelebrationDay.SoukotD1] = "סכות תחלה",
+    [TorahCelebrationDay.SoukotD8] = "סכות סוף"
+  };
+
   static public readonly NullSafeDictionary<TorahCelebrationDay, TranslationsDictionary> TorahCelebrationDays = new()
   {
     [TorahCelebrationDay.None] = new TranslationsDictionary

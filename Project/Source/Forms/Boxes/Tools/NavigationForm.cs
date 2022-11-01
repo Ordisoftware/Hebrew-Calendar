@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class NavigationForm : Form
@@ -54,7 +54,7 @@ partial class NavigationForm : Form
         LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
         LabelLunarMonthName.Text = $"({strMonth.ToUpper()})";
         LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
-        LabelLunarDayEvent.Text = isShabat ? $"({AppTranslations.Shabat.GetLang().ToUpper()}" : string.Empty;
+        LabelLunarDayEvent.Text = isShabat ? $"({AppTranslations.Shabat.GetLang().ToUpper()})" : string.Empty;
         int left = LabelLunarMonthValue.Left + Math.Max(LabelLunarMonthValue.Width, LabelLunarDayValue.Width);
         LabelLunarMonthName.Left = left;
         LabelLunarDayEvent.Left = left;

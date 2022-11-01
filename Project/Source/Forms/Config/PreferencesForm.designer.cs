@@ -88,6 +88,7 @@
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
       this.EditAutoSortBookmarks = new System.Windows.Forms.CheckBox();
       this.EditMainFormTitleBarShowCelebration = new System.Windows.Forms.CheckBox();
+      this.EditHebrewNamesInUnicode = new System.Windows.Forms.CheckBox();
       this.EditMainFormTitleBarShowToday = new System.Windows.Forms.CheckBox();
       this.EditDebuggerEnabled = new System.Windows.Forms.CheckBox();
       this.EditUsageStatisticsEnabled = new System.Windows.Forms.CheckBox();
@@ -701,6 +702,7 @@
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
       this.TabPageApplication.Controls.Add(this.EditAutoSortBookmarks);
       this.TabPageApplication.Controls.Add(this.EditMainFormTitleBarShowCelebration);
+      this.TabPageApplication.Controls.Add(this.EditHebrewNamesInUnicode);
       this.TabPageApplication.Controls.Add(this.EditMainFormTitleBarShowToday);
       this.TabPageApplication.Controls.Add(this.EditDebuggerEnabled);
       this.TabPageApplication.Controls.Add(this.EditUsageStatisticsEnabled);
@@ -844,6 +846,12 @@
       resources.ApplyResources(this.EditMainFormTitleBarShowCelebration, "EditMainFormTitleBarShowCelebration");
       this.EditMainFormTitleBarShowCelebration.Name = "EditMainFormTitleBarShowCelebration";
       this.EditMainFormTitleBarShowCelebration.UseVisualStyleBackColor = true;
+      // 
+      // EditHebrewNamesInUnicode
+      // 
+      resources.ApplyResources(this.EditHebrewNamesInUnicode, "EditHebrewNamesInUnicode");
+      this.EditHebrewNamesInUnicode.Name = "EditHebrewNamesInUnicode";
+      this.EditHebrewNamesInUnicode.UseVisualStyleBackColor = true;
       // 
       // EditMainFormTitleBarShowToday
       // 
@@ -3389,5 +3397,6 @@
     internal LinkLabel ActionMonthViewThemeDark;
         private CheckBox EditCalendarHebrewDateSingleLine;
         private CheckBox EditCalendarParashahWithBookAndRef;
+        private CheckBox EditHebrewNamesInUnicode;
     }
 }
