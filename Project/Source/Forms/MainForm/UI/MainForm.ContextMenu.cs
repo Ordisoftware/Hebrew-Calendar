@@ -132,7 +132,7 @@ public partial class MainForm
         {
           string captionParashah = parashah.ToStringShort(false, dayParashah.HasLinkedParashah);
           ContextMenuDayDate.Text += $" - {captionParashah}";
-          ContextMenuDayParashah.Text = $"Parashah {captionParashah}";
+          ContextMenuDayParashah.Text = $"{Parashah.DisplayName} {captionParashah}";
           ContextMenuDayParashah.Enabled = true;
         }
       }

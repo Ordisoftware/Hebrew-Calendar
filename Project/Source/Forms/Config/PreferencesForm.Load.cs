@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-10 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -130,6 +130,9 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditReminderBoxRetakeFocusAfterDateClick.Checked = Settings.BoxesRetakeFocusAfterDateClick);
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLine.Checked = Settings.CalendarHebrewDateSingleLine);
     SystemManager.TryCatch(() => EditCalendarParashahWithBookAndRef.Checked = Settings.CalendarParashahWithBookAndFullRef);
+    SystemManager.TryCatch(() => EditHebrewNamesInUnicode.Checked = Settings.HebrewNamesInUnicode);
+    SystemManager.TryCatch(() => SelectMonthViewEventsAlignment.SelectedIndex = (int)Settings.MonthViewEventsAlignment);
+    SystemManager.TryCatch(() => EditMonthViewEventsAlignmentOnlyForParashah.Checked = Settings.MonthViewEventsAlignmentOnlyForTorah);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);
@@ -142,6 +145,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => OldLongitude = Settings.GPSLongitude);
     SystemManager.TryCatch(() => OldShabatDay = Settings.ShabatDay);
     SystemManager.TryCatch(() => OldTimeZone = Settings.TimeZone);
+    SystemManager.TryCatch(() => OldHebrewNamesInUnicode = Settings.HebrewNamesInUnicode);
     SystemManager.TryCatch(() => OldUseMoonDays = Settings.TorahEventsCountAsMoon);
     SystemManager.TryCatch(() => OldUseSod = Settings.UseSodHaibour);
     SystemManager.TryCatch(() => OldUseSimhat = Settings.UseSimhatTorahOutside);

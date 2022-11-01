@@ -139,6 +139,7 @@ partial class PreferencesForm
                || form.OldLongitude != Settings.GPSLongitude
                || form.OldShabatDay != Settings.ShabatDay
                || form.OldTimeZone != Settings.TimeZone
+               || form.OldHebrewNamesInUnicode != Settings.HebrewNamesInUnicode
                || form.OldUseMoonDays != Settings.TorahEventsCountAsMoon
                || form.OldUseTwoDaysForLastPessahDayOutside != Settings.UseTwoDaysForLastPessahDayOutside
                || form.OldUseSimhat != Settings.UseSimhatTorahOutside

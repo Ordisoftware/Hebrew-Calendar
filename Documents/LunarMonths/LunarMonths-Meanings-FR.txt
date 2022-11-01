@@ -10,4 +10,4 @@ Kislev = Epaisseur, espoir.
 T'evet = Fortes pluies.
 Shevat' = Il (HaShem) a gouverné [par l'écrit]. Ce qui est dit, exprimé et dévoilé.
 Adar = 
-Adar II = 
+VeAdar = 

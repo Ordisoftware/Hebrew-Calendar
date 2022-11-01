@@ -16,7 +16,7 @@ namespace CodeProjectCalendar.NET
   public enum CalendarViews
   {
     /// <summary>
-    /// Renders the Calendar in a month view
+    /// Renders the Calendar in a monthly view
     /// </summary>
     Month = 1,
     /// <summary>
@@ -67,6 +67,8 @@ namespace CodeProjectCalendar.NET
     private readonly ScrollPanel _scrollPanel;
 
     // ORDISOFTWARE MODIF BEGIN
+    static public StringAlignment EventAlignment { get; set; }
+    static public bool EventAlignmentOnlyForTorah { get; set; }
     public List<IEvent> TheEvents { get; }
     internal List<CalendarEvent> CalendarEvents { get; }
 
@@ -943,6 +945,8 @@ namespace CodeProjectCalendar.NET
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
       // ORDISOFWTARE MODIF BEGIN
+      var eventStringFormat = new StringFormat();
+      eventStringFormat.Alignment = EventAlignment;
       var today = DateTime.Today;
       string monthText = _calendarDate.ToString("MMMM").Titleize();
       if ( isPrinting )
@@ -1035,7 +1039,8 @@ namespace CodeProjectCalendar.NET
             if ( !first )
             {
               first = true;
-              string strCounter1 = $"{monthText} {counter1.ToString(CultureInfo.InvariantCulture)}";
+              //string strCounter1 = $"{monthText} {counter1.ToString(CultureInfo.InvariantCulture)}";
+              string strCounter1 = $"{counter1.ToString(CultureInfo.InvariantCulture)}";
               if ( _calendarDate.Year == DateTime.Now.Year && _calendarDate.Month == DateTime.Now.Month && counter1 == DateTime.Now.Day )
               {
                 //ORDISOFTWARE MODIF BEGIN FIRST DAY OF MONTH ACTUAL DAY
@@ -1047,14 +1052,14 @@ namespace CodeProjectCalendar.NET
                     if ( CheckSelected(counter1) && !isPrinting )
                     {
                       isSelected = true;
-                      g.FillRectangle(CurrentDayBackBrush, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                      g.FillRectangle(CurrentDayBackBrush, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 4 - 2, stringSize.Height - 2);
                       g.DrawString(strCounter1, _todayFont, CurrentDayForeBrush, xStart + 5, yStart + 2);
                     }
                     else
                     {
                       var pen = useColors ? PenSelectedDay : PenBlack;
-                      g.FillRectangle(brushBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
-                      g.DrawRectangle(pen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4, stringSize.Height - 2);
+                      g.FillRectangle(brushBack, xStart + 5, yStart + 2 + 1, stringSize.Width + 4 - 4, stringSize.Height - 2);
+                      g.DrawRectangle(pen, xStart + 5, yStart + 2 + 1, stringSize.Width + 4 - 4, stringSize.Height - 2);
                       g.DrawString(strCounter1, _todayFont, CurrentDayBackBrush, xStart + 5, yStart + 2);
                     }
                   }
@@ -1149,7 +1154,7 @@ namespace CodeProjectCalendar.NET
                   var pen = useColors
                             ? selectedBoxOnlyCurrent ? PenText : PenSelectedDay
                             : PenBlack;
-                  g.DrawRectangle(pen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 0, stringSize.Height - 2 - 2);
+                  g.DrawRectangle(pen, xStart + 5 - 1, yStart + 2 + 1, stringSize.Width + 2, stringSize.Height - 2 - 2);
                 }
                 g.DrawString(strCounter1, _daysFont, BrushText, xStart + 5, yStart + 2);
                 //ORDISOFTWARE MODIF END
@@ -1328,7 +1333,7 @@ namespace CodeProjectCalendar.NET
         for ( int index = 0; index < countEvents; index++ )
         //foreach ( IEvent v in _events )
         {
-          var v = list[index];
+          var v = (CustomEvent)list[index];
           if ( DayForward(v, dt) )
           //if ( NeedsRendering(v, dt) )
           {
@@ -1360,7 +1365,11 @@ namespace CodeProjectCalendar.NET
             if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
               g.DrawRectangle(PenBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
 
-            g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), xx, yy + offsetY);
+            var rect = new Rectangle(xx, yy + offsetY, cellWidth - 2 - 5, (int)( sz.Height - 1 ));
+            if ( !EventAlignmentOnlyForTorah || v.IsParashah )
+              g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormat);
+            else
+              g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect);
             g.Clip = r;
 
             /*if ( generateSunToolTips )
@@ -1374,6 +1383,7 @@ namespace CodeProjectCalendar.NET
               _calendarEvents.Add(ev);
             }*/
             renderOffsetY += (int)sz.Height + deltaLine;
+            if ( v.IsHebrew ) renderOffsetY += 2;
           }
         }
         // ORDISOFTWARE MODIF END

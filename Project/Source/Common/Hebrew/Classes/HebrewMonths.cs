@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -37,8 +37,8 @@ static class HebrewMonths
     "כסלו",
     "טבת",
     "שבט",
-    "אדר א",
-    "אדר ב"
+    "אדר",
+    "ואדר"
   };
 
   /// <summary>
@@ -61,7 +61,7 @@ static class HebrewMonths
       "Tevet'",
       "Shevat'",
       "Adar",
-      "Adar II",
+      "VeAdar",
     },
     [Language.FR] = new string[]
     {
@@ -78,7 +78,7 @@ static class HebrewMonths
       "Tevet'",
       "Shevat'",
       "Adar",
-      "Adar II"
+      "VeAdar"
     }
   };
 

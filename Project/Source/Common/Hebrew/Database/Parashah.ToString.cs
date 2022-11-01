@@ -17,29 +17,50 @@ namespace Ordisoftware.Hebrew;
 public partial class Parashah
 {
 
+  static public string DisplayName => HebrewDatabase.HebrewNamesInUnicode ? "פרשה" : "Parashah";
+
+  static public string ShabatDisplayName => HebrewDatabase.HebrewNamesInUnicode ? "שבת" : "Shabat";
+
+  public string GetDisplayText() => HebrewDatabase.HebrewNamesInUnicode ? Unicode : Name;
+
   public string ToStringShort(bool withBookAndref, bool withLinked)
   {
-    string result = Name;
-    if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().Name : string.Empty;
-    if ( withBookAndref ) result += $" ({Book} {ToStringOnlyVerses()})";
+    string result = GetDisplayText();
+    if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().GetDisplayText() : string.Empty;
+    if ( withBookAndref )
+      result += $" ({ToStringBookAndReferences()})";
     return result;
   }
 
-  public string ToStringOnlyBookAndFullRef()
+  public string ToStringBookAndReferences()
   {
-    return $"{Book} {ToStringOnlyVerses()}";
+    return HebrewDatabase.HebrewNamesInUnicode
+      ? $"{BookInfos.Unicode[(TanakBook)Book]} : {GetUnicodeVerses()}"
+      : $"{Book} {GetLatinVerses()}";
   }
 
-  private string ToStringOnlyVerses()
+  private string GetUnicodeVerses()
   {
-    return VerseBegin + " - " + ( IsLinkedToNext ? GetLinked().VerseEnd : VerseEnd );
+    string result = HebrewAlphabet.IntToUnicode(ChapterBegin);
+    result += ".";
+    result += HebrewAlphabet.IntToUnicode(VerseBegin);
+    result += " - ";
+    result += HebrewAlphabet.IntToUnicode(ChapterEnd);
+    result += ".";
+    result += HebrewAlphabet.IntToUnicode(VerseEnd);
+    return result;
+  }
+
+  private string GetLatinVerses()
+  {
+    return ChapterAndVerseBegin + " - " + ( IsLinkedToNext ? GetLinked().ChapterAndVerseEnd : ChapterAndVerseEnd );
   }
 
   public override string ToString()
     => ToString(false);
 
   public string ToString(bool useHebrewFont)
-    => $"Torah Sefer {Book} {VerseBegin} - {VerseEnd} " +
+    => $"Torah Sefer {Book} {ChapterAndVerseBegin} - {ChapterAndVerseEnd} " +
        $"Parashah n°{Number} " +
        $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
        $"{( useHebrewFont ? Hebrew : Unicode )} : " +
@@ -48,7 +69,7 @@ public partial class Parashah
        ( Memo.IsNullOrEmpty() ? string.Empty : $" ; {Memo.GetOrEmpty()}" );
 
   public string ToStringReadable()
-    => $"• Torah Sefer {Book} {VerseBegin} - {VerseEnd}" + Globals.NL +
+    => $"• Torah Sefer {Book} {ChapterAndVerseBegin} - {ChapterAndVerseEnd}" + Globals.NL +
        $"• Parashah n°{Number} : {Name} {Unicode}" + Globals.NL +
        $"• {HebrewTranslations.Translation.GetLang()} : {Translation.GetOrEmpty()}" + Globals.NL +
        $"• {HebrewTranslations.Lettriq.GetLang()} : {Lettriq.GetOrEmpty()}";

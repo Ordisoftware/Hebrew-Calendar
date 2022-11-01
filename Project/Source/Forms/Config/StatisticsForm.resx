@@ -322,7 +322,7 @@
     <value>48</value>
   </data>
   <data name="fillMonthViewTimeLabel.Text" xml:space="preserve">
-    <value>Fill month view:</value>
+    <value>Fill monthly view:</value>
   </data>
   <data name="&gt;&gt;fillMonthViewTimeLabel.Name" xml:space="preserve">
     <value>fillMonthViewTimeLabel</value>
@@ -430,7 +430,7 @@
     <value>54</value>
   </data>
   <data name="monthViewEventsCountLabel.Text" xml:space="preserve">
-    <value>Month view items:</value>
+    <value>Monthly view items:</value>
   </data>
   <data name="&gt;&gt;monthViewEventsCountLabel.Name" xml:space="preserve">
     <value>monthViewEventsCountLabel</value>

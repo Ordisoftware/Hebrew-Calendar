@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2022-10 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using SQLite;
@@ -62,15 +62,19 @@ public partial class LunisolarDay
     => TorahEvent != TorahCelebrationDay.None;
 
   public string DayAndMonthText
-    => $"{LunarDay} {HebrewMonths.Transcriptions.GetLang()[LunarMonth]}";
+    => Settings.HebrewNamesInUnicode
+       ? $"{HebrewAlphabet.IntToUnicode(LunarDay)}\" {HebrewMonths.Unicode[LunarMonth]}"
+       : $"{LunarDay} {HebrewMonths.Transcriptions.GetLang()[LunarMonth]}";
 
   public string DayAndMonthWithYearText
     => $"{DayAndMonthText} {Date.Year}";
 
   public string DayAndMonthFormattedText
-    => Settings.MoonDayTextFormat
-               .Replace("%MONTHNAME%", HebrewMonths.Transcriptions.GetLang()[LunarMonth])
-               .Replace("%MONTHNUM%", LunarMonth.ToString())
-               .Replace("%DAYNUM%", LunarDay.ToString());
+    => Settings.HebrewNamesInUnicode
+       ? $"{HebrewAlphabet.IntToUnicode(LunarDay)}\" {HebrewMonths.Unicode[LunarMonth]}"
+       : Settings.MoonDayTextFormat
+                 .Replace("%MONTHNAME%", HebrewMonths.Transcriptions.GetLang()[LunarMonth])
+                 .Replace("%MONTHNUM%", LunarMonth.ToString())
+                 .Replace("%DAYNUM%", LunarDay.ToString());
 
 }

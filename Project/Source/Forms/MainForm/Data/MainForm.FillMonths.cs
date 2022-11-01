@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-10 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using CodeProjectCalendar.NET;
@@ -100,11 +100,13 @@ partial class MainForm
       bool dateSingleLine = Settings.CalendarHebrewDateSingleLine;
       bool omerSun = !Settings.TorahEventsCountAsMoon;
       bool omerSunAndNotDateSingleLine = omerSun && !dateSingleLine;
+      bool useUnicode = Settings.HebrewNamesInUnicode;
       bool isCelebrationWeekStart = false;
       bool isCelebrationWeekEnd = false;
       if ( LunisolarDays.Count == 0 ) return;
       DayBrushes = new Brush[YearsInterval, 13, 35];
       var fontEvent = new Font("Calibri", Settings.MonthViewFontSize);
+      var fontEventHebrew = new Font("Calibri", Settings.MonthViewFontSize + 2);
       string strRise = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise);
       string strSet = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set);
       LoadingForm.Instance.Initialize(AppTranslations.ProgressFillMonths.GetLang(),
@@ -176,7 +178,7 @@ partial class MainForm
           if ( dateSingleLine && ( omerSun || row.Moonrise is not null ) )
           {
             var color = row.IsNewMoon ? Settings.CalendarColorTorahEvent : Settings.MonthViewTextColor;
-            add(color, row.DayAndMonthFormattedText);
+            add(color, row.DayAndMonthFormattedText, useUnicode);
           }
           else
             strDate = " " + row.DayAndMonthFormattedText;
@@ -209,31 +211,33 @@ partial class MainForm
             }
           }
           // Torah
-          add(Settings.CalendarColorTorahEvent, row.TorahEventText);
+          add(Settings.CalendarColorTorahEvent, row.TorahEventText, useUnicode, useUnicode);
           // Season
           if ( row.SeasonChange != 0 )
-            add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange));
+            add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange)/*, TODO useUnicode*/);
           // Parashah
           if ( Settings.CalendarShowParashah && !string.IsNullOrEmpty(row.ParashahID) )
           {
             var parashah = ParashotFactory.Instance.Get(row.ParashahID);
             if ( parashah is null )
-              add(Settings.CalendarColorParashah, SysTranslations.UndefinedSlot.GetLang());
+              add(Settings.CalendarColorParashah, SysTranslations.UndefinedSlot.GetLang(), useUnicode, useUnicode);
             else
             {
-              add(Settings.CalendarColorParashah, parashah.ToStringShort(false, row.HasLinkedParashah));
+              add(Settings.CalendarColorParashah, parashah.ToStringShort(false, row.HasLinkedParashah), useUnicode, useUnicode);
               if ( Settings.CalendarParashahWithBookAndFullRef )
-                add(Settings.CalendarColorParashah, $"{parashah.ToStringOnlyBookAndFullRef()}");
+                add(Settings.CalendarColorParashah, $"{parashah.ToStringBookAndReferences()}", useUnicode, useUnicode);
             }
           }
           // Add info
-          void add(Color color, string text)
+          void add(Color color, string text, bool isHebrew = false, bool isTorah = false)
           {
             if ( string.IsNullOrEmpty(text) ) return;
             var item = new CustomEvent
             {
               Date = date,
-              EventFont = fontEvent
+              EventFont = isHebrew ? fontEventHebrew : fontEvent,
+              IsHebrew = isHebrew,
+              IsParashah = isTorah
             };
             if ( Settings.UseColors )
             {

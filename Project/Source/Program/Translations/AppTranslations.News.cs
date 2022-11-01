@@ -64,7 +64,7 @@ static partial class AppTranslations
                       "• Added some keyboard shortcuts to change and select day in monthly view." + Globals.NL +
                       "• Added celebration verses board and its command-line option." + Globals.NL +
                       "• Added search next parashah from today in parashot board." + Globals.NL +
-                      "• Moved day of shabat selection to the generation tab in the preferences." + Globals.NL +
+                      "• Moved day of Shabat selection to the generation tab in the preferences." + Globals.NL +
                       "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
                       "• Improved web links menus to display those in the current language to the top." + Globals.NL +
                       "• The monthly view displays solar hours in case of sun omer." + Globals.NL +
@@ -83,7 +83,7 @@ static partial class AppTranslations
                       "• Ajout de raccourcis clavier pour changer et sélectionner un jour dans la vue mensuelle." + Globals.NL +
                       "• Ajout d'un tableau des versets des célébrations et de son option de ligne de commande." + Globals.NL +
                       "• Ajout de la recherche de la prochaine parashah depuis aujourd'hui dans le tableau des parashot." + Globals.NL +
-                      "• Déplacement du choix du jour du shabat vers l'onglet de génération dans les préférences." + Globals.NL +
+                      "• Déplacement du choix du jour du Shabat vers l'onglet de génération dans les préférences." + Globals.NL +
                       "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                       "• Amélioration des menus de liens web pour afficher ceux dans la langue actuelle vers le haut." + Globals.NL +
                       "• La vue mensuelle affiche les heures solaires en cas de omer du soleil." + Globals.NL +

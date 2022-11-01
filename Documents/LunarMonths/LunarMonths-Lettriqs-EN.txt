@@ -10,4 +10,4 @@ Kislev =
 T'evet = 
 Shevat' = 
 Adar = 
-Adar II = 
+VeAdar = 

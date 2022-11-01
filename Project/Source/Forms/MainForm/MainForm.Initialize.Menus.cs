@@ -91,7 +91,7 @@ partial class MainForm
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
       if ( weekParashah.Factory is null ) return;
-      string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.VerseBegin}";
+      string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.ChapterAndVerseBegin}";
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
     // Visual month parashah study
@@ -110,7 +110,7 @@ partial class MainForm
       var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
       if ( weekParashah is null ) return;
-      string verse = $"{(int)weekParashah.Book}.{weekParashah.VerseBegin}";
+      string verse = $"{(int)weekParashah.Book}.{weekParashah.ChapterAndVerseBegin}";
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
   }

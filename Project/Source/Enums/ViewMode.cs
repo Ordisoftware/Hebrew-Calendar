@@ -29,7 +29,7 @@ public enum ViewMode
   Text = 1,
 
   /// <summary>
-  /// Month view mode to display the month calendar.
+  /// Monthly view mode to display the month calendar.
   /// </summary>
   Month = 2,
 

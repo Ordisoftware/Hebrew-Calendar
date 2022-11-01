@@ -553,7 +553,7 @@ partial class LettersControl : UserControl
     string str = TextBox.Text;
     if ( EditCopyWithFinalLetter.Checked )
       str = HebrewAlphabet.SetFinal(str, true);
-    Clipboard.SetText(HebrewAlphabet.ToUnicode(str));
+    Clipboard.SetText(HebrewAlphabet.ToUnicodeChars(str));
     DisplayManager.ShowSuccessOrSound(SysTranslations.DataCopiedToClipboard.GetLang(), Globals.ClipboardSoundFilePath);
     Focus(LettersControlFocusSelect.All);
 

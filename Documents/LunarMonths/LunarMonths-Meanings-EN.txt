@@ -10,4 +10,4 @@ Kislev = Thickness, hope
 T'evet = Heavy rain
 Shevat' = 
 Adar = 
-Adar II = 
+VeAdar = 

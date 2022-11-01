@@ -10,4 +10,4 @@ Kislev =
 T'evet = 
 Shevat' = Partage de la Bénédiction du Bouclier [d'Israël] {cf. Tehilim 3}.
 Adar = 
-Adar II = 
+VeAdar = 

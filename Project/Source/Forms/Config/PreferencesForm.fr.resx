@@ -176,16 +176,22 @@
     <value>Activer le menu des liens web</value>
   </data>
   <data name="EditAutoSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 17</value>
+    <value>225, 17</value>
   </data>
   <data name="EditAutoSortBookmarks.Text" xml:space="preserve">
-    <value>Tri automatique des signets par date</value>
+    <value>Trier automatiquement les signets par date</value>
   </data>
   <data name="EditMainFormTitleBarShowCelebration.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 17</value>
   </data>
   <data name="EditMainFormTitleBarShowCelebration.Text" xml:space="preserve">
     <value>Afficher la célébration en cours dans la barre de titre</value>
+  </data>
+  <data name="EditHebrewNamesInUnicode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 17</value>
+  </data>
+  <data name="EditHebrewNamesInUnicode.Text" xml:space="preserve">
+    <value>Afficher les noms hébreux en caractères Unicode au lieu des transcriptions latines</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 17</value>
@@ -297,6 +303,12 @@
   </data>
   <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
     <value>Fenêtre des célébrations</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 17</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.Text" xml:space="preserve">
+    <value>Les boites de rappel et de navigation reprennent le focus après clic sur date (clic droit pour le contraire)</value>
   </data>
   <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 17</value>
@@ -424,8 +436,11 @@
   <data name="LabelMaxYearsInterval.Text" xml:space="preserve">
     <value>Intervalle d'années maximum</value>
   </data>
+  <data name="EditUseTwoDaysForLastPessahDayOutside.Text" xml:space="preserve">
+    <value>Utiliser deux jours pour Shebih'i Shel Pessa'h en dehors d'Israël</value>
+  </data>
   <data name="EditUseSimhatTorahOutside.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 17</value>
+    <value>217, 17</value>
   </data>
   <data name="EditUseSimhatTorahOutside.Text" xml:space="preserve">
     <value>Utiliser Shim'hat Torah en dehors d'Israël</value>
@@ -573,6 +588,9 @@
   </data>
   <data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
     <value>Jours avant le premier rappel</value>
+  </data>
+  <data name="EditCalendarParashahWithBookAndRef.Text" xml:space="preserve">
+    <value>Afficher le livre et les références de la parashah dans la vue mensuelle</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 17</value>
@@ -739,6 +757,21 @@
   <data name="TabPageMonthView.Text" xml:space="preserve">
     <value>Vue par mois</value>
   </data>
+  <data name="SelectMonthViewEventsAlignment.Items" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="SelectMonthViewEventsAlignment.Items1" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="SelectMonthViewEventsAlignment.Items2" xml:space="preserve">
+    <value>Droite</value>
+  </data>
+  <data name="LabelMonthViewEventsAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="LabelMonthViewEventsAlignment.Text" xml:space="preserve">
+    <value>Alignement</value>
+  </data>
   <data name="LabelCalendarDoubleClickAction.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 13</value>
   </data>
@@ -764,10 +797,10 @@
     <value>Définir jour actif</value>
   </data>
   <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 13</value>
+    <value>287, 13</value>
   </data>
   <data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
-    <value>Format du texte du jour de la lune</value>
+    <value>Format du texte du jour de la lune pour la transcription latine</value>
   </data>
   <data name="EditCalendarShowSelectedBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 17</value>
@@ -775,11 +808,23 @@
   <data name="EditCalendarShowSelectedBox.Text" xml:space="preserve">
     <value>Afficher la case du jour sélectionné</value>
   </data>
+  <data name="EditCalendarHebrewDateSingleLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>376, 17</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLine.Text" xml:space="preserve">
+    <value>Date lunaire sur une seule ligne, sinon après le lever du soleil ou de la lune</value>
+  </data>
   <data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 17</value>
   </data>
   <data name="EditCalendarUseHoverEffect.Text" xml:space="preserve">
     <value>Utiliser l'effet de survol</value>
+  </data>
+  <data name="EditMonthViewEventsAlignmentOnlyForParashah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 17</value>
+  </data>
+  <data name="EditMonthViewEventsAlignmentOnlyForParashah.Text" xml:space="preserve">
+    <value>Seulement pour la parashah et les célébrations</value>
   </data>
   <data name="EditMonthViewChangeDayOnClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 17</value>
@@ -942,17 +987,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
-  </data>
-  <data name="EditUseTwoDaysForLastPessahDayOutside.Text" xml:space="preserve">
-    <value>Utiliser deux jours pour Shebih'i Shel Pessa'h en dehors d'Israël</value>
-  </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.Text" xml:space="preserve">
-    <value>Les boites de rappel et de navigation reprennent le focus après clic sur date (clic droit pour le contraire)</value>
-  </data>
-  <data name="EditCalendarHebrewDateSingleLine.Text" xml:space="preserve">
-    <value>Date hébraïque sur une seule ligne, sinon après le lever du soleil ou de la lune</value>
-  </data>
-  <data name="EditCalendarParashahWithBookAndRef.Text" xml:space="preserve">
-    <value>Afficher le livre et les références de la parashah dans la vue mensuelle</value>
   </data>
 </root>

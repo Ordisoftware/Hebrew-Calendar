@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ReminderForm : Form
@@ -87,7 +87,7 @@ partial class ReminderForm : Form
       var date = row.Date;
       form.LabelTitle.Text = isShabat
         ? AppTranslations.Shabat.GetLang()
-        : AppTranslations.TorahCelebrationDays.GetLang(celebration == TorahCelebrationDay.None
+        : AppTranslations.GetCelebrationDisplayText(celebration == TorahCelebrationDay.None
           ? row.TorahEvent
           : celebration);
       form.LabelDate.Text = isShabat
@@ -303,7 +303,7 @@ partial class ReminderForm : Form
       var menuitem = (ToolStripMenuItem)sender;
       var day = (LunisolarDay)LabelParashahValue.Tag;
       var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-      string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
+      string verse = $"{(int)parashah.Book}.{parashah.ChapterAndVerseBegin}";
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
   }

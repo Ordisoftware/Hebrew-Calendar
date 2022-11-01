@@ -11,8 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
+
+using EllisWeb.Gematria;
 
 /// <summary>
 /// Provides Hebrew letters class to manage Hebrew font and Unicode chars
@@ -52,6 +54,16 @@ static class HebrewAlphabet
   };
 
   /// <summary>
+  /// Indicates letters names in Unicode chars.
+  /// </summary>
+  static public readonly string[] Unicode =
+  {
+    "",
+    "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל",
+    "מ", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ק", "ר", "ש", "ת",
+  };
+
+  /// <summary>
   /// Indicates letters names in Hebrew font chars.
   /// </summary>
   static public readonly string[] Hebrew =
@@ -86,6 +98,18 @@ static class HebrewAlphabet
     new char[] { 'p', '[' },
     new char[] { 'j', '/' }
   };
+
+  static private GematriaOptions GematriaOptions = new GematriaOptions();
+
+  static HebrewAlphabet()
+  {
+    GematriaOptions.IncludeSeparators = false;
+  }
+
+  static public string IntToUnicode(int value)
+  {
+    return Calculator.ConvertToGematriaNumericString(value, GematriaOptions);
+  }
 
   /// <summary>
   /// Indicates if a string contains some Hebrew Unicode chars.
@@ -187,7 +211,7 @@ static class HebrewAlphabet
   /// <summary>
   /// Converts Hebrew font chars to Unicode Hebrew chars.
   /// </summary>
-  static public string ToUnicode(string str)
+  static public string ToUnicodeChars(string str)
   {
     if ( str.IsNullOrEmpty() ) return string.Empty;
     string result = string.Empty;

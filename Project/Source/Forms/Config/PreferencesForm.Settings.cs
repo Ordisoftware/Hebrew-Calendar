@@ -41,7 +41,7 @@ partial class PreferencesForm
     string timezone = Settings.TimeZone;
     long starttime = Settings.BenchmarkStartingApp;
     long loadtime = Settings.BenchmarkLoadData;
-    int shabat = EditShabatDay.SelectedIndex;
+    int Shabat = EditShabatDay.SelectedIndex;
     int bookmarksCount = Settings.DateBookmarksCount;
     var lastupdate = Settings.CheckUpdateLastDone;
     var lastvacuum = Settings.VacuumLastDone;
@@ -55,7 +55,7 @@ partial class PreferencesForm
     Settings.GPSLatitude = lat;
     Settings.GPSLongitude = lng;
     Settings.TimeZone = timezone;
-    Settings.ShabatDay = shabat;
+    Settings.ShabatDay = Shabat;
     Settings.LanguageSelected = Languages.Current;
     Settings.BenchmarkStartingApp = starttime;
     Settings.BenchmarkLoadData = loadtime;
@@ -113,8 +113,8 @@ partial class PreferencesForm
     var omer = SelectUseSodHaibour.Checked
       ? AppTranslations.MainFormSubTitleSod.GetLang()
       : AppTranslations.MainFormSubTitleOmer[SelectOmerMoon.Checked][Language.EN];
-    var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-    SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
+    var Shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+    SaveSettingsDialog.FileName = $"Settings {city} {omer} {Shabat}";
     if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
     TabControl.SelectedIndex = 0;
     SaveSettings();

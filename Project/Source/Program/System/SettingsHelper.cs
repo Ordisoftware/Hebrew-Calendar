@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Ordisoftware.Hebrew.Calendar.Properties;
@@ -105,6 +105,9 @@ static class SettingsHelper
       //
       EditMemoForm.LastLocation = settings.EditMemoFormLastLocation;
       EditMemoForm.LastSize = settings.EditMemoFormLastSize;
+      HebrewDatabase.HebrewNamesInUnicode = settings.HebrewNamesInUnicode;
+      CodeProjectCalendar.NET.Calendar.EventAlignment = settings.MonthViewEventsAlignment;
+      CodeProjectCalendar.NET.Calendar.EventAlignmentOnlyForTorah = settings.MonthViewEventsAlignmentOnlyForTorah;
       //
       if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
         settings.AutoOpenExportFolder = false;
@@ -151,6 +154,9 @@ static class SettingsHelper
       //
       settings.EditMemoFormLastLocation = EditMemoForm.LastLocation;
       settings.EditMemoFormLastSize = EditMemoForm.LastSize;
+      HebrewDatabase.HebrewNamesInUnicode = settings.HebrewNamesInUnicode;
+      CodeProjectCalendar.NET.Calendar.EventAlignment = settings.MonthViewEventsAlignment;
+      CodeProjectCalendar.NET.Calendar.EventAlignmentOnlyForTorah = settings.MonthViewEventsAlignmentOnlyForTorah;
       SystemManager.TryCatch(settings.Save);
     }
     finally

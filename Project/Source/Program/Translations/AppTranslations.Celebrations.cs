@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using static Ordisoftware.Hebrew.HebrewTranslations;
@@ -21,6 +21,26 @@ using static Ordisoftware.Hebrew.HebrewTranslations;
 /// </summary>
 static partial class AppTranslations
 {
+
+  static public string GetLunarMonthDisplayText(int month)
+  => Program.Settings.HebrewNamesInUnicode
+     ? HebrewMonths.Unicode[month]
+     : HebrewMonths.Transcriptions.GetLang()[month];
+
+  static public string GetPessahDisplayText(int day)
+    => Program.Settings.HebrewNamesInUnicode
+       ? "פסח" + " " + HebrewAlphabet.Unicode[day]
+       : PessahDay.GetLang(day);
+
+  static public string GetSoukotDisplayText(int day)
+    => Program.Settings.HebrewNamesInUnicode
+       ? "סכות" + " " + HebrewAlphabet.Unicode[day]
+       : PessahDay.GetLang(day);
+
+  static public string GetCelebrationDisplayText(TorahCelebrationDay value)
+    => Program.Settings.HebrewNamesInUnicode
+       ? UnicodeCelebrations[value]
+       : TorahCelebrationDays.GetLang(value);
 
   static public readonly TranslationsDictionary Start = new()
   {
@@ -152,6 +172,22 @@ static partial class AppTranslations
       [Language.EN] = "Lunar anniversary",
       [Language.FR] = "Anniversaire lunaire"
     }*/
+  };
+
+  static public readonly Dictionary<TorahCelebrationDay, string> UnicodeCelebrations = new()
+  {
+    [TorahCelebrationDay.None] = "",
+    [TorahCelebrationDay.NewYearD1] = "שנה חדשה",
+    [TorahCelebrationDay.NewYearD10] = "לקחת שה",
+    [TorahCelebrationDay.PessahD1] = "פסח תחלה",
+    [TorahCelebrationDay.PessahD7] = "פסח סוף",
+    [TorahCelebrationDay.ChavouotDiet] = "שבועות דיאטה",
+    [TorahCelebrationDay.Chavouot1] = "שבועות שה",
+    [TorahCelebrationDay.Chavouot2] = "שבועות סוף",
+    [TorahCelebrationDay.YomTerouah] = "יומ תרועה",
+    [TorahCelebrationDay.YomHaKipourim] = "יומ הכיפורים",
+    [TorahCelebrationDay.SoukotD1] = "סכות תחלה",
+    [TorahCelebrationDay.SoukotD8] = "סכות סוף"
   };
 
 }

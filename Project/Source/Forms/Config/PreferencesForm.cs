@@ -33,6 +33,7 @@ partial class PreferencesForm : Form
   public string OldLatitude { get; private set; }
   public string OldLongitude { get; private set; }
   public string OldTimeZone { get; private set; }
+  public bool OldHebrewNamesInUnicode { get; private set; }
   public bool OldUseMoonDays { get; private set; }
   public bool OldUseSod { get; private set; }
   public bool OldUseSimhat { get; private set; }
@@ -483,6 +484,7 @@ partial class PreferencesForm : Form
     EditReminderShabatShowParashah.Enabled = EditCalendarShowParashah.Checked;
     EditWeeklyParashahShowAtStartup.Enabled = EditCalendarShowParashah.Checked;
     EditWeeklyParashahShowAtNewWeek.Enabled = EditCalendarShowParashah.Checked;
+    EditCalendarParashahWithBookAndRef.Enabled = EditCalendarShowParashah.Checked;
   }
 
   private void EditCalendarParashahWithBook_CheckedChanged(object sender, EventArgs e)

@@ -88,7 +88,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added some parashah and celebrations online providers for the study.
 - The monthly view shows sun times instead of moon when using sun omer.
 - Web links menus displays those in the current language to the top.
-- Moved day of shabat selection to the generation tab of the preferences form.
+- Moved day of Shabat selection to the generation tab of the preferences form.
 - Fixed some check-boxes in celebrations and new moons boards.
 - Fixed export monthly view to remove all active and selected day marks.
 - Some fixes and improvements.
@@ -107,7 +107,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 [![Navigation window](https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en-254x300.png)](https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Dates diff calculator](https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en-349x300.png)](https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en.png)
 
-[![Reminder box celebration](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Reminder box Shabat](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en.png)
+[![Reminder box celebration](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en.png)&nbsp;&nbsp;&nbsp;&nbsp;[![Reminder box Shabat](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-Shabat-en-300x141.png)](https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-Shabat-en.png)
 
 [![Lock session box](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en-300x201.png)](https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en.png)&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -303,7 +303,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Ctrl + Tab | Next view |
 | Shift + Ctrl + Tab | Previous view |
 | F1 | Text report view |
-| F2 | Month view |
+| F2 | monthly view |
 | F3 | Database grid view |
 | F4 | Next celebrations window |
 | F5 | Search a celebration window |
@@ -368,6 +368,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add dark theme for monthly view.
 - Add print boards.
 - Add option to generate a fixed interval (if the current year is within).
+- Add option to display hebrew names in Latin Transcription or in Hebrew Unicode or both.
 - Improve notices to be in only one window having a page control like preferences.
 - Improve food notice with details and cooking recipes.
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
@@ -391,7 +392,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Add auto sort bookmarks.
 >- Add auto-backup bookmarks.
 >- Add comments to bookmarks.
->- Add option to choose information order in the month view.
+>- Add option to choose information order in the monthly view.
 >- Add option to indicate parashah and Torah reference in upper or sentence case.
 >- Add import button to the GPS box on the first start.
 >- Improve weekly parashah description box to have access to the tools for the study.
@@ -399,20 +400,22 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 9.35
 
->- Add option to display only omer ephemeris or sun and moon the same time in the month view
->- Add option to choose font type in the month view.
+>- Add option to display only omer ephemeris or sun and moon the same time in the monthly view
+>- Add option to choose font type in the monthly view.
 >- Check and fix weekly parashah generation with soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
 #### In progress - Version 9.34
 
 - Add the end verse of parashah when displaying the beginning one
-- Add option to have the Hebrew date on a single line before the ephemeris in the month view.
-- Add option to display book name and references of parashah in the month view.
->- Add option to display hebrew names in Latin Transcription or in Hebrew Unicode or both.
-- Fix display of the ending verse of the parashah to indicate that of the linked if applicable.
+- Add option to have the Hebrew date on a single line before the ephemeris in the monthly view.
+- Add option to display book name and references of parashah in the monthly view.
+- Add option to display Hebrew names in Unicode or Latin transcription.
+- Add option to set events text alignment in the monthly view.
+- Rename Adar II in VeAdar.
+- Fix display ending verse of the parashah to indicate that of the linked if applicable.
 - Fix parashah description box to have the linked parashah name in the title bar.
-- Fix Hebrew date template for the month view that is capitalized on rendering.
+- Fix Hebrew date template for the monthly view that is capitalized on rendering.
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update shows some error message (must not).
 
@@ -452,7 +455,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add option to retake or not the focus when clicking date in reminder box.
 - Move all notices to a drop-down menu in Tools.
 - Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise.
-- Fix shavouh'ot 1 and 2 times to be solar like shabat even using moon omer.
+- Fix shavouh'ot 1 and 2 times to be solar like Shabat even using moon omer.
 - Fix reset settings crashes the monthly view until restart.
 - Fix multiple parashah description boxes at the same time which only displays the first one opened until closed.
 - Fix save in parashot board causes a null exception in case of empty cells in the grid.
@@ -625,7 +628,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add option to show current celebration in the title bar.
 - Fix title bar not updated in case of fullscreen or screensaver.
 - Fix frozen reminder boxes while mouse is over the monthly view.
-- Fix showing new parashah description box after shabat when a celebration is in progress.
+- Fix showing new parashah description box after Shabat when a celebration is in progress.
 
 #### 2021.09.26 - Version 9.5
 
@@ -647,7 +650,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add option to choose action for double-click in visual month: nothing, set active or select day.
 - Add Ctrl + Click to select day even if the related option is disabled.
 - Add Shift + Arrows keyboard shortcuts to move to previous or next day or week.
-- Move day of shabat selection to the generation tab of the preferences form.
+- Move day of Shabat selection to the generation tab of the preferences form.
 - Fix printing to remove all special boxes.
 - Some fixes and improvements.
 
@@ -667,7 +670,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### 2021.09.20 - Version 9.1
 
 - Add bookmarks to context menu in monthly view.
-- Add parashot board link in shabat reminder box when no weekly parashah available.
+- Add parashot board link in Shabat reminder box when no weekly parashah available.
 - Fix bug with no selected day on changing day at midnight.
 
 #### 2021.09.19 - Version 9.0
@@ -724,7 +727,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### 2021.08.08 - Version 8.4
 
-- Fix main form and shabat reminder box that open the wrong (next book) parashah for reading online.
+- Fix main form and Shabat reminder box that open the wrong (next book) parashah for reading online.
 
 #### 2021.08.05 - Version 8.3
 
