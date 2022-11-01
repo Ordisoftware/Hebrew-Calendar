@@ -401,17 +401,17 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 >- Add option to display only omer ephemeris or sun and moon the same time in the month view
 >- Add option to choose font type in the month view.
->- Fix weekly parashah generation parashot and soukot.
->- Fix reminder and Sim'hat Torah.
+>- Check and fix weekly parashah generation with soukot.
+>- Check and Fix reminder behavior with Sim'hat Torah.
 
 #### In progress - Version 9.34
 
+- Add the end verse of parashah when displaying the beginning one
 - Add option to have the Hebrew date on a single line before the ephemeris in the month view.
 - Add option to display book name and references of parashah in the month view.
->- Add option to display parashah names in Latin Transcription or in Hebrew Unicode or both.
->- Add option to display book names in Latin Transcription or in Hebrew Unicode or both.
->- Add option to display celebration names in Latin Transcription or in Hebrew Unicode or both.
->- Add option to display hebrew month names in Latin Transcription or in Hebrew Unicode or both.
+>- Add option to display hebrew names in Latin Transcription or in Hebrew Unicode or both.
+- Fix display of the ending verse of the parashah to indicate that of the linked if applicable.
+- Fix parashah description box to have the linked parashah name in the title bar.
 - Fix Hebrew date template for the month view that is capitalized on rendering.
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update shows some error message (must not).

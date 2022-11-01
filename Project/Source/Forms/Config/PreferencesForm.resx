@@ -2285,13 +2285,13 @@
     <value>23, 170</value>
   </data>
   <data name="EditCalendarParashahWithBookAndRef.Size" type="System.Drawing.Size, System.Drawing">
-    <value>324, 17</value>
+    <value>357, 17</value>
   </data>
   <data name="EditCalendarParashahWithBookAndRef.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="EditCalendarParashahWithBookAndRef.Text" xml:space="preserve">
-    <value>Display book and references of the parashah in the month view</value>
+    <value>Show weekly parashah book and verses references in the month view</value>
   </data>
   <data name="&gt;&gt;EditCalendarParashahWithBookAndRef.Name" xml:space="preserve">
     <value>EditCalendarParashahWithBookAndRef</value>
