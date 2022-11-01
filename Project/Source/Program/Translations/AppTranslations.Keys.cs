@@ -31,7 +31,7 @@ static partial class AppTranslations
     [Language.EN] = "Ctrl + Tab : Next view" + Globals.NL +
                     "Shift + Ctrl + Tab : Previous view" + Globals.NL +
                     "F1 : Text report view" + Globals.NL +
-                    "F2 : Month view" + Globals.NL +
+                    "F2 : Monthly view" + Globals.NL +
                     "F3 : Database grid view" + Globals.NL +
                     "F4 : Next celebrations window" + Globals.NL +
                     "F5 : Search a celebration window" + Globals.NL +
