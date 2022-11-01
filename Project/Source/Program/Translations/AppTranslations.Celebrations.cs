@@ -35,7 +35,7 @@ static partial class AppTranslations
   static public string GetSoukotDisplayText(int day)
     => Program.Settings.HebrewNamesInUnicode
        ? "סכות" + " " + HebrewAlphabet.Unicode[day]
-       : PessahDay.GetLang(day);
+       : SoukotDay.GetLang(day);
 
   static public string GetCelebrationDisplayText(TorahCelebrationDay value)
     => Program.Settings.HebrewNamesInUnicode
