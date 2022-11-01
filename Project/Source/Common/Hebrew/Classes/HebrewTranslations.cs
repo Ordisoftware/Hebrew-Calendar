@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -169,5 +169,19 @@ static partial class HebrewTranslations
       [Language.FR] = "Soukot"
     }
   };
+
+  static public readonly Dictionary<TorahCelebration, string> UnicodeCelebrations = new()
+  {
+    [TorahCelebration.Pessah] = "פסח",
+    [TorahCelebration.Chavouot] = "שבועות",
+    [TorahCelebration.YomTerouah] = "יומ תרועה",
+    [TorahCelebration.YomHaKipourim] = "יומ הכיפורים",
+    [TorahCelebration.Soukot] = "סכות"
+  };
+
+  static public string GetCelebrationDisplayText(TorahCelebration celebration)
+    => HebrewDatabase.HebrewNamesInUnicode
+       ? UnicodeCelebrations[celebration]
+       : TorahCelebrations[celebration].GetLang();
 
 }
