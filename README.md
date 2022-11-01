@@ -368,6 +368,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add dark theme for monthly view.
 - Add print boards.
 - Add option to generate a fixed interval (if the current year is within).
+- Add option to display hebrew names in Latin Transcription or in Hebrew Unicode or both.
 - Improve notices to be in only one window having a page control like preferences.
 - Improve food notice with details and cooking recipes.
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
@@ -409,8 +410,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add the end verse of parashah when displaying the beginning one
 - Add option to have the Hebrew date on a single line before the ephemeris in the month view.
 - Add option to display book name and references of parashah in the month view.
->- Add option to display hebrew names in Latin Transcription or in Hebrew Unicode or both.
-- Fix display of the ending verse of the parashah to indicate that of the linked if applicable.
+- Fix display ending verse of the parashah to indicate that of the linked if applicable.
 - Fix parashah description box to have the linked parashah name in the title bar.
 - Fix Hebrew date template for the month view that is capitalized on rendering.
 - Fix screen location of the show "new in version" box when app starts minimized.
