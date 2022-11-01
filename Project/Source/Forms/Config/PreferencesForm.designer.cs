@@ -489,14 +489,14 @@
       // 
       this.toolStripMenuItem22.Name = "toolStripMenuItem22";
       resources.ApplyResources(this.toolStripMenuItem22, "toolStripMenuItem22");
-      this.toolStripMenuItem22.Tag = "%DAYNUM% %MONTHNAME%  [%MONTHNUM%]";
+      this.toolStripMenuItem22.Tag = "%DAYNUM% %MONTHNAME% [%MONTHNUM%]";
       this.toolStripMenuItem22.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // toolStripMenuItem20
       // 
       this.toolStripMenuItem20.Name = "toolStripMenuItem20";
       resources.ApplyResources(this.toolStripMenuItem20, "toolStripMenuItem20");
-      this.toolStripMenuItem20.Tag = "%DAYNUM% %MONTHNAME%  (%MONTHNUM%)";
+      this.toolStripMenuItem20.Tag = "%DAYNUM% %MONTHNAME% (%MONTHNUM%)";
       this.toolStripMenuItem20.Click += new System.EventHandler(this.MenuSelectMoonDayTextFormat_Click);
       // 
       // toolStripMenuItem21
