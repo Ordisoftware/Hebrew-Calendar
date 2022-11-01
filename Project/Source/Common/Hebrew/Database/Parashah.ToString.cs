@@ -14,41 +14,58 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
+using EllisWeb.Gematria;
+
 public partial class Parashah
 {
 
-  public string GetDisplayText()
-      => /*HebrewDatabase.HebrewNamesInUnicode ? Unicode :*/ Name;
+  static public string DisplayName => HebrewDatabase.HebrewNamesInUnicode ? "פרשה" : "Parashah";
+
+  static public string ShabatDisplayName => HebrewDatabase.HebrewNamesInUnicode ? "שבת" : "Shabat";
+
+  public string GetDisplayText() => HebrewDatabase.HebrewNamesInUnicode ? Unicode : Name;
 
   public string ToStringShort(bool withBookAndref, bool withLinked)
   {
     string result = GetDisplayText();
     if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().GetDisplayText() : string.Empty;
     if ( withBookAndref )
-      //if ( HebrewDatabase.HebrewNamesInUnicode )
-      //  result = $"({ToStringOnlyBookAndFullRef()}) " + result;
-      //else
-      result += $" ({ToStringOnlyBookAndFullRef()})";
+      if ( HebrewDatabase.HebrewNamesInUnicode )
+        result += $" ({ToStringBookAndReferences()})";
+      else
+        result += $" ({ToStringBookAndReferences()})";
     return result;
   }
 
-  public string ToStringOnlyBookAndFullRef()
+  public string ToStringBookAndReferences()
   {
-    return /*HebrewDatabase.HebrewNamesInUnicode
-      ? $"{ToStringOnlyVerses()} {BookInfos.Unicode[(TanakBook)Book]}"
-      : */$"{Book} {ToStringOnlyVerses()}";
+    return HebrewDatabase.HebrewNamesInUnicode
+      ? $"{BookInfos.Unicode[(TanakBook)Book]} : {GetUnicodeVerses()}"
+      : $"{Book} {GetLatinVerses()}";
   }
 
-  private string ToStringOnlyVerses()
+  private string GetUnicodeVerses()
   {
-    return VerseBegin + " - " + ( IsLinkedToNext ? GetLinked().VerseEnd : VerseEnd );
+    string result = Calculator.ConvertToGematriaNumericString(ChapterBegin, includeSeparators: false);
+    result += ".";
+    result += Calculator.ConvertToGematriaNumericString(VerseBegin, includeSeparators: false);
+    result += " - ";
+    result += Calculator.ConvertToGematriaNumericString(ChapterEnd, includeSeparators: false);
+    result += ".";
+    result += Calculator.ConvertToGematriaNumericString(VerseEnd, includeSeparators: false);
+    return result;
+  }
+
+  private string GetLatinVerses()
+  {
+    return ChapterAndVerseBegin + " - " + ( IsLinkedToNext ? GetLinked().ChapterAndVerseEnd : ChapterAndVerseEnd );
   }
 
   public override string ToString()
     => ToString(false);
 
   public string ToString(bool useHebrewFont)
-    => $"Torah Sefer {Book} {VerseBegin} - {VerseEnd} " +
+    => $"Torah Sefer {Book} {ChapterAndVerseBegin} - {ChapterAndVerseEnd} " +
        $"Parashah n°{Number} " +
        $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
        $"{( useHebrewFont ? Hebrew : Unicode )} : " +
@@ -57,7 +74,7 @@ public partial class Parashah
        ( Memo.IsNullOrEmpty() ? string.Empty : $" ; {Memo.GetOrEmpty()}" );
 
   public string ToStringReadable()
-    => $"• Torah Sefer {Book} {VerseBegin} - {VerseEnd}" + Globals.NL +
+    => $"• Torah Sefer {Book} {ChapterAndVerseBegin} - {ChapterAndVerseEnd}" + Globals.NL +
        $"• Parashah n°{Number} : {Name} {Unicode}" + Globals.NL +
        $"• {HebrewTranslations.Translation.GetLang()} : {Translation.GetOrEmpty()}" + Globals.NL +
        $"• {HebrewTranslations.Lettriq.GetLang()} : {Lettriq.GetOrEmpty()}";

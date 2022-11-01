@@ -276,7 +276,7 @@ partial class NavigationForm : Form
       var menuitem = (ToolStripMenuItem)sender;
       var day = (LunisolarDay)LabelParashahValue.Tag;
       var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-      string verse = $"{(int)parashah.Book}.{parashah.VerseBegin}";
+      string verse = $"{(int)parashah.Book}.{parashah.ChapterAndVerseBegin}";
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
   }

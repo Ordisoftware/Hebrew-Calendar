@@ -2936,5 +2936,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["HebrewNamesInUnicode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Near")]
+        public global::System.Drawing.StringAlignment MonthViewEventsAlignment {
+            get {
+                return ((global::System.Drawing.StringAlignment)(this["MonthViewEventsAlignment"]));
+            }
+            set {
+                this["MonthViewEventsAlignment"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewEventsAlignmentOnlyForTorah {
+            get {
+                return ((bool)(this["MonthViewEventsAlignmentOnlyForTorah"]));
+            }
+            set {
+                this["MonthViewEventsAlignmentOnlyForTorah"] = value;
+            }
+        }
     }
 }

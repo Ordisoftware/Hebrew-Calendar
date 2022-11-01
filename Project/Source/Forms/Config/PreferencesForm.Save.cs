@@ -134,12 +134,14 @@ partial class PreferencesForm
     Settings.CalendarHebrewDateSingleLine = EditCalendarHebrewDateSingleLine.Checked;
     Settings.CalendarParashahWithBookAndFullRef = EditCalendarParashahWithBookAndRef.Checked;
     Settings.HebrewNamesInUnicode = EditHebrewNamesInUnicode.Checked;
+    Settings.MonthViewEventsAlignment = (StringAlignment)SelectMonthViewEventsAlignment.SelectedIndex;
+    Settings.MonthViewEventsAlignmentOnlyForTorah = EditMonthViewEventsAlignmentOnlyForParashah.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;
     // Navigation window
     NavigationForm.Instance.Relocalize();
-    // Month view
+    // Monthly view
     Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
     // Shabat
     Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;

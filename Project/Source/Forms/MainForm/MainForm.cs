@@ -217,7 +217,11 @@ partial class MainForm : Form
     {
       if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
       {
-        var lines = Text.Replace("Parashah ", "").SplitNoEmptyLines(" - ").ToList();
+        // TODO refactor un UpdateUI and do a clean formatting with gregorian date before hebrew
+        var text = Text.IndexOf('(') > 0
+          ? new string(Text.ToCharArray().TakeWhile(c => c != '(').ToArray())
+          : Text;
+        var lines = text.Replace(Parashah.DisplayName + " ", "").SplitNoEmptyLines(" - ").ToList();
         if ( lines.Count >= 3 )
         {
           lines.Insert(2, DateTime.Today.ToShortDateString());

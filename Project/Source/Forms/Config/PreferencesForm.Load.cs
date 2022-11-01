@@ -131,6 +131,8 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLine.Checked = Settings.CalendarHebrewDateSingleLine);
     SystemManager.TryCatch(() => EditCalendarParashahWithBookAndRef.Checked = Settings.CalendarParashahWithBookAndFullRef);
     SystemManager.TryCatch(() => EditHebrewNamesInUnicode.Checked = Settings.HebrewNamesInUnicode);
+    SystemManager.TryCatch(() => SelectMonthViewEventsAlignment.SelectedIndex = (int)Settings.MonthViewEventsAlignment);
+    SystemManager.TryCatch(() => EditMonthViewEventsAlignmentOnlyForParashah.Checked = Settings.MonthViewEventsAlignmentOnlyForTorah);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);

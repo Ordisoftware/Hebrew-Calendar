@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 using SQLite;
@@ -37,23 +37,36 @@ public partial class Parashah : INotifyPropertyChanged
                   string translation = "",
                   string lettriq = "")
   {
-    Book = book;
-    Number = number;
-    Name = name;
-    Unicode = unicode;
-    Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
-    VerseBegin = verseBegin;
-    VerseEnd = verseEnd;
-    IsLinkedToNext = isLinkedToNext;
-    Translation = translation;
-    Lettriq = lettriq;
-    Memo = string.Empty;
-    ID = $"{(int)book}.{number}";
+    try
+    {
+      Book = book;
+      Number = number;
+      Name = name;
+      Unicode = unicode;
+      Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
+      ChapterAndVerseBegin = verseBegin;
+      ChapterAndVerseEnd = verseEnd;
+      var partsBegin = ChapterAndVerseBegin.Split('.');
+      ChapterBegin = Convert.ToInt32(partsBegin[0]);
+      VerseBegin = Convert.ToInt32(partsBegin[1]);
+      var partsEnd = ChapterAndVerseEnd.Split('.');
+      ChapterEnd = Convert.ToInt32(partsEnd[0]);
+      VerseEnd = Convert.ToInt32(partsEnd[1]);
+      IsLinkedToNext = isLinkedToNext;
+      Translation = translation;
+      Lettriq = lettriq;
+      Memo = string.Empty;
+      ID = $"{(int)book}.{number}";
+    }
+    catch ( Exception ex )
+    {
+      throw new Exception("Error on creating parashah instance: " + ex.Message);
+    }
   }
 
   public object Clone()
   {
-    return new Parashah(Book, Number, Name, Unicode, VerseBegin, VerseEnd, IsLinkedToNext, Translation, Lettriq);
+    return new Parashah(Book, Number, Name, Unicode, ChapterAndVerseBegin, ChapterAndVerseEnd, IsLinkedToNext, Translation, Lettriq);
   }
 
 }

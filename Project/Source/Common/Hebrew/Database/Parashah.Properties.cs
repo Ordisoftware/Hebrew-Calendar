@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 using SQLite;
@@ -25,11 +25,16 @@ public partial class Parashah
   public TorahBook Book { get; set; }
   public int Number { get; set; }
 
-  public string VerseBegin { get; set; }
-  public string VerseEnd { get; set; }
+  public string ChapterAndVerseBegin { get; set; }
+  public string ChapterAndVerseEnd { get; set; }
 
-  public string FullReferenceBegin => $"{(int)Book}.{VerseBegin}";
-  public string FullReferenceEnd => $"{(int)Book}.{VerseEnd}";
+  public int ChapterBegin { get; init; }
+  public int ChapterEnd { get; init; }
+  public int VerseBegin { get; init; }
+  public int VerseEnd { get; init; }
+
+  public string FullReferenceBegin => $"{(int)Book}.{ChapterAndVerseBegin}";
+  public string FullReferenceEnd => $"{(int)Book}.{ChapterAndVerseEnd}";
 
   public string Name // Obsolete: Value comes from factory.
   {

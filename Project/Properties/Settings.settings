@@ -731,5 +731,11 @@
     <Setting Name="HebrewNamesInUnicode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="MonthViewEventsAlignment" Type="System.Drawing.StringAlignment" Scope="User">
+      <Value Profile="(Default)">Near</Value>
+    </Setting>
+    <Setting Name="MonthViewEventsAlignmentOnlyForTorah" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

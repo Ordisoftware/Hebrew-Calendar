@@ -56,7 +56,7 @@ class ParashotFactory : ProviderSettings
   {
     foreach ( var kvp in Items )
       foreach ( var item in kvp.Value )
-        stream.WriteLine($"{kvp.Key} : {item.Number} - {item.Unicode} - {item.Name} - {item.VerseBegin} - {item.VerseEnd} - {item.IsLinkedToNext}");
+        stream.WriteLine($"{kvp.Key} : {item.Number} - {item.Unicode} - {item.Name} - {item.ChapterAndVerseBegin} - {item.ChapterAndVerseEnd} - {item.IsLinkedToNext}");
   }
 
   public void Reset()

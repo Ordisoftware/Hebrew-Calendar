@@ -140,8 +140,8 @@ public partial class MainForm
               var parashah = weekParashah.Factory;
               TitleParashah = parashah.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
                                                      weekParashah.Day.HasLinkedParashah);
-              TitleParashah = $"Parashah {TitleParashah}";
-              ActionWeeklyParashah.Text = $"Parashah {parashah.ToStringShort(false, weekParashah.Day.HasLinkedParashah)}";
+              TitleParashah = $"{Parashah.DisplayName} {TitleParashah}";
+              ActionWeeklyParashah.Text = $"{Parashah.DisplayName} {parashah.ToStringShort(false, weekParashah.Day.HasLinkedParashah)}";
               ActionWeeklyParashah.Enabled = true;
             }
             else
@@ -195,7 +195,7 @@ public partial class MainForm
   }
 
   /// <summary>
-  /// Updates the month view.
+  /// Updates the monthly view.
   /// </summary>
   public void UpdateCalendarMonth(bool doFill)
   {

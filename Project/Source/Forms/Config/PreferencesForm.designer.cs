@@ -38,6 +38,9 @@
       this.ActionResetSettings = new System.Windows.Forms.LinkLabel();
       this.OpenExeFileDialog = new System.Windows.Forms.OpenFileDialog();
       this.MenuSelectMoonDayTextFormat = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.toolStripMenuItem22 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +77,6 @@
       this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
       this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
-      this.EditReminderBoxRetakeFocusAfterDateClick = new System.Windows.Forms.CheckBox();
       this.LabelDateBookmarksCount = new System.Windows.Forms.Label();
       this.LabelChangeLangNotice = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
@@ -123,6 +125,7 @@
       this.EditGlobalHotKeyPopupMainFormWin = new System.Windows.Forms.CheckBox();
       this.LabelTrayIconClickOpen = new System.Windows.Forms.Label();
       this.SelectOpenNextCelebrationsForm = new System.Windows.Forms.RadioButton();
+      this.EditReminderBoxRetakeFocusAfterDateClick = new System.Windows.Forms.CheckBox();
       this.SelectOpenMainForm = new System.Windows.Forms.RadioButton();
       this.EditGlobalHotKeyPopupMainFormEnabled = new System.Windows.Forms.CheckBox();
       this.EditMainFormShownGoToToday = new System.Windows.Forms.CheckBox();
@@ -270,6 +273,8 @@
       this.EditSelectedDayBoxColor = new System.Windows.Forms.Panel();
       this.EditCalendarColorTorahEvent = new System.Windows.Forms.Panel();
       this.TabPageMonthView = new System.Windows.Forms.TabPage();
+      this.SelectMonthViewEventsAlignment = new System.Windows.Forms.ComboBox();
+      this.LabelMonthViewEventsAlignment = new System.Windows.Forms.Label();
       this.LabelCalendarDoubleClickAction = new System.Windows.Forms.Label();
       this.SelectCalendarDoubleClickActionSelect = new System.Windows.Forms.RadioButton();
       this.SelectCalendarDoubleClickActionNothing = new System.Windows.Forms.RadioButton();
@@ -282,6 +287,7 @@
       this.EditCalendarShowSelectedBox = new System.Windows.Forms.CheckBox();
       this.EditCalendarHebrewDateSingleLine = new System.Windows.Forms.CheckBox();
       this.EditCalendarUseHoverEffect = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewEventsAlignmentOnlyForParashah = new System.Windows.Forms.CheckBox();
       this.EditMonthViewChangeDayOnClick = new System.Windows.Forms.CheckBox();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
       this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
@@ -351,9 +357,6 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
-      this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripMenuItem22 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -481,6 +484,24 @@
       this.MenuSelectMoonDayTextFormat.Name = "MenuSelectMoonDayTextFormat";
       this.MenuSelectMoonDayTextFormat.ShowImageMargin = false;
       resources.ApplyResources(this.MenuSelectMoonDayTextFormat, "MenuSelectMoonDayTextFormat");
+      // 
+      // toolStripMenuItem22
+      // 
+      this.toolStripMenuItem22.Name = "toolStripMenuItem22";
+      resources.ApplyResources(this.toolStripMenuItem22, "toolStripMenuItem22");
+      this.toolStripMenuItem22.Tag = "%DAYNUM% %MONTHNAME%  [%MONTHNUM%]";
+      // 
+      // toolStripMenuItem20
+      // 
+      this.toolStripMenuItem20.Name = "toolStripMenuItem20";
+      resources.ApplyResources(this.toolStripMenuItem20, "toolStripMenuItem20");
+      this.toolStripMenuItem20.Tag = "%DAYNUM% %MONTHNAME%  (%MONTHNUM%)";
+      // 
+      // toolStripMenuItem21
+      // 
+      this.toolStripMenuItem21.Name = "toolStripMenuItem21";
+      resources.ApplyResources(this.toolStripMenuItem21, "toolStripMenuItem21");
+      this.toolStripMenuItem21.Tag = "%DAYNUM% %MONTHNAME%";
       // 
       // toolStripMenuItem3
       // 
@@ -694,7 +715,6 @@
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
       this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
-      this.TabPageApplication.Controls.Add(this.EditReminderBoxRetakeFocusAfterDateClick);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.LabelChangeLangNotice);
       this.TabPageApplication.Controls.Add(this.label7);
@@ -762,13 +782,6 @@
       this.EditVolume.TickFrequency = 10;
       this.EditVolume.Value = 100;
       this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
-      // 
-      // EditReminderBoxRetakeFocusAfterDateClick
-      // 
-      resources.ApplyResources(this.EditReminderBoxRetakeFocusAfterDateClick, "EditReminderBoxRetakeFocusAfterDateClick");
-      this.EditReminderBoxRetakeFocusAfterDateClick.Name = "EditReminderBoxRetakeFocusAfterDateClick";
-      this.EditReminderBoxRetakeFocusAfterDateClick.UseVisualStyleBackColor = true;
-      this.EditReminderBoxRetakeFocusAfterDateClick.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // LabelDateBookmarksCount
       // 
@@ -1048,6 +1061,7 @@
       this.TabPageTrayIcon.Controls.Add(this.PanelHotKey);
       this.TabPageTrayIcon.Controls.Add(this.LabelTrayIconClickOpen);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenNextCelebrationsForm);
+      this.TabPageTrayIcon.Controls.Add(this.EditReminderBoxRetakeFocusAfterDateClick);
       this.TabPageTrayIcon.Controls.Add(this.SelectOpenMainForm);
       this.TabPageTrayIcon.Controls.Add(this.EditGlobalHotKeyPopupMainFormEnabled);
       this.TabPageTrayIcon.Controls.Add(this.EditMainFormShownGoToToday);
@@ -1143,6 +1157,13 @@
       resources.ApplyResources(this.SelectOpenNextCelebrationsForm, "SelectOpenNextCelebrationsForm");
       this.SelectOpenNextCelebrationsForm.Name = "SelectOpenNextCelebrationsForm";
       this.SelectOpenNextCelebrationsForm.UseVisualStyleBackColor = true;
+      // 
+      // EditReminderBoxRetakeFocusAfterDateClick
+      // 
+      resources.ApplyResources(this.EditReminderBoxRetakeFocusAfterDateClick, "EditReminderBoxRetakeFocusAfterDateClick");
+      this.EditReminderBoxRetakeFocusAfterDateClick.Name = "EditReminderBoxRetakeFocusAfterDateClick";
+      this.EditReminderBoxRetakeFocusAfterDateClick.UseVisualStyleBackColor = true;
+      this.EditReminderBoxRetakeFocusAfterDateClick.CheckedChanged += new System.EventHandler(this.EditRemindAutoLock_CheckedChanged);
       // 
       // SelectOpenMainForm
       // 
@@ -2333,6 +2354,8 @@
       // 
       this.TabPageMonthView.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageMonthView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageMonthView.Controls.Add(this.SelectMonthViewEventsAlignment);
+      this.TabPageMonthView.Controls.Add(this.LabelMonthViewEventsAlignment);
       this.TabPageMonthView.Controls.Add(this.LabelCalendarDoubleClickAction);
       this.TabPageMonthView.Controls.Add(this.SelectCalendarDoubleClickActionSelect);
       this.TabPageMonthView.Controls.Add(this.SelectCalendarDoubleClickActionNothing);
@@ -2345,6 +2368,7 @@
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowSelectedBox);
       this.TabPageMonthView.Controls.Add(this.EditCalendarHebrewDateSingleLine);
       this.TabPageMonthView.Controls.Add(this.EditCalendarUseHoverEffect);
+      this.TabPageMonthView.Controls.Add(this.EditMonthViewEventsAlignmentOnlyForParashah);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewChangeDayOnClick);
       this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
       this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
@@ -2353,6 +2377,22 @@
       this.TabPageMonthView.Controls.Add(this.EditMoonDayTextFormat);
       resources.ApplyResources(this.TabPageMonthView, "TabPageMonthView");
       this.TabPageMonthView.Name = "TabPageMonthView";
+      // 
+      // SelectMonthViewEventsAlignment
+      // 
+      this.SelectMonthViewEventsAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectMonthViewEventsAlignment.FormattingEnabled = true;
+      this.SelectMonthViewEventsAlignment.Items.AddRange(new object[] {
+            resources.GetString("SelectMonthViewEventsAlignment.Items"),
+            resources.GetString("SelectMonthViewEventsAlignment.Items1"),
+            resources.GetString("SelectMonthViewEventsAlignment.Items2")});
+      resources.ApplyResources(this.SelectMonthViewEventsAlignment, "SelectMonthViewEventsAlignment");
+      this.SelectMonthViewEventsAlignment.Name = "SelectMonthViewEventsAlignment";
+      // 
+      // LabelMonthViewEventsAlignment
+      // 
+      resources.ApplyResources(this.LabelMonthViewEventsAlignment, "LabelMonthViewEventsAlignment");
+      this.LabelMonthViewEventsAlignment.Name = "LabelMonthViewEventsAlignment";
       // 
       // LabelCalendarDoubleClickAction
       // 
@@ -2433,6 +2473,13 @@
       this.EditCalendarUseHoverEffect.Name = "EditCalendarUseHoverEffect";
       this.EditCalendarUseHoverEffect.UseVisualStyleBackColor = true;
       this.EditCalendarUseHoverEffect.CheckedChanged += new System.EventHandler(this.EditMonthViewOption_Changed);
+      // 
+      // EditMonthViewEventsAlignmentOnlyForParashah
+      // 
+      resources.ApplyResources(this.EditMonthViewEventsAlignmentOnlyForParashah, "EditMonthViewEventsAlignmentOnlyForParashah");
+      this.EditMonthViewEventsAlignmentOnlyForParashah.Name = "EditMonthViewEventsAlignmentOnlyForParashah";
+      this.EditMonthViewEventsAlignmentOnlyForParashah.UseVisualStyleBackColor = true;
+      this.EditMonthViewEventsAlignmentOnlyForParashah.CheckedChanged += new System.EventHandler(this.EditMonthViewOption_Changed);
       // 
       // EditMonthViewChangeDayOnClick
       // 
@@ -3000,24 +3047,6 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
-      // toolStripMenuItem20
-      // 
-      this.toolStripMenuItem20.Name = "toolStripMenuItem20";
-      resources.ApplyResources(this.toolStripMenuItem20, "toolStripMenuItem20");
-      this.toolStripMenuItem20.Tag = "%DAYNUM% %MONTHNAME%  (%MONTHNUM%)";
-      // 
-      // toolStripMenuItem21
-      // 
-      this.toolStripMenuItem21.Name = "toolStripMenuItem21";
-      resources.ApplyResources(this.toolStripMenuItem21, "toolStripMenuItem21");
-      this.toolStripMenuItem21.Tag = "%DAYNUM% %MONTHNAME%";
-      // 
-      // toolStripMenuItem22
-      // 
-      this.toolStripMenuItem22.Name = "toolStripMenuItem22";
-      resources.ApplyResources(this.toolStripMenuItem22, "toolStripMenuItem22");
-      this.toolStripMenuItem22.Tag = "%DAYNUM% %MONTHNAME%  [%MONTHNUM%]";
-      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3425,5 +3454,8 @@
         private ToolStripMenuItem toolStripMenuItem20;
         private ToolStripMenuItem toolStripMenuItem21;
         private ToolStripMenuItem toolStripMenuItem22;
+        private ComboBox SelectMonthViewEventsAlignment;
+        private Label LabelMonthViewEventsAlignment;
+        private CheckBox EditMonthViewEventsAlignmentOnlyForParashah;
     }
 }

@@ -376,7 +376,7 @@ partial class MainForm
   }
 
   /// <summary>
-  /// Initializes the calendar month view aspect.
+  /// Initializes the calendar monthly view aspect.
   /// </summary>
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP003:Dispose previous before re-assigning", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
