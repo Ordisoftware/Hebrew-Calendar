@@ -409,10 +409,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add the end verse of parashah when displaying the beginning one
 - Add option to have the Hebrew date on a single line before the ephemeris in the month view.
 - Add option to display book name and references of parashah in the month view.
->- Add option to display parashah names in Latin Transcription or in Hebrew Unicode or both.
->- Add option to display book names in Latin Transcription or in Hebrew Unicode or both.
->- Add option to display celebration names in Latin Transcription or in Hebrew Unicode or both.
->- Add option to display hebrew month names in Latin Transcription or in Hebrew Unicode or both.
+>- Add option to display hebrew names in Latin Transcription or in Hebrew Unicode or both.
 - Fix display of the ending verse of the parashah to indicate that of the linked if applicable.
 - Fix parashah description box to have the linked parashah name in the title bar.
 - Fix Hebrew date template for the month view that is capitalized on rendering.
