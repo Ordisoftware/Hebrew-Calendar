@@ -175,11 +175,11 @@ static partial class DebugManager
                                 .CreateLogger();
           }
           else
-            Log.Logger = logconf.WriteTo.File(Globals.SinkFileRollingFilePatternPath,
-                                              shared: SystemManager.AllowMultipleInstances,
+            Log.Logger = logconf.WriteTo.File(path: Globals.SinkFileRollingFilePatternPath,
                                               outputTemplate: Globals.SinkFileEventTemplate,
-                                              rollingInterval: Globals.SinkFileRollingInterval,
                                               fileSizeLimitBytes: Globals.SinkFileSizeLimitBytes,
+                                              shared: SystemManager.AllowMultipleInstances,
+                                              rollingInterval: Globals.SinkFileRollingInterval,
                                               retainedFileCountLimit: Globals.SinkFileRetainedFileCountLimit)
                                 .WriteToSimpleAndRichTextBox(new MessageTemplateTextFormatter(Globals.SinkFileEventTemplate))
                                 .CreateLogger();

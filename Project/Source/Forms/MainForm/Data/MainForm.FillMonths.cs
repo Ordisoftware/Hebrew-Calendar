@@ -173,7 +173,7 @@ partial class MainForm
               ? Settings.CalendarColorFullMoon
               : Settings.CalendarColorMoon;
           string strDate = string.Empty;
-          if ( dateSingleLine && ( omerSun || row.Moonrise != null ) )
+          if ( dateSingleLine && ( omerSun || row.Moonrise is not null ) )
           {
             var color = row.IsNewMoon ? Settings.CalendarColorTorahEvent : Settings.MonthViewTextColor;
             add(color, row.DayAndMonthFormattedText);
