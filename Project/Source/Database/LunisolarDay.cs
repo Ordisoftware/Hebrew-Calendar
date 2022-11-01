@@ -15,7 +15,6 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 using SQLite;
-using EllisWeb.Gematria;
 
 [Serializable]
 [Table("LunisolarDays")]
@@ -64,18 +63,15 @@ public partial class LunisolarDay
 
   public string DayAndMonthText
     => Settings.HebrewNamesInUnicode
-       // TODO refactor calculator in one method in hebrewalphabet
-       ? $"{Calculator.ConvertToGematriaNumericString(LunarDay, includeSeparators: false)}\" {HebrewMonths.Unicode[LunarMonth]}"
+       ? $"{HebrewAlphabet.IntToUnicode(LunarDay)}\" {HebrewMonths.Unicode[LunarMonth]}"
        : $"{LunarDay} {HebrewMonths.Transcriptions.GetLang()[LunarMonth]}";
 
   public string DayAndMonthWithYearText
-    => Settings.HebrewNamesInUnicode
-       ? $"{DayAndMonthText} {Date.Year}"
-       : $"{DayAndMonthText} {Date.Year}";
+    => $"{DayAndMonthText} {Date.Year}";
 
   public string DayAndMonthFormattedText
     => Settings.HebrewNamesInUnicode
-       ? $"{Calculator.ConvertToGematriaNumericString(LunarDay, includeSeparators: false)}\" {HebrewMonths.Unicode[LunarMonth]}"
+       ? $"{HebrewAlphabet.IntToUnicode(LunarDay)}\" {HebrewMonths.Unicode[LunarMonth]}"
        : Settings.MoonDayTextFormat
                  .Replace("%MONTHNAME%", HebrewMonths.Transcriptions.GetLang()[LunarMonth])
                  .Replace("%MONTHNUM%", LunarMonth.ToString())

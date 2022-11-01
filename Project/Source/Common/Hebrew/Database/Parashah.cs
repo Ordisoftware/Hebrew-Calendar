@@ -60,7 +60,7 @@ public partial class Parashah : INotifyPropertyChanged
     }
     catch ( Exception ex )
     {
-      throw new Exception("Error on creating parashah instance: " + ex.Message);
+      throw new Exception("Error on creating parashah instance: " + ex.Message, ex);
     }
   }
 

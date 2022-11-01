@@ -120,7 +120,7 @@ static class HebrewTools
       var wordAnalyzed = RemoveNumberingAndDiacritics(word);
       var items = wordAnalyzed.Word.Split(' ');
       if ( !wordAnalyzed.IsUnicode )
-        items = items.Select(w => HebrewAlphabet.ToUnicode(HebrewAlphabet.SetFinal(w, true))).ToArray();
+        items = items.Select(w => HebrewAlphabet.ToUnicodeChars(HebrewAlphabet.SetFinal(w, true))).ToArray();
       foreach ( string item in items )
         if ( item.Length > 0 )
         {

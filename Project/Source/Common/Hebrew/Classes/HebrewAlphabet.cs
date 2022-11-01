@@ -14,6 +14,8 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
+using EllisWeb.Gematria;
+
 /// <summary>
 /// Provides Hebrew letters class to manage Hebrew font and Unicode chars
 /// from text available at www.fourmilab.ch/etexts/www/hebrew/Bible.
@@ -96,6 +98,18 @@ static class HebrewAlphabet
     new char[] { 'p', '[' },
     new char[] { 'j', '/' }
   };
+
+  static private GematriaOptions GematriaOptions = new GematriaOptions();
+
+  static HebrewAlphabet()
+  {
+    GematriaOptions.IncludeSeparators = false;
+  }
+
+  static public string IntToUnicode(int value)
+  {
+    return Calculator.ConvertToGematriaNumericString(value, GematriaOptions);
+  }
 
   /// <summary>
   /// Indicates if a string contains some Hebrew Unicode chars.
@@ -197,7 +211,7 @@ static class HebrewAlphabet
   /// <summary>
   /// Converts Hebrew font chars to Unicode Hebrew chars.
   /// </summary>
-  static public string ToUnicode(string str)
+  static public string ToUnicodeChars(string str)
   {
     if ( str.IsNullOrEmpty() ) return string.Empty;
     string result = string.Empty;

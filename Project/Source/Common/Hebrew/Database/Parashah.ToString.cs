@@ -14,8 +14,6 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
-using EllisWeb.Gematria;
-
 public partial class Parashah
 {
 
@@ -30,10 +28,7 @@ public partial class Parashah
     string result = GetDisplayText();
     if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().GetDisplayText() : string.Empty;
     if ( withBookAndref )
-      if ( HebrewDatabase.HebrewNamesInUnicode )
-        result += $" ({ToStringBookAndReferences()})";
-      else
-        result += $" ({ToStringBookAndReferences()})";
+      result += $" ({ToStringBookAndReferences()})";
     return result;
   }
 
@@ -46,13 +41,13 @@ public partial class Parashah
 
   private string GetUnicodeVerses()
   {
-    string result = Calculator.ConvertToGematriaNumericString(ChapterBegin, includeSeparators: false);
+    string result = HebrewAlphabet.IntToUnicode(ChapterBegin);
     result += ".";
-    result += Calculator.ConvertToGematriaNumericString(VerseBegin, includeSeparators: false);
+    result += HebrewAlphabet.IntToUnicode(VerseBegin);
     result += " - ";
-    result += Calculator.ConvertToGematriaNumericString(ChapterEnd, includeSeparators: false);
+    result += HebrewAlphabet.IntToUnicode(ChapterEnd);
     result += ".";
-    result += Calculator.ConvertToGematriaNumericString(VerseEnd, includeSeparators: false);
+    result += HebrewAlphabet.IntToUnicode(VerseEnd);
     return result;
   }
 

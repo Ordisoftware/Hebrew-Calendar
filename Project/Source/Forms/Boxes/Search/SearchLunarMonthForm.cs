@@ -1,5 +1,4 @@
-﻿using EllisWeb.Gematria;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -68,7 +67,7 @@ partial class SearchLunarMonthForm : Form
     foreach ( var row in LunisolarDays.Where(row => row.IsNewMoon && row.Date.Year == year && row.LunarMonth > 0) )
     {
       string key = Program.Settings.HebrewNamesInUnicode
-        ? Calculator.ConvertToGematriaNumericString(row.LunarMonth, includeSeparators: false)
+        ? HebrewAlphabet.IntToUnicode(row.LunarMonth)
         : row.LunarMonth.ToString();
       string date = row.Date.ToLongDateString();
       var item = ListItems.Items.Add(key);
