@@ -22,26 +22,6 @@ using static Ordisoftware.Hebrew.HebrewTranslations;
 static partial class AppTranslations
 {
 
-  static public string GetLunarMonthDisplayText(int month)
-  => Program.Settings.HebrewNamesInUnicode
-     ? HebrewMonths.Unicode[month]
-     : HebrewMonths.Transcriptions.GetLang()[month];
-
-  static public string GetPessahDisplayText(int day)
-    => Program.Settings.HebrewNamesInUnicode
-       ? "פסח" + " " + HebrewAlphabet.Unicode[day]
-       : PessahDay.GetLang(day);
-
-  static public string GetSoukotDisplayText(int day)
-    => Program.Settings.HebrewNamesInUnicode
-       ? "סכות" + " " + HebrewAlphabet.Unicode[day]
-       : SoukotDay.GetLang(day);
-
-  static public string GetCelebrationDisplayText(TorahCelebrationDay value)
-    => Program.Settings.HebrewNamesInUnicode
-       ? UnicodeCelebrations[value]
-       : TorahCelebrationDays.GetLang(value);
-
   static public readonly TranslationsDictionary Start = new()
   {
     [Language.EN] = "Start",
@@ -174,20 +154,40 @@ static partial class AppTranslations
     }*/
   };
 
-  static public readonly Dictionary<TorahCelebrationDay, string> UnicodeCelebrations = new()
+  static public readonly Dictionary<TorahCelebrationDay, string> UnicodeCelebrationDays = new()
   {
     [TorahCelebrationDay.None] = "",
     [TorahCelebrationDay.NewYearD1] = "שנה חדשה",
     [TorahCelebrationDay.NewYearD10] = "לקחת שה",
-    [TorahCelebrationDay.PessahD1] = "פסח תחלה",
-    [TorahCelebrationDay.PessahD7] = "פסח סוף",
-    [TorahCelebrationDay.ChavouotDiet] = "שבועות דיאטה",
-    [TorahCelebrationDay.Chavouot1] = "שבועות שה",
-    [TorahCelebrationDay.Chavouot2] = "שבועות סוף",
-    [TorahCelebrationDay.YomTerouah] = "יומ תרועה",
-    [TorahCelebrationDay.YomHaKipourim] = "יומ הכיפורים",
-    [TorahCelebrationDay.SoukotD1] = "סכות תחלה",
-    [TorahCelebrationDay.SoukotD8] = "סכות סוף"
+    [TorahCelebrationDay.PessahD1] = UnicodeCelebrations[TorahCelebration.Pessah] + " " + "תחלה",
+    [TorahCelebrationDay.PessahD7] = UnicodeCelebrations[TorahCelebration.Pessah] + " " + "סוף",
+    [TorahCelebrationDay.ChavouotDiet] = UnicodeCelebrations[TorahCelebration.Chavouot] + " " + "דיאטה",
+    [TorahCelebrationDay.Chavouot1] = UnicodeCelebrations[TorahCelebration.Chavouot] + " " + "שה",
+    [TorahCelebrationDay.Chavouot2] = UnicodeCelebrations[TorahCelebration.Chavouot] + " " + "סוף",
+    [TorahCelebrationDay.YomTerouah] = UnicodeCelebrations[TorahCelebration.YomTerouah],
+    [TorahCelebrationDay.YomHaKipourim] = UnicodeCelebrations[TorahCelebration.YomHaKipourim],
+    [TorahCelebrationDay.SoukotD1] = UnicodeCelebrations[TorahCelebration.Soukot] + " " + "תחלה",
+    [TorahCelebrationDay.SoukotD8] = UnicodeCelebrations[TorahCelebration.Soukot] + " " + "סוף"
   };
+
+  static public string GetLunarMonthDisplayText(int month)
+  => Program.Settings.HebrewNamesInUnicode
+     ? HebrewMonths.Unicode[month]
+     : HebrewMonths.Transcriptions.GetLang()[month];
+
+  static public string GetPessahDisplayText(int day)
+    => Program.Settings.HebrewNamesInUnicode
+       ? "פסח" + " " + HebrewAlphabet.Unicode[day]
+       : PessahDay.GetLang(day);
+
+  static public string GetSoukotDisplayText(int day)
+    => Program.Settings.HebrewNamesInUnicode
+       ? "סכות" + " " + HebrewAlphabet.Unicode[day]
+       : SoukotDay.GetLang(day);
+
+  static public string GetCelebrationDisplayText(TorahCelebrationDay value)
+    => Program.Settings.HebrewNamesInUnicode
+       ? UnicodeCelebrationDays[value]
+       : TorahCelebrationDays.GetLang(value);
 
 }

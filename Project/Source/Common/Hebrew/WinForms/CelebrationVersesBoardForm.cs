@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 public partial class CelebrationVersesBoardForm : Form
@@ -81,7 +81,7 @@ public partial class CelebrationVersesBoardForm : Form
     this.CheckLocationOrCenterToMainFormElseScreen();
     var items = Enums.GetValues<TorahCelebration>()
                      .Skip(1)
-                     .Select(v => new ListViewItem(HebrewTranslations.TorahCelebrations.GetLang(v)) { Tag = v });
+                     .Select(v => new ListViewItem(HebrewTranslations.GetCelebrationDisplayText(v)) { Tag = v });
     SelectCelebration.Items.Clear();
     SelectCelebration.Items.AddRange(items.ToArray());
   }
@@ -164,7 +164,10 @@ public partial class CelebrationVersesBoardForm : Form
     if ( collection is null ) return;
     foreach ( var reference in collection )
     {
-      var item = SelectVerse.Items.Add(reference.Item1.ToString().Replace('_', ' '));
+      string bookname = HebrewDatabase.HebrewNamesInUnicode
+        ? BookInfos.Unicode[reference.Item1]
+        : reference.Item1.ToString().Replace('_', ' ');
+      var item = SelectVerse.Items.Add(bookname);
       item.Tag = reference;
       item.SubItems.Add(reference.Item2);
       item.SubItems.Add(reference.Item3);
