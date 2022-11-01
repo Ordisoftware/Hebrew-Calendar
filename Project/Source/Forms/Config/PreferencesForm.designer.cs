@@ -351,6 +351,9 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
+      this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripMenuItem22 = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -449,6 +452,9 @@
       // MenuSelectMoonDayTextFormat
       // 
       this.MenuSelectMoonDayTextFormat.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem22,
+            this.toolStripMenuItem20,
+            this.toolStripMenuItem21,
             this.toolStripMenuItem3,
             this.toolStripMenuItem4,
             this.toolStripMenuItem5,
@@ -2994,6 +3000,24 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
+      // toolStripMenuItem20
+      // 
+      this.toolStripMenuItem20.Name = "toolStripMenuItem20";
+      resources.ApplyResources(this.toolStripMenuItem20, "toolStripMenuItem20");
+      this.toolStripMenuItem20.Tag = "%DAYNUM% %MONTHNAME%  (%MONTHNUM%)";
+      // 
+      // toolStripMenuItem21
+      // 
+      this.toolStripMenuItem21.Name = "toolStripMenuItem21";
+      resources.ApplyResources(this.toolStripMenuItem21, "toolStripMenuItem21");
+      this.toolStripMenuItem21.Tag = "%DAYNUM% %MONTHNAME%";
+      // 
+      // toolStripMenuItem22
+      // 
+      this.toolStripMenuItem22.Name = "toolStripMenuItem22";
+      resources.ApplyResources(this.toolStripMenuItem22, "toolStripMenuItem22");
+      this.toolStripMenuItem22.Tag = "%DAYNUM% %MONTHNAME%  [%MONTHNUM%]";
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3398,5 +3422,8 @@
         private CheckBox EditCalendarHebrewDateSingleLine;
         private CheckBox EditCalendarParashahWithBookAndRef;
         private CheckBox EditHebrewNamesInUnicode;
+        private ToolStripMenuItem toolStripMenuItem20;
+        private ToolStripMenuItem toolStripMenuItem21;
+        private ToolStripMenuItem toolStripMenuItem22;
     }
 }
