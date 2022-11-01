@@ -596,7 +596,7 @@
     <value>381, 17</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
-    <value>Montrer la description de la parashah de la semaine au début de la semaine</value>
+    <value>Afficher la description de la parashah de la semaine au début de la semaine</value>
   </data>
   <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
@@ -608,7 +608,7 @@
     <value>336, 17</value>
   </data>
   <data name="EditWeeklyParashahShowAtStartup.Text" xml:space="preserve">
-    <value>Montrer la description de la parashah de la semaine au démarrage</value>
+    <value>Afficher la description de la parashah de la semaine au démarrage</value>
   </data>
   <data name="TabPageColors.Text" xml:space="preserve">
     <value>Couleurs</value>

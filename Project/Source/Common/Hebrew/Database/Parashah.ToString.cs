@@ -31,13 +31,18 @@ public partial class Parashah
   {
     string result = Name;
     if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().Name : string.Empty;
-    if ( withBookAndref ) result += $" ({Book} {VerseBegin})";
+    if ( withBookAndref ) result += $" ({Book} {ToStringOnlyVerses()})";
     return result;
   }
 
   public string ToStringOnlyBookAndFullRef()
   {
-    return $"{Book} {VerseBegin} - {VerseEnd}";
+    return $"{Book} {ToStringOnlyVerses()}";
+  }
+
+  private string ToStringOnlyVerses()
+  {
+    return VerseBegin + " - " + ( IsLinkedToNext ? GetLinked().VerseEnd : VerseEnd );
   }
 
   //public string ToStringShort(ParashahToStringStyle style)
