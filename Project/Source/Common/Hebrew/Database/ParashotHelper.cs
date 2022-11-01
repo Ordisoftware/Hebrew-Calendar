@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 static class ParashotHelper
@@ -40,6 +40,7 @@ static class ParashotHelper
     if ( linked is not null )
       message += Globals.NL2 + linked.ToStringReadable();
     string title = HebrewTranslations.WeeklyParashah.GetLang() + " : " + parashah.Name;
+    if ( linked is not null ) title += " - " + linked.Name;
     form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
     {
       StartPosition = FormStartPosition.CenterScreen,
