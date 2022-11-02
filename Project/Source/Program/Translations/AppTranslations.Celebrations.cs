@@ -170,22 +170,17 @@ static partial class AppTranslations
     [TorahCelebrationDay.SoukotD8] = UnicodeCelebrations[TorahCelebration.Soukot] + " " + "סוף"
   };
 
-  static public string GetLunarMonthDisplayText(int month)
-  => Program.Settings.HebrewNamesInUnicode
-     ? HebrewMonths.Unicode[month]
-     : HebrewMonths.Transcriptions.GetLang()[month];
-
-  static public string GetPessahDisplayText(int day)
+  static public string GetPessahDayDisplayText(int day)
     => Program.Settings.HebrewNamesInUnicode
        ? "פסח" + " " + HebrewAlphabet.Unicode[day]
        : PessahDay.GetLang(day);
 
-  static public string GetSoukotDisplayText(int day)
+  static public string GetSoukotDayDisplayText(int day)
     => Program.Settings.HebrewNamesInUnicode
        ? "סכות" + " " + HebrewAlphabet.Unicode[day]
        : SoukotDay.GetLang(day);
 
-  static public string GetCelebrationDisplayText(TorahCelebrationDay value)
+  static public string GetCelebrationDayDisplayText(TorahCelebrationDay value)
     => Program.Settings.HebrewNamesInUnicode
        ? UnicodeCelebrationDays[value]
        : TorahCelebrationDays.GetLang(value);

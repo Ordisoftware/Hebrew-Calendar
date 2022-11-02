@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SearchLunarMonthForm : Form
@@ -71,7 +71,7 @@ partial class SearchLunarMonthForm : Form
         : row.LunarMonth.ToString();
       string date = row.Date.ToLongDateString();
       var item = ListItems.Items.Add(key);
-      item.SubItems.Add(AppTranslations.GetLunarMonthDisplayText(row.LunarMonth));
+      item.SubItems.Add(HebrewTranslations.GetLunarMonthDisplayText(row.LunarMonth));
       item.SubItems.Add(date.Titleize());
       item.Tag = row;
       if ( selectedKey is not null && key == selectedKey && itemToSelect is null )

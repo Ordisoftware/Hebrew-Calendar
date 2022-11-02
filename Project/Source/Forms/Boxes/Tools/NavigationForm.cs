@@ -48,13 +48,13 @@ partial class NavigationForm : Form
         ActiveControl = LabelDate;
         var row = LunisolarDays.Single(day => day.Date == value);
         LabelDate.Text = value.ToLongDateString().Titleize();
-        string strMonth = HebrewMonths.Transcriptions.GetLang()[row.LunarMonth];
+        string strMonth = HebrewTranslations.GetLunarMonthDisplayText(row.LunarMonth);
         bool isShabat = value.DayOfWeek == (DayOfWeek)Settings.ShabatDay;
         //
         LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
         LabelLunarMonthName.Text = $"({strMonth.ToUpper()})";
         LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
-        LabelLunarDayEvent.Text = isShabat ? $"({AppTranslations.Shabat.GetLang().ToUpper()})" : string.Empty;
+        LabelLunarDayEvent.Text = isShabat ? $"({HebrewTranslations.Parashah.ToUpper()})" : string.Empty;
         int left = LabelLunarMonthValue.Left + Math.Max(LabelLunarMonthValue.Width, LabelLunarDayValue.Width);
         LabelLunarMonthName.Left = left;
         LabelLunarDayEvent.Left = left;

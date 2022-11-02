@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class LunisolarDay
@@ -28,7 +28,7 @@ partial class LunisolarDay
           ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
           : -1;
         if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
-          return (TorahCelebration.Pessah, day, AppTranslations.GetPessahDisplayText(day));
+          return (TorahCelebration.Pessah, day, AppTranslations.GetPessahDayDisplayText(day));
       }
       else
       if ( !onlyPessah && LunarMonth == TorahCelebrationSettings.YomsMonth )
@@ -37,7 +37,7 @@ partial class LunisolarDay
           ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
           : -1;
         if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
-          return (TorahCelebration.Soukot, day, AppTranslations.GetSoukotDisplayText(day));
+          return (TorahCelebration.Soukot, day, AppTranslations.GetSoukotDayDisplayText(day));
       }
       else
       if ( !onlyPessah && LunarMonth == TorahCelebrationSettings.ChavouotMonth )
@@ -72,7 +72,7 @@ partial class LunisolarDay
           && Date >= first.Date
           && Date <= last.Date )
         {
-          string str = AppTranslations.GetCelebrationDisplayText(TorahCelebrationDay.ChavouotDiet);
+          string str = AppTranslations.GetCelebrationDayDisplayText(TorahCelebrationDay.ChavouotDiet);
           return (TorahCelebration.Chavouot, (int)( Date - first.Date ).TotalDays + 1, str);
         }
       }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -97,7 +97,7 @@ public partial class MainForm
     if ( torahEvent != TorahCelebration.None )
     {
       ContextMenuDayDate.Text += $" - {torahEventText}";
-      string celebrationName = HebrewTranslations.TorahCelebrations.GetLang(torahEvent);
+      string celebrationName = HebrewTranslations.GetCelebrationDisplayText(torahEvent);
       ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutCurrentCelebration.GetLang(celebrationName);
     }
     else
@@ -111,7 +111,7 @@ public partial class MainForm
           torahEventNext = TorahCelebrationSettings.Convert(rowNextCelebration.TorahEvent);
         if ( torahEventNext != TorahCelebration.None )
         {
-          string celebrationName = HebrewTranslations.TorahCelebrations.GetLang(torahEventNext);
+          string celebrationName = HebrewTranslations.GetCelebrationDisplayText(torahEventNext);
           ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutNextCelebration.GetLang(celebrationName);
         }
       }
@@ -132,7 +132,7 @@ public partial class MainForm
         {
           string captionParashah = parashah.ToStringShort(false, dayParashah.HasLinkedParashah);
           ContextMenuDayDate.Text += $" - {captionParashah}";
-          ContextMenuDayParashah.Text = $"{Parashah.DisplayName} {captionParashah}";
+          ContextMenuDayParashah.Text = $"{HebrewTranslations.Parashah} {captionParashah}";
           ContextMenuDayParashah.Enabled = true;
         }
       }

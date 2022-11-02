@@ -64,7 +64,7 @@ partial class SearchEventForm : Form
     ListViewItem itemToSelectDefault = null;
     foreach ( var row in rows )
     {
-      string key = AppTranslations.GetCelebrationDisplayText(row.TorahEvent);
+      string key = AppTranslations.GetCelebrationDayDisplayText(row.TorahEvent);
       string date = row.Date.ToLongDateString();
       var item = ListItems.Items.Add(key);
       item.SubItems.Add(date.Titleize());

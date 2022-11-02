@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase
@@ -58,7 +58,7 @@ partial class ApplicationDatabase
           day.LunarDay -= delta;
           checkParashah(day);
           if ( day.TorahEvent != TorahCelebrationDay.None )
-            day.TorahEventText = AppTranslations.GetCelebrationDisplayText(day.TorahEvent);
+            day.TorahEventText = AppTranslations.GetCelebrationDayDisplayText(day.TorahEvent);
           else
             day.TorahEventText = day.GetWeekLongCelebrationIntermediateDay().Text;
         }
