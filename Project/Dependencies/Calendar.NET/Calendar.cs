@@ -68,6 +68,7 @@ namespace CodeProjectCalendar.NET
     private readonly ScrollPanel _scrollPanel;
 
     // ORDISOFTWARE MODIF BEGIN
+    //public List<IEvent> TheEvents { get; }
     public List<IEvent> TheEvents { get; }
     internal List<CalendarEvent> CalendarEvents { get; }
 
@@ -1002,6 +1003,11 @@ namespace CodeProjectCalendar.NET
       }
       bool CheckSelected(int day)
         => day == selectedDay && _calendarDate.Month == selectedMonth && _calendarDate.Year == selectedYear;
+
+      // TODO optimize
+      var eventsDictionary = TheEvents.Cast<CustomEvent>()
+                                      .GroupBy(e => e.Date)
+                                      .ToDictionary(g => g.Key, g => g.ToArray());
       // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
@@ -1326,10 +1332,15 @@ namespace CodeProjectCalendar.NET
 
         //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
         var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
-        var list = TheEvents.Where(ev => ev.Date == dt /*&& ( ev.Enabled || _showDisabledEvents )*/).ToArray();
+        //var list = TheEvents.Where(ev => ev.Date == dt /*&& ( ev.Enabled || _showDisabledEvents )*/).Cast<CustomEvent>().ToArray();
+        if ( !eventsDictionary.ContainsKey(dt) ) continue;
+        var list = eventsDictionary[dt];
         int countEvents = list.Length;
-        int countEventsPrev = list.Length - 1;
-        if ( countEvents == 0 ) continue;
+
+        // TODO optimize
+        int countEventsPrev = list[countEvents - 1].IsSeparator ? countEvents - 2 : countEvents - 1;
+
+        if ( list.Count(v => !v.IsSeparator) == 0 ) continue;
         int deltaLine = -5 + linespacing;
         var sample = list.FirstOrDefault(e => !e.EventText.IsNullOrEmpty());
         if ( sample is null ) continue;
@@ -1337,7 +1348,7 @@ namespace CodeProjectCalendar.NET
         for ( int index = 0; index < countEvents; index++ )
         //foreach ( IEvent v in _events )
         {
-          var v = (CustomEvent)list[index];
+          var v = list[index];
 
           if ( v.IsSeparator )
           {

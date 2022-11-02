@@ -755,5 +755,8 @@
     <Setting Name="MonthViewSeparatorForCelebrationAndParashah" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="CalendarHebrewDateSingleLineItalic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -156,6 +156,7 @@ public partial class MainForm
           if ( !TitleParashah.IsEmpty() ) Text += $" - {TitleParashah/*.ToUpper()*/}";
         }
         ActionWeeklyParashah.Visible = Settings.CalendarShowParashah;
+        WeeklyParashahSeparator.Visible = Settings.CalendarShowParashah;
       });
     }
     finally

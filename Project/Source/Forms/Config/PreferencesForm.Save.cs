@@ -132,6 +132,7 @@ partial class PreferencesForm
     Settings.UseTwoDaysForLastPessahDayOutside = EditUseTwoDaysForLastPessahDayOutside.Checked;
     Settings.BoxesRetakeFocusAfterDateClick = EditReminderBoxRetakeFocusAfterDateClick.Checked;
     Settings.CalendarHebrewDateSingleLine = EditCalendarHebrewDateSingleLine.Checked;
+    Settings.CalendarHebrewDateSingleLineItalic = EditCalendarHebrewDateSingleLineItalic.Checked;
     Settings.CalendarParashahWithBookAndFullRef = EditCalendarParashahWithBookAndRef.Checked;
     Settings.HebrewNamesInUnicode = EditHebrewNamesInUnicode.Checked;
     Settings.HebrewInUnicodeKeepArabicNumerals = EditHebrewInUnicodeKeepArabicNumerals.Checked;

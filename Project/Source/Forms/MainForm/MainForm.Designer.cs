@@ -147,7 +147,7 @@
       this.ActionWeeklyParashahReadOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWeeklyParashahOpenWithHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
-      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+      this.WeeklyParashahSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
@@ -998,7 +998,7 @@
             this.toolStripMenuItem1,
             this.toolStripSeparator10,
             this.ActionWeeklyParashah,
-            this.toolStripSeparator11,
+            this.WeeklyParashahSeparator,
             this.ActionParashotBoard,
             this.ActionShowCelebrationVersesBoard,
             this.ActionViewCelebrationsBoard,
@@ -1147,10 +1147,10 @@
       this.ActionWeeklyParashahOpenWithHebrewWords.Name = "ActionWeeklyParashahOpenWithHebrewWords";
       this.ActionWeeklyParashahOpenWithHebrewWords.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
-      // toolStripSeparator11
+      // WeeklyParashahSeparator
       // 
-      this.toolStripSeparator11.Name = "toolStripSeparator11";
-      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
+      this.WeeklyParashahSeparator.Name = "WeeklyParashahSeparator";
+      resources.ApplyResources(this.WeeklyParashahSeparator, "WeeklyParashahSeparator");
       // 
       // ActionParashotBoard
       // 
@@ -1941,7 +1941,7 @@
     internal System.Windows.Forms.ToolStripButton ActionNavigate;
     internal System.Windows.Forms.ToolStripButton ActionViewNextCelebrations;
     private System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashah;
-    private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+    private System.Windows.Forms.ToolStripSeparator WeeklyParashahSeparator;
     private System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashahStudyOnline;
     private System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashahReadOnline;
     private System.Windows.Forms.BindingSource LunisolarDaysBindingSource;

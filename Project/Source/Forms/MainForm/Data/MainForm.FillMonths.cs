@@ -109,8 +109,10 @@ partial class MainForm
       bool isCelebrationWeekEnd = false;
       if ( LunisolarDays.Count == 0 ) return;
       DayBrushes = new Brush[YearsInterval, 13, 35];
-      var fontEvent = new Font("Calibri", Settings.MonthViewFontSize);
       var fontEventHebrew = new Font("Calibri", Settings.MonthViewHebrewFontSize);
+      var fontEventNoItalic = new Font("Calibri", Settings.MonthViewFontSize);
+      var fontEventItalic = new Font("Calibri", Settings.MonthViewFontSize, FontStyle.Italic);
+      var fontEvent = fontEventNoItalic;
       string strRise = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise);
       string strSet = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set);
       LoadingForm.Instance.Initialize(AppTranslations.ProgressFillMonths.GetLang(),
@@ -185,12 +187,16 @@ partial class MainForm
           // Single line date
           if ( dateSingleLine && ( omerSun || row.Moonrise is not null ) )
           {
+            if ( Settings.CalendarHebrewDateSingleLineItalic )
+              fontEvent = fontEventItalic;
             if ( separatorForLunarDate )
               add(Settings.MonthViewTextColor, string.Empty);
             var color = row.IsNewMoon ? Settings.CalendarColorTorahEvent : Settings.MonthViewTextColor;
             add(color, row.DayAndMonthFormattedText, useUnicode);
             if ( separatorForLunarDate )
               add(Settings.MonthViewTextColor, string.Empty);
+            if ( Settings.CalendarHebrewDateSingleLineItalic )
+              fontEvent = fontEventNoItalic;
           }
           else
           {

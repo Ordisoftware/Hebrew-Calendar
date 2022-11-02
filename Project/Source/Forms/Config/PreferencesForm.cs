@@ -488,7 +488,7 @@ partial class PreferencesForm : Form
 
   private void EditCalendarShowParashah_Changed(object sender, EventArgs e)
   {
-    if ( IsReady ) MustRefreshMonthView = true;
+    SetMustRefreshEnabled(null, null);
     EditMainFormTitleBarShowWeeklyParashah.Enabled = EditCalendarShowParashah.Checked;
     EditParashahCaptionWithBookAndRef.Enabled = EditCalendarShowParashah.Checked;
     EditReminderShabatShowParashah.Enabled = EditCalendarShowParashah.Checked;
@@ -542,7 +542,7 @@ partial class PreferencesForm : Form
 
   private void EditUseColors_CheckedChanged(object sender, EventArgs e)
   {
-    if ( IsReady ) MustRefreshMonthView = true;
+    SetMustRefreshEnabled(null, null);
     PanelCalendarColors.Enabled = EditUseColors.Checked;
     EditSelectedDayBoxColorOnlyCurrent.Enabled = EditUseColors.Checked;
   }
@@ -574,6 +574,12 @@ partial class PreferencesForm : Form
   private void ActionSaveTheme_Click(object sender, EventArgs e)
   {
     SaveTheme();
+  }
+
+  private void EditCalendarHebrewDateSingleLine_CheckedChanged(object sender, EventArgs e)
+  {
+    SetMustRefreshEnabled(null, null);
+    EditCalendarHebrewDateSingleLineItalic.Enabled = EditCalendarHebrewDateSingleLine.Checked;
   }
 
   #endregion

@@ -443,6 +443,9 @@
   <data name="BindingNavigatorPositionItem.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="BindingNavigatorPositionItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
   <data name="BindingNavigatorPositionItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 23</value>
   </data>
@@ -2234,7 +2237,7 @@
   <data name="ActionWeeklyParashah.Text" xml:space="preserve">
     <value>Weekly parashah</value>
   </data>
-  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="WeeklyParashahSeparator.Size" type="System.Drawing.Size, System.Drawing">
     <value>281, 6</value>
   </data>
   <data name="ActionParashotBoard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -3847,7 +3850,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAASABAwEgAQMBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAASgBAwEoAQMBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -4470,10 +4473,10 @@
   <data name="&gt;&gt;ActionWeeklyParashahOpenWithHebrewWords.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
-    <value>toolStripSeparator11</value>
+  <data name="&gt;&gt;WeeklyParashahSeparator.Name" xml:space="preserve">
+    <value>WeeklyParashahSeparator</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
+  <data name="&gt;&gt;WeeklyParashahSeparator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionParashotBoard.Name" xml:space="preserve">

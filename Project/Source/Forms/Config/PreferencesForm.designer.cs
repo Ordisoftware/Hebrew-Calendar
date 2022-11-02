@@ -370,6 +370,7 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditCalendarHebrewDateSingleLineItalic = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControl.SuspendLayout();
@@ -2403,6 +2404,7 @@
       this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacingInfo);
       this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatHelp);
       this.TabPageMonthView.Controls.Add(this.EditCalendarShowSelectedBox);
+      this.TabPageMonthView.Controls.Add(this.EditCalendarHebrewDateSingleLineItalic);
       this.TabPageMonthView.Controls.Add(this.EditCalendarHebrewDateSingleLine);
       this.TabPageMonthView.Controls.Add(this.EditCalendarUseHoverEffect);
       this.TabPageMonthView.Controls.Add(this.EditMonthViewEventsAlignmentOnlyForParashah);
@@ -2568,7 +2570,7 @@
       resources.ApplyResources(this.EditCalendarHebrewDateSingleLine, "EditCalendarHebrewDateSingleLine");
       this.EditCalendarHebrewDateSingleLine.Name = "EditCalendarHebrewDateSingleLine";
       this.EditCalendarHebrewDateSingleLine.UseVisualStyleBackColor = true;
-      this.EditCalendarHebrewDateSingleLine.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      this.EditCalendarHebrewDateSingleLine.CheckedChanged += new System.EventHandler(this.EditCalendarHebrewDateSingleLine_CheckedChanged);
       // 
       // EditCalendarUseHoverEffect
       // 
@@ -3178,6 +3180,13 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
+      // EditCalendarHebrewDateSingleLineItalic
+      // 
+      resources.ApplyResources(this.EditCalendarHebrewDateSingleLineItalic, "EditCalendarHebrewDateSingleLineItalic");
+      this.EditCalendarHebrewDateSingleLineItalic.Name = "EditCalendarHebrewDateSingleLineItalic";
+      this.EditCalendarHebrewDateSingleLineItalic.UseVisualStyleBackColor = true;
+      this.EditCalendarHebrewDateSingleLineItalic.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -3603,5 +3612,6 @@
     private NumericUpDown EditMonthViewSeparatorSize;
     private Label label10;
     private CheckBox EditMonthViewSeparatorForCelebrationAndParashah;
-  }
+        private CheckBox EditCalendarHebrewDateSingleLineItalic;
+    }
 }
