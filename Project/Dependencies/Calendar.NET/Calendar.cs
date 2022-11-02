@@ -7,6 +7,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Calendar;
+using Ordisoftware.Hebrew.Calendar.Properties;
 
 namespace CodeProjectCalendar.NET
 {
@@ -67,8 +68,6 @@ namespace CodeProjectCalendar.NET
     private readonly ScrollPanel _scrollPanel;
 
     // ORDISOFTWARE MODIF BEGIN
-    static public StringAlignment EventAlignment { get; set; }
-    static public bool EventAlignmentOnlyForTorah { get; set; }
     public List<IEvent> TheEvents { get; }
     internal List<CalendarEvent> CalendarEvents { get; }
 
@@ -659,99 +658,101 @@ namespace CodeProjectCalendar.NET
 
     private void PresetHolidays()
     {
-      var aprilFools = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 4, 1),
-        RecurringFrequency = RecurringFrequencies.Yearly,
-        EventText = "April Fools Day"
-      };
-      AddEvent(aprilFools);
+      // ORDISOFTWARE MODIF BEGIN
+      //var aprilFools = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 4, 1),
+      //  RecurringFrequency = RecurringFrequencies.Yearly,
+      //  EventText = "April Fools Day"
+      //};
+      //AddEvent(aprilFools);
 
-      var memorialDay = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 5, 28),
-        RecurringFrequency = RecurringFrequencies.Custom,
-        EventText = "Memorial Day",
-        CustomRecurringFunction = MemorialDayHandler
-      };
-      AddEvent(memorialDay);
+      //var memorialDay = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 5, 28),
+      //  RecurringFrequency = RecurringFrequencies.Custom,
+      //  EventText = "Memorial Day",
+      //  CustomRecurringFunction = MemorialDayHandler
+      //};
+      //AddEvent(memorialDay);
 
-      var newYears = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 1, 1),
-        RecurringFrequency = RecurringFrequencies.Yearly,
-        EventText = "New Years Day"
-      };
-      AddEvent(newYears);
+      //var newYears = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 1, 1),
+      //  RecurringFrequency = RecurringFrequencies.Yearly,
+      //  EventText = "New Years Day"
+      //};
+      //AddEvent(newYears);
 
-      var mlkDay = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 1, 15),
-        RecurringFrequency = RecurringFrequencies.Custom,
-        EventText = "Martin Luther King Jr. Day",
-        CustomRecurringFunction = MlkDayHandler
-      };
-      AddEvent(mlkDay);
+      //var mlkDay = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 1, 15),
+      //  RecurringFrequency = RecurringFrequencies.Custom,
+      //  EventText = "Martin Luther King Jr. Day",
+      //  CustomRecurringFunction = MlkDayHandler
+      //};
+      //AddEvent(mlkDay);
 
-      var presidentsDay = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 2, 15),
-        RecurringFrequency = RecurringFrequencies.Custom,
-        EventText = "President's Day",
-        CustomRecurringFunction = MlkDayHandler
-      };
-      AddEvent(presidentsDay);
+      //var presidentsDay = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 2, 15),
+      //  RecurringFrequency = RecurringFrequencies.Custom,
+      //  EventText = "President's Day",
+      //  CustomRecurringFunction = MlkDayHandler
+      //};
+      //AddEvent(presidentsDay);
 
-      var independanceDay = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 7, 4),
-        RecurringFrequency = RecurringFrequencies.Yearly,
-        EventText = "Independence Day"
-      };
-      AddEvent(independanceDay);
+      //var independanceDay = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 7, 4),
+      //  RecurringFrequency = RecurringFrequencies.Yearly,
+      //  EventText = "Independence Day"
+      //};
+      //AddEvent(independanceDay);
 
-      var laborDay = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 9, 1),
-        RecurringFrequency = RecurringFrequencies.Custom,
-        EventText = "Labor Day",
-        CustomRecurringFunction = LaborDayHandler
-      };
-      AddEvent(laborDay);
+      //var laborDay = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 9, 1),
+      //  RecurringFrequency = RecurringFrequencies.Custom,
+      //  EventText = "Labor Day",
+      //  CustomRecurringFunction = LaborDayHandler
+      //};
+      //AddEvent(laborDay);
 
-      var columbusDay = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 10, 14),
-        RecurringFrequency = RecurringFrequencies.Custom,
-        EventText = "Columbus Day",
-        CustomRecurringFunction = ColumbusDayHandler
-      };
-      AddEvent(columbusDay);
+      //var columbusDay = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 10, 14),
+      //  RecurringFrequency = RecurringFrequencies.Custom,
+      //  EventText = "Columbus Day",
+      //  CustomRecurringFunction = ColumbusDayHandler
+      //};
+      //AddEvent(columbusDay);
 
-      var veteransDay = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 11, 11),
-        RecurringFrequency = RecurringFrequencies.Yearly,
-        EventText = "Veteran's Day"
-      };
-      AddEvent(veteransDay);
+      //var veteransDay = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 11, 11),
+      //  RecurringFrequency = RecurringFrequencies.Yearly,
+      //  EventText = "Veteran's Day"
+      //};
+      //AddEvent(veteransDay);
 
-      var thanksgivingDay = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 11, 11),
-        RecurringFrequency = RecurringFrequencies.Custom,
-        EventText = "Thanksgiving Day",
-        CustomRecurringFunction = ThanksgivingDayHandler
-      };
-      AddEvent(thanksgivingDay);
+      //var thanksgivingDay = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 11, 11),
+      //  RecurringFrequency = RecurringFrequencies.Custom,
+      //  EventText = "Thanksgiving Day",
+      //  CustomRecurringFunction = ThanksgivingDayHandler
+      //};
+      //AddEvent(thanksgivingDay);
 
-      var christmas = new HolidayEvent
-      {
-        Date = new DateTime(DateTime.Now.Year, 12, 25),
-        RecurringFrequency = RecurringFrequencies.Yearly,
-        EventText = "Christmas Day"
-      };
-      AddEvent(christmas);
+      //var christmas = new HolidayEvent
+      //{
+      //  Date = new DateTime(DateTime.Now.Year, 12, 25),
+      //  RecurringFrequency = RecurringFrequencies.Yearly,
+      //  EventText = "Christmas Day"
+      //};
+      //AddEvent(christmas);
+      // ORDISOFTWARE MODIF END
     }
 
     [CustomRecurring("Thanksgiving Day Handler", "Selects the fourth Thursday in the month")]
@@ -819,6 +820,7 @@ namespace CodeProjectCalendar.NET
 
     internal Bitmap RequestImage()
     {
+      ;
       const int cellHourWidth = 60;
       const int cellHourHeight = 30;
       var bmp = new Bitmap(ClientSize.Width, cellHourWidth * 24);
@@ -945,8 +947,10 @@ namespace CodeProjectCalendar.NET
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
       // ORDISOFWTARE MODIF BEGIN
-      var eventStringFormat = new StringFormat();
-      eventStringFormat.Alignment = EventAlignment;
+      int separatorsize = Program.Settings.MonthViewSeparatorSize;
+      int linespacing = Program.Settings.CalendarLineSpacing;
+      var eventStringFormat = new StringFormat() { Alignment = Program.Settings.MonthViewEventsAlignment };
+      var eventAlignmentOnlyForTorah = Program.Settings.MonthViewEventsAlignmentOnlyForTorah;
       var today = DateTime.Today;
       string monthText = _calendarDate.ToString("MMMM").Titleize();
       if ( isPrinting )
@@ -1316,24 +1320,31 @@ namespace CodeProjectCalendar.NET
 
       // ORDISOFTWARE MODIF BEGIN
       //_events.Sort(new EventComparer());
-      // ORDISOFTWARE MODIF END
       for ( int i = 1; i <= daysinmonth; i++ )
       {
-        int renderOffsetY = -3 + Program.Settings.CalendarLineSpacing;
+        int renderOffsetY = -3 + linespacing;
 
-        // ORDISOFTWARE MODIF BEGIN
         //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
         var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
         var list = TheEvents.Where(ev => ev.Date == dt /*&& ( ev.Enabled || _showDisabledEvents )*/).ToArray();
         int countEvents = list.Length;
         int countEventsPrev = list.Length - 1;
         if ( countEvents == 0 ) continue;
-        int deltaLine = -5 + Program.Settings.CalendarLineSpacing;
-        SizeF sz = g.MeasureString(list[0].EventText, list[0].EventFont);
+        int deltaLine = -5 + linespacing;
+        var sample = list.FirstOrDefault(e => !e.EventText.IsNullOrEmpty());
+        if ( sample is null ) continue;
+        SizeF sz = g.MeasureString(sample.EventText, sample.EventFont);
         for ( int index = 0; index < countEvents; index++ )
         //foreach ( IEvent v in _events )
         {
           var v = (CustomEvent)list[index];
+
+          if ( v.IsSeparator )
+          {
+            renderOffsetY += separatorsize;
+            continue;
+          }
+
           if ( DayForward(v, dt) )
           //if ( NeedsRendering(v, dt) )
           {
@@ -1366,10 +1377,13 @@ namespace CodeProjectCalendar.NET
               g.DrawRectangle(PenBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
 
             var rect = new Rectangle(xx, yy + offsetY, cellWidth - 2 - 5, (int)( sz.Height - 1 ));
-            if ( !EventAlignmentOnlyForTorah || v.IsParashah )
+            if ( !eventAlignmentOnlyForTorah || v.IsTorah )
               g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormat);
             else
               g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect);
+
+            if ( v.IsHebrew ) renderOffsetY += 2;
+
             g.Clip = r;
 
             /*if ( generateSunToolTips )
@@ -1383,11 +1397,10 @@ namespace CodeProjectCalendar.NET
               _calendarEvents.Add(ev);
             }*/
             renderOffsetY += (int)sz.Height + deltaLine;
-            if ( v.IsHebrew ) renderOffsetY += 2;
           }
         }
-        // ORDISOFTWARE MODIF END
       }
+      // ORDISOFTWARE MODIF END
 
       _rectangles.Clear();
       g.Dispose();

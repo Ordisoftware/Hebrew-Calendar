@@ -24,6 +24,6 @@ class CalendarDateItem
   public MoonPhase MoonPhase { get; set; }
   public SeasonChange TorahSeasonChange { get; set; }
   public SeasonChange RealSeasonChange { get; set; }
-  public SunAndMoonRiseAndSet Ephemerisis { get; set; }
+  public SunAndMoonRiseAndSet Ephemeris { get; set; }
   public override string ToString() => SQLiteDate.ToString(Date);
 }

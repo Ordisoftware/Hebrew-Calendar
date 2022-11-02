@@ -20,6 +20,7 @@ partial class HebrewDatabase : SQLiteDatabase
   static public HebrewDatabase Instance { get; protected set; }
 
   static public bool HebrewNamesInUnicode { get; set; }
+  static public bool ArabicNumeralReferences { get; set; }
 
   static HebrewDatabase()
   {
@@ -80,6 +81,13 @@ partial class HebrewDatabase : SQLiteDatabase
     const string table = "ProcessLocks";
     if ( Connection.CheckTable(table) && Globals.ConcurrentRunningProcesses.Any() )
       Connection.DropTableIfExists(table);
+
+    // TODO URGENT reconstruct parashot
+    // versebegin -> ChapterAndVerseBegin
+    // verseend -> ChapterAndVerseEnd
+    // and split in ChapterBegin ChapterEnd VerseBegin VerseEnd
+    // or remove columns and use factory
+
   }
 
 }

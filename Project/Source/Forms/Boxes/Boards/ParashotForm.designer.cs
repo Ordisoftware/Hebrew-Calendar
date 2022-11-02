@@ -580,7 +580,7 @@
       // ColumnBegin
       // 
       this.ColumnBegin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnBegin.DataPropertyName = "VerseBegin";
+      this.ColumnBegin.DataPropertyName = "ChapterAndVerseBegin";
       dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       this.ColumnBegin.DefaultCellStyle = dataGridViewCellStyle5;
       resources.ApplyResources(this.ColumnBegin, "ColumnBegin");
@@ -592,7 +592,7 @@
       // ColumnEnd
       // 
       this.ColumnEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-      this.ColumnEnd.DataPropertyName = "VerseEnd";
+      this.ColumnEnd.DataPropertyName = "ChapterAndVerseEnd";
       dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
       this.ColumnEnd.DefaultCellStyle = dataGridViewCellStyle6;
       resources.ApplyResources(this.ColumnEnd, "ColumnEnd");

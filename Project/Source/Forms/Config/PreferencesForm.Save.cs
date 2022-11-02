@@ -134,8 +134,13 @@ partial class PreferencesForm
     Settings.CalendarHebrewDateSingleLine = EditCalendarHebrewDateSingleLine.Checked;
     Settings.CalendarParashahWithBookAndFullRef = EditCalendarParashahWithBookAndRef.Checked;
     Settings.HebrewNamesInUnicode = EditHebrewNamesInUnicode.Checked;
+    Settings.HebrewInUnicodeKeepArabicNumerals = EditHebrewInUnicodeKeepArabicNumerals.Checked;
     Settings.MonthViewEventsAlignment = (StringAlignment)SelectMonthViewEventsAlignment.SelectedIndex;
     Settings.MonthViewEventsAlignmentOnlyForTorah = EditMonthViewEventsAlignmentOnlyForParashah.Checked;
+    Settings.MonthViewSeparatorForLunarDate = EditMonthViewSeparatorForLunarDate.Checked;
+    Settings.MonthViewSeparatorForEphemeris = EditMonthViewSeparatorForEphemeris.Checked;
+    Settings.MonthViewSeparatorForCelebrationAndParashah = EditMonthViewSeparatorForCelebrationAndParashah.Checked;
+    Settings.MonthViewSeparatorSize = (int)EditMonthViewSeparatorSize.Value;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;
@@ -143,6 +148,7 @@ partial class PreferencesForm
     NavigationForm.Instance.Relocalize();
     // Monthly view
     Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
+    Settings.MonthViewHebrewFontSize = (int)EditMonthViewHebrewFontSize.Value;
     // Shabat
     Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
     // Reminder boxes location

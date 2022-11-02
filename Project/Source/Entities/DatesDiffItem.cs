@@ -73,7 +73,7 @@ class DatesDiffItem
       MoonYears = 1;
       if ( DateStart.Day == 1 ) SolarMonths = 0;
       if ( DateStart.Month == 1 && DateStart.Day == 1 ) SolarYears = 0;
-      if ( data.MoonDay == 1 && data.Ephemerisis.Moonrise is not null ) LunarMonths = 0;
+      if ( data.MoonDay == 1 && data.Ephemeris.Moonrise is not null ) LunarMonths = 0;
       if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears = 0;
       for ( DateTime index = DateStart; index <= DateEnd; index = index.AddDays(1) )
       {
@@ -81,7 +81,7 @@ class DatesDiffItem
         data = CalendarDates.Instance[index];
         if ( index.Day == 1 ) SolarMonths++;
         if ( index.Month == 1 && index.Day == 1 ) SolarYears++;
-        if ( data.Ephemerisis.Moonrise is null ) continue;
+        if ( data.Ephemeris.Moonrise is null ) continue;
         MoonDays++;
         if ( data.MoonDay == 1 ) LunarMonths++;
         if ( data.TorahSeasonChange == SeasonChange.SpringEquinox ) MoonYears++;

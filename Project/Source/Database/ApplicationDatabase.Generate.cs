@@ -125,14 +125,14 @@ partial class ApplicationDatabase
     try
     {
       var data = CalendarDates.Instance[day.Date];
-      var ephemeris = data.Ephemerisis;
+      var ephemeris = data.Ephemeris;
       if ( IsMoonriseDelayed )
       {
         ephemeris.Moonrise = DelayMoonrise;
         IsMoonriseDelayed = false;
       }
       else
-      if ( CalendarDates.Instance[day.Date.AddDays(1)].Ephemerisis.Moonrise is null )
+      if ( CalendarDates.Instance[day.Date.AddDays(1)].Ephemeris.Moonrise is null )
         if ( ephemeris.Moonrise == new TimeSpan(0) )
         {
           DelayMoonrise = ephemeris.Moonrise;
