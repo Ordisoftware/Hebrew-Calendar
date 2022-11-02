@@ -65,6 +65,7 @@ partial class PreferencesForm
     EditLogEnabled_CheckedChanged(null, null);
     EditCalendarShowParashah_Changed(null, null);
     EditHebrewNamesInUnicode_CheckedChanged(null, null);
+    EditCalendarHebrewDateSingleLine_CheckedChanged(null, null);
     ActiveControl = ActionClose;
     ActionResetSettings.TabStop = false;
     IsReady = true;
