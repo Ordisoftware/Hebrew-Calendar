@@ -86,8 +86,8 @@ partial class ReminderForm : Form
       };
       var date = row.Date;
       form.LabelTitle.Text = isShabat
-        ? AppTranslations.Shabat.GetLang()
-        : AppTranslations.GetCelebrationDisplayText(celebration == TorahCelebrationDay.None
+        ? HebrewTranslations.Shabat
+        : AppTranslations.GetCelebrationDayDisplayText(celebration == TorahCelebrationDay.None
           ? row.TorahEvent
           : celebration);
       form.LabelDate.Text = isShabat

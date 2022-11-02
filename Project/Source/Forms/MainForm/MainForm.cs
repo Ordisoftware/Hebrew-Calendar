@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -217,11 +217,11 @@ partial class MainForm : Form
     {
       if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
       {
-        // TODO refactor un UpdateUI and do a clean formatting with gregorian date before hebrew
-        var text = Text.IndexOf('(') > 0
+        // TODO refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
+        var text = Text.IndexOf('(') >= 0
           ? new string(Text.ToCharArray().TakeWhile(c => c != '(').ToArray())
           : Text;
-        var lines = text.Replace(Parashah.DisplayName + " ", "").SplitNoEmptyLines(" - ").ToList();
+        var lines = text.Replace(HebrewTranslations.Parashah + " ", "").SplitNoEmptyLines(" - ").ToList();
         if ( lines.Count >= 3 )
         {
           lines.Insert(2, DateTime.Today.ToShortDateString());

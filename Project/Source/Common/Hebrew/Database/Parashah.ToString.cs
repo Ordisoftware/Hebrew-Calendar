@@ -17,16 +17,12 @@ namespace Ordisoftware.Hebrew;
 public partial class Parashah
 {
 
-  static public string DisplayName => HebrewDatabase.HebrewNamesInUnicode ? "פרשה" : "Parashah";
-
-  static public string ShabatDisplayName => HebrewDatabase.HebrewNamesInUnicode ? "שבת" : "Shabat";
-
-  public string GetDisplayText() => HebrewDatabase.HebrewNamesInUnicode ? Unicode : Name;
+  public string GetNameDisplayText() => HebrewDatabase.HebrewNamesInUnicode ? Unicode : Name;
 
   public string ToStringShort(bool withBookAndref, bool withLinked)
   {
-    string result = GetDisplayText();
-    if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().GetDisplayText() : string.Empty;
+    string result = GetNameDisplayText();
+    if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().GetNameDisplayText() : string.Empty;
     if ( withBookAndref )
       result += $" ({ToStringBookAndReferences()})";
     return result;

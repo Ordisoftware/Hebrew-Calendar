@@ -184,4 +184,19 @@ static partial class HebrewTranslations
        ? UnicodeCelebrations[celebration]
        : TorahCelebrations[celebration].GetLang();
 
+  static public string GetLunarMonthDisplayText(int month)
+    => HebrewDatabase.HebrewNamesInUnicode
+     ? HebrewMonths.Unicode[month]
+     : HebrewMonths.Transcriptions.GetLang()[month];
+
+  static public string Shabat
+    => HebrewDatabase.HebrewNamesInUnicode
+       ? "שבת"
+       : "Shabat";
+
+  static public string Parashah
+    => HebrewDatabase.HebrewNamesInUnicode
+       ? "פרשה"
+       : "Parashah";
+
 }
