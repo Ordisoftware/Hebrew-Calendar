@@ -106,8 +106,7 @@ static class SettingsHelper
       EditMemoForm.LastLocation = settings.EditMemoFormLastLocation;
       EditMemoForm.LastSize = settings.EditMemoFormLastSize;
       HebrewDatabase.HebrewNamesInUnicode = settings.HebrewNamesInUnicode;
-      CodeProjectCalendar.NET.Calendar.EventAlignment = settings.MonthViewEventsAlignment;
-      CodeProjectCalendar.NET.Calendar.EventAlignmentOnlyForTorah = settings.MonthViewEventsAlignmentOnlyForTorah;
+      HebrewDatabase.ArabicNumeralReferences = settings.HebrewInUnicodeKeepArabicNumerals;
       //
       if ( settings.AutoOpenExportedFile && settings.AutoOpenExportFolder )
         settings.AutoOpenExportFolder = false;
@@ -155,8 +154,7 @@ static class SettingsHelper
       settings.EditMemoFormLastLocation = EditMemoForm.LastLocation;
       settings.EditMemoFormLastSize = EditMemoForm.LastSize;
       HebrewDatabase.HebrewNamesInUnicode = settings.HebrewNamesInUnicode;
-      CodeProjectCalendar.NET.Calendar.EventAlignment = settings.MonthViewEventsAlignment;
-      CodeProjectCalendar.NET.Calendar.EventAlignmentOnlyForTorah = settings.MonthViewEventsAlignmentOnlyForTorah;
+      HebrewDatabase.ArabicNumeralReferences = settings.HebrewInUnicodeKeepArabicNumerals;
       SystemManager.TryCatch(settings.Save);
     }
     finally

@@ -2960,5 +2960,89 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["MonthViewEventsAlignmentOnlyForTorah"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool HebrewInUnicodeKeepArabicNumerals {
+            get {
+                return ((bool)(this["HebrewInUnicodeKeepArabicNumerals"]));
+            }
+            set {
+                this["HebrewInUnicodeKeepArabicNumerals"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("11")]
+        public int MonthViewHebrewFontSize {
+            get {
+                return ((int)(this["MonthViewHebrewFontSize"]));
+            }
+            set {
+                this["MonthViewHebrewFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSeparatorForLunarDate {
+            get {
+                return ((bool)(this["MonthViewSeparatorForLunarDate"]));
+            }
+            set {
+                this["MonthViewSeparatorForLunarDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSeparatorForEphemeris {
+            get {
+                return ((bool)(this["MonthViewSeparatorForEphemeris"]));
+            }
+            set {
+                this["MonthViewSeparatorForEphemeris"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int MonthViewSeparatorSize {
+            get {
+                return ((int)(this["MonthViewSeparatorSize"]));
+            }
+            set {
+                this["MonthViewSeparatorSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSeparatorForCelebrationAndParashah {
+            get {
+                return ((bool)(this["MonthViewSeparatorForCelebrationAndParashah"]));
+            }
+            set {
+                this["MonthViewSeparatorForCelebrationAndParashah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CalendarHebrewDateSingleLineItalic {
+            get {
+                return ((bool)(this["CalendarHebrewDateSingleLineItalic"]));
+            }
+            set {
+                this["CalendarHebrewDateSingleLineItalic"] = value;
+            }
+        }
     }
 }

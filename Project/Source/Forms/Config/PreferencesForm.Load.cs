@@ -129,12 +129,19 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditUseTwoDaysForLastPessahDayOutside.Checked = Settings.UseTwoDaysForLastPessahDayOutside);
     SystemManager.TryCatch(() => EditReminderBoxRetakeFocusAfterDateClick.Checked = Settings.BoxesRetakeFocusAfterDateClick);
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLine.Checked = Settings.CalendarHebrewDateSingleLine);
+    SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLineItalic.Checked = Settings.CalendarHebrewDateSingleLineItalic);
     SystemManager.TryCatch(() => EditCalendarParashahWithBookAndRef.Checked = Settings.CalendarParashahWithBookAndFullRef);
     SystemManager.TryCatch(() => EditHebrewNamesInUnicode.Checked = Settings.HebrewNamesInUnicode);
+    SystemManager.TryCatch(() => EditHebrewInUnicodeKeepArabicNumerals.Checked = Settings.HebrewInUnicodeKeepArabicNumerals);
     SystemManager.TryCatch(() => SelectMonthViewEventsAlignment.SelectedIndex = (int)Settings.MonthViewEventsAlignment);
     SystemManager.TryCatch(() => EditMonthViewEventsAlignmentOnlyForParashah.Checked = Settings.MonthViewEventsAlignmentOnlyForTorah);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForLunarDate.Checked = Settings.MonthViewSeparatorForLunarDate);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForEphemeris.Checked = Settings.MonthViewSeparatorForEphemeris);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForCelebrationAndParashah.Checked = Settings.MonthViewSeparatorForCelebrationAndParashah);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorSize.Value = Settings.MonthViewSeparatorSize);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewFontSize.Value = Settings.MonthViewFontSize);
+    SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);
     SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);
     SystemManager.TryCatch(() => EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay);
     // Special

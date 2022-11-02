@@ -99,6 +99,11 @@ partial class PreferencesForm : Form
     IsReady = false;
   }
 
+  private void SetMustRefreshEnabled(object sender, EventArgs e)
+  {
+    if ( IsReady ) MustRefreshMonthView = true;
+  }
+
   #endregion
 
   #region Export and import
@@ -257,6 +262,11 @@ partial class PreferencesForm : Form
     LoadingForm.Instance.Hidden = EditLoadingFormHidden.Checked;
   }
 
+  private void EditHebrewNamesInUnicode_CheckedChanged(object sender, EventArgs e)
+  {
+    EditHebrewInUnicodeKeepArabicNumerals.Enabled = EditHebrewNamesInUnicode.Checked;
+  }
+
   #endregion
 
   #region Startup
@@ -410,7 +420,7 @@ partial class PreferencesForm : Form
     var date = DateTime.Today; // TODO use saved birthday
     if ( !SelectDayForm.Run(AppTranslations.SelectBirthday.GetLang(), ref date) ) return;
     if ( !SelectBirthTimeForm.Run(out var time) ) return;
-    if ( time >= new TimeSpan(0, 0, 0) && time < CalendarDates.Instance[date].Ephemerisis.Sunset )
+    if ( time >= new TimeSpan(0, 0, 0) && time < CalendarDates.Instance[date].Ephemeris.Sunset )
       date = date.AddDays(-1);
     Settings.ShabatDay = (int)date.DayOfWeek;
     foreach ( DayOfWeekItem day in EditShabatDay.Items )
@@ -478,18 +488,13 @@ partial class PreferencesForm : Form
 
   private void EditCalendarShowParashah_Changed(object sender, EventArgs e)
   {
-    if ( IsReady ) MustRefreshMonthView = true;
+    SetMustRefreshEnabled(null, null);
     EditMainFormTitleBarShowWeeklyParashah.Enabled = EditCalendarShowParashah.Checked;
     EditParashahCaptionWithBookAndRef.Enabled = EditCalendarShowParashah.Checked;
     EditReminderShabatShowParashah.Enabled = EditCalendarShowParashah.Checked;
     EditWeeklyParashahShowAtStartup.Enabled = EditCalendarShowParashah.Checked;
     EditWeeklyParashahShowAtNewWeek.Enabled = EditCalendarShowParashah.Checked;
     EditCalendarParashahWithBookAndRef.Enabled = EditCalendarShowParashah.Checked;
-  }
-
-  private void EditCalendarParashahWithBook_CheckedChanged(object sender, EventArgs e)
-  {
-    if ( IsReady ) MustRefreshMonthView = true;
   }
 
   #endregion
@@ -529,11 +534,6 @@ partial class PreferencesForm : Form
     EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem )?.Tag;
   }
 
-  private void EditMonthViewOption_Changed(object sender, EventArgs e)
-  {
-    if ( IsReady ) MustRefreshMonthView = true;
-  }
-
   private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
   {
     MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
@@ -542,7 +542,7 @@ partial class PreferencesForm : Form
 
   private void EditUseColors_CheckedChanged(object sender, EventArgs e)
   {
-    if ( IsReady ) MustRefreshMonthView = true;
+    SetMustRefreshEnabled(null, null);
     PanelCalendarColors.Enabled = EditUseColors.Checked;
     EditSelectedDayBoxColorOnlyCurrent.Enabled = EditUseColors.Checked;
   }
@@ -574,6 +574,12 @@ partial class PreferencesForm : Form
   private void ActionSaveTheme_Click(object sender, EventArgs e)
   {
     SaveTheme();
+  }
+
+  private void EditCalendarHebrewDateSingleLine_CheckedChanged(object sender, EventArgs e)
+  {
+    SetMustRefreshEnabled(null, null);
+    EditCalendarHebrewDateSingleLineItalic.Enabled = EditCalendarHebrewDateSingleLine.Checked;
   }
 
   #endregion

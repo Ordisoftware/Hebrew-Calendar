@@ -13,7 +13,8 @@ namespace CodeProjectCalendar.NET
     // ORDISOFTWARE MODIF BEGIN
     public string ToolTipText { get; set; }
     public bool IsHebrew { get; set; }
-    public bool IsParashah { get; set; }
+    public bool IsTorah { get; set; }
+    public bool IsSeparator { get; set; }
     // ORDISOFTWARE MODIF END
 
     public int Rank

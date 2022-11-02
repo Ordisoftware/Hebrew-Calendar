@@ -65,7 +65,7 @@ class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
         Date = key,
         MoonDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(key),
         MoonPhase = key.GetMoonPhase(),
-        Ephemerisis = key.GetSunMoonEphemeris()
+        Ephemeris = key.GetSunMoonEphemeris()
       };
       if ( !TorahSeasons.ContainsKey(key.Year) )
         InitializeSeasons(key.Year);

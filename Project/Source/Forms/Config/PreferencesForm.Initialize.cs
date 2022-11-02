@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Text;
@@ -64,6 +64,7 @@ partial class PreferencesForm
     EditUseColors_CheckedChanged(null, null);
     EditLogEnabled_CheckedChanged(null, null);
     EditCalendarShowParashah_Changed(null, null);
+    EditHebrewNamesInUnicode_CheckedChanged(null, null);
     ActiveControl = ActionClose;
     ActionResetSettings.TabStop = false;
     IsReady = true;
@@ -150,6 +151,7 @@ partial class PreferencesForm
   {
     InitializeNumericInterval(EditTextReportFontSize, LabelTextReportFontSizeInterval, TextReportFontSizeInterval);
     InitializeNumericInterval(EditMonthViewFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
+    InitializeNumericInterval(EditMonthViewHebrewFontSize, LabelMonthViewHebrewFontSizeInterval, VisualMonthFontSizeInterval);
     InitializeNumericInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
     InitializeNumericInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
     InitializeNumericInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
