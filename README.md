@@ -385,7 +385,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Changelog
 
-#### In progress - Version 10.0
+#### TO DO Next
 
 >- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 >- Add command-line option `--lunarmonths` to show the lunar months board.
@@ -398,26 +398,30 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
 
-#### In progress - Version 9.35
+#### TO DO - Version 10.1
 
 >- Add option to display only omer ephemeris or sun and moon the same time in the monthly view
 >- Add option to choose font type in the monthly view.
 >- Check and fix weekly parashah generation with soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
-#### In progress - Version 9.34
+#### In progress - Version 10.0
 
-- Add the end verse of parashah when displaying the beginning one
+- Rename Adar II in VeAdar.
+- Add the ending verse of parashah when displaying the beginning one
 - Add option to have the Hebrew date on a single line before the ephemeris in the monthly view.
 - Add option to display book name and references of parashah in the monthly view.
 - Add option to display Hebrew names in Unicode or Latin transcription.
+- Add option to keep Arabic numerals when using display Hebrew names in Unicode.
+- Add option to set font size for Hebrew in Unicode chars.
 - Add option to set events text alignment in the monthly view.
-- Rename Adar II in VeAdar.
+- Add option to insert separator between lunar date, ephemeris, celebration and parashah.
 - Fix display ending verse of the parashah to indicate that of the linked if applicable.
 - Fix parashah description box to have the linked parashah name in the title bar.
 - Fix Hebrew date template for the monthly view that is capitalized on rendering.
 - Fix screen location of the show "new in version" box when app starts minimized.
-- Fix auto web check update shows some error message (must not).
+- Fix auto web check update shows some error message and must not.
+- Some fixes and improvements.
 
 #### 2022.09.25 - Version 9.33
 
