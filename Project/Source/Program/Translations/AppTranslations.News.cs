@@ -47,11 +47,19 @@ static partial class AppTranslations
 
     ["10.0"] = new TranslationsDictionary
     {
-      [Language.EN] = "" + Globals.NL +
-                      "",
+      [Language.EN] = "• Adar II was renamed in VeAdar." + Globals.NL +
+                      "• Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections." + Globals.NL +
+                      "• Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode." + Globals.NL +
+                      "• Some fixes and improvements." + Globals.NL +
+                      "• Optimized code." + Globals.NL +
+                      "• Updated web links.",
 
-      [Language.FR] = "" + Globals.NL +
-                      ""
+      [Language.FR] = "• Adar II a été renommé en VeAdar." + Globals.NL +
+                      "• Ajout d'options pour la disposition des données dans la vue mensuelle : pour mettre la date lunaire sur une seule ligne avant les éphémérides, pour afficher le nom du livre avec les références de la parashah, pour définir l'alignement du texte et pour insérer un séparateur entre les sections." + Globals.NL +
+                      "• Ajout d'options pour afficher les noms hébreux en caractères Unicode ou en transcription latine, et pour conserver les chiffres arabes en cas d'Unicode." + Globals.NL +
+                      "• Quelques correctifs et améliorations." + Globals.NL +
+                      "• Code optimisé." + Globals.NL +
+                      "• Mise à jour des liens Web."
     },
 
     ["9.33"] = new TranslationsDictionary

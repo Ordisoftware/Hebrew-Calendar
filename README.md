@@ -76,7 +76,6 @@ A libre and open-source software written in C# that allows to generate a calenda
 **What's new in the latest version 10**
 
 - Adar II was renamed in VeAdar.
-- Added the ending verse of parashah when displaying the beginning one
 - Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
 - Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
 - Some fixes and improvements.
