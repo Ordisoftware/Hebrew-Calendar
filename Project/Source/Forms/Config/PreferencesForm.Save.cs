@@ -148,6 +148,8 @@ partial class PreferencesForm
     // Navigation window
     NavigationForm.Instance.Relocalize();
     // Monthly view
+    Settings.MonthViewFontNameLatin = SelectMonthViewFontNameLatin.Text;
+    Settings.MonthViewFontNameHebrew = SelectMonthViewFontNameHebrew.Text;
     Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
     Settings.MonthViewHebrewFontSize = (int)EditMonthViewHebrewFontSize.Value;
     // Shabat

@@ -758,5 +758,11 @@
     <Setting Name="CalendarHebrewDateSingleLineItalic" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="MonthViewFontNameLatin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Calibri</Value>
+    </Setting>
+    <Setting Name="MonthViewFontNameHebrew" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Calibri</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
