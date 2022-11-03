@@ -56,7 +56,7 @@ partial class MainForm
         string strMoonriseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccurings);
         string strPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhases);
         string strSeason = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges);
-        string strEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahCelebrationDays);
+        string strEvent = day.TorahEvent.ToStringExport(AppTranslations.CelebrationDays);
         result.Append(strMoonriseType).Append(csvSeparator);
         result.Append(strPhase).Append(csvSeparator);
         result.Append(strSeason).Append(csvSeparator);

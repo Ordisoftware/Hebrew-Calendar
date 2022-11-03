@@ -233,7 +233,7 @@ partial class CelebrationsBoardForm : Form
     Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
     foreach ( var value in TorahCelebrationSettings.ManagedEvents )
     {
-      name = value.ToStringExport(AppTranslations.TorahCelebrationDays, EditEnglishTitles.Checked);
+      name = value.ToStringExport(AppTranslations.CelebrationDays, EditEnglishTitles.Checked);
       if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
       Board.Columns.Add(name, typeof(DateTime));
     }
