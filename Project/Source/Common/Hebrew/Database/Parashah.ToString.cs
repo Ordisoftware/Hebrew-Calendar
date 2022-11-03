@@ -37,14 +37,14 @@ public partial class Parashah
 
   public string ToStringReferenceBegin()
   {
-    return HebrewDatabase.ArabicNumeralReferences
+    return !HebrewDatabase.HebrewNamesInUnicode || HebrewDatabase.ArabicNumeralReferences
       ? ReferenceBegin
       : $"{HebrewAlphabet.IntToUnicode(FirstChapter)}.{HebrewAlphabet.IntToUnicode(FirstVerse)}";
   }
 
   public string ToStringReferenceEnd()
   {
-    if ( HebrewDatabase.ArabicNumeralReferences )
+    if ( !HebrewDatabase.HebrewNamesInUnicode || HebrewDatabase.ArabicNumeralReferences )
       return IsLinkedToNext ? GetLinked().ReferenceEnd : ReferenceEnd;
     else
     {

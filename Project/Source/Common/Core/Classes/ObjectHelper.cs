@@ -21,7 +21,7 @@ static class ObjectHelper
 {
 
   /// <summary>
-  /// Gets an IEnumerable<typeparamref name="ListViewItem"/> from a ListView.ListViewItemCollection collection.
+  /// Gets an IEnumerable&lt;ListViewItem&gt; from a ListView.ListViewItemCollection collection.
   /// </summary>
   /// <param name="collection">The collection.</param>
   static public IEnumerable<ListViewItem> AsIEnumerable(this ListView.ListViewItemCollection collection)

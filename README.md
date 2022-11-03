@@ -391,7 +391,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Add option to display only omer ephemeris or sun and moon the same time in the monthly view
 >- Add option to choose font type in the monthly view.
 
-#### In progress - Version 10.0
+#### 2022.11.03 - Version 10.0
 
 - Rename Adar II in VeAdar.
 - Add solar day in search a gregorian date box.
