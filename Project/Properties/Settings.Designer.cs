@@ -3044,5 +3044,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["CalendarHebrewDateSingleLineItalic"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Calibri")]
+        public string MonthViewFontNameLatin {
+            get {
+                return ((string)(this["MonthViewFontNameLatin"]));
+            }
+            set {
+                this["MonthViewFontNameLatin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Calibri")]
+        public string MonthViewFontNameHebrew {
+            get {
+                return ((string)(this["MonthViewFontNameHebrew"]));
+            }
+            set {
+                this["MonthViewFontNameHebrew"] = value;
+            }
+        }
     }
 }

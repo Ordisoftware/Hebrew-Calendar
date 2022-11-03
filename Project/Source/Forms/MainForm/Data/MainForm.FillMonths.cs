@@ -109,9 +109,9 @@ partial class MainForm
       bool isCelebrationWeekEnd = false;
       if ( LunisolarDays.Count == 0 ) return;
       DayBrushes = new Brush[YearsInterval, 13, 35];
-      var fontEventHebrew = new Font("Calibri", Settings.MonthViewHebrewFontSize);
-      var fontEventNoItalic = new Font("Calibri", Settings.MonthViewFontSize);
-      var fontEventItalic = new Font("Calibri", Settings.MonthViewFontSize, FontStyle.Italic);
+      var fontEventHebrew = new Font(Settings.MonthViewFontNameHebrew, Settings.MonthViewHebrewFontSize);
+      var fontEventNoItalic = new Font(Settings.MonthViewFontNameLatin, Settings.MonthViewFontSize);
+      var fontEventItalic = new Font(Settings.MonthViewFontNameLatin, Settings.MonthViewFontSize, FontStyle.Italic);
       var fontEvent = fontEventNoItalic;
       string strRise = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise);
       string strSet = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set);

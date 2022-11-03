@@ -582,6 +582,22 @@ partial class PreferencesForm : Form
     EditCalendarHebrewDateSingleLineItalic.Enabled = EditCalendarHebrewDateSingleLine.Checked;
   }
 
+  private void SelectMonthViewFontNameLatin_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    LabelMonthViewFontNameLatinSample.Font = new Font(SelectMonthViewFontNameLatin.Text,
+                                                      LabelMonthViewFontNameLatinSample.Font.Size);
+    if ( !IsReady ) return;
+    SetMustRefreshEnabled(null, null);
+  }
+
+  private void SelectMonthViewFontNameHebrew_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    LabelMonthViewFontNameHebrewSample.Font = new Font(SelectMonthViewFontNameHebrew.Text,
+                                                       LabelMonthViewFontNameHebrewSample.Font.Size);
+    if ( !IsReady ) return;
+    SetMustRefreshEnabled(null, null);
+  }
+
   #endregion
 
   #region Export Save, Copy and Print
