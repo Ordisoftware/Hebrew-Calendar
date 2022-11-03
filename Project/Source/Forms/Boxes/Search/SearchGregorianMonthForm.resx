@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 3</value>
+    <value>156, 3</value>
   </data>
   <data name="ActionCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 3</value>
+    <value>75, 3</value>
   </data>
   <data name="ActionOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -187,7 +187,7 @@
     <value>10, 308</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 28</value>
+    <value>234, 28</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="LabelYear.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -232,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelYear.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="ListItems.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -256,7 +256,7 @@
     <value>12, 59</value>
   </data>
   <data name="ListItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 235</value>
+    <value>231, 235</value>
   </data>
   <data name="ListItems.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -271,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ListItems.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="SelectYear.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -289,13 +289,64 @@
     <value>SelectYear</value>
   </data>
   <data name="&gt;&gt;SelectYear.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.SelectYearsControl, Ordisoftware.Hebrew.Calendar, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.SelectYearsControl, Ordisoftware.Hebrew.Calendar, Version=10.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SelectYear.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SelectYear.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>198, 29</value>
+  </data>
+  <data name="SelectDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 21</value>
+  </data>
+  <data name="SelectDay.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="&gt;&gt;SelectDay.Name" xml:space="preserve">
+    <value>SelectDay</value>
+  </data>
+  <data name="&gt;&gt;SelectDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectDay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectDay.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="LabelDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 10</value>
+  </data>
+  <data name="LabelDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="LabelDay.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="LabelDay.Text" xml:space="preserve">
+    <value>Solar day</value>
+  </data>
+  <data name="LabelDay.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="&gt;&gt;LabelDay.Name" xml:space="preserve">
+    <value>LabelDay</value>
+  </data>
+  <data name="&gt;&gt;LabelDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelDay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LabelDay.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -304,7 +355,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>199, 346</value>
+    <value>254, 346</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>

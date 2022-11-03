@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2021-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class SearchGregorianMonthForm : Form
@@ -19,7 +19,11 @@ partial class SearchGregorianMonthForm : Form
 
   private readonly MainForm MainForm = MainForm.Instance;
 
+
+
   public LunisolarDay CurrentDay { get; private set; }
+
+  private int CurrentDayIndex = -1;
 
   public SearchGregorianMonthForm()
   {
@@ -31,7 +35,7 @@ partial class SearchGregorianMonthForm : Form
     SelectYear.Fill(MainForm.YearsIntervalArray, year);
   }
 
-  private void SearchEventForm_Load(object sender, EventArgs e)
+  private void SearchGregorianMonthForm_Load(object sender, EventArgs e)
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
   }
@@ -56,6 +60,7 @@ partial class SearchGregorianMonthForm : Form
   private void SelectYear_SelectedIndexChanged(object sender, EventArgs e)
   {
     int selectedKey = ListItems.SelectedIndices.Count > 0 ? ListItems.SelectedIndices[0] : -1;
+    CurrentDayIndex = SelectDay.SelectedIndex;
     ListItems.Items.Clear();
     for ( int index = 0; index < 12; index++ )
     {
@@ -79,8 +84,21 @@ partial class SearchGregorianMonthForm : Form
 
   private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( ListItems.SelectedIndices.Count > 0 )
-      MainForm.GoToDate(new DateTime(SelectYear.Value, ListItems.SelectedIndices[0] + 1, 1));
+    if ( ListItems.SelectedIndices.Count <= 0 ) return;
+    SelectDay.Items.Clear();
+    var listDays = Enumerable.Range(1, DateTime.DaysInMonth(SelectYear.Value, ListItems.SelectedIndices[0] + 1));
+    SelectDay.Items.AddRange(listDays.Cast<object>().ToArray());
+    if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
+    if ( CurrentDayIndex >= SelectDay.Items.Count )
+      CurrentDayIndex = SelectDay.Items.Count - 1;
+    SelectDay.SelectedIndex = CurrentDayIndex;
+  }
+
+  private void SelectDay_SelectedIndexChanged(object sender, EventArgs e)
+  {
+    CurrentDayIndex = SelectDay.SelectedIndex + 1;
+    if ( SelectDay.SelectedItem is not null )
+      MainForm.GoToDate(new DateTime(SelectYear.Value, ListItems.SelectedIndices[0] + 1, CurrentDayIndex));
   }
 
 }

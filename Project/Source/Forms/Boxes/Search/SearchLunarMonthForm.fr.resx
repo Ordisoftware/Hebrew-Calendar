@@ -142,7 +142,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Chercher mois lunaire</value>
   </data>
-  <data name="LabelLunarDay.Text" xml:space="preserve">
+  <data name="LabelDay.Text" xml:space="preserve">
     <value>Jour lunaire</value>
   </data>
 </root>

@@ -35,7 +35,7 @@ partial class SearchLunarMonthForm : Form
     SelectYear.Fill(MainForm.YearsIntervalArray, year);
   }
 
-  private void SearchEventForm_Load(object sender, EventArgs e)
+  private void SearchLunarMonthForm_Load(object sender, EventArgs e)
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
   }
@@ -60,7 +60,7 @@ partial class SearchLunarMonthForm : Form
   {
     int year = SelectYear.Value;
     string selectedKey = ListItems.SelectedItems.Count > 0 ? ListItems.SelectedItems[0].Text : null;
-    CurrentDayIndex = SelectMoonDay.SelectedIndex;
+    CurrentDayIndex = SelectDay.SelectedIndex;
     ListItems.Items.Clear();
     ListViewItem itemToSelect = null;
     ListViewItem itemToSelectDefault = null;
@@ -104,25 +104,25 @@ partial class SearchLunarMonthForm : Form
   {
     if ( ListItems.SelectedItems.Count <= 0 ) return;
     var row = (LunisolarDay)ListItems.SelectedItems[0].Tag;
-    SelectMoonDay.Items.Clear();
+    SelectDay.Items.Clear();
     int year = SelectYear.Value;
     var days = LunisolarDays.Where(day => day.Date.Year == year && day.LunarMonth == row.LunarMonth);
-    SelectMoonDay.Items.AddRange(days.ToArray());
+    SelectDay.Items.AddRange(days.ToArray());
     if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
-    if ( CurrentDayIndex >= SelectMoonDay.Items.Count )
-      CurrentDayIndex = SelectMoonDay.Items.Count - 1;
-    SelectMoonDay.SelectedIndex = CurrentDayIndex;
+    if ( CurrentDayIndex >= SelectDay.Items.Count )
+      CurrentDayIndex = SelectDay.Items.Count - 1;
+    SelectDay.SelectedIndex = CurrentDayIndex;
   }
 
-  private void SelectMoonDay_Format(object sender, ListControlConvertEventArgs e)
+  private void SelectDay_Format(object sender, ListControlConvertEventArgs e)
   {
     e.Value = ( (LunisolarDay)e.ListItem ).LunarDay.ToString();
   }
 
-  private void SelectMoonDay_SelectedIndexChanged(object sender, EventArgs e)
+  private void SelectDay_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( SelectMoonDay.SelectedItem is not null )
-      MainForm.GoToDate(( (LunisolarDay)SelectMoonDay.SelectedItem ).Date);
+    if ( SelectDay.SelectedItem is not null )
+      MainForm.GoToDate(( (LunisolarDay)SelectDay.SelectedItem ).Date);
   }
 
 }
