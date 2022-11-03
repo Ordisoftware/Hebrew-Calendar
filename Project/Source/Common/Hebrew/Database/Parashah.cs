@@ -51,7 +51,7 @@ public partial class Parashah : INotifyPropertyChanged
       FirstVerse = Convert.ToInt32(partsBegin[1]);
       var partsEnd = ReferenceEnd.Split('.');
       LastChapter = Convert.ToInt32(partsEnd[0]);
-      LastEnd = Convert.ToInt32(partsEnd[1]);
+      LastVerse = Convert.ToInt32(partsEnd[1]);
       IsLinkedToNext = isLinkedToNext;
       Translation = translation;
       Lettriq = lettriq;

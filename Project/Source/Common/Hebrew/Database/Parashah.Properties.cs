@@ -25,13 +25,19 @@ public partial class Parashah
   public TorahBook Book { get; set; }
   public int Number { get; set; }
 
+  // Obsolete : Moved to ReferenceBegin since v10.0
+  public string VerseBegin { get; set; }
+
+  // Obsolete : Moved to ReferenceEnd since v10.0
+  public string VerseEnd { get; set; }
+
   public string ReferenceBegin { get; set; }
   public string ReferenceEnd { get; set; }
 
-  public int FirstChapter { get; init; }
-  public int LastChapter { get; init; }
-  public int FirstVerse { get; init; }
-  public int LastEnd { get; init; }
+  public int FirstChapter { get; set; }
+  public int LastChapter { get; set; }
+  public int FirstVerse { get; set; }
+  public int LastVerse { get; set; }
 
   public string FullReferenceBegin => $"{(int)Book}.{ReferenceBegin}";
   public string FullReferenceEnd => $"{(int)Book}.{ReferenceEnd}";

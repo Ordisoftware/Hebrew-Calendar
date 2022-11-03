@@ -135,7 +135,7 @@ static class HebrewAlphabet
   /// <summary>
   /// Indicate options for the gematria calculator.
   /// </summary>
-  static private GematriaOptions GematriaOptions = new GematriaOptions();
+  static private readonly GematriaOptions GematriaOptions = new();
 
   /// <summary>
   /// Static constructor

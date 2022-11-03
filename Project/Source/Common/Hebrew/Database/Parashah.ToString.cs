@@ -49,7 +49,7 @@ public partial class Parashah
     else
     {
       int chapterEnd = IsLinkedToNext ? GetLinked().LastChapter : LastChapter;
-      int verseEnd = IsLinkedToNext ? GetLinked().LastEnd : LastEnd;
+      int verseEnd = IsLinkedToNext ? GetLinked().LastVerse : LastVerse;
       return HebrewAlphabet.IntToUnicode(chapterEnd) + "." + HebrewAlphabet.IntToUnicode(verseEnd);
     }
   }
