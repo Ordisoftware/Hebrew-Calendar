@@ -19,17 +19,18 @@ partial class SearchGregorianMonthForm : Form
 
   private readonly MainForm MainForm = MainForm.Instance;
 
-
-
   public LunisolarDay CurrentDay { get; private set; }
 
   private int CurrentDayIndex = -1;
+
+  private bool GoToDateMutex;
 
   public SearchGregorianMonthForm()
   {
     InitializeComponent();
     Icon = MainForm.Icon;
     ActiveControl = ListItems;
+    GoToDateMutex = true;
     CurrentDay = MainForm.CurrentDay;
     int year = CurrentDay is null ? DateTime.Today.Year : MainForm.CurrentDayYear;
     SelectYear.Fill(MainForm.YearsIntervalArray, year);
@@ -38,11 +39,9 @@ partial class SearchGregorianMonthForm : Form
   private void SearchGregorianMonthForm_Load(object sender, EventArgs e)
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
-  }
-
-  private void SearchGregorianMonthForm_Shown(object sender, EventArgs e)
-  {
-    ListItems_SelectedIndexChanged(null, null);
+    ListItems.Items[CurrentDay.Date.Month - 1].Selected = true;
+    GoToDateMutex = false;
+    SelectDay.SelectedIndex = CurrentDay.Date.Day - 1;
   }
 
   private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -96,9 +95,9 @@ partial class SearchGregorianMonthForm : Form
 
   private void SelectDay_SelectedIndexChanged(object sender, EventArgs e)
   {
-    CurrentDayIndex = SelectDay.SelectedIndex + 1;
-    if ( SelectDay.SelectedItem is not null )
-      MainForm.GoToDate(new DateTime(SelectYear.Value, ListItems.SelectedIndices[0] + 1, CurrentDayIndex));
+    CurrentDayIndex = SelectDay.SelectedIndex;
+    if ( !GoToDateMutex && SelectDay.SelectedItem is not null )
+      MainForm.GoToDate(new DateTime(SelectYear.Value, ListItems.SelectedIndices[0] + 1, CurrentDayIndex + 1));
   }
 
 }

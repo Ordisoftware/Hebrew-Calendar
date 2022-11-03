@@ -25,11 +25,14 @@ partial class SearchLunarMonthForm : Form
 
   private int CurrentDayIndex = -1;
 
+  private bool GoToDateMutex;
+
   public SearchLunarMonthForm()
   {
     InitializeComponent();
     Icon = MainForm.Icon;
     ActiveControl = ListItems;
+    GoToDateMutex = true;
     CurrentDay = MainForm.CurrentDay;
     int year = CurrentDay is null ? DateTime.Today.Year : MainForm.CurrentDayYear;
     SelectYear.Fill(MainForm.YearsIntervalArray, year);
@@ -38,11 +41,17 @@ partial class SearchLunarMonthForm : Form
   private void SearchLunarMonthForm_Load(object sender, EventArgs e)
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
-  }
-
-  private void SearchLunarMonthForm_Shown(object sender, EventArgs e)
-  {
-    ListItems_SelectedIndexChanged(null, null);
+    var item = ListItems.Items
+                        .AsIEnumerable()
+                        .FirstOrDefault(item => ( (LunisolarDay)item.Tag ).LunarMonth == CurrentDay.LunarMonth);
+    if ( item is not null )
+    {
+      item.Focused = true;
+      item.Selected = true;
+    }
+    GoToDateMutex = false;
+    if ( item is not null )
+      SelectDay.SelectedIndex = CurrentDay.LunarDay - 1;
   }
 
   private void SearchMonthForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -121,7 +130,8 @@ partial class SearchLunarMonthForm : Form
 
   private void SelectDay_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( SelectDay.SelectedItem is not null )
+    CurrentDayIndex = SelectDay.SelectedIndex;
+    if ( !GoToDateMutex && SelectDay.SelectedItem is not null )
       MainForm.GoToDate(( (LunisolarDay)SelectDay.SelectedItem ).Date);
   }
 

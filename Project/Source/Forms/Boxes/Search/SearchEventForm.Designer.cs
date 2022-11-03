@@ -123,7 +123,6 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchEventForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchEventForm_Load);
-      this.Shown += new System.EventHandler(this.SearchEventForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

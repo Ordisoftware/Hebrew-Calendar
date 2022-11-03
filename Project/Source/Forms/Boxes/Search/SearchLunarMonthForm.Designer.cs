@@ -34,9 +34,9 @@
       this.ActionOK = new System.Windows.Forms.Button();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
-      this.ColumnNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.ColumnMonth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.ColumnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnNumber = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.ColumnMonth = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.ColumnDate = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
       this.SelectYear = new Ordisoftware.Core.SelectYearsControl();
       this.LabelDay = new System.Windows.Forms.Label();
       this.SelectDay = new System.Windows.Forms.ComboBox();
@@ -141,7 +141,6 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchLunarMonthForm_Load);
-      this.Shown += new System.EventHandler(this.SearchLunarMonthForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();

@@ -355,7 +355,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add dark theme for monthly view.
 - Add print boards.
 - Add option to generate a fixed interval (if the current year is within).
-- Add option to display hebrew names in Latin Transcription or in Hebrew Unicode or both.
 - Improve notices to be in only one window having a page control like preferences.
 - Improve food notice with details and cooking recipes.
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
@@ -384,17 +383,18 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Add import button to the GPS box on the first start.
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
+>- Check and fix weekly parashah generation with soukot.
+>- Check and Fix reminder behavior with Sim'hat Torah.
 
 #### TO DO - Version 10.1
 
 >- Add option to display only omer ephemeris or sun and moon the same time in the monthly view
 >- Add option to choose font type in the monthly view.
->- Check and fix weekly parashah generation with soukot.
->- Check and Fix reminder behavior with Sim'hat Torah.
 
 #### In progress - Version 10.0
 
 - Rename Adar II in VeAdar.
+- Add solar day in search a gregorian date box.
 - Add option to have lunar date on a single line before the ephemeris in the monthly view.
 - Add option to display book name and references of parashah in the monthly view.
 - Add option to set events text alignment in the monthly view.
@@ -402,7 +402,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add option to display Hebrew names in Unicode chars or Latin transcription.
 - Add option to keep Arabic numerals when using display Hebrew names in Unicode.
 - Add option to set font size for Hebrew in Unicode chars.
-- Add the ending verse of parashah when displaying the beginning one
+- Add the ending verse of parashah when displaying the beginning one.
 - Fix display ending verse of the parashah to indicate that of the linked if applicable.
 - Fix parashah description box to have the linked parashah name in the title bar.
 - Fix Hebrew date template for the monthly view that is capitalized on rendering.

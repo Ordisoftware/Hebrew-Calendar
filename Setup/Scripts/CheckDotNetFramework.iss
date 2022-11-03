@@ -77,10 +77,7 @@ end;
 
 function CheckForFramework(): Boolean;
 begin
-    //result := not IsDotNetDetected('v4.8.1', 0);
-    // IS Alternative
-    TDotNetVersion = (net11, net20, net30, net35, net4Client, net4Full, net45, net451, net452, net46, net461, net462, net47, net471, net472, net48);
-    result := IsDotNetInstalled(net48, 0);
+    result := not IsDotNetDetected('v4.8', 0);
 end;
 
 

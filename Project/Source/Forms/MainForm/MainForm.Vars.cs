@@ -68,7 +68,7 @@ public partial class MainForm
 
   public int CurrentDayYear => CurrentDay?.Date.Year ?? 0;
 
-  private DateTime? _DateSelected = null;
+  private DateTime? _DateSelected;
   public DateTime? DateSelected
   {
     get => _DateSelected;

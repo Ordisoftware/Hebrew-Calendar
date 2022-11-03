@@ -54,7 +54,7 @@ partial class NavigationForm : Form
         LabelLunarMonthValue.Text = AppTranslations.NavigationMonth.GetLang(row.LunarMonth);
         LabelLunarMonthName.Text = $"({strMonth.ToUpper()})";
         LabelLunarDayValue.Text = AppTranslations.NavigationDay.GetLang(row.LunarDay);
-        LabelLunarDayEvent.Text = isShabat ? $"({HebrewTranslations.Parashah.ToUpper()})" : string.Empty;
+        LabelLunarDayEvent.Text = isShabat ? $"({HebrewTranslations.Shabat.ToUpper()})" : string.Empty;
         int left = LabelLunarMonthValue.Left + Math.Max(LabelLunarMonthValue.Width, LabelLunarDayValue.Width);
         LabelLunarMonthName.Left = left;
         LabelLunarDayEvent.Left = left;
