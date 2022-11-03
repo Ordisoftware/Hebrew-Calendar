@@ -134,7 +134,6 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
       this.Load += new System.EventHandler(this.SearchGregorianMonthForm_Load);
-      this.Shown += new System.EventHandler(this.SearchGregorianMonthForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
