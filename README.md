@@ -79,7 +79,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
 - Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
 - Some fixes and improvements.
-- Optimized code.
+- Optimized and refactored code.
 - Updated web links.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
@@ -409,6 +409,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update shows some error message and must not.
 - Some fixes and improvements.
+- Code refactoring and optimization.
 
 #### 2022.09.25 - Version 9.33
 
