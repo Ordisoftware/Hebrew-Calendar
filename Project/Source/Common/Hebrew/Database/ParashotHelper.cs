@@ -39,8 +39,8 @@ static class ParashotHelper
     var message = parashah.ToStringReadable();
     if ( linked is not null )
       message += Globals.NL2 + linked.ToStringReadable();
-    string title = HebrewTranslations.WeeklyParashah.GetLang() + " : " + parashah.Name;
-    if ( linked is not null ) title += " - " + linked.Name;
+    string title = $"{HebrewTranslations.WeeklyParashah.GetLang()} : {parashah.Name}";
+    if ( linked is not null ) title += $" - {linked.Name}";
     form = new MessageBoxEx(title, message, width: MessageBoxEx.DefaultWidthMedium)
     {
       StartPosition = FormStartPosition.CenterScreen,

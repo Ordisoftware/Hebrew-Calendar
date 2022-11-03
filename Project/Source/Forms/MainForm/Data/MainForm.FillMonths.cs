@@ -187,16 +187,12 @@ partial class MainForm
           // Single line date
           if ( dateSingleLine && ( omerSun || row.Moonrise is not null ) )
           {
-            if ( Settings.CalendarHebrewDateSingleLineItalic )
-              fontEvent = fontEventItalic;
             if ( separatorForLunarDate )
               add(Settings.MonthViewTextColor, string.Empty);
             var color = row.IsNewMoon ? Settings.CalendarColorTorahEvent : Settings.MonthViewTextColor;
-            add(color, row.DayAndMonthFormattedText, useUnicode);
+            add(color, row.DayAndMonthFormattedText, useUnicode, false, Settings.CalendarHebrewDateSingleLineItalic);
             if ( separatorForLunarDate )
               add(Settings.MonthViewTextColor, string.Empty);
-            if ( Settings.CalendarHebrewDateSingleLineItalic )
-              fontEvent = fontEventNoItalic;
           }
           else
           {
@@ -256,13 +252,13 @@ partial class MainForm
             {
               add(Settings.CalendarColorParashah, parashah.ToStringShort(false, row.HasLinkedParashah), useUnicode, true);
               if ( Settings.CalendarParashahWithBookAndFullRef )
-                add(Settings.CalendarColorParashah, $"{parashah.ToStringBookAndReferences()}", useUnicode, true);
+                add(Settings.CalendarColorParashah, $"{parashah.ToStringWithBookAndReferences()}", useUnicode, true);
             }
           }
           //
           // Add info
           //
-          void add(Color color, string text, bool isHebrew = false, bool isTorah = false)
+          void add(Color color, string text, bool isHebrew = false, bool isTorah = false, bool isItalic = false)
           {
             bool isSeparator = text.IsNullOrEmpty();
             if ( isSeparator )
@@ -275,7 +271,7 @@ partial class MainForm
             var item = new CustomEvent
             {
               Date = date,
-              EventFont = isHebrew ? fontEventHebrew : fontEvent,
+              EventFont = isHebrew ? fontEventHebrew : isItalic ? fontEventItalic : fontEvent,
               IsHebrew = isHebrew,
               IsTorah = isTorah,
               IsSeparator = isSeparator
@@ -306,6 +302,10 @@ partial class MainForm
             return;
           }
         }
+      CalendarEventsGrouped = MonthlyCalendar.TheEvents
+                                        .Cast<CustomEvent>()
+                                        .GroupBy(e => e.Date)
+                                        .ToDictionary(g => g.Key, g => g.ToArray());
     }
     finally
     {

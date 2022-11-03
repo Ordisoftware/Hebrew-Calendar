@@ -113,8 +113,8 @@ partial class PreferencesForm
     var omer = SelectUseSodHaibour.Checked
       ? AppTranslations.MainFormSubTitleSod.GetLang()
       : AppTranslations.MainFormSubTitleOmer[SelectOmerMoon.Checked][Language.EN];
-    var Shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-    SaveSettingsDialog.FileName = $"Settings {city} {omer} {Shabat}";
+    var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
+    SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
     if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
     TabControl.SelectedIndex = 0;
     SaveSettings();

@@ -19,9 +19,9 @@ partial class ApplicationDatabase
 
   public const string SeparatorV = "|";
   public const string SeparatorH = "-";
-  public const string ColumnSepLeft = SeparatorV + " ";
-  public const string ColumnSepInner = " " + SeparatorV + " ";
-  public const string ColumnSepRight = " " + SeparatorV;
+  public const string ColumnSepLeft = $"{SeparatorV} ";
+  public const string ColumnSepInner = $" {SeparatorV} ";
+  public const string ColumnSepRight = $" {SeparatorV}";
   public const string MoonNoText = "        ";
   public const string ShabatText = "[S]";
   public const string MoonFullText = "o";
@@ -89,11 +89,12 @@ partial class ApplicationDatabase
             : day.IsFullMoon
               ? MoonFullText
               : " ";
-          string strSun = day.SunriseAsString + " - " + day.SunsetAsString;
+          string strSun = $"{day.SunriseAsString} - {day.SunsetAsString}";
           strSun = ShowWinterSummerHour
             ? ( TimeZoneInfo.Local.IsDaylightSavingTime(dayDate.AddDays(1))
-              ? AppTranslations.EphemerisCodes.GetLang(Ephemeris.SummerHour)
-              : AppTranslations.EphemerisCodes.GetLang(Ephemeris.WinterHour) ) + $" {strSun}"
+                ? AppTranslations.EphemerisCodes.GetLang(Ephemeris.SummerHour)
+                : AppTranslations.EphemerisCodes.GetLang(Ephemeris.WinterHour) )
+              + $" {strSun}"
             : strSun + new string(' ', 3 + 1);
           strSun += " ";
           strSun += ShowShabat && dayDate.DayOfWeek == (DayOfWeek)Settings.ShabatDay
@@ -114,8 +115,8 @@ partial class ApplicationDatabase
           string strEvent = day.TorahEventText;
           string sSeason = AppTranslations.SeasonChanges.GetLang(day.SeasonChange);
           strDesc = strEvent.Length != 0 && sSeason.Length != 0
-            ? strEvent + " - " + sSeason
-            : strEvent + sSeason;
+            ? $"{strEvent} - {sSeason}"
+            : $"{strEvent}{sSeason}";
           int lengthAvailable = CalendarFieldSize[ReportFieldText.Events];
           int length = lengthAvailable - 2 - strDesc.Length;
           if ( length < 0 )

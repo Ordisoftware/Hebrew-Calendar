@@ -18,6 +18,7 @@ function IsDotNetDetected(version: string; service: cardinal): boolean;
 //    'v4.7.1'        .NET Framework 4.7.1
 //    'v4.7.2'        .NET Framework 4.7.2
 //    'v4.8'          .NET Framework 4.8
+//    'v4.8.1'        .NET Framework 4.8.1
 //
 // service -- Specify any non-negative integer for the required service pack level:
 //    0               No service packs required
@@ -29,14 +30,12 @@ var
 begin
     versionKey := version;
     versionRelease := 0;
-
     // .NET 1.1 and 2.0 embed release number in version key
     if version = 'v1.1' then begin
         versionKey := 'v1.1.4322';
     end else if version = 'v2.0' then begin
         versionKey := 'v2.0.50727';
     end
-
     // .NET 4.5 and newer install as update to .NET 4.0 Full
     else if Pos('v4.', version) = 1 then begin
         versionKey := 'v4\Full';
@@ -51,38 +50,37 @@ begin
           'v4.7.1': versionRelease := 461308; // 461310 before Win10 Fall Creators Update
           'v4.7.2': versionRelease := 461808; // 461814 before Win10 April 2018 Update
           'v4.8':   versionRelease := 528040; // 528049 before Win10 May 2019 Update
+          '4.8.1':  versionRelease := 533325; 
         end;
     end;
-
     // installation key group for all .NET versions
     key := 'SOFTWARE\Microsoft\NET Framework Setup\NDP\' + versionKey;
-
     // .NET 3.0 uses value InstallSuccess in subkey Setup
     if Pos('v3.0', version) = 1 then begin
         success := RegQueryDWordValue(HKLM, key + '\Setup', 'InstallSuccess', install);
     end else begin
         success := RegQueryDWordValue(HKLM, key, 'Install', install);
     end;
-
     // .NET 4.0 and newer use value Servicing instead of SP
     if Pos('v4', version) = 1 then begin
         success := success and RegQueryDWordValue(HKLM, key, 'Servicing', serviceCount);
     end else begin
         success := success and RegQueryDWordValue(HKLM, key, 'SP', serviceCount);
     end;
-
     // .NET 4.5 and newer use additional value Release
     if versionRelease > 0 then begin
         success := success and RegQueryDWordValue(HKLM, key, 'Release', release);
         success := success and (release >= versionRelease);
     end;
-
     result := success and (install = 1) and (serviceCount >= service);
 end;
 
 function CheckForFramework(): Boolean;
 begin
-    result := not IsDotNetDetected('v4.8', 0);
+    //result := not IsDotNetDetected('v4.8.1', 0);
+    // IS Alternative
+    TDotNetVersion = (net11, net20, net30, net35, net4Client, net4Full, net45, net451, net452, net46, net461, net462, net47, net471, net472, net48);
+    result := IsDotNetInstalled(net48, 0);
 end;
 
 

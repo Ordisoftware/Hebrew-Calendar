@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 partial class HebrewDatabase : SQLiteDatabase
@@ -56,6 +56,17 @@ partial class HebrewDatabase : SQLiteDatabase
   private List<Parashah> LoadParashot()
   {
     Parashot = Load(Connection.Table<Parashah>());
+    if ( IsParashotUpgradedV10 )
+    {
+      foreach ( Parashah item in Parashot )
+      {
+        item.ReferenceBegin = item.VerseBegin;
+        item.ReferenceEnd = item.VerseEnd;
+        item.InitializeReferences();
+      }
+      SaveParashot();
+      IsParashotUpgradedV10 = false;
+    }
     ParashotAsBindingList = new BindingList<Parashah>(Parashot);
     return Parashot;
   }

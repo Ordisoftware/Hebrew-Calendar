@@ -72,6 +72,39 @@ static class HebrewAlphabet
     "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
   };
 
+  /// <summary>
+  /// Indicates letters transcriptions in latin chars.
+  /// </summary>
+  static public readonly NullSafeDictionary<Language, string[]> Transcriptions = new()
+  {
+    [Language.EN] = new string[]
+    {
+      "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "T'et", "Yod", "Kaf",
+      "Lamed", "Mem", "Nun", "Samek", "H'ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
+    },
+
+    [Language.FR] = new string[]
+    {
+      "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "T'et", "Youd", "Kaf",
+      "Lamed", "Mem", "Noun", "Samek", "H'ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
+    }
+  };
+
+  /// <summary>
+  /// Indicates dictionary of [ Hebrew letter keyboard code > Latin transcription of the Hebrew name ].
+  /// </summary>
+  static public readonly NullSafeDictionary<Language, Dictionary<string, string>> TranscriptionFromCodes = new()
+  {
+    [Language.EN] = KeyCodes.Zip(Transcriptions[Language.EN], (k, v) => new { Code = k, Transcription = v })
+                            .ToDictionary(x => x.Code, x => x.Transcription),
+
+    [Language.FR] = KeyCodes.Zip(Transcriptions[Language.FR], (k, v) => new { Code = k, Transcription = v })
+                            .ToDictionary(x => x.Code, x => x.Transcription)
+  };
+
+  /// <summary>
+  /// Indicates dictionary of [ Hebrew letter keyboard code > Hebrew name ].
+  /// </summary>
   static public readonly Dictionary<string, string> HebrewFromCodes
     = KeyCodes.Zip(Hebrew, (k, v) => new { Code = k, Name = v }).ToDictionary(x => x.Code, x => x.Name);
 
@@ -99,13 +132,23 @@ static class HebrewAlphabet
     new char[] { 'j', '/' }
   };
 
-  static private GematriaOptions GematriaOptions = new GematriaOptions();
+  /// <summary>
+  /// Indicate options for the gematria calculator.
+  /// </summary>
+  static private readonly GematriaOptions GematriaOptions = new();
 
+  /// <summary>
+  /// Static constructor
+  /// </summary>
   static HebrewAlphabet()
   {
     GematriaOptions.IncludeSeparators = false;
   }
 
+  /// <summary>
+  /// Converts an integer to its representation using Hebrew letters.
+  /// </summary>
+  /// <param name="value"></param>
   static public string IntToUnicode(int value)
   {
     return Calculator.ConvertToGematriaNumericString(value, GematriaOptions);

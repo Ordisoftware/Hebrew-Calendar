@@ -31,32 +31,27 @@ public partial class Parashah : INotifyPropertyChanged
                   int number,
                   string name,
                   string unicode,
-                  string verseBegin,
-                  string verseEnd,
+                  string referenceBegin,
+                  string referenceEnd,
                   bool isLinkedToNext = false,
                   string translation = "",
                   string lettriq = "")
   {
     try
     {
+      ID = $"{(int)book}.{number}";
       Book = book;
       Number = number;
       Name = name;
       Unicode = unicode;
       Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
-      ChapterAndVerseBegin = verseBegin;
-      ChapterAndVerseEnd = verseEnd;
-      var partsBegin = ChapterAndVerseBegin.Split('.');
-      ChapterBegin = Convert.ToInt32(partsBegin[0]);
-      VerseBegin = Convert.ToInt32(partsBegin[1]);
-      var partsEnd = ChapterAndVerseEnd.Split('.');
-      ChapterEnd = Convert.ToInt32(partsEnd[0]);
-      VerseEnd = Convert.ToInt32(partsEnd[1]);
       IsLinkedToNext = isLinkedToNext;
       Translation = translation;
       Lettriq = lettriq;
       Memo = string.Empty;
-      ID = $"{(int)book}.{number}";
+      ReferenceBegin = referenceBegin;
+      ReferenceEnd = referenceEnd;
+      InitializeReferences();
     }
     catch ( Exception ex )
     {
@@ -64,9 +59,19 @@ public partial class Parashah : INotifyPropertyChanged
     }
   }
 
+  internal void InitializeReferences()
+  {
+    var partsBegin = ReferenceBegin.Split('.');
+    FirstChapter = Convert.ToInt32(partsBegin[0]);
+    FirstVerse = Convert.ToInt32(partsBegin[1]);
+    var partsEnd = ReferenceEnd.Split('.');
+    LastChapter = Convert.ToInt32(partsEnd[0]);
+    LastVerse = Convert.ToInt32(partsEnd[1]);
+  }
+
   public object Clone()
   {
-    return new Parashah(Book, Number, Name, Unicode, ChapterAndVerseBegin, ChapterAndVerseEnd, IsLinkedToNext, Translation, Lettriq);
+    return new Parashah(Book, Number, Name, Unicode, ReferenceBegin, ReferenceEnd, IsLinkedToNext, Translation, Lettriq);
   }
 
 }

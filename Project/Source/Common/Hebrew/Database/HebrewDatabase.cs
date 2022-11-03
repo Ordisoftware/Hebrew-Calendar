@@ -22,6 +22,8 @@ partial class HebrewDatabase : SQLiteDatabase
   static public bool HebrewNamesInUnicode { get; set; }
   static public bool ArabicNumeralReferences { get; set; }
 
+  static private bool IsParashotUpgradedV10;
+
   static HebrewDatabase()
   {
     Instance = new HebrewDatabase();
@@ -82,12 +84,15 @@ partial class HebrewDatabase : SQLiteDatabase
     if ( Connection.CheckTable(table) && Globals.ConcurrentRunningProcesses.Any() )
       Connection.DropTableIfExists(table);
 
-    // TODO URGENT reconstruct parashot
-    // versebegin -> ChapterAndVerseBegin
-    // verseend -> ChapterAndVerseEnd
-    // and split in ChapterBegin ChapterEnd VerseBegin VerseEnd
-    // or remove columns and use factory
-
+    if ( !Connection.CheckColumn(nameof(Parashot), "ReferenceBegin", "TEXT", "''", true) )
+    {
+      Connection.CheckColumn(nameof(Parashot), "ReferenceEnd", "TEXT", "''", true);
+      Connection.CheckColumn(nameof(Parashot), "FirstChapter", "INTEGER", "0", true);
+      Connection.CheckColumn(nameof(Parashot), "FirstVerse", "INTEGER", "0", true);
+      Connection.CheckColumn(nameof(Parashot), "LastChapter", "INTEGER", "0", true);
+      Connection.CheckColumn(nameof(Parashot), "LastVerse", "INTEGER", "0", true);
+      IsParashotUpgradedV10 = true;
+    }
   }
 
 }

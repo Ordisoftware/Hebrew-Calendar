@@ -73,26 +73,13 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 9**
+**What's new in the latest version 10**
 
-- Added mouse hover effect in monthly view.
-- Added context menu for days in monthly view.
-- Added bookmarks to context menu in monthly view.
-- Added some options and colors for monthly view.
-- Added option to show current celebration in the title bar.
-- Added option to set active day by click in monthly view.
-- Added option for double-click in visual month to set active or select.
-- Added some keyboard shortcuts to change and select day in monthly view.
-- Added celebration verses board and its command-line option.
-- Added option to show current celebration in the title bar.
-- Added some parashah and celebrations online providers for the study.
-- The monthly view shows sun times instead of moon when using sun omer.
-- Web links menus displays those in the current language to the top.
-- Moved day of Shabat selection to the generation tab of the preferences form.
-- Fixed some check-boxes in celebrations and new moons boards.
-- Fixed export monthly view to remove all active and selected day marks.
+- Adar II was renamed in VeAdar.
+- Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
+- Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
 - Some fixes and improvements.
-- Optimized code.
+- Optimized and refactored code.
 - Updated web links.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
@@ -408,20 +395,21 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### In progress - Version 10.0
 
 - Rename Adar II in VeAdar.
-- Add the ending verse of parashah when displaying the beginning one
-- Add option to have the Hebrew date on a single line before the ephemeris in the monthly view.
+- Add option to have lunar date on a single line before the ephemeris in the monthly view.
 - Add option to display book name and references of parashah in the monthly view.
-- Add option to display Hebrew names in Unicode or Latin transcription.
-- Add option to keep Arabic numerals when using display Hebrew names in Unicode.
-- Add option to set font size for Hebrew in Unicode chars.
 - Add option to set events text alignment in the monthly view.
 - Add option to insert separator between lunar date, ephemeris, celebration and parashah.
+- Add option to display Hebrew names in Unicode chars or Latin transcription.
+- Add option to keep Arabic numerals when using display Hebrew names in Unicode.
+- Add option to set font size for Hebrew in Unicode chars.
+- Add the ending verse of parashah when displaying the beginning one
 - Fix display ending verse of the parashah to indicate that of the linked if applicable.
 - Fix parashah description box to have the linked parashah name in the title bar.
 - Fix Hebrew date template for the monthly view that is capitalized on rendering.
 - Fix screen location of the show "new in version" box when app starts minimized.
 - Fix auto web check update shows some error message and must not.
 - Some fixes and improvements.
+- Code refactoring and optimization.
 
 #### 2022.09.25 - Version 9.33
 
