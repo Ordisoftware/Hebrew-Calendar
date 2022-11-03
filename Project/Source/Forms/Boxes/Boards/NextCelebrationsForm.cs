@@ -43,7 +43,7 @@ partial class NextCelebrationsForm : Form
       var item = row.Date.ToLongDateString().Titleize();
       if ( row.HasSeasonChange )
         Instance.ListView.Items.Add(item)
-                               .SubItems.Add(AppTranslations.SeasonChanges.GetLang(row.SeasonChange))
+                               .SubItems.Add(AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange))
                                .Tag = row.Date;
       if ( row.HasTorahEvent )
         Instance.ListView.Items.Add(item)

@@ -34,9 +34,11 @@
       this.ActionOK = new System.Windows.Forms.Button();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
-      this.ColumnNumber = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.ColumnMonth = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.ColumnNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnMonth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.SelectYear = new Ordisoftware.Core.SelectYearsControl();
+      this.SelectDay = new System.Windows.Forms.ComboBox();
+      this.LabelDay = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -98,12 +100,27 @@
       this.SelectYear.Value = -1;
       this.SelectYear.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
+      // SelectDay
+      // 
+      this.SelectDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectDay.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectDay, "SelectDay");
+      this.SelectDay.Name = "SelectDay";
+      this.SelectDay.SelectedIndexChanged += new System.EventHandler(this.SelectDay_SelectedIndexChanged);
+      // 
+      // LabelDay
+      // 
+      resources.ApplyResources(this.LabelDay, "LabelDay");
+      this.LabelDay.Name = "LabelDay";
+      // 
       // SearchGregorianMonthForm
       // 
       this.AcceptButton = this.ActionOK;
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
+      this.Controls.Add(this.SelectDay);
+      this.Controls.Add(this.LabelDay);
       this.Controls.Add(this.SelectYear);
       this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelBottom);
@@ -116,7 +133,7 @@
       this.Name = "SearchGregorianMonthForm";
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
-      this.Load += new System.EventHandler(this.SearchEventForm_Load);
+      this.Load += new System.EventHandler(this.SearchGregorianMonthForm_Load);
       this.Shown += new System.EventHandler(this.SearchGregorianMonthForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
@@ -134,5 +151,7 @@
     private System.Windows.Forms.ColumnHeader ColumnMonth;
     private System.Windows.Forms.ColumnHeader ColumnNumber;
     private Ordisoftware.Core.SelectYearsControl SelectYear;
+    private ComboBox SelectDay;
+    private Label LabelDay;
   }
 }

@@ -34,12 +34,12 @@
       this.ActionOK = new System.Windows.Forms.Button();
       this.LabelYear = new System.Windows.Forms.Label();
       this.ListItems = new System.Windows.Forms.ListView();
-      this.ColumnNumber = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.ColumnMonth = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.ColumnDate = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.ColumnNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnMonth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.SelectYear = new Ordisoftware.Core.SelectYearsControl();
-      this.LabelLunarDay = new System.Windows.Forms.Label();
-      this.SelectMoonDay = new System.Windows.Forms.ComboBox();
+      this.LabelDay = new System.Windows.Forms.Label();
+      this.SelectDay = new System.Windows.Forms.ComboBox();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -106,19 +106,19 @@
       this.SelectYear.Value = -1;
       this.SelectYear.SelectedIndexChanged += new System.EventHandler(this.SelectYear_SelectedIndexChanged);
       // 
-      // LabelLunarDay
+      // LabelDay
       // 
-      resources.ApplyResources(this.LabelLunarDay, "LabelLunarDay");
-      this.LabelLunarDay.Name = "LabelLunarDay";
+      resources.ApplyResources(this.LabelDay, "LabelDay");
+      this.LabelDay.Name = "LabelDay";
       // 
-      // SelectMoonDay
+      // SelectDay
       // 
-      this.SelectMoonDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectMoonDay.FormattingEnabled = true;
-      resources.ApplyResources(this.SelectMoonDay, "SelectMoonDay");
-      this.SelectMoonDay.Name = "SelectMoonDay";
-      this.SelectMoonDay.SelectedIndexChanged += new System.EventHandler(this.SelectMoonDay_SelectedIndexChanged);
-      this.SelectMoonDay.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectMoonDay_Format);
+      this.SelectDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectDay.FormattingEnabled = true;
+      resources.ApplyResources(this.SelectDay, "SelectDay");
+      this.SelectDay.Name = "SelectDay";
+      this.SelectDay.SelectedIndexChanged += new System.EventHandler(this.SelectDay_SelectedIndexChanged);
+      this.SelectDay.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.SelectDay_Format);
       // 
       // SearchLunarMonthForm
       // 
@@ -126,8 +126,8 @@
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.Controls.Add(this.SelectMoonDay);
-      this.Controls.Add(this.LabelLunarDay);
+      this.Controls.Add(this.SelectDay);
+      this.Controls.Add(this.LabelDay);
       this.Controls.Add(this.SelectYear);
       this.Controls.Add(this.ListItems);
       this.Controls.Add(this.PanelBottom);
@@ -140,7 +140,7 @@
       this.Name = "SearchLunarMonthForm";
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchMonthForm_FormClosing);
-      this.Load += new System.EventHandler(this.SearchEventForm_Load);
+      this.Load += new System.EventHandler(this.SearchLunarMonthForm_Load);
       this.Shown += new System.EventHandler(this.SearchLunarMonthForm_Shown);
       this.PanelBottom.ResumeLayout(false);
       this.ResumeLayout(false);
@@ -159,7 +159,7 @@
     private System.Windows.Forms.ColumnHeader ColumnDate;
     private System.Windows.Forms.ColumnHeader ColumnNumber;
     private Ordisoftware.Core.SelectYearsControl SelectYear;
-    private System.Windows.Forms.Label LabelLunarDay;
-    private System.Windows.Forms.ComboBox SelectMoonDay;
+    private System.Windows.Forms.Label LabelDay;
+    private System.Windows.Forms.ComboBox SelectDay;
   }
 }

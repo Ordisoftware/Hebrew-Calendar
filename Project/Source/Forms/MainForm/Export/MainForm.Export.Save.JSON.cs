@@ -37,7 +37,7 @@ partial class MainForm
         MoonRiseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccurings),
         MoonPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhases),
         SeasonChange = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges),
-        TorahEvent = day.TorahEvent.ToStringExport(AppTranslations.TorahCelebrationDays),
+        TorahEvent = day.TorahEvent.ToStringExport(AppTranslations.CelebrationDays),
       });
       using var dataset = new DataSet(Globals.AssemblyTitle);
       dataset.Tables.Add(data.ToDataTable(nameof(LunisolarDays)));

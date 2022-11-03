@@ -142,4 +142,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Chercher mois grégorien</value>
   </data>
+  <data name="LabelDay.Text" xml:space="preserve">
+    <value>Jour solaire</value>
+  </data>
 </root>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase
@@ -113,7 +113,7 @@ partial class ApplicationDatabase
           string textDate = $"{textDay} {SQLiteDate.ToString(dayDate)}";
           string strDesc;
           string strEvent = day.TorahEventText;
-          string sSeason = AppTranslations.SeasonChanges.GetLang(day.SeasonChange);
+          string sSeason = AppTranslations.GetSeasonChangeDisplayText(day.SeasonChange);
           strDesc = strEvent.Length != 0 && sSeason.Length != 0
             ? $"{strEvent} - {sSeason}"
             : $"{strEvent}{sSeason}";

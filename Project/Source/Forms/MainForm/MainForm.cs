@@ -1122,7 +1122,7 @@ partial class MainForm : Form
       var torah = (TorahCelebrationDay)e.Value;
       e.Value = torah == TorahCelebrationDay.None
         ? string.Empty
-        : torah.ToStringExport(AppTranslations.TorahCelebrationDays);
+        : torah.ToStringExport(AppTranslations.CelebrationDays);
     }
   }
 

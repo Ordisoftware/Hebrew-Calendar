@@ -129,7 +129,7 @@
     <value>5, 5</value>
   </data>
   <data name="LabelDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 25</value>
+    <value>394, 25</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LabelDate.TabIndex" type="System.Int32, mscorlib">
@@ -163,7 +163,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="PanelTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 35</value>
+    <value>404, 35</value>
   </data>
   <data name="PanelTop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -481,7 +481,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="PanelAllExceptParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 115</value>
+    <value>370, 115</value>
   </data>
   <data name="PanelAllExceptParashah.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -540,7 +540,7 @@
   <data name="ActionViewParashahInfos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
+        vAAADrwBlbxySQAAAZ5JREFUOE+VU9tKAlEU9V/6hDC7+RNd8Ib4F0VIXmYkyjMjhK+V0EO99OYP9AkS
         ITaIJegICqYoMiPobu89ZxQtMRes2eds9lpnzRnGQ7jN579FLgdZTYObBQquQteJbR7+CyKnwzrUajXI
         CvEkJYugkwnl8jsYHxVmpVyGUumN+4l0mmvVMCjRs5TN4RrsRlTwx66Ze5EMGEaF+ylFAcu2eU1J8HVf
         pNSBa1Cvf4HZbDAbuDaMKveLxSKkVRWSMgndiZQ6cA1aZgParSaYWJvNOhp+cn8ZNC+lDlwDX1jB6Cr0
@@ -562,7 +562,7 @@
   <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
+        vQAADr0BR/uQrQAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
         QXZRUNiwIi06tBQ6FIKE+Wfzl7UZ2rr0j1VCc2JLt5WVzu3p+7zv77Lo1AsPe3iez/P7vWOTv8/4Zal1
         AjIUbRJEzlvRM2PnYv8+ziUJxa9vwNfJc8DSIFB0rNQzi7ethzL9Ll5+WEx1VAMLPcC8B/gswEdX9MwW
         +zDVXs2HhNyZPbxa7FoliulbQLIKxbeC4rwfpewdI3pmpkvfBNmyrxNplpG54UMoJXeh8FrHn+pQmG1C
@@ -587,7 +587,7 @@
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
+        vAAADrwBlbxySQAAApxJREFUOE+N0d9PUlEAB/DzWr31Wqv10AxbuOVfUA+19d7aqs31VGsrXVaiSX9C
         aVnq+jUItVUaqNwrPy6XH4pgaCCikkDqVX7IICVNSODbuYBim22e7bvde875fnbuPUQiM5DJcQtZ8rDE
         pFESn12DzeRiJOg2Xl0JOQk/oCQ2pptYmR5iHVQRM32Ph8aJaXSMVDbqyA4guBnCqRWHp4a/ANikASJz
         drtRo3CaB7rAD6jSvEZx26R+Wx0LuMrAKZlB7XZZsDChxay9F5O2PiC3UQDwO4YZ7hliMyySghsrS3P4
@@ -632,7 +632,7 @@
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
+        vQAADr0BR/uQrQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
         TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
         MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
         I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
@@ -652,7 +652,7 @@
     <value>Parashot board</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 154</value>
+    <value>211, 132</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -1084,7 +1084,7 @@
     <value>0, 36</value>
   </data>
   <data name="PanelMiddle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 305</value>
+    <value>404, 305</value>
   </data>
   <data name="PanelMiddle.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1111,7 +1111,7 @@
     <value>Courier New, 9.75pt</value>
   </data>
   <data name="ActionNextDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 7</value>
+    <value>230, 7</value>
   </data>
   <data name="ActionNextDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 26</value>
@@ -1147,7 +1147,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSelectDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 7</value>
+    <value>185, 7</value>
   </data>
   <data name="ActionSelectDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 26</value>
@@ -1180,7 +1180,7 @@
     <value>Courier New, 9.75pt</value>
   </data>
   <data name="ActionPreviousDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 7</value>
+    <value>144, 7</value>
   </data>
   <data name="ActionPreviousDay.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 26</value>
@@ -1210,7 +1210,7 @@
     <value>0, 35</value>
   </data>
   <data name="PanelSeparatorTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 1</value>
+    <value>404, 1</value>
   </data>
   <data name="PanelSeparatorTop.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1273,7 +1273,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 7</value>
+    <value>331, 7</value>
   </data>
   <data name="ActionSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 26</value>
@@ -1342,7 +1342,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 7</value>
+    <value>367, 7</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 26</value>
@@ -1375,7 +1375,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 40</value>
+    <value>404, 40</value>
   </data>
   <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1399,7 +1399,7 @@
     <value>0, 340</value>
   </data>
   <data name="PanelSeparatorBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 1</value>
+    <value>404, 1</value>
   </data>
   <data name="PanelSeparatorBottom.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1423,7 +1423,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>364, 381</value>
+    <value>404, 381</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -222,6 +222,20 @@ static partial class AppTranslations
       [Language.FR] = "Solstice d'hiver"
     }
   };
+
+  static public readonly Dictionary<SeasonChange, string> HebrewCharsSeasons = new()
+  {
+    [SeasonChange.None] = "",
+    [SeasonChange.SpringEquinox] = "שוויון אביבי",
+    [SeasonChange.SummerSolstice] = "היפוך הקיץ",
+    [SeasonChange.AutumnEquinox] = "שוויון סתווי",
+    [SeasonChange.WinterSolstice] = "היפוך חורף"
+  };
+
+  static public string GetSeasonChangeDisplayText(SeasonChange value)
+    => Program.Settings.HebrewNamesInUnicode
+       ? HebrewCharsSeasons[value]
+       : SeasonChanges.GetLang(value);
 
   static public readonly NullSafeDictionary<ReportFieldText, TranslationsDictionary> ReportFields = new()
   {

@@ -229,7 +229,7 @@ partial class MainForm
           }
           // Season change
           if ( row.SeasonChange != 0 )
-            add(Settings.CalendarColorSeason, AppTranslations.SeasonChanges.GetLang(row.SeasonChange));
+            add(Settings.CalendarColorSeason, AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange));
           // Separator
           if ( separatorForEphemeris )
             add(Settings.MonthViewTextColor, string.Empty);

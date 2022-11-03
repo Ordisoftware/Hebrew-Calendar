@@ -64,7 +64,7 @@ static partial class AppTranslations
     [Language.FR] = $"{CelebrationsInLatinChars[TorahCelebration.Soukot][Language.FR]} Jour {0}"
   };
 
-  static public readonly NullSafeDictionary<TorahCelebrationDay, TranslationsDictionary> TorahCelebrationDays = new()
+  static public readonly NullSafeDictionary<TorahCelebrationDay, TranslationsDictionary> CelebrationDays = new()
   {
     [TorahCelebrationDay.None] = new TranslationsDictionary
     {
@@ -154,7 +154,7 @@ static partial class AppTranslations
     }*/
   };
 
-  static public readonly Dictionary<TorahCelebrationDay, string> UnicodeCelebrationDays = new()
+  static public readonly Dictionary<TorahCelebrationDay, string> HebrewCharsCelebrationDays = new()
   {
     [TorahCelebrationDay.None] = "",
     [TorahCelebrationDay.NewYearD1] = "שנה חדשה",
@@ -182,7 +182,7 @@ static partial class AppTranslations
 
   static public string GetCelebrationDayDisplayText(TorahCelebrationDay value)
     => Program.Settings.HebrewNamesInUnicode
-       ? UnicodeCelebrationDays[value]
-       : TorahCelebrationDays.GetLang(value);
+       ? HebrewCharsCelebrationDays[value]
+       : CelebrationDays.GetLang(value);
 
 }
