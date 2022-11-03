@@ -41,9 +41,10 @@ partial class SearchLunarMonthForm : Form
   private void SearchLunarMonthForm_Load(object sender, EventArgs e)
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
+    int month = CurrentDay.LunarMonth;
     var item = ListItems.Items
                         .AsIEnumerable()
-                        .FirstOrDefault(item => ( (LunisolarDay)item.Tag ).LunarMonth == CurrentDay.LunarMonth);
+                        .FirstOrDefault(item => ( (LunisolarDay)item.Tag ).LunarMonth == month);
     if ( item is not null )
     {
       item.Focused = true;

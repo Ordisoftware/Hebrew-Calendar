@@ -37,7 +37,7 @@ public partial class MainForm
 
   static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
-  static internal Dictionary<DateTime, CustomEvent[]> CalendarEventsGrouped;
+  static internal Dictionary<DateTime, CustomEvent[]> CalendarEventsGrouped { get; private set; }
 
   private readonly ToolTip LastToolTip = new();
 

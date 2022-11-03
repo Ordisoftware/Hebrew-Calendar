@@ -40,9 +40,10 @@ partial class SearchEventForm : Form
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
     GoToDateMutex = false;
+    int month = CurrentDay.LunarMonth;
     var item = ListItems.Items
                         .AsIEnumerable()
-                        .FirstOrDefault(item => ( (LunisolarDay)item.Tag ).LunarMonth == CurrentDay.LunarMonth);
+                        .FirstOrDefault(item => ( (LunisolarDay)item.Tag ).LunarMonth == month);
     if ( item is null )
       ListItems_SelectedIndexChanged(this, EventArgs.Empty);
     else
