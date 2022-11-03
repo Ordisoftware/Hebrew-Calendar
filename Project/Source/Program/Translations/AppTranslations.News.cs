@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -34,7 +34,7 @@ static partial class AppTranslations
   static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
   {
 
-    /*["10.0"] = new TranslationsDictionary
+    /*["x.y"] = new TranslationsDictionary
     {
       [Language.EN] = "• Added lunar months board with hebrew names, meanings, lettriqs and tools." + Globals.NL +
                       "• Added a command-line option to show the lunar months board." + Globals.NL +
@@ -44,6 +44,15 @@ static partial class AppTranslations
                       "• Ajout d'une option de ligne de commande pour afficher la boite de description de la parashah hebdomadaire." + Globals.NL +
                       "• Quelques améliorations et corrections."
     },*/
+
+    ["10.0"] = new TranslationsDictionary
+    {
+      [Language.EN] = "" + Globals.NL +
+                      "",
+
+      [Language.FR] = "" + Globals.NL +
+                      ""
+    },
 
     ["9.33"] = new TranslationsDictionary
     {
