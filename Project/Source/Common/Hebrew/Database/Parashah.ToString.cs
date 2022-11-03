@@ -22,35 +22,34 @@ public partial class Parashah
   public string ToStringShort(bool withBookAndref, bool withLinked)
   {
     string result = GetNameDisplayText();
-    if ( withLinked ) result += GetLinked() is not null ? " - " + GetLinked().GetNameDisplayText() : string.Empty;
+    if ( withLinked ) result += GetLinked() is not null ? $" - {GetLinked().GetNameDisplayText()}" : string.Empty;
     if ( withBookAndref )
-      result += $" ({ToStringBookAndReferences()})";
+      result += $" ({ToStringWithBookAndReferences()})";
     return result;
   }
 
-  public string ToStringBookAndReferences()
+  public string ToStringWithBookAndReferences()
   {
-    string refText = ToStringReferenceBegin() + " - " + ToStringReferenceEnd();
     return HebrewDatabase.HebrewNamesInUnicode
-      ? $"{BookInfos.Unicode[(TanakBook)Book]} : {refText}"
-      : $"{Book} {refText}";
+      ? $"{BookInfos.Unicode[(TanakBook)Book]} : {ToStringReferenceBegin()} - {ToStringReferenceEnd()}"
+      : $"{Book} {ToStringReferenceBegin()} - {ToStringReferenceEnd()}";
   }
 
   public string ToStringReferenceBegin()
   {
     return HebrewDatabase.ArabicNumeralReferences
-      ? ChapterAndVerseBegin
-      : HebrewAlphabet.IntToUnicode(ChapterBegin) + "." + HebrewAlphabet.IntToUnicode(VerseBegin);
+      ? ReferenceBegin
+      : $"{HebrewAlphabet.IntToUnicode(FirstChapter)}.{HebrewAlphabet.IntToUnicode(FirstVerse)}";
   }
 
   public string ToStringReferenceEnd()
   {
     if ( HebrewDatabase.ArabicNumeralReferences )
-      return IsLinkedToNext ? GetLinked().ChapterAndVerseEnd : ChapterAndVerseEnd;
+      return IsLinkedToNext ? GetLinked().ReferenceEnd : ReferenceEnd;
     else
     {
-      int chapterEnd = IsLinkedToNext ? GetLinked().ChapterEnd : ChapterEnd;
-      int verseEnd = IsLinkedToNext ? GetLinked().VerseEnd : VerseEnd;
+      int chapterEnd = IsLinkedToNext ? GetLinked().LastChapter : LastChapter;
+      int verseEnd = IsLinkedToNext ? GetLinked().LastEnd : LastEnd;
       return HebrewAlphabet.IntToUnicode(chapterEnd) + "." + HebrewAlphabet.IntToUnicode(verseEnd);
     }
   }
@@ -59,7 +58,7 @@ public partial class Parashah
     => ToString(false);
 
   public string ToString(bool useHebrewFont)
-    => $"Torah Sefer {Book} {ChapterAndVerseBegin} - {ChapterAndVerseEnd} " +
+    => $"Torah Sefer {Book} {ReferenceBegin} - {ReferenceEnd} " +
        $"Parashah n°{Number} " +
        $"{Name}{( IsLinkedToNext ? "*" : string.Empty )} " +
        $"{( useHebrewFont ? Hebrew : Unicode )} : " +
@@ -68,7 +67,7 @@ public partial class Parashah
        ( Memo.IsNullOrEmpty() ? string.Empty : $" ; {Memo.GetOrEmpty()}" );
 
   public string ToStringReadable()
-    => $"• Torah Sefer {Book} {ChapterAndVerseBegin} - {ChapterAndVerseEnd}" + Globals.NL +
+    => $"• Torah Sefer {Book} {ReferenceBegin} - {ReferenceEnd}" + Globals.NL +
        $"• Parashah n°{Number} : {Name} {Unicode}" + Globals.NL +
        $"• {HebrewTranslations.Translation.GetLang()} : {Translation.GetOrEmpty()}" + Globals.NL +
        $"• {HebrewTranslations.Lettriq.GetLang()} : {Lettriq.GetOrEmpty()}";

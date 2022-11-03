@@ -1024,4 +1024,13 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Nom de la police</value>
   </data>
+  <data name="EditMonthViewSeparatorForCelebrationAndParashah.Text" xml:space="preserve">
+    <value>Célébration et parashah</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLineItalic.Text" xml:space="preserve">
+    <value>Date lunaire sur une seule ligne en italic</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Taille du séparateur</value>
+  </data>
 </root>

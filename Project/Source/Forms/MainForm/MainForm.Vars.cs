@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using CodeProjectCalendar.NET;
 using DandTSoftware.Timers;
 
 public partial class MainForm
@@ -35,6 +36,8 @@ public partial class MainForm
   static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
   static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+
+  static internal Dictionary<DateTime, CustomEvent[]> CalendarEventsGrouped;
 
   private readonly ToolTip LastToolTip = new();
 

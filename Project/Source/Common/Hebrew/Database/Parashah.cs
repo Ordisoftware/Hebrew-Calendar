@@ -31,8 +31,8 @@ public partial class Parashah : INotifyPropertyChanged
                   int number,
                   string name,
                   string unicode,
-                  string verseBegin,
-                  string verseEnd,
+                  string referenceBegin,
+                  string referenceEnd,
                   bool isLinkedToNext = false,
                   string translation = "",
                   string lettriq = "")
@@ -44,14 +44,14 @@ public partial class Parashah : INotifyPropertyChanged
       Name = name;
       Unicode = unicode;
       Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
-      ChapterAndVerseBegin = verseBegin;
-      ChapterAndVerseEnd = verseEnd;
-      var partsBegin = ChapterAndVerseBegin.Split('.');
-      ChapterBegin = Convert.ToInt32(partsBegin[0]);
-      VerseBegin = Convert.ToInt32(partsBegin[1]);
-      var partsEnd = ChapterAndVerseEnd.Split('.');
-      ChapterEnd = Convert.ToInt32(partsEnd[0]);
-      VerseEnd = Convert.ToInt32(partsEnd[1]);
+      ReferenceBegin = referenceBegin;
+      ReferenceEnd = referenceEnd;
+      var partsBegin = ReferenceBegin.Split('.');
+      FirstChapter = Convert.ToInt32(partsBegin[0]);
+      FirstVerse = Convert.ToInt32(partsBegin[1]);
+      var partsEnd = ReferenceEnd.Split('.');
+      LastChapter = Convert.ToInt32(partsEnd[0]);
+      LastEnd = Convert.ToInt32(partsEnd[1]);
       IsLinkedToNext = isLinkedToNext;
       Translation = translation;
       Lettriq = lettriq;
@@ -66,7 +66,7 @@ public partial class Parashah : INotifyPropertyChanged
 
   public object Clone()
   {
-    return new Parashah(Book, Number, Name, Unicode, ChapterAndVerseBegin, ChapterAndVerseEnd, IsLinkedToNext, Translation, Lettriq);
+    return new Parashah(Book, Number, Name, Unicode, ReferenceBegin, ReferenceEnd, IsLinkedToNext, Translation, Lettriq);
   }
 
 }

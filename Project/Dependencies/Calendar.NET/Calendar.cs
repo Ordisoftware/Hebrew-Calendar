@@ -756,50 +756,50 @@ namespace CodeProjectCalendar.NET
       // ORDISOFTWARE MODIF END
     }
 
-    [CustomRecurring("Thanksgiving Day Handler", "Selects the fourth Thursday in the month")]
-    private bool ThanksgivingDayHandler(IEvent evnt, DateTime dt)
-    {
-      return dt.DayOfWeek == DayOfWeek.Thursday && dt.Day > 21 && dt.Day <= 28 && dt.Month == evnt.Date.Month;
-    }
+    //[CustomRecurring("Thanksgiving Day Handler", "Selects the fourth Thursday in the month")]
+    //private bool ThanksgivingDayHandler(IEvent evnt, DateTime dt)
+    //{
+    //  return dt.DayOfWeek == DayOfWeek.Thursday && dt.Day > 21 && dt.Day <= 28 && dt.Month == evnt.Date.Month;
+    //}
 
-    [CustomRecurring("Columbus Day Handler", "Selects the second Monday in the month")]
-    private bool ColumbusDayHandler(IEvent evnt, DateTime dt)
-    {
-      return dt.DayOfWeek == DayOfWeek.Monday && dt.Day > 7 && dt.Day <= 14 && dt.Month == evnt.Date.Month;
-    }
+    //[CustomRecurring("Columbus Day Handler", "Selects the second Monday in the month")]
+    //private bool ColumbusDayHandler(IEvent evnt, DateTime dt)
+    //{
+    //  return dt.DayOfWeek == DayOfWeek.Monday && dt.Day > 7 && dt.Day <= 14 && dt.Month == evnt.Date.Month;
+    //}
 
-    [CustomRecurring("Labor Day Handler", "Selects the first Monday in the month")]
-    private bool LaborDayHandler(IEvent evnt, DateTime dt)
-    {
-      return dt.DayOfWeek == DayOfWeek.Monday && dt.Day <= 7 && dt.Month == evnt.Date.Month;
-    }
+    //[CustomRecurring("Labor Day Handler", "Selects the first Monday in the month")]
+    //private bool LaborDayHandler(IEvent evnt, DateTime dt)
+    //{
+    //  return dt.DayOfWeek == DayOfWeek.Monday && dt.Day <= 7 && dt.Month == evnt.Date.Month;
+    //}
 
-    [CustomRecurring("Martin Luther King Jr. Day Handler", "Selects the third Monday in the month")]
-    private bool MlkDayHandler(IEvent evnt, DateTime dt)
-    {
-      return dt.DayOfWeek == DayOfWeek.Monday && dt.Day > 14 && dt.Day <= 21 && dt.Month == evnt.Date.Month;
-    }
+    //[CustomRecurring("Martin Luther King Jr. Day Handler", "Selects the third Monday in the month")]
+    //private bool MlkDayHandler(IEvent evnt, DateTime dt)
+    //{
+    //  return dt.DayOfWeek == DayOfWeek.Monday && dt.Day > 14 && dt.Day <= 21 && dt.Month == evnt.Date.Month;
+    //}
 
-    [CustomRecurring("Memorial Day Handler", "Selects the last Monday in the month")]
-    private bool MemorialDayHandler(IEvent evnt, DateTime dt)
-    {
-      DateTime dt2 = LastDayOfWeekInMonth(dt, DayOfWeek.Monday);
-      return dt.Month == evnt.Date.Month && dt2.Day == dt.Date.Day;
-    }
+    //[CustomRecurring("Memorial Day Handler", "Selects the last Monday in the month")]
+    //private bool MemorialDayHandler(IEvent evnt, DateTime dt)
+    //{
+    //  DateTime dt2 = LastDayOfWeekInMonth(dt, DayOfWeek.Monday);
+    //  return dt.Month == evnt.Date.Month && dt2.Day == dt.Date.Day;
+    //}
 
-    static private DateTime LastDayOfWeekInMonth(DateTime day, DayOfWeek dow)
-    {
-      DateTime lastDay = new DateTime(day.Year, day.Month, 1).AddMonths(1).AddDays(-1);
-      DayOfWeek lastDow = lastDay.DayOfWeek;
+    //static private DateTime LastDayOfWeekInMonth(DateTime day, DayOfWeek dow)
+    //{
+    //  DateTime lastDay = new DateTime(day.Year, day.Month, 1).AddMonths(1).AddDays(-1);
+    //  DayOfWeek lastDow = lastDay.DayOfWeek;
 
-      int diff = dow - lastDow;
+    //  int diff = dow - lastDow;
 
-      if ( diff > 0 ) diff -= 7;
+    //  if ( diff > 0 ) diff -= 7;
 
-      System.Diagnostics.Debug.Assert(diff <= 0);
+    //  System.Diagnostics.Debug.Assert(diff <= 0);
 
-      return lastDay.AddDays(diff);
-    }
+    //  return lastDay.AddDays(diff);
+    //}
 
 
     //private int Max(params float[] value)
@@ -821,7 +821,6 @@ namespace CodeProjectCalendar.NET
 
     internal Bitmap RequestImage()
     {
-      ;
       const int cellHourWidth = 60;
       const int cellHourHeight = 30;
       var bmp = new Bitmap(ClientSize.Width, cellHourWidth * 24);
@@ -1003,11 +1002,6 @@ namespace CodeProjectCalendar.NET
       }
       bool CheckSelected(int day)
         => day == selectedDay && _calendarDate.Month == selectedMonth && _calendarDate.Year == selectedYear;
-
-      // TODO optimize
-      var eventsDictionary = TheEvents.Cast<CustomEvent>()
-                                      .GroupBy(e => e.Date)
-                                      .ToDictionary(g => g.Key, g => g.ToArray());
       // ORDISOFWTARE MODIF END
 
       yStart += headerSpacing + controlsSpacing;
@@ -1333,16 +1327,13 @@ namespace CodeProjectCalendar.NET
         //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
         var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
         //var list = TheEvents.Where(ev => ev.Date == dt /*&& ( ev.Enabled || _showDisabledEvents )*/).Cast<CustomEvent>().ToArray();
-        if ( !eventsDictionary.ContainsKey(dt) ) continue;
-        var list = eventsDictionary[dt];
+        if ( !MainForm.CalendarEventsGrouped.ContainsKey(dt) ) continue;
+        var list = MainForm.CalendarEventsGrouped[dt];
         int countEvents = list.Length;
-
-        // TODO optimize
         int countEventsPrev = list[countEvents - 1].IsSeparator ? countEvents - 2 : countEvents - 1;
-
-        if ( list.Count(v => !v.IsSeparator) == 0 ) continue;
+        if ( list.All(v => v.IsSeparator) ) continue;
         int deltaLine = -5 + linespacing;
-        var sample = list.FirstOrDefault(e => !e.EventText.IsNullOrEmpty());
+        var sample = Array.Find(list, e => !e.EventText.IsNullOrEmpty());
         if ( sample is null ) continue;
         SizeF sz = g.MeasureString(sample.EventText, sample.EventFont);
         for ( int index = 0; index < countEvents; index++ )
