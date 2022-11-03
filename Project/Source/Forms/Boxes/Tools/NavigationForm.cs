@@ -67,7 +67,7 @@ partial class NavigationForm : Form
         LabelMoonsetValue.Visible = row.Moonset is not null;
         LabelMoonset.Visible = row.Moonset is not null;
         //
-        LabelEventSeasonValue.Text = AppTranslations.SeasonChanges.GetLang(row.SeasonChange);
+        LabelEventSeasonValue.Text = AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange);
         if ( LabelEventSeasonValue.Text.Length == 0 )
           LabelEventSeasonValue.Text = NoDataField;
         //
