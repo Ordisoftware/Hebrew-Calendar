@@ -30,8 +30,8 @@ partial class ApplicationDatabase
     int month = 0;
     int delta = 0;
     int indexParashah = -1;
-    var ShabatDay = (DayOfWeek)Settings.ShabatDay;
-    bool ShabatMutex = false;
+    var shabatDay = (DayOfWeek)Settings.ShabatDay;
+    bool shabatMutex = false;
     int simhatTorah = TorahCelebrationSettings.SimhatTorah;
     if ( Settings.UseSimhatTorahOutside ) simhatTorah++;
     int simhatTorahRoot = simhatTorah;
@@ -78,10 +78,10 @@ partial class ApplicationDatabase
     void checkParashah(LunisolarDay day)
     {
       if ( day.TorahEvent == TorahCelebrationDay.PessahD1 )
-        ShabatMutex = true;
+        shabatMutex = true;
       if ( day.LunarMonth == TorahCelebrationSettings.YomsMonth && day.LunarDay == simhatTorah )
       {
-        if ( day.Date.DayOfWeek == ShabatDay )
+        if ( day.Date.DayOfWeek == shabatDay )
           simhatTorah++;
         else
         {
@@ -91,7 +91,7 @@ partial class ApplicationDatabase
         }
       }
       else
-      if ( !ShabatMutex && date.DayOfWeek == ShabatDay && indexParashah >= 0 && indexParashah < parashot.Count )
+      if ( !shabatMutex && date.DayOfWeek == shabatDay && indexParashah >= 0 && indexParashah < parashot.Count )
       {
         day.ParashahID = parashot[indexParashah].ID;
         indexParashah++;
@@ -99,7 +99,7 @@ partial class ApplicationDatabase
           simhatTorah = simhatTorahRoot;
       }
       if ( day.TorahEvent == TorahCelebrationDay.PessahD7 )
-        ShabatMutex = false;
+        shabatMutex = false;
     }
     //
     void remap(LunisolarDay day)
@@ -189,8 +189,8 @@ partial class ApplicationDatabase
         if ( !Settings.UseTwoDaysForLastPessahDayOutside ) lengthPessah--;
         calculate(dayDate, lengthPessah, TorahCelebrationDay.PessahD7, false);
         dayDate = calculate(dayDate, TorahCelebrationSettings.ChavouotLenght - 1 - delta, TorahCelebrationDay.ChavouotDiet, true);
-        var ShabatDay = (DayOfWeek)Settings.ShabatDay;
-        while ( dayDate.DayOfWeek != ShabatDay )
+        var shabatDay = (DayOfWeek)Settings.ShabatDay;
+        while ( dayDate.DayOfWeek != shabatDay )
           dayDate = dayDate.AddDays(1);
         SystemManager.TryCatch(() =>
         {

@@ -31,13 +31,13 @@ partial class LunisolarDay
   public LunisolarDay GetParashahReadingDay()
   {
     LunisolarDay result = null;
-    var ShabatDay = (DayOfWeek)Settings.ShabatDay;
+    var shabatDay = (DayOfWeek)Settings.ShabatDay;
     int indexStart = Table.IndexOf(this);
     int indexEnd = Math.Min(indexStart + SearchParashahInterval, Table.Count);
     for ( int index = indexStart; index < indexEnd; index++ )
     {
       var row = Table[index];
-      if ( row.Date.DayOfWeek == ShabatDay )
+      if ( row.Date.DayOfWeek == shabatDay )
       {
         result = row;
         break;

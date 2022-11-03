@@ -153,7 +153,7 @@ public partial class CelebrationVersesBoardForm : Form
 
   private void SelectCelebration_Format(object sender, ListControlConvertEventArgs e)
   {
-    e.Value = HebrewTranslations.TorahCelebrations[(TorahCelebration)e.Value].GetLang();
+    e.Value = HebrewTranslations.CelebrationsInLatinChars[(TorahCelebration)e.Value].GetLang();
   }
 
   private void SelectCelebration_SelectedIndexChanged(object sender, EventArgs e)
