@@ -54,14 +54,14 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary PessahDay = new()
   {
-    [Language.EN] = $"{CelebrationsInLatinChars[TorahCelebration.Pessah][Language.EN]} Day {0}",
-    [Language.FR] = $"{CelebrationsInLatinChars[TorahCelebration.Pessah][Language.FR]} Jour {0}"
+    [Language.EN] = $"{CelebrationsInLatinChars[TorahCelebration.Pessah][Language.EN]} Day {{0}}",
+    [Language.FR] = $"{CelebrationsInLatinChars[TorahCelebration.Pessah][Language.FR]} Jour {{0}}"
   };
 
   static public readonly TranslationsDictionary SoukotDay = new()
   {
-    [Language.EN] = $"{CelebrationsInLatinChars[TorahCelebration.Soukot][Language.EN]} Day {0}",
-    [Language.FR] = $"{CelebrationsInLatinChars[TorahCelebration.Soukot][Language.FR]} Jour {0}"
+    [Language.EN] = $"{CelebrationsInLatinChars[TorahCelebration.Soukot][Language.EN]} Day {{0}}",
+    [Language.FR] = $"{CelebrationsInLatinChars[TorahCelebration.Soukot][Language.FR]} Jour {{0}}"
   };
 
   static public readonly NullSafeDictionary<TorahCelebrationDay, TranslationsDictionary> CelebrationDays = new()
