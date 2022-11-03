@@ -62,12 +62,7 @@ partial class HebrewDatabase : SQLiteDatabase
       {
         item.ReferenceBegin = item.VerseBegin;
         item.ReferenceEnd = item.VerseEnd;
-        var partsBegin = item.ReferenceBegin.Split('.');
-        item.FirstChapter = Convert.ToInt32(partsBegin[0]);
-        item.FirstVerse = Convert.ToInt32(partsBegin[1]);
-        var partsEnd = item.ReferenceEnd.Split('.');
-        item.LastChapter = Convert.ToInt32(partsEnd[0]);
-        item.LastVerse = Convert.ToInt32(partsEnd[1]);
+        item.InitializeReferences();
       }
       SaveParashot();
       IsParashotUpgradedV10 = false;

@@ -39,29 +39,34 @@ public partial class Parashah : INotifyPropertyChanged
   {
     try
     {
+      ID = $"{(int)book}.{number}";
       Book = book;
       Number = number;
       Name = name;
       Unicode = unicode;
       Hebrew = HebrewAlphabet.ToHebrewFont(unicode);
-      ReferenceBegin = referenceBegin;
-      ReferenceEnd = referenceEnd;
-      var partsBegin = ReferenceBegin.Split('.');
-      FirstChapter = Convert.ToInt32(partsBegin[0]);
-      FirstVerse = Convert.ToInt32(partsBegin[1]);
-      var partsEnd = ReferenceEnd.Split('.');
-      LastChapter = Convert.ToInt32(partsEnd[0]);
-      LastVerse = Convert.ToInt32(partsEnd[1]);
       IsLinkedToNext = isLinkedToNext;
       Translation = translation;
       Lettriq = lettriq;
       Memo = string.Empty;
-      ID = $"{(int)book}.{number}";
+      ReferenceBegin = referenceBegin;
+      ReferenceEnd = referenceEnd;
+      InitializeReferences();
     }
     catch ( Exception ex )
     {
       throw new Exception("Error on creating parashah instance: " + ex.Message, ex);
     }
+  }
+
+  internal void InitializeReferences()
+  {
+    var partsBegin = ReferenceBegin.Split('.');
+    FirstChapter = Convert.ToInt32(partsBegin[0]);
+    FirstVerse = Convert.ToInt32(partsBegin[1]);
+    var partsEnd = ReferenceEnd.Split('.');
+    LastChapter = Convert.ToInt32(partsEnd[0]);
+    LastVerse = Convert.ToInt32(partsEnd[1]);
   }
 
   public object Clone()

@@ -25,11 +25,8 @@ public partial class Parashah
   public TorahBook Book { get; set; }
   public int Number { get; set; }
 
-  // Obsolete : Moved to ReferenceBegin since v10.0
-  public string VerseBegin { get; set; }
-
-  // Obsolete : Moved to ReferenceEnd since v10.0
-  public string VerseEnd { get; set; }
+  public string VerseBegin { get; set; } // Obsolete : Moved to ReferenceBegin since v10.0
+  public string VerseEnd { get; set; }   // Obsolete : Moved to ReferenceEnd since v10.0
 
   public string ReferenceBegin { get; set; }
   public string ReferenceEnd { get; set; }
