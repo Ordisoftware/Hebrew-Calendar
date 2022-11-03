@@ -395,6 +395,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### In progress - Version 10.0
 
 - Rename Adar II in VeAdar.
+- Add solar day in search a gregorian date box.
 - Add option to have lunar date on a single line before the ephemeris in the monthly view.
 - Add option to display book name and references of parashah in the monthly view.
 - Add option to set events text alignment in the monthly view.
