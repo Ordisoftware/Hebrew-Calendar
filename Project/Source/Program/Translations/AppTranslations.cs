@@ -265,4 +265,43 @@ static partial class AppTranslations
     }
   };
 
+  static public readonly NullSafeDictionary<MonthlyViewLayoutSection, TranslationsDictionary> LayoutSections = new()
+  {
+    [MonthlyViewLayoutSection.LunarDate] = new TranslationsDictionary
+    {
+      [Language.EN] = "Lunar date",
+      [Language.FR] = "Date lunaire"
+    },
+    [MonthlyViewLayoutSection.EphemerisSun] = new TranslationsDictionary
+    {
+      [Language.EN] = "Sun ephemeris",
+      [Language.FR] = "Éphémérides du soleil"
+    },
+    [MonthlyViewLayoutSection.EphemerisMoon] = new TranslationsDictionary
+    {
+      [Language.EN] = "Moon ephemeris",
+      [Language.FR] = "Éphémérides de la lune"
+    },
+    [MonthlyViewLayoutSection.SeasonChange] = new TranslationsDictionary
+    {
+      [Language.EN] = "Season change",
+      [Language.FR] = "Changement de saison"
+    },
+    [MonthlyViewLayoutSection.Celebration] = new TranslationsDictionary
+    {
+      [Language.EN] = "Celebration",
+      [Language.FR] = "Célébration"
+    },
+    [MonthlyViewLayoutSection.ParashahName] = new TranslationsDictionary
+    {
+      [Language.EN] = "Parashah name",
+      [Language.FR] = "Nom de la parashah"
+    },
+    [MonthlyViewLayoutSection.ParashahReference] = new TranslationsDictionary
+    {
+      [Language.EN] = "Parashah reference",
+      [Language.FR] = "Référence de la parashah"
+    }
+  };
+
 }

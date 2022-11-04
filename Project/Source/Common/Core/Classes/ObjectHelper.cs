@@ -31,6 +31,17 @@ static class ObjectHelper
   }
 
   /// <summary>
+  /// Gets an IEnumerable<typeparamref name="T"/> from a ListBox.Items collection.
+  /// </summary>
+  /// <typeparam name="T">Generic type parameter.</typeparam>
+  /// <param name="collection">The collection.</param>
+  static public IEnumerable<T> AsIEnumerable<T>(this ListBox.ObjectCollection collection)
+  {
+    foreach ( T item in collection )
+      yield return item;
+  }
+
+  /// <summary>
   /// Gets an IEnumerable<typeparamref name="T"/> from a ComboBox.Items collection.
   /// </summary>
   /// <typeparam name="T">Generic type parameter.</typeparam>

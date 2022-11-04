@@ -121,7 +121,7 @@ partial class PreferencesForm
     Settings.CalendarUseHoverEffect = EditCalendarUseHoverEffect.Checked;
     Settings.CalendarShowSelectedBox = EditCalendarShowSelectedBox.Checked;
     Settings.SelectedDayBoxColorOnlyCurrent = EditSelectedDayBoxColorOnlyCurrent.Checked;
-    Settings.CalendarShowParashah = EditCalendarShowParashah.Checked;
+    Settings.CalendarShowParashah = EditParashahEnabled.Checked;
     Settings.MainFormTitleBarShowWeeklyParashah = EditMainFormTitleBarShowWeeklyParashah.Checked;
     Settings.ParashahCaptionWithBookAndRef = EditParashahCaptionWithBookAndRef.Checked;
     Settings.ReminderShabatShowParashah = EditReminderShabatShowParashah.Checked;
@@ -133,14 +133,17 @@ partial class PreferencesForm
     Settings.BoxesRetakeFocusAfterDateClick = EditReminderBoxRetakeFocusAfterDateClick.Checked;
     Settings.CalendarHebrewDateSingleLine = EditCalendarHebrewDateSingleLine.Checked;
     Settings.CalendarHebrewDateSingleLineItalic = EditCalendarHebrewDateSingleLineItalic.Checked;
-    Settings.CalendarParashahWithBookAndFullRef = EditCalendarParashahWithBookAndRef.Checked;
     Settings.HebrewNamesInUnicode = EditHebrewNamesInUnicode.Checked;
     Settings.HebrewInUnicodeKeepArabicNumerals = EditHebrewInUnicodeKeepArabicNumerals.Checked;
     Settings.MonthViewEventsAlignment = (StringAlignment)SelectMonthViewEventsAlignment.SelectedIndex;
     Settings.MonthViewEventsAlignmentOnlyForTorah = EditMonthViewEventsAlignmentOnlyForParashah.Checked;
     Settings.MonthViewSeparatorForLunarDate = EditMonthViewSeparatorForLunarDate.Checked;
-    Settings.MonthViewSeparatorForEphemeris = EditMonthViewSeparatorForEphemeris.Checked;
-    Settings.MonthViewSeparatorForCelebrationAndParashah = EditMonthViewSeparatorForCelebrationAndParashah.Checked;
+    Settings.MonthViewSeparatorForCelebration = EditMonthViewSeparatorForCelebration.Checked;
+    Settings.MonthViewSeparatorForEphemerisSun = EditMonthViewSeparatorForEphemerisSun.Checked;
+    Settings.MonthViewSeparatorForEphemerisMoon = EditMonthViewSeparatorForEphemerisMoon.Checked;
+    Settings.MonthViewSeparatorForSeasonChange = EditMonthViewSeparatorForSeasonChange.Checked;
+    Settings.MonthViewSeparatorForParashahName = EditMonthViewSeparatorForParashahName.Checked;
+    Settings.MonthViewSeparatorForParashahReference = EditMonthViewSeparatorForParashahReference.Checked;
     Settings.MonthViewSeparatorSize = (int)EditMonthViewSeparatorSize.Value;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
@@ -148,9 +151,9 @@ partial class PreferencesForm
     // Navigation window
     NavigationForm.Instance.Relocalize();
     // Monthly view
-    Settings.MonthViewFontNameLatin = SelectMonthViewFontNameLatin.Text;
-    Settings.MonthViewFontNameHebrew = SelectMonthViewFontNameHebrew.Text;
-    Settings.MonthViewFontSize = (int)EditMonthViewFontSize.Value;
+    Settings.MonthViewFontNameLatin = SelectMonthViewLatinFontName.Text;
+    Settings.MonthViewFontNameHebrew = SelectMonthViewHebrewFontName.Text;
+    Settings.MonthViewFontSize = (int)EditMonthViewLatinFontSize.Value;
     Settings.MonthViewHebrewFontSize = (int)EditMonthViewHebrewFontSize.Value;
     // Shabat
     Settings.ShabatDay = (int)( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
@@ -164,15 +167,26 @@ partial class PreferencesForm
     for ( int index = 0; index < SelectRemindEventsBefore.Items.Count; index++ )
       SystemManager.TryCatch(() =>
       {
-        string name = "TorahEventRemind" + ( (TorahEventItem)SelectRemindEventsBefore.Items[index] ).Event;
+        string name = TorahEventRemindPrefix + ( (TorahEventItem)SelectRemindEventsBefore.Items[index] ).Event;
         Settings[name] = SelectRemindEventsBefore.GetItemChecked(index);
       });
     for ( int index = 0; index < SelectRemindEventsDay.Items.Count; index++ )
       SystemManager.TryCatch(() =>
       {
-        string name = "TorahEventRemindDay" + ( (TorahEventItem)SelectRemindEventsDay.Items[index] ).Event;
+        string name = TorahEventRemindDayPrefix + ( (TorahEventItem)SelectRemindEventsDay.Items[index] ).Event;
         Settings[name] = SelectRemindEventsDay.GetItemChecked(index);
       });
+    // Layout
+    for ( int index = 0; index < SelectLayoutSections.Items.Count; index++ )
+    {
+      SystemManager.TryCatch(() =>
+      {
+        var item = (LayoutItem)SelectLayoutSections.Items[index];
+        string prefix = LayoutSectionPrefix + item.Id;
+        Settings[prefix + LayoutSectionPosition] = index;
+        Settings[prefix + LayoutSectionEnabled] = SelectLayoutSections.GetItemChecked(index);
+      });
+    }
     // HotKey
     Settings.GlobalHotKeyPopupMainFormEnabled = EditGlobalHotKeyPopupMainFormEnabled.Checked;
     Settings.GlobalHotKeyPopupMainFormKey = (int)(Keys)SelectGlobalHotKeyPopupMainFormKey.SelectedItem;

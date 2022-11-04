@@ -89,21 +89,21 @@ partial class PreferencesForm
   static PreferencesForm()
   {
     using var form = new PreferencesForm();
-    TabIndexApplication = form.TabControl.TabPages.IndexOf(form.TabPageApplication);
-    TabIndexCelebrations = form.TabControl.TabPages.IndexOf(form.TabPageCelebrations);
-    TabIndexExport = form.TabControl.TabPages.IndexOf(form.TabPageExport);
-    TabIndexGeneration = form.TabControl.TabPages.IndexOf(form.TabPageGeneration);
-    TabIndexMonthView = form.TabControl.TabPages.IndexOf(form.TabPageMonthView);
-    TabIndexNavigation = form.TabControl.TabPages.IndexOf(form.TabPageNavigation);
-    TabIndexParashah = form.TabControl.TabPages.IndexOf(form.TabPageParashah);
-    TabIndexPaths = form.TabControl.TabPages.IndexOf(form.TabPagePaths);
-    TabIndexPrinting = form.TabControl.TabPages.IndexOf(form.TabPagePrinting);
-    TabIndexReminder = form.TabControl.TabPages.IndexOf(form.TabPageReminder);
-    TabIndexShabat = form.TabControl.TabPages.IndexOf(form.TabPageShabat);
-    TabIndexStartup = form.TabControl.TabPages.IndexOf(form.TabPageStartup);
-    TabIndexTextReport = form.TabControl.TabPages.IndexOf(form.TabPageTextReport);
-    TabIndexTrayIcon = form.TabControl.TabPages.IndexOf(form.TabPageTrayIcon);
-    TabIndexWeather = form.TabControl.TabPages.IndexOf(form.TabPageWeather);
+    TabIndexApplication = form.TabControlMain.TabPages.IndexOf(form.TabPageApplication);
+    TabIndexCelebrations = form.TabControlMain.TabPages.IndexOf(form.TabPageCelebrations);
+    TabIndexExport = form.TabControlMain.TabPages.IndexOf(form.TabPageExport);
+    TabIndexGeneration = form.TabControlMain.TabPages.IndexOf(form.TabPageGeneration);
+    TabIndexMonthView = form.TabControlMain.TabPages.IndexOf(form.TabPageMonthView);
+    TabIndexNavigation = form.TabControlMain.TabPages.IndexOf(form.TabPageNavigation);
+    TabIndexParashah = form.TabControlMain.TabPages.IndexOf(form.TabPageParashah);
+    TabIndexPaths = form.TabControlMain.TabPages.IndexOf(form.TabPagePaths);
+    TabIndexPrinting = form.TabControlMain.TabPages.IndexOf(form.TabPagePrinting);
+    TabIndexReminder = form.TabControlMain.TabPages.IndexOf(form.TabPageReminder);
+    TabIndexShabat = form.TabControlMain.TabPages.IndexOf(form.TabPageShabat);
+    TabIndexStartup = form.TabControlMain.TabPages.IndexOf(form.TabPageStartup);
+    TabIndexTextReport = form.TabControlMain.TabPages.IndexOf(form.TabPageTextReport);
+    TabIndexTrayIcon = form.TabControlMain.TabPages.IndexOf(form.TabPageTrayIcon);
+    TabIndexWeather = form.TabControlMain.TabPages.IndexOf(form.TabPageWeather);
     var filter1 = new Regex("(^F[0-9]{1,2}$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
     var filter2 = new Regex("(^[A-Z]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
     var filter3 = new Regex("(^D[0-D9]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
@@ -121,7 +121,8 @@ partial class PreferencesForm
     var lang = Settings.LanguageSelected;
     var form = new PreferencesForm();
     if ( !MainForm.Instance.Visible ) form.ShowInTaskbar = true;
-    form.TabControl.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndex;
+    form.TabControlMain.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndex;
+    form.TabControlMonthView.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndexMonthView;
     form.ShowDialog();
     while ( LanguageChanged || DoReset )
     {
@@ -152,7 +153,8 @@ partial class PreferencesForm
       MainForm.Instance.CurrentGPSLongitude = (float)XmlConvert.ToDouble(Settings.GPSLongitude);
       if ( result ) CalendarDates.Instance.Clear();
     });
-    Settings.PreferencesFormSelectedTabIndex = form.TabControl.SelectedIndex;
+    Settings.PreferencesFormSelectedTabIndex = form.TabControlMain.SelectedIndex;
+    Settings.PreferencesFormSelectedTabIndexMonthView = form.TabControlMonthView.SelectedIndex;
     form.Dispose();
     form = null;
     return result;

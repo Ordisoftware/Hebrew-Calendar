@@ -99,8 +99,11 @@ partial class MainForm
     {
       InitializeYearsInterval();
       bool separatorForLunarDate = Settings.MonthViewSeparatorForLunarDate;
-      bool separatorForEphemeris = Settings.MonthViewSeparatorForEphemeris;
-      bool separatorForCelebrationAndParashah = Settings.MonthViewSeparatorForCelebrationAndParashah;
+      bool separatorForEphemeris = Settings.MonthViewSeparatorForEphemerisSun;
+      bool separatorForSeasonChange = Settings.MonthViewSeparatorForSeasonChange;
+      bool separatorForCelebration = Settings.MonthViewSeparatorForCelebration;
+      bool separatorForParashahName = Settings.MonthViewSeparatorForParashahName;
+      bool separatorForParashahReference = Settings.MonthViewSeparatorForParashahReference;
       bool dateSingleLine = Settings.CalendarHebrewDateSingleLine;
       bool omerSun = !Settings.TorahEventsCountAsMoon;
       bool omerSunAndNotDateSingleLine = omerSun && !dateSingleLine;
@@ -185,22 +188,26 @@ partial class MainForm
               : Settings.CalendarColorMoon;
           string strDate = string.Empty;
           // Single line date
-          if ( dateSingleLine && ( omerSun || row.Moonrise is not null ) )
-          {
-            if ( separatorForLunarDate )
-              add(Settings.MonthViewTextColor, string.Empty);
-            var color = row.IsNewMoon ? Settings.CalendarColorTorahEvent : Settings.MonthViewTextColor;
-            add(color, row.DayAndMonthFormattedText, useUnicode, false, Settings.CalendarHebrewDateSingleLineItalic);
-            if ( separatorForLunarDate )
-              add(Settings.MonthViewTextColor, string.Empty);
-          }
-          else
-          {
-            if ( separatorForLunarDate )
-              add(Settings.MonthViewTextColor, string.Empty);
-            strDate = " " + row.DayAndMonthFormattedText;
-          }
+          if ( Settings.MonthViewLayoutLunarDateEnabled )
+            if ( dateSingleLine && ( omerSun || row.Moonrise is not null ) )
+            {
+              if ( separatorForLunarDate )
+                add(Settings.MonthViewTextColor, string.Empty);
+              var color = row.IsNewMoon ? Settings.CalendarColorTorahEvent : Settings.MonthViewTextColor;
+              add(color, row.DayAndMonthFormattedText, useUnicode, false, Settings.CalendarHebrewDateSingleLineItalic);
+              if ( separatorForLunarDate )
+                add(Settings.MonthViewTextColor, string.Empty);
+            }
+            else
+            {
+              if ( separatorForLunarDate )
+                add(Settings.MonthViewTextColor, string.Empty);
+              strDate = " " + row.DayAndMonthFormattedText;
+            }
           // Ephemeris
+
+          //if ( Settings.MonthViewLayoutEphemeris Enabled )
+
           if ( omerSun )
           {
             add(colorEphemeris, $"{strRise}{row.SunriseAsString}{strDate}");
@@ -227,19 +234,30 @@ partial class MainForm
             if ( row.Moonset is not null )
               add(Settings.MonthViewTextColor, strSet + row.MoonsetAsString);
           }
-          // Season change
-          if ( row.SeasonChange != 0 )
-            add(Settings.CalendarColorSeason, AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange));
-          // Separator
+
           if ( separatorForEphemeris )
             add(Settings.MonthViewTextColor, string.Empty);
+
+
+          // Season change
+          if ( Settings.MonthViewLayoutSeasonChangeEnabled )
+          {
+            if ( row.SeasonChange != 0 )
+              add(Settings.CalendarColorSeason, AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange));
+            // Separator
+            if ( separatorForSeasonChange )
+              add(Settings.MonthViewTextColor, string.Empty);
+          }
           //
-          // Torah celebration
+          // Celebration
           //
-          if ( !row.TorahEventText.IsNullOrEmpty() )
-            add(Settings.CalendarColorTorahEvent, row.TorahEventText, useUnicode, true);
-          if ( separatorForCelebrationAndParashah )
-            add(Settings.MonthViewTextColor, string.Empty);
+          if ( Settings.MonthViewLayoutCelebrationEnabled )
+          {
+            if ( !row.TorahEventText.IsNullOrEmpty() )
+              add(Settings.CalendarColorTorahEvent, row.TorahEventText, useUnicode, true);
+            if ( separatorForCelebration )
+              add(Settings.MonthViewTextColor, string.Empty);
+          }
           //
           // Parashah
           //
@@ -250,9 +268,18 @@ partial class MainForm
               add(Settings.CalendarColorParashah, SysTranslations.UndefinedSlot.GetLang(), useUnicode, true);
             else
             {
-              add(Settings.CalendarColorParashah, parashah.ToStringShort(false, row.HasLinkedParashah), useUnicode, true);
-              if ( Settings.CalendarParashahWithBookAndFullRef )
+              if ( Settings.MonthViewLayoutParashahNameEnabled )
+              {
+                add(Settings.CalendarColorParashah, parashah.ToStringShort(false, row.HasLinkedParashah), useUnicode, true);
+                if ( separatorForParashahName )
+                  add(Settings.MonthViewTextColor, string.Empty);
+              }
+              if ( Settings.MonthViewLayoutParashahReferenceEnabled )
+              {
                 add(Settings.CalendarColorParashah, $"{parashah.ToStringWithBookAndReferences()}", useUnicode, true);
+                if ( separatorForParashahReference )
+                  add(Settings.MonthViewTextColor, string.Empty);
+              }
             }
           }
           //

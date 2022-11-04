@@ -377,6 +377,36 @@ partial class PreferencesForm : Form
     MainForm.Instance.InitializeCurrentTimeZone();
   }
 
+  private void SelectOmerMoon_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( !IsReady ) return;
+    if ( !SelectOmerMoon.Checked ) return;
+    var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+    index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+  }
+
+  private void SelectOmerSun_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( !IsReady ) return;
+    if ( !SelectOmerSun.Checked ) return;
+    var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+    index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+  }
+
+  private void SelectUseSodHaibour_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( !IsReady ) return;
+    if ( !SelectUseSodHaibour.Checked ) return;
+    var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+    index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+  }
+
   #endregion
 
   #region Reminder
@@ -486,15 +516,20 @@ partial class PreferencesForm : Form
 
   #region Parashah
 
-  private void EditCalendarShowParashah_Changed(object sender, EventArgs e)
+  private void EditParashahEnabled_Changed(object sender, EventArgs e)
   {
+    EditMainFormTitleBarShowWeeklyParashah.Enabled = EditParashahEnabled.Checked;
+    EditParashahCaptionWithBookAndRef.Enabled = EditParashahEnabled.Checked;
+    EditReminderShabatShowParashah.Enabled = EditParashahEnabled.Checked;
+    EditWeeklyParashahShowAtStartup.Enabled = EditParashahEnabled.Checked;
+    EditWeeklyParashahShowAtNewWeek.Enabled = EditParashahEnabled.Checked;
+    if ( !IsReady ) return;
     SetMustRefreshEnabled(null, null);
-    EditMainFormTitleBarShowWeeklyParashah.Enabled = EditCalendarShowParashah.Checked;
-    EditParashahCaptionWithBookAndRef.Enabled = EditCalendarShowParashah.Checked;
-    EditReminderShabatShowParashah.Enabled = EditCalendarShowParashah.Checked;
-    EditWeeklyParashahShowAtStartup.Enabled = EditCalendarShowParashah.Checked;
-    EditWeeklyParashahShowAtNewWeek.Enabled = EditCalendarShowParashah.Checked;
-    EditCalendarParashahWithBookAndRef.Enabled = EditCalendarShowParashah.Checked;
+    if ( EditParashahEnabled.Checked ) return;
+    var index = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahName);
+    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+    index = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahReference);
+    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
   }
 
   #endregion
@@ -527,18 +562,7 @@ partial class PreferencesForm : Form
 
   #endregion
 
-  #region Month View
-
-  private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
-  {
-    EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem )?.Tag;
-  }
-
-  private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
-  {
-    MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
-                                     new Point(0, ActionMoonDayTextFormatReset.Height));
-  }
+  #region Colors
 
   private void EditUseColors_CheckedChanged(object sender, EventArgs e)
   {
@@ -576,6 +600,21 @@ partial class PreferencesForm : Form
     SaveTheme();
   }
 
+  #endregion
+
+  #region Month View
+
+  private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
+  {
+    EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem )?.Tag;
+  }
+
+  private void ActionMoonDayTextFormatReset_Click(object sender, EventArgs e)
+  {
+    MenuSelectMoonDayTextFormat.Show(ActionMoonDayTextFormatReset,
+                                     new Point(0, ActionMoonDayTextFormatReset.Height));
+  }
+
   private void EditCalendarHebrewDateSingleLine_CheckedChanged(object sender, EventArgs e)
   {
     SetMustRefreshEnabled(null, null);
@@ -584,18 +623,68 @@ partial class PreferencesForm : Form
 
   private void SelectMonthViewFontNameLatin_SelectedIndexChanged(object sender, EventArgs e)
   {
-    LabelMonthViewFontNameLatinSample.Font = new Font(SelectMonthViewFontNameLatin.Text,
-                                                      LabelMonthViewFontNameLatinSample.Font.Size);
+    LabelMonthViewFontNameLatinSample.Font = new Font(SelectMonthViewLatinFontName.Text,
+                                                      (float)EditMonthViewLatinFontSize.Value);
     if ( !IsReady ) return;
     SetMustRefreshEnabled(null, null);
   }
 
   private void SelectMonthViewFontNameHebrew_SelectedIndexChanged(object sender, EventArgs e)
   {
-    LabelMonthViewFontNameHebrewSample.Font = new Font(SelectMonthViewFontNameHebrew.Text,
-                                                       LabelMonthViewFontNameHebrewSample.Font.Size);
+    LabelMonthViewFontNameHebrewSample.Font = new Font(SelectMonthViewHebrewFontName.Text,
+                                                       (float)EditMonthViewHebrewFontSize.Value);
     if ( !IsReady ) return;
     SetMustRefreshEnabled(null, null);
+  }
+
+  private void ActionSeparatorsCheckAll_Click(object sender, EventArgs e)
+  {
+    EditMonthViewSeparatorForCelebration.Checked = true;
+    EditMonthViewSeparatorForEphemerisMoon.Checked = true;
+    EditMonthViewSeparatorForEphemerisSun.Checked = true;
+    EditMonthViewSeparatorForLunarDate.Checked = true;
+    EditMonthViewSeparatorForParashahName.Checked = true;
+    EditMonthViewSeparatorForParashahReference.Checked = true;
+    EditMonthViewSeparatorForSeasonChange.Checked = true;
+  }
+
+  private void ActionSeparatorsUncheckAll_Click(object sender, EventArgs e)
+  {
+    EditMonthViewSeparatorForCelebration.Checked = false;
+    EditMonthViewSeparatorForEphemerisMoon.Checked = false;
+    EditMonthViewSeparatorForEphemerisSun.Checked = false;
+    EditMonthViewSeparatorForLunarDate.Checked = false;
+    EditMonthViewSeparatorForParashahName.Checked = false;
+    EditMonthViewSeparatorForParashahReference.Checked = false;
+    EditMonthViewSeparatorForSeasonChange.Checked = false;
+  }
+
+  private void ListBoxLayout_ItemCheck(object sender, ItemCheckEventArgs e)
+  {
+    if ( !IsReady ) return;
+    SetMustRefreshEnabled(null, null);
+    var item = (LayoutItem)SelectLayoutSections.Items[e.Index];
+    if ( item.Id == MonthlyViewLayoutSection.EphemerisSun && !SelectOmerMoon.Checked )
+      e.NewValue = CheckState.Checked;
+    else
+    if ( item.Id == MonthlyViewLayoutSection.EphemerisMoon && SelectOmerMoon.Checked )
+      e.NewValue = CheckState.Checked;
+    else
+    if ( item.Id == MonthlyViewLayoutSection.ParashahName && !EditParashahEnabled.Checked )
+      e.NewValue = CheckState.Unchecked;
+    else
+    if ( item.Id == MonthlyViewLayoutSection.ParashahReference && !EditParashahEnabled.Checked )
+      e.NewValue = CheckState.Unchecked;
+  }
+
+  private void ActionLayoutSectionUp_Click(object sender, EventArgs e)
+  {
+
+  }
+
+  private void ActionLayoutSectionDown_Click(object sender, EventArgs e)
+  {
+
   }
 
   #endregion
@@ -829,7 +918,6 @@ partial class PreferencesForm : Form
     MainForm.Instance.SeparatorMenuWeather.Enabled = enabled;
     PanelWeatherOnline.Enabled = enabled;
   }
-
 
   #endregion
 

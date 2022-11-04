@@ -45,6 +45,19 @@ static partial class AppTranslations
                       "• Quelques améliorations et corrections."
     },*/
 
+    ["10.1"] = new TranslationsDictionary
+    {
+      [Language.EN] = "" + Globals.NL +
+                      "" + Globals.NL +
+                      "" + Globals.NL +
+                      "",
+
+      [Language.FR] = "" + Globals.NL +
+                      "" + Globals.NL +
+                      "" + Globals.NL +
+                      "",
+    },
+
     ["10.0"] = new TranslationsDictionary
     {
       [Language.EN] = "• Adar II was renamed in VeAdar." + Globals.NL +
@@ -62,13 +75,6 @@ static partial class AppTranslations
                       "• Mise à jour des liens Web."
     },
 
-    ["9.33"] = new TranslationsDictionary
-    {
-      [Language.EN] = "• Add search parashah text box in parashot board.",
-
-      [Language.FR] = "• Ajout d'une zone de texte de recherche de parashah dans le tableau des parashot."
-    },
-
     ["9.x"] = new TranslationsDictionary
     {
       [Language.EN] = "• Added mouse hover effect in monthly view." + Globals.NL +
@@ -81,6 +87,7 @@ static partial class AppTranslations
                       "• Added some keyboard shortcuts to change and select day in monthly view." + Globals.NL +
                       "• Added celebration verses board and its command-line option." + Globals.NL +
                       "• Added search next parashah from today in parashot board." + Globals.NL +
+                      "• Added search parashah text box in parashot board." + Globals.NL +
                       "• Moved day of Shabat selection to the generation tab in the preferences." + Globals.NL +
                       "• Improved export filenames for celebrations and new moons boards." + Globals.NL +
                       "• Improved web links menus to display those in the current language to the top." + Globals.NL +
@@ -100,6 +107,7 @@ static partial class AppTranslations
                       "• Ajout de raccourcis clavier pour changer et sélectionner un jour dans la vue mensuelle." + Globals.NL +
                       "• Ajout d'un tableau des versets des célébrations et de son option de ligne de commande." + Globals.NL +
                       "• Ajout de la recherche de la prochaine parashah depuis aujourd'hui dans le tableau des parashot." + Globals.NL +
+                      "• Ajout d'une zone de texte de recherche de parashah dans le tableau des parashot." + Globals.NL +
                       "• Déplacement du choix du jour du Shabat vers l'onglet de génération dans les préférences." + Globals.NL +
                       "• Amélioration des noms de fichiers exportés par les tableaux des célébrations et des nouvelles lunes." + Globals.NL +
                       "• Amélioration des menus de liens web pour afficher ceux dans la langue actuelle vers le haut." + Globals.NL +

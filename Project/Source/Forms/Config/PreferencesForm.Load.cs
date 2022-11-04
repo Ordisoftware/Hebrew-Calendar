@@ -118,7 +118,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditCalendarUseHoverEffect.Checked = Settings.CalendarUseHoverEffect);
     SystemManager.TryCatch(() => EditCalendarShowSelectedBox.Checked = Settings.CalendarShowSelectedBox);
     SystemManager.TryCatch(() => EditSelectedDayBoxColorOnlyCurrent.Checked = Settings.SelectedDayBoxColorOnlyCurrent);
-    SystemManager.TryCatch(() => EditCalendarShowParashah.Checked = Settings.CalendarShowParashah);
+    SystemManager.TryCatch(() => EditParashahEnabled.Checked = Settings.CalendarShowParashah);
     SystemManager.TryCatch(() => EditMainFormTitleBarShowWeeklyParashah.Checked = Settings.MainFormTitleBarShowWeeklyParashah);
     SystemManager.TryCatch(() => EditParashahCaptionWithBookAndRef.Checked = Settings.ParashahCaptionWithBookAndRef);
     SystemManager.TryCatch(() => EditReminderShabatShowParashah.Checked = Settings.ReminderShabatShowParashah);
@@ -130,17 +130,20 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditReminderBoxRetakeFocusAfterDateClick.Checked = Settings.BoxesRetakeFocusAfterDateClick);
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLine.Checked = Settings.CalendarHebrewDateSingleLine);
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLineItalic.Checked = Settings.CalendarHebrewDateSingleLineItalic);
-    SystemManager.TryCatch(() => EditCalendarParashahWithBookAndRef.Checked = Settings.CalendarParashahWithBookAndFullRef);
     SystemManager.TryCatch(() => EditHebrewNamesInUnicode.Checked = Settings.HebrewNamesInUnicode);
     SystemManager.TryCatch(() => EditHebrewInUnicodeKeepArabicNumerals.Checked = Settings.HebrewInUnicodeKeepArabicNumerals);
     SystemManager.TryCatch(() => SelectMonthViewEventsAlignment.SelectedIndex = (int)Settings.MonthViewEventsAlignment);
     SystemManager.TryCatch(() => EditMonthViewEventsAlignmentOnlyForParashah.Checked = Settings.MonthViewEventsAlignmentOnlyForTorah);
     SystemManager.TryCatch(() => EditMonthViewSeparatorForLunarDate.Checked = Settings.MonthViewSeparatorForLunarDate);
-    SystemManager.TryCatch(() => EditMonthViewSeparatorForEphemeris.Checked = Settings.MonthViewSeparatorForEphemeris);
-    SystemManager.TryCatch(() => EditMonthViewSeparatorForCelebrationAndParashah.Checked = Settings.MonthViewSeparatorForCelebrationAndParashah);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForCelebration.Checked = Settings.MonthViewSeparatorForCelebration);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForEphemerisSun.Checked = Settings.MonthViewSeparatorForEphemerisSun);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForEphemerisMoon.Checked = Settings.MonthViewSeparatorForEphemerisMoon);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForSeasonChange.Checked = Settings.MonthViewSeparatorForSeasonChange);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForParashahName.Checked = Settings.MonthViewSeparatorForParashahName);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForParashahReference.Checked = Settings.MonthViewSeparatorForParashahReference);
     SystemManager.TryCatch(() => EditMonthViewSeparatorSize.Value = Settings.MonthViewSeparatorSize);
     // Assigned by the form on user action
-    SystemManager.TryCatch(() => EditMonthViewFontSize.Value = Settings.MonthViewFontSize);
+    SystemManager.TryCatch(() => EditMonthViewLatinFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);
     SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);
     SystemManager.TryCatch(() => EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay);
