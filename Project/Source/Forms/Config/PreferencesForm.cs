@@ -379,32 +379,32 @@ partial class PreferencesForm : Form
 
   private void SelectOmerMoon_CheckedChanged(object sender, EventArgs e)
   {
-    if ( !IsReady ) return;
-    if ( !SelectOmerMoon.Checked ) return;
-    var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
-    index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+    //if ( !IsReady ) return;
+    //if ( !SelectOmerMoon.Checked ) return;
+    //var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+    //index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
   }
 
   private void SelectOmerSun_CheckedChanged(object sender, EventArgs e)
   {
-    if ( !IsReady ) return;
-    if ( !SelectOmerSun.Checked ) return;
-    var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
-    index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+    //if ( !IsReady ) return;
+    //if ( !SelectOmerSun.Checked ) return;
+    //var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+    //index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
   }
 
   private void SelectUseSodHaibour_CheckedChanged(object sender, EventArgs e)
   {
-    if ( !IsReady ) return;
-    if ( !SelectUseSodHaibour.Checked ) return;
-    var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
-    index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+    //if ( !IsReady ) return;
+    //if ( !SelectUseSodHaibour.Checked ) return;
+    //var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+    //index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
   }
 
   #endregion
