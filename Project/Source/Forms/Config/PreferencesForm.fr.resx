@@ -472,9 +472,6 @@
   <data name="EditBigCalendarWarning.Text" xml:space="preserve">
     <value>Afficher une alerte pour un grand intervalle</value>
   </data>
-  <data name="EditAskRegenerateIfIntervalGreater.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 17</value>
-  </data>
   <data name="EditAskRegenerateIfIntervalGreater.Text" xml:space="preserve">
     <value>Demander de régénérer au démarrage si l'intervalle est supérieur</value>
   </data>
