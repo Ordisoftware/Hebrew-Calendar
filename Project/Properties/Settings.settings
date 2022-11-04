@@ -827,5 +827,11 @@
     <Setting Name="FirstLaunchV10_1" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="EphemerisPrefixSun" Type="System.String" Scope="User">
+      <Value Profile="(Default)">☉</Value>
+    </Setting>
+    <Setting Name="EphemerisPrefixMoon" Type="System.String" Scope="User">
+      <Value Profile="(Default)">☽</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

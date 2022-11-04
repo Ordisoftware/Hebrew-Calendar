@@ -131,18 +131,6 @@ static partial class AppTranslations
     }
   };
 
-  static public readonly TranslationsDictionary EphemerisCodePrefixSun = new()
-  {
-    [Language.EN] = "☉ ",
-    [Language.FR] = "☉ "
-  };
-
-  static public readonly TranslationsDictionary EphemerisCodePrefixMoon = new()
-  {
-    [Language.EN] = "☽ ",
-    [Language.FR] = "☽ "
-  };
-
   static public readonly NullSafeDictionary<MoonriseOccurring, TranslationsDictionary> MoonriseOccurings = new()
   {
     [MoonriseOccurring.AfterSet] = new TranslationsDictionary

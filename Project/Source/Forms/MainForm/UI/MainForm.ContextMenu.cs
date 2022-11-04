@@ -149,6 +149,7 @@ public partial class MainForm
     ContextMenuDayDatesDiffToToday.Enabled = ContextMenuDayCurrentEvent.Date != DateTime.Today;
     ContextMenuDayDatesDiffToSelected.Enabled = DateSelected is not null
                                                 && ContextMenuDaySelectDate.Enabled && DateSelected != DateTime.Today;
+    // TODO remove
     //if ( Settings.TorahEventsCountAsMoon )
     //{
     //ContextMenuDayMoonrise.Visible = false;

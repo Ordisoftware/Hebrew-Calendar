@@ -679,12 +679,28 @@ partial class PreferencesForm : Form
 
   private void ActionLayoutSectionUp_Click(object sender, EventArgs e)
   {
-
+    SelectLayoutSections.MoveSelectedItem(-1);
+    SelectLayoutSections.Focus();
+    SetMustRefreshEnabled(null, null);
   }
 
   private void ActionLayoutSectionDown_Click(object sender, EventArgs e)
   {
+    SelectLayoutSections.MoveSelectedItem(1);
+    SelectLayoutSections.Focus();
+    SetMustRefreshEnabled(null, null);
+  }
 
+  private void ActionResetEphemerisPrefixSun_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      EditCustomWebSearch.Text = (string)Settings.Properties[nameof(Settings.EphemerisPrefixSun)].DefaultValue;
+  }
+
+  private void ActionResetEphemerisPrefixMoon_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      EditCustomWebSearch.Text = (string)Settings.Properties[nameof(Settings.EphemerisPrefixMoon)].DefaultValue;
   }
 
   #endregion
