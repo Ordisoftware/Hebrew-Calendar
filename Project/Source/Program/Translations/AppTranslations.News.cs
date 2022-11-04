@@ -47,15 +47,11 @@ static partial class AppTranslations
 
     ["10.1"] = new TranslationsDictionary
     {
-      [Language.EN] = "" + Globals.NL +
-                      "" + Globals.NL +
-                      "" + Globals.NL +
-                      "",
+      [Language.EN] = "• Add option to select font names for texts in the monthly view." + Globals.NL +
+                      "• Add option to select data layout order and sections to show in the monthly view.",
 
-      [Language.FR] = "" + Globals.NL +
-                      "" + Globals.NL +
-                      "" + Globals.NL +
-                      "",
+      [Language.FR] = "• Ajout d'une option pour sélectionner les noms de police pour les textes dans la vue mensuelle" + Globals.NL +
+                      "• Ajout d'une option pour sélectionner la disposition des données et les sections à afficher dans la vue mensuelle."
     },
 
     ["10.0"] = new TranslationsDictionary

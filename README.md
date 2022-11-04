@@ -376,21 +376,19 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 >- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 >- Add command-line option `--lunarmonths` to show the lunar months board.
->- Add auto sort bookmarks.
->- Add auto-backup bookmarks.
 >- Add comments to bookmarks.
->- Add option to choose information order in the monthly view.
->- Add option to indicate parashah and Torah reference in upper or sentence case.
+>- Add auto sort bookmarks.
+>- Add auto backup bookmarks.
 >- Add import button to the GPS box on the first start.
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
 >- Check and fix weekly parashah generation with soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
-#### TO DO - Version 10.1
+#### 2022.11 - Version 10.1
 
-- Add option to select data layout order and sections to show in the monthly view.
 - Add option to select font names for texts in the monthly view.
+- Add option to select data layout order and sections to show in the monthly view.
 
 #### 2022.11.03 - Version 10.0
 

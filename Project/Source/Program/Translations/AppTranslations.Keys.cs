@@ -98,7 +98,7 @@ static partial class AppTranslations
                     "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
                     "F8 (ou Ctrl + N) : Fenêtre de navigation" + Globals.NL +
                     "Ctrl + T (ou Numpad0) : Aller à aujourd'hui" + Globals.NL +
-                    "Ctrl + B (or Decimal) : Aller au jour sélectionné" + Globals.NL +
+                    "Ctrl + B (ou Décimal) : Aller au jour sélectionné" + Globals.NL +
                     "Ctrl + D : Chercher un jour" + Globals.NL +
                     "Ctrl + S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
                     "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
