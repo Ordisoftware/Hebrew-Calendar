@@ -3320,5 +3320,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["FirstLaunchV10_1"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("☉")]
+        public string EphemerisPrefixSun {
+            get {
+                return ((string)(this["EphemerisPrefixSun"]));
+            }
+            set {
+                this["EphemerisPrefixSun"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("☽")]
+        public string EphemerisPrefixMoon {
+            get {
+                return ((string)(this["EphemerisPrefixMoon"]));
+            }
+            set {
+                this["EphemerisPrefixMoon"] = value;
+            }
+        }
     }
 }

@@ -314,6 +314,12 @@
       this.SelectMonthViewEventsAlignment = new System.Windows.Forms.ComboBox();
       this.EditMonthViewSeparatorSize = new System.Windows.Forms.NumericUpDown();
       this.TabPageMonthViewFonts = new System.Windows.Forms.TabPage();
+      this.ActionResetEphemerisPrefixMoon = new System.Windows.Forms.Button();
+      this.LabelEphemerisPrefixMoon = new System.Windows.Forms.Label();
+      this.EditEphemerisPrefixMoon = new Ordisoftware.Core.TextBoxEx();
+      this.ActionResetEphemerisPrefixSun = new System.Windows.Forms.Button();
+      this.LabelEphemerisPrefixSun = new System.Windows.Forms.Label();
+      this.EditEphemerisPrefixSun = new Ordisoftware.Core.TextBoxEx();
       this.LabelMonthViewFontNameLatin = new System.Windows.Forms.Label();
       this.LabelMonthViewFontNameHebrewSample = new System.Windows.Forms.TextBox();
       this.EditMonthViewLatinFontSize = new System.Windows.Forms.NumericUpDown();
@@ -2729,6 +2735,12 @@
       // TabPageMonthViewFonts
       // 
       this.TabPageMonthViewFonts.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageMonthViewFonts.Controls.Add(this.ActionResetEphemerisPrefixMoon);
+      this.TabPageMonthViewFonts.Controls.Add(this.LabelEphemerisPrefixMoon);
+      this.TabPageMonthViewFonts.Controls.Add(this.EditEphemerisPrefixMoon);
+      this.TabPageMonthViewFonts.Controls.Add(this.ActionResetEphemerisPrefixSun);
+      this.TabPageMonthViewFonts.Controls.Add(this.LabelEphemerisPrefixSun);
+      this.TabPageMonthViewFonts.Controls.Add(this.EditEphemerisPrefixSun);
       this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewFontNameLatin);
       this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewFontNameHebrewSample);
       this.TabPageMonthViewFonts.Controls.Add(this.EditMonthViewLatinFontSize);
@@ -2745,6 +2757,48 @@
       resources.ApplyResources(this.TabPageMonthViewFonts, "TabPageMonthViewFonts");
       this.TabPageMonthViewFonts.Name = "TabPageMonthViewFonts";
       this.TabPageMonthViewFonts.UseVisualStyleBackColor = true;
+      // 
+      // ActionResetEphemerisPrefixMoon
+      // 
+      this.ActionResetEphemerisPrefixMoon.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetEphemerisPrefixMoon, "ActionResetEphemerisPrefixMoon");
+      this.ActionResetEphemerisPrefixMoon.Name = "ActionResetEphemerisPrefixMoon";
+      this.ActionResetEphemerisPrefixMoon.UseVisualStyleBackColor = true;
+      this.ActionResetEphemerisPrefixMoon.Click += new System.EventHandler(this.ActionResetEphemerisPrefixMoon_Click);
+      // 
+      // LabelEphemerisPrefixMoon
+      // 
+      resources.ApplyResources(this.LabelEphemerisPrefixMoon, "LabelEphemerisPrefixMoon");
+      this.LabelEphemerisPrefixMoon.Name = "LabelEphemerisPrefixMoon";
+      // 
+      // EditEphemerisPrefixMoon
+      // 
+      this.EditEphemerisPrefixMoon.BackColor = System.Drawing.SystemColors.Window;
+      this.EditEphemerisPrefixMoon.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditEphemerisPrefixMoon, "EditEphemerisPrefixMoon");
+      this.EditEphemerisPrefixMoon.Name = "EditEphemerisPrefixMoon";
+      this.EditEphemerisPrefixMoon.SpellCheckAllowed = false;
+      // 
+      // ActionResetEphemerisPrefixSun
+      // 
+      this.ActionResetEphemerisPrefixSun.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetEphemerisPrefixSun, "ActionResetEphemerisPrefixSun");
+      this.ActionResetEphemerisPrefixSun.Name = "ActionResetEphemerisPrefixSun";
+      this.ActionResetEphemerisPrefixSun.UseVisualStyleBackColor = true;
+      this.ActionResetEphemerisPrefixSun.Click += new System.EventHandler(this.ActionResetEphemerisPrefixSun_Click);
+      // 
+      // LabelEphemerisPrefixSun
+      // 
+      resources.ApplyResources(this.LabelEphemerisPrefixSun, "LabelEphemerisPrefixSun");
+      this.LabelEphemerisPrefixSun.Name = "LabelEphemerisPrefixSun";
+      // 
+      // EditEphemerisPrefixSun
+      // 
+      this.EditEphemerisPrefixSun.BackColor = System.Drawing.SystemColors.Window;
+      this.EditEphemerisPrefixSun.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditEphemerisPrefixSun, "EditEphemerisPrefixSun");
+      this.EditEphemerisPrefixSun.Name = "EditEphemerisPrefixSun";
+      this.EditEphemerisPrefixSun.SpellCheckAllowed = false;
       // 
       // LabelMonthViewFontNameLatin
       // 
@@ -3828,5 +3882,11 @@
     private Button ActionSeparatorsCheckAll;
     private Label LabelChangeOmerInfo;
     private Label LabelParashahEnabledInfo;
-  }
+        private Button ActionResetEphemerisPrefixSun;
+        private Label LabelEphemerisPrefixSun;
+        private TextBoxEx EditEphemerisPrefixSun;
+        private Button ActionResetEphemerisPrefixMoon;
+        private Label LabelEphemerisPrefixMoon;
+        private TextBoxEx EditEphemerisPrefixMoon;
+    }
 }

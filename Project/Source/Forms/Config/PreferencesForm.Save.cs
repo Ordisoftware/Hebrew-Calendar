@@ -145,6 +145,8 @@ partial class PreferencesForm
     Settings.MonthViewSeparatorForParashahName = EditMonthViewSeparatorForParashahName.Checked;
     Settings.MonthViewSeparatorForParashahReference = EditMonthViewSeparatorForParashahReference.Checked;
     Settings.MonthViewSeparatorSize = (int)EditMonthViewSeparatorSize.Value;
+    Settings.EphemerisPrefixSun = EditEphemerisPrefixSun.Text;
+    Settings.EphemerisPrefixMoon = EditEphemerisPrefixMoon.Text;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;
