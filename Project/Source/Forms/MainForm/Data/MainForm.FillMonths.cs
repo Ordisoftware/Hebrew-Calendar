@@ -213,9 +213,9 @@ partial class MainForm
           // Initialize dispatch table
           addSectionsMethods.Clear();
           string strDate = string.Empty;
-          bool alone = sunTimes && moonTimes;
-          Action addsun = alone ? addSunWithMoon : addSunAlone;
-          Action addmoon = alone ? addMoonWithSun : addMoonAlone;
+          bool both = sunTimes && moonTimes;
+          Action addsun = both ? addSunWithMoon : sunTimes ? addSunAlone : null;
+          Action addmoon = both ? addMoonWithSun : moonTimes ? addMoonAlone : null;
           addSectionsMethods.Add(Settings.MonthViewLayoutLunarDatePosition, addLunarDateSingleLine);
           addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisSunPosition, addsun);
           addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisMoonPosition, addmoon);
@@ -225,7 +225,7 @@ partial class MainForm
           addSectionsMethods.Add(Settings.MonthViewLayoutParashahReferencePosition, addParashahRef);
           // Call dispatch table
           for ( int index = 0; index < addSectionsMethods.Count; index++ )
-            addSectionsMethods[index].Invoke();
+            addSectionsMethods[index]?.Invoke();
           //
           // Date on single line
           //
