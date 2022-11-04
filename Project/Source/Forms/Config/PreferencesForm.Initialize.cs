@@ -14,9 +14,6 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Text;
 using System.Xml;
 
 /// <summary>
@@ -42,11 +39,6 @@ partial class PreferencesForm
   private const string LayoutSectionPosition = "Position";
   private const string LayoutSectionEnabled = "Enabled";
 
-  private readonly List<FontFamily> InstalledFonts
-    = new InstalledFontCollection().Families
-                                   .OrderBy(font => font.Name)
-                                   .ToList();
-
   /// <summary>
   /// Does form load.
   /// </summary>
@@ -63,9 +55,7 @@ partial class PreferencesForm
     LoadDays();
     LoadEvents();
     LoadLayout();
-    LoadReportFonts();
-    LoadMonthlyViewLatinFonts();
-    LoadMonthlyViewHebrewFonts();
+    LoadFonts();
     LoadHotKeys();
   }
 
@@ -327,48 +317,14 @@ partial class PreferencesForm
     SelectLayoutSections.Sort((item1, item2) => ( (LayoutItem)item1 ).Position.CompareTo(( (LayoutItem)item2 ).Position));
   }
 
-  // TODO refactor fonts loading in a combo box
-
   /// <summary>
-  /// Loads report fonts names.
+  /// Loads fonts names.
   /// </summary>
-  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
-  private void LoadReportFonts()
+  private void LoadFonts()
   {
-    foreach ( var font in InstalledFonts.Where(value => MonoSpacedFonts.Contains(value.Name.ToLower())) )
-    {
-      int index = EditTextReportFontName.Items.Add(font.Name);
-      if ( font.Name == Settings.FontName )
-        EditTextReportFontName.SelectedIndex = index;
-    }
-  }
-
-  /// <summary>
-  /// Loads latin fonts names.
-  /// </summary>
-  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
-  private void LoadMonthlyViewLatinFonts()
-  {
-    foreach ( var font in InstalledFonts )
-    {
-      int index = SelectMonthViewLatinFontName.Items.Add(font.Name);
-      if ( font.Name == Settings.MonthViewFontNameLatin )
-        SelectMonthViewLatinFontName.SelectedIndex = index;
-    }
-  }
-
-  /// <summary>
-  /// Loads latin fonts names.
-  /// </summary>
-  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
-  private void LoadMonthlyViewHebrewFonts()
-  {
-    foreach ( var font in InstalledFonts )
-    {
-      int index = SelectMonthViewHebrewFontName.Items.Add(font.Name);
-      if ( font.Name == Settings.MonthViewFontNameHebrew )
-        SelectMonthViewHebrewFontName.SelectedIndex = index;
-    }
+    EditTextReportFontName.LoadFonts(Settings.FontName, value => MonoSpacedFonts.Contains(value.Name.ToLower()));
+    SelectMonthViewLatinFontName.LoadFonts(Settings.MonthViewFontNameLatin);
+    SelectMonthViewHebrewFontName.LoadFonts(Settings.MonthViewFontNameHebrew);
   }
 
   /// <summary>
