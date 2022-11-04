@@ -2915,13 +2915,13 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool CalendarParashahWithBookAndFullRef {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CalendarParashahBookWithReference {
             get {
-                return ((bool)(this["CalendarParashahWithBookAndFullRef"]));
+                return ((bool)(this["CalendarParashahBookWithReference"]));
             }
             set {
-                this["CalendarParashahWithBookAndFullRef"] = value;
+                this["CalendarParashahBookWithReference"] = value;
             }
         }
         
@@ -3000,12 +3000,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MonthViewSeparatorForEphemeris {
+        public bool MonthViewSeparatorForEphemerisSun {
             get {
-                return ((bool)(this["MonthViewSeparatorForEphemeris"]));
+                return ((bool)(this["MonthViewSeparatorForEphemerisSun"]));
             }
             set {
-                this["MonthViewSeparatorForEphemeris"] = value;
+                this["MonthViewSeparatorForEphemerisSun"] = value;
             }
         }
         
@@ -3024,12 +3024,12 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MonthViewSeparatorForCelebrationAndParashah {
+        public bool MonthViewSeparatorForCelebration {
             get {
-                return ((bool)(this["MonthViewSeparatorForCelebrationAndParashah"]));
+                return ((bool)(this["MonthViewSeparatorForCelebration"]));
             }
             set {
-                this["MonthViewSeparatorForCelebrationAndParashah"] = value;
+                this["MonthViewSeparatorForCelebration"] = value;
             }
         }
         
@@ -3066,6 +3066,246 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["MonthViewFontNameHebrew"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSeparatorForEphemerisMoon {
+            get {
+                return ((bool)(this["MonthViewSeparatorForEphemerisMoon"]));
+            }
+            set {
+                this["MonthViewSeparatorForEphemerisMoon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSeparatorForSeasonChange {
+            get {
+                return ((bool)(this["MonthViewSeparatorForSeasonChange"]));
+            }
+            set {
+                this["MonthViewSeparatorForSeasonChange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSeparatorForParashahName {
+            get {
+                return ((bool)(this["MonthViewSeparatorForParashahName"]));
+            }
+            set {
+                this["MonthViewSeparatorForParashahName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSeparatorForParashahReference {
+            get {
+                return ((bool)(this["MonthViewSeparatorForParashahReference"]));
+            }
+            set {
+                this["MonthViewSeparatorForParashahReference"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MonthViewLayoutLunarDateEnabled {
+            get {
+                return ((bool)(this["MonthViewLayoutLunarDateEnabled"]));
+            }
+            set {
+                this["MonthViewLayoutLunarDateEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewLayoutEphemerisSunEnabled {
+            get {
+                return ((bool)(this["MonthViewLayoutEphemerisSunEnabled"]));
+            }
+            set {
+                this["MonthViewLayoutEphemerisSunEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewLayoutEphemerisMoonEnabled {
+            get {
+                return ((bool)(this["MonthViewLayoutEphemerisMoonEnabled"]));
+            }
+            set {
+                this["MonthViewLayoutEphemerisMoonEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MonthViewLayoutSeasonChangeEnabled {
+            get {
+                return ((bool)(this["MonthViewLayoutSeasonChangeEnabled"]));
+            }
+            set {
+                this["MonthViewLayoutSeasonChangeEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MonthViewLayoutCelebrationEnabled {
+            get {
+                return ((bool)(this["MonthViewLayoutCelebrationEnabled"]));
+            }
+            set {
+                this["MonthViewLayoutCelebrationEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MonthViewLayoutParashahNameEnabled {
+            get {
+                return ((bool)(this["MonthViewLayoutParashahNameEnabled"]));
+            }
+            set {
+                this["MonthViewLayoutParashahNameEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewLayoutParashahReferenceEnabled {
+            get {
+                return ((bool)(this["MonthViewLayoutParashahReferenceEnabled"]));
+            }
+            set {
+                this["MonthViewLayoutParashahReferenceEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int MonthViewLayoutLunarDatePosition {
+            get {
+                return ((int)(this["MonthViewLayoutLunarDatePosition"]));
+            }
+            set {
+                this["MonthViewLayoutLunarDatePosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int MonthViewLayoutEphemerisSunPosition {
+            get {
+                return ((int)(this["MonthViewLayoutEphemerisSunPosition"]));
+            }
+            set {
+                this["MonthViewLayoutEphemerisSunPosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int MonthViewLayoutEphemerisMoonPosition {
+            get {
+                return ((int)(this["MonthViewLayoutEphemerisMoonPosition"]));
+            }
+            set {
+                this["MonthViewLayoutEphemerisMoonPosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int MonthViewLayoutSeasonChangePosition {
+            get {
+                return ((int)(this["MonthViewLayoutSeasonChangePosition"]));
+            }
+            set {
+                this["MonthViewLayoutSeasonChangePosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int MonthViewLayoutCelebrationPosition {
+            get {
+                return ((int)(this["MonthViewLayoutCelebrationPosition"]));
+            }
+            set {
+                this["MonthViewLayoutCelebrationPosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public int MonthViewLayoutParashahNamePosition {
+            get {
+                return ((int)(this["MonthViewLayoutParashahNamePosition"]));
+            }
+            set {
+                this["MonthViewLayoutParashahNamePosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int MonthViewLayoutParashahReferencePosition {
+            get {
+                return ((int)(this["MonthViewLayoutParashahReferencePosition"]));
+            }
+            set {
+                this["MonthViewLayoutParashahReferencePosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Paramètre {
+            get {
+                return ((int)(this["Paramètre"]));
+            }
+            set {
+                this["Paramètre"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int PreferencesFormSelectedTabIndexMonthView {
+            get {
+                return ((int)(this["PreferencesFormSelectedTabIndexMonthView"]));
+            }
+            set {
+                this["PreferencesFormSelectedTabIndexMonthView"] = value;
             }
         }
     }

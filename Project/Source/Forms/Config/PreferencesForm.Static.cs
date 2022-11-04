@@ -122,6 +122,7 @@ partial class PreferencesForm
     var form = new PreferencesForm();
     if ( !MainForm.Instance.Visible ) form.ShowInTaskbar = true;
     form.TabControlMain.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndex;
+    form.TabControlMonthView.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndexMonthView;
     form.ShowDialog();
     while ( LanguageChanged || DoReset )
     {
@@ -153,6 +154,7 @@ partial class PreferencesForm
       if ( result ) CalendarDates.Instance.Clear();
     });
     Settings.PreferencesFormSelectedTabIndex = form.TabControlMain.SelectedIndex;
+    Settings.PreferencesFormSelectedTabIndexMonthView = form.TabControlMonthView.SelectedIndex;
     form.Dispose();
     form = null;
     return result;

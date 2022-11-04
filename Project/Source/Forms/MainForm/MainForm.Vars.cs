@@ -124,8 +124,8 @@ public partial class MainForm
       foreach ( var form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
       foreach ( var value in TorahCelebrationSettings.ManagedEvents )
       {
-        TorahEventRemindList.Add(value, (bool)Settings["TorahEventRemind" + value]);
-        TorahEventRemindDayList.Add(value, (bool)Settings["TorahEventRemindDay" + value]);
+        TorahEventRemindList.Add(value, (bool)Settings[PreferencesForm.TorahEventRemindPrefix + value]);
+        TorahEventRemindDayList.Add(value, (bool)Settings[PreferencesForm.TorahEventRemindDayPrefix + value]);
         LastCelebrationReminded[value] = null;
       }
     });

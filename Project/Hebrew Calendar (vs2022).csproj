@@ -85,6 +85,8 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -104,8 +106,12 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dependencies\Meziantou.AccessToken\AccessToken.cs" />
@@ -397,6 +403,7 @@
     <Compile Include="Source\Database\ApplicationDatabase.Parashah.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.LoadBoard.cs" />
     <Compile Include="Source\Database\LunisolarDay.cs" />
+    <Compile Include="Source\Enums\MonthlyViewLayoutSection.cs" />
     <Compile Include="Source\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\TorahCelebrationVerses.cs" />
     <Compile Include="Source\Enums\TorahCelebrationSettings.cs" />

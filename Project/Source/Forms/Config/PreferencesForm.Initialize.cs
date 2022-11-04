@@ -26,7 +26,23 @@ using System.Xml;
 partial class PreferencesForm
 {
 
-  private List<FontFamily> InstalledFonts
+  private sealed class LayoutItem
+  {
+    public MonthlyViewLayoutSection Id { get; set; }
+    public int Position { get; set; }
+    public bool Enabled { get; set; }
+    public string Text { get; set; }
+    public override string ToString() => Text;
+  }
+
+  internal const string TorahEventRemindPrefix = "TorahEventRemind";
+  internal const string TorahEventRemindDayPrefix = "TorahEventRemindDay";
+
+  const string LayoutSectionPrefix = "MonthViewLayout";
+  private const string LayoutSectionPosition = "Position";
+  private const string LayoutSectionEnabled = "Enabled";
+
+  private readonly List<FontFamily> InstalledFonts
     = new InstalledFontCollection().Families
                                    .OrderBy(font => font.Name)
                                    .ToList();
@@ -46,6 +62,7 @@ partial class PreferencesForm
     LoadPowerActions();
     LoadDays();
     LoadEvents();
+    LoadLayout();
     LoadReportFonts();
     LoadMonthlyViewLatinFonts();
     LoadMonthlyViewHebrewFonts();
@@ -72,7 +89,7 @@ partial class PreferencesForm
     EditRemindCelebrations_Changed(null, null);
     EditUseColors_CheckedChanged(null, null);
     EditLogEnabled_CheckedChanged(null, null);
-    EditCalendarShowParashah_Changed(null, null);
+    EditParashahEnabled_Changed(null, null);
     EditHebrewNamesInUnicode_CheckedChanged(null, null);
     EditCalendarHebrewDateSingleLine_CheckedChanged(null, null);
     ActiveControl = ActionClose;
@@ -160,7 +177,7 @@ partial class PreferencesForm
   private void LoadEditIntervals()
   {
     InitializeNumericInterval(EditTextReportFontSize, LabelTextReportFontSizeInterval, TextReportFontSizeInterval);
-    InitializeNumericInterval(EditMonthViewFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
+    InitializeNumericInterval(EditMonthViewLatinFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
     InitializeNumericInterval(EditMonthViewHebrewFontSize, LabelMonthViewHebrewFontSizeInterval, VisualMonthFontSizeInterval);
     InitializeNumericInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
     InitializeNumericInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
@@ -268,13 +285,49 @@ partial class PreferencesForm
             Event = value
           };
           int index = SelectRemindEventsBefore.Items.Add(item);
-          if ( (bool)Settings["TorahEventRemind" + value] )
+          if ( (bool)Settings[TorahEventRemindPrefix + value] )
             SelectRemindEventsBefore.SetItemChecked(index, true);
           index = SelectRemindEventsDay.Items.Add(item);
-          if ( (bool)Settings["TorahEventRemindDay" + value] )
+          if ( (bool)Settings[TorahEventRemindDayPrefix + value] )
             SelectRemindEventsDay.SetItemChecked(index, true);
         });
   }
+
+  private LayoutItem LayoutSectionSun;
+  private LayoutItem LayoutSectionMoon;
+  private LayoutItem LayoutSectionParashahName;
+  private LayoutItem LayoutSectionParashahReference;
+
+  /// <summary>
+  /// Loads layout sections.
+  /// </summary>
+  private void LoadLayout()
+  {
+    foreach ( var value in Enums.GetValues<MonthlyViewLayoutSection>() )
+      SystemManager.TryCatch(() =>
+        {
+          string prefix = $"{LayoutSectionPrefix}{value}";
+          var item = new LayoutItem
+          {
+            Id = value,
+            Position = (int)Settings[prefix + LayoutSectionPosition],
+            Enabled = (bool)Settings[prefix + LayoutSectionEnabled],
+            Text = AppTranslations.LayoutSections[value].GetLang()
+          };
+          int index = SelectLayoutSections.Items.Add(item);
+          if ( item.Enabled ) SelectLayoutSections.SetItemChecked(index, true);
+          if ( value == MonthlyViewLayoutSection.EphemerisSun ) LayoutSectionSun = item;
+          else
+          if ( value == MonthlyViewLayoutSection.EphemerisMoon ) LayoutSectionMoon = item;
+          else
+          if ( value == MonthlyViewLayoutSection.ParashahName ) LayoutSectionParashahName = item;
+          else
+          if ( value == MonthlyViewLayoutSection.ParashahReference ) LayoutSectionParashahReference = item;
+        });
+    SelectLayoutSections.Sort((item1, item2) => ( (LayoutItem)item1 ).Position.CompareTo(( (LayoutItem)item2 ).Position));
+  }
+
+  // TODO refactor fonts loading in a combo box
 
   /// <summary>
   /// Loads report fonts names.
@@ -298,13 +351,11 @@ partial class PreferencesForm
   {
     foreach ( var font in InstalledFonts )
     {
-      int index = SelectMonthViewFontNameLatin.Items.Add(font.Name);
+      int index = SelectMonthViewLatinFontName.Items.Add(font.Name);
       if ( font.Name == Settings.MonthViewFontNameLatin )
-        SelectMonthViewFontNameLatin.SelectedIndex = index;
+        SelectMonthViewLatinFontName.SelectedIndex = index;
     }
   }
-
-  // TODO refactor fonts loading in a combo box
 
   /// <summary>
   /// Loads latin fonts names.
@@ -314,9 +365,9 @@ partial class PreferencesForm
   {
     foreach ( var font in InstalledFonts )
     {
-      int index = SelectMonthViewFontNameHebrew.Items.Add(font.Name);
+      int index = SelectMonthViewHebrewFontName.Items.Add(font.Name);
       if ( font.Name == Settings.MonthViewFontNameHebrew )
-        SelectMonthViewFontNameHebrew.SelectedIndex = index;
+        SelectMonthViewHebrewFontName.SelectedIndex = index;
     }
   }
 
