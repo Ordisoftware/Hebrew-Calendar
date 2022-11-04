@@ -886,9 +886,6 @@
   <data name="EditMonthViewEventsAlignmentOnlyForParashah.Text" xml:space="preserve">
     <value>Seulement pour la célébration et la parashah</value>
   </data>
-  <data name="EditCalendarHebrewDateSingleLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 17</value>
-  </data>
   <data name="EditCalendarHebrewDateSingleLine.Text" xml:space="preserve">
     <value>Date lunaire sur une seule ligne, sinon après le lever du soleil ou de la lune</value>
   </data>
