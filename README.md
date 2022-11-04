@@ -390,7 +390,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### TO DO - Version 10.1
 
 - Add option to select data layout order and sections to show in the monthly view.
-- Add option to choose font name for texts in the monthly view.
+- Add option to select font names for texts in the monthly view.
 
 #### 2022.11.03 - Version 10.0
 
