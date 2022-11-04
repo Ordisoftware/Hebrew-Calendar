@@ -112,10 +112,22 @@ static partial class Program
         Settings.FirstLaunch = true;
       }
       // Check language
-      if ( Settings.UpgradeResetRequiredV5_10 )
-        Settings.CurrentView = ViewMode.Month;
       if ( Settings.LanguageSelected == Language.None )
         Settings.LanguageSelected = Languages.Current;
+      // Updates
+      if ( Settings.UpgradeResetRequiredV5_10 )
+        Settings.CurrentView = ViewMode.Month;
+      if ( Settings.FirstLaunchV10_1 && !Settings.FirstLaunch )
+        if ( Settings.TorahEventsCountAsMoon )
+        {
+          Settings.MonthViewLayoutEphemerisSunEnabled = false;
+          Settings.MonthViewLayoutEphemerisMoonEnabled = true;
+        }
+        else
+        {
+          Settings.MonthViewLayoutEphemerisSunEnabled = true;
+          Settings.MonthViewLayoutEphemerisMoonEnabled = false;
+        }
       // Check OS
       if ( Settings.FirstLaunch && SystemStatistics.Instance.Platform.Contains("Windows 7") )
         Settings.NavigationWindowUseUnicodeIcons = false;

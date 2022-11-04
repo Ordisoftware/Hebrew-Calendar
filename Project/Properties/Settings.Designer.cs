@@ -3308,5 +3308,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["PreferencesFormSelectedTabIndexMonthView"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunchV10_1 {
+            get {
+                return ((bool)(this["FirstLaunchV10_1"]));
+            }
+            set {
+                this["FirstLaunchV10_1"] = value;
+            }
+        }
     }
 }

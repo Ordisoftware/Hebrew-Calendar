@@ -187,6 +187,7 @@ static class SettingsHelper
     settings.FirstLaunchV9_14 = false;
     settings.FirstLaunchV9_17 = false;
     settings.FirstLaunchV9_18 = false;
+    settings.FirstLaunchV10_1 = false;
   }
 
   /// <summary>

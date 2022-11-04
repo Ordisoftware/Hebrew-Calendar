@@ -238,6 +238,7 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ContextMenuSunMoonSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMainOuter1.SuspendLayout();
       this.PanelMainOuter2.SuspendLayout();
       this.PanelMainInner1.SuspendLayout();
@@ -1549,6 +1550,7 @@
             this.toolStripSeparator15,
             this.ContextMenuDaySunrise,
             this.ContextMenuDaySunset,
+            this.ContextMenuSunMoonSeparator,
             this.ContextMenuDayMoonrise,
             this.ContextMenuDayMoonset,
             this.ContextMenuDayTimesSeparator,
@@ -1789,6 +1791,11 @@
       this.MenuBookmarks.Name = "MenuBookmarks";
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
+      // 
+      // ContextMenuSunMoonSeparator
+      // 
+      this.ContextMenuSunMoonSeparator.Name = "ContextMenuSunMoonSeparator";
+      resources.ApplyResources(this.ContextMenuSunMoonSeparator, "ContextMenuSunMoonSeparator");
       // 
       // MainForm
       // 
@@ -2039,6 +2046,7 @@
     private ToolStripSeparator toolStripSeparator29;
     private ToolStripMenuItem ActionTakeScreenshotView;
     private ToolStripMenuItem ActionTakeScreenshotWindow;
-  }
+        private ToolStripSeparator ContextMenuSunMoonSeparator;
+    }
 }
 
