@@ -15,7 +15,6 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing;
-using System.Drawing.Imaging;
 using CodeProjectCalendar.NET;
 using Ordisoftware.Core;
 using Ordisoftware.Hebrew.Calendar.Properties;
@@ -211,9 +210,9 @@ partial class MainForm
             isCelebrationWeekStart = false;
           int rank = 0;
           Color colorEphemeris = row.IsNewMoon ? colorTorahEvent : row.IsFullMoon ? colorFullMoon : colorNotFullMoon;
-          string strDate = string.Empty;
-          //
+          // Initialize dispatch table
           addSectionsMethods.Clear();
+          string strDate = string.Empty;
           bool alone = sunTimes && moonTimes;
           Action addsun = alone ? addSunWithMoon : addSunAlone;
           Action addmoon = alone ? addMoonWithSun : addMoonAlone;
@@ -224,6 +223,7 @@ partial class MainForm
           addSectionsMethods.Add(Settings.MonthViewLayoutCelebrationPosition, addCelebration);
           addSectionsMethods.Add(Settings.MonthViewLayoutParashahNamePosition, addParashahName);
           addSectionsMethods.Add(Settings.MonthViewLayoutParashahReferencePosition, addParashahRef);
+          // Call dispatch table
           for ( int index = 0; index < addSectionsMethods.Count; index++ )
             addSectionsMethods[index].Invoke();
           //
