@@ -27,25 +27,25 @@ partial class PreferencesForm
   /// <seealso cref="M:System.Windows.Forms.Form.ProcessCmdKey(Message@,Keys)"/>
   protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
   {
-    if ( keyData >= Keys.F1 && keyData < Keys.F1 + TabControl.TabCount )
+    if ( keyData >= Keys.F1 && keyData < Keys.F1 + TabControlMain.TabCount )
     {
-      TabControl.SelectTab(keyData - Keys.F1);
+      TabControlMain.SelectTab(keyData - Keys.F1);
       return true;
     }
     if ( keyData == ( Keys.Control | Keys.Tab ) )
     {
-      if ( TabControl.SelectedIndex == TabControl.TabCount - 1 )
-        TabControl.SelectedIndex = 0;
+      if ( TabControlMain.SelectedIndex == TabControlMain.TabCount - 1 )
+        TabControlMain.SelectedIndex = 0;
       else
-        TabControl.SelectedIndex++;
+        TabControlMain.SelectedIndex++;
       return true;
     }
     if ( keyData == ( Keys.Control | Keys.Shift | Keys.Tab ) )
     {
-      if ( TabControl.SelectedIndex == 0 )
-        TabControl.SelectedIndex = TabControl.TabCount - 1;
+      if ( TabControlMain.SelectedIndex == 0 )
+        TabControlMain.SelectedIndex = TabControlMain.TabCount - 1;
       else
-        TabControl.SelectedIndex--;
+        TabControlMain.SelectedIndex--;
       return true;
     }
     return base.ProcessCmdKey(ref msg, keyData);

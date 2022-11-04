@@ -125,7 +125,7 @@ partial class PreferencesForm
     }
     if ( changed )
     {
-      TabControl.SelectedTab = TabPageGeneration;
+      TabControlMain.SelectedTab = TabPageGeneration;
       Settings.SetFirstAndUpgradeFlagsOff();
       SystemManager.TryCatch(Settings.Store);
     }
@@ -303,6 +303,8 @@ partial class PreferencesForm
         SelectMonthViewFontNameLatin.SelectedIndex = index;
     }
   }
+
+  // TODO refactor fonts loading in a combo box
 
   /// <summary>
   /// Loads latin fonts names.

@@ -764,7 +764,7 @@
     <value>Fond du jour</value>
   </data>
   <data name="TabPageMonthView.Text" xml:space="preserve">
-    <value>Vue par mois</value>
+    <value>Vue mensuelle</value>
   </data>
   <data name="EditMonthViewSeparatorForCelebrationAndParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>

@@ -116,7 +116,7 @@ partial class PreferencesForm
     var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
     SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
     if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-    TabControl.SelectedIndex = 0;
+    TabControlMain.SelectedIndex = 0;
     SaveSettings();
     Settings.Store();
     var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);

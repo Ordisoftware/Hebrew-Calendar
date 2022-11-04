@@ -71,7 +71,7 @@
       this.OpenThemeDialog = new System.Windows.Forms.OpenFileDialog();
       this.SaveSettingsDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
-      this.TabControl = new System.Windows.Forms.TabControl();
+      this.TabControlMain = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
       this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
@@ -174,6 +174,10 @@
       this.EditAskRegenerateIfIntervalGreater = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
+      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
+      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
+      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
       this.TabPageReminder = new System.Windows.Forms.TabPage();
       this.LabelDefaultLockoutAction = new System.Windows.Forms.Label();
       this.LabelReminderBoxDesktopLocation = new System.Windows.Forms.Label();
@@ -308,6 +312,7 @@
       this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
       this.EditMonthViewFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelTextReportFontSizeInterval = new System.Windows.Forms.Label();
       this.LabelFontName = new System.Windows.Forms.Label();
@@ -354,6 +359,11 @@
       this.ActionSelectCalculatorPath = new System.Windows.Forms.Button();
       this.LabelHebrewLettersPath = new System.Windows.Forms.Label();
       this.ActionSelectHebrewLettersPath = new System.Windows.Forms.Button();
+      this.EditCustomWebSearch = new Ordisoftware.Core.TextBoxEx();
+      this.EditHebrewWordsPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
+      this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
       this.TabPageWeather = new System.Windows.Forms.TabPage();
       this.LabelWeatherAppPath = new System.Windows.Forms.Label();
       this.ActionSelectWeatherAppPath = new System.Windows.Forms.Button();
@@ -365,20 +375,13 @@
       this.SelectWeatherOnlineMicrosoftNetworkDotCom = new System.Windows.Forms.RadioButton();
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
-      this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
-      this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
-      this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
-      this.EditAutoGenerateYearsInterval = new Ordisoftware.Core.TextBoxEx();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
-      this.EditCustomWebSearch = new Ordisoftware.Core.TextBoxEx();
-      this.EditHebrewWordsPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditExportFolder = new Ordisoftware.Core.TextBoxEx();
-      this.EditCalculatorPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditHebrewLettersPath = new Ordisoftware.Core.TextBoxEx();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
+      this.TabControlMonthView = new System.Windows.Forms.TabControl();
+      this.tabPage1 = new System.Windows.Forms.TabPage();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
-      this.TabControl.SuspendLayout();
+      this.TabControlMain.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
@@ -419,6 +422,9 @@
       this.TabPagePaths.SuspendLayout();
       this.TabPageWeather.SuspendLayout();
       this.PanelWeatherOnline.SuspendLayout();
+      this.TabControlMonthView.SuspendLayout();
+      this.tabPage1.SuspendLayout();
+      this.tabPage2.SuspendLayout();
       this.SuspendLayout();
       // 
       // DialogColor
@@ -708,28 +714,28 @@
       this.OpenThemeDialog.FileName = "openFileDialog1";
       resources.ApplyResources(this.OpenThemeDialog, "OpenThemeDialog");
       // 
-      // TabControl
+      // TabControlMain
       // 
-      resources.ApplyResources(this.TabControl, "TabControl");
-      this.TabControl.Controls.Add(this.TabPageApplication);
-      this.TabControl.Controls.Add(this.TabPageStartup);
-      this.TabControl.Controls.Add(this.TabPageTrayIcon);
-      this.TabControl.Controls.Add(this.TabPageNavigation);
-      this.TabControl.Controls.Add(this.TabPageGeneration);
-      this.TabControl.Controls.Add(this.TabPageReminder);
-      this.TabControl.Controls.Add(this.TabPageShabat);
-      this.TabControl.Controls.Add(this.TabPageCelebrations);
-      this.TabControl.Controls.Add(this.TabPageParashah);
-      this.TabControl.Controls.Add(this.TabPageColors);
-      this.TabControl.Controls.Add(this.TabPageMonthView);
-      this.TabControl.Controls.Add(this.TabPageTextReport);
-      this.TabControl.Controls.Add(this.TabPageExport);
-      this.TabControl.Controls.Add(this.TabPagePrinting);
-      this.TabControl.Controls.Add(this.TabPagePaths);
-      this.TabControl.Controls.Add(this.TabPageWeather);
-      this.TabControl.Multiline = true;
-      this.TabControl.Name = "TabControl";
-      this.TabControl.SelectedIndex = 0;
+      resources.ApplyResources(this.TabControlMain, "TabControlMain");
+      this.TabControlMain.Controls.Add(this.TabPageApplication);
+      this.TabControlMain.Controls.Add(this.TabPageStartup);
+      this.TabControlMain.Controls.Add(this.TabPageTrayIcon);
+      this.TabControlMain.Controls.Add(this.TabPageNavigation);
+      this.TabControlMain.Controls.Add(this.TabPageGeneration);
+      this.TabControlMain.Controls.Add(this.TabPageReminder);
+      this.TabControlMain.Controls.Add(this.TabPageShabat);
+      this.TabControlMain.Controls.Add(this.TabPageCelebrations);
+      this.TabControlMain.Controls.Add(this.TabPageParashah);
+      this.TabControlMain.Controls.Add(this.TabPageColors);
+      this.TabControlMain.Controls.Add(this.TabPageMonthView);
+      this.TabControlMain.Controls.Add(this.TabPageTextReport);
+      this.TabControlMain.Controls.Add(this.TabPageExport);
+      this.TabControlMain.Controls.Add(this.TabPagePrinting);
+      this.TabControlMain.Controls.Add(this.TabPagePaths);
+      this.TabControlMain.Controls.Add(this.TabPageWeather);
+      this.TabControlMain.Multiline = true;
+      this.TabControlMain.Name = "TabControlMain";
+      this.TabControlMain.SelectedIndex = 0;
       // 
       // TabPageApplication
       // 
@@ -1600,6 +1606,38 @@
       this.ActionAutoGenerateHelp.UseVisualStyleBackColor = true;
       this.ActionAutoGenerateHelp.Click += new System.EventHandler(this.ActionAutoGenerateHelp_Click);
       // 
+      // EditGPSLatitude
+      // 
+      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
+      this.EditGPSLatitude.Name = "EditGPSLatitude";
+      this.EditGPSLatitude.ReadOnly = true;
+      this.EditGPSLatitude.SpellCheckAllowed = false;
+      // 
+      // EditTimeZone
+      // 
+      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
+      this.EditTimeZone.Name = "EditTimeZone";
+      this.EditTimeZone.ReadOnly = true;
+      this.EditTimeZone.SpellCheckAllowed = false;
+      // 
+      // EditGPSLongitude
+      // 
+      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
+      this.EditGPSLongitude.Name = "EditGPSLongitude";
+      this.EditGPSLongitude.ReadOnly = true;
+      this.EditGPSLongitude.SpellCheckAllowed = false;
+      // 
+      // EditAutoGenerateYearsInterval
+      // 
+      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
+      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
+      this.EditAutoGenerateYearsInterval.ReadOnly = true;
+      this.EditAutoGenerateYearsInterval.SpellCheckAllowed = false;
+      // 
       // TabPageReminder
       // 
       this.TabPageReminder.BackColor = System.Drawing.SystemColors.Window;
@@ -2355,45 +2393,8 @@
       // 
       this.TabPageMonthView.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageMonthView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontNameHebrewSample);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewSeparatorForCelebrationAndParashah);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewSeparatorSizeInfo);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewSeparatorSize);
-      this.TabPageMonthView.Controls.Add(this.label10);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewSeparatorForLunarDate);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewSeparatorForEphemeris);
-      this.TabPageMonthView.Controls.Add(this.label8);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontNameHebrew);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontNameLatin);
-      this.TabPageMonthView.Controls.Add(this.SelectMonthViewFontNameHebrew);
-      this.TabPageMonthView.Controls.Add(this.SelectMonthViewFontNameLatin);
-      this.TabPageMonthView.Controls.Add(this.SelectMonthViewEventsAlignment);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewEventsAlignment);
-      this.TabPageMonthView.Controls.Add(this.LabelCalendarDoubleClickAction);
-      this.TabPageMonthView.Controls.Add(this.SelectCalendarDoubleClickActionSelect);
-      this.TabPageMonthView.Controls.Add(this.SelectCalendarDoubleClickActionNothing);
-      this.TabPageMonthView.Controls.Add(this.SelectCalendarDoubleClickActionSetActive);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewHebrewFontSizeInterval);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSizeInterval);
-      this.TabPageMonthView.Controls.Add(this.LabelMoonDayTextFormat);
-      this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatReset);
-      this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacingInfo);
-      this.TabPageMonthView.Controls.Add(this.ActionMoonDayTextFormatHelp);
-      this.TabPageMonthView.Controls.Add(this.EditCalendarShowSelectedBox);
-      this.TabPageMonthView.Controls.Add(this.EditCalendarHebrewDateSingleLineItalic);
-      this.TabPageMonthView.Controls.Add(this.EditCalendarHebrewDateSingleLine);
-      this.TabPageMonthView.Controls.Add(this.EditCalendarUseHoverEffect);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewEventsAlignmentOnlyForParashah);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewChangeDayOnClick);
+      this.TabPageMonthView.Controls.Add(this.TabControlMonthView);
       this.TabPageMonthView.Controls.Add(this.label11);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontNameLatinSample);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewHebrewFontSize);
-      this.TabPageMonthView.Controls.Add(this.LabelMonthViewFontSize);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewHebrewFontSize);
-      this.TabPageMonthView.Controls.Add(this.EditCalendarLineSpacing);
-      this.TabPageMonthView.Controls.Add(this.EditMonthViewFontSize);
-      this.TabPageMonthView.Controls.Add(this.LabelCalendarLineSpacing);
-      this.TabPageMonthView.Controls.Add(this.EditMoonDayTextFormat);
       resources.ApplyResources(this.TabPageMonthView, "TabPageMonthView");
       this.TabPageMonthView.Name = "TabPageMonthView";
       // 
@@ -2674,6 +2675,15 @@
       // 
       resources.ApplyResources(this.LabelCalendarLineSpacing, "LabelCalendarLineSpacing");
       this.LabelCalendarLineSpacing.Name = "LabelCalendarLineSpacing";
+      // 
+      // EditMoonDayTextFormat
+      // 
+      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
+      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
+      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
+      this.EditMoonDayTextFormat.SpellCheckAllowed = false;
+      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // TabPageTextReport
       // 
@@ -3041,6 +3051,50 @@
       this.ActionSelectHebrewLettersPath.UseVisualStyleBackColor = true;
       this.ActionSelectHebrewLettersPath.Click += new System.EventHandler(this.ActionSelectHebrewLettersPath_Click);
       // 
+      // EditCustomWebSearch
+      // 
+      this.EditCustomWebSearch.BackColor = System.Drawing.SystemColors.Window;
+      this.EditCustomWebSearch.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditCustomWebSearch, "EditCustomWebSearch");
+      this.EditCustomWebSearch.Name = "EditCustomWebSearch";
+      this.EditCustomWebSearch.SpellCheckAllowed = false;
+      // 
+      // EditHebrewWordsPath
+      // 
+      this.EditHebrewWordsPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewWordsPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewWordsPath, "EditHebrewWordsPath");
+      this.EditHebrewWordsPath.Name = "EditHebrewWordsPath";
+      this.EditHebrewWordsPath.ReadOnly = true;
+      this.EditHebrewWordsPath.SpellCheckAllowed = false;
+      // 
+      // EditExportFolder
+      // 
+      this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
+      this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
+      this.EditExportFolder.Name = "EditExportFolder";
+      this.EditExportFolder.ReadOnly = true;
+      this.EditExportFolder.SpellCheckAllowed = false;
+      // 
+      // EditCalculatorPath
+      // 
+      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
+      this.EditCalculatorPath.Name = "EditCalculatorPath";
+      this.EditCalculatorPath.ReadOnly = true;
+      this.EditCalculatorPath.SpellCheckAllowed = false;
+      // 
+      // EditHebrewLettersPath
+      // 
+      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
+      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
+      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
+      this.EditHebrewLettersPath.ReadOnly = true;
+      this.EditHebrewLettersPath.SpellCheckAllowed = false;
+      // 
       // TabPageWeather
       // 
       this.TabPageWeather.BackColor = System.Drawing.SystemColors.Window;
@@ -3131,91 +3185,6 @@
       this.ActionResetWeatherAppPath.UseVisualStyleBackColor = true;
       this.ActionResetWeatherAppPath.Click += new System.EventHandler(this.ActionResetWeatherAppPath_Click);
       // 
-      // EditGPSLatitude
-      // 
-      this.EditGPSLatitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLatitude, "EditGPSLatitude");
-      this.EditGPSLatitude.Name = "EditGPSLatitude";
-      this.EditGPSLatitude.ReadOnly = true;
-      this.EditGPSLatitude.SpellCheckAllowed = false;
-      // 
-      // EditTimeZone
-      // 
-      this.EditTimeZone.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditTimeZone, "EditTimeZone");
-      this.EditTimeZone.Name = "EditTimeZone";
-      this.EditTimeZone.ReadOnly = true;
-      this.EditTimeZone.SpellCheckAllowed = false;
-      // 
-      // EditGPSLongitude
-      // 
-      this.EditGPSLongitude.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditGPSLongitude, "EditGPSLongitude");
-      this.EditGPSLongitude.Name = "EditGPSLongitude";
-      this.EditGPSLongitude.ReadOnly = true;
-      this.EditGPSLongitude.SpellCheckAllowed = false;
-      // 
-      // EditAutoGenerateYearsInterval
-      // 
-      this.EditAutoGenerateYearsInterval.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditAutoGenerateYearsInterval, "EditAutoGenerateYearsInterval");
-      this.EditAutoGenerateYearsInterval.Name = "EditAutoGenerateYearsInterval";
-      this.EditAutoGenerateYearsInterval.ReadOnly = true;
-      this.EditAutoGenerateYearsInterval.SpellCheckAllowed = false;
-      // 
-      // EditMoonDayTextFormat
-      // 
-      this.EditMoonDayTextFormat.BackColor = System.Drawing.SystemColors.Window;
-      this.EditMoonDayTextFormat.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditMoonDayTextFormat, "EditMoonDayTextFormat");
-      this.EditMoonDayTextFormat.Name = "EditMoonDayTextFormat";
-      this.EditMoonDayTextFormat.SpellCheckAllowed = false;
-      this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.SetMustRefreshEnabled);
-      // 
-      // EditCustomWebSearch
-      // 
-      this.EditCustomWebSearch.BackColor = System.Drawing.SystemColors.Window;
-      this.EditCustomWebSearch.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditCustomWebSearch, "EditCustomWebSearch");
-      this.EditCustomWebSearch.Name = "EditCustomWebSearch";
-      this.EditCustomWebSearch.SpellCheckAllowed = false;
-      // 
-      // EditHebrewWordsPath
-      // 
-      this.EditHebrewWordsPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewWordsPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewWordsPath, "EditHebrewWordsPath");
-      this.EditHebrewWordsPath.Name = "EditHebrewWordsPath";
-      this.EditHebrewWordsPath.ReadOnly = true;
-      this.EditHebrewWordsPath.SpellCheckAllowed = false;
-      // 
-      // EditExportFolder
-      // 
-      this.EditExportFolder.BackColor = System.Drawing.SystemColors.Control;
-      this.EditExportFolder.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditExportFolder, "EditExportFolder");
-      this.EditExportFolder.Name = "EditExportFolder";
-      this.EditExportFolder.ReadOnly = true;
-      this.EditExportFolder.SpellCheckAllowed = false;
-      // 
-      // EditCalculatorPath
-      // 
-      this.EditCalculatorPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditCalculatorPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditCalculatorPath, "EditCalculatorPath");
-      this.EditCalculatorPath.Name = "EditCalculatorPath";
-      this.EditCalculatorPath.ReadOnly = true;
-      this.EditCalculatorPath.SpellCheckAllowed = false;
-      // 
-      // EditHebrewLettersPath
-      // 
-      this.EditHebrewLettersPath.BackColor = System.Drawing.SystemColors.Control;
-      this.EditHebrewLettersPath.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      resources.ApplyResources(this.EditHebrewLettersPath, "EditHebrewLettersPath");
-      this.EditHebrewLettersPath.Name = "EditHebrewLettersPath";
-      this.EditHebrewLettersPath.ReadOnly = true;
-      this.EditHebrewLettersPath.SpellCheckAllowed = false;
-      // 
       // EditWeatherAppPath
       // 
       this.EditWeatherAppPath.BackColor = System.Drawing.SystemColors.Control;
@@ -3225,12 +3194,72 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
+      // TabControlMonthView
+      // 
+      resources.ApplyResources(this.TabControlMonthView, "TabControlMonthView");
+      this.TabControlMonthView.Controls.Add(this.tabPage1);
+      this.TabControlMonthView.Controls.Add(this.tabPage2);
+      this.TabControlMonthView.Name = "TabControlMonthView";
+      this.TabControlMonthView.SelectedIndex = 0;
+      // 
+      // tabPage1
+      // 
+      this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+      this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.tabPage1.Controls.Add(this.EditCalendarUseHoverEffect);
+      this.tabPage1.Controls.Add(this.EditMonthViewChangeDayOnClick);
+      this.tabPage1.Controls.Add(this.EditCalendarShowSelectedBox);
+      this.tabPage1.Controls.Add(this.SelectCalendarDoubleClickActionSetActive);
+      this.tabPage1.Controls.Add(this.SelectCalendarDoubleClickActionNothing);
+      this.tabPage1.Controls.Add(this.SelectCalendarDoubleClickActionSelect);
+      this.tabPage1.Controls.Add(this.LabelCalendarDoubleClickAction);
+      this.tabPage1.Controls.Add(this.LabelMoonDayTextFormat);
+      this.tabPage1.Controls.Add(this.EditMoonDayTextFormat);
+      this.tabPage1.Controls.Add(this.ActionMoonDayTextFormatHelp);
+      this.tabPage1.Controls.Add(this.ActionMoonDayTextFormatReset);
+      resources.ApplyResources(this.tabPage1, "tabPage1");
+      this.tabPage1.Name = "tabPage1";
+      // 
+      // tabPage2
+      // 
+      this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
+      this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.tabPage2.Controls.Add(this.LabelMonthViewFontNameLatin);
+      this.tabPage2.Controls.Add(this.LabelMonthViewFontNameHebrewSample);
+      this.tabPage2.Controls.Add(this.LabelCalendarLineSpacing);
+      this.tabPage2.Controls.Add(this.EditMonthViewSeparatorForCelebrationAndParashah);
+      this.tabPage2.Controls.Add(this.EditMonthViewFontSize);
+      this.tabPage2.Controls.Add(this.EditMonthViewSeparatorSizeInfo);
+      this.tabPage2.Controls.Add(this.EditCalendarLineSpacing);
+      this.tabPage2.Controls.Add(this.EditMonthViewSeparatorSize);
+      this.tabPage2.Controls.Add(this.EditMonthViewHebrewFontSize);
+      this.tabPage2.Controls.Add(this.label10);
+      this.tabPage2.Controls.Add(this.LabelMonthViewFontSize);
+      this.tabPage2.Controls.Add(this.EditMonthViewSeparatorForLunarDate);
+      this.tabPage2.Controls.Add(this.LabelMonthViewHebrewFontSize);
+      this.tabPage2.Controls.Add(this.EditMonthViewSeparatorForEphemeris);
+      this.tabPage2.Controls.Add(this.LabelMonthViewFontNameLatinSample);
+      this.tabPage2.Controls.Add(this.label8);
+      this.tabPage2.Controls.Add(this.EditMonthViewEventsAlignmentOnlyForParashah);
+      this.tabPage2.Controls.Add(this.LabelMonthViewFontNameHebrew);
+      this.tabPage2.Controls.Add(this.EditCalendarHebrewDateSingleLine);
+      this.tabPage2.Controls.Add(this.EditCalendarHebrewDateSingleLineItalic);
+      this.tabPage2.Controls.Add(this.SelectMonthViewFontNameHebrew);
+      this.tabPage2.Controls.Add(this.LabelCalendarLineSpacingInfo);
+      this.tabPage2.Controls.Add(this.SelectMonthViewFontNameLatin);
+      this.tabPage2.Controls.Add(this.LabelMonthViewFontSizeInterval);
+      this.tabPage2.Controls.Add(this.SelectMonthViewEventsAlignment);
+      this.tabPage2.Controls.Add(this.LabelMonthViewHebrewFontSizeInterval);
+      this.tabPage2.Controls.Add(this.LabelMonthViewEventsAlignment);
+      resources.ApplyResources(this.tabPage2, "tabPage2");
+      this.tabPage2.Name = "tabPage2";
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
-      this.Controls.Add(this.TabControl);
+      this.Controls.Add(this.TabControlMain);
       this.Controls.Add(this.PanelBottomSeparator);
       this.Controls.Add(this.PanelButtons);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -3244,7 +3273,7 @@
       this.PanelButtons.ResumeLayout(false);
       this.PanelButtons.PerformLayout();
       this.MenuSelectMoonDayTextFormat.ResumeLayout(false);
-      this.TabControl.ResumeLayout(false);
+      this.TabControlMain.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
@@ -3305,6 +3334,11 @@
       this.TabPageWeather.PerformLayout();
       this.PanelWeatherOnline.ResumeLayout(false);
       this.PanelWeatherOnline.PerformLayout();
+      this.TabControlMonthView.ResumeLayout(false);
+      this.tabPage1.ResumeLayout(false);
+      this.tabPage1.PerformLayout();
+      this.tabPage2.ResumeLayout(false);
+      this.tabPage2.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -3531,7 +3565,7 @@
     private System.Windows.Forms.RadioButton SelectWeatherOnlineWeatherDotCom;
     private System.Windows.Forms.SaveFileDialog SaveSettingsDialog;
     private System.Windows.Forms.SaveFileDialog SaveThemeDialog;
-    private System.Windows.Forms.TabControl TabControl;
+    private System.Windows.Forms.TabControl TabControlMain;
     private System.Windows.Forms.TabPage TabPageApplication;
     private System.Windows.Forms.TabPage TabPageCelebrations;
     private System.Windows.Forms.TabPage TabPageGeneration;
@@ -3656,5 +3690,8 @@
         private Label LabelMonthViewFontNameHebrew;
         private ComboBox SelectMonthViewFontNameHebrew;
         private Label LabelMonthViewFontNameHebrewSample;
+        private TabControl TabControlMonthView;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }
