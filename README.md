@@ -77,6 +77,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 - Adar II was renamed in VeAdar.
 - Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
+- Added option to select data layout order and sections to show in the monthly view.
 - Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
 - Some fixes and improvements.
 - Optimized and refactored code.
@@ -388,8 +389,8 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### TO DO - Version 10.1
 
-- Add option to choose font type in the monthly view.
-- Add option to display only omer ephemeris or sun and moon the same time in the monthly view
+- Add option to select data layout order and sections to show in the monthly view.
+- Add option to choose font name for texts in the monthly view.
 
 #### 2022.11.03 - Version 10.0
 
