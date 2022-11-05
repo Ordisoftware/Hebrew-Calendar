@@ -731,12 +731,6 @@
     <Setting Name="HebrewNamesInUnicode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="MonthViewEventsAlignment" Type="System.Drawing.StringAlignment" Scope="User">
-      <Value Profile="(Default)">Near</Value>
-    </Setting>
-    <Setting Name="MonthViewEventsAlignmentOnlyForTorah" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="HebrewInUnicodeKeepArabicNumerals" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -835,6 +829,18 @@
     </Setting>
     <Setting Name="MonthViewSunOrMoonOneLineStarSign" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MonthViewAlignmentDate" Type="System.Drawing.StringAlignment" Scope="User">
+      <Value Profile="(Default)">Near</Value>
+    </Setting>
+    <Setting Name="MonthViewAlignmentEphemeris" Type="System.Drawing.StringAlignment" Scope="User">
+      <Value Profile="(Default)">Near</Value>
+    </Setting>
+    <Setting Name="MonthViewAlignmentCelebration" Type="System.Drawing.StringAlignment" Scope="User">
+      <Value Profile="(Default)">Near</Value>
+    </Setting>
+    <Setting Name="MonthViewAlignmentParashah" Type="System.Drawing.StringAlignment" Scope="User">
+      <Value Profile="(Default)">Near</Value>
     </Setting>
   </Settings>
 </SettingsFile>

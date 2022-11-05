@@ -949,8 +949,10 @@ namespace CodeProjectCalendar.NET
       // ORDISOFWTARE MODIF BEGIN
       int separatorsize = Program.Settings.MonthViewSeparatorSize;
       int linespacing = Program.Settings.CalendarLineSpacing;
-      var eventStringFormat = new StringFormat() { Alignment = Program.Settings.MonthViewEventsAlignment };
-      var eventAlignmentOnlyForTorah = Program.Settings.MonthViewEventsAlignmentOnlyForTorah;
+      var eventStringFormatDate = new StringFormat() { Alignment = Program.Settings.MonthViewAlignmentDate };
+      var eventStringFormatEphemeris = new StringFormat() { Alignment = Program.Settings.MonthViewAlignmentEphemeris };
+      var eventStringFormatCelebration = new StringFormat() { Alignment = Program.Settings.MonthViewAlignmentCelebration };
+      var eventStringFormatParashah = new StringFormat() { Alignment = Program.Settings.MonthViewAlignmentParashah };
       var today = DateTime.Today;
       string monthText = _calendarDate.ToString("MMMM").Titleize();
       if ( isPrinting )
@@ -1381,8 +1383,18 @@ namespace CodeProjectCalendar.NET
                 g.DrawRectangle(PenBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
 
               var rect = new Rectangle(xx, yy + offsetY, cellWidth - 2 - 5, (int)( sz.Height - 1 ));
-              if ( !eventAlignmentOnlyForTorah || v.IsTorah )
-                g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormat);
+
+              if ( v.Section == CalendarSection.Date )
+                g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormatDate);
+              else
+              if ( v.Section == CalendarSection.Ephemeris )
+                g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormatEphemeris);
+              else
+              if ( v.Section == CalendarSection.Celebration )
+                g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormatCelebration);
+              else
+              if ( v.Section == CalendarSection.Parashah )
+                g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormatParashah);
               else
                 g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect);
 

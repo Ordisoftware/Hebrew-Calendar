@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using Ordisoftware.Hebrew.Calendar;
 
 namespace CodeProjectCalendar.NET
 {
@@ -13,8 +14,8 @@ namespace CodeProjectCalendar.NET
     // ORDISOFTWARE MODIF BEGIN
     public string ToolTipText { get; set; }
     public bool IsHebrew { get; set; }
-    public bool IsTorah { get; set; }
-    public bool IsSeparator { get; set; }
+    public bool IsSeparator => Section == CalendarSection.Separator;
+    public CalendarSection Section { get; set; }
     // ORDISOFTWARE MODIF END
 
     public int Rank
