@@ -101,12 +101,6 @@ partial class MainForm
     {
       if ( LunisolarDays.Count == 0 ) return;
       InitializeYearsInterval();
-      bool showLunarDate = Settings.MonthViewLayoutLunarDateEnabled;
-      bool showSeason = Settings.MonthViewLayoutSeasonChangeEnabled;
-      bool showCelebration = Settings.MonthViewLayoutCelebrationEnabled;
-      bool showParashah = Settings.CalendarShowParashah;
-      bool showParashahName = Settings.MonthViewLayoutParashahNameEnabled;
-      bool showParashahRef = Settings.MonthViewLayoutParashahReferenceEnabled;
       var colorBack = Settings.MonthViewBackColor;
       var colorText = Settings.MonthViewTextColor;
       var colorSeason = Settings.CalendarColorSeason;
@@ -131,8 +125,18 @@ partial class MainForm
       bool sepParashahName = Settings.MonthViewSeparatorForParashahName;
       bool sepParashahRef = Settings.MonthViewSeparatorForParashahReference;
       bool dateOnSingleLine = Settings.CalendarHebrewDateSingleLine;
-      bool sunTimes = Settings.MonthViewLayoutEphemerisSunEnabled;
-      bool moonTimes = Settings.MonthViewLayoutEphemerisMoonEnabled;
+      bool aloneOneLine = Settings.MonthViewSunOrMoonOneLine;
+      bool showLunarDate = Settings.MonthViewLayoutLunarDateEnabled;
+      bool showSeason = Settings.MonthViewLayoutSeasonChangeEnabled;
+      bool showCelebration = Settings.MonthViewLayoutCelebrationEnabled;
+      bool showParashah = Settings.CalendarShowParashah;
+      bool showParashahName = Settings.MonthViewLayoutParashahNameEnabled;
+      bool showParashahRef = Settings.MonthViewLayoutParashahReferenceEnabled;
+      bool showSun = Settings.MonthViewLayoutEphemerisSunEnabled;
+      bool showMoon = Settings.MonthViewLayoutEphemerisMoonEnabled;
+      bool bothTimes = showSun && showMoon;
+      bool addAlonePrefix = !bothTimes && Settings.MonthViewSunOrMoonOneLineStarSign;
+      bool addPrefix = bothTimes || addAlonePrefix;
       bool isOmerSun = !Settings.TorahEventsCountAsMoon;
       bool useUnicode = Settings.HebrewNamesInUnicode;
       bool isCelebrationWeekStart = false;
@@ -213,9 +217,8 @@ partial class MainForm
           // Initialize dispatch table
           addSectionsMethods.Clear();
           string strDate = string.Empty;
-          bool both = sunTimes && moonTimes;
-          Action addsun = both ? addSunWithMoon : sunTimes ? addSunAlone : null;
-          Action addmoon = both ? addMoonWithSun : moonTimes ? addMoonAlone : null;
+          Action addsun = bothTimes ? addSunWithMoon : showSun ? addSunAlone : null;
+          Action addmoon = bothTimes ? addMoonWithSun : showMoon ? addMoonAlone : null;
           addSectionsMethods.Add(Settings.MonthViewLayoutLunarDatePosition, addLunarDateSingleLine);
           addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisSunPosition, addsun);
           addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisMoonPosition, addmoon);
@@ -252,8 +255,15 @@ partial class MainForm
           //
           void addSunAlone()
           {
-            add(colorEphemeris, $"{strRise}{row.SunriseAsString}{strDate}");
-            add(colorText, strSet + row.SunsetAsString);
+            if ( aloneOneLine )
+            {
+              addSunWithMoon();
+            }
+            else
+            {
+              add(colorEphemeris, $"{strRise}{row.SunriseAsString}{strDate}");
+              add(colorText, strSet + row.SunsetAsString);
+            }
             if ( sepEphemerisSun )
               add(colorText, string.Empty);
           }
@@ -262,29 +272,39 @@ partial class MainForm
           //
           void addMoonAlone()
           {
-            if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+            if ( aloneOneLine )
             {
-              if ( row.Moonset is not null )
-                add(colorText, strSet + row.MoonsetAsString);
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}");
+              addMoonWithSun();
             }
             else
             {
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}");
-              if ( row.Moonset is not null )
-                add(colorText, strSet + row.MoonsetAsString);
+              if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+              {
+                if ( row.Moonset is not null )
+                  add(colorText, strSet + row.MoonsetAsString);
+                if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+                  add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}");
+              }
+              else
+              {
+                if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+                  add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}");
+                if ( row.Moonset is not null )
+                  add(colorText, strSet + row.MoonsetAsString);
+              }
+              if ( sepEphemerisMoon )
+                add(colorText, string.Empty);
             }
-            if ( sepEphemerisMoon )
-              add(colorText, string.Empty);
           }
           //
           // Sun with moon
           //
           void addSunWithMoon()
           {
-            add(colorSun, $"{prefixSun}{strRise}{row.SunriseAsString} - {strSet}{row.SunsetAsString}");
+            string str = $"{strRise}{row.SunriseAsString} - {strSet}{row.SunsetAsString}";
+            if ( addPrefix )
+              str = prefixSun + str;
+            add(colorSun, str);
             if ( sepEphemerisSun )
               add(colorText, string.Empty);
           }
@@ -302,7 +322,9 @@ partial class MainForm
               setMoonWithSun_RiseAfterSet();
             else
               setMoonWithSun_RiseBeforeSet();
-            add(colorMoon, $"{prefixMoon}{all}");
+            if ( addPrefix )
+              all = prefixMoon + all;
+            add(colorMoon, all);
             if ( sepEphemerisMoon )
               add(colorText, string.Empty);
             //

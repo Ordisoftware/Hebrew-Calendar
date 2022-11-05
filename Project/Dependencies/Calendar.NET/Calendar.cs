@@ -1000,6 +1000,7 @@ namespace CodeProjectCalendar.NET
         selectedMonth = today.Month;
         selectedYear = today.Year;
       }
+      var eventsGrouped = MainForm.CalendarEventsGrouped;
       bool CheckSelected(int day)
         => day == selectedDay && _calendarDate.Month == selectedMonth && _calendarDate.Year == selectedYear;
       // ORDISOFWTARE MODIF END
@@ -1320,88 +1321,89 @@ namespace CodeProjectCalendar.NET
 
       // ORDISOFTWARE MODIF BEGIN
       //_events.Sort(new EventComparer());
-      for ( int i = 1; i <= daysinmonth; i++ )
-      {
-        int renderOffsetY = -3 + linespacing;
-
-        //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
-        var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
-        //var list = TheEvents.Where(ev => ev.Date == dt /*&& ( ev.Enabled || _showDisabledEvents )*/).Cast<CustomEvent>().ToArray();
-        if ( !MainForm.CalendarEventsGrouped.ContainsKey(dt) ) continue;
-        var list = MainForm.CalendarEventsGrouped[dt];
-        int countEvents = list.Length;
-        int countEventsPrev = list[countEvents - 1].IsSeparator ? countEvents - 2 : countEvents - 1;
-        if ( list.All(v => v.IsSeparator) ) continue;
-        int deltaLine = -5 + linespacing;
-        var sample = Array.Find(list, e => !e.EventText.IsNullOrEmpty());
-        if ( sample is null ) continue;
-        SizeF sz = g.MeasureString(sample.EventText, sample.EventFont);
-        for ( int index = 0; index < countEvents; index++ )
-        //foreach ( IEvent v in _events )
+      if ( eventsGrouped is not null )
+        for ( int i = 1; i <= daysinmonth; i++ )
         {
-          var v = list[index];
+          int renderOffsetY = -3 + linespacing;
 
-          if ( v.IsSeparator )
+          //var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 23, 59, _calendarDate.Second);
+          var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, i, 00, 00, 0);
+          //var list = TheEvents.Where(ev => ev.Date == dt /*&& ( ev.Enabled || _showDisabledEvents )*/).Cast<CustomEvent>().ToArray();
+          if ( !eventsGrouped.ContainsKey(dt) ) continue;
+          var list = MainForm.CalendarEventsGrouped[dt];
+          int countEvents = list.Length;
+          int countEventsPrev = list[countEvents - 1].IsSeparator ? countEvents - 2 : countEvents - 1;
+          if ( list.All(v => v.IsSeparator) ) continue;
+          int deltaLine = -5 + linespacing;
+          var sample = Array.Find(list, e => !e.EventText.IsNullOrEmpty());
+          if ( sample is null ) continue;
+          SizeF sz = g.MeasureString(sample.EventText, sample.EventFont);
+          for ( int index = 0; index < countEvents; index++ )
+          //foreach ( IEvent v in _events )
           {
-            renderOffsetY += separatorsize;
-            continue;
-          }
+            var v = list[index];
 
-          if ( DayForward(v, dt) )
-          //if ( NeedsRendering(v, dt) )
-          {
-            int alpha = !v.Enabled && _dimDisabledEvents ? alpha = 64 : 255;
-            Color alphaColor = Color.FromArgb(alpha, v.EventColor.R, v.EventColor.G, v.EventColor.B);
-
-            int offsetY = renderOffsetY;
-            Region r = g.Clip;
-            if ( i > _calendarDays.Count ) continue;
-
-            Point point = _calendarDays[i];
-            int yy = point.Y - 1;
-
-            //int xx = ( ( cellWidth - (int)sz.Width ) / 2 ) + point.X;
-            int xx = point.X + 5;
-            //if ( sz.Width > cellWidth ) xx = point.X;
-
-            if ( renderOffsetY + sz.Height + sz.Height + sz.Height > cellHeight - 2 && index != countEventsPrev )
+            if ( v.IsSeparator )
             {
-              g.DrawString("...", new Font(v.EventFont, FontStyle.Bold), SolidBrushesPool.Get(v.EventTextColor), xx, yy + offsetY);
-              break;
+              renderOffsetY += separatorsize;
+              continue;
             }
 
-            int pointYoffsetY = point.Y + offsetY;
-
-            g.Clip = new Region(new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height));
-            g.FillRectangle(SolidBrushesPool.Get(alphaColor), point.X + 3, pointYoffsetY, cellWidth - 5, sz.Height);
-
-            if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
-              g.DrawRectangle(PenBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
-
-            var rect = new Rectangle(xx, yy + offsetY, cellWidth - 2 - 5, (int)( sz.Height - 1 ));
-            if ( !eventAlignmentOnlyForTorah || v.IsTorah )
-              g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormat);
-            else
-              g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect);
-
-            if ( v.IsHebrew ) renderOffsetY += 2;
-
-            g.Clip = r;
-
-            /*if ( generateSunToolTips )
+            if ( DayForward(v, dt) )
+            //if ( NeedsRendering(v, dt) )
             {
-              var ev = new CalendarEvent
+              int alpha = !v.Enabled && _dimDisabledEvents ? alpha = 64 : 255;
+              Color alphaColor = Color.FromArgb(alpha, v.EventColor.R, v.EventColor.G, v.EventColor.B);
+
+              int offsetY = renderOffsetY;
+              Region r = g.Clip;
+              if ( i > _calendarDays.Count ) continue;
+
+              Point point = _calendarDays[i];
+              int yy = point.Y - 1;
+
+              //int xx = ( ( cellWidth - (int)sz.Width ) / 2 ) + point.X;
+              int xx = point.X + 5;
+              //if ( sz.Width > cellWidth ) xx = point.X;
+
+              if ( renderOffsetY + sz.Height + sz.Height + sz.Height > cellHeight - 2 && index != countEventsPrev )
               {
-                EventArea = new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height),
-                Event = v,
-                Date = dt
-              };
-              _calendarEvents.Add(ev);
-            }*/
-            renderOffsetY += (int)sz.Height + deltaLine;
+                g.DrawString("...", new Font(v.EventFont, FontStyle.Bold), SolidBrushesPool.Get(v.EventTextColor), xx, yy + offsetY);
+                break;
+              }
+
+              int pointYoffsetY = point.Y + offsetY;
+
+              g.Clip = new Region(new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height));
+              g.FillRectangle(SolidBrushesPool.Get(alphaColor), point.X + 3, pointYoffsetY, cellWidth - 5, sz.Height);
+
+              if ( !v.Enabled && _showDashedBorderOnDisabledEvents )
+                g.DrawRectangle(PenBlack, point.X + 1, pointYoffsetY, cellWidth - 2, sz.Height - 1);
+
+              var rect = new Rectangle(xx, yy + offsetY, cellWidth - 2 - 5, (int)( sz.Height - 1 ));
+              if ( !eventAlignmentOnlyForTorah || v.IsTorah )
+                g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect, eventStringFormat);
+              else
+                g.DrawString(v.EventText, v.EventFont, SolidBrushesPool.Get(v.EventTextColor), rect);
+
+              if ( v.IsHebrew ) renderOffsetY += 2;
+
+              g.Clip = r;
+
+              /*if ( generateSunToolTips )
+              {
+                var ev = new CalendarEvent
+                {
+                  EventArea = new Rectangle(point.X + 1, pointYoffsetY, cellWidth - 1, (int)sz.Height),
+                  Event = v,
+                  Date = dt
+                };
+                _calendarEvents.Add(ev);
+              }*/
+              renderOffsetY += (int)sz.Height + deltaLine;
+            }
           }
         }
-      }
       // ORDISOFTWARE MODIF END
 
       _rectangles.Clear();

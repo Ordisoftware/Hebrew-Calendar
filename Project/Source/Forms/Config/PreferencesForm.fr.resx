@@ -409,9 +409,6 @@
   <data name="TabPageGeneration.Text" xml:space="preserve">
     <value>Génération</value>
   </data>
-  <data name="LabelChangeOmerInfo.Text" xml:space="preserve">
-    <value>Le changement de omer réinitialisera l'affichage des éphémérides selon l'astre sélectionné. Pour afficher l'autre astre, cochez-le à nouveau dans l'apparence de la vue mensuelle.</value>
-  </data>
   <data name="SelectUseSodHaibour.Text" xml:space="preserve">
     <value>Utiliser le Sod HaH'ibour avec le omer du soleil</value>
   </data>
@@ -480,6 +477,9 @@
   </data>
   <data name="EditAutoRegenerate.Text" xml:space="preserve">
     <value>Auto-générer données pour cet intervalle d'années si expiré</value>
+  </data>
+  <data name="LabelChangeOmerInfo.Text" xml:space="preserve">
+    <value>Le changement de omer réinitialisera l'affichage des éphémérides selon l'astre sélectionné. Pour afficher l'autre astre, cochez-le à nouveau dans l'apparence de la vue mensuelle.</value>
   </data>
   <data name="TabPageReminder.Text" xml:space="preserve">
     <value>Rappeleur</value>
@@ -595,6 +595,9 @@
   <data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
     <value>Jours avant le premier rappel</value>
   </data>
+  <data name="LabelParashahEnabledInfo.Text" xml:space="preserve">
+    <value>Les sections seront décochées dans l'apparence de la vue mensuelle si désactivée.</value>
+  </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 17</value>
   </data>
@@ -608,7 +611,10 @@
     <value>Afficher la parashah de la semaine dans la boite de rappel</value>
   </data>
   <data name="EditParashahCaptionWithBookAndRef.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 17</value>
+    <value>368, 17</value>
+  </data>
+  <data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
+    <value>Afficher le nom de la parashah de la semaine avec le livre et la référence</value>
   </data>
   <data name="EditWeeklyParashahShowAtNewWeek.Size" type="System.Drawing.Size, System.Drawing">
     <value>381, 17</value>
@@ -616,7 +622,7 @@
   <data name="EditWeeklyParashahShowAtNewWeek.Text" xml:space="preserve">
     <value>Afficher la description de la parashah de la semaine au début de la semaine</value>
   </data>
-  <data name="EditCalendarShowParashah.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="EditParashahEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 17</value>
   </data>
   <data name="EditParashahEnabled.Text" xml:space="preserve">
@@ -760,9 +766,6 @@
   <data name="TabPageMonthViewBehavior.Text" xml:space="preserve">
     <value>Comportement</value>
   </data>
-  <data name="EditCalendarParashahWithBookAndRef.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 17</value>
-  </data>
   <data name="EditCalendarUseHoverEffect.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 17</value>
   </data>
@@ -805,12 +808,6 @@
   <data name="LabelCalendarDoubleClickAction.Text" xml:space="preserve">
     <value>Action du double-clic gauche</value>
   </data>
-  <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 13</value>
-  </data>
-  <data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
-    <value>Format du texte du jour de la lune pour la transcription latine</value>
-  </data>
   <data name="TabPageMonthViewAppearence.Text" xml:space="preserve">
     <value>Apparence</value>
   </data>
@@ -821,10 +818,16 @@
     <value>Alignement</value>
   </data>
   <data name="EditMonthViewSeparatorForLunarDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
+    <value>224, 17</value>
   </data>
   <data name="EditMonthViewSeparatorForLunarDate.Text" xml:space="preserve">
     <value>La date lunaire lorsque sur une seule ligne</value>
+  </data>
+  <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 13</value>
+  </data>
+  <data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
+    <value>Format du texte du jour de la lune pour la transcription latine</value>
   </data>
   <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -878,13 +881,19 @@
     <value>Taille du séparateur</value>
   </data>
   <data name="EditMonthViewEventsAlignmentOnlyForParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 17</value>
+    <value>236, 17</value>
   </data>
   <data name="EditMonthViewEventsAlignmentOnlyForParashah.Text" xml:space="preserve">
     <value>Seulement pour la célébration et la parashah</value>
   </data>
+  <data name="EditMonthViewSunOrMoonOneLineStarSign.Text" xml:space="preserve">
+    <value>Heures du soleil ou de la lune seul avec son signe si sur une seule ligne</value>
+  </data>
+  <data name="EditMonthViewSunOrMoonOneLine.Text" xml:space="preserve">
+    <value>Heures du soleil ou de la lune seul sur une seule ligne sinon deux</value>
+  </data>
   <data name="EditCalendarHebrewDateSingleLine.Text" xml:space="preserve">
-    <value>Date lunaire sur une seule ligne, sinon après le lever du soleil ou de la lune</value>
+    <value>Date lunaire sur une seule ligne, sinon après le lever du soleil ou de la lune selon le omer</value>
   </data>
   <data name="SelectMonthViewEventsAlignment.Items" xml:space="preserve">
     <value>Gauche</value>
@@ -895,12 +904,6 @@
   <data name="SelectMonthViewEventsAlignment.Items2" xml:space="preserve">
     <value>Droite</value>
   </data>
-  <data name="EditCalendarHebrewDateSingleLineItalic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 17</value>
-  </data>
-  <data name="EditCalendarHebrewDateSingleLineItalic.Text" xml:space="preserve">
-    <value>Date lunaire en italique lorsque sur une seule ligne</value>
-  </data>
   <data name="TabPageMonthViewFonts.Text" xml:space="preserve">
     <value>Caractères</value>
   </data>
@@ -909,6 +912,12 @@
   </data>
   <data name="LabelMonthViewFontNameLatin.Text" xml:space="preserve">
     <value>Nom de la police latine</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLineItalic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 17</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLineItalic.Text" xml:space="preserve">
+    <value>Date lunaire en italique lorsque sur une seule ligne</value>
   </data>
   <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 13</value>
@@ -1072,10 +1081,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
-  <data name="EditParashahCaptionWithBookAndRef.Text" xml:space="preserve">
-    <value>Afficher le nom de la parashah de la semaine avec le livre et la référence</value>
+  <data name="LabelEphemerisPrefixMoon.Text" xml:space="preserve">
+    <value>Signe ou préfixe de la lune</value>
   </data>
-  <data name="LabelParashahEnabledInfo.Text" xml:space="preserve">
-    <value>Les sections seront décochées dans l'apparence de la vue mensuelle si désactivée.</value>
+  <data name="LabelEphemerisPrefixSun.Text" xml:space="preserve">
+    <value>Signe ou préfixe du soleil</value>
+  </data>
+  <data name="TabPageMonthViewLayout.Text" xml:space="preserve">
+    <value>Disposition</value>
   </data>
 </root>
