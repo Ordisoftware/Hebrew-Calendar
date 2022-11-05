@@ -106,9 +106,19 @@ partial class PreferencesForm
         SelectUseSodHaibour.Checked = true;
       else
       if ( Settings.TorahEventsCountAsMoon )
+      {
         SelectOmerMoon.Checked = true;
+        Settings.MonthViewLayoutEphemerisMoonEnabled = true;
+        int index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+        if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+      }
       else
+      {
         SelectOmerSun.Checked = true;
+        Settings.MonthViewLayoutEphemerisSunEnabled = true;
+        int index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+        if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+      }
       MainForm.Instance.ActionShowShabatNotice_Click(null, null);
       if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
         ActionUsePersonalShabat_LinkClicked(null, null);
