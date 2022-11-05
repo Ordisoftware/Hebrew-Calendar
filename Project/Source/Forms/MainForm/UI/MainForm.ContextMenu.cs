@@ -138,7 +138,7 @@ public partial class MainForm
         }
       }
     }
-    // Times
+    // Activated and selected days
     ContextMenuDaySetAsActive.Enabled = ContextMenuDayCurrentEvent.Date != MonthlyCalendar.CalendarDate.Date;
     ContextMenuDayClearSelection.Enabled = DateSelected is not null && DateSelected != DateTime.Today;
     ContextMenuDaySelectDate.Enabled = ( DateSelected is null && DateTime.Today != ContextMenuDayCurrentEvent.Date )
@@ -149,20 +149,11 @@ public partial class MainForm
     ContextMenuDayDatesDiffToToday.Enabled = ContextMenuDayCurrentEvent.Date != DateTime.Today;
     ContextMenuDayDatesDiffToSelected.Enabled = DateSelected is not null
                                                 && ContextMenuDaySelectDate.Enabled && DateSelected != DateTime.Today;
-    // TODO remove
-    //if ( Settings.TorahEventsCountAsMoon )
-    //{
-    //ContextMenuDayMoonrise.Visible = false;
-    //ContextMenuDayMoonset.Visible = false;
+    // Ephemeris
     ContextMenuDaySunrise.Visible = !ContextMenuDayCurrentEvent?.SunriseAsString.IsNullOrEmpty() ?? false;
     ContextMenuDaySunset.Visible = !ContextMenuDayCurrentEvent?.SunsetAsString.IsNullOrEmpty() ?? false;
     ContextMenuDaySunrise.Text = AppTranslations.Sunrise.GetLang(ContextMenuDayCurrentEvent?.SunriseAsString ?? "-");
     ContextMenuDaySunset.Text = AppTranslations.Sunset.GetLang(ContextMenuDayCurrentEvent?.SunsetAsString ?? "-");
-    //}
-    //else
-    //{
-    //ContextMenuDaySunrise.Visible = false;
-    //ContextMenuDaySunset.Visible = false;
     if ( ContextMenuDayCurrentEvent.MoonriseOccuring == MoonriseOccurring.AfterSet )
     {
       ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.Moonset is not null;
@@ -185,10 +176,6 @@ public partial class MainForm
       ContextMenuDayMoonrise.ImageIndex = 2;
       ContextMenuDayMoonset.ImageIndex = 3;
     }
-    //    }
-    //ContextMenuDaySunMoonSeparator.Visible = false;
-    //ContextMenuDayTimesSeparator.Visible = ContextMenuDaySunrise.Visible || ContextMenuDaySunset.Visible
-    //                                    || ContextMenuDayMoonrise.Visible || ContextMenuDayMoonset.Visible;
   }
 
 }

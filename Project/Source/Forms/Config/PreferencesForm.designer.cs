@@ -304,7 +304,7 @@
       this.SelectMonthViewAlignmentEphemeris = new System.Windows.Forms.ComboBox();
       this.EditMonthViewSeparatorForSeasonChange = new System.Windows.Forms.CheckBox();
       this.EditMonthViewSunOrMoonOneLine = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSeparatorSizeInfo = new System.Windows.Forms.Label();
+      this.LabelMonthViewSeparatorSizeInfo = new System.Windows.Forms.Label();
       this.EditCalendarHebrewDateSingleLine = new System.Windows.Forms.CheckBox();
       this.label10 = new System.Windows.Forms.Label();
       this.LabelMonthViewAlignmentDate = new System.Windows.Forms.Label();
@@ -2527,7 +2527,7 @@
       this.TabPageMonthViewLayout.Controls.Add(this.SelectMonthViewAlignmentEphemeris);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForSeasonChange);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSunOrMoonOneLine);
-      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorSizeInfo);
+      this.TabPageMonthViewLayout.Controls.Add(this.LabelMonthViewSeparatorSizeInfo);
       this.TabPageMonthViewLayout.Controls.Add(this.EditCalendarHebrewDateSingleLine);
       this.TabPageMonthViewLayout.Controls.Add(this.label10);
       this.TabPageMonthViewLayout.Controls.Add(this.LabelMonthViewAlignmentDate);
@@ -2703,9 +2703,9 @@
       // 
       // EditMonthViewSeparatorSizeInfo
       // 
-      resources.ApplyResources(this.EditMonthViewSeparatorSizeInfo, "EditMonthViewSeparatorSizeInfo");
-      this.EditMonthViewSeparatorSizeInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.EditMonthViewSeparatorSizeInfo.Name = "EditMonthViewSeparatorSizeInfo";
+      resources.ApplyResources(this.LabelMonthViewSeparatorSizeInfo, "EditMonthViewSeparatorSizeInfo");
+      this.LabelMonthViewSeparatorSizeInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelMonthViewSeparatorSizeInfo.Name = "EditMonthViewSeparatorSizeInfo";
       // 
       // EditCalendarHebrewDateSingleLine
       // 
@@ -3967,7 +3967,7 @@
     private Label label8;
     private CheckBox EditMonthViewSeparatorForLunarDate;
     private CheckBox EditMonthViewSeparatorForEphemerisSun;
-    private Label EditMonthViewSeparatorSizeInfo;
+    private Label LabelMonthViewSeparatorSizeInfo;
     private NumericUpDown EditMonthViewSeparatorSize;
     private Label label10;
     private CheckBox EditMonthViewSeparatorForCelebration;

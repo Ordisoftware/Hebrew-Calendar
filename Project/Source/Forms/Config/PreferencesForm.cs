@@ -14,7 +14,6 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using Newtonsoft.Json.Linq;
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
 using KVPImageExportTarget = KeyValuePair<ImageExportTarget, string>;
 

@@ -64,6 +64,7 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 40, 20, 1);
   static public readonly (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
   static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 5, 1);
+  static public readonly (int, int, int, int) SeparatorSizeInterval = (0, 10, 3, 1);
   static public readonly (int, int, int, int) LoomingDelayInterval = (500, 5000, 1000, 250);
   static public readonly (int, int, int, int) PrintingMarginInterval = (10, 160, 80, 10);
   static public readonly (int, int, int, int) PrintPageCountWarningInterval = (10, 100, 20, 10);

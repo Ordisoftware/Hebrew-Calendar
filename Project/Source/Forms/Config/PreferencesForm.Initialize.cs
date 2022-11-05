@@ -14,7 +14,6 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-using System.Reflection;
 using System.Xml;
 
 /// <summary>
@@ -185,6 +184,7 @@ partial class PreferencesForm
     InitializeNumericInterval(EditAutoLockSessionTimeOut, LabelAutoLockSessionTimeOutIntervalInfo, RemindAutoLockTimeOutInterval);
     InitializeNumericInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
     InitializeNumericInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
+    InitializeNumericInterval(EditMonthViewSeparatorSize, LabelMonthViewSeparatorSizeInfo, SeparatorSizeInterval);
     InitializeNumericInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
     int countBookmarks = Program.DateBookmarks.MaxCount;
     if ( countBookmarks == -1 ) countBookmarks = DateBookmarksCountInterval.Item1;
