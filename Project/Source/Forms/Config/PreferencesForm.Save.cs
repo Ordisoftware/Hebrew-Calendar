@@ -135,8 +135,10 @@ partial class PreferencesForm
     Settings.CalendarHebrewDateSingleLineItalic = EditCalendarHebrewDateSingleLineItalic.Checked;
     Settings.HebrewNamesInUnicode = EditHebrewNamesInUnicode.Checked;
     Settings.HebrewInUnicodeKeepArabicNumerals = EditHebrewInUnicodeKeepArabicNumerals.Checked;
-    Settings.MonthViewEventsAlignment = (StringAlignment)SelectMonthViewEventsAlignment.SelectedIndex;
-    Settings.MonthViewEventsAlignmentOnlyForTorah = EditMonthViewEventsAlignmentOnlyForParashah.Checked;
+    Settings.MonthViewAlignmentDate = (StringAlignment)SelectMonthViewAlignmentDate.SelectedIndex;
+    Settings.MonthViewAlignmentEphemeris = (StringAlignment)SelectMonthViewAlignmentEphemeris.SelectedIndex;
+    Settings.MonthViewAlignmentCelebration = (StringAlignment)SelectMonthViewAlignmentCelebration.SelectedIndex;
+    Settings.MonthViewAlignmentParashah = (StringAlignment)SelectMonthViewAlignmentParashah.SelectedIndex;
     Settings.MonthViewSeparatorForLunarDate = EditMonthViewSeparatorForLunarDate.Checked;
     Settings.MonthViewSeparatorForCelebration = EditMonthViewSeparatorForCelebration.Checked;
     Settings.MonthViewSeparatorForEphemerisSun = EditMonthViewSeparatorForEphemerisSun.Checked;
@@ -185,7 +187,7 @@ partial class PreferencesForm
     {
       SystemManager.TryCatch(() =>
       {
-        var item = (LayoutItem)SelectLayoutSections.Items[index];
+        var item = (LayoutSectionItem)SelectLayoutSections.Items[index];
         string prefix = LayoutSectionPrefix + item.Id;
         Settings[prefix + LayoutSectionPosition] = index;
         Settings[prefix + LayoutSectionEnabled] = SelectLayoutSections.GetItemChecked(index);

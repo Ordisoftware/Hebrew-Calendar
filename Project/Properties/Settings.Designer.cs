@@ -2939,30 +2939,6 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Near")]
-        public global::System.Drawing.StringAlignment MonthViewEventsAlignment {
-            get {
-                return ((global::System.Drawing.StringAlignment)(this["MonthViewEventsAlignment"]));
-            }
-            set {
-                this["MonthViewEventsAlignment"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MonthViewEventsAlignmentOnlyForTorah {
-            get {
-                return ((bool)(this["MonthViewEventsAlignmentOnlyForTorah"]));
-            }
-            set {
-                this["MonthViewEventsAlignmentOnlyForTorah"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool HebrewInUnicodeKeepArabicNumerals {
             get {
@@ -3354,6 +3330,54 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["MonthViewSunOrMoonOneLineStarSign"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Near")]
+        public global::System.Drawing.StringAlignment MonthViewAlignmentDate {
+            get {
+                return ((global::System.Drawing.StringAlignment)(this["MonthViewAlignmentDate"]));
+            }
+            set {
+                this["MonthViewAlignmentDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Near")]
+        public global::System.Drawing.StringAlignment MonthViewAlignmentEphemeris {
+            get {
+                return ((global::System.Drawing.StringAlignment)(this["MonthViewAlignmentEphemeris"]));
+            }
+            set {
+                this["MonthViewAlignmentEphemeris"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Near")]
+        public global::System.Drawing.StringAlignment MonthViewAlignmentCelebration {
+            get {
+                return ((global::System.Drawing.StringAlignment)(this["MonthViewAlignmentCelebration"]));
+            }
+            set {
+                this["MonthViewAlignmentCelebration"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Near")]
+        public global::System.Drawing.StringAlignment MonthViewAlignmentParashah {
+            get {
+                return ((global::System.Drawing.StringAlignment)(this["MonthViewAlignmentParashah"]));
+            }
+            set {
+                this["MonthViewAlignmentParashah"] = value;
             }
         }
     }

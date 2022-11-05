@@ -240,11 +240,9 @@ partial class MainForm
               if ( isOmerSun || row.Moonrise is not null )
               {
                 var color = row.IsNewMoon ? colorTorahEvent : colorEphemeris;
+                add(color, row.DayAndMonthFormattedText, CalendarSection.Date, useUnicode, dateInItalic);
                 if ( sepLunarDate )
-                  add(colorText, string.Empty);
-                add(color, row.DayAndMonthFormattedText, useUnicode, false, dateInItalic);
-                if ( sepLunarDate )
-                  add(colorText, string.Empty);
+                  add(colorText, string.Empty, CalendarSection.Separator);
               }
             }
             else
@@ -261,11 +259,11 @@ partial class MainForm
             }
             else
             {
-              add(colorEphemeris, $"{strRise}{row.SunriseAsString}{strDate}");
-              add(colorText, strSet + row.SunsetAsString);
+              add(colorEphemeris, $"{strRise}{row.SunriseAsString}{strDate}", CalendarSection.Ephemeris);
+              add(colorText, strSet + row.SunsetAsString, CalendarSection.Ephemeris);
             }
             if ( sepEphemerisSun )
-              add(colorText, string.Empty);
+              add(colorText, string.Empty, CalendarSection.Separator);
           }
           //
           // Moon alone
@@ -281,19 +279,19 @@ partial class MainForm
               if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
               {
                 if ( row.Moonset is not null )
-                  add(colorText, strSet + row.MoonsetAsString);
+                  add(colorText, strSet + row.MoonsetAsString, CalendarSection.Ephemeris);
                 if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                  add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}");
+                  add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}", CalendarSection.Ephemeris);
               }
               else
               {
                 if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                  add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}");
+                  add(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}", CalendarSection.Ephemeris);
                 if ( row.Moonset is not null )
-                  add(colorText, strSet + row.MoonsetAsString);
+                  add(colorText, strSet + row.MoonsetAsString, CalendarSection.Ephemeris);
               }
               if ( sepEphemerisMoon )
-                add(colorText, string.Empty);
+                add(colorText, string.Empty, CalendarSection.Separator);
             }
           }
           //
@@ -304,9 +302,9 @@ partial class MainForm
             string str = $"{strRise}{row.SunriseAsString} - {strSet}{row.SunsetAsString}";
             if ( addPrefix )
               str = prefixSun + str;
-            add(colorSun, str);
+            add(colorSun, str, CalendarSection.Ephemeris);
             if ( sepEphemerisSun )
-              add(colorText, string.Empty);
+              add(colorText, string.Empty, CalendarSection.Separator);
           }
           //
           // Moon with sun
@@ -324,9 +322,9 @@ partial class MainForm
               setMoonWithSun_RiseBeforeSet();
             if ( addPrefix )
               all = prefixMoon + all;
-            add(colorMoon, all);
+            add(colorMoon, all, CalendarSection.Ephemeris);
             if ( sepEphemerisMoon )
-              add(colorText, string.Empty);
+              add(colorText, string.Empty, CalendarSection.Separator);
             //
             void setMoonWithSun_RiseAfterSet()
             {
@@ -357,9 +355,9 @@ partial class MainForm
           {
             if ( !showSeason ) return;
             if ( row.SeasonChange != 0 )
-              add(colorSeason, AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange));
+              add(colorSeason, AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange), CalendarSection.Ephemeris);
             if ( sepSeasonChange )
-              add(colorText, string.Empty);
+              add(colorText, string.Empty, CalendarSection.Separator);
           }
           //
           // Add celebration
@@ -368,9 +366,9 @@ partial class MainForm
           {
             if ( !showCelebration ) return;
             if ( !row.TorahEventText.IsNullOrEmpty() )
-              add(colorTorahEvent, row.TorahEventText, useUnicode, true);
+              add(colorTorahEvent, row.TorahEventText, CalendarSection.Celebration, useUnicode);
             if ( sepCelebration )
-              add(colorText, string.Empty);
+              add(colorText, string.Empty, CalendarSection.Separator);
           }
           //
           // Add parashah name
@@ -380,33 +378,32 @@ partial class MainForm
             if ( !showParashah || !showParashahName || string.IsNullOrEmpty(row.ParashahID) ) return;
             parashah = ParashotFactory.Instance.Get(row.ParashahID);
             if ( parashah is null )
-              add(colorParashah, SysTranslations.UndefinedSlot.GetLang(), useUnicode, true);
+              add(colorParashah, SysTranslations.UndefinedSlot.GetLang(), CalendarSection.Parashah, useUnicode);
             else
-              add(colorParashah, parashah.ToStringShort(false, row.HasLinkedParashah), useUnicode, true);
+              add(colorParashah, parashah.ToStringShort(false, row.HasLinkedParashah), CalendarSection.Parashah, useUnicode);
             if ( sepParashahName )
-              add(colorText, string.Empty);
+              add(colorText, string.Empty, CalendarSection.Separator);
           }
           //
           // Add parashah ref
           //
           void addParashahRef()
           {
-            if ( !showParashah || !showParashahName || string.IsNullOrEmpty(row.ParashahID) ) return;
+            if ( !showParashah || !showParashahRef || string.IsNullOrEmpty(row.ParashahID) ) return;
             parashah = ParashotFactory.Instance.Get(row.ParashahID);
             if ( parashah is null )
-              add(colorParashah, SysTranslations.UndefinedSlot.GetLang(), useUnicode, true);
+              add(colorParashah, SysTranslations.UndefinedSlot.GetLang(), CalendarSection.Parashah, useUnicode);
             else
-              add(colorParashah, $"{parashah.ToStringWithBookAndReferences()}", useUnicode, true);
-            if ( sepParashahName )
-              add(colorText, string.Empty);
+              add(colorParashah, $"{parashah.ToStringWithBookAndReferences()}", CalendarSection.Parashah, useUnicode);
+            if ( sepParashahRef )
+              add(colorText, string.Empty, CalendarSection.Separator);
           }
           //
           // Add info
           //
-          void add(Color color, string text, bool isHebrew = false, bool isTorah = false, bool isItalic = false)
+          void add(Color color, string text, CalendarSection section, bool isHebrew = false, bool isItalic = false)
           {
-            bool isSeparator = text.IsNullOrEmpty();
-            if ( isSeparator )
+            if ( section == CalendarSection.Separator )
             {
               if ( hasPreviousSeperator ) return;
               hasPreviousSeperator = true;
@@ -420,8 +417,7 @@ partial class MainForm
               Date = date,
               EventFont = isHebrew ? fontEventHebrew : isItalic ? fontEventItalic : fontEvent,
               IsHebrew = isHebrew,
-              IsTorah = isTorah,
-              IsSeparator = isSeparator
+              Section = section
             };
             if ( useColors )
             {

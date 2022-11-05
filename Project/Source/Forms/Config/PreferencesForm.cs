@@ -14,6 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using Newtonsoft.Json.Linq;
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
 using KVPImageExportTarget = KeyValuePair<ImageExportTarget, string>;
 
@@ -379,6 +380,7 @@ partial class PreferencesForm : Form
 
   private void SelectOmerMoon_CheckedChanged(object sender, EventArgs e)
   {
+    // TODO choose a behavior
     //if ( !IsReady ) return;
     //if ( !SelectOmerMoon.Checked ) return;
     //var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
@@ -617,47 +619,67 @@ partial class PreferencesForm : Form
 
   private void SelectMonthViewFontNameLatin_SelectedIndexChanged(object sender, EventArgs e)
   {
+    SetMustRefreshEnabled(null, null);
     LabelMonthViewFontNameLatinSample.Font = new Font(SelectMonthViewLatinFontName.Text,
                                                       (float)EditMonthViewLatinFontSize.Value);
-    if ( !IsReady ) return;
-    SetMustRefreshEnabled(null, null);
   }
 
   private void SelectMonthViewFontNameHebrew_SelectedIndexChanged(object sender, EventArgs e)
   {
+    SetMustRefreshEnabled(null, null);
     LabelMonthViewFontNameHebrewSample.Font = new Font(SelectMonthViewHebrewFontName.Text,
                                                        (float)EditMonthViewHebrewFontSize.Value);
-    if ( !IsReady ) return;
-    SetMustRefreshEnabled(null, null);
   }
 
   private void ActionSeparatorsCheckAll_Click(object sender, EventArgs e)
   {
-    EditMonthViewSeparatorForCelebration.Checked = true;
-    EditMonthViewSeparatorForEphemerisMoon.Checked = true;
-    EditMonthViewSeparatorForEphemerisSun.Checked = true;
-    EditMonthViewSeparatorForLunarDate.Checked = true;
-    EditMonthViewSeparatorForParashahName.Checked = true;
-    EditMonthViewSeparatorForParashahReference.Checked = true;
-    EditMonthViewSeparatorForSeasonChange.Checked = true;
+    SetAllSeparators(true);
   }
 
   private void ActionSeparatorsUncheckAll_Click(object sender, EventArgs e)
   {
-    EditMonthViewSeparatorForCelebration.Checked = false;
-    EditMonthViewSeparatorForEphemerisMoon.Checked = false;
-    EditMonthViewSeparatorForEphemerisSun.Checked = false;
-    EditMonthViewSeparatorForLunarDate.Checked = false;
-    EditMonthViewSeparatorForParashahName.Checked = false;
-    EditMonthViewSeparatorForParashahReference.Checked = false;
-    EditMonthViewSeparatorForSeasonChange.Checked = false;
+    SetAllSeparators(false);
+  }
+
+  void SetAllSeparators(bool enabled)
+  {
+    EditMonthViewSeparatorForCelebration.Checked = enabled;
+    EditMonthViewSeparatorForEphemerisMoon.Checked = enabled;
+    EditMonthViewSeparatorForEphemerisSun.Checked = enabled;
+    EditMonthViewSeparatorForLunarDate.Checked = enabled;
+    EditMonthViewSeparatorForParashahName.Checked = enabled;
+    EditMonthViewSeparatorForParashahReference.Checked = enabled;
+    EditMonthViewSeparatorForSeasonChange.Checked = enabled;
+  }
+
+  private void ActionSetAllAlignmentsLeft_Click(object sender, EventArgs e)
+  {
+    SetAllAlignments(0);
+  }
+
+  private void ActionSetAllAlignmentsCenter_Click(object sender, EventArgs e)
+  {
+    SetAllAlignments(1);
+  }
+
+  private void ActionSetAllAlignmentsRight_Click(object sender, EventArgs e)
+  {
+    SetAllAlignments(2);
+  }
+
+  void SetAllAlignments(int index)
+  {
+    SelectMonthViewAlignmentDate.SelectedIndex = index;
+    SelectMonthViewAlignmentEphemeris.SelectedIndex = index;
+    SelectMonthViewAlignmentCelebration.SelectedIndex = index;
+    SelectMonthViewAlignmentParashah.SelectedIndex = index;
   }
 
   private void ListBoxLayout_ItemCheck(object sender, ItemCheckEventArgs e)
   {
     if ( !IsReady ) return;
     SetMustRefreshEnabled(null, null);
-    var item = (LayoutItem)SelectLayoutSections.Items[e.Index];
+    var item = (LayoutSectionItem)SelectLayoutSections.Items[e.Index];
     if ( item.Id == MonthlyViewLayoutSection.LunarDate )
       e.NewValue = CheckState.Checked;
     if ( item.Id == MonthlyViewLayoutSection.EphemerisSun && !SelectOmerMoon.Checked )
@@ -684,7 +706,6 @@ partial class PreferencesForm : Form
   {
     SelectLayoutSections.MoveSelectedItem(1);
     SelectLayoutSections.Focus();
-    SetMustRefreshEnabled(null, null);
   }
 
   private void ActionResetEphemerisPrefixSun_Click(object sender, EventArgs e)
@@ -701,14 +722,31 @@ partial class PreferencesForm : Form
 
   private void EditCalendarHebrewDateSingleLine_CheckedChanged(object sender, EventArgs e)
   {
-    if ( IsReady ) SetMustRefreshEnabled(null, null);
+    SetMustRefreshEnabled(null, null);
     EditCalendarHebrewDateSingleLineItalic.Enabled = EditCalendarHebrewDateSingleLine.Checked;
   }
 
   private void EditMonthViewSunOrMoonOneLine_CheckedChanged(object sender, EventArgs e)
   {
-    if ( IsReady ) SetMustRefreshEnabled(null, null);
+    SetMustRefreshEnabled(null, null);
     EditMonthViewSunOrMoonOneLineStarSign.Enabled = EditMonthViewSunOrMoonOneLine.Checked;
+  }
+
+  private void ActionLayoutResetSections_Click(object sender, EventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) ) return;
+    foreach ( LayoutSectionItem item in SelectLayoutSections.Items )
+    {
+      string prefix = $"{LayoutSectionPrefix}{item.Id}";
+      item.Position = Convert.ToInt32((string)Settings.Properties[prefix + LayoutSectionPosition].DefaultValue);
+      item.Enabled = Convert.ToBoolean((string)Settings.Properties[prefix + LayoutSectionEnabled].DefaultValue);
+    }
+    // Sorting does not sort checks!
+    SelectLayoutSections.Sort((item1, item2) => ( (LayoutSectionItem)item1 ).Position.CompareTo(( (LayoutSectionItem)item2 ).Position));
+    for ( int index = 0; index < SelectLayoutSections.Items.Count; index++ )
+      if ( ( (LayoutSectionItem)SelectLayoutSections.Items[index] ).Enabled )
+        SelectLayoutSections.SetItemChecked(index, true);
+    SetMustRefreshEnabled(null, null);
   }
 
   #endregion

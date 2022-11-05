@@ -74,6 +74,7 @@ static public class PensPool
 static class FormsHelper
 {
 
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "N/A")]
   static public readonly List<FontFamily> InstalledFonts
     = new InstalledFontCollection().Families
                                    .OrderBy(font => font.Name)

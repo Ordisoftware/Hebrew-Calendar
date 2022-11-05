@@ -285,56 +285,64 @@
       this.SelectCalendarDoubleClickActionSelect = new System.Windows.Forms.RadioButton();
       this.LabelCalendarDoubleClickAction = new System.Windows.Forms.Label();
       this.TabPageMonthViewLayout = new System.Windows.Forms.TabPage();
+      this.ActionLayoutResetSections = new System.Windows.Forms.Button();
+      this.ActionSetAllAlignmentsRight = new System.Windows.Forms.Button();
+      this.ActionSetAllAlignmentsCenter = new System.Windows.Forms.Button();
+      this.ActionSeparatorsUncheckAll = new System.Windows.Forms.Button();
+      this.LabelMonthViewAlignmentParashah = new System.Windows.Forms.Label();
       this.ActionLayoutSectionUp = new System.Windows.Forms.Button();
+      this.ActionSetAllAlignmentsLeft = new System.Windows.Forms.Button();
+      this.ActionSeparatorsCheckAll = new System.Windows.Forms.Button();
       this.SelectLayoutSections = new System.Windows.Forms.CheckedListBox();
+      this.LabelMonthViewAlignmentEphemeris = new System.Windows.Forms.Label();
+      this.EditMonthViewSeparatorForLunarDate = new System.Windows.Forms.CheckBox();
       this.ActionLayoutSectionDown = new System.Windows.Forms.Button();
       this.EditMonthViewSunOrMoonOneLineStarSign = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSunOrMoonOneLine = new System.Windows.Forms.CheckBox();
-      this.EditCalendarHebrewDateSingleLine = new System.Windows.Forms.CheckBox();
-      this.TabPageMonthViewAppearence = new System.Windows.Forms.TabPage();
-      this.ActionSeparatorsUncheckAll = new System.Windows.Forms.Button();
-      this.ActionSeparatorsCheckAll = new System.Windows.Forms.Button();
-      this.LabelMonthViewEventsAlignment = new System.Windows.Forms.Label();
-      this.EditMonthViewSeparatorForLunarDate = new System.Windows.Forms.CheckBox();
-      this.LabelMoonDayTextFormat = new System.Windows.Forms.Label();
-      this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
       this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
-      this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
-      this.EditMonthViewSeparatorForSeasonChange = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSeparatorForEphemerisMoon = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSeparatorForEphemerisSun = new System.Windows.Forms.CheckBox();
-      this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
-      this.EditMonthViewSeparatorForParashahReference = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSeparatorForParashahName = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSeparatorForCelebration = new System.Windows.Forms.CheckBox();
-      this.label8 = new System.Windows.Forms.Label();
-      this.LabelCalendarLineSpacingInfo = new System.Windows.Forms.Label();
-      this.label10 = new System.Windows.Forms.Label();
-      this.EditMonthViewEventsAlignmentOnlyForParashah = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSeparatorSizeInfo = new System.Windows.Forms.Label();
-      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
-      this.SelectMonthViewEventsAlignment = new System.Windows.Forms.ComboBox();
+      this.SelectMonthViewAlignmentParashah = new System.Windows.Forms.ComboBox();
       this.EditMonthViewSeparatorSize = new System.Windows.Forms.NumericUpDown();
-      this.TabPageMonthViewFonts = new System.Windows.Forms.TabPage();
+      this.SelectMonthViewAlignmentEphemeris = new System.Windows.Forms.ComboBox();
+      this.EditMonthViewSeparatorForSeasonChange = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewSunOrMoonOneLine = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewSeparatorSizeInfo = new System.Windows.Forms.Label();
+      this.EditCalendarHebrewDateSingleLine = new System.Windows.Forms.CheckBox();
+      this.label10 = new System.Windows.Forms.Label();
+      this.LabelMonthViewAlignmentDate = new System.Windows.Forms.Label();
+      this.EditMonthViewSeparatorForEphemerisMoon = new System.Windows.Forms.CheckBox();
+      this.SelectMonthViewAlignmentDate = new System.Windows.Forms.ComboBox();
+      this.LabelCalendarLineSpacingInfo = new System.Windows.Forms.Label();
+      this.LabelMonthViewAlignmentCelebration = new System.Windows.Forms.Label();
+      this.label8 = new System.Windows.Forms.Label();
+      this.SelectMonthViewAlignmentCelebration = new System.Windows.Forms.ComboBox();
+      this.EditMonthViewSeparatorForEphemerisSun = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewSeparatorForParashahReference = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewSeparatorForCelebration = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewSeparatorForParashahName = new System.Windows.Forms.CheckBox();
+      this.EditCalendarLineSpacing = new System.Windows.Forms.NumericUpDown();
+      this.TabPageMonthViewAppearence = new System.Windows.Forms.TabPage();
       this.ActionResetEphemerisPrefixMoon = new System.Windows.Forms.Button();
+      this.LabelMoonDayTextFormat = new System.Windows.Forms.Label();
+      this.EditMoonDayTextFormat = new Ordisoftware.Core.TextBoxEx();
       this.LabelEphemerisPrefixMoon = new System.Windows.Forms.Label();
+      this.ActionMoonDayTextFormatHelp = new System.Windows.Forms.Button();
+      this.ActionMoonDayTextFormatReset = new System.Windows.Forms.Button();
       this.EditEphemerisPrefixMoon = new Ordisoftware.Core.TextBoxEx();
+      this.LabelMonthViewFontNameLatin = new System.Windows.Forms.Label();
+      this.LabelMonthViewHebrewFontSizeInterval = new System.Windows.Forms.Label();
       this.ActionResetEphemerisPrefixSun = new System.Windows.Forms.Button();
+      this.LabelMonthViewHebrewFontSize = new System.Windows.Forms.Label();
+      this.LabelMonthViewFontSizeInterval = new System.Windows.Forms.Label();
       this.LabelEphemerisPrefixSun = new System.Windows.Forms.Label();
       this.EditEphemerisPrefixSun = new Ordisoftware.Core.TextBoxEx();
-      this.LabelMonthViewFontNameLatin = new System.Windows.Forms.Label();
-      this.LabelMonthViewFontNameHebrewSample = new System.Windows.Forms.TextBox();
-      this.EditMonthViewLatinFontSize = new System.Windows.Forms.NumericUpDown();
-      this.EditMonthViewHebrewFontSize = new System.Windows.Forms.NumericUpDown();
-      this.EditCalendarHebrewDateSingleLineItalic = new System.Windows.Forms.CheckBox();
       this.LabelMonthViewFontSize = new System.Windows.Forms.Label();
-      this.LabelMonthViewHebrewFontSize = new System.Windows.Forms.Label();
+      this.LabelMonthViewFontNameHebrewSample = new System.Windows.Forms.TextBox();
       this.LabelMonthViewFontNameLatinSample = new System.Windows.Forms.TextBox();
+      this.SelectMonthViewLatinFontName = new System.Windows.Forms.ComboBox();
+      this.EditCalendarHebrewDateSingleLineItalic = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewLatinFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontNameHebrew = new System.Windows.Forms.Label();
       this.SelectMonthViewHebrewFontName = new System.Windows.Forms.ComboBox();
-      this.SelectMonthViewLatinFontName = new System.Windows.Forms.ComboBox();
-      this.LabelMonthViewFontSizeInterval = new System.Windows.Forms.Label();
-      this.LabelMonthViewHebrewFontSizeInterval = new System.Windows.Forms.Label();
+      this.EditMonthViewHebrewFontSize = new System.Windows.Forms.NumericUpDown();
       this.label11 = new System.Windows.Forms.Label();
       this.TabPageTextReport = new System.Windows.Forms.TabPage();
       this.LabelTextReportFontSizeInterval = new System.Windows.Forms.Label();
@@ -431,10 +439,9 @@
       this.TabControlMonthView.SuspendLayout();
       this.TabPageMonthViewBehavior.SuspendLayout();
       this.TabPageMonthViewLayout.SuspendLayout();
-      this.TabPageMonthViewAppearence.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewSeparatorSize)).BeginInit();
-      this.TabPageMonthViewFonts.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).BeginInit();
+      this.TabPageMonthViewAppearence.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewLatinFontSize)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewHebrewFontSize)).BeginInit();
       this.TabPageTextReport.SuspendLayout();
@@ -2435,7 +2442,6 @@
       this.TabControlMonthView.Controls.Add(this.TabPageMonthViewBehavior);
       this.TabControlMonthView.Controls.Add(this.TabPageMonthViewLayout);
       this.TabControlMonthView.Controls.Add(this.TabPageMonthViewAppearence);
-      this.TabControlMonthView.Controls.Add(this.TabPageMonthViewFonts);
       resources.ApplyResources(this.TabControlMonthView, "TabControlMonthView");
       this.TabControlMonthView.Name = "TabControlMonthView";
       this.TabControlMonthView.SelectedIndex = 0;
@@ -2502,15 +2508,86 @@
       // 
       // TabPageMonthViewLayout
       // 
+      this.TabPageMonthViewLayout.Controls.Add(this.ActionLayoutResetSections);
+      this.TabPageMonthViewLayout.Controls.Add(this.ActionSetAllAlignmentsRight);
+      this.TabPageMonthViewLayout.Controls.Add(this.ActionSetAllAlignmentsCenter);
+      this.TabPageMonthViewLayout.Controls.Add(this.ActionSeparatorsUncheckAll);
+      this.TabPageMonthViewLayout.Controls.Add(this.LabelMonthViewAlignmentParashah);
       this.TabPageMonthViewLayout.Controls.Add(this.ActionLayoutSectionUp);
+      this.TabPageMonthViewLayout.Controls.Add(this.ActionSetAllAlignmentsLeft);
+      this.TabPageMonthViewLayout.Controls.Add(this.ActionSeparatorsCheckAll);
       this.TabPageMonthViewLayout.Controls.Add(this.SelectLayoutSections);
+      this.TabPageMonthViewLayout.Controls.Add(this.LabelMonthViewAlignmentEphemeris);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForLunarDate);
       this.TabPageMonthViewLayout.Controls.Add(this.ActionLayoutSectionDown);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSunOrMoonOneLineStarSign);
+      this.TabPageMonthViewLayout.Controls.Add(this.LabelCalendarLineSpacing);
+      this.TabPageMonthViewLayout.Controls.Add(this.SelectMonthViewAlignmentParashah);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorSize);
+      this.TabPageMonthViewLayout.Controls.Add(this.SelectMonthViewAlignmentEphemeris);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForSeasonChange);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSunOrMoonOneLine);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorSizeInfo);
       this.TabPageMonthViewLayout.Controls.Add(this.EditCalendarHebrewDateSingleLine);
+      this.TabPageMonthViewLayout.Controls.Add(this.label10);
+      this.TabPageMonthViewLayout.Controls.Add(this.LabelMonthViewAlignmentDate);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForEphemerisMoon);
+      this.TabPageMonthViewLayout.Controls.Add(this.SelectMonthViewAlignmentDate);
+      this.TabPageMonthViewLayout.Controls.Add(this.LabelCalendarLineSpacingInfo);
+      this.TabPageMonthViewLayout.Controls.Add(this.LabelMonthViewAlignmentCelebration);
+      this.TabPageMonthViewLayout.Controls.Add(this.label8);
+      this.TabPageMonthViewLayout.Controls.Add(this.SelectMonthViewAlignmentCelebration);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForEphemerisSun);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForParashahReference);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForCelebration);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForParashahName);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditCalendarLineSpacing);
       resources.ApplyResources(this.TabPageMonthViewLayout, "TabPageMonthViewLayout");
       this.TabPageMonthViewLayout.Name = "TabPageMonthViewLayout";
       this.TabPageMonthViewLayout.UseVisualStyleBackColor = true;
+      // 
+      // ActionLayoutResetSections
+      // 
+      this.ActionLayoutResetSections.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionLayoutResetSections, "ActionLayoutResetSections");
+      this.ActionLayoutResetSections.Name = "ActionLayoutResetSections";
+      this.ActionLayoutResetSections.UseVisualStyleBackColor = true;
+      this.ActionLayoutResetSections.Click += new System.EventHandler(this.ActionLayoutResetSections_Click);
+      // 
+      // ActionSetAllAlignmentsRight
+      // 
+      this.ActionSetAllAlignmentsRight.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSetAllAlignmentsRight, "ActionSetAllAlignmentsRight");
+      this.ActionSetAllAlignmentsRight.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.ActionSetAllAlignmentsRight.Name = "ActionSetAllAlignmentsRight";
+      this.ActionSetAllAlignmentsRight.TabStop = false;
+      this.ActionSetAllAlignmentsRight.UseVisualStyleBackColor = true;
+      this.ActionSetAllAlignmentsRight.Click += new System.EventHandler(this.ActionSetAllAlignmentsRight_Click);
+      // 
+      // ActionSetAllAlignmentsCenter
+      // 
+      this.ActionSetAllAlignmentsCenter.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSetAllAlignmentsCenter, "ActionSetAllAlignmentsCenter");
+      this.ActionSetAllAlignmentsCenter.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.ActionSetAllAlignmentsCenter.Name = "ActionSetAllAlignmentsCenter";
+      this.ActionSetAllAlignmentsCenter.TabStop = false;
+      this.ActionSetAllAlignmentsCenter.UseVisualStyleBackColor = true;
+      this.ActionSetAllAlignmentsCenter.Click += new System.EventHandler(this.ActionSetAllAlignmentsCenter_Click);
+      // 
+      // ActionSeparatorsUncheckAll
+      // 
+      this.ActionSeparatorsUncheckAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSeparatorsUncheckAll, "ActionSeparatorsUncheckAll");
+      this.ActionSeparatorsUncheckAll.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.ActionSeparatorsUncheckAll.Name = "ActionSeparatorsUncheckAll";
+      this.ActionSeparatorsUncheckAll.TabStop = false;
+      this.ActionSeparatorsUncheckAll.UseVisualStyleBackColor = true;
+      this.ActionSeparatorsUncheckAll.Click += new System.EventHandler(this.ActionSeparatorsUncheckAll_Click);
+      // 
+      // LabelMonthViewAlignmentParashah
+      // 
+      resources.ApplyResources(this.LabelMonthViewAlignmentParashah, "LabelMonthViewAlignmentParashah");
+      this.LabelMonthViewAlignmentParashah.Name = "LabelMonthViewAlignmentParashah";
       // 
       // ActionLayoutSectionUp
       // 
@@ -2520,12 +2597,44 @@
       this.ActionLayoutSectionUp.UseVisualStyleBackColor = true;
       this.ActionLayoutSectionUp.Click += new System.EventHandler(this.ActionLayoutSectionUp_Click);
       // 
+      // ActionSetAllAlignmentsLeft
+      // 
+      this.ActionSetAllAlignmentsLeft.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSetAllAlignmentsLeft, "ActionSetAllAlignmentsLeft");
+      this.ActionSetAllAlignmentsLeft.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.ActionSetAllAlignmentsLeft.Name = "ActionSetAllAlignmentsLeft";
+      this.ActionSetAllAlignmentsLeft.TabStop = false;
+      this.ActionSetAllAlignmentsLeft.UseVisualStyleBackColor = true;
+      this.ActionSetAllAlignmentsLeft.Click += new System.EventHandler(this.ActionSetAllAlignmentsLeft_Click);
+      // 
+      // ActionSeparatorsCheckAll
+      // 
+      this.ActionSeparatorsCheckAll.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSeparatorsCheckAll, "ActionSeparatorsCheckAll");
+      this.ActionSeparatorsCheckAll.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.ActionSeparatorsCheckAll.Name = "ActionSeparatorsCheckAll";
+      this.ActionSeparatorsCheckAll.TabStop = false;
+      this.ActionSeparatorsCheckAll.UseVisualStyleBackColor = true;
+      this.ActionSeparatorsCheckAll.Click += new System.EventHandler(this.ActionSeparatorsCheckAll_Click);
+      // 
       // SelectLayoutSections
       // 
       this.SelectLayoutSections.FormattingEnabled = true;
       resources.ApplyResources(this.SelectLayoutSections, "SelectLayoutSections");
       this.SelectLayoutSections.Name = "SelectLayoutSections";
       this.SelectLayoutSections.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ListBoxLayout_ItemCheck);
+      // 
+      // LabelMonthViewAlignmentEphemeris
+      // 
+      resources.ApplyResources(this.LabelMonthViewAlignmentEphemeris, "LabelMonthViewAlignmentEphemeris");
+      this.LabelMonthViewAlignmentEphemeris.Name = "LabelMonthViewAlignmentEphemeris";
+      // 
+      // EditMonthViewSeparatorForLunarDate
+      // 
+      resources.ApplyResources(this.EditMonthViewSeparatorForLunarDate, "EditMonthViewSeparatorForLunarDate");
+      this.EditMonthViewSeparatorForLunarDate.Name = "EditMonthViewSeparatorForLunarDate";
+      this.EditMonthViewSeparatorForLunarDate.UseVisualStyleBackColor = true;
+      this.EditMonthViewSeparatorForLunarDate.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // ActionLayoutSectionDown
       // 
@@ -2542,108 +2651,41 @@
       this.EditMonthViewSunOrMoonOneLineStarSign.UseVisualStyleBackColor = true;
       this.EditMonthViewSunOrMoonOneLineStarSign.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
-      // EditMonthViewSunOrMoonOneLine
-      // 
-      resources.ApplyResources(this.EditMonthViewSunOrMoonOneLine, "EditMonthViewSunOrMoonOneLine");
-      this.EditMonthViewSunOrMoonOneLine.Name = "EditMonthViewSunOrMoonOneLine";
-      this.EditMonthViewSunOrMoonOneLine.UseVisualStyleBackColor = true;
-      this.EditMonthViewSunOrMoonOneLine.CheckedChanged += new System.EventHandler(this.EditMonthViewSunOrMoonOneLine_CheckedChanged);
-      // 
-      // EditCalendarHebrewDateSingleLine
-      // 
-      resources.ApplyResources(this.EditCalendarHebrewDateSingleLine, "EditCalendarHebrewDateSingleLine");
-      this.EditCalendarHebrewDateSingleLine.Name = "EditCalendarHebrewDateSingleLine";
-      this.EditCalendarHebrewDateSingleLine.UseVisualStyleBackColor = true;
-      this.EditCalendarHebrewDateSingleLine.CheckedChanged += new System.EventHandler(this.EditCalendarHebrewDateSingleLine_CheckedChanged);
-      // 
-      // TabPageMonthViewAppearence
-      // 
-      this.TabPageMonthViewAppearence.BackColor = System.Drawing.SystemColors.Window;
-      this.TabPageMonthViewAppearence.Controls.Add(this.ActionSeparatorsUncheckAll);
-      this.TabPageMonthViewAppearence.Controls.Add(this.ActionSeparatorsCheckAll);
-      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewEventsAlignment);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorForLunarDate);
-      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMoonDayTextFormat);
-      this.TabPageMonthViewAppearence.Controls.Add(this.ActionMoonDayTextFormatReset);
-      this.TabPageMonthViewAppearence.Controls.Add(this.LabelCalendarLineSpacing);
-      this.TabPageMonthViewAppearence.Controls.Add(this.ActionMoonDayTextFormatHelp);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorForSeasonChange);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorForEphemerisMoon);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorForEphemerisSun);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditCalendarLineSpacing);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorForParashahReference);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorForParashahName);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorForCelebration);
-      this.TabPageMonthViewAppearence.Controls.Add(this.label8);
-      this.TabPageMonthViewAppearence.Controls.Add(this.LabelCalendarLineSpacingInfo);
-      this.TabPageMonthViewAppearence.Controls.Add(this.label10);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewEventsAlignmentOnlyForParashah);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorSizeInfo);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMoonDayTextFormat);
-      this.TabPageMonthViewAppearence.Controls.Add(this.SelectMonthViewEventsAlignment);
-      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewSeparatorSize);
-      resources.ApplyResources(this.TabPageMonthViewAppearence, "TabPageMonthViewAppearence");
-      this.TabPageMonthViewAppearence.Name = "TabPageMonthViewAppearence";
-      this.TabPageMonthViewAppearence.UseVisualStyleBackColor = true;
-      // 
-      // ActionSeparatorsUncheckAll
-      // 
-      this.ActionSeparatorsUncheckAll.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSeparatorsUncheckAll, "ActionSeparatorsUncheckAll");
-      this.ActionSeparatorsUncheckAll.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.ActionSeparatorsUncheckAll.Name = "ActionSeparatorsUncheckAll";
-      this.ActionSeparatorsUncheckAll.TabStop = false;
-      this.ActionSeparatorsUncheckAll.UseVisualStyleBackColor = true;
-      this.ActionSeparatorsUncheckAll.Click += new System.EventHandler(this.ActionSeparatorsUncheckAll_Click);
-      // 
-      // ActionSeparatorsCheckAll
-      // 
-      this.ActionSeparatorsCheckAll.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSeparatorsCheckAll, "ActionSeparatorsCheckAll");
-      this.ActionSeparatorsCheckAll.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.ActionSeparatorsCheckAll.Name = "ActionSeparatorsCheckAll";
-      this.ActionSeparatorsCheckAll.TabStop = false;
-      this.ActionSeparatorsCheckAll.UseVisualStyleBackColor = true;
-      this.ActionSeparatorsCheckAll.Click += new System.EventHandler(this.ActionSeparatorsCheckAll_Click);
-      // 
-      // LabelMonthViewEventsAlignment
-      // 
-      resources.ApplyResources(this.LabelMonthViewEventsAlignment, "LabelMonthViewEventsAlignment");
-      this.LabelMonthViewEventsAlignment.Name = "LabelMonthViewEventsAlignment";
-      // 
-      // EditMonthViewSeparatorForLunarDate
-      // 
-      resources.ApplyResources(this.EditMonthViewSeparatorForLunarDate, "EditMonthViewSeparatorForLunarDate");
-      this.EditMonthViewSeparatorForLunarDate.Name = "EditMonthViewSeparatorForLunarDate";
-      this.EditMonthViewSeparatorForLunarDate.UseVisualStyleBackColor = true;
-      this.EditMonthViewSeparatorForLunarDate.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
-      // 
-      // LabelMoonDayTextFormat
-      // 
-      resources.ApplyResources(this.LabelMoonDayTextFormat, "LabelMoonDayTextFormat");
-      this.LabelMoonDayTextFormat.Name = "LabelMoonDayTextFormat";
-      // 
-      // ActionMoonDayTextFormatReset
-      // 
-      this.ActionMoonDayTextFormatReset.ContextMenuStrip = this.MenuSelectMoonDayTextFormat;
-      this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
-      this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
-      this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
-      this.ActionMoonDayTextFormatReset.Click += new System.EventHandler(this.ActionMoonDayTextFormatReset_Click);
-      // 
       // LabelCalendarLineSpacing
       // 
       resources.ApplyResources(this.LabelCalendarLineSpacing, "LabelCalendarLineSpacing");
       this.LabelCalendarLineSpacing.Name = "LabelCalendarLineSpacing";
       // 
-      // ActionMoonDayTextFormatHelp
+      // SelectMonthViewAlignmentParashah
       // 
-      this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
-      this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
-      this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
-      this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
+      this.SelectMonthViewAlignmentParashah.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectMonthViewAlignmentParashah.FormattingEnabled = true;
+      this.SelectMonthViewAlignmentParashah.Items.AddRange(new object[] {
+            resources.GetString("SelectMonthViewAlignmentParashah.Items"),
+            resources.GetString("SelectMonthViewAlignmentParashah.Items1"),
+            resources.GetString("SelectMonthViewAlignmentParashah.Items2")});
+      resources.ApplyResources(this.SelectMonthViewAlignmentParashah, "SelectMonthViewAlignmentParashah");
+      this.SelectMonthViewAlignmentParashah.Name = "SelectMonthViewAlignmentParashah";
+      this.SelectMonthViewAlignmentParashah.SelectedIndexChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      // 
+      // EditMonthViewSeparatorSize
+      // 
+      this.EditMonthViewSeparatorSize.BackColor = System.Drawing.SystemColors.Window;
+      resources.ApplyResources(this.EditMonthViewSeparatorSize, "EditMonthViewSeparatorSize");
+      this.EditMonthViewSeparatorSize.Name = "EditMonthViewSeparatorSize";
+      this.EditMonthViewSeparatorSize.ReadOnly = true;
+      // 
+      // SelectMonthViewAlignmentEphemeris
+      // 
+      this.SelectMonthViewAlignmentEphemeris.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectMonthViewAlignmentEphemeris.FormattingEnabled = true;
+      this.SelectMonthViewAlignmentEphemeris.Items.AddRange(new object[] {
+            resources.GetString("SelectMonthViewAlignmentEphemeris.Items"),
+            resources.GetString("SelectMonthViewAlignmentEphemeris.Items1"),
+            resources.GetString("SelectMonthViewAlignmentEphemeris.Items2")});
+      resources.ApplyResources(this.SelectMonthViewAlignmentEphemeris, "SelectMonthViewAlignmentEphemeris");
+      this.SelectMonthViewAlignmentEphemeris.Name = "SelectMonthViewAlignmentEphemeris";
+      this.SelectMonthViewAlignmentEphemeris.SelectedIndexChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // EditMonthViewSeparatorForSeasonChange
       // 
@@ -2652,6 +2694,36 @@
       this.EditMonthViewSeparatorForSeasonChange.UseVisualStyleBackColor = true;
       this.EditMonthViewSeparatorForSeasonChange.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
+      // EditMonthViewSunOrMoonOneLine
+      // 
+      resources.ApplyResources(this.EditMonthViewSunOrMoonOneLine, "EditMonthViewSunOrMoonOneLine");
+      this.EditMonthViewSunOrMoonOneLine.Name = "EditMonthViewSunOrMoonOneLine";
+      this.EditMonthViewSunOrMoonOneLine.UseVisualStyleBackColor = true;
+      this.EditMonthViewSunOrMoonOneLine.CheckedChanged += new System.EventHandler(this.EditMonthViewSunOrMoonOneLine_CheckedChanged);
+      // 
+      // EditMonthViewSeparatorSizeInfo
+      // 
+      resources.ApplyResources(this.EditMonthViewSeparatorSizeInfo, "EditMonthViewSeparatorSizeInfo");
+      this.EditMonthViewSeparatorSizeInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.EditMonthViewSeparatorSizeInfo.Name = "EditMonthViewSeparatorSizeInfo";
+      // 
+      // EditCalendarHebrewDateSingleLine
+      // 
+      resources.ApplyResources(this.EditCalendarHebrewDateSingleLine, "EditCalendarHebrewDateSingleLine");
+      this.EditCalendarHebrewDateSingleLine.Name = "EditCalendarHebrewDateSingleLine";
+      this.EditCalendarHebrewDateSingleLine.UseVisualStyleBackColor = true;
+      this.EditCalendarHebrewDateSingleLine.CheckedChanged += new System.EventHandler(this.EditCalendarHebrewDateSingleLine_CheckedChanged);
+      // 
+      // label10
+      // 
+      resources.ApplyResources(this.label10, "label10");
+      this.label10.Name = "label10";
+      // 
+      // LabelMonthViewAlignmentDate
+      // 
+      resources.ApplyResources(this.LabelMonthViewAlignmentDate, "LabelMonthViewAlignmentDate");
+      this.LabelMonthViewAlignmentDate.Name = "LabelMonthViewAlignmentDate";
+      // 
       // EditMonthViewSeparatorForEphemerisMoon
       // 
       resources.ApplyResources(this.EditMonthViewSeparatorForEphemerisMoon, "EditMonthViewSeparatorForEphemerisMoon");
@@ -2659,12 +2731,73 @@
       this.EditMonthViewSeparatorForEphemerisMoon.UseVisualStyleBackColor = true;
       this.EditMonthViewSeparatorForEphemerisMoon.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
+      // SelectMonthViewAlignmentDate
+      // 
+      this.SelectMonthViewAlignmentDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectMonthViewAlignmentDate.FormattingEnabled = true;
+      this.SelectMonthViewAlignmentDate.Items.AddRange(new object[] {
+            resources.GetString("SelectMonthViewAlignmentDate.Items"),
+            resources.GetString("SelectMonthViewAlignmentDate.Items1"),
+            resources.GetString("SelectMonthViewAlignmentDate.Items2")});
+      resources.ApplyResources(this.SelectMonthViewAlignmentDate, "SelectMonthViewAlignmentDate");
+      this.SelectMonthViewAlignmentDate.Name = "SelectMonthViewAlignmentDate";
+      this.SelectMonthViewAlignmentDate.SelectedIndexChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      // 
+      // LabelCalendarLineSpacingInfo
+      // 
+      resources.ApplyResources(this.LabelCalendarLineSpacingInfo, "LabelCalendarLineSpacingInfo");
+      this.LabelCalendarLineSpacingInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelCalendarLineSpacingInfo.Name = "LabelCalendarLineSpacingInfo";
+      // 
+      // LabelMonthViewAlignmentCelebration
+      // 
+      resources.ApplyResources(this.LabelMonthViewAlignmentCelebration, "LabelMonthViewAlignmentCelebration");
+      this.LabelMonthViewAlignmentCelebration.Name = "LabelMonthViewAlignmentCelebration";
+      // 
+      // label8
+      // 
+      resources.ApplyResources(this.label8, "label8");
+      this.label8.Name = "label8";
+      // 
+      // SelectMonthViewAlignmentCelebration
+      // 
+      this.SelectMonthViewAlignmentCelebration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.SelectMonthViewAlignmentCelebration.FormattingEnabled = true;
+      this.SelectMonthViewAlignmentCelebration.Items.AddRange(new object[] {
+            resources.GetString("SelectMonthViewAlignmentCelebration.Items"),
+            resources.GetString("SelectMonthViewAlignmentCelebration.Items1"),
+            resources.GetString("SelectMonthViewAlignmentCelebration.Items2")});
+      resources.ApplyResources(this.SelectMonthViewAlignmentCelebration, "SelectMonthViewAlignmentCelebration");
+      this.SelectMonthViewAlignmentCelebration.Name = "SelectMonthViewAlignmentCelebration";
+      this.SelectMonthViewAlignmentCelebration.SelectedIndexChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      // 
       // EditMonthViewSeparatorForEphemerisSun
       // 
       resources.ApplyResources(this.EditMonthViewSeparatorForEphemerisSun, "EditMonthViewSeparatorForEphemerisSun");
       this.EditMonthViewSeparatorForEphemerisSun.Name = "EditMonthViewSeparatorForEphemerisSun";
       this.EditMonthViewSeparatorForEphemerisSun.UseVisualStyleBackColor = true;
       this.EditMonthViewSeparatorForEphemerisSun.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      // 
+      // EditMonthViewSeparatorForParashahReference
+      // 
+      resources.ApplyResources(this.EditMonthViewSeparatorForParashahReference, "EditMonthViewSeparatorForParashahReference");
+      this.EditMonthViewSeparatorForParashahReference.Name = "EditMonthViewSeparatorForParashahReference";
+      this.EditMonthViewSeparatorForParashahReference.UseVisualStyleBackColor = true;
+      this.EditMonthViewSeparatorForParashahReference.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      // 
+      // EditMonthViewSeparatorForCelebration
+      // 
+      resources.ApplyResources(this.EditMonthViewSeparatorForCelebration, "EditMonthViewSeparatorForCelebration");
+      this.EditMonthViewSeparatorForCelebration.Name = "EditMonthViewSeparatorForCelebration";
+      this.EditMonthViewSeparatorForCelebration.UseVisualStyleBackColor = true;
+      this.EditMonthViewSeparatorForCelebration.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      // 
+      // EditMonthViewSeparatorForParashahName
+      // 
+      resources.ApplyResources(this.EditMonthViewSeparatorForParashahName, "EditMonthViewSeparatorForParashahName");
+      this.EditMonthViewSeparatorForParashahName.Name = "EditMonthViewSeparatorForParashahName";
+      this.EditMonthViewSeparatorForParashahName.UseVisualStyleBackColor = true;
+      this.EditMonthViewSeparatorForParashahName.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // EditCalendarLineSpacing
       // 
@@ -2674,55 +2807,48 @@
       this.EditCalendarLineSpacing.ReadOnly = true;
       this.EditCalendarLineSpacing.ValueChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
-      // EditMonthViewSeparatorForParashahReference
+      // TabPageMonthViewAppearence
       // 
-      resources.ApplyResources(this.EditMonthViewSeparatorForParashahReference, "EditMonthViewSeparatorForParashahReference");
-      this.EditMonthViewSeparatorForParashahReference.Name = "EditMonthViewSeparatorForParashahReference";
-      this.EditMonthViewSeparatorForParashahReference.UseVisualStyleBackColor = true;
-      this.EditMonthViewSeparatorForParashahReference.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      this.TabPageMonthViewAppearence.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageMonthViewAppearence.Controls.Add(this.ActionResetEphemerisPrefixMoon);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMoonDayTextFormat);
+      this.TabPageMonthViewAppearence.Controls.Add(this.EditMoonDayTextFormat);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelEphemerisPrefixMoon);
+      this.TabPageMonthViewAppearence.Controls.Add(this.ActionMoonDayTextFormatHelp);
+      this.TabPageMonthViewAppearence.Controls.Add(this.ActionMoonDayTextFormatReset);
+      this.TabPageMonthViewAppearence.Controls.Add(this.EditEphemerisPrefixMoon);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewFontNameLatin);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewHebrewFontSizeInterval);
+      this.TabPageMonthViewAppearence.Controls.Add(this.ActionResetEphemerisPrefixSun);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewHebrewFontSize);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewFontSizeInterval);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelEphemerisPrefixSun);
+      this.TabPageMonthViewAppearence.Controls.Add(this.EditEphemerisPrefixSun);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewFontSize);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewFontNameHebrewSample);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewFontNameLatinSample);
+      this.TabPageMonthViewAppearence.Controls.Add(this.SelectMonthViewLatinFontName);
+      this.TabPageMonthViewAppearence.Controls.Add(this.EditCalendarHebrewDateSingleLineItalic);
+      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewLatinFontSize);
+      this.TabPageMonthViewAppearence.Controls.Add(this.LabelMonthViewFontNameHebrew);
+      this.TabPageMonthViewAppearence.Controls.Add(this.SelectMonthViewHebrewFontName);
+      this.TabPageMonthViewAppearence.Controls.Add(this.EditMonthViewHebrewFontSize);
+      resources.ApplyResources(this.TabPageMonthViewAppearence, "TabPageMonthViewAppearence");
+      this.TabPageMonthViewAppearence.Name = "TabPageMonthViewAppearence";
+      this.TabPageMonthViewAppearence.UseVisualStyleBackColor = true;
       // 
-      // EditMonthViewSeparatorForParashahName
+      // ActionResetEphemerisPrefixMoon
       // 
-      resources.ApplyResources(this.EditMonthViewSeparatorForParashahName, "EditMonthViewSeparatorForParashahName");
-      this.EditMonthViewSeparatorForParashahName.Name = "EditMonthViewSeparatorForParashahName";
-      this.EditMonthViewSeparatorForParashahName.UseVisualStyleBackColor = true;
-      this.EditMonthViewSeparatorForParashahName.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      this.ActionResetEphemerisPrefixMoon.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionResetEphemerisPrefixMoon, "ActionResetEphemerisPrefixMoon");
+      this.ActionResetEphemerisPrefixMoon.Name = "ActionResetEphemerisPrefixMoon";
+      this.ActionResetEphemerisPrefixMoon.UseVisualStyleBackColor = true;
+      this.ActionResetEphemerisPrefixMoon.Click += new System.EventHandler(this.ActionResetEphemerisPrefixMoon_Click);
       // 
-      // EditMonthViewSeparatorForCelebration
+      // LabelMoonDayTextFormat
       // 
-      resources.ApplyResources(this.EditMonthViewSeparatorForCelebration, "EditMonthViewSeparatorForCelebration");
-      this.EditMonthViewSeparatorForCelebration.Name = "EditMonthViewSeparatorForCelebration";
-      this.EditMonthViewSeparatorForCelebration.UseVisualStyleBackColor = true;
-      this.EditMonthViewSeparatorForCelebration.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
-      // 
-      // label8
-      // 
-      resources.ApplyResources(this.label8, "label8");
-      this.label8.Name = "label8";
-      // 
-      // LabelCalendarLineSpacingInfo
-      // 
-      resources.ApplyResources(this.LabelCalendarLineSpacingInfo, "LabelCalendarLineSpacingInfo");
-      this.LabelCalendarLineSpacingInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelCalendarLineSpacingInfo.Name = "LabelCalendarLineSpacingInfo";
-      // 
-      // label10
-      // 
-      resources.ApplyResources(this.label10, "label10");
-      this.label10.Name = "label10";
-      // 
-      // EditMonthViewEventsAlignmentOnlyForParashah
-      // 
-      resources.ApplyResources(this.EditMonthViewEventsAlignmentOnlyForParashah, "EditMonthViewEventsAlignmentOnlyForParashah");
-      this.EditMonthViewEventsAlignmentOnlyForParashah.Name = "EditMonthViewEventsAlignmentOnlyForParashah";
-      this.EditMonthViewEventsAlignmentOnlyForParashah.UseVisualStyleBackColor = true;
-      this.EditMonthViewEventsAlignmentOnlyForParashah.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
-      // 
-      // EditMonthViewSeparatorSizeInfo
-      // 
-      resources.ApplyResources(this.EditMonthViewSeparatorSizeInfo, "EditMonthViewSeparatorSizeInfo");
-      this.EditMonthViewSeparatorSizeInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.EditMonthViewSeparatorSizeInfo.Name = "EditMonthViewSeparatorSizeInfo";
+      resources.ApplyResources(this.LabelMoonDayTextFormat, "LabelMoonDayTextFormat");
+      this.LabelMoonDayTextFormat.Name = "LabelMoonDayTextFormat";
       // 
       // EditMoonDayTextFormat
       // 
@@ -2733,63 +2859,27 @@
       this.EditMoonDayTextFormat.SpellCheckAllowed = false;
       this.EditMoonDayTextFormat.TextChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
-      // SelectMonthViewEventsAlignment
-      // 
-      this.SelectMonthViewEventsAlignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.SelectMonthViewEventsAlignment.FormattingEnabled = true;
-      this.SelectMonthViewEventsAlignment.Items.AddRange(new object[] {
-            resources.GetString("SelectMonthViewEventsAlignment.Items"),
-            resources.GetString("SelectMonthViewEventsAlignment.Items1"),
-            resources.GetString("SelectMonthViewEventsAlignment.Items2")});
-      resources.ApplyResources(this.SelectMonthViewEventsAlignment, "SelectMonthViewEventsAlignment");
-      this.SelectMonthViewEventsAlignment.Name = "SelectMonthViewEventsAlignment";
-      this.SelectMonthViewEventsAlignment.SelectedIndexChanged += new System.EventHandler(this.SetMustRefreshEnabled);
-      // 
-      // EditMonthViewSeparatorSize
-      // 
-      this.EditMonthViewSeparatorSize.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditMonthViewSeparatorSize, "EditMonthViewSeparatorSize");
-      this.EditMonthViewSeparatorSize.Name = "EditMonthViewSeparatorSize";
-      this.EditMonthViewSeparatorSize.ReadOnly = true;
-      // 
-      // TabPageMonthViewFonts
-      // 
-      this.TabPageMonthViewFonts.BackColor = System.Drawing.SystemColors.Window;
-      this.TabPageMonthViewFonts.Controls.Add(this.ActionResetEphemerisPrefixMoon);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelEphemerisPrefixMoon);
-      this.TabPageMonthViewFonts.Controls.Add(this.EditEphemerisPrefixMoon);
-      this.TabPageMonthViewFonts.Controls.Add(this.ActionResetEphemerisPrefixSun);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelEphemerisPrefixSun);
-      this.TabPageMonthViewFonts.Controls.Add(this.EditEphemerisPrefixSun);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewFontNameLatin);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewFontNameHebrewSample);
-      this.TabPageMonthViewFonts.Controls.Add(this.EditMonthViewLatinFontSize);
-      this.TabPageMonthViewFonts.Controls.Add(this.EditMonthViewHebrewFontSize);
-      this.TabPageMonthViewFonts.Controls.Add(this.EditCalendarHebrewDateSingleLineItalic);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewFontSize);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewHebrewFontSize);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewFontNameLatinSample);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewFontNameHebrew);
-      this.TabPageMonthViewFonts.Controls.Add(this.SelectMonthViewHebrewFontName);
-      this.TabPageMonthViewFonts.Controls.Add(this.SelectMonthViewLatinFontName);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewFontSizeInterval);
-      this.TabPageMonthViewFonts.Controls.Add(this.LabelMonthViewHebrewFontSizeInterval);
-      resources.ApplyResources(this.TabPageMonthViewFonts, "TabPageMonthViewFonts");
-      this.TabPageMonthViewFonts.Name = "TabPageMonthViewFonts";
-      this.TabPageMonthViewFonts.UseVisualStyleBackColor = true;
-      // 
-      // ActionResetEphemerisPrefixMoon
-      // 
-      this.ActionResetEphemerisPrefixMoon.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionResetEphemerisPrefixMoon, "ActionResetEphemerisPrefixMoon");
-      this.ActionResetEphemerisPrefixMoon.Name = "ActionResetEphemerisPrefixMoon";
-      this.ActionResetEphemerisPrefixMoon.UseVisualStyleBackColor = true;
-      this.ActionResetEphemerisPrefixMoon.Click += new System.EventHandler(this.ActionResetEphemerisPrefixMoon_Click);
-      // 
       // LabelEphemerisPrefixMoon
       // 
       resources.ApplyResources(this.LabelEphemerisPrefixMoon, "LabelEphemerisPrefixMoon");
       this.LabelEphemerisPrefixMoon.Name = "LabelEphemerisPrefixMoon";
+      // 
+      // ActionMoonDayTextFormatHelp
+      // 
+      this.ActionMoonDayTextFormatHelp.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionMoonDayTextFormatHelp, "ActionMoonDayTextFormatHelp");
+      this.ActionMoonDayTextFormatHelp.Name = "ActionMoonDayTextFormatHelp";
+      this.ActionMoonDayTextFormatHelp.UseVisualStyleBackColor = true;
+      this.ActionMoonDayTextFormatHelp.Click += new System.EventHandler(this.ActionMoonDayTextFormatHelp_Click);
+      // 
+      // ActionMoonDayTextFormatReset
+      // 
+      this.ActionMoonDayTextFormatReset.ContextMenuStrip = this.MenuSelectMoonDayTextFormat;
+      this.ActionMoonDayTextFormatReset.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionMoonDayTextFormatReset, "ActionMoonDayTextFormatReset");
+      this.ActionMoonDayTextFormatReset.Name = "ActionMoonDayTextFormatReset";
+      this.ActionMoonDayTextFormatReset.UseVisualStyleBackColor = true;
+      this.ActionMoonDayTextFormatReset.Click += new System.EventHandler(this.ActionMoonDayTextFormatReset_Click);
       // 
       // EditEphemerisPrefixMoon
       // 
@@ -2800,6 +2890,17 @@
       this.EditEphemerisPrefixMoon.SpellCheckAllowed = false;
       this.EditEphemerisPrefixMoon.TextChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
+      // LabelMonthViewFontNameLatin
+      // 
+      resources.ApplyResources(this.LabelMonthViewFontNameLatin, "LabelMonthViewFontNameLatin");
+      this.LabelMonthViewFontNameLatin.Name = "LabelMonthViewFontNameLatin";
+      // 
+      // LabelMonthViewHebrewFontSizeInterval
+      // 
+      resources.ApplyResources(this.LabelMonthViewHebrewFontSizeInterval, "LabelMonthViewHebrewFontSizeInterval");
+      this.LabelMonthViewHebrewFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelMonthViewHebrewFontSizeInterval.Name = "LabelMonthViewHebrewFontSizeInterval";
+      // 
       // ActionResetEphemerisPrefixSun
       // 
       this.ActionResetEphemerisPrefixSun.FlatAppearance.BorderSize = 0;
@@ -2807,6 +2908,17 @@
       this.ActionResetEphemerisPrefixSun.Name = "ActionResetEphemerisPrefixSun";
       this.ActionResetEphemerisPrefixSun.UseVisualStyleBackColor = true;
       this.ActionResetEphemerisPrefixSun.Click += new System.EventHandler(this.ActionResetEphemerisPrefixSun_Click);
+      // 
+      // LabelMonthViewHebrewFontSize
+      // 
+      resources.ApplyResources(this.LabelMonthViewHebrewFontSize, "LabelMonthViewHebrewFontSize");
+      this.LabelMonthViewHebrewFontSize.Name = "LabelMonthViewHebrewFontSize";
+      // 
+      // LabelMonthViewFontSizeInterval
+      // 
+      resources.ApplyResources(this.LabelMonthViewFontSizeInterval, "LabelMonthViewFontSizeInterval");
+      this.LabelMonthViewFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelMonthViewFontSizeInterval.Name = "LabelMonthViewFontSizeInterval";
       // 
       // LabelEphemerisPrefixSun
       // 
@@ -2822,10 +2934,10 @@
       this.EditEphemerisPrefixSun.SpellCheckAllowed = false;
       this.EditEphemerisPrefixSun.TextChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
-      // LabelMonthViewFontNameLatin
+      // LabelMonthViewFontSize
       // 
-      resources.ApplyResources(this.LabelMonthViewFontNameLatin, "LabelMonthViewFontNameLatin");
-      this.LabelMonthViewFontNameLatin.Name = "LabelMonthViewFontNameLatin";
+      resources.ApplyResources(this.LabelMonthViewFontSize, "LabelMonthViewFontSize");
+      this.LabelMonthViewFontSize.Name = "LabelMonthViewFontSize";
       // 
       // LabelMonthViewFontNameHebrewSample
       // 
@@ -2833,6 +2945,28 @@
       resources.ApplyResources(this.LabelMonthViewFontNameHebrewSample, "LabelMonthViewFontNameHebrewSample");
       this.LabelMonthViewFontNameHebrewSample.Name = "LabelMonthViewFontNameHebrewSample";
       this.LabelMonthViewFontNameHebrewSample.TabStop = false;
+      // 
+      // LabelMonthViewFontNameLatinSample
+      // 
+      this.LabelMonthViewFontNameLatinSample.BackColor = System.Drawing.SystemColors.Control;
+      resources.ApplyResources(this.LabelMonthViewFontNameLatinSample, "LabelMonthViewFontNameLatinSample");
+      this.LabelMonthViewFontNameLatinSample.Name = "LabelMonthViewFontNameLatinSample";
+      this.LabelMonthViewFontNameLatinSample.TabStop = false;
+      // 
+      // SelectMonthViewLatinFontName
+      // 
+      this.SelectMonthViewLatinFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.SelectMonthViewLatinFontName, "SelectMonthViewLatinFontName");
+      this.SelectMonthViewLatinFontName.FormattingEnabled = true;
+      this.SelectMonthViewLatinFontName.Name = "SelectMonthViewLatinFontName";
+      this.SelectMonthViewLatinFontName.SelectedIndexChanged += new System.EventHandler(this.SelectMonthViewFontNameLatin_SelectedIndexChanged);
+      // 
+      // EditCalendarHebrewDateSingleLineItalic
+      // 
+      resources.ApplyResources(this.EditCalendarHebrewDateSingleLineItalic, "EditCalendarHebrewDateSingleLineItalic");
+      this.EditCalendarHebrewDateSingleLineItalic.Name = "EditCalendarHebrewDateSingleLineItalic";
+      this.EditCalendarHebrewDateSingleLineItalic.UseVisualStyleBackColor = true;
+      this.EditCalendarHebrewDateSingleLineItalic.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // EditMonthViewLatinFontSize
       // 
@@ -2857,6 +2991,19 @@
             0});
       this.EditMonthViewLatinFontSize.ValueChanged += new System.EventHandler(this.SelectMonthViewFontNameLatin_SelectedIndexChanged);
       // 
+      // LabelMonthViewFontNameHebrew
+      // 
+      resources.ApplyResources(this.LabelMonthViewFontNameHebrew, "LabelMonthViewFontNameHebrew");
+      this.LabelMonthViewFontNameHebrew.Name = "LabelMonthViewFontNameHebrew";
+      // 
+      // SelectMonthViewHebrewFontName
+      // 
+      this.SelectMonthViewHebrewFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      resources.ApplyResources(this.SelectMonthViewHebrewFontName, "SelectMonthViewHebrewFontName");
+      this.SelectMonthViewHebrewFontName.FormattingEnabled = true;
+      this.SelectMonthViewHebrewFontName.Name = "SelectMonthViewHebrewFontName";
+      this.SelectMonthViewHebrewFontName.SelectedIndexChanged += new System.EventHandler(this.SelectMonthViewFontNameHebrew_SelectedIndexChanged);
+      // 
       // EditMonthViewHebrewFontSize
       // 
       this.EditMonthViewHebrewFontSize.BackColor = System.Drawing.SystemColors.Window;
@@ -2879,63 +3026,6 @@
             0,
             0});
       this.EditMonthViewHebrewFontSize.ValueChanged += new System.EventHandler(this.SelectMonthViewFontNameHebrew_SelectedIndexChanged);
-      // 
-      // EditCalendarHebrewDateSingleLineItalic
-      // 
-      resources.ApplyResources(this.EditCalendarHebrewDateSingleLineItalic, "EditCalendarHebrewDateSingleLineItalic");
-      this.EditCalendarHebrewDateSingleLineItalic.Name = "EditCalendarHebrewDateSingleLineItalic";
-      this.EditCalendarHebrewDateSingleLineItalic.UseVisualStyleBackColor = true;
-      this.EditCalendarHebrewDateSingleLineItalic.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
-      // 
-      // LabelMonthViewFontSize
-      // 
-      resources.ApplyResources(this.LabelMonthViewFontSize, "LabelMonthViewFontSize");
-      this.LabelMonthViewFontSize.Name = "LabelMonthViewFontSize";
-      // 
-      // LabelMonthViewHebrewFontSize
-      // 
-      resources.ApplyResources(this.LabelMonthViewHebrewFontSize, "LabelMonthViewHebrewFontSize");
-      this.LabelMonthViewHebrewFontSize.Name = "LabelMonthViewHebrewFontSize";
-      // 
-      // LabelMonthViewFontNameLatinSample
-      // 
-      this.LabelMonthViewFontNameLatinSample.BackColor = System.Drawing.SystemColors.Control;
-      resources.ApplyResources(this.LabelMonthViewFontNameLatinSample, "LabelMonthViewFontNameLatinSample");
-      this.LabelMonthViewFontNameLatinSample.Name = "LabelMonthViewFontNameLatinSample";
-      this.LabelMonthViewFontNameLatinSample.TabStop = false;
-      // 
-      // LabelMonthViewFontNameHebrew
-      // 
-      resources.ApplyResources(this.LabelMonthViewFontNameHebrew, "LabelMonthViewFontNameHebrew");
-      this.LabelMonthViewFontNameHebrew.Name = "LabelMonthViewFontNameHebrew";
-      // 
-      // SelectMonthViewHebrewFontName
-      // 
-      this.SelectMonthViewHebrewFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      resources.ApplyResources(this.SelectMonthViewHebrewFontName, "SelectMonthViewHebrewFontName");
-      this.SelectMonthViewHebrewFontName.FormattingEnabled = true;
-      this.SelectMonthViewHebrewFontName.Name = "SelectMonthViewHebrewFontName";
-      this.SelectMonthViewHebrewFontName.SelectedIndexChanged += new System.EventHandler(this.SelectMonthViewFontNameHebrew_SelectedIndexChanged);
-      // 
-      // SelectMonthViewLatinFontName
-      // 
-      this.SelectMonthViewLatinFontName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      resources.ApplyResources(this.SelectMonthViewLatinFontName, "SelectMonthViewLatinFontName");
-      this.SelectMonthViewLatinFontName.FormattingEnabled = true;
-      this.SelectMonthViewLatinFontName.Name = "SelectMonthViewLatinFontName";
-      this.SelectMonthViewLatinFontName.SelectedIndexChanged += new System.EventHandler(this.SelectMonthViewFontNameLatin_SelectedIndexChanged);
-      // 
-      // LabelMonthViewFontSizeInterval
-      // 
-      resources.ApplyResources(this.LabelMonthViewFontSizeInterval, "LabelMonthViewFontSizeInterval");
-      this.LabelMonthViewFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelMonthViewFontSizeInterval.Name = "LabelMonthViewFontSizeInterval";
-      // 
-      // LabelMonthViewHebrewFontSizeInterval
-      // 
-      resources.ApplyResources(this.LabelMonthViewHebrewFontSizeInterval, "LabelMonthViewHebrewFontSizeInterval");
-      this.LabelMonthViewHebrewFontSizeInterval.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelMonthViewHebrewFontSizeInterval.Name = "LabelMonthViewHebrewFontSizeInterval";
       // 
       // label11
       // 
@@ -3516,12 +3606,10 @@
       this.TabPageMonthViewBehavior.PerformLayout();
       this.TabPageMonthViewLayout.ResumeLayout(false);
       this.TabPageMonthViewLayout.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewSeparatorSize)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).EndInit();
       this.TabPageMonthViewAppearence.ResumeLayout(false);
       this.TabPageMonthViewAppearence.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditCalendarLineSpacing)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewSeparatorSize)).EndInit();
-      this.TabPageMonthViewFonts.ResumeLayout(false);
-      this.TabPageMonthViewFonts.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewLatinFontSize)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditMonthViewHebrewFontSize)).EndInit();
       this.TabPageTextReport.ResumeLayout(false);
@@ -3868,9 +3956,8 @@
     private ToolStripMenuItem toolStripMenuItem20;
     private ToolStripMenuItem toolStripMenuItem21;
     private ToolStripMenuItem toolStripMenuItem22;
-    private ComboBox SelectMonthViewEventsAlignment;
-    private Label LabelMonthViewEventsAlignment;
-    private CheckBox EditMonthViewEventsAlignmentOnlyForParashah;
+    private ComboBox SelectMonthViewAlignmentDate;
+    private Label LabelMonthViewAlignmentDate;
     private CheckBox EditHebrewInUnicodeKeepArabicNumerals;
     private Label LabelMonthViewFontNameLatin;
     private ComboBox SelectMonthViewLatinFontName;
@@ -3892,7 +3979,6 @@
     private TextBox LabelMonthViewFontNameHebrewSample;
     private TabControl TabControlMonthView;
     private TabPage TabPageMonthViewBehavior;
-    private TabPage TabPageMonthViewFonts;
     private TabPage TabPageMonthViewAppearence;
     private CheckedListBox SelectLayoutSections;
     private Button ActionLayoutSectionDown;
@@ -3905,14 +3991,24 @@
     private Button ActionSeparatorsCheckAll;
     private Label LabelChangeOmerInfo;
     private Label LabelParashahEnabledInfo;
-        private Button ActionResetEphemerisPrefixSun;
-        private Label LabelEphemerisPrefixSun;
-        private TextBoxEx EditEphemerisPrefixSun;
-        private Button ActionResetEphemerisPrefixMoon;
-        private Label LabelEphemerisPrefixMoon;
-        private TextBoxEx EditEphemerisPrefixMoon;
-        private CheckBox EditMonthViewSunOrMoonOneLine;
-        private CheckBox EditMonthViewSunOrMoonOneLineStarSign;
-        private TabPage TabPageMonthViewLayout;
+    private Button ActionResetEphemerisPrefixSun;
+    private Label LabelEphemerisPrefixSun;
+    private TextBoxEx EditEphemerisPrefixSun;
+    private Button ActionResetEphemerisPrefixMoon;
+    private Label LabelEphemerisPrefixMoon;
+    private TextBoxEx EditEphemerisPrefixMoon;
+    private CheckBox EditMonthViewSunOrMoonOneLine;
+    private CheckBox EditMonthViewSunOrMoonOneLineStarSign;
+    private TabPage TabPageMonthViewLayout;
+    private Label LabelMonthViewAlignmentCelebration;
+    private ComboBox SelectMonthViewAlignmentCelebration;
+    private Label LabelMonthViewAlignmentParashah;
+    private Label LabelMonthViewAlignmentEphemeris;
+    private ComboBox SelectMonthViewAlignmentParashah;
+    private ComboBox SelectMonthViewAlignmentEphemeris;
+        private Button ActionLayoutResetSections;
+        private Button ActionSetAllAlignmentsRight;
+        private Button ActionSetAllAlignmentsCenter;
+        private Button ActionSetAllAlignmentsLeft;
     }
 }

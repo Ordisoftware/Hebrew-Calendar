@@ -24,7 +24,7 @@ using System.Xml;
 partial class PreferencesForm
 {
 
-  private sealed class LayoutItem
+  private sealed class LayoutSectionItem
   {
     public MonthlyViewLayoutSection Id { get; set; }
     public int Position { get; set; }
@@ -285,10 +285,10 @@ partial class PreferencesForm
         });
   }
 
-  private LayoutItem LayoutSectionSun;
-  private LayoutItem LayoutSectionMoon;
-  private LayoutItem LayoutSectionParashahName;
-  private LayoutItem LayoutSectionParashahReference;
+  private LayoutSectionItem LayoutSectionSun;
+  private LayoutSectionItem LayoutSectionMoon;
+  private LayoutSectionItem LayoutSectionParashahName;
+  private LayoutSectionItem LayoutSectionParashahReference;
 
   /// <summary>
   /// Loads layout sections.
@@ -299,7 +299,7 @@ partial class PreferencesForm
       SystemManager.TryCatch(() =>
         {
           string prefix = $"{LayoutSectionPrefix}{value}";
-          var item = new LayoutItem
+          var item = new LayoutSectionItem
           {
             Id = value,
             Position = (int)Settings[prefix + LayoutSectionPosition],
@@ -316,9 +316,9 @@ partial class PreferencesForm
           if ( value == MonthlyViewLayoutSection.ParashahReference ) LayoutSectionParashahReference = item;
         });
     // Sorting does not sort checks!
-    SelectLayoutSections.Sort((item1, item2) => ( (LayoutItem)item1 ).Position.CompareTo(( (LayoutItem)item2 ).Position));
+    SelectLayoutSections.Sort((item1, item2) => ( (LayoutSectionItem)item1 ).Position.CompareTo(( (LayoutSectionItem)item2 ).Position));
     for ( int index = 0; index < SelectLayoutSections.Items.Count; index++ )
-      if ( ( (LayoutItem)SelectLayoutSections.Items[index] ).Enabled )
+      if ( ( (LayoutSectionItem)SelectLayoutSections.Items[index] ).Enabled )
         SelectLayoutSections.SetItemChecked(index, true);
   }
 

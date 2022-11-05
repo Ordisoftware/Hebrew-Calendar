@@ -132,8 +132,10 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLineItalic.Checked = Settings.CalendarHebrewDateSingleLineItalic);
     SystemManager.TryCatch(() => EditHebrewNamesInUnicode.Checked = Settings.HebrewNamesInUnicode);
     SystemManager.TryCatch(() => EditHebrewInUnicodeKeepArabicNumerals.Checked = Settings.HebrewInUnicodeKeepArabicNumerals);
-    SystemManager.TryCatch(() => SelectMonthViewEventsAlignment.SelectedIndex = (int)Settings.MonthViewEventsAlignment);
-    SystemManager.TryCatch(() => EditMonthViewEventsAlignmentOnlyForParashah.Checked = Settings.MonthViewEventsAlignmentOnlyForTorah);
+    SystemManager.TryCatch(() => SelectMonthViewAlignmentDate.SelectedIndex = (int)Settings.MonthViewAlignmentDate);
+    SystemManager.TryCatch(() => SelectMonthViewAlignmentEphemeris.SelectedIndex = (int)Settings.MonthViewAlignmentEphemeris);
+    SystemManager.TryCatch(() => SelectMonthViewAlignmentCelebration.SelectedIndex = (int)Settings.MonthViewAlignmentCelebration);
+    SystemManager.TryCatch(() => SelectMonthViewAlignmentParashah.SelectedIndex = (int)Settings.MonthViewAlignmentParashah);
     SystemManager.TryCatch(() => EditMonthViewSeparatorForLunarDate.Checked = Settings.MonthViewSeparatorForLunarDate);
     SystemManager.TryCatch(() => EditMonthViewSeparatorForCelebration.Checked = Settings.MonthViewSeparatorForCelebration);
     SystemManager.TryCatch(() => EditMonthViewSeparatorForEphemerisSun.Checked = Settings.MonthViewSeparatorForEphemerisSun);

@@ -404,6 +404,7 @@
     <Compile Include="Source\Database\ApplicationDatabase.LoadBoard.cs" />
     <Compile Include="Source\Database\LunisolarDay.cs" />
     <Compile Include="Source\Enums\MonthlyViewLayoutSection.cs" />
+    <Compile Include="Source\Enums\CalendarSection.cs" />
     <Compile Include="Source\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\TorahCelebrationVerses.cs" />
     <Compile Include="Source\Enums\TorahCelebrationSettings.cs" />
