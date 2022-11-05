@@ -615,12 +615,6 @@ partial class PreferencesForm : Form
                                      new Point(0, ActionMoonDayTextFormatReset.Height));
   }
 
-  private void EditCalendarHebrewDateSingleLine_CheckedChanged(object sender, EventArgs e)
-  {
-    SetMustRefreshEnabled(null, null);
-    EditCalendarHebrewDateSingleLineItalic.Enabled = EditCalendarHebrewDateSingleLine.Checked;
-  }
-
   private void SelectMonthViewFontNameLatin_SelectedIndexChanged(object sender, EventArgs e)
   {
     LabelMonthViewFontNameLatinSample.Font = new Font(SelectMonthViewLatinFontName.Text,
@@ -664,6 +658,8 @@ partial class PreferencesForm : Form
     if ( !IsReady ) return;
     SetMustRefreshEnabled(null, null);
     var item = (LayoutItem)SelectLayoutSections.Items[e.Index];
+    if ( item.Id == MonthlyViewLayoutSection.LunarDate )
+      e.NewValue = CheckState.Checked;
     if ( item.Id == MonthlyViewLayoutSection.EphemerisSun && !SelectOmerMoon.Checked )
       e.NewValue = CheckState.Checked;
     else
@@ -694,13 +690,25 @@ partial class PreferencesForm : Form
   private void ActionResetEphemerisPrefixSun_Click(object sender, EventArgs e)
   {
     if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
-      EditCustomWebSearch.Text = (string)Settings.Properties[nameof(Settings.EphemerisPrefixSun)].DefaultValue;
+      EditEphemerisPrefixSun.Text = (string)Settings.Properties[nameof(Settings.EphemerisPrefixSun)].DefaultValue;
   }
 
   private void ActionResetEphemerisPrefixMoon_Click(object sender, EventArgs e)
   {
     if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
-      EditCustomWebSearch.Text = (string)Settings.Properties[nameof(Settings.EphemerisPrefixMoon)].DefaultValue;
+      EditEphemerisPrefixMoon.Text = (string)Settings.Properties[nameof(Settings.EphemerisPrefixMoon)].DefaultValue;
+  }
+
+  private void EditCalendarHebrewDateSingleLine_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( IsReady ) SetMustRefreshEnabled(null, null);
+    EditCalendarHebrewDateSingleLineItalic.Enabled = EditCalendarHebrewDateSingleLine.Checked;
+  }
+
+  private void EditMonthViewSunOrMoonOneLine_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( IsReady ) SetMustRefreshEnabled(null, null);
+    EditMonthViewSunOrMoonOneLineStarSign.Enabled = EditMonthViewSunOrMoonOneLine.Checked;
   }
 
   #endregion

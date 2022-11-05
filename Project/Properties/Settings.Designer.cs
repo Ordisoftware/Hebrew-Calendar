@@ -3203,7 +3203,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int MonthViewLayoutLunarDatePosition {
             get {
                 return ((int)(this["MonthViewLayoutLunarDatePosition"]));
@@ -3215,7 +3215,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int MonthViewLayoutEphemerisSunPosition {
             get {
                 return ((int)(this["MonthViewLayoutEphemerisSunPosition"]));
@@ -3227,7 +3227,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int MonthViewLayoutEphemerisMoonPosition {
             get {
                 return ((int)(this["MonthViewLayoutEphemerisMoonPosition"]));
@@ -3239,7 +3239,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public int MonthViewLayoutSeasonChangePosition {
             get {
                 return ((int)(this["MonthViewLayoutSeasonChangePosition"]));
@@ -3251,7 +3251,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public int MonthViewLayoutCelebrationPosition {
             get {
                 return ((int)(this["MonthViewLayoutCelebrationPosition"]));
@@ -3263,7 +3263,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public int MonthViewLayoutParashahNamePosition {
             get {
                 return ((int)(this["MonthViewLayoutParashahNamePosition"]));
@@ -3275,25 +3275,13 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
         public int MonthViewLayoutParashahReferencePosition {
             get {
                 return ((int)(this["MonthViewLayoutParashahReferencePosition"]));
             }
             set {
                 this["MonthViewLayoutParashahReferencePosition"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Paramètre {
-            get {
-                return ((int)(this["Paramètre"]));
-            }
-            set {
-                this["Paramètre"] = value;
             }
         }
         
@@ -3342,6 +3330,30 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["EphemerisPrefixMoon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSunOrMoonOneLine {
+            get {
+                return ((bool)(this["MonthViewSunOrMoonOneLine"]));
+            }
+            set {
+                this["MonthViewSunOrMoonOneLine"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSunOrMoonOneLineStarSign {
+            get {
+                return ((bool)(this["MonthViewSunOrMoonOneLineStarSign"]));
+            }
+            set {
+                this["MonthViewSunOrMoonOneLineStarSign"] = value;
             }
         }
     }

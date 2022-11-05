@@ -798,28 +798,25 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="MonthViewLayoutLunarDatePosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="MonthViewLayoutEphemerisSunPosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="MonthViewLayoutEphemerisMoonPosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">3</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="MonthViewLayoutSeasonChangePosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">4</Value>
+      <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="MonthViewLayoutCelebrationPosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">4</Value>
     </Setting>
     <Setting Name="MonthViewLayoutParashahNamePosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">6</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="MonthViewLayoutParashahReferencePosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">7</Value>
-    </Setting>
-    <Setting Name="Paramètre" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">6</Value>
     </Setting>
     <Setting Name="PreferencesFormSelectedTabIndexMonthView" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -832,6 +829,12 @@
     </Setting>
     <Setting Name="EphemerisPrefixMoon" Type="System.String" Scope="User">
       <Value Profile="(Default)">☽</Value>
+    </Setting>
+    <Setting Name="MonthViewSunOrMoonOneLine" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MonthViewSunOrMoonOneLineStarSign" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

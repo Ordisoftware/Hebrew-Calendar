@@ -14,6 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using System.Reflection;
 using System.Xml;
 
 /// <summary>
@@ -82,6 +83,7 @@ partial class PreferencesForm
     EditParashahEnabled_Changed(null, null);
     EditHebrewNamesInUnicode_CheckedChanged(null, null);
     EditCalendarHebrewDateSingleLine_CheckedChanged(null, null);
+    EditMonthViewSunOrMoonOneLine_CheckedChanged(null, null);
     ActiveControl = ActionClose;
     ActionResetSettings.TabStop = false;
     IsReady = true;
@@ -305,7 +307,6 @@ partial class PreferencesForm
             Text = AppTranslations.LayoutSections[value].GetLang()
           };
           int index = SelectLayoutSections.Items.Add(item);
-          if ( item.Enabled ) SelectLayoutSections.SetItemChecked(index, true);
           if ( value == MonthlyViewLayoutSection.EphemerisSun ) LayoutSectionSun = item;
           else
           if ( value == MonthlyViewLayoutSection.EphemerisMoon ) LayoutSectionMoon = item;
@@ -314,7 +315,11 @@ partial class PreferencesForm
           else
           if ( value == MonthlyViewLayoutSection.ParashahReference ) LayoutSectionParashahReference = item;
         });
+    // Sorting does not sort checks!
     SelectLayoutSections.Sort((item1, item2) => ( (LayoutItem)item1 ).Position.CompareTo(( (LayoutItem)item2 ).Position));
+    for ( int index = 0; index < SelectLayoutSections.Items.Count; index++ )
+      if ( ( (LayoutItem)SelectLayoutSections.Items[index] ).Enabled )
+        SelectLayoutSections.SetItemChecked(index, true);
   }
 
   /// <summary>
