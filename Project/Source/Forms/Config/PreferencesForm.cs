@@ -379,33 +379,50 @@ partial class PreferencesForm : Form
 
   private void SelectOmerMoon_CheckedChanged(object sender, EventArgs e)
   {
-    // TODO choose a behavior
-    //if ( !IsReady ) return;
-    //if ( !SelectOmerMoon.Checked ) return;
-    //var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
-    //index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+    if ( !IsReady ) return;
+    if ( !SelectOmerMoon.Checked ) return;
+    var indexSun = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    var indexMoon = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    if ( indexSun == -1 || indexMoon == -1 ) return;
+    bool isSun = SelectLayoutSections.GetItemChecked(indexSun);
+    bool isMoon = SelectLayoutSections.GetItemChecked(indexMoon);
+    if ( isSun && !isMoon )
+    {
+      SelectLayoutSections.SetItemChecked(indexSun, false);
+      SelectLayoutSections.SetItemChecked(indexMoon, true);
+    }
   }
 
   private void SelectOmerSun_CheckedChanged(object sender, EventArgs e)
   {
-    //if ( !IsReady ) return;
-    //if ( !SelectOmerSun.Checked ) return;
-    //var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
-    //index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+    if ( !IsReady ) return;
+    if ( !SelectOmerSun.Checked ) return;
+    var indexSun = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    var indexMoon = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    if ( indexSun == -1 || indexMoon == -1 ) return;
+    bool isSun = SelectLayoutSections.GetItemChecked(indexSun);
+    bool isMoon = SelectLayoutSections.GetItemChecked(indexMoon);
+    if ( !isSun && isMoon )
+    {
+      SelectLayoutSections.SetItemChecked(indexSun, true);
+      SelectLayoutSections.SetItemChecked(indexMoon, false);
+    }
   }
 
   private void SelectUseSodHaibour_CheckedChanged(object sender, EventArgs e)
   {
-    //if ( !IsReady ) return;
-    //if ( !SelectUseSodHaibour.Checked ) return;
-    //var index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
-    //index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    //if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+    if ( !IsReady ) return;
+    if ( !SelectUseSodHaibour.Checked ) return;
+    var indexSun = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
+    var indexMoon = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
+    if ( indexSun == -1 || indexMoon == -1 ) return;
+    bool isSun = SelectLayoutSections.GetItemChecked(indexSun);
+    bool isMoon = SelectLayoutSections.GetItemChecked(indexMoon);
+    if ( !isSun && isMoon )
+    {
+      SelectLayoutSections.SetItemChecked(indexSun, true);
+      SelectLayoutSections.SetItemChecked(indexMoon, false);
+    }
   }
 
   #endregion
@@ -538,11 +555,11 @@ partial class PreferencesForm : Form
     EditWeeklyParashahShowAtNewWeek.Enabled = EditParashahEnabled.Checked;
     if ( !IsReady ) return;
     SetMustRefreshEnabled(null, null);
-    if ( EditParashahEnabled.Checked ) return;
-    var index = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahName);
-    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
-    index = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahReference);
-    if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, false);
+    var index1 = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahName);
+    var index2 = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahReference);
+    if ( index1 != -1 ) SelectLayoutSections.SetItemChecked(index1, EditParashahEnabled.Checked);
+    if ( !EditParashahEnabled.Checked )
+      if ( index2 != -1 ) SelectLayoutSections.SetItemChecked(index2, false);
   }
 
   #endregion
@@ -722,13 +739,13 @@ partial class PreferencesForm : Form
   private void ActionResetEphemerisPrefixSun_Click(object sender, EventArgs e)
   {
     if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
-      EditEphemerisPrefixSun.Text = (string)Settings.Properties[nameof(Settings.EphemerisPrefixSun)].DefaultValue;
+      EditEphemerisPrefixSun.Text = (string)Settings.Properties[nameof(Settings.EphemerisSignSun)].DefaultValue;
   }
 
   private void ActionResetEphemerisPrefixMoon_Click(object sender, EventArgs e)
   {
     if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
-      EditEphemerisPrefixMoon.Text = (string)Settings.Properties[nameof(Settings.EphemerisPrefixMoon)].DefaultValue;
+      EditEphemerisPrefixMoon.Text = (string)Settings.Properties[nameof(Settings.EphemerisSignMoon)].DefaultValue;
   }
 
   private void EditCalendarHebrewDateSingleLine_CheckedChanged(object sender, EventArgs e)

@@ -15,6 +15,7 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
+using Ordisoftware.Core;
 
 /// <summary>
 /// Provides form to edit the preferences.
@@ -122,8 +123,16 @@ partial class PreferencesForm
     var lang = Settings.LanguageSelected;
     var form = new PreferencesForm();
     if ( !MainForm.Instance.Visible ) form.ShowInTaskbar = true;
-    form.TabControlMain.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndex;
-    form.TabControlMonthView.SelectedIndex = index >= 0 ? index : Settings.PreferencesFormSelectedTabIndexMonthView;
+    SystemManager.TryCatchManage(() =>
+    {
+      if ( index >= 0 )
+        form.TabControlMain.SelectedIndex = index;
+      else
+      if ( form.TabControlMain.TabPages.IsValidIndex(Settings.PreferencesFormSelectedTabIndex) )
+        form.TabControlMain.SelectedIndex = Settings.PreferencesFormSelectedTabIndex;
+      if ( form.TabControlMain.TabPages.IsValidIndex(Settings.PreferencesFormSelectedTabIndexMonthView) )
+        form.TabControlMonthView.SelectedIndex = Settings.PreferencesFormSelectedTabIndexMonthView;
+    });
     form.ShowDialog();
     while ( LanguageChanged || DoReset )
     {

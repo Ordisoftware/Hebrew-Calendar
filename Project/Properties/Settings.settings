@@ -818,10 +818,10 @@
     <Setting Name="FirstLaunchV10_1" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="EphemerisPrefixSun" Type="System.String" Scope="User">
+    <Setting Name="EphemerisSignSun" Type="System.String" Scope="User">
       <Value Profile="(Default)">☉</Value>
     </Setting>
-    <Setting Name="EphemerisPrefixMoon" Type="System.String" Scope="User">
+    <Setting Name="EphemerisSignMoon" Type="System.String" Scope="User">
       <Value Profile="(Default)">☽</Value>
     </Setting>
     <Setting Name="MonthViewSunOrMoonOneLine" Type="System.Boolean" Scope="User">
@@ -841,6 +841,9 @@
     </Setting>
     <Setting Name="MonthViewAlignmentParashah" Type="System.Drawing.StringAlignment" Scope="User">
       <Value Profile="(Default)">Near</Value>
+    </Setting>
+    <Setting Name="EphemerisSignBeforeElseAfter" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

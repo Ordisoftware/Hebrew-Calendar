@@ -3288,24 +3288,24 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("☉")]
-        public string EphemerisPrefixSun {
+        public string EphemerisSignSun {
             get {
-                return ((string)(this["EphemerisPrefixSun"]));
+                return ((string)(this["EphemerisSignSun"]));
             }
             set {
-                this["EphemerisPrefixSun"] = value;
+                this["EphemerisSignSun"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("☽")]
-        public string EphemerisPrefixMoon {
+        public string EphemerisSignMoon {
             get {
-                return ((string)(this["EphemerisPrefixMoon"]));
+                return ((string)(this["EphemerisSignMoon"]));
             }
             set {
-                this["EphemerisPrefixMoon"] = value;
+                this["EphemerisSignMoon"] = value;
             }
         }
         
@@ -3378,6 +3378,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["MonthViewAlignmentParashah"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EphemerisSignBeforeElseAfter {
+            get {
+                return ((bool)(this["EphemerisSignBeforeElseAfter"]));
+            }
+            set {
+                this["EphemerisSignBeforeElseAfter"] = value;
             }
         }
     }

@@ -596,7 +596,8 @@
     <value>Jours avant le premier rappel</value>
   </data>
   <data name="LabelParashahEnabledInfo.Text" xml:space="preserve">
-    <value>Les sections seront décochées dans l'apparence de la vue mensuelle si désactivée.</value>
+    <value>Si désactivée alors les sections seront décochées dans la disposition de la vue mensuelle.
+Si activé, seul le nom sera revérifié.</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 17</value>
@@ -868,8 +869,8 @@
   <data name="LabelMonthViewAlignmentCelebration.Text" xml:space="preserve">
     <value>Alignement célébration</value>
   </data>
-  <data name="TabPageMonthViewAppearence.Text" xml:space="preserve">
-    <value>Apparence</value>
+  <data name="TabPageMonthViewDisplay.Text" xml:space="preserve">
+    <value>Affichage</value>
   </data>
   <data name="EditMonthViewSeparatorForLunarDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 17</value>
@@ -927,9 +928,6 @@
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Taille du séparateur</value>
-  </data>
-  <data name="TabPageMonthViewFonts.Text" xml:space="preserve">
-    <value>Caractères</value>
   </data>
   <data name="LabelEphemerisPrefixMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 13</value>
@@ -1143,5 +1141,8 @@
   </data>
   <data name="SelectMonthViewAlignmentCelebration.Items2" xml:space="preserve">
     <value>Droite</value>
+  </data>
+  <data name="EditEphemerisSignBeforeElseAfter.Text" xml:space="preserve">
+    <value>Avant les heures sinon après</value>
   </data>
 </root>

@@ -120,8 +120,9 @@ partial class MainForm
       bool showMoon = Settings.MonthViewLayoutEphemerisMoonEnabled;
       bool bothTimes = showSun && showMoon;
       bool noTimes = !showSun && !showMoon;
-      bool addAlonePrefix = !bothTimes && Settings.MonthViewSunOrMoonOneLineStarSign;
-      bool addPrefix = bothTimes || addAlonePrefix;
+      bool showSignBefore = Settings.EphemerisSignBeforeElseAfter;
+      bool showSignEvenAlone = !bothTimes && Settings.MonthViewSunOrMoonOneLineStarSign;
+      bool showSign = bothTimes || showSignEvenAlone;
       bool dateOnSingleLine = noTimes || Settings.CalendarHebrewDateSingleLine;
       bool dateInItalic = Settings.CalendarHebrewDateSingleLineItalic;
       bool sepLunarDate = Settings.MonthViewSeparatorForLunarDate;
@@ -148,8 +149,8 @@ partial class MainForm
       var fontEventNoItalic = new Font(Settings.MonthViewFontNameLatin, Settings.MonthViewFontSize);
       var fontEventItalic = new Font(Settings.MonthViewFontNameLatin, Settings.MonthViewFontSize, FontStyle.Italic);
       var fontEvent = fontEventNoItalic;
-      string prefixSun = Settings.EphemerisPrefixSun;
-      string prefixMoon = Settings.EphemerisPrefixMoon;
+      string signSun = Settings.EphemerisSignSun;
+      string signMoon = Settings.EphemerisSignMoon;
       string strRise = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Rise);
       string strSet = AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set);
       var addSectionsMethods = new Dictionary<int, Action>();
@@ -203,6 +204,8 @@ partial class MainForm
             color1 ??= colorBack;
           DayBrushes[YearLast - date.Year, date.Month, date.Day] = SolidBrushesPool.Get(color1.Value);
           Color colorEphemeris = row.IsNewMoon ? colorTorahEvent : row.IsFullMoon ? colorFullMoon : colorNotFullMoon;
+          colorSun = isOmerSun ? colorEphemeris : colorText;
+          colorMoon = isOmerSun ? colorText : colorEphemeris;
           if ( TorahCelebrationSettings.CelebrationEndWeek.Contains(eventTorah) )
             isCelebrationWeekStart = false;
           // Initialize dispatch table
@@ -284,8 +287,11 @@ partial class MainForm
           void addSunWithMoon()
           {
             string str = $"{strRise}{row.SunriseAsString} - {strSet}{row.SunsetAsString}";
-            if ( addPrefix )
-              str = prefixSun + str;
+            if ( showSign )
+              if ( showSignBefore )
+                str = $"{signSun} {str}";
+              else
+                str = $"{str} {signSun}";
             addLine(colorSun, str, CalendarSection.Ephemeris);
             addSeparator(sepEphemerisSun);
           }
@@ -294,39 +300,40 @@ partial class MainForm
           //
           void addMoonWithSun()
           {
-            colorSun = isOmerSun ? colorEphemeris : colorText;
-            colorMoon = isOmerSun ? colorText : colorEphemeris;
             string set = $"{strSet}{row.MoonsetAsString}";
             string rise = $"{strRise}{row.MoonriseAsString}";
-            string all = string.Empty;
+            string str = string.Empty;
             if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
               setMoonWithSun_RiseAfterSet();
             else
               setMoonWithSun_RiseBeforeSet();
-            if ( addPrefix )
-              all = prefixMoon + all;
-            addLine(colorMoon, all, CalendarSection.Ephemeris);
+            if ( showSign )
+              if ( showSignBefore )
+                str = $"{signMoon} {str}";
+              else
+                str = $"{str} {signMoon}";
+            addLine(colorMoon, str, CalendarSection.Ephemeris);
             addSeparator(sepEphemerisMoon);
             //
             void setMoonWithSun_RiseAfterSet()
             {
               if ( row.Moonset is not null )
-                all = $"{set}";
+                str = $"{set}";
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
               {
-                if ( all.Length != 0 ) all += " - ";
-                all += $"{rise}{strDate}";
+                if ( str.Length != 0 ) str += " - ";
+                str += $"{rise}{strDate}";
               }
             }
             //
             void setMoonWithSun_RiseBeforeSet()
             {
               if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
-                all = $"{rise}";
+                str = $"{rise}";
               if ( row.Moonset is not null )
               {
-                if ( all.Length != 0 ) all += " - ";
-                all += $"{set}{strDate}";
+                if ( str.Length != 0 ) str += " - ";
+                str += $"{set}{strDate}";
               }
             }
           }
