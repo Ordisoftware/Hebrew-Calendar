@@ -556,10 +556,12 @@ partial class PreferencesForm : Form
     if ( !IsReady ) return;
     SetMustRefreshEnabled(null, null);
     var index1 = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahName);
-    var index2 = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahReference);
     if ( index1 != -1 ) SelectLayoutSections.SetItemChecked(index1, EditParashahEnabled.Checked);
     if ( !EditParashahEnabled.Checked )
+    {
+      var index2 = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahReference);
       if ( index2 != -1 ) SelectLayoutSections.SetItemChecked(index2, false);
+    }
   }
 
   #endregion

@@ -125,6 +125,7 @@ partial class MainForm
       bool showSign = bothTimes || showSignEvenAlone;
       bool dateOnSingleLine = noTimes || Settings.CalendarHebrewDateSingleLine;
       bool dateInItalic = Settings.CalendarHebrewDateSingleLineItalic;
+      bool sepFirst = Settings.MonthViewSeparatorForGregorianDay;
       bool sepLunarDate = Settings.MonthViewSeparatorForLunarDate;
       bool sepEphemerisSun = Settings.MonthViewSeparatorForEphemerisSun;
       bool sepEphemerisMoon = Settings.MonthViewSeparatorForEphemerisMoon;
@@ -223,6 +224,8 @@ partial class MainForm
           addSectionsMethods.Add(Settings.MonthViewLayoutParashahNamePosition, addParashahName);
           addSectionsMethods.Add(Settings.MonthViewLayoutParashahReferencePosition, addParashahRef);
           // Call dispatch table
+          if ( sepFirst )
+            addSeparator(true);
           for ( int index = 0; index < addSectionsMethods.Count; index++ )
             addSectionsMethods[index]?.Invoke();
           //

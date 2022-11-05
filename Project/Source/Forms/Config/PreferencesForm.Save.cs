@@ -139,6 +139,7 @@ partial class PreferencesForm
     Settings.MonthViewAlignmentEphemeris = (StringAlignment)SelectMonthViewAlignmentEphemeris.SelectedIndex;
     Settings.MonthViewAlignmentCelebration = (StringAlignment)SelectMonthViewAlignmentCelebration.SelectedIndex;
     Settings.MonthViewAlignmentParashah = (StringAlignment)SelectMonthViewAlignmentParashah.SelectedIndex;
+    Settings.MonthViewSeparatorForGregorianDay = EditMonthViewSeparatorForGregorianDay.Checked;
     Settings.MonthViewSeparatorForLunarDate = EditMonthViewSeparatorForLunarDate.Checked;
     Settings.MonthViewSeparatorForCelebration = EditMonthViewSeparatorForCelebration.Checked;
     Settings.MonthViewSeparatorForEphemerisSun = EditMonthViewSeparatorForEphemerisSun.Checked;
