@@ -385,7 +385,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Check and fix weekly parashah generation with soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
-#### 2022.11 - Version 10.1
+#### 2022.11.15 - Version 10.1
 
 - Add option to select font names for texts in the monthly view.
 - Add option to select data layout order and sections to show in the monthly view.
