@@ -493,8 +493,14 @@ partial class PreferencesForm : Form
 
   private void ActionRemindEventsBeforeReset_Click(object sender, EventArgs e)
   {
-    SetChecked(SelectRemindEventsBefore, true);
-    SelectRemindEventsBefore.SetItemChecked(0, false);
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      for ( int index = 0; index < SelectRemindEventsBefore.Items.Count; index++ )
+        SystemManager.TryCatch(() =>
+        {
+          string name = TorahEventRemindPrefix + ( (TorahEventItem)SelectRemindEventsBefore.Items[index] ).Event;
+          bool state = Convert.ToBoolean((string)Settings.Properties[name].DefaultValue);
+          SelectRemindEventsBefore.SetItemChecked(index, state);
+        });
   }
 
   private void ActionEventsDaySelectAll_Click(object sender, EventArgs e)
@@ -509,8 +515,14 @@ partial class PreferencesForm : Form
 
   private void ActionEventsDayReset_Click(object sender, EventArgs e)
   {
-    SetChecked(SelectRemindEventsDay, true);
-    SelectRemindEventsDay.SetItemChecked(0, false);
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+      for ( int index = 0; index < SelectRemindEventsDay.Items.Count; index++ )
+        SystemManager.TryCatch(() =>
+        {
+          string name = TorahEventRemindDayPrefix + ( (TorahEventItem)SelectRemindEventsDay.Items[index] ).Event;
+          bool state = Convert.ToBoolean((string)Settings.Properties[name].DefaultValue);
+          SelectRemindEventsDay.SetItemChecked(index, state);
+        });
   }
 
   #endregion
