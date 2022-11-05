@@ -119,15 +119,9 @@ static partial class Program
         Settings.CurrentView = ViewMode.Month;
       if ( Settings.FirstLaunchV10_1 && !Settings.FirstLaunch )
         if ( Settings.TorahEventsCountAsMoon )
-        {
-          Settings.MonthViewLayoutEphemerisSunEnabled = false;
           Settings.MonthViewLayoutEphemerisMoonEnabled = true;
-        }
         else
-        {
           Settings.MonthViewLayoutEphemerisSunEnabled = true;
-          Settings.MonthViewLayoutEphemerisMoonEnabled = false;
-        }
       // Check OS
       if ( Settings.FirstLaunch && SystemStatistics.Instance.Platform.Contains("Windows 7") )
         Settings.NavigationWindowUseUnicodeIcons = false;
