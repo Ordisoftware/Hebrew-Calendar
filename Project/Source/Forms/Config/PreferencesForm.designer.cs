@@ -338,6 +338,7 @@
       this.LabelMonthViewFontNameHebrewSample = new System.Windows.Forms.TextBox();
       this.LabelMonthViewFontNameLatinSample = new System.Windows.Forms.TextBox();
       this.SelectMonthViewLatinFontName = new System.Windows.Forms.ComboBox();
+      this.EditEphemerisSignBeforeElseAfter = new System.Windows.Forms.CheckBox();
       this.EditCalendarHebrewDateSingleLineItalic = new System.Windows.Forms.CheckBox();
       this.EditMonthViewLatinFontSize = new System.Windows.Forms.NumericUpDown();
       this.LabelMonthViewFontNameHebrew = new System.Windows.Forms.Label();
@@ -407,7 +408,7 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditEphemerisSignBeforeElseAfter = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewSeparatorForGregorianDay = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControlMain.SuspendLayout();
@@ -2519,6 +2520,7 @@
       this.TabPageMonthViewLayout.Controls.Add(this.ActionSeparatorsCheckAll);
       this.TabPageMonthViewLayout.Controls.Add(this.SelectLayoutSections);
       this.TabPageMonthViewLayout.Controls.Add(this.LabelMonthViewAlignmentEphemeris);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForGregorianDay);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForLunarDate);
       this.TabPageMonthViewLayout.Controls.Add(this.ActionLayoutSectionDown);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSunOrMoonOneLineStarSign);
@@ -2962,6 +2964,13 @@
       this.SelectMonthViewLatinFontName.FormattingEnabled = true;
       this.SelectMonthViewLatinFontName.Name = "SelectMonthViewLatinFontName";
       this.SelectMonthViewLatinFontName.SelectedIndexChanged += new System.EventHandler(this.SelectMonthViewFontNameLatin_SelectedIndexChanged);
+      // 
+      // EditEphemerisSignBeforeElseAfter
+      // 
+      resources.ApplyResources(this.EditEphemerisSignBeforeElseAfter, "EditEphemerisSignBeforeElseAfter");
+      this.EditEphemerisSignBeforeElseAfter.Name = "EditEphemerisSignBeforeElseAfter";
+      this.EditEphemerisSignBeforeElseAfter.UseVisualStyleBackColor = true;
+      this.EditEphemerisSignBeforeElseAfter.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // EditCalendarHebrewDateSingleLineItalic
       // 
@@ -3543,12 +3552,12 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
-      // EditEphemerisSignBeforeElseAfter
+      // EditMonthViewSeparatorForGregorianDay
       // 
-      resources.ApplyResources(this.EditEphemerisSignBeforeElseAfter, "EditEphemerisSignBeforeElseAfter");
-      this.EditEphemerisSignBeforeElseAfter.Name = "EditEphemerisSignBeforeElseAfter";
-      this.EditEphemerisSignBeforeElseAfter.UseVisualStyleBackColor = true;
-      this.EditEphemerisSignBeforeElseAfter.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      resources.ApplyResources(this.EditMonthViewSeparatorForGregorianDay, "EditMonthViewSeparatorForGregorianDay");
+      this.EditMonthViewSeparatorForGregorianDay.Name = "EditMonthViewSeparatorForGregorianDay";
+      this.EditMonthViewSeparatorForGregorianDay.UseVisualStyleBackColor = true;
+      this.EditMonthViewSeparatorForGregorianDay.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // PreferencesForm
       // 
@@ -4020,5 +4029,6 @@
         private Button ActionSetAllAlignmentsCenter;
         private Button ActionSetAllAlignmentsLeft;
         private CheckBox EditEphemerisSignBeforeElseAfter;
+        private CheckBox EditMonthViewSeparatorForGregorianDay;
     }
 }

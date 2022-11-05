@@ -352,6 +352,8 @@ static class FormsHelper
   /// <summary>
   /// Loads fonts names into a combo box.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public void LoadFonts(this ComboBox control, string nameSelected, Func<FontFamily, bool> filter = null)
   {
     foreach ( var font in filter is null ? InstalledFonts : InstalledFonts.Where(filter) )
@@ -365,6 +367,8 @@ static class FormsHelper
   /// <summary>
   /// Loads fonts names into a list box.
   /// </summary>
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public void LoadFonts(this ListBox control, string nameSelected, Func<FontFamily, bool> filter = null)
   {
     foreach ( var font in filter is null ? InstalledFonts : InstalledFonts.Where(filter) )

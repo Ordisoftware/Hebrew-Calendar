@@ -3392,5 +3392,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["EphemerisSignBeforeElseAfter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonthViewSeparatorForGregorianDay {
+            get {
+                return ((bool)(this["MonthViewSeparatorForGregorianDay"]));
+            }
+            set {
+                this["MonthViewSeparatorForGregorianDay"] = value;
+            }
+        }
     }
 }

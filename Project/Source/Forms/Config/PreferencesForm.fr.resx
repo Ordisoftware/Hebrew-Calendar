@@ -1145,4 +1145,7 @@ Si activé, seul le nom sera revérifié.</value>
   <data name="EditEphemerisSignBeforeElseAfter.Text" xml:space="preserve">
     <value>Avant les heures sinon après</value>
   </data>
+  <data name="EditMonthViewSeparatorForGregorianDay.Text" xml:space="preserve">
+    <value>Numéro du jour grégorien</value>
+  </data>
 </root>

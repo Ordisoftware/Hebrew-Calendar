@@ -136,6 +136,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => SelectMonthViewAlignmentEphemeris.SelectedIndex = (int)Settings.MonthViewAlignmentEphemeris);
     SystemManager.TryCatch(() => SelectMonthViewAlignmentCelebration.SelectedIndex = (int)Settings.MonthViewAlignmentCelebration);
     SystemManager.TryCatch(() => SelectMonthViewAlignmentParashah.SelectedIndex = (int)Settings.MonthViewAlignmentParashah);
+    SystemManager.TryCatch(() => EditMonthViewSeparatorForGregorianDay.Checked = Settings.MonthViewSeparatorForGregorianDay);
     SystemManager.TryCatch(() => EditMonthViewSeparatorForLunarDate.Checked = Settings.MonthViewSeparatorForLunarDate);
     SystemManager.TryCatch(() => EditMonthViewSeparatorForCelebration.Checked = Settings.MonthViewSeparatorForCelebration);
     SystemManager.TryCatch(() => EditMonthViewSeparatorForEphemerisSun.Checked = Settings.MonthViewSeparatorForEphemerisSun);
