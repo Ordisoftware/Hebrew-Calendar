@@ -306,7 +306,7 @@ partial class PreferencesForm
             Enabled = (bool)Settings[prefix + LayoutSectionEnabled],
             Text = AppTranslations.LayoutSections[value].GetLang()
           };
-          int index = SelectLayoutSections.Items.Add(item);
+          SelectLayoutSections.Items.Add(item);
           if ( value == MonthlyViewLayoutSection.EphemerisSun ) LayoutSectionSun = item;
           else
           if ( value == MonthlyViewLayoutSection.EphemerisMoon ) LayoutSectionMoon = item;

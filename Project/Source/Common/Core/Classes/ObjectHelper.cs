@@ -85,6 +85,22 @@ static class ObjectHelper
   }
 
   /// <summary>
+  /// Indicates if value is between min and max.
+  /// </summary>
+  static public bool IsInRange(this int value, int min, int max)
+  {
+    return value >= min && value <= max;
+  }
+
+  /// <summary>
+  /// Indicates if an index is in the range of a list.
+  /// </summary>
+  static public bool IsValidIndex(this IList list, int index)
+  {
+    return index >= 0 && index < list.Count;
+  }
+
+  /// <summary>
   /// A bool extension method that determine if one is true and some others not.
   /// </summary>
   /// <param name="first">The first to act on.</param>

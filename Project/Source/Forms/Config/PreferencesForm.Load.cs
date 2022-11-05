@@ -144,10 +144,11 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditMonthViewSeparatorForParashahName.Checked = Settings.MonthViewSeparatorForParashahName);
     SystemManager.TryCatch(() => EditMonthViewSeparatorForParashahReference.Checked = Settings.MonthViewSeparatorForParashahReference);
     SystemManager.TryCatch(() => EditMonthViewSeparatorSize.Value = Settings.MonthViewSeparatorSize);
-    SystemManager.TryCatch(() => EditEphemerisPrefixSun.Text = Settings.EphemerisPrefixSun);
-    SystemManager.TryCatch(() => EditEphemerisPrefixMoon.Text = Settings.EphemerisPrefixMoon);
+    SystemManager.TryCatch(() => EditEphemerisPrefixSun.Text = Settings.EphemerisSignSun);
+    SystemManager.TryCatch(() => EditEphemerisPrefixMoon.Text = Settings.EphemerisSignMoon);
     SystemManager.TryCatch(() => EditMonthViewSunOrMoonOneLine.Checked = Settings.MonthViewSunOrMoonOneLine);
     SystemManager.TryCatch(() => EditMonthViewSunOrMoonOneLineStarSign.Checked = Settings.MonthViewSunOrMoonOneLineStarSign);
+    SystemManager.TryCatch(() => EditEphemerisSignBeforeElseAfter.Checked = Settings.EphemerisSignBeforeElseAfter);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewLatinFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);
