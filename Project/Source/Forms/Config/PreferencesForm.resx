@@ -2095,6 +2095,32 @@
   <data name="&gt;&gt;TabPageShabat.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="ActionRemindEventsBeforeSelectNone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectNone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectNone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAFxJREFUOE9j2Lp16/tNmzb937BhA0kYpAeklwHEIBeA9DKATCMXgPSOGjA8DFi/
+        fj2USzoA6aXcAIq9QHFeWLZs2QEQA2TaBqCTiMJAtSA9IL0MQKAMxMbkYQZlAKK6iSAo5kidAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 158</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectNone.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.Name" xml:space="preserve">
     <value>ActionRemindEventsBeforeSelectNone</value>
   </data>
@@ -2106,6 +2132,36 @@
   </data>
   <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ActionRemindEventsBeforeReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionRemindEventsBeforeReset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionRemindEventsBeforeReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAWtJREFUOE/tkE9LAlEUxWfdvg8Q2D5znX8SHQmJFkFEpC2sVUFtgijQGU2LIAvD
+        aJUggSWYRDozZmhlugiKKAjLCFoYgUMQFriI0x2zRRDRB/DAj3sfnHfuu49p6qfMPklj4IWIjhPetJwA
+        rYtQKqHjRRg8UsTq3Gtp2L9kmk/B4BbDek7c7F06hF8qQrh+RuauQsh1siUZ8csncPErWBbTMHqkYOM6
+        wxgoeTX7gP61PNK3MsJnZczulzASuoB9Iw9bMAfb+insxNTWOUKFRwxTT4N36gFaVxJFuQax+ILxWAl9
+        oRuwyznonYmqZmzF2846BlUWx5BSO0f9Phr4PhA4htl7AHYhxdYDEndVDEbuYYs+wBoooGs6kqHsDqKV
+        UHb+RjmrdTPbEuujAILR8wJOyh+YSFUwmZaRKL6ih4vtkvEvtennokcmb6rGGHnhlX4e3XySoOoWlf3Q
+        MP4lFaFWGuWpml9o6l9imE99dc5WVz6rKAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionRemindEventsBeforeReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionRemindEventsBeforeReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 158</value>
+  </data>
+  <data name="ActionRemindEventsBeforeReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionRemindEventsBeforeReset.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;ActionRemindEventsBeforeReset.Name" xml:space="preserve">
     <value>ActionRemindEventsBeforeReset</value>
@@ -2119,6 +2175,36 @@
   <data name="&gt;&gt;ActionRemindEventsBeforeReset.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="ActionRemindEventsBeforeSelectAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAX5JREFUOE+lU8lOAkEUnH/hE7waRRY5GZFdBQFRVhGQRb6IK4SEu7+iJsqABtQ4
+        bDOUXY1DMjfESir9ulNVef06rfR6vVG320Wn0/kT6aFXYbEt6FWYRjw+PeOlr0IdDCX76gCvYk+yNs+p
+        oZagdx2gDgY4cLhw4g8iepFAOpND+a6Oar2JbKGIeOIS/mAETpdHaFXpsQQM396hTaZY6Iagjtl8gels
+        LjiT9Xyhy3NqqCUsAaPxGA6nG75ACLF4EtlcAZVaA7VGE/mbWySSKQTCp3C5PVJLWAI+Pr+gG0tZm+DO
+        egLookNqCUvAt6atZiA64AwymTzKVTED0UGu8NtBiDM4lFrCEqBNZnLdBJwDYQnggPbtTnjFK5zHzFeo
+        4a52j2zefIWwnBO1hAxot9tys1wact0ES2OlpXcdQOzu2XHk9SFyFkPqKo1iqYKS6OJazCMai+PYF5Bd
+        mpAB5hW2gbzCv/9Cq9V6YMG0jmhpIwotPfQqAjbBne2o2H4AUfUkJYL2MUgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 158</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionRemindEventsBeforeSelectAll.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
   <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.Name" xml:space="preserve">
     <value>ActionRemindEventsBeforeSelectAll</value>
   </data>
@@ -2130,6 +2216,32 @@
   </data>
   <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAFxJREFUOE9j2Lp16/tNmzb937BhA0kYpAeklwHEIBeA9DKATCMXgPSOGjA8DFi/
+        fj2USzoA6aXcAIq9QHFeWLZs2QEQA2TaBqCTiMJAtSA9IL0MQKAMxMbkYQZlAKK6iSAo5kidAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>281, 158</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionEventsDaySelectNone.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="&gt;&gt;ActionEventsDaySelectNone.Name" xml:space="preserve">
     <value>ActionEventsDaySelectNone</value>
@@ -2143,6 +2255,36 @@
   <data name="&gt;&gt;ActionEventsDaySelectNone.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="ActionEventsDayReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionEventsDayReset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionEventsDayReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAWtJREFUOE/tkE9LAlEUxWfdvg8Q2D5znX8SHQmJFkFEpC2sVUFtgijQGU2LIAvD
+        aJUggSWYRDozZmhlugiKKAjLCFoYgUMQFriI0x2zRRDRB/DAj3sfnHfuu49p6qfMPklj4IWIjhPetJwA
+        rYtQKqHjRRg8UsTq3Gtp2L9kmk/B4BbDek7c7F06hF8qQrh+RuauQsh1siUZ8csncPErWBbTMHqkYOM6
+        wxgoeTX7gP61PNK3MsJnZczulzASuoB9Iw9bMAfb+insxNTWOUKFRwxTT4N36gFaVxJFuQax+ILxWAl9
+        oRuwyznonYmqZmzF2846BlUWx5BSO0f9Phr4PhA4htl7AHYhxdYDEndVDEbuYYs+wBoooGs6kqHsDqKV
+        UHb+RjmrdTPbEuujAILR8wJOyh+YSFUwmZaRKL6ih4vtkvEvtennokcmb6rGGHnhlX4e3XySoOoWlf3Q
+        MP4lFaFWGuWpml9o6l9imE99dc5WVz6rKAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionEventsDayReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionEventsDayReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 158</value>
+  </data>
+  <data name="ActionEventsDayReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionEventsDayReset.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
   <data name="&gt;&gt;ActionEventsDayReset.Name" xml:space="preserve">
     <value>ActionEventsDayReset</value>
   </data>
@@ -2154,6 +2296,36 @@
   </data>
   <data name="&gt;&gt;ActionEventsDayReset.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAX5JREFUOE+lU8lOAkEUnH/hE7waRRY5GZFdBQFRVhGQRb6IK4SEu7+iJsqABtQ4
+        bDOUXY1DMjfESir9ulNVef06rfR6vVG320Wn0/kT6aFXYbEt6FWYRjw+PeOlr0IdDCX76gCvYk+yNs+p
+        oZagdx2gDgY4cLhw4g8iepFAOpND+a6Oar2JbKGIeOIS/mAETpdHaFXpsQQM396hTaZY6Iagjtl8gels
+        LjiT9Xyhy3NqqCUsAaPxGA6nG75ACLF4EtlcAZVaA7VGE/mbWySSKQTCp3C5PVJLWAI+Pr+gG0tZm+DO
+        egLookNqCUvAt6atZiA64AwymTzKVTED0UGu8NtBiDM4lFrCEqBNZnLdBJwDYQnggPbtTnjFK5zHzFeo
+        4a52j2zefIWwnBO1hAxot9tys1wact0ES2OlpXcdQOzu2XHk9SFyFkPqKo1iqYKS6OJazCMai+PYF5Bd
+        mpAB5hW2gbzCv/9Cq9V6YMG0jmhpIwotPfQqAjbBne2o2H4AUfUkJYL2MUgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 158</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionEventsDaySelectAll.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;ActionEventsDaySelectAll.Name" xml:space="preserve">
     <value>ActionEventsDaySelectAll</value>
@@ -2167,6 +2339,27 @@
   <data name="&gt;&gt;ActionEventsDaySelectAll.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 128</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutesIntervalInfo.Name" xml:space="preserve">
     <value>LabelRemindCelebrationEveryMinutesIntervalInfo</value>
   </data>
@@ -2178,6 +2371,27 @@
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutesIntervalInfo.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="LabelReminderCelebrationsIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelReminderCelebrationsIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelReminderCelebrationsIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelReminderCelebrationsIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 78</value>
+  </data>
+  <data name="LabelReminderCelebrationsIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelReminderCelebrationsIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LabelReminderCelebrationsIntervalInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
   </data>
   <data name="&gt;&gt;LabelReminderCelebrationsIntervalInfo.Name" xml:space="preserve">
     <value>LabelReminderCelebrationsIntervalInfo</value>
@@ -2191,6 +2405,27 @@
   <data name="&gt;&gt;LabelReminderCelebrationsIntervalInfo.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 78</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBeforeIntervalInfo.Name" xml:space="preserve">
     <value>LabelRemindCelebrationHoursBeforeIntervalInfo</value>
   </data>
@@ -2202,6 +2437,18 @@
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBeforeIntervalInfo.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="EditRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditRemindCelebrationEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 124</value>
+  </data>
+  <data name="EditRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditRemindCelebrationEveryMinutes.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Name" xml:space="preserve">
     <value>EditRemindCelebrationEveryMinutes</value>
@@ -2215,6 +2462,27 @@
   <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="LabelRemindCelebrationHoursBefore.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBefore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 55</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelRemindCelebrationHoursBefore.Text" xml:space="preserve">
+    <value>Hours before second remind</value>
+  </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.Name" xml:space="preserve">
     <value>LabelRemindCelebrationHoursBefore</value>
   </data>
@@ -2226,6 +2494,27 @@
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 17</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditReminderCelebrationsEnabled.Text" xml:space="preserve">
+    <value>Remind</value>
   </data>
   <data name="&gt;&gt;EditReminderCelebrationsEnabled.Name" xml:space="preserve">
     <value>EditReminderCelebrationsEnabled</value>
@@ -2239,6 +2528,27 @@
   <data name="&gt;&gt;EditReminderCelebrationsEnabled.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="LabelRemindCelebrationEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 105</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="LabelRemindCelebrationEveryMinutes.Text" xml:space="preserve">
+    <value>Remind every minutes</value>
+  </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.Name" xml:space="preserve">
     <value>LabelRemindCelebrationEveryMinutes</value>
   </data>
@@ -2250,6 +2560,18 @@
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
     <value>12</value>
+  </data>
+  <data name="SelectRemindEventsDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectRemindEventsDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 190</value>
+  </data>
+  <data name="SelectRemindEventsDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 169</value>
+  </data>
+  <data name="SelectRemindEventsDay.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;SelectRemindEventsDay.Name" xml:space="preserve">
     <value>SelectRemindEventsDay</value>
@@ -2263,6 +2585,18 @@
   <data name="&gt;&gt;SelectRemindEventsDay.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <data name="EditRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditRemindCelebrationHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 74</value>
+  </data>
+  <data name="EditRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditRemindCelebrationHoursBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Name" xml:space="preserve">
     <value>EditRemindCelebrationHoursBefore</value>
   </data>
@@ -2274,6 +2608,18 @@
   </data>
   <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="SelectRemindEventsBefore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectRemindEventsBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 190</value>
+  </data>
+  <data name="SelectRemindEventsBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 169</value>
+  </data>
+  <data name="SelectRemindEventsBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;SelectRemindEventsBefore.Name" xml:space="preserve">
     <value>SelectRemindEventsBefore</value>
@@ -2287,6 +2633,18 @@
   <data name="&gt;&gt;SelectRemindEventsBefore.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="EditRemindCelebrationsDaysBefore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditRemindCelebrationsDaysBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 74</value>
+  </data>
+  <data name="EditRemindCelebrationsDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditRemindCelebrationsDaysBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.Name" xml:space="preserve">
     <value>EditRemindCelebrationsDaysBefore</value>
   </data>
@@ -2298,6 +2656,27 @@
   </data>
   <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.ZOrder" xml:space="preserve">
     <value>16</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 55</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
+    <value>Days before first remind</value>
   </data>
   <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.Name" xml:space="preserve">
     <value>LabelRemindCelebrationDaysBefore</value>
@@ -2770,10 +3149,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSetAllAlignmentsRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 373</value>
+    <value>206, 370</value>
   </data>
   <data name="ActionSetAllAlignmentsRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSetAllAlignmentsRight.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -2813,10 +3192,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSetAllAlignmentsCenter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 373</value>
+    <value>178, 370</value>
   </data>
   <data name="ActionSetAllAlignmentsCenter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSetAllAlignmentsCenter.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -2851,10 +3230,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSeparatorsUncheckAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 373</value>
+    <value>326, 370</value>
   </data>
   <data name="ActionSeparatorsUncheckAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSeparatorsUncheckAll.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -2964,10 +3343,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSetAllAlignmentsLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 373</value>
+    <value>150, 370</value>
   </data>
   <data name="ActionSetAllAlignmentsLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSetAllAlignmentsLeft.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -3006,10 +3385,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSeparatorsCheckAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>299, 373</value>
+    <value>297, 370</value>
   </data>
   <data name="ActionSeparatorsCheckAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>26, 26</value>
   </data>
   <data name="ActionSeparatorsCheckAll.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -9319,601 +9698,6 @@
   </data>
   <data name="&gt;&gt;EditRemindShabatHoursBefore.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectNone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectNone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectNone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAFxJREFUOE9j2Lp16/tNmzb937BhA0kYpAeklwHEIBeA9DKATCMXgPSOGjA8DFi/
-        fj2USzoA6aXcAIq9QHFeWLZs2QEQA2TaBqCTiMJAtSA9IL0MQKAMxMbkYQZlAKK6iSAo5kidAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectNone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 165</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectNone.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.Name" xml:space="preserve">
-    <value>ActionRemindEventsBeforeSelectNone</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeSelectNone.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionRemindEventsBeforeReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionRemindEventsBeforeReset.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionRemindEventsBeforeReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAWtJREFUOE/tkE9LAlEUxWfdvg8Q2D5znX8SHQmJFkFEpC2sVUFtgijQGU2LIAvD
-        aJUggSWYRDozZmhlugiKKAjLCFoYgUMQFriI0x2zRRDRB/DAj3sfnHfuu49p6qfMPklj4IWIjhPetJwA
-        rYtQKqHjRRg8UsTq3Gtp2L9kmk/B4BbDek7c7F06hF8qQrh+RuauQsh1siUZ8csncPErWBbTMHqkYOM6
-        wxgoeTX7gP61PNK3MsJnZczulzASuoB9Iw9bMAfb+insxNTWOUKFRwxTT4N36gFaVxJFuQax+ILxWAl9
-        oRuwyznonYmqZmzF2846BlUWx5BSO0f9Phr4PhA4htl7AHYhxdYDEndVDEbuYYs+wBoooGs6kqHsDqKV
-        UHb+RjmrdTPbEuujAILR8wJOyh+YSFUwmZaRKL6ih4vtkvEvtennokcmb6rGGHnhlX4e3XySoOoWlf3Q
-        MP4lFaFWGuWpml9o6l9imE99dc5WVz6rKAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionRemindEventsBeforeReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionRemindEventsBeforeReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 165</value>
-  </data>
-  <data name="ActionRemindEventsBeforeReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="ActionRemindEventsBeforeReset.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeReset.Name" xml:space="preserve">
-    <value>ActionRemindEventsBeforeReset</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeReset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeReset.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeReset.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAX5JREFUOE+lU8lOAkEUnH/hE7waRRY5GZFdBQFRVhGQRb6IK4SEu7+iJsqABtQ4
-        bDOUXY1DMjfESir9ulNVef06rfR6vVG320Wn0/kT6aFXYbEt6FWYRjw+PeOlr0IdDCX76gCvYk+yNs+p
-        oZagdx2gDgY4cLhw4g8iepFAOpND+a6Oar2JbKGIeOIS/mAETpdHaFXpsQQM396hTaZY6Iagjtl8gels
-        LjiT9Xyhy3NqqCUsAaPxGA6nG75ACLF4EtlcAZVaA7VGE/mbWySSKQTCp3C5PVJLWAI+Pr+gG0tZm+DO
-        egLookNqCUvAt6atZiA64AwymTzKVTED0UGu8NtBiDM4lFrCEqBNZnLdBJwDYQnggPbtTnjFK5zHzFeo
-        4a52j2zefIWwnBO1hAxot9tys1wact0ES2OlpXcdQOzu2XHk9SFyFkPqKo1iqYKS6OJazCMai+PYF5Bd
-        mpAB5hW2gbzCv/9Cq9V6YMG0jmhpIwotPfQqAjbBne2o2H4AUfUkJYL2MUgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 165</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="ActionRemindEventsBeforeSelectAll.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.Name" xml:space="preserve">
-    <value>ActionRemindEventsBeforeSelectAll</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;ActionRemindEventsBeforeSelectAll.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ActionEventsDaySelectNone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionEventsDaySelectNone.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionEventsDaySelectNone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAFxJREFUOE9j2Lp16/tNmzb937BhA0kYpAeklwHEIBeA9DKATCMXgPSOGjA8DFi/
-        fj2USzoA6aXcAIq9QHFeWLZs2QEQA2TaBqCTiMJAtSA9IL0MQKAMxMbkYQZlAKK6iSAo5kidAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
-  <data name="ActionEventsDaySelectNone.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionEventsDaySelectNone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 165</value>
-  </data>
-  <data name="ActionEventsDaySelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="ActionEventsDaySelectNone.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDaySelectNone.Name" xml:space="preserve">
-    <value>ActionEventsDaySelectNone</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDaySelectNone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDaySelectNone.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDaySelectNone.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ActionEventsDayReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionEventsDayReset.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionEventsDayReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAWtJREFUOE/tkE9LAlEUxWfdvg8Q2D5znX8SHQmJFkFEpC2sVUFtgijQGU2LIAvD
-        aJUggSWYRDozZmhlugiKKAjLCFoYgUMQFriI0x2zRRDRB/DAj3sfnHfuu49p6qfMPklj4IWIjhPetJwA
-        rYtQKqHjRRg8UsTq3Gtp2L9kmk/B4BbDek7c7F06hF8qQrh+RuauQsh1siUZ8csncPErWBbTMHqkYOM6
-        wxgoeTX7gP61PNK3MsJnZczulzASuoB9Iw9bMAfb+insxNTWOUKFRwxTT4N36gFaVxJFuQax+ILxWAl9
-        oRuwyznonYmqZmzF2846BlUWx5BSO0f9Phr4PhA4htl7AHYhxdYDEndVDEbuYYs+wBoooGs6kqHsDqKV
-        UHb+RjmrdTPbEuujAILR8wJOyh+YSFUwmZaRKL6ih4vtkvEvtennokcmb6rGGHnhlX4e3XySoOoWlf3Q
-        MP4lFaFWGuWpml9o6l9imE99dc5WVz6rKAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionEventsDayReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionEventsDayReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 165</value>
-  </data>
-  <data name="ActionEventsDayReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="ActionEventsDayReset.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDayReset.Name" xml:space="preserve">
-    <value>ActionEventsDayReset</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDayReset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDayReset.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDayReset.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ActionEventsDaySelectAll.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionEventsDaySelectAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 6.75pt, style=Bold</value>
-  </data>
-  <data name="ActionEventsDaySelectAll.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAX5JREFUOE+lU8lOAkEUnH/hE7waRRY5GZFdBQFRVhGQRb6IK4SEu7+iJsqABtQ4
-        bDOUXY1DMjfESir9ulNVef06rfR6vVG320Wn0/kT6aFXYbEt6FWYRjw+PeOlr0IdDCX76gCvYk+yNs+p
-        oZagdx2gDgY4cLhw4g8iepFAOpND+a6Oar2JbKGIeOIS/mAETpdHaFXpsQQM396hTaZY6Iagjtl8gels
-        LjiT9Xyhy3NqqCUsAaPxGA6nG75ACLF4EtlcAZVaA7VGE/mbWySSKQTCp3C5PVJLWAI+Pr+gG0tZm+DO
-        egLookNqCUvAt6atZiA64AwymTzKVTED0UGu8NtBiDM4lFrCEqBNZnLdBJwDYQnggPbtTnjFK5zHzFeo
-        4a52j2zefIWwnBO1hAxot9tys1wact0ES2OlpXcdQOzu2XHk9SFyFkPqKo1iqYKS6OJazCMai+PYF5Bd
-        mpAB5hW2gbzCv/9Cq9V6YMG0jmhpIwotPfQqAjbBne2o2H4AUfUkJYL2MUgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ActionEventsDaySelectAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionEventsDaySelectAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>263, 165</value>
-  </data>
-  <data name="ActionEventsDaySelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="ActionEventsDaySelectAll.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDaySelectAll.Name" xml:space="preserve">
-    <value>ActionEventsDaySelectAll</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDaySelectAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDaySelectAll.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;ActionEventsDaySelectAll.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 128</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutesIntervalInfo.Text" xml:space="preserve">
-    <value>0 - 0</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutesIntervalInfo.Name" xml:space="preserve">
-    <value>LabelRemindCelebrationEveryMinutesIntervalInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutesIntervalInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutesIntervalInfo.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutesIntervalInfo.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LabelReminderCelebrationsIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelReminderCelebrationsIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelReminderCelebrationsIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelReminderCelebrationsIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 78</value>
-  </data>
-  <data name="LabelReminderCelebrationsIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
-  </data>
-  <data name="LabelReminderCelebrationsIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LabelReminderCelebrationsIntervalInfo.Text" xml:space="preserve">
-    <value>0 - 0</value>
-  </data>
-  <data name="&gt;&gt;LabelReminderCelebrationsIntervalInfo.Name" xml:space="preserve">
-    <value>LabelReminderCelebrationsIntervalInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelReminderCelebrationsIntervalInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelReminderCelebrationsIntervalInfo.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;LabelReminderCelebrationsIntervalInfo.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 78</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBeforeIntervalInfo.Text" xml:space="preserve">
-    <value>0 - 0</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationHoursBeforeIntervalInfo.Name" xml:space="preserve">
-    <value>LabelRemindCelebrationHoursBeforeIntervalInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationHoursBeforeIntervalInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationHoursBeforeIntervalInfo.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationHoursBeforeIntervalInfo.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="EditRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditRemindCelebrationEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 124</value>
-  </data>
-  <data name="EditRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditRemindCelebrationEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Name" xml:space="preserve">
-    <value>EditRemindCelebrationEveryMinutes</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBefore.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBefore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 55</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelRemindCelebrationHoursBefore.Text" xml:space="preserve">
-    <value>Hours before second remind</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.Name" xml:space="preserve">
-    <value>LabelRemindCelebrationHoursBefore</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="EditReminderCelebrationsEnabled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditReminderCelebrationsEnabled.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditReminderCelebrationsEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditReminderCelebrationsEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
-  </data>
-  <data name="EditReminderCelebrationsEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 17</value>
-  </data>
-  <data name="EditReminderCelebrationsEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditReminderCelebrationsEnabled.Text" xml:space="preserve">
-    <value>Remind</value>
-  </data>
-  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Name" xml:space="preserve">
-    <value>EditReminderCelebrationsEnabled</value>
-  </data>
-  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditReminderCelebrationsEnabled.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;EditReminderCelebrationsEnabled.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 105</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 13</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="LabelRemindCelebrationEveryMinutes.Text" xml:space="preserve">
-    <value>Remind every minutes</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.Name" xml:space="preserve">
-    <value>LabelRemindCelebrationEveryMinutes</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationEveryMinutes.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="SelectRemindEventsDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectRemindEventsDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 190</value>
-  </data>
-  <data name="SelectRemindEventsDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 169</value>
-  </data>
-  <data name="SelectRemindEventsDay.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;SelectRemindEventsDay.Name" xml:space="preserve">
-    <value>SelectRemindEventsDay</value>
-  </data>
-  <data name="&gt;&gt;SelectRemindEventsDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectRemindEventsDay.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;SelectRemindEventsDay.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="EditRemindCelebrationHoursBefore.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditRemindCelebrationHoursBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 74</value>
-  </data>
-  <data name="EditRemindCelebrationHoursBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditRemindCelebrationHoursBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Name" xml:space="preserve">
-    <value>EditRemindCelebrationHoursBefore</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationHoursBefore.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationHoursBefore.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="SelectRemindEventsBefore.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectRemindEventsBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 190</value>
-  </data>
-  <data name="SelectRemindEventsBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 169</value>
-  </data>
-  <data name="SelectRemindEventsBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;SelectRemindEventsBefore.Name" xml:space="preserve">
-    <value>SelectRemindEventsBefore</value>
-  </data>
-  <data name="&gt;&gt;SelectRemindEventsBefore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectRemindEventsBefore.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;SelectRemindEventsBefore.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="EditRemindCelebrationsDaysBefore.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditRemindCelebrationsDaysBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 74</value>
-  </data>
-  <data name="EditRemindCelebrationsDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditRemindCelebrationsDaysBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.Name" xml:space="preserve">
-    <value>EditRemindCelebrationsDaysBefore</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;EditRemindCelebrationsDaysBefore.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="LabelRemindCelebrationDaysBefore.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelRemindCelebrationDaysBefore.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelRemindCelebrationDaysBefore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelRemindCelebrationDaysBefore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 55</value>
-  </data>
-  <data name="LabelRemindCelebrationDaysBefore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 13</value>
-  </data>
-  <data name="LabelRemindCelebrationDaysBefore.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LabelRemindCelebrationDaysBefore.Text" xml:space="preserve">
-    <value>Days before first remind</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.Name" xml:space="preserve">
-    <value>LabelRemindCelebrationDaysBefore</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.Parent" xml:space="preserve">
-    <value>TabPageCelebrations</value>
-  </data>
-  <data name="&gt;&gt;LabelRemindCelebrationDaysBefore.ZOrder" xml:space="preserve">
-    <value>17</value>
   </data>
   <data name="ActionSwitchToMonthViewLayoutSettings2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

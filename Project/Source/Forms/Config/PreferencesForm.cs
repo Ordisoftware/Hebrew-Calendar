@@ -491,12 +491,14 @@ partial class PreferencesForm : Form
 
   private void ActionRemindEventsBeforeSelectAll_Click(object sender, EventArgs e)
   {
-    SetChecked(SelectRemindEventsBefore, true);
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToSetAllOptions.GetLang()) )
+      SetChecked(SelectRemindEventsBefore, true);
   }
 
   private void ActionRemindEventsBeforeSelectNone_Click(object sender, EventArgs e)
   {
-    SetChecked(SelectRemindEventsBefore, false);
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToUnsetAllOptions.GetLang()) )
+      SetChecked(SelectRemindEventsBefore, false);
   }
 
   private void ActionRemindEventsBeforeReset_Click(object sender, EventArgs e)
@@ -513,12 +515,14 @@ partial class PreferencesForm : Form
 
   private void ActionEventsDaySelectAll_Click(object sender, EventArgs e)
   {
-    SetChecked(SelectRemindEventsDay, true);
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToSetAllOptions.GetLang()) )
+      SetChecked(SelectRemindEventsDay, true);
   }
 
   private void ActionEventsDaySelectNone_Click(object sender, EventArgs e)
   {
-    SetChecked(SelectRemindEventsDay, false);
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToUnsetAllOptions.GetLang()) )
+      SetChecked(SelectRemindEventsDay, false);
   }
 
   private void ActionEventsDayReset_Click(object sender, EventArgs e)
@@ -661,12 +665,14 @@ partial class PreferencesForm : Form
 
   private void ActionSeparatorsCheckAll_Click(object sender, EventArgs e)
   {
-    SetAllSeparators(true);
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToSetAllOptions.GetLang()) )
+      SetAllSeparators(true);
   }
 
   private void ActionSeparatorsUncheckAll_Click(object sender, EventArgs e)
   {
-    SetAllSeparators(false);
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToUnsetAllOptions.GetLang()) )
+      SetAllSeparators(false);
   }
 
   void SetAllSeparators(bool enabled)
