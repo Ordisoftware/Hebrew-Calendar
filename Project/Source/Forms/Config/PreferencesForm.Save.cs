@@ -150,9 +150,10 @@ partial class PreferencesForm
     Settings.MonthViewSeparatorSize = (int)EditMonthViewSeparatorSize.Value;
     Settings.EphemerisSignSun = EditEphemerisPrefixSun.Text;
     Settings.EphemerisSignMoon = EditEphemerisPrefixMoon.Text;
-    Settings.MonthViewSunOrMoonOneLine = EditMonthViewSunOrMoonOneLine.Checked;
-    Settings.MonthViewSunOrMoonOneLineStarSign = EditMonthViewSunOrMoonOneLineStarSign.Checked;
+    Settings.MonthViewOneLuminaryOneLine = EditMonthViewOneLuminaryOneLine.Checked;
+    Settings.MonthViewOneLuminaryOneLineSign = EditMonthViewOneLuminaryOneLineSign.Checked;
     Settings.EphemerisSignBeforeElseAfter = EditEphemerisSignBeforeElseAfter.Checked;
+    Settings.HideLuminarySigns = EditHideLuminarySigns.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;

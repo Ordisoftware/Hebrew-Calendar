@@ -3312,24 +3312,24 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MonthViewSunOrMoonOneLine {
+        public bool MonthViewOneLuminaryOneLine {
             get {
-                return ((bool)(this["MonthViewSunOrMoonOneLine"]));
+                return ((bool)(this["MonthViewOneLuminaryOneLine"]));
             }
             set {
-                this["MonthViewSunOrMoonOneLine"] = value;
+                this["MonthViewOneLuminaryOneLine"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MonthViewSunOrMoonOneLineStarSign {
+        public bool MonthViewOneLuminaryOneLineSign {
             get {
-                return ((bool)(this["MonthViewSunOrMoonOneLineStarSign"]));
+                return ((bool)(this["MonthViewOneLuminaryOneLineSign"]));
             }
             set {
-                this["MonthViewSunOrMoonOneLineStarSign"] = value;
+                this["MonthViewOneLuminaryOneLineSign"] = value;
             }
         }
         
@@ -3402,6 +3402,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["MonthViewSeparatorForGregorianDay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HideLuminarySigns {
+            get {
+                return ((bool)(this["HideLuminarySigns"]));
+            }
+            set {
+                this["HideLuminarySigns"] = value;
             }
         }
     }

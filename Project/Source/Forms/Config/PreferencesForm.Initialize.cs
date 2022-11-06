@@ -32,6 +32,34 @@ partial class PreferencesForm
     public override string ToString() => Text;
   }
 
+  private LayoutSectionItem LayoutSectionSun;
+  private LayoutSectionItem LayoutSectionMoon;
+  private LayoutSectionItem LayoutSectionParashahName;
+  private LayoutSectionItem LayoutSectionParashahRef;
+
+  private bool SunChecked
+  {
+    get => SelectLayoutSections.GetItemChecked(SelectLayoutSections.Items.IndexOf(LayoutSectionSun));
+    set => SelectLayoutSections.SetItemChecked(SelectLayoutSections.Items.IndexOf(LayoutSectionSun), value);
+  }
+
+  private bool MoonChecked
+  {
+    get => SelectLayoutSections.GetItemChecked(SelectLayoutSections.Items.IndexOf(LayoutSectionMoon));
+    set => SelectLayoutSections.SetItemChecked(SelectLayoutSections.Items.IndexOf(LayoutSectionMoon), value);
+  }
+
+  private bool ParashahNameChecked
+  {
+    get => SelectLayoutSections.GetItemChecked(SelectLayoutSections.Items.IndexOf(LayoutSectionParashahName));
+    set => SelectLayoutSections.SetItemChecked(SelectLayoutSections.Items.IndexOf(LayoutSectionParashahName), value);
+  }
+
+  private bool ParashahRefChecked
+  {
+    get => SelectLayoutSections.GetItemChecked(SelectLayoutSections.Items.IndexOf(LayoutSectionParashahRef));
+    set => SelectLayoutSections.SetItemChecked(SelectLayoutSections.Items.IndexOf(LayoutSectionParashahRef), value);
+  }
   internal const string TorahEventRemindPrefix = "TorahEventRemind";
   internal const string TorahEventRemindDayPrefix = "TorahEventRemindDay";
 
@@ -82,7 +110,7 @@ partial class PreferencesForm
     EditParashahEnabled_Changed(null, null);
     EditHebrewNamesInUnicode_CheckedChanged(null, null);
     EditCalendarHebrewDateSingleLine_CheckedChanged(null, null);
-    EditMonthViewSunOrMoonOneLine_CheckedChanged(null, null);
+    UpdateMonthViewCheckBoxes(null, null);
     ActiveControl = ActionClose;
     ActionResetSettings.TabStop = false;
     IsReady = true;
@@ -109,15 +137,13 @@ partial class PreferencesForm
       {
         SelectOmerMoon.Checked = true;
         Settings.MonthViewLayoutEphemerisMoonEnabled = true;
-        int index = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-        if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+        MoonChecked = true;
       }
       else
       {
         SelectOmerSun.Checked = true;
         Settings.MonthViewLayoutEphemerisSunEnabled = true;
-        int index = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-        if ( index != -1 ) SelectLayoutSections.SetItemChecked(index, true);
+        SunChecked = true;
       }
       MainForm.Instance.ActionShowShabatNotice_Click(null, null);
       if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
@@ -178,8 +204,8 @@ partial class PreferencesForm
   private void LoadEditIntervals()
   {
     InitializeNumericInterval(EditTextReportFontSize, LabelTextReportFontSizeInterval, TextReportFontSizeInterval);
-    InitializeNumericInterval(EditMonthViewLatinFontSize, LabelMonthViewFontSizeInterval, VisualMonthFontSizeInterval);
-    InitializeNumericInterval(EditMonthViewHebrewFontSize, LabelMonthViewHebrewFontSizeInterval, VisualMonthFontSizeInterval);
+    InitializeNumericInterval(EditMonthViewLatinFontSize, LabelMonthViewFontSizeInterval, VisualMonthLatinFontSizeInterval);
+    InitializeNumericInterval(EditMonthViewHebrewFontSize, LabelMonthViewHebrewFontSizeInterval, VisualMonthHebrewFontSizeInterval);
     InitializeNumericInterval(EditCheckUpdateAtStartupInterval, LabelCheckUpdateAtStartupInfo, CheckUpdateInterval);
     InitializeNumericInterval(EditVacuumAtStartupInterval, LabelOptimizeDatabaseIntervalInfo, CheckUpdateInterval);
     InitializeNumericInterval(EditPrintingMargin, LabelPrintingMarginIntervalInfo, PrintingMarginInterval);
@@ -295,11 +321,6 @@ partial class PreferencesForm
         });
   }
 
-  private LayoutSectionItem LayoutSectionSun;
-  private LayoutSectionItem LayoutSectionMoon;
-  private LayoutSectionItem LayoutSectionParashahName;
-  private LayoutSectionItem LayoutSectionParashahReference;
-
   /// <summary>
   /// Loads layout sections.
   /// </summary>
@@ -323,7 +344,7 @@ partial class PreferencesForm
           else
           if ( value == MonthlyViewLayoutSection.ParashahName ) LayoutSectionParashahName = item;
           else
-          if ( value == MonthlyViewLayoutSection.ParashahReference ) LayoutSectionParashahReference = item;
+          if ( value == MonthlyViewLayoutSection.ParashahReference ) LayoutSectionParashahRef = item;
         });
     // Sorting does not sort checks!
     SelectLayoutSections.Sort((item1, item2) => ( (LayoutSectionItem)item1 ).Position.CompareTo(( (LayoutSectionItem)item2 ).Position));

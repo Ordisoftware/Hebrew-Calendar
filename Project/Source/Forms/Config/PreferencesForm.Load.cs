@@ -147,9 +147,10 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditMonthViewSeparatorSize.Value = Settings.MonthViewSeparatorSize);
     SystemManager.TryCatch(() => EditEphemerisPrefixSun.Text = Settings.EphemerisSignSun);
     SystemManager.TryCatch(() => EditEphemerisPrefixMoon.Text = Settings.EphemerisSignMoon);
-    SystemManager.TryCatch(() => EditMonthViewSunOrMoonOneLine.Checked = Settings.MonthViewSunOrMoonOneLine);
-    SystemManager.TryCatch(() => EditMonthViewSunOrMoonOneLineStarSign.Checked = Settings.MonthViewSunOrMoonOneLineStarSign);
+    SystemManager.TryCatch(() => EditMonthViewOneLuminaryOneLine.Checked = Settings.MonthViewOneLuminaryOneLine);
+    SystemManager.TryCatch(() => EditMonthViewOneLuminaryOneLineSign.Checked = Settings.MonthViewOneLuminaryOneLineSign);
     SystemManager.TryCatch(() => EditEphemerisSignBeforeElseAfter.Checked = Settings.EphemerisSignBeforeElseAfter);
+    SystemManager.TryCatch(() => EditHideLuminarySigns.Checked = Settings.HideLuminarySigns);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewLatinFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);

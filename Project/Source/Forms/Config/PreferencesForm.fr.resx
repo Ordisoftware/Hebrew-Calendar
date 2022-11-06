@@ -409,6 +409,9 @@
   <data name="TabPageGeneration.Text" xml:space="preserve">
     <value>Génération</value>
   </data>
+  <data name="ActionSwitchToMonthViewLayoutSettings.Text" xml:space="preserve">
+    <value>Paramètres de disposition de la vue mensuelle</value>
+  </data>
   <data name="SelectUseSodHaibour.Text" xml:space="preserve">
     <value>Utiliser le Sod HaH'ibour avec le omer du soleil</value>
   </data>
@@ -479,7 +482,7 @@
     <value>Auto-générer données pour cet intervalle d'années si expiré</value>
   </data>
   <data name="LabelChangeOmerInfo.Text" xml:space="preserve">
-    <value>Le changement de omer réinitialisera l'affichage des éphémérides selon l'astre sélectionné. Pour afficher l'autre astre, cochez-le à nouveau dans l'apparence de la vue mensuelle.</value>
+    <value>Changer le omer cochera l'option des éphémérides du luminaire sélectionné</value>
   </data>
   <data name="TabPageReminder.Text" xml:space="preserve">
     <value>Rappeleur</value>
@@ -597,7 +600,7 @@
   </data>
   <data name="LabelParashahEnabledInfo.Text" xml:space="preserve">
     <value>Si désactivée alors les sections seront décochées dans la disposition de la vue mensuelle.
-Si activé, seul le nom sera revérifié.</value>
+Si activé, seul le nom sera recoché.</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 17</value>
@@ -812,47 +815,104 @@ Si activé, seul le nom sera revérifié.</value>
   <data name="TabPageMonthViewLayout.Text" xml:space="preserve">
     <value>Disposition</value>
   </data>
+  <data name="ActionSwitchToOmerSettings.Text" xml:space="preserve">
+    <value>Paramètres du omer du calendrier</value>
+  </data>
   <data name="LabelMonthViewAlignmentParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 13</value>
+    <value>106, 13</value>
   </data>
   <data name="LabelMonthViewAlignmentParashah.Text" xml:space="preserve">
     <value>Alignement parashah</value>
   </data>
   <data name="LabelMonthViewAlignmentEphemeris.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 13</value>
+    <value>122, 13</value>
   </data>
   <data name="LabelMonthViewAlignmentEphemeris.Text" xml:space="preserve">
     <value>Alignement éphémérides</value>
   </data>
+  <data name="EditMonthViewSeparatorForGregorianDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 17</value>
+  </data>
+  <data name="EditMonthViewSeparatorForGregorianDay.Text" xml:space="preserve">
+    <value>Numéro du jour grégorien</value>
+  </data>
+  <data name="EditMonthViewSeparatorForLunarDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 17</value>
+  </data>
+  <data name="EditMonthViewSeparatorForLunarDate.Text" xml:space="preserve">
+    <value>La date lunaire lorsque sur une seule ligne</value>
+  </data>
+  <data name="EditHideLuminarySigns.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 17</value>
+  </data>
+  <data name="EditHideLuminarySigns.Text" xml:space="preserve">
+    <value>Masquer tous les signes des luminaires</value>
+  </data>
   <data name="EditMonthViewSunOrMoonOneLineStarSign.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 17</value>
+    <value>279, 17</value>
   </data>
-  <data name="EditMonthViewSunOrMoonOneLineStarSign.Text" xml:space="preserve">
-    <value>Heures du soleil ou de la lune seul avec son signe si sur une seule ligne</value>
+  <data name="EditMonthViewOneLuminaryOneLineSign.Text" xml:space="preserve">
+    <value>Afficher le signe du luminaire si un seul est affiché sur une ligne</value>
   </data>
-  <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 13</value>
+  <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
   </data>
-  <data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
-    <value>Format du texte du jour de la lune pour la transcription latine</value>
+  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
+    <value>Interligne</value>
+  </data>
+  <data name="SelectMonthViewAlignmentParashah.Items" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="SelectMonthViewAlignmentParashah.Items1" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="SelectMonthViewAlignmentParashah.Items2" xml:space="preserve">
+    <value>Droite</value>
+  </data>
+  <data name="SelectMonthViewAlignmentEphemeris.Items" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="SelectMonthViewAlignmentEphemeris.Items1" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="SelectMonthViewAlignmentEphemeris.Items2" xml:space="preserve">
+    <value>Droite</value>
+  </data>
+  <data name="EditMonthViewSeparatorForSeasonChange.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="EditMonthViewSeparatorForSeasonChange.Text" xml:space="preserve">
+    <value>Changement de saison</value>
   </data>
   <data name="EditMonthViewSunOrMoonOneLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 17</value>
+    <value>406, 17</value>
   </data>
-  <data name="EditMonthViewSunOrMoonOneLine.Text" xml:space="preserve">
-    <value>Heures du soleil ou de la lune seul sur une seule ligne sinon deux</value>
+  <data name="EditMonthViewOneLuminaryOneLine.Text" xml:space="preserve">
+    <value>Utiliser une seule ligne pour les heures si un seul luminaire est affiché, sinon deux</value>
   </data>
   <data name="EditCalendarHebrewDateSingleLine.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 17</value>
+    <value>448, 17</value>
   </data>
   <data name="EditCalendarHebrewDateSingleLine.Text" xml:space="preserve">
-    <value>Date lunaire sur une seule ligne, sinon après le lever du soleil ou de la lune selon le omer</value>
+    <value>Date lunaire sur une seule ligne, sinon après le lever du luminaire sélectionné pour le omer</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Taille du séparateur</value>
   </data>
   <data name="LabelMonthViewAlignmentDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
+    <value>83, 13</value>
   </data>
   <data name="LabelMonthViewAlignmentDate.Text" xml:space="preserve">
     <value>Alignement date</value>
+  </data>
+  <data name="EditMonthViewSeparatorForEphemerisMoon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 17</value>
+  </data>
+  <data name="EditMonthViewSeparatorForEphemerisMoon.Text" xml:space="preserve">
+    <value>Ephémérides de la lune</value>
   </data>
   <data name="SelectMonthViewAlignmentDate.Items" xml:space="preserve">
     <value>Gauche</value>
@@ -864,37 +924,25 @@ Si activé, seul le nom sera revérifié.</value>
     <value>Droite</value>
   </data>
   <data name="LabelMonthViewAlignmentCelebration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 13</value>
+    <value>114, 13</value>
   </data>
   <data name="LabelMonthViewAlignmentCelebration.Text" xml:space="preserve">
     <value>Alignement célébration</value>
   </data>
-  <data name="TabPageMonthViewDisplay.Text" xml:space="preserve">
-    <value>Affichage</value>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
   </data>
-  <data name="EditMonthViewSeparatorForLunarDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 17</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Insérer un séparateur vide après</value>
   </data>
-  <data name="EditMonthViewSeparatorForLunarDate.Text" xml:space="preserve">
-    <value>La date lunaire lorsque sur une seule ligne</value>
+  <data name="SelectMonthViewAlignmentCelebration.Items" xml:space="preserve">
+    <value>Gauche</value>
   </data>
-  <data name="LabelCalendarLineSpacing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+  <data name="SelectMonthViewAlignmentCelebration.Items1" xml:space="preserve">
+    <value>Centre</value>
   </data>
-  <data name="LabelCalendarLineSpacing.Text" xml:space="preserve">
-    <value>Interligne</value>
-  </data>
-  <data name="EditMonthViewSeparatorForSeasonChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
-  </data>
-  <data name="EditMonthViewSeparatorForSeasonChange.Text" xml:space="preserve">
-    <value>Changement de saison</value>
-  </data>
-  <data name="EditMonthViewSeparatorForEphemerisMoon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 17</value>
-  </data>
-  <data name="EditMonthViewSeparatorForEphemerisMoon.Text" xml:space="preserve">
-    <value>Ephémérides de la lune</value>
+  <data name="SelectMonthViewAlignmentCelebration.Items2" xml:space="preserve">
+    <value>Droite</value>
   </data>
   <data name="EditMonthViewSeparatorForEphemerisSun.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 17</value>
@@ -908,26 +956,23 @@ Si activé, seul le nom sera revérifié.</value>
   <data name="EditMonthViewSeparatorForParashahReference.Text" xml:space="preserve">
     <value>Référence de la parashah</value>
   </data>
+  <data name="EditMonthViewSeparatorForCelebration.Text" xml:space="preserve">
+    <value>Célébration</value>
+  </data>
   <data name="EditMonthViewSeparatorForParashahName.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 17</value>
   </data>
   <data name="EditMonthViewSeparatorForParashahName.Text" xml:space="preserve">
     <value>Nom de la parashah</value>
   </data>
-  <data name="EditMonthViewSeparatorForCelebration.Text" xml:space="preserve">
-    <value>Célébration</value>
+  <data name="TabPageMonthViewDisplay.Text" xml:space="preserve">
+    <value>Affichage</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 13</value>
+  <data name="LabelMoonDayTextFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 13</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Insérer un séparateur vide après</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Taille du séparateur</value>
+  <data name="LabelMoonDayTextFormat.Text" xml:space="preserve">
+    <value>Format du texte du jour de la lune pour la transcription latine</value>
   </data>
   <data name="LabelEphemerisPrefixMoon.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 13</value>
@@ -935,23 +980,23 @@ Si activé, seul le nom sera revérifié.</value>
   <data name="LabelEphemerisPrefixMoon.Text" xml:space="preserve">
     <value>Signe ou préfixe de la lune</value>
   </data>
-  <data name="LabelEphemerisPrefixSun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
-  </data>
-  <data name="LabelEphemerisPrefixSun.Text" xml:space="preserve">
-    <value>Signe ou préfixe du soleil</value>
-  </data>
   <data name="LabelMonthViewFontNameLatin.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
   </data>
   <data name="LabelMonthViewFontNameLatin.Text" xml:space="preserve">
     <value>Nom de la police latine</value>
   </data>
-  <data name="EditCalendarHebrewDateSingleLineItalic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 17</value>
+  <data name="LabelMonthViewHebrewFontSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
   </data>
-  <data name="EditCalendarHebrewDateSingleLineItalic.Text" xml:space="preserve">
-    <value>Date lunaire en italique lorsque sur une seule ligne</value>
+  <data name="LabelMonthViewHebrewFontSize.Text" xml:space="preserve">
+    <value>Taille lettres hébreux</value>
+  </data>
+  <data name="LabelEphemerisPrefixSun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 13</value>
+  </data>
+  <data name="LabelEphemerisPrefixSun.Text" xml:space="preserve">
+    <value>Signe ou préfixe du soleil</value>
   </data>
   <data name="LabelMonthViewFontSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 13</value>
@@ -959,11 +1004,17 @@ Si activé, seul le nom sera revérifié.</value>
   <data name="LabelMonthViewFontSize.Text" xml:space="preserve">
     <value>Taille lettres latines</value>
   </data>
-  <data name="LabelMonthViewHebrewFontSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
+  <data name="EditEphemerisSignBeforeElseAfter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 17</value>
   </data>
-  <data name="LabelMonthViewHebrewFontSize.Text" xml:space="preserve">
-    <value>Taille lettres hébreux</value>
+  <data name="EditEphemerisSignBeforeElseAfter.Text" xml:space="preserve">
+    <value>Avant les heures sinon après</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLineItalic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>262, 17</value>
+  </data>
+  <data name="EditCalendarHebrewDateSingleLineItalic.Text" xml:space="preserve">
+    <value>Date lunaire en italique lorsque sur une seule ligne</value>
   </data>
   <data name="LabelMonthViewFontNameHebrew.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 13</value>
@@ -1112,40 +1163,17 @@ Si activé, seul le nom sera revérifié.</value>
   <data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
     <value>Tester</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Préférences</value>
   </data>
-  <data name="SelectMonthViewAlignmentCelebration.Items" xml:space="preserve">
-    <value>Gauche</value>
+  <data name="ActionSwitchToMonthViewLayoutSettings2.Text" xml:space="preserve">
+    <value>Paramètres de disposition de la vue mensuelle</value>
   </data>
-  <data name="SelectMonthViewAlignmentEphemeris.Items" xml:space="preserve">
-    <value>Gauche</value>
-  </data>
-  <data name="SelectMonthViewAlignmentParashah.Items" xml:space="preserve">
-    <value>Gauche</value>
-  </data>
-  <data name="SelectMonthViewAlignmentCelebration.Items1" xml:space="preserve">
-    <value>Centre</value>
-  </data>
-  <data name="SelectMonthViewAlignmentEphemeris.Items1" xml:space="preserve">
-    <value>Centre</value>
-  </data>
-  <data name="SelectMonthViewAlignmentParashah.Items1" xml:space="preserve">
-    <value>Centre</value>
-  </data>
-  <data name="SelectMonthViewAlignmentEphemeris.Items2" xml:space="preserve">
-    <value>Droite</value>
-  </data>
-  <data name="SelectMonthViewAlignmentParashah.Items2" xml:space="preserve">
-    <value>Droite</value>
-  </data>
-  <data name="SelectMonthViewAlignmentCelebration.Items2" xml:space="preserve">
-    <value>Droite</value>
-  </data>
-  <data name="EditEphemerisSignBeforeElseAfter.Text" xml:space="preserve">
-    <value>Avant les heures sinon après</value>
-  </data>
-  <data name="EditMonthViewSeparatorForGregorianDay.Text" xml:space="preserve">
-    <value>Numéro du jour grégorien</value>
+  <data name="ActionSwitchToParashahSettings.Text" xml:space="preserve">
+    <value>Paramètres de la parashah</value>
   </data>
 </root>

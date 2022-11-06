@@ -77,7 +77,8 @@ partial class PreferencesForm
   static public readonly (int, int, int, int) RemindShabatHoursBeforeInterval = (1, 24, 6, 1);
   static public readonly (int, int, int, int) SaveImageCountWarningInterval = (25, 300, 50, 25);
   static public readonly (int, int, int, int) TextReportFontSizeInterval = (7, 30, 10, 1);
-  static public readonly (int, int, int, int) VisualMonthFontSizeInterval = (7, 30, 9, 1);
+  static public readonly (int, int, int, int) VisualMonthLatinFontSizeInterval = (7, 30, 9, 1);
+  static public readonly (int, int, int, int) VisualMonthHebrewFontSizeInterval = (7, 30, 11, 1);
 
   // Available keys for shortcuts
   static private readonly List<Keys> AvailableHotKeyKeys;
