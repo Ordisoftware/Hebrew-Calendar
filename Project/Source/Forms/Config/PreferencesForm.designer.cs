@@ -150,6 +150,7 @@
       this.EditNavigateTopColor = new System.Windows.Forms.Panel();
       this.EditNavigateBottomColor = new System.Windows.Forms.Panel();
       this.TabPageGeneration = new System.Windows.Forms.TabPage();
+      this.ActionSwitchToMonthViewLayoutSettings = new System.Windows.Forms.LinkLabel();
       this.SelectUseSodHaibour = new System.Windows.Forms.RadioButton();
       this.SelectOmerSun = new System.Windows.Forms.RadioButton();
       this.SelectOmerMoon = new System.Windows.Forms.RadioButton();
@@ -174,7 +175,7 @@
       this.EditAskRegenerateIfIntervalGreater = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.LabelChangeOmerInfo = new System.Windows.Forms.Label();
+      this.LabelChangeOmerInfo = new System.Windows.Forms.LinkLabel();
       this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
       this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
       this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
@@ -223,6 +224,7 @@
       this.EditRemindCelebrationsDaysBefore = new System.Windows.Forms.NumericUpDown();
       this.LabelRemindCelebrationDaysBefore = new System.Windows.Forms.Label();
       this.TabPageParashah = new System.Windows.Forms.TabPage();
+      this.ActionSwitchToMonthViewLayoutSettings2 = new System.Windows.Forms.LinkLabel();
       this.LabelParashahEnabledInfo = new System.Windows.Forms.Label();
       this.EditMainFormTitleBarShowWeeklyParashah = new System.Windows.Forms.CheckBox();
       this.EditReminderShabatShowParashah = new System.Windows.Forms.CheckBox();
@@ -285,6 +287,8 @@
       this.SelectCalendarDoubleClickActionSelect = new System.Windows.Forms.RadioButton();
       this.LabelCalendarDoubleClickAction = new System.Windows.Forms.Label();
       this.TabPageMonthViewLayout = new System.Windows.Forms.TabPage();
+      this.ActionSwitchToParashahSettings = new System.Windows.Forms.LinkLabel();
+      this.ActionSwitchToOmerSettings = new System.Windows.Forms.LinkLabel();
       this.ActionLayoutResetSections = new System.Windows.Forms.Button();
       this.ActionSetAllAlignmentsRight = new System.Windows.Forms.Button();
       this.ActionSetAllAlignmentsCenter = new System.Windows.Forms.Button();
@@ -295,15 +299,17 @@
       this.ActionSeparatorsCheckAll = new System.Windows.Forms.Button();
       this.SelectLayoutSections = new System.Windows.Forms.CheckedListBox();
       this.LabelMonthViewAlignmentEphemeris = new System.Windows.Forms.Label();
+      this.EditMonthViewSeparatorForGregorianDay = new System.Windows.Forms.CheckBox();
       this.EditMonthViewSeparatorForLunarDate = new System.Windows.Forms.CheckBox();
       this.ActionLayoutSectionDown = new System.Windows.Forms.Button();
-      this.EditMonthViewSunOrMoonOneLineStarSign = new System.Windows.Forms.CheckBox();
+      this.EditHideLuminarySigns = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewOneLuminaryOneLineSign = new System.Windows.Forms.CheckBox();
       this.LabelCalendarLineSpacing = new System.Windows.Forms.Label();
       this.SelectMonthViewAlignmentParashah = new System.Windows.Forms.ComboBox();
       this.EditMonthViewSeparatorSize = new System.Windows.Forms.NumericUpDown();
       this.SelectMonthViewAlignmentEphemeris = new System.Windows.Forms.ComboBox();
       this.EditMonthViewSeparatorForSeasonChange = new System.Windows.Forms.CheckBox();
-      this.EditMonthViewSunOrMoonOneLine = new System.Windows.Forms.CheckBox();
+      this.EditMonthViewOneLuminaryOneLine = new System.Windows.Forms.CheckBox();
       this.LabelMonthViewSeparatorSizeInfo = new System.Windows.Forms.Label();
       this.EditCalendarHebrewDateSingleLine = new System.Windows.Forms.CheckBox();
       this.label10 = new System.Windows.Forms.Label();
@@ -408,7 +414,6 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditMonthViewSeparatorForGregorianDay = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControlMain.SuspendLayout();
@@ -504,6 +509,7 @@
       this.ActionResetSettings.LinkColor = System.Drawing.Color.Navy;
       this.ActionResetSettings.Name = "ActionResetSettings";
       this.ActionResetSettings.TabStop = true;
+      this.ActionResetSettings.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionResetSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionResetSettings_LinkClicked);
       // 
       // OpenExeFileDialog
@@ -1351,6 +1357,7 @@
       this.ActionUseBlackAndWhiteColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseBlackAndWhiteColors.Name = "ActionUseBlackAndWhiteColors";
       this.ActionUseBlackAndWhiteColors.TabStop = true;
+      this.ActionUseBlackAndWhiteColors.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionUseBlackAndWhiteColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseBlackAndWhiteColors_LinkClicked);
       // 
       // LabelTopColor
@@ -1366,6 +1373,7 @@
       this.ActionUseDefaultColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseDefaultColors.Name = "ActionUseDefaultColors";
       this.ActionUseDefaultColors.TabStop = true;
+      this.ActionUseDefaultColors.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionUseDefaultColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseDefaultColors_LinkClicked);
       // 
       // LabelMiddleColor
@@ -1398,6 +1406,7 @@
       this.ActionUseSystemColors.LinkColor = System.Drawing.Color.Navy;
       this.ActionUseSystemColors.Name = "ActionUseSystemColors";
       this.ActionUseSystemColors.TabStop = true;
+      this.ActionUseSystemColors.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionUseSystemColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUseSystemColors_LinkClicked);
       // 
       // EditNavigateMiddleColor
@@ -1428,6 +1437,7 @@
       // 
       this.TabPageGeneration.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageGeneration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageGeneration.Controls.Add(this.ActionSwitchToMonthViewLayoutSettings);
       this.TabPageGeneration.Controls.Add(this.SelectUseSodHaibour);
       this.TabPageGeneration.Controls.Add(this.SelectOmerSun);
       this.TabPageGeneration.Controls.Add(this.SelectOmerMoon);
@@ -1459,6 +1469,17 @@
       this.TabPageGeneration.Controls.Add(this.EditAutoGenerateYearsInterval);
       resources.ApplyResources(this.TabPageGeneration, "TabPageGeneration");
       this.TabPageGeneration.Name = "TabPageGeneration";
+      // 
+      // ActionSwitchToMonthViewLayoutSettings
+      // 
+      this.ActionSwitchToMonthViewLayoutSettings.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionSwitchToMonthViewLayoutSettings, "ActionSwitchToMonthViewLayoutSettings");
+      this.ActionSwitchToMonthViewLayoutSettings.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionSwitchToMonthViewLayoutSettings.LinkColor = System.Drawing.Color.Navy;
+      this.ActionSwitchToMonthViewLayoutSettings.Name = "ActionSwitchToMonthViewLayoutSettings";
+      this.ActionSwitchToMonthViewLayoutSettings.TabStop = true;
+      this.ActionSwitchToMonthViewLayoutSettings.VisitedLinkColor = System.Drawing.Color.Navy;
+      this.ActionSwitchToMonthViewLayoutSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionSwitchToMonthViewLayout_LinkClicked);
       // 
       // SelectUseSodHaibour
       // 
@@ -1505,6 +1526,7 @@
       this.ActionUsePersonalShabat.LinkColor = System.Drawing.Color.Navy;
       this.ActionUsePersonalShabat.Name = "ActionUsePersonalShabat";
       this.ActionUsePersonalShabat.TabStop = true;
+      this.ActionUsePersonalShabat.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionUsePersonalShabat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionUsePersonalShabat_LinkClicked);
       // 
       // ActionPersonalShabatHelp
@@ -1588,6 +1610,7 @@
       this.ActionGetGPS.LinkColor = System.Drawing.Color.Navy;
       this.ActionGetGPS.Name = "ActionGetGPS";
       this.ActionGetGPS.TabStop = true;
+      this.ActionGetGPS.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionGetGPS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionGetGPS_LinkClicked);
       // 
       // SelectAutoGenerateYearsInterval
@@ -1643,10 +1666,13 @@
       // 
       // LabelChangeOmerInfo
       // 
-      this.LabelChangeOmerInfo.BackColor = System.Drawing.Color.Transparent;
+      this.LabelChangeOmerInfo.ActiveLinkColor = System.Drawing.Color.Navy;
       resources.ApplyResources(this.LabelChangeOmerInfo, "LabelChangeOmerInfo");
-      this.LabelChangeOmerInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelChangeOmerInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+      this.LabelChangeOmerInfo.LinkColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelChangeOmerInfo.Name = "LabelChangeOmerInfo";
+      this.LabelChangeOmerInfo.TabStop = true;
+      this.LabelChangeOmerInfo.VisitedLinkColor = System.Drawing.SystemColors.ControlDarkDark;
       // 
       // EditGPSLatitude
       // 
@@ -1663,6 +1689,7 @@
       this.EditTimeZone.Name = "EditTimeZone";
       this.EditTimeZone.ReadOnly = true;
       this.EditTimeZone.SpellCheckAllowed = false;
+      this.EditTimeZone.TabStop = false;
       // 
       // EditGPSLongitude
       // 
@@ -1735,6 +1762,7 @@
       this.LabelSelectReminderSound.LinkColor = System.Drawing.Color.Navy;
       this.LabelSelectReminderSound.Name = "LabelSelectReminderSound";
       this.LabelSelectReminderSound.TabStop = true;
+      this.LabelSelectReminderSound.VisitedLinkColor = System.Drawing.Color.Navy;
       this.LabelSelectReminderSound.Click += new System.EventHandler(this.LabelSelectReminderSound_Click);
       // 
       // LabelAutoLockSessionTimeOutIntervalInfo
@@ -1900,7 +1928,6 @@
       resources.ApplyResources(this.ActionRemindEventsBeforeSelectNone, "ActionRemindEventsBeforeSelectNone");
       this.ActionRemindEventsBeforeSelectNone.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionRemindEventsBeforeSelectNone.Name = "ActionRemindEventsBeforeSelectNone";
-      this.ActionRemindEventsBeforeSelectNone.TabStop = false;
       this.ActionRemindEventsBeforeSelectNone.UseVisualStyleBackColor = true;
       this.ActionRemindEventsBeforeSelectNone.Click += new System.EventHandler(this.ActionRemindEventsBeforeSelectNone_Click);
       // 
@@ -1910,7 +1937,6 @@
       resources.ApplyResources(this.ActionRemindEventsBeforeReset, "ActionRemindEventsBeforeReset");
       this.ActionRemindEventsBeforeReset.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionRemindEventsBeforeReset.Name = "ActionRemindEventsBeforeReset";
-      this.ActionRemindEventsBeforeReset.TabStop = false;
       this.ActionRemindEventsBeforeReset.UseVisualStyleBackColor = true;
       this.ActionRemindEventsBeforeReset.Click += new System.EventHandler(this.ActionRemindEventsBeforeReset_Click);
       // 
@@ -1920,7 +1946,6 @@
       resources.ApplyResources(this.ActionRemindEventsBeforeSelectAll, "ActionRemindEventsBeforeSelectAll");
       this.ActionRemindEventsBeforeSelectAll.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionRemindEventsBeforeSelectAll.Name = "ActionRemindEventsBeforeSelectAll";
-      this.ActionRemindEventsBeforeSelectAll.TabStop = false;
       this.ActionRemindEventsBeforeSelectAll.UseVisualStyleBackColor = true;
       this.ActionRemindEventsBeforeSelectAll.Click += new System.EventHandler(this.ActionRemindEventsBeforeSelectAll_Click);
       // 
@@ -1930,7 +1955,6 @@
       resources.ApplyResources(this.ActionEventsDaySelectNone, "ActionEventsDaySelectNone");
       this.ActionEventsDaySelectNone.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionEventsDaySelectNone.Name = "ActionEventsDaySelectNone";
-      this.ActionEventsDaySelectNone.TabStop = false;
       this.ActionEventsDaySelectNone.UseVisualStyleBackColor = true;
       this.ActionEventsDaySelectNone.Click += new System.EventHandler(this.ActionEventsDaySelectNone_Click);
       // 
@@ -1940,7 +1964,6 @@
       resources.ApplyResources(this.ActionEventsDayReset, "ActionEventsDayReset");
       this.ActionEventsDayReset.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionEventsDayReset.Name = "ActionEventsDayReset";
-      this.ActionEventsDayReset.TabStop = false;
       this.ActionEventsDayReset.UseVisualStyleBackColor = true;
       this.ActionEventsDayReset.Click += new System.EventHandler(this.ActionEventsDayReset_Click);
       // 
@@ -1950,7 +1973,6 @@
       resources.ApplyResources(this.ActionEventsDaySelectAll, "ActionEventsDaySelectAll");
       this.ActionEventsDaySelectAll.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionEventsDaySelectAll.Name = "ActionEventsDaySelectAll";
-      this.ActionEventsDaySelectAll.TabStop = false;
       this.ActionEventsDaySelectAll.UseVisualStyleBackColor = true;
       this.ActionEventsDaySelectAll.Click += new System.EventHandler(this.ActionEventsDaySelectAll_Click);
       // 
@@ -2038,6 +2060,7 @@
       // 
       this.TabPageParashah.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageParashah.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPageParashah.Controls.Add(this.ActionSwitchToMonthViewLayoutSettings2);
       this.TabPageParashah.Controls.Add(this.LabelParashahEnabledInfo);
       this.TabPageParashah.Controls.Add(this.EditMainFormTitleBarShowWeeklyParashah);
       this.TabPageParashah.Controls.Add(this.EditReminderShabatShowParashah);
@@ -2047,6 +2070,17 @@
       this.TabPageParashah.Controls.Add(this.EditWeeklyParashahShowAtStartup);
       resources.ApplyResources(this.TabPageParashah, "TabPageParashah");
       this.TabPageParashah.Name = "TabPageParashah";
+      // 
+      // ActionSwitchToMonthViewLayoutSettings2
+      // 
+      this.ActionSwitchToMonthViewLayoutSettings2.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionSwitchToMonthViewLayoutSettings2, "ActionSwitchToMonthViewLayoutSettings2");
+      this.ActionSwitchToMonthViewLayoutSettings2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionSwitchToMonthViewLayoutSettings2.LinkColor = System.Drawing.Color.Navy;
+      this.ActionSwitchToMonthViewLayoutSettings2.Name = "ActionSwitchToMonthViewLayoutSettings2";
+      this.ActionSwitchToMonthViewLayoutSettings2.TabStop = true;
+      this.ActionSwitchToMonthViewLayoutSettings2.VisitedLinkColor = System.Drawing.Color.Navy;
+      this.ActionSwitchToMonthViewLayoutSettings2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionSwitchToMonthViewLayout_LinkClicked);
       // 
       // LabelParashahEnabledInfo
       // 
@@ -2244,6 +2278,7 @@
       this.ActionMonthViewThemeDark.LinkColor = System.Drawing.Color.Navy;
       this.ActionMonthViewThemeDark.Name = "ActionMonthViewThemeDark";
       this.ActionMonthViewThemeDark.TabStop = true;
+      this.ActionMonthViewThemeDark.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionMonthViewThemeDark.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionMonthViewThemeDark_LinkClicked);
       // 
       // LabelColorText
@@ -2259,6 +2294,7 @@
       this.ActionMonthViewThemeLight.LinkColor = System.Drawing.Color.Navy;
       this.ActionMonthViewThemeLight.Name = "ActionMonthViewThemeLight";
       this.ActionMonthViewThemeLight.TabStop = true;
+      this.ActionMonthViewThemeLight.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionMonthViewThemeLight.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionMonthViewThemeLight_LinkClicked);
       // 
       // label3
@@ -2510,6 +2546,8 @@
       // 
       // TabPageMonthViewLayout
       // 
+      this.TabPageMonthViewLayout.Controls.Add(this.ActionSwitchToParashahSettings);
+      this.TabPageMonthViewLayout.Controls.Add(this.ActionSwitchToOmerSettings);
       this.TabPageMonthViewLayout.Controls.Add(this.ActionLayoutResetSections);
       this.TabPageMonthViewLayout.Controls.Add(this.ActionSetAllAlignmentsRight);
       this.TabPageMonthViewLayout.Controls.Add(this.ActionSetAllAlignmentsCenter);
@@ -2523,13 +2561,14 @@
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForGregorianDay);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForLunarDate);
       this.TabPageMonthViewLayout.Controls.Add(this.ActionLayoutSectionDown);
-      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSunOrMoonOneLineStarSign);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditHideLuminarySigns);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewOneLuminaryOneLineSign);
       this.TabPageMonthViewLayout.Controls.Add(this.LabelCalendarLineSpacing);
       this.TabPageMonthViewLayout.Controls.Add(this.SelectMonthViewAlignmentParashah);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorSize);
       this.TabPageMonthViewLayout.Controls.Add(this.SelectMonthViewAlignmentEphemeris);
       this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSeparatorForSeasonChange);
-      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewSunOrMoonOneLine);
+      this.TabPageMonthViewLayout.Controls.Add(this.EditMonthViewOneLuminaryOneLine);
       this.TabPageMonthViewLayout.Controls.Add(this.LabelMonthViewSeparatorSizeInfo);
       this.TabPageMonthViewLayout.Controls.Add(this.EditCalendarHebrewDateSingleLine);
       this.TabPageMonthViewLayout.Controls.Add(this.label10);
@@ -2549,6 +2588,28 @@
       this.TabPageMonthViewLayout.Name = "TabPageMonthViewLayout";
       this.TabPageMonthViewLayout.UseVisualStyleBackColor = true;
       // 
+      // ActionSwitchToParashahSettings
+      // 
+      this.ActionSwitchToParashahSettings.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionSwitchToParashahSettings, "ActionSwitchToParashahSettings");
+      this.ActionSwitchToParashahSettings.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionSwitchToParashahSettings.LinkColor = System.Drawing.Color.Navy;
+      this.ActionSwitchToParashahSettings.Name = "ActionSwitchToParashahSettings";
+      this.ActionSwitchToParashahSettings.TabStop = true;
+      this.ActionSwitchToParashahSettings.VisitedLinkColor = System.Drawing.Color.Navy;
+      this.ActionSwitchToParashahSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionSwitchToParashahSettings_LinkClicked);
+      // 
+      // ActionSwitchToOmerSettings
+      // 
+      this.ActionSwitchToOmerSettings.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionSwitchToOmerSettings, "ActionSwitchToOmerSettings");
+      this.ActionSwitchToOmerSettings.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionSwitchToOmerSettings.LinkColor = System.Drawing.Color.Navy;
+      this.ActionSwitchToOmerSettings.Name = "ActionSwitchToOmerSettings";
+      this.ActionSwitchToOmerSettings.TabStop = true;
+      this.ActionSwitchToOmerSettings.VisitedLinkColor = System.Drawing.Color.Navy;
+      this.ActionSwitchToOmerSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionSwitchToOmerSettings_LinkClicked);
+      // 
       // ActionLayoutResetSections
       // 
       this.ActionLayoutResetSections.FlatAppearance.BorderSize = 0;
@@ -2563,7 +2624,6 @@
       resources.ApplyResources(this.ActionSetAllAlignmentsRight, "ActionSetAllAlignmentsRight");
       this.ActionSetAllAlignmentsRight.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionSetAllAlignmentsRight.Name = "ActionSetAllAlignmentsRight";
-      this.ActionSetAllAlignmentsRight.TabStop = false;
       this.ActionSetAllAlignmentsRight.UseVisualStyleBackColor = true;
       this.ActionSetAllAlignmentsRight.Click += new System.EventHandler(this.ActionSetAllAlignmentsRight_Click);
       // 
@@ -2573,7 +2633,6 @@
       resources.ApplyResources(this.ActionSetAllAlignmentsCenter, "ActionSetAllAlignmentsCenter");
       this.ActionSetAllAlignmentsCenter.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionSetAllAlignmentsCenter.Name = "ActionSetAllAlignmentsCenter";
-      this.ActionSetAllAlignmentsCenter.TabStop = false;
       this.ActionSetAllAlignmentsCenter.UseVisualStyleBackColor = true;
       this.ActionSetAllAlignmentsCenter.Click += new System.EventHandler(this.ActionSetAllAlignmentsCenter_Click);
       // 
@@ -2583,7 +2642,6 @@
       resources.ApplyResources(this.ActionSeparatorsUncheckAll, "ActionSeparatorsUncheckAll");
       this.ActionSeparatorsUncheckAll.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionSeparatorsUncheckAll.Name = "ActionSeparatorsUncheckAll";
-      this.ActionSeparatorsUncheckAll.TabStop = false;
       this.ActionSeparatorsUncheckAll.UseVisualStyleBackColor = true;
       this.ActionSeparatorsUncheckAll.Click += new System.EventHandler(this.ActionSeparatorsUncheckAll_Click);
       // 
@@ -2606,7 +2664,6 @@
       resources.ApplyResources(this.ActionSetAllAlignmentsLeft, "ActionSetAllAlignmentsLeft");
       this.ActionSetAllAlignmentsLeft.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionSetAllAlignmentsLeft.Name = "ActionSetAllAlignmentsLeft";
-      this.ActionSetAllAlignmentsLeft.TabStop = false;
       this.ActionSetAllAlignmentsLeft.UseVisualStyleBackColor = true;
       this.ActionSetAllAlignmentsLeft.Click += new System.EventHandler(this.ActionSetAllAlignmentsLeft_Click);
       // 
@@ -2616,7 +2673,6 @@
       resources.ApplyResources(this.ActionSeparatorsCheckAll, "ActionSeparatorsCheckAll");
       this.ActionSeparatorsCheckAll.ForeColor = System.Drawing.SystemColors.ControlText;
       this.ActionSeparatorsCheckAll.Name = "ActionSeparatorsCheckAll";
-      this.ActionSeparatorsCheckAll.TabStop = false;
       this.ActionSeparatorsCheckAll.UseVisualStyleBackColor = true;
       this.ActionSeparatorsCheckAll.Click += new System.EventHandler(this.ActionSeparatorsCheckAll_Click);
       // 
@@ -2625,12 +2681,19 @@
       this.SelectLayoutSections.FormattingEnabled = true;
       resources.ApplyResources(this.SelectLayoutSections, "SelectLayoutSections");
       this.SelectLayoutSections.Name = "SelectLayoutSections";
-      this.SelectLayoutSections.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ListBoxLayout_ItemCheck);
+      this.SelectLayoutSections.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.SelectLayoutSections_ItemCheck);
       // 
       // LabelMonthViewAlignmentEphemeris
       // 
       resources.ApplyResources(this.LabelMonthViewAlignmentEphemeris, "LabelMonthViewAlignmentEphemeris");
       this.LabelMonthViewAlignmentEphemeris.Name = "LabelMonthViewAlignmentEphemeris";
+      // 
+      // EditMonthViewSeparatorForGregorianDay
+      // 
+      resources.ApplyResources(this.EditMonthViewSeparatorForGregorianDay, "EditMonthViewSeparatorForGregorianDay");
+      this.EditMonthViewSeparatorForGregorianDay.Name = "EditMonthViewSeparatorForGregorianDay";
+      this.EditMonthViewSeparatorForGregorianDay.UseVisualStyleBackColor = true;
+      this.EditMonthViewSeparatorForGregorianDay.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // EditMonthViewSeparatorForLunarDate
       // 
@@ -2647,12 +2710,19 @@
       this.ActionLayoutSectionDown.UseVisualStyleBackColor = true;
       this.ActionLayoutSectionDown.Click += new System.EventHandler(this.ActionLayoutSectionDown_Click);
       // 
-      // EditMonthViewSunOrMoonOneLineStarSign
+      // EditHideLuminarySigns
       // 
-      resources.ApplyResources(this.EditMonthViewSunOrMoonOneLineStarSign, "EditMonthViewSunOrMoonOneLineStarSign");
-      this.EditMonthViewSunOrMoonOneLineStarSign.Name = "EditMonthViewSunOrMoonOneLineStarSign";
-      this.EditMonthViewSunOrMoonOneLineStarSign.UseVisualStyleBackColor = true;
-      this.EditMonthViewSunOrMoonOneLineStarSign.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
+      resources.ApplyResources(this.EditHideLuminarySigns, "EditHideLuminarySigns");
+      this.EditHideLuminarySigns.Name = "EditHideLuminarySigns";
+      this.EditHideLuminarySigns.UseVisualStyleBackColor = true;
+      this.EditHideLuminarySigns.CheckedChanged += new System.EventHandler(this.UpdateMonthViewCheckBoxes);
+      // 
+      // EditMonthViewOneLuminaryOneLineSign
+      // 
+      resources.ApplyResources(this.EditMonthViewOneLuminaryOneLineSign, "EditMonthViewOneLuminaryOneLineSign");
+      this.EditMonthViewOneLuminaryOneLineSign.Name = "EditMonthViewOneLuminaryOneLineSign";
+      this.EditMonthViewOneLuminaryOneLineSign.UseVisualStyleBackColor = true;
+      this.EditMonthViewOneLuminaryOneLineSign.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // LabelCalendarLineSpacing
       // 
@@ -2697,12 +2767,12 @@
       this.EditMonthViewSeparatorForSeasonChange.UseVisualStyleBackColor = true;
       this.EditMonthViewSeparatorForSeasonChange.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
-      // EditMonthViewSunOrMoonOneLine
+      // EditMonthViewOneLuminaryOneLine
       // 
-      resources.ApplyResources(this.EditMonthViewSunOrMoonOneLine, "EditMonthViewSunOrMoonOneLine");
-      this.EditMonthViewSunOrMoonOneLine.Name = "EditMonthViewSunOrMoonOneLine";
-      this.EditMonthViewSunOrMoonOneLine.UseVisualStyleBackColor = true;
-      this.EditMonthViewSunOrMoonOneLine.CheckedChanged += new System.EventHandler(this.EditMonthViewSunOrMoonOneLine_CheckedChanged);
+      resources.ApplyResources(this.EditMonthViewOneLuminaryOneLine, "EditMonthViewOneLuminaryOneLine");
+      this.EditMonthViewOneLuminaryOneLine.Name = "EditMonthViewOneLuminaryOneLine";
+      this.EditMonthViewOneLuminaryOneLine.UseVisualStyleBackColor = true;
+      this.EditMonthViewOneLuminaryOneLine.CheckedChanged += new System.EventHandler(this.UpdateMonthViewCheckBoxes);
       // 
       // LabelMonthViewSeparatorSizeInfo
       // 
@@ -3509,6 +3579,7 @@
       this.ActionWeatherOnlineTest.LinkColor = System.Drawing.Color.Navy;
       this.ActionWeatherOnlineTest.Name = "ActionWeatherOnlineTest";
       this.ActionWeatherOnlineTest.TabStop = true;
+      this.ActionWeatherOnlineTest.VisitedLinkColor = System.Drawing.Color.Navy;
       this.ActionWeatherOnlineTest.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionWeatherOnlineTest_LinkClicked);
       // 
       // SelectWeatherOnlineWeatherDotCom
@@ -3551,13 +3622,6 @@
       this.EditWeatherAppPath.Name = "EditWeatherAppPath";
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
-      // 
-      // EditMonthViewSeparatorForGregorianDay
-      // 
-      resources.ApplyResources(this.EditMonthViewSeparatorForGregorianDay, "EditMonthViewSeparatorForGregorianDay");
-      this.EditMonthViewSeparatorForGregorianDay.Name = "EditMonthViewSeparatorForGregorianDay";
-      this.EditMonthViewSeparatorForGregorianDay.UseVisualStyleBackColor = true;
-      this.EditMonthViewSeparatorForGregorianDay.CheckedChanged += new System.EventHandler(this.SetMustRefreshEnabled);
       // 
       // PreferencesForm
       // 
@@ -4007,7 +4071,6 @@
     private CheckBox EditMonthViewSeparatorForEphemerisMoon;
     private Button ActionSeparatorsUncheckAll;
     private Button ActionSeparatorsCheckAll;
-    private Label LabelChangeOmerInfo;
     private Label LabelParashahEnabledInfo;
     private Button ActionResetEphemerisPrefixSun;
     private Label LabelEphemerisPrefixSun;
@@ -4015,8 +4078,8 @@
     private Button ActionResetEphemerisPrefixMoon;
     private Label LabelEphemerisPrefixMoon;
     private TextBoxEx EditEphemerisPrefixMoon;
-    private CheckBox EditMonthViewSunOrMoonOneLine;
-    private CheckBox EditMonthViewSunOrMoonOneLineStarSign;
+    private CheckBox EditMonthViewOneLuminaryOneLine;
+    private CheckBox EditMonthViewOneLuminaryOneLineSign;
     private TabPage TabPageMonthViewLayout;
     private Label LabelMonthViewAlignmentCelebration;
     private ComboBox SelectMonthViewAlignmentCelebration;
@@ -4024,11 +4087,17 @@
     private Label LabelMonthViewAlignmentEphemeris;
     private ComboBox SelectMonthViewAlignmentParashah;
     private ComboBox SelectMonthViewAlignmentEphemeris;
-        private Button ActionLayoutResetSections;
-        private Button ActionSetAllAlignmentsRight;
-        private Button ActionSetAllAlignmentsCenter;
-        private Button ActionSetAllAlignmentsLeft;
-        private CheckBox EditEphemerisSignBeforeElseAfter;
-        private CheckBox EditMonthViewSeparatorForGregorianDay;
-    }
+    private Button ActionLayoutResetSections;
+    private Button ActionSetAllAlignmentsRight;
+    private Button ActionSetAllAlignmentsCenter;
+    private Button ActionSetAllAlignmentsLeft;
+    private CheckBox EditEphemerisSignBeforeElseAfter;
+    private CheckBox EditMonthViewSeparatorForGregorianDay;
+    private LinkLabel LabelChangeOmerInfo;
+    private LinkLabel ActionSwitchToMonthViewLayoutSettings;
+    private LinkLabel ActionSwitchToOmerSettings;
+    private CheckBox EditHideLuminarySigns;
+    private LinkLabel ActionSwitchToMonthViewLayoutSettings2;
+    private LinkLabel ActionSwitchToParashahSettings;
+  }
 }

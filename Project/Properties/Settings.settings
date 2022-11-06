@@ -824,10 +824,10 @@
     <Setting Name="EphemerisSignMoon" Type="System.String" Scope="User">
       <Value Profile="(Default)">☽</Value>
     </Setting>
-    <Setting Name="MonthViewSunOrMoonOneLine" Type="System.Boolean" Scope="User">
+    <Setting Name="MonthViewOneLuminaryOneLine" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="MonthViewSunOrMoonOneLineStarSign" Type="System.Boolean" Scope="User">
+    <Setting Name="MonthViewOneLuminaryOneLineSign" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="MonthViewAlignmentDate" Type="System.Drawing.StringAlignment" Scope="User">
@@ -846,6 +846,9 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="MonthViewSeparatorForGregorianDay" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="HideLuminarySigns" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>

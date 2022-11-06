@@ -381,15 +381,10 @@ partial class PreferencesForm : Form
   {
     if ( !IsReady ) return;
     if ( !SelectOmerMoon.Checked ) return;
-    var indexSun = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    var indexMoon = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    if ( indexSun == -1 || indexMoon == -1 ) return;
-    bool isSun = SelectLayoutSections.GetItemChecked(indexSun);
-    bool isMoon = SelectLayoutSections.GetItemChecked(indexMoon);
-    if ( isSun && !isMoon )
+    if ( SunChecked && !MoonChecked )
     {
-      SelectLayoutSections.SetItemChecked(indexSun, false);
-      SelectLayoutSections.SetItemChecked(indexMoon, true);
+      SunChecked = false;
+      MoonChecked = true;
     }
   }
 
@@ -397,15 +392,10 @@ partial class PreferencesForm : Form
   {
     if ( !IsReady ) return;
     if ( !SelectOmerSun.Checked ) return;
-    var indexSun = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    var indexMoon = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    if ( indexSun == -1 || indexMoon == -1 ) return;
-    bool isSun = SelectLayoutSections.GetItemChecked(indexSun);
-    bool isMoon = SelectLayoutSections.GetItemChecked(indexMoon);
-    if ( !isSun && isMoon )
+    if ( !SunChecked && MoonChecked )
     {
-      SelectLayoutSections.SetItemChecked(indexSun, true);
-      SelectLayoutSections.SetItemChecked(indexMoon, false);
+      SunChecked = true;
+      MoonChecked = false;
     }
   }
 
@@ -413,16 +403,17 @@ partial class PreferencesForm : Form
   {
     if ( !IsReady ) return;
     if ( !SelectUseSodHaibour.Checked ) return;
-    var indexSun = SelectLayoutSections.Items.IndexOf(LayoutSectionSun);
-    var indexMoon = SelectLayoutSections.Items.IndexOf(LayoutSectionMoon);
-    if ( indexSun == -1 || indexMoon == -1 ) return;
-    bool isSun = SelectLayoutSections.GetItemChecked(indexSun);
-    bool isMoon = SelectLayoutSections.GetItemChecked(indexMoon);
-    if ( !isSun && isMoon )
+    if ( !SunChecked && MoonChecked )
     {
-      SelectLayoutSections.SetItemChecked(indexSun, true);
-      SelectLayoutSections.SetItemChecked(indexMoon, false);
+      SunChecked = true;
+      MoonChecked = false;
     }
+  }
+
+  private void ActionSwitchToMonthViewLayout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    TabControlMain.SelectedTab = TabPageMonthView;
+    TabControlMonthView.SelectedTab = TabPageMonthViewLayout;
   }
 
   #endregion
@@ -554,14 +545,11 @@ partial class PreferencesForm : Form
     EditWeeklyParashahShowAtStartup.Enabled = EditParashahEnabled.Checked;
     EditWeeklyParashahShowAtNewWeek.Enabled = EditParashahEnabled.Checked;
     if ( !IsReady ) return;
-    SetMustRefreshEnabled(null, null);
-    var index1 = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahName);
-    if ( index1 != -1 ) SelectLayoutSections.SetItemChecked(index1, EditParashahEnabled.Checked);
+    SunChecked = true;
+    MoonChecked = false;
+    ParashahNameChecked = EditParashahEnabled.Checked;
     if ( !EditParashahEnabled.Checked )
-    {
-      var index2 = SelectLayoutSections.Items.IndexOf(LayoutSectionParashahReference);
-      if ( index2 != -1 ) SelectLayoutSections.SetItemChecked(index2, false);
-    }
+      ParashahRefChecked = false;
   }
 
   #endregion
@@ -636,6 +624,16 @@ partial class PreferencesForm : Form
 
   #region Month View
 
+  private void ActionSwitchToOmerSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    TabControlMain.SelectedTab = TabPageGeneration;
+  }
+
+  private void ActionSwitchToParashahSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    TabControlMain.SelectedTab = TabPageParashah;
+  }
+
   private void MenuSelectMoonDayTextFormat_Click(object sender, EventArgs e)
   {
     EditMoonDayTextFormat.Text = (string)( sender as ToolStripMenuItem )?.Tag;
@@ -705,24 +703,46 @@ partial class PreferencesForm : Form
     SelectMonthViewAlignmentParashah.SelectedIndex = index;
   }
 
-  private void ListBoxLayout_ItemCheck(object sender, ItemCheckEventArgs e)
+  private class EventArgsTest : EventArgs { public bool OneLuminary { get; set; } }
+
+  private void SelectLayoutSections_ItemCheck(object sender, ItemCheckEventArgs e)
   {
     if ( !IsReady ) return;
-    SetMustRefreshEnabled(null, null);
     var item = (LayoutSectionItem)SelectLayoutSections.Items[e.Index];
     if ( item.Id == MonthlyViewLayoutSection.LunarDate )
       e.NewValue = CheckState.Checked;
-    if ( item.Id == MonthlyViewLayoutSection.EphemerisSun && !SelectOmerMoon.Checked )
-      e.NewValue = CheckState.Checked;
-    else
-    if ( item.Id == MonthlyViewLayoutSection.EphemerisMoon && SelectOmerMoon.Checked )
-      e.NewValue = CheckState.Checked;
-    else
     if ( item.Id == MonthlyViewLayoutSection.ParashahName && !EditParashahEnabled.Checked )
       e.NewValue = CheckState.Unchecked;
     else
     if ( item.Id == MonthlyViewLayoutSection.ParashahReference && !EditParashahEnabled.Checked )
       e.NewValue = CheckState.Unchecked;
+    else
+    if ( item.Id == MonthlyViewLayoutSection.EphemerisSun )
+    {
+      if ( !SelectOmerMoon.Checked ) e.NewValue = CheckState.Checked;
+      var args = new EventArgsTest() { OneLuminary = ( e.NewValue == CheckState.Checked ) ^ MoonChecked };
+      UpdateMonthViewCheckBoxes(SelectLayoutSections, args);
+      return;
+    }
+    else
+    if ( item.Id == MonthlyViewLayoutSection.EphemerisMoon )
+    {
+      if ( SelectOmerMoon.Checked ) e.NewValue = CheckState.Checked;
+      var args = new EventArgsTest() { OneLuminary = SunChecked ^ ( e.NewValue == CheckState.Checked ) };
+      UpdateMonthViewCheckBoxes(SelectLayoutSections, args);
+      return;
+    }
+    SetMustRefreshEnabled(null, null);
+  }
+
+  private void UpdateMonthViewCheckBoxes(object sender, EventArgs e)
+  {
+    SetMustRefreshEnabled(null, null);
+    bool oneLuminary = e is EventArgsTest ? ( (EventArgsTest)e ).OneLuminary : SunChecked ^ MoonChecked;
+    EditMonthViewOneLuminaryOneLine.Enabled = oneLuminary;
+    EditMonthViewOneLuminaryOneLineSign.Enabled = oneLuminary
+                                                  && EditMonthViewOneLuminaryOneLine.Checked
+                                                  && !EditHideLuminarySigns.Checked;
   }
 
   private void ActionLayoutSectionUp_Click(object sender, EventArgs e)
@@ -754,12 +774,6 @@ partial class PreferencesForm : Form
   {
     SetMustRefreshEnabled(null, null);
     EditCalendarHebrewDateSingleLineItalic.Enabled = EditCalendarHebrewDateSingleLine.Checked;
-  }
-
-  private void EditMonthViewSunOrMoonOneLine_CheckedChanged(object sender, EventArgs e)
-  {
-    SetMustRefreshEnabled(null, null);
-    EditMonthViewSunOrMoonOneLineStarSign.Enabled = EditMonthViewSunOrMoonOneLine.Checked;
   }
 
   private void ActionLayoutResetSections_Click(object sender, EventArgs e)

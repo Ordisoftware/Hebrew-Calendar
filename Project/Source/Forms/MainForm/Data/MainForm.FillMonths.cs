@@ -121,8 +121,8 @@ partial class MainForm
       bool bothTimes = showSun && showMoon;
       bool noTimes = !showSun && !showMoon;
       bool showSignBefore = Settings.EphemerisSignBeforeElseAfter;
-      bool showSignEvenAlone = !bothTimes && Settings.MonthViewSunOrMoonOneLineStarSign;
-      bool showSign = bothTimes || showSignEvenAlone;
+      bool showSignEvenAlone = !bothTimes && Settings.MonthViewOneLuminaryOneLineSign;
+      bool showSign = !Settings.HideLuminarySigns && ( bothTimes || showSignEvenAlone );
       bool dateOnSingleLine = noTimes || Settings.CalendarHebrewDateSingleLine;
       bool dateInItalic = Settings.CalendarHebrewDateSingleLineItalic;
       bool sepFirst = Settings.MonthViewSeparatorForGregorianDay;
@@ -133,7 +133,7 @@ partial class MainForm
       bool sepCelebration = Settings.MonthViewSeparatorForCelebration;
       bool sepParashahName = Settings.MonthViewSeparatorForParashahName;
       bool sepParashahRef = Settings.MonthViewSeparatorForParashahReference;
-      bool aloneOneLine = Settings.MonthViewSunOrMoonOneLine;
+      bool aloneOneLine = Settings.MonthViewOneLuminaryOneLine;
       bool showLunarDate = Settings.MonthViewLayoutLunarDateEnabled;
       bool showSeason = Settings.MonthViewLayoutSeasonChangeEnabled;
       bool showCelebration = Settings.MonthViewLayoutCelebrationEnabled;
