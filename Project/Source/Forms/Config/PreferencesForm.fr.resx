@@ -600,7 +600,7 @@
   </data>
   <data name="LabelParashahEnabledInfo.Text" xml:space="preserve">
     <value>Si désactivée alors les sections seront décochées dans la disposition de la vue mensuelle.
-Si activé, seul le nom sera revérifié.</value>
+Si activé, seul le nom sera recoché.</value>
   </data>
   <data name="EditMainFormTitleBarShowWeeklyParashah.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 17</value>
