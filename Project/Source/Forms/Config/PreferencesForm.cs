@@ -709,7 +709,7 @@ partial class PreferencesForm : Form
     SelectMonthViewAlignmentParashah.SelectedIndex = index;
   }
 
-  private class EventArgsTest : EventArgs { public bool OneLuminary { get; set; } }
+  private sealed class LuminaryEventArgs : EventArgs { public bool OneLuminary { get; set; } }
 
   private void SelectLayoutSections_ItemCheck(object sender, ItemCheckEventArgs e)
   {
@@ -726,7 +726,7 @@ partial class PreferencesForm : Form
     if ( item.Id == MonthlyViewLayoutSection.EphemerisSun )
     {
       if ( !SelectOmerMoon.Checked ) e.NewValue = CheckState.Checked;
-      var args = new EventArgsTest() { OneLuminary = ( e.NewValue == CheckState.Checked ) ^ MoonChecked };
+      var args = new LuminaryEventArgs() { OneLuminary = ( e.NewValue == CheckState.Checked ) ^ MoonChecked };
       UpdateMonthViewCheckBoxes(SelectLayoutSections, args);
       return;
     }
@@ -734,7 +734,7 @@ partial class PreferencesForm : Form
     if ( item.Id == MonthlyViewLayoutSection.EphemerisMoon )
     {
       if ( SelectOmerMoon.Checked ) e.NewValue = CheckState.Checked;
-      var args = new EventArgsTest() { OneLuminary = SunChecked ^ ( e.NewValue == CheckState.Checked ) };
+      var args = new LuminaryEventArgs() { OneLuminary = SunChecked ^ ( e.NewValue == CheckState.Checked ) };
       UpdateMonthViewCheckBoxes(SelectLayoutSections, args);
       return;
     }
@@ -744,7 +744,7 @@ partial class PreferencesForm : Form
   private void UpdateMonthViewCheckBoxes(object sender, EventArgs e)
   {
     SetMustRefreshEnabled(null, null);
-    bool oneLuminary = e is EventArgsTest ? ( (EventArgsTest)e ).OneLuminary : SunChecked ^ MoonChecked;
+    bool oneLuminary = e is LuminaryEventArgs args ? args.OneLuminary : SunChecked ^ MoonChecked;
     EditMonthViewOneLuminaryOneLine.Enabled = oneLuminary;
     EditMonthViewOneLuminaryOneLineSign.Enabled = oneLuminary
                                                   && EditMonthViewOneLuminaryOneLine.Checked
