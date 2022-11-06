@@ -254,13 +254,13 @@ partial class ParashotForm : Form
   {
     ActionSave.PerformClick();
     string name = HebrewDatabase.Instance.ParashotTableName;
-    MainForm.Instance.SaveDataBoardDialog.FileName = SysTranslations.BoardExportFileName.GetLang(name);
+    MainForm.Instance.SaveBoardDialog.FileName = SysTranslations.BoardExportFileName.GetLang(name);
     for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
       if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-        MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
-    if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() == DialogResult.OK )
+        MainForm.Instance.SaveBoardDialog.FilterIndex = index + 1;
+    if ( MainForm.Instance.SaveBoardDialog.ShowDialog() == DialogResult.OK )
     {
-      string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
+      string filePath = MainForm.Instance.SaveBoardDialog.FileName;
       DoExportTable(filePath);
       DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
                                         Globals.KeyboardSoundFilePath);

@@ -40,7 +40,7 @@ partial class ManageAcquaintanceEventsForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    SaveBookmarksDialog.InitialDirectory = Settings.GetExportSettingsDirectory();
+    SaveBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
     OpenBookmarksDialog.InitialDirectory = SaveBookmarksDialog.InitialDirectory;
     SaveBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
     OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;

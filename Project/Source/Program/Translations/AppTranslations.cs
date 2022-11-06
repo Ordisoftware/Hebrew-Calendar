@@ -64,11 +64,11 @@ static partial class AppTranslations
   static public readonly TranslationsDictionary AskToResetPreferences = new()
   {
     [Language.EN] = SysTranslations.ResetPreferences[Language.EN] + Globals.NL2 +
-                    "GPS location, Shabat day and bookmarks will be kept." + Globals.NL2 +
+                    "GPS location, luminary for omer, Shabat day and bookmarks will be kept." + Globals.NL2 +
                     SysTranslations.AskToContinue[Language.EN],
 
     [Language.FR] = SysTranslations.ResetPreferences[Language.FR] + Globals.NL2 +
-                    "La position GPS, le jour du Shabat et les signets seront conservés." + Globals.NL2 +
+                    "La position GPS, le luminaire pour le omer, le jour du Shabat et les signets seront conservés." + Globals.NL2 +
                     SysTranslations.AskToContinue[Language.FR]
   };
 

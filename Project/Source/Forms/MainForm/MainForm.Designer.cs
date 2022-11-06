@@ -32,7 +32,7 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      this.SaveTextDialog = new System.Windows.Forms.SaveFileDialog();
+      this.SaveReportDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMainOuter1 = new System.Windows.Forms.Panel();
       this.PanelMainOuter2 = new System.Windows.Forms.Panel();
       this.PanelMainInner1 = new System.Windows.Forms.Panel();
@@ -84,7 +84,7 @@
       this.moonPhaseImagePictureBox = new System.Windows.Forms.PictureBox();
       this.label1 = new System.Windows.Forms.Label();
       this.TimerTooltip = new System.Windows.Forms.Timer(this.components);
-      this.SaveDataGridDialog = new System.Windows.Forms.SaveFileDialog();
+      this.SaveGridDialog = new System.Windows.Forms.SaveFileDialog();
       this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
       this.MenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuShowHide = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,7 +108,7 @@
       this.TimerTrayMouseMove = new System.Windows.Forms.Timer(this.components);
       this.TimerResumeReminder = new System.Windows.Forms.Timer(this.components);
       this.SaveImageDialog = new System.Windows.Forms.SaveFileDialog();
-      this.FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+      this.SelectImagesFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
       this.ActionSaveToFile = new System.Windows.Forms.ToolStripButton();
       this.ActionCopyToClipboard = new System.Windows.Forms.ToolStripButton();
       this.ActionPrint = new System.Windows.Forms.ToolStripButton();
@@ -199,7 +199,7 @@
       this.ToolStrip = new System.Windows.Forms.ToolStrip();
       this.ToolStripTopSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ToolStripTopSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.SaveBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TimerUpdateTitles = new System.Windows.Forms.Timer(this.components);
       this.ContextMenuStripDay = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ContextMenuDayDate = new System.Windows.Forms.ToolStripMenuItem();
@@ -264,7 +264,7 @@
       // 
       // SaveTextDialog
       // 
-      resources.ApplyResources(this.SaveTextDialog, "SaveTextDialog");
+      resources.ApplyResources(this.SaveReportDialog, "SaveTextDialog");
       // 
       // PanelMainOuter1
       // 
@@ -1840,7 +1840,7 @@
     }
 
     #endregion
-    private System.Windows.Forms.SaveFileDialog SaveTextDialog;
+    private System.Windows.Forms.SaveFileDialog SaveReportDialog;
     private System.Windows.Forms.Panel PanelMainOuter1;
     private System.Windows.Forms.Panel PanelSepTop;
     private System.Windows.Forms.Panel PanelTitle;
@@ -1857,7 +1857,7 @@
     private System.Windows.Forms.Panel PanelMainInner2;
     private System.Windows.Forms.Timer TimerTooltip;
     private System.Windows.Forms.DataGridView DataGridView;
-    public System.Windows.Forms.SaveFileDialog SaveDataGridDialog;
+    public System.Windows.Forms.SaveFileDialog SaveGridDialog;
     private System.Windows.Forms.NotifyIcon TrayIcon;
     public System.Windows.Forms.ToolStripMenuItem MenuShowHide;
     private System.Windows.Forms.ToolStripMenuItem MenuNavigate;
@@ -1882,7 +1882,7 @@
     private System.Windows.Forms.ToolStripSeparator SeparatorTrayMenu5;
     private System.Windows.Forms.ToolStripMenuItem MenuTools;
     private System.Windows.Forms.SaveFileDialog SaveImageDialog;
-    private System.Windows.Forms.FolderBrowserDialog FolderDialog;
+    private System.Windows.Forms.FolderBrowserDialog SelectImagesFolderDialog;
     private System.Windows.Forms.ToolStripButton ActionSaveToFile;
     private System.Windows.Forms.ToolStripButton ActionCopyToClipboard;
     private System.Windows.Forms.ToolStripButton ActionPrint;
@@ -1938,7 +1938,7 @@
     public System.Windows.Forms.ToolStripSeparator SeparatorMenuWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
-    public System.Windows.Forms.SaveFileDialog SaveDataBoardDialog;
+    public System.Windows.Forms.SaveFileDialog SaveBoardDialog;
     private System.Windows.Forms.Timer TimerUpdateTitles;
     internal System.Windows.Forms.ToolStripMenuItem ActionViewLunarMonths;
     internal System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;

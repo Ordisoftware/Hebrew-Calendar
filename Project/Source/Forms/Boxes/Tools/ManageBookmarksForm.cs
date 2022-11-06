@@ -47,7 +47,7 @@ partial class ManageBookmarksForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    SaveBookmarksDialog.InitialDirectory = Settings.GetExportSettingsDirectory();
+    SaveBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
     OpenBookmarksDialog.InitialDirectory = SaveBookmarksDialog.InitialDirectory;
     SaveBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
     OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
@@ -87,12 +87,12 @@ partial class ManageBookmarksForm : Form
 
   private void ActionExport_Click(object sender, EventArgs e)
   {
-    DoActionExport_Click(sender, e);
+    DoActionExport();
   }
 
   private void ActionImport_Click(object sender, EventArgs e)
   {
-    DoActionImport_Click(sender, e);
+    DoActionImport();
   }
 
   private void ActionClear_Click(object sender, EventArgs e)

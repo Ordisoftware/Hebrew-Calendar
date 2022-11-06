@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ManageBookmarksForm : Form
@@ -30,7 +30,7 @@ partial class ManageBookmarksForm : Form
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
-  private void DoActionExport_Click(object sender, EventArgs e)
+  private void DoActionExport()
   {
     if ( !RunDialog(SaveBookmarksDialog, TableName) ) return;
     try
@@ -71,7 +71,7 @@ partial class ManageBookmarksForm : Form
     }
   }
 
-  private void DoActionImport_Click(object sender, EventArgs e)
+  private void DoActionImport()
   {
     if ( !RunDialog(OpenBookmarksDialog, string.Empty) ) return;
     try

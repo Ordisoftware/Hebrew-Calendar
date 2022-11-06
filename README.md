@@ -389,6 +389,8 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 - Add option to select font names for texts in the monthly view.
 - Add option to select data layout order and sections to show in the monthly view.
+- Change export behavior to set default sub-folders to `Boards` and `Data` and `Images`.
+- Fix export bookmarks default folder to be the app document root folder and not `Settings`.
 - Some UI/UX fixes and improvements.
 
 #### 2022.11.03 - Version 10.0

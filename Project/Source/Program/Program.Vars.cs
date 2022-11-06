@@ -45,10 +45,10 @@ static partial class Program
     => Path.Combine(Globals.SystemFolderPath, "ApplicationEvent.ico");
 
   /// <summary>
-  /// Indicates data grid export targets
+  /// Indicates image export targets
   /// </summary>
-  static public readonly NullSafeOfStringDictionary<DataExportTarget> GridExportTargets
-    = ExportHelper.CreateExportTargets(DataExportTarget.CSV, DataExportTarget.JSON);
+  static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets
+    = ExportHelper.CreateExportTargets<ImageExportTarget>().SetUnsupported(ImageExportTarget.GIF);
 
   /// <summary>
   /// Indicates board export targets
@@ -57,10 +57,10 @@ static partial class Program
     = ExportHelper.CreateExportTargets(DataExportTarget.TXT, DataExportTarget.CSV, DataExportTarget.JSON);
 
   /// <summary>
-  /// Indicates image export targets
+  /// Indicates data grid export targets
   /// </summary>
-  static public readonly NullSafeOfStringDictionary<ImageExportTarget> ImageExportTargets
-    = ExportHelper.CreateExportTargets<ImageExportTarget>().SetUnsupported(ImageExportTarget.GIF);
+  static public readonly NullSafeOfStringDictionary<DataExportTarget> GridExportTargets
+    = ExportHelper.CreateExportTargets(DataExportTarget.CSV, DataExportTarget.JSON);
 
   /// <summary>
   /// Indicates minimum items for load data to show the loading form.

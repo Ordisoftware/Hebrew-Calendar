@@ -41,6 +41,18 @@ static partial class SysTranslations
     [Language.FR] = "Le paramètre va être réinitialisé à sa valeur par défaut."
   };
 
+  static public readonly TranslationsDictionary SetAllOptions = new()
+  {
+    [Language.EN] = "All options will be enabled.",
+    [Language.FR] = "Toutes les options vont être activées."
+  };
+
+  static public readonly TranslationsDictionary UnsetAllOptions = new()
+  {
+    [Language.EN] = "All options will be disabled.",
+    [Language.FR] = "Toutes les options vont être désactivées."
+  };
+
   static public readonly TranslationsDictionary AskToResetPreferences = new()
   {
     [Language.EN] = ResetPreferences[Language.EN] + Globals.NL2 + AskToContinue[Language.EN],
@@ -51,6 +63,18 @@ static partial class SysTranslations
   {
     [Language.EN] = ResetParameter[Language.EN] + Globals.NL2 + AskToContinue[Language.EN],
     [Language.FR] = ResetParameter[Language.FR] + Globals.NL2 + AskToContinue[Language.FR]
+  };
+
+  static public readonly TranslationsDictionary AskToSetAllOptions = new()
+  {
+    [Language.EN] = SetAllOptions[Language.EN] + Globals.NL2 + AskToContinue[Language.EN],
+    [Language.FR] = SetAllOptions[Language.FR] + Globals.NL2 + AskToContinue[Language.FR]
+  };
+
+  static public readonly TranslationsDictionary AskToUnsetAllOptions = new()
+  {
+    [Language.EN] = UnsetAllOptions[Language.EN] + Globals.NL2 + AskToContinue[Language.EN],
+    [Language.FR] = UnsetAllOptions[Language.FR] + Globals.NL2 + AskToContinue[Language.FR]
   };
 
   static public readonly TranslationsDictionary AskToCheckPreferences = new()
