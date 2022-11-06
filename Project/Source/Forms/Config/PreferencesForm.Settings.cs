@@ -61,6 +61,10 @@ partial class PreferencesForm
     Settings.BenchmarkLoadData = loadtime;
     Settings.RestoreMainForm();
     Settings.InitializeReminderBoxDesktopLocation();
+    if ( Settings.TorahEventsCountAsMoon )
+      Settings.MonthViewLayoutEphemerisMoonEnabled = true;
+    else
+      Settings.MonthViewLayoutEphemerisSunEnabled = true;
     Program.TranscriptionGuideForm.CenterToMainFormElseScreen();
     Program.GrammarGuideForm.CenterToMainFormElseScreen();
     SystemManager.TryCatch(Settings.Store);
