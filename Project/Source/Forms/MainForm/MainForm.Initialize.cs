@@ -346,15 +346,14 @@ partial class MainForm
   /// </summary>
   public void InitializeDialogsDirectory()
   {
-    string directory = Settings.GetExportDirectory();
-    SaveTextDialog.InitialDirectory = directory;
-    SaveImageDialog.InitialDirectory = directory;
-    SaveDataGridDialog.InitialDirectory = directory;
-    SaveDataBoardDialog.InitialDirectory = directory;
-    FolderDialog.SelectedPath = directory;
-    SaveDataGridDialog.Filter = Program.GridExportTargets.CreateFilters();
-    SaveDataBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();
+    SelectImagesFolderDialog.SelectedPath = Settings.GetExportImageDirectory();
+    SaveReportDialog.InitialDirectory = Settings.GetExportDirectory();
+    SaveImageDialog.InitialDirectory = Settings.GetExportImageDirectory();
+    SaveGridDialog.InitialDirectory = Settings.GetExportDataDirectory();
+    SaveBoardDialog.InitialDirectory = Settings.GetExportBoardDirectory();
     SaveImageDialog.Filter = Program.ImageExportTargets.CreateFilters();
+    SaveGridDialog.Filter = Program.GridExportTargets.CreateFilters();
+    SaveBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();
   }
 
   /// <summary>

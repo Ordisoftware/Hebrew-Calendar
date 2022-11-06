@@ -47,9 +47,9 @@ partial class MainForm
       {
         return ProcessTextExport(interval, lines =>
         {
-          SaveTextDialog.FileName = GetExportDataFilename(interval);
-          if ( SaveTextDialog.ShowDialog() != DialogResult.OK ) return false;
-          filePath = SaveTextDialog.FileName;
+          SaveReportDialog.FileName = GetExportDataFilename(interval);
+          if ( SaveReportDialog.ShowDialog() != DialogResult.OK ) return false;
+          filePath = SaveReportDialog.FileName;
           File.WriteAllText(filePath, lines.AsMultiLine(), Encoding.UTF8);
           return true;
         });
@@ -67,8 +67,8 @@ partial class MainForm
             if ( Settings.SaveImageCountWarning > 0 && countImages >= Settings.SaveImageCountWarning )
               if ( !DisplayManager.QueryYesNo(SysTranslations.AskToSaveLotsOfImages.GetLang(countImages)) )
                 return false;
-            if ( FolderDialog.ShowDialog() != DialogResult.OK ) return false;
-            filePath = FolderDialog.SelectedPath;
+            if ( SelectImagesFolderDialog.ShowDialog() != DialogResult.OK ) return false;
+            filePath = SelectImagesFolderDialog.SelectedPath;
             return ExportSaveMonthImage(filePath, interval);
           }
           else
@@ -93,12 +93,12 @@ partial class MainForm
       },
       [ViewMode.Grid] = (interval) =>
       {
-        SaveDataGridDialog.FileName = GetExportDataFilename(interval);
+        SaveGridDialog.FileName = GetExportDataFilename(interval);
         for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
           if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-            SaveDataGridDialog.FilterIndex = index + 1;
-        if ( SaveDataGridDialog.ShowDialog() != DialogResult.OK ) return false;
-        filePath = SaveDataGridDialog.FileName;
+            SaveGridDialog.FilterIndex = index + 1;
+        if ( SaveGridDialog.ShowDialog() != DialogResult.OK ) return false;
+        filePath = SaveGridDialog.FileName;
         return ExportSaveGrid(filePath, interval);
       }
     };
