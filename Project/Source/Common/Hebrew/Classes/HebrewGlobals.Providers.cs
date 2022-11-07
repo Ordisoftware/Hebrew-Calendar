@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -33,10 +33,16 @@ static partial class HebrewGlobals
     => Path.Combine(WebProvidersFolderPath, "WebProviders-Bible.txt");
 
   /// <summary>
-  /// Indicates the file path of the online study celebration providers.
+  /// Indicates the file path of the online text study celebration providers.
   /// </summary>
-  static public string WebProvidersCelebrationFilePath
-    => Path.Combine(WebProvidersFolderPath, "WebProviders-Celebration.txt");
+  static public string WebProvidersCelebrationTextsFilePath
+    => Path.Combine(WebProvidersFolderPath, "WebProviders-Celebration-Texts.txt");
+
+  /// <summary>
+  /// Indicates the file path of the online video study celebration providers.
+  /// </summary>
+  static public string WebProvidersCelebrationVideosFilePath
+    => Path.Combine(WebProvidersFolderPath, "WebProviders-Celebration-Videos.txt");
 
   /// <summary>
   /// Indicates the file path of the online search concordance providers.
@@ -62,9 +68,14 @@ static partial class HebrewGlobals
   static public OnlineProviders WebProvidersBible { get; private set; }
 
   /// <summary>
-  /// Indicates the online study celebration providers.
+  /// Indicates the online text study celebration providers.
   /// </summary>
-  static public OnlineProviders WebProvidersCelebration { get; private set; }
+  static public OnlineProviders WebProvidersCelebrationTexts { get; private set; }
+
+  /// <summary>
+  /// Indicates the online video study celebration providers.
+  /// </summary>
+  static public OnlineProviders WebProvidersCelebrationVideos { get; private set; }
 
   /// <summary>
   /// Indicates the online search concordance providers.
@@ -91,7 +102,8 @@ static partial class HebrewGlobals
     WebProvidersConcordance = Globals.CreateOnlineProviders(folder, WebProvidersConcordanceFilePath);
     WebProvidersBible = Globals.CreateOnlineProviders(folder, WebProvidersBibleFilePath);
     WebProvidersParashah = Globals.CreateOnlineProviders(folder, WebProvidersParashahFilePath);
-    WebProvidersCelebration = Globals.CreateOnlineProviders(folder, WebProvidersCelebrationFilePath);
+    WebProvidersCelebrationTexts = Globals.CreateOnlineProviders(folder, WebProvidersCelebrationTextsFilePath);
+    WebProvidersCelebrationVideos = Globals.CreateOnlineProviders(folder, WebProvidersCelebrationVideosFilePath);
     Globals.LoadWebLinksProviders();
   }
 

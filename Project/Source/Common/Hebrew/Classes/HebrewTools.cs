@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -163,44 +163,18 @@ static class HebrewTools
   /// </summary>
   [SuppressMessage("Performance", "U2U1103:Index strings correctly", Justification = "For code readability")]
   [SuppressMessage("Style", "GCop414:Remove .ToString() as it's unnecessary.", Justification = "Opinion")]
-  static public void OpenBibleProvider(string url, int book, int chapter, int verse)
+  static public void OpenBibleProvider(string pattern, int book, int chapter, int verse)
   {
     SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
     {
-      string chapterString = chapter.ToString();
-      if ( url.Contains("%BOOKMM%") && chapter >= 100 )
-      {
-        int dizaine = ( chapter - 100 ) / 10;
-        char centaine = 'a';
-        centaine += (char)dizaine;
-        chapterString = centaine.ToString() + ( chapter - 100 - dizaine * 10 ).ToString();
-        url = url.Replace("%CHAPTERNUM#2%", "%CHAPTERNUM%");
-      }
-      url = url.Replace("%BOOKSEFARIA%", OnlineBookInfos.StudyBible[(TanakBook)book]
-                                                   .Replace("1", "I")
-                                                   .Replace("2", "II")
-                                                   .Replace(" ", "_"))
-               .Replace("%BOOKSB%", OnlineBookInfos.StudyBible[(TanakBook)book])
-               .Replace("%BOOKBIBLEHUB%", OnlineBookInfos.BibleHub[(TanakBook)book])
-               .Replace("%BOOKCHABAD%", ( OnlineBookInfos.Chabad[(TanakBook)book] + chapter - 1 ).ToString())
-               .Replace("%BOOKMM%", OnlineBookInfos.MechonMamre[(TanakBook)book])
-               .Replace("%BOOKTORAHBOX%", OnlineBookInfos.TorahBox[(TanakBook)book])
-               .Replace("%BOOKDJEP%", OnlineBookInfos.Djep[(TanakBook)book])
-               .Replace("%BOOKLE%", OnlineBookInfos.LEvangile[(TanakBook)book])
-               .Replace("%BOOKNUM%", book.ToString())
-               .Replace("%CHAPTERNUM%", chapterString)
-               .Replace("%VERSENUM%", verse.ToString())
-               .Replace("%BOOKNUM#2%", book.ToString("00"))
-               .Replace("%CHAPTERNUM#2%", chapter.ToString("00"))
-               .Replace("%VERSENUM#2%", verse.ToString("00"));
-      SystemManager.RunShell(url);
+      SystemManager.RunShell(OnlineBookInfos.GetUrl(pattern, book, chapter, verse));
     });
   }
 
   /// <summary>
   /// Opens online parashah provider.
   /// </summary>
-  static public void OpenParashahProvider(string url, Parashah parashah, bool openLinked = false)
+  static public void OpenParashahProvider(string pattern, Parashah parashah, bool openLinked = false)
   {
     if ( parashah is null )
     {
@@ -208,7 +182,7 @@ static class HebrewTools
       return;
     }
     open(parashah);
-    if ( openLinked && url.IndexOf('%') >= 0 )
+    if ( openLinked && pattern.IndexOf('%') >= 0 )
     {
       var linked = parashah.GetLinked();
       if ( linked is not null ) open(linked);
@@ -218,21 +192,7 @@ static class HebrewTools
     {
       SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
       {
-        string link = url.Replace("%WIKIPEDIA-EN%", OnlineParashot.WikipediaEN[item.Book][item.Number - 1])
-                         .Replace("%WIKIPEDIA-FR%", OnlineParashot.WikipediaFR[item.Book][item.Number - 1])
-                         .Replace("%TORAHBOX%", OnlineParashot.TorahBox[item.Book][item.Number - 1])
-                         .Replace("%TORAHORG%", OnlineParashot.TorahOrg[item.Book][item.Number - 1])
-                         .Replace("%TORAHJEWS%", OnlineParashot.TorahJews[item.Book][item.Number - 1])
-                         .Replace("%YESHIVACO%", OnlineParashot.YeshivaCo[item.Book][item.Number - 1])
-                         .Replace("%THEYESHIVA%", OnlineParashot.TheYeshivaNet[item.Book][item.Number - 1])
-                         .Replace("%MYJEWISHLEARNING%", OnlineParashot.MyJewishLearning[item.Book][item.Number - 1])
-                         .Replace("%CHABAD-EN%", OnlineParashot.ChabadEN[item.Book][item.Number - 1])
-                         .Replace("%CHABAD-FR%", OnlineParashot.ChabadFR[item.Book][item.Number - 1])
-                         .Replace("%AISH-EN%", OnlineParashot.AishEN[item.Book][item.Number - 1])
-                         .Replace("%AISH-FR%", OnlineParashot.AishFR[item.Book][item.Number - 1])
-                         .Replace("%AISH-IW%", OnlineParashot.AishIW[item.Book][item.Number - 1])
-                         .Replace("%THETORAHCOM%", OnlineParashot.TheTorahCom[item.Book][item.Number - 1]);
-        SystemManager.OpenWebLink(link);
+        SystemManager.OpenWebLink(OnlineParashot.GetUrl(pattern, item));
       });
     }
   }
@@ -240,29 +200,11 @@ static class HebrewTools
   /// <summary>
   /// Opens online celebration provider.
   /// </summary>
-  static public void OpenCelebrationProvider(string url, TorahCelebration celebration)
+  static public void OpenCelebrationProvider(string pattern, TorahCelebration celebration)
   {
     SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
     {
-      string link = url.Replace("%WIKIPEDIA-EN%", OnlineCelebration.WikipediaEN[celebration])
-                       .Replace("%WIKIPEDIA-FR%", OnlineCelebration.WikipediaFR[celebration])
-                       .Replace("%TORAHBOX%", OnlineCelebration.TorahBox[celebration])
-                       .Replace("%CHIOURIM%", OnlineCelebration.Chiourim[celebration])
-                       .Replace("%TORAHORG%", OnlineCelebration.TorahOrg[celebration])
-                       .Replace("%TORAHJEWS%", OnlineCelebration.TrueTorahJews[celebration])
-                       .Replace("%YESHIVACO%", OnlineCelebration.YeshivaCo[celebration])
-                       .Replace("%THEYESHIVA%", OnlineCelebration.TheYeshiva[celebration])
-                       .Replace("%MYJEWISHLEARNING%", OnlineCelebration.MyJewishLearning[celebration])
-                       .Replace("%LOUBAVITCH%", OnlineCelebration.Loubavitch[celebration])
-                       .Replace("%CHABAD-EN%", OnlineCelebration.ChabadEN[celebration])
-                       .Replace("%CHABAD-FR%", OnlineCelebration.ChabadFR[celebration])
-                       .Replace("%AISH-EN%", OnlineCelebration.AishEN[celebration])
-                       .Replace("%AISH-FR%", OnlineCelebration.AishFR[celebration])
-                       .Replace("%AISH-IW%", OnlineCelebration.AishIW[celebration])
-                       .Replace("%REFORMJUDAISM%", OnlineCelebration.ReformJudaism[celebration])
-                       .Replace("%THETORAHCOM%", OnlineCelebration.TheTorahCom[celebration])
-                       .Replace("%RAVABDELHAK%", OnlineCelebration.RavAbdelhak[celebration]);
-      SystemManager.OpenWebLink(link);
+      SystemManager.OpenWebLink(OnlineCelebration.GetUrl(pattern, celebration));
     });
   }
 

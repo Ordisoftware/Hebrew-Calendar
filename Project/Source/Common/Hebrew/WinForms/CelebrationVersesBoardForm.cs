@@ -51,7 +51,14 @@ public partial class CelebrationVersesBoardForm : Form
 
   private void InitializeMenu()
   {
-    ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersCelebration, (sender, e) =>
+    ActionStudyOnlineTexts.InitializeFromProviders(HebrewGlobals.WebProvidersCelebrationTexts, (sender, e) =>
+    {
+      if ( ListBoxCelebrations.SelectedItems.Count <= 0 ) return;
+      var menuitem = (ToolStripMenuItem)sender;
+      var celebration = (TorahCelebration)ListBoxCelebrations.SelectedItems[0].Tag;
+      HebrewTools.OpenCelebrationProvider((string)menuitem.Tag, celebration);
+    });
+    ActionStudyOnlineVideos.InitializeFromProviders(HebrewGlobals.WebProvidersCelebrationVideos, (sender, e) =>
     {
       if ( ListBoxCelebrations.SelectedItems.Count <= 0 ) return;
       var menuitem = (ToolStripMenuItem)sender;

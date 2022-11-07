@@ -49,11 +49,14 @@ static partial class AppTranslations
     {
       [Language.EN] = "• Add option to select font names for texts in the monthly view." + Globals.NL +
                       "• Add option to select data layout order and sections to show in the monthly view." + Globals.NL +
-                      "• Some UI/UX fixes and improvements.",
+                      "• Some UI/UX fixes and improvements." + Globals.NL +
+                      "• Update web links.",
+
 
       [Language.FR] = "• Ajout d'une option pour sélectionner les noms de police pour les textes dans la vue mensuelle" + Globals.NL +
                       "• Ajout d'une option pour sélectionner la disposition des données et les sections à afficher dans la vue mensuelle." + Globals.NL +
-                      "• Quelques correctifs et améliorations d'UI/UX."
+                      "• Quelques correctifs et améliorations d'UI/UX." + Globals.NL +
+                      "• Mise à jour des liens web."
     },
 
     ["10.0"] = new TranslationsDictionary

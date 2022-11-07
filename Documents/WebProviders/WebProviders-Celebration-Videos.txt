@@ -1,0 +1,112 @@
+﻿; --------------------------------------------------------------------------------------------------
+; File format for online providers items to search a celebration
+; --------------------------------------------------------------------------------------------------
+; To create a folder else items will be at root level: Lang/[short code] = Title
+; Use the tag FOLDER-SEPARATOR to insert a separator menu item between folders
+; --------------------------------------------------------------------------------------------------
+; Name = Title
+; URL = Web link
+; --------------------------------------------------------------------------------------------------
+; Use the "-" char at the beginning of a line to insert a separator
+; --------------------------------------------------------------------------------------------------
+
+Name = (FR) TorahDeVie.com : Les fêtes
+URL = http://www.torahdevie.com/category/service-de-d-ieu/les-fetes-juives/
+
+Name = (FR) TorahDeVie.com : Le Chabbat
+URL = https://www.torahdevie.com/category/service-de-d-ieu/le-chabbat/
+
+Name = (FR) Rav Yossef Hay
+URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAEofZFfLuRetOEcVKOOLGbm
+
+Name = (FR) Rav Chriqui
+URL = https://www.youtube.com/playlist?list=PLI4WtgHMTlAeeu0BFOLjffigOYGdN97WW
+
+-
+
+Name = (FR) Rav Yehia Benchetrit : Le sens des fêtes
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTTgDadDmS-7eOfruomzI3w
+
+Name = (FR) Rav Yehia Benchetrit : Se preparer aux fetes juives
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQ49SreVMsp7SnxbsOy7ttf
+
+Name = (FR) Rav Yehia Benchetrit : Pessah 1
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqTJUZ-eKzZd83BBDTqGSoxB
+
+Name = (FR) Rav Yehia Benchetrit : Pessah 2
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQzFrQK-mo0cFU8VKxLgTOC
+
+Name = (FR) Rav Yehia Benchetrit : Chavouoth
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSq6bwe1R1tvoeqkebCrglM
+
+Name = (FR) Rav Yehia Benchetrit : Roch Hachana
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQdLi1vntOgV_AzWetLTBtL
+
+Name = (FR) Rav Yehia Benchetrit : Kippour
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSrev_lUQvOCLSOMVlxbHVN
+
+Name = (FR) Rav Yehia Benchetrit : Kippour
+URL = https://www.youtube.com/watch?v=GZPx6kk3TL0
+
+Name = (FR) Rav Yehia Benchetrit : Souccot
+URL = https://www.youtube.com/watch?v=HnbYwaJDawA
+
+Name = (FR) Rav Yehia Benchetrit : Le Chabat
+URL = https://www.youtube.com/watch?v=DoKvGnVRvpw&list=PLSn7yTHwEx-BGZKgCVDgtZqHZCpU8ieK2
+
+-
+
+Name = (FR) Rav David Pinto : Les fêtes
+URL = https://www.youtube.com/playlist?list=PL7L6Q1h8wVHylddP-42rZ53xBAUu3mdCp
+
+Name = (FR) Rav David Pinto : Le Chabbat, pourquoi ?
+URL = https://www.youtube.com/watch?v=ZMkD_5XyKag
+
+Name = (FR) Rav David Pinto : Le jour du Chabbat rassemble toute la Création
+URL = https://www.youtube.com/watch?v=7TipVmogIGM
+ 
+Name = (FR) Rav David Pinto : La Sainteté du Chabbat procure les forces pour affronter l'avenir
+URL = https://www.youtube.com/watch?v=V6ynYzJyy-A
+ 
+Name = (FR) Rav David Pinto : Chabbat Hagadol, une préparation pour la délivrance
+URL = https://www.youtube.com/watch?v=_J-p0DrtIU0
+
+-
+
+Name = (FR) Rav Rav Menahem Altabe : Pessah
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF-jo1FXpZA5q7xaXc5CgH3a
+
+Name = (FR) Rav Rav Menahem Altabe : Chavouot
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF8z1ahoYa0FjOwukY-MF4Wc
+
+Name = (FR) Rav Rav Menahem Altabe : Roch Hachana
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF-gignKk9vBQvaCqLHe1yd8
+
+Name = (FR) Rav Rav Menahem Altabe : Kipour
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF-4GwPDtJqpJlJTavsnDC3W
+
+Name = (FR) Rav Rav Menahem Altabe : Soukot
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF-COsMG-LLY_Q3lF8ToXy49
+
+Name = (FR) Rav Rav Menahem Altabe : Les fêtes
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF9-7LhRtE7924U6-BzLom1z
+
+Name = (FR) Rav Rav Menahem Altabe : Le Chabbat
+URL = https://www.youtube.com/watch?v=Hd427np5flQ&list=PLSn7yTHwEx-B8WqPCwLWyBC0gDQAoA2OZ
+
+Name = (FR) Rav Rav Menahem Altabe : Rambam - Sefer Hayad - Zemanim Chabbat
+URL = https://www.youtube.com/watch?v=5GAyTE09W1k&list=PLwh9wT44mCF_sz2DMgJSbX6rEl-EskFcS
+
+-
+
+Name = (FR) Exposé Les célébrations de la Torah
+URL = https://www.youtube.com/watch?v=gqjY4wwuAeQ&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=28
+
+Name = (FR) Exposé Pessah et la sortie de Mitsraïm
+URL = https://www.youtube.com/watch?v=7pYtMgQm6cs&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=16
+
+Name = (FR) Exposé La circoncision, le 'hamets, la matsa et le souffle
+URL = https://www.youtube.com/watch?v=dNKab1_yIzI&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=17
+
+Name = (FR) Exposé La réparation de la Téchouva
+URL = https://www.youtube.com/watch?v=HpJW4vsAwuA&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=18
