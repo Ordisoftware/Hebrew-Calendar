@@ -42,8 +42,6 @@ URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
 Name = (EN) ReformJudaism.org
 URL = https://reformjudaism.org/jewish-holidays/%REFORMJUDAISM%
 
--
-
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/vie-juive/%TORAHBOX%/
 
