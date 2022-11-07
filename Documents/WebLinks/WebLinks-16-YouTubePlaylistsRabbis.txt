@@ -79,6 +79,9 @@ URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF_f4o7BaXZHc6k0C2hRwiRV
 Name = (FR) [Rav Menahem Altabe] Pirké Avot
 URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF_L_bvxuy6sv0unGAN1jCnd
 
+Name = (FR) [Rav Menahem Altabe] Likoutei Si'hot Volume 1
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF9XR_2nSRcYHjbPmtTdoRE_
+
 Name = (FR) [Rav Menahem Altabe] Tanya
 URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF9eq7Cc-gWb8uvdu49HvBfh
 
@@ -90,6 +93,9 @@ URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF_sz2DMgJSbX6rEl-EskFcS
 
 Name = (FR) [Rav Menahem Altabe] Rambam - Sefer Hamitsvot
 URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF822tOlpCNiBTW5BW1Z5gD0
+
+Name = (FR) [Rav Menahem Altabe] Kora'h
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF9zBjafxjZdxTC4bz_8imf6
 
 - 
 

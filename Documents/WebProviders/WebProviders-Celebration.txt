@@ -121,6 +121,23 @@ URL = https://www.youtube.com/watch?v=HnbYwaJDawA
 
 -
 
+Name = (FR) Rav Rav Menahem Altabe : Pessah Playlist **
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF-jo1FXpZA5q7xaXc5CgH3a
+
+Name = (FR) Rav Rav Menahem Altabe : Chavouot Playlist **
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF8z1ahoYa0FjOwukY-MF4Wc
+
+Name = (FR) Rav Rav Menahem Altabe : Roch Hachana Playlist **
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF-gignKk9vBQvaCqLHe1yd8
+
+Name = (FR) Rav Rav Menahem Altabe : Kipour Playlist **
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF-4GwPDtJqpJlJTavsnDC3W
+
+Name = (FR) Rav Rav Menahem Altabe : Soukot Playlist **
+URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF-COsMG-LLY_Q3lF8ToXy49
+
+-
+
 Name = (FR) Exposé Les célébrations de la Torah **
 URL = https://www.youtube.com/watch?v=gqjY4wwuAeQ&list=PLSn7yTHwEx-DL6u9qWpRtF1vEAEVxe1Hk&index=28
 
