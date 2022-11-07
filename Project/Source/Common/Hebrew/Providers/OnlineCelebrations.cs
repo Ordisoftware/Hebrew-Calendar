@@ -54,20 +54,20 @@ static class OnlineCelebration
   static public readonly Dictionary<TorahCelebration, string> AishEN = new()
   {
     { TorahCelebration.Shabat, "shabbat" },
-    { TorahCelebration.Pessah, "h/pes" },
-    { TorahCelebration.Chavouot, "h/sh" },
-    { TorahCelebration.YomTerouah, "h/rh" },
-    { TorahCelebration.YomHaKipourim, "h/yom-kippur" },
-    { TorahCelebration.Soukot, "h/su" }
+    { TorahCelebration.Pessah, "passover" },
+    { TorahCelebration.Chavouot, "shavuot" },
+    { TorahCelebration.YomTerouah, "rosh-hashanah" },
+    { TorahCelebration.YomHaKipourim, "yom-kippur" },
+    { TorahCelebration.Soukot, "sukkot" }
   };
 
   static public readonly Dictionary<TorahCelebration, string> AishFR = new()
   {
     { TorahCelebration.Shabat, "shabbat" },
     { TorahCelebration.Pessah, "h/pessah" },
-    { TorahCelebration.Chavouot, "h/shavuot" },
-    { TorahCelebration.YomTerouah, "h/rosh_hashanah" },
-    { TorahCelebration.YomHaKipourim, "h/yom_kippour" },
+    { TorahCelebration.Chavouot, "h/chavuout" },
+    { TorahCelebration.YomTerouah, "h/rosh-hashanah" },
+    { TorahCelebration.YomHaKipourim, "h/yom-kippour" },
     { TorahCelebration.Soukot, "h/succot" }
   };
 
@@ -143,7 +143,7 @@ static class OnlineCelebration
 
   static public readonly Dictionary<TorahCelebration, string> ReformJudaism = new()
   {
-    { TorahCelebration.Shabat, "shabbatah" },
+    { TorahCelebration.Shabat, "shabbat" },
     { TorahCelebration.Pessah, "passover" },
     { TorahCelebration.Chavouot, "shavuot" },
     { TorahCelebration.YomTerouah, "rosh-hashanah" },
@@ -163,7 +163,7 @@ static class OnlineCelebration
 
   static public readonly Dictionary<TorahCelebration, string> TheYeshiva = new()
   {
-    { TorahCelebration.Shabat, "" },
+    { TorahCelebration.Shabat, "c776/series/the-laws-of-shabbos" },
     { TorahCelebration.Pessah, "c3/torah/holidays/pesach" },
     { TorahCelebration.Chavouot, "c76/torah/holidays/shavuot" },
     { TorahCelebration.YomTerouah, "c83/torah/holidays/rosh-hashanah" },
