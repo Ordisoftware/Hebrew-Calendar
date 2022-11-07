@@ -82,7 +82,7 @@ partial class ReminderForm : Form
       form = new ReminderForm
       {
         IsShabat = isShabat,
-        Celebration = row.TorahEvent
+        Celebration = TorahCelebrationSettings.Convert(row.TorahEvent)
       };
       var date = row.Date;
       form.LabelTitle.Text = isShabat
@@ -120,7 +120,7 @@ partial class ReminderForm : Form
           }
           else
           {
-            form.Celebration = TorahCelebrationDay.Shabat;
+            form.Celebration = TorahCelebration.Shabat;
             form.LabelParashahValue.Text = form.ActionViewParashot.Text;
             form.LabelParashahValue.Tag = null;
           }
@@ -240,7 +240,7 @@ partial class ReminderForm : Form
 
   private bool IsShabat;
 
-  private TorahCelebrationDay Celebration;
+  private TorahCelebration Celebration;
 
   private ReminderForm()
   {
@@ -377,13 +377,13 @@ partial class ReminderForm : Form
     if ( LabelParashahValue.Tag is null )
     {
       ActiveControl = null;
-      if ( Celebration == TorahCelebrationDay.Shabat )
+      if ( Celebration == TorahCelebration.Shabat )
         ParashotForm.Run();
       else
       {
         CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
-                                       nameof(Settings.CelebrationVersesBoardFormClientSize));
-        Program.SelectCurrentCelebrationInVersesForm(Celebration);
+                                       nameof(Settings.CelebrationVersesBoardFormClientSize),
+                                       Celebration);
       }
     }
     else

@@ -148,11 +148,11 @@
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWeeklyParashahOpenWithHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
       this.WeeklyParashahSeparator = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewNewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionViewLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowCelebrationsBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowNewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
@@ -206,6 +206,7 @@
       this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDaySunrise = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDaySunset = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuSunMoonSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayMoonrise = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayMoonset = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayTimesSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -238,7 +239,6 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ContextMenuSunMoonSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMainOuter1.SuspendLayout();
       this.PanelMainOuter2.SuspendLayout();
       this.PanelMainInner1.SuspendLayout();
@@ -262,9 +262,9 @@
       this.ContextMenuStripDay.SuspendLayout();
       this.SuspendLayout();
       // 
-      // SaveTextDialog
+      // SaveReportDialog
       // 
-      resources.ApplyResources(this.SaveReportDialog, "SaveTextDialog");
+      resources.ApplyResources(this.SaveReportDialog, "SaveReportDialog");
       // 
       // PanelMainOuter1
       // 
@@ -829,10 +829,6 @@
       // 
       this.TimerResumeReminder.Tick += new System.EventHandler(this.TimerResumeReminder_Tick);
       // 
-      // SaveImageDialog
-      // 
-      resources.ApplyResources(this.SaveImageDialog, "SaveImageDialog");
-      // 
       // ActionSaveToFile
       // 
       this.ActionSaveToFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -1000,11 +996,11 @@
             this.toolStripSeparator10,
             this.ActionWeeklyParashah,
             this.WeeklyParashahSeparator,
-            this.ActionParashotBoard,
+            this.ActionShowParashotBoard,
             this.ActionShowCelebrationVersesBoard,
-            this.ActionViewCelebrationsBoard,
-            this.ActionViewNewMoonsBoard,
-            this.ActionViewLunarMonths,
+            this.ActionShowCelebrationsBoard,
+            this.ActionShowNewMoonsBoard,
+            this.ActionShowLunarMonths,
             this.toolStripSeparator8,
             this.ActionCalculateDateDiff,
             this.ActionOpenSystemDateAndTime,
@@ -1153,35 +1149,35 @@
       this.WeeklyParashahSeparator.Name = "WeeklyParashahSeparator";
       resources.ApplyResources(this.WeeklyParashahSeparator, "WeeklyParashahSeparator");
       // 
-      // ActionParashotBoard
+      // ActionShowParashotBoard
       // 
-      resources.ApplyResources(this.ActionParashotBoard, "ActionParashotBoard");
-      this.ActionParashotBoard.Name = "ActionParashotBoard";
-      this.ActionParashotBoard.Click += new System.EventHandler(this.ActionViewParashot_Click);
+      resources.ApplyResources(this.ActionShowParashotBoard, "ActionShowParashotBoard");
+      this.ActionShowParashotBoard.Name = "ActionShowParashotBoard";
+      this.ActionShowParashotBoard.Click += new System.EventHandler(this.ActionShowParashot_Click);
       // 
       // ActionShowCelebrationVersesBoard
       // 
       resources.ApplyResources(this.ActionShowCelebrationVersesBoard, "ActionShowCelebrationVersesBoard");
       this.ActionShowCelebrationVersesBoard.Name = "ActionShowCelebrationVersesBoard";
-      this.ActionShowCelebrationVersesBoard.Click += new System.EventHandler(this.CelebrationVersesBoard_Click);
+      this.ActionShowCelebrationVersesBoard.Click += new System.EventHandler(this.ActionShowCelebrationVersesBoard_Click);
       // 
-      // ActionViewCelebrationsBoard
+      // ActionShowCelebrationsBoard
       // 
-      resources.ApplyResources(this.ActionViewCelebrationsBoard, "ActionViewCelebrationsBoard");
-      this.ActionViewCelebrationsBoard.Name = "ActionViewCelebrationsBoard";
-      this.ActionViewCelebrationsBoard.Click += new System.EventHandler(this.ActionViewCelebrationsBoard_Click);
+      resources.ApplyResources(this.ActionShowCelebrationsBoard, "ActionShowCelebrationsBoard");
+      this.ActionShowCelebrationsBoard.Name = "ActionShowCelebrationsBoard";
+      this.ActionShowCelebrationsBoard.Click += new System.EventHandler(this.ActionShowCelebrationsBoard_Click);
       // 
-      // ActionViewNewMoonsBoard
+      // ActionShowNewMoonsBoard
       // 
-      resources.ApplyResources(this.ActionViewNewMoonsBoard, "ActionViewNewMoonsBoard");
-      this.ActionViewNewMoonsBoard.Name = "ActionViewNewMoonsBoard";
-      this.ActionViewNewMoonsBoard.Click += new System.EventHandler(this.ActionViewMoonsBoard_Click);
+      resources.ApplyResources(this.ActionShowNewMoonsBoard, "ActionShowNewMoonsBoard");
+      this.ActionShowNewMoonsBoard.Name = "ActionShowNewMoonsBoard";
+      this.ActionShowNewMoonsBoard.Click += new System.EventHandler(this.ActionShowMoonsBoard_Click);
       // 
-      // ActionViewLunarMonths
+      // ActionShowLunarMonths
       // 
-      resources.ApplyResources(this.ActionViewLunarMonths, "ActionViewLunarMonths");
-      this.ActionViewLunarMonths.Name = "ActionViewLunarMonths";
-      this.ActionViewLunarMonths.Click += new System.EventHandler(this.ActionViewLunarMonths_Click);
+      resources.ApplyResources(this.ActionShowLunarMonths, "ActionShowLunarMonths");
+      this.ActionShowLunarMonths.Name = "ActionShowLunarMonths";
+      this.ActionShowLunarMonths.Click += new System.EventHandler(this.ActionShowLunarMonths_Click);
       // 
       // toolStripSeparator8
       // 
@@ -1601,6 +1597,11 @@
       resources.ApplyResources(this.ContextMenuDaySunset, "ContextMenuDaySunset");
       this.ContextMenuDaySunset.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ContextMenuDayDate_MouseDown);
       // 
+      // ContextMenuSunMoonSeparator
+      // 
+      this.ContextMenuSunMoonSeparator.Name = "ContextMenuSunMoonSeparator";
+      resources.ApplyResources(this.ContextMenuSunMoonSeparator, "ContextMenuSunMoonSeparator");
+      // 
       // ContextMenuDayMoonrise
       // 
       this.ContextMenuDayMoonrise.Name = "ContextMenuDayMoonrise";
@@ -1792,11 +1793,6 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
-      // ContextMenuSunMoonSeparator
-      // 
-      this.ContextMenuSunMoonSeparator.Name = "ContextMenuSunMoonSeparator";
-      resources.ApplyResources(this.ContextMenuSunMoonSeparator, "ContextMenuSunMoonSeparator");
-      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -1940,11 +1936,11 @@
     public System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
     public System.Windows.Forms.SaveFileDialog SaveBoardDialog;
     private System.Windows.Forms.Timer TimerUpdateTitles;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewLunarMonths;
+    internal System.Windows.Forms.ToolStripMenuItem ActionShowLunarMonths;
     internal System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewCelebrationsBoard;
-    internal System.Windows.Forms.ToolStripMenuItem ActionViewNewMoonsBoard;
-    internal System.Windows.Forms.ToolStripMenuItem ActionParashotBoard;
+    internal System.Windows.Forms.ToolStripMenuItem ActionShowCelebrationsBoard;
+    internal System.Windows.Forms.ToolStripMenuItem ActionShowNewMoonsBoard;
+    internal System.Windows.Forms.ToolStripMenuItem ActionShowParashotBoard;
     internal System.Windows.Forms.ToolStripButton ActionNavigate;
     internal System.Windows.Forms.ToolStripButton ActionViewNextCelebrations;
     private System.Windows.Forms.ToolStripMenuItem ActionWeeklyParashah;
@@ -2046,7 +2042,7 @@
     private ToolStripSeparator toolStripSeparator29;
     private ToolStripMenuItem ActionTakeScreenshotView;
     private ToolStripMenuItem ActionTakeScreenshotWindow;
-        private ToolStripSeparator ContextMenuSunMoonSeparator;
-    }
+    private ToolStripSeparator ContextMenuSunMoonSeparator;
+  }
 }
 

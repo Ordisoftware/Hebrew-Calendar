@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -142,7 +142,7 @@ static class TorahCelebrationSettings
   static public readonly IEnumerable<TorahCelebrationDay> MinorEvents
     = Enums.GetValues<TorahCelebrationDay>()
            .SkipUntil(v => v == TorahCelebrationDay.SoukotD8)
-           .TakeUntil(v => v == TorahCelebrationDay.Pourim);
+           .TakeWhile(v => v == TorahCelebrationDay.Shabat); // TODO update when ready
 
   /// <summary>
   /// Indicates special celebration days.
@@ -192,6 +192,12 @@ static class TorahCelebrationSettings
     TorahCelebrationDay.YomHaKipourim => TorahCelebration.YomHaKipourim,
     TorahCelebrationDay.SoukotD1 => TorahCelebration.Soukot,
     TorahCelebrationDay.SoukotD8 => TorahCelebration.Soukot,
+    // TODO uncomment when ready
+    //TorahCelebrationDay.HanoukaD1 => TorahCelebration.Hanouka,
+    //TorahCelebrationDay.HanoukaD8 => TorahCelebration.Hanouka,
+    //TorahCelebrationDay.Pourim => TorahCelebration.Pourim,
+    //TorahCelebrationDay.LagBahomer => TorahCelebration.LagBahomer,
+    TorahCelebrationDay.Shabat => TorahCelebration.Shabat,
     _ => TorahCelebration.None
   };
 

@@ -226,44 +226,12 @@ static class SettingsHelper
     }
   }
 
-  // TODO refactor in Core Globals ? But need a shared var
-
   /// <summary>
-  /// Get the export directory.
+  /// Gets the export directory.
   /// </summary>
   static internal string GetExportDirectory(this Settings settings)
   {
     string result = settings.ExportFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
-    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
-    return result;
-  }
-
-  /// <summary>
-  /// Gets the images export directory.
-  /// </summary>
-  static internal string GetExportImageDirectory(this Settings settings)
-  {
-    string result = Path.Combine(settings.GetExportDirectory(), "Images");
-    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
-    return result;
-  }
-
-  /// <summary>
-  /// Gets the data export directory.
-  /// </summary>
-  static internal string GetExportDataDirectory(this Settings settings)
-  {
-    string result = Path.Combine(settings.GetExportDirectory(), "Data");
-    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
-    return result;
-  }
-
-  /// <summary>
-  /// Gets the boards export directory.
-  /// </summary>
-  static internal string GetExportBoardDirectory(this Settings settings)
-  {
-    string result = Path.Combine(settings.GetExportDirectory(), "Boards");
     if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
     return result;
   }
@@ -279,14 +247,33 @@ static class SettingsHelper
   }
 
   /// <summary>
-  /// Gets the backup directory.
+  /// Gets the images export directory.
   /// </summary>
-  // TODO use when available
-  //static internal string GetBackupDirectory(this Settings settings)
-  //{
-  //  string path = settings.BackupFolder.Replace("%USER_APP_DOCUMENTS%", Globals.UserDocumentsFolderPath);
-  //  if ( !Directory.Exists(path) ) Directory.CreateDirectory(path);
-  //  return path;
-  //}
+  static internal string GetExportImagesDirectory(this Settings settings)
+  {
+    string result = Path.Combine(settings.GetExportDirectory(), "Images");
+    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
+    return result;
+  }
+
+  /// <summary>
+  /// Gets the boards export directory.
+  /// </summary>
+  static internal string GetExportBoardsDirectory(this Settings settings)
+  {
+    string result = Path.Combine(settings.GetExportDirectory(), "Boards");
+    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
+    return result;
+  }
+
+  /// <summary>
+  /// Gets the data export directory.
+  /// </summary>
+  static internal string GetExportDataDirectory(this Settings settings)
+  {
+    string result = Path.Combine(settings.GetExportDirectory(), "Data");
+    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
+    return result;
+  }
 
 }

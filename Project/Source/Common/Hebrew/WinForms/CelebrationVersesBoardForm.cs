@@ -21,7 +21,7 @@ public partial class CelebrationVersesBoardForm : Form
 
   static public CelebrationVersesBoardForm Instance { get; private set; }
 
-  static public void Run(string locationPropertyName, string clientSizePropertyName)
+  static public void Run(string locationPropertyName, string clientSizePropertyName, TorahCelebration celebration)
   {
     if ( Instance is null )
       Instance = new CelebrationVersesBoardForm(locationPropertyName, clientSizePropertyName);
@@ -33,6 +33,7 @@ public partial class CelebrationVersesBoardForm : Form
     }
     Instance.Show();
     Instance.ForceBringToFront();
+    Instance.SelectCelebration(celebration);
   }
 
   private readonly string LocationPropertyName;
@@ -43,7 +44,7 @@ public partial class CelebrationVersesBoardForm : Form
     InitializeComponent();
     InitializeMenu();
     Icon = Globals.MainForm.Icon;
-    ActiveControl = SelectCelebration;
+    ActiveControl = ListBoxCelebrations;
     LocationPropertyName = locationPropertyName;
     ClientSizePropertyName = clientSizePropertyName;
   }
@@ -52,23 +53,45 @@ public partial class CelebrationVersesBoardForm : Form
   {
     ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersCelebration, (sender, e) =>
     {
-      if ( SelectCelebration.SelectedItems.Count <= 0 ) return;
+      if ( ListBoxCelebrations.SelectedItems.Count <= 0 ) return;
       var menuitem = (ToolStripMenuItem)sender;
-      var celebration = (TorahCelebration)SelectCelebration.SelectedItems[0].Tag;
+      var celebration = (TorahCelebration)ListBoxCelebrations.SelectedItems[0].Tag;
       HebrewTools.OpenCelebrationProvider((string)menuitem.Tag, celebration);
     });
     ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
-      foreach ( ListViewItem item in SelectVerse.SelectedItems )
+      foreach ( ListViewItem item in ListBoxVerses.SelectedItems )
       {
         var verseitem = (Tuple<TanakBook, string, string>)item.Tag;
         var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, reference);
-        if ( SelectVerse.SelectedItems.Count > 1 )
+        if ( ListBoxVerses.SelectedItems.Count > 1 )
           Thread.Sleep(1500);
       }
     });
+  }
+
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
+  public void SelectCelebration(TorahCelebration celebration)
+  {
+    if ( ListBoxCelebrations.Items.Count <= 0 ) return;
+    if ( celebration != TorahCelebration.None )
+    {
+      string str = celebration.ToString();
+      foreach ( ListViewItem item in ListBoxCelebrations.Items )
+        if ( str.StartsWith(( (TorahCelebration)item.Tag ).ToString(), StringComparison.Ordinal) )
+        {
+          item.Selected = true;
+          item.Focused = true;
+          break;
+        }
+    }
+    else
+    {
+      Instance.ListBoxCelebrations.Items[0].Selected = true;
+      Instance.ListBoxCelebrations.Items[0].Focused = true;
+    }
   }
 
   private void CelebrationVersesBoardForm_Load(object sender, EventArgs e)
@@ -82,8 +105,8 @@ public partial class CelebrationVersesBoardForm : Form
     var items = Enums.GetValues<TorahCelebration>()
                      .Skip(1)
                      .Select(v => new ListViewItem(HebrewTranslations.GetCelebrationDisplayText(v)) { Tag = v });
-    SelectCelebration.Items.Clear();
-    SelectCelebration.Items.AddRange(items.ToArray());
+    ListBoxCelebrations.Items.Clear();
+    ListBoxCelebrations.Items.AddRange(items.ToArray());
   }
 
   private void CelebrationVersesBoardForm_Deactivate(object sender, EventArgs e)
@@ -108,33 +131,33 @@ public partial class CelebrationVersesBoardForm : Form
 
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    if ( SelectVerse.SelectedItems.Count <= 0 ) return;
-    var verseitem = (Tuple<TanakBook, string, string>)SelectVerse.SelectedItems[0].Tag;
+    if ( ListBoxVerses.SelectedItems.Count <= 0 ) return;
+    var verseitem = (Tuple<TanakBook, string, string>)ListBoxVerses.SelectedItems[0].Tag;
     var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
     HebrewTools.OpenHebrewWordsGoToVerse(reference);
   }
 
-  private void SelectCelebration_MouseDoubleClick(object sender, MouseEventArgs e)
+  private void ListBoxCelebrations_MouseDoubleClick(object sender, MouseEventArgs e)
   {
-    SelectCelebration.ContextMenuStrip.Show(Cursor.Position);
+    ListBoxCelebrations.ContextMenuStrip.Show(Cursor.Position);
   }
 
-  private void SelectVerse_MouseDoubleClick(object sender, MouseEventArgs e)
+  private void ListBoxVerses_MouseDoubleClick(object sender, MouseEventArgs e)
   {
-    SelectVerse.ContextMenuStrip.Show(Cursor.Position);
+    ListBoxVerses.ContextMenuStrip.Show(Cursor.Position);
   }
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
-  private void Lists_KeyDown(object sender, KeyEventArgs e)
+  private void ListBoxes_KeyDown(object sender, KeyEventArgs e)
   {
     switch ( e.KeyCode )
     {
       case Keys.Left:
-        SelectCelebration.Focus();
+        ListBoxCelebrations.Focus();
         e.Handled = true;
         break;
       case Keys.Right:
-        SelectVerse.Focus();
+        ListBoxVerses.Focus();
         e.Handled = true;
         break;
       case Keys.Enter:
@@ -151,31 +174,31 @@ public partial class CelebrationVersesBoardForm : Form
     }
   }
 
-  private void SelectCelebration_Format(object sender, ListControlConvertEventArgs e)
+  private void ListBoxCelebrations_Format(object sender, ListControlConvertEventArgs e)
   {
     e.Value = HebrewTranslations.CelebrationsInLatinChars[(TorahCelebration)e.Value].GetLang();
   }
 
-  private void SelectCelebration_SelectedIndexChanged(object sender, EventArgs e)
+  private void ListBoxCelebrations_SelectedIndexChanged(object sender, EventArgs e)
   {
-    if ( SelectCelebration.SelectedItems.Count <= 0 ) return;
-    SelectVerse.Items.Clear();
-    var collection = TorahCelebrationVerses.Instance.Items[(TorahCelebration)SelectCelebration.SelectedItems[0].Tag];
+    if ( ListBoxCelebrations.SelectedItems.Count <= 0 ) return;
+    ListBoxVerses.Items.Clear();
+    var collection = TorahCelebrationVerses.Instance.Items[(TorahCelebration)ListBoxCelebrations.SelectedItems[0].Tag];
     if ( collection is null ) return;
     foreach ( var reference in collection )
     {
       string bookname = HebrewDatabase.HebrewNamesInUnicode
         ? BookInfos.Unicode[reference.Item1]
         : reference.Item1.ToString().Replace('_', ' ');
-      var item = SelectVerse.Items.Add(bookname);
+      var item = ListBoxVerses.Items.Add(bookname);
       item.Tag = reference;
       item.SubItems.Add(reference.Item2);
       item.SubItems.Add(reference.Item3);
     }
-    if ( SelectVerse.Items.Count > 0 )
+    if ( ListBoxVerses.Items.Count > 0 )
     {
-      SelectVerse.Items[0].Focused = true;
-      SelectVerse.Items[0].Selected = true;
+      ListBoxVerses.Items[0].Focused = true;
+      ListBoxVerses.Items[0].Selected = true;
     }
   }
 

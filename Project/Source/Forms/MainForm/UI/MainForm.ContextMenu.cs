@@ -114,6 +114,7 @@ public partial class MainForm
         {
           string celebrationName = HebrewTranslations.GetCelebrationDisplayText(torahEventNext);
           ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutNextCelebration.GetLang(celebrationName);
+          ContextMenuDayCelebrationVersesBoard.Tag = torahEventNext;
         }
       }
     }
@@ -127,7 +128,7 @@ public partial class MainForm
       bool show2 = !( weeklong?.Event == TorahCelebration.Soukot && dayParashah?.ParashahID == "1.1" );
       if ( ( show1 && show2 ) || isSimhatTorah1 || isSimhatTorah2 || rowDay == dayParashah )
       {
-        // TODO use same as top menu
+        // TODO refactor to use same code as top menu ?
         var parashah = ParashotFactory.Instance.Get(dayParashah?.ParashahID);
         if ( parashah is not null )
         {

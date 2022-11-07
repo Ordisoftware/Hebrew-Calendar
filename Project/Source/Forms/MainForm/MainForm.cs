@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using System.Windows.Forms;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -626,53 +627,53 @@ partial class MainForm : Form
   }
 
   /// <summary>
-  /// Event handler. Called by CelebrationVersesBoard for click events.
+  /// Event handler. Called by ActionShowCelebrationVersesBoard for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void CelebrationVersesBoard_Click(object sender, EventArgs e)
+  private void ActionShowCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
     CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
-                                   nameof(Settings.CelebrationVersesBoardFormClientSize));
-    Program.SelectCurrentCelebrationInVersesForm(TorahCelebrationDay.PessahD1);
+                                   nameof(Settings.CelebrationVersesBoardFormClientSize),
+                                   TorahCelebration.Pessah);
   }
 
   /// <summary>
-  /// Event handler. Called by ActionViewCelebrationsBoard for click events.
+  /// Event handler. Called by ActionShowCelebrationsBoard for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionViewCelebrationsBoard_Click(object sender, EventArgs e)
+  private void ActionShowCelebrationsBoard_Click(object sender, EventArgs e)
   {
     CelebrationsBoardForm.Run();
   }
 
   /// <summary>
-  /// Event handler. Called by ActionViewMoonsBoard for click events.
+  /// Event handler. Called by ActionShowMoonsBoard for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionViewMoonsBoard_Click(object sender, EventArgs e)
+  private void ActionShowMoonsBoard_Click(object sender, EventArgs e)
   {
     NewMoonsBoardForm.Run();
   }
 
   /// <summary>
-  /// Event handler. Called by ActionViewLunarMonths for click events.
+  /// Event handler. Called by ActionShowLunarMonths for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionViewLunarMonths_Click(object sender, EventArgs e)
+  private void ActionShowLunarMonths_Click(object sender, EventArgs e)
   {
     LunarMonthsForm.Run();
   }
 
   /// <summary>
-  /// Event handler. Called by ActionViewParashot for click events.
+  /// Event handler. Called by ActionShowParashot for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
-  private void ActionViewParashot_Click(object sender, EventArgs e)
+  private void ActionShowParashot_Click(object sender, EventArgs e)
   {
     ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah().Factory);
   }
@@ -1230,10 +1231,8 @@ partial class MainForm : Form
   private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
     CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
-                                   nameof(Settings.CelebrationVersesBoardFormClientSize));
-    var day = ApplicationDatabase.Instance.GetCurrentOrNextCelebration(ContextMenuDayCurrentEvent.Date);
-    if ( day is not null )
-      Program.SelectCurrentCelebrationInVersesForm(day.TorahEvent);
+                                   nameof(Settings.CelebrationVersesBoardFormClientSize),
+                                   (TorahCelebration)ContextMenuDayCelebrationVersesBoard.Tag);
   }
 
   private void ContextMenuDayParashah_Click(object sender, EventArgs e)
