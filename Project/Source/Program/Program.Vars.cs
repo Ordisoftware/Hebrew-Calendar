@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -194,41 +194,6 @@ static partial class Program
                                                         true,
                                                         Globals.IsDebugExecutable,
                                                         DataFileFolder.ApplicationDocuments));
-    }
-  }
-
-  /// <summary>
-  /// Select a celebration in the CelebrationVersesBoardForm instance.
-  /// </summary>
-  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
-  static public void SelectCurrentCelebrationInVersesForm(TorahCelebrationDay celebration = TorahCelebrationDay.None)
-  {
-    if ( CelebrationVersesBoardForm.Instance is null ) return;
-    if ( CelebrationVersesBoardForm.Instance.SelectCelebration.Items.Count <= 0 ) return;
-    if ( celebration == TorahCelebrationDay.None )
-    {
-      var dateStart = DateTime.Today;
-      var days = ApplicationDatabase.Instance.LunisolarDays;
-      var day = days.Find(d => d.Date >= dateStart && d.HasTorahEvent && d.TorahEvent != TorahCelebrationDay.NewYearD1);
-      if ( day is not null ) celebration = day.TorahEvent;
-    }
-    if ( celebration == TorahCelebrationDay.NewYearD10 )
-      celebration = TorahCelebrationDay.PessahD1;
-    if ( celebration != TorahCelebrationDay.None )
-    {
-      string str = celebration.ToString();
-      foreach ( ListViewItem item in CelebrationVersesBoardForm.Instance.SelectCelebration.Items )
-        if ( str.StartsWith(( (TorahCelebration)item.Tag ).ToString(), StringComparison.Ordinal) )
-        {
-          item.Selected = true;
-          item.Focused = true;
-          break;
-        }
-    }
-    else
-    {
-      CelebrationVersesBoardForm.Instance.SelectCelebration.Items[0].Selected = true;
-      CelebrationVersesBoardForm.Instance.SelectCelebration.Items[0].Focused = true;
     }
   }
 

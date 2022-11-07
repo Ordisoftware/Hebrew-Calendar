@@ -56,9 +56,9 @@ partial class MainForm
       LastCelebrationReminded.Add(value, null);
     if ( !SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO remove when lunar months ready
     {
-      ActionViewLunarMonths.Enabled = false;
-      ActionViewLunarMonths.Visible = false;
-      ActionViewLunarMonths.Tag = int.MinValue;
+      ActionShowLunarMonths.Enabled = false;
+      ActionShowLunarMonths.Visible = false;
+      ActionShowLunarMonths.Tag = int.MinValue;
     }
   }
 
@@ -198,16 +198,16 @@ partial class MainForm
     if ( ApplicationCommandLine.Instance.OpenCelebrationVersesBoard )
       ActionShowCelebrationVersesBoard.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenCelebrationsBoard )
-      ActionViewCelebrationsBoard.PerformClick();
+      ActionShowCelebrationsBoard.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenNewMoonsBoard )
-      ActionViewNewMoonsBoard.PerformClick();
+      ActionShowNewMoonsBoard.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenParashotBoard )
-      ActionParashotBoard.PerformClick();
+      ActionShowParashotBoard.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
       ActionWeeklyParashahDescription.PerformClick();
     if ( SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO remove when lunar months ready
       if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
-        ActionViewLunarMonths.PerformClick();
+        ActionShowLunarMonths.PerformClick();
   }
 
   /// <summary>
@@ -346,11 +346,11 @@ partial class MainForm
   /// </summary>
   public void InitializeDialogsDirectory()
   {
-    SelectImagesFolderDialog.SelectedPath = Settings.GetExportImageDirectory();
+    SelectImagesFolderDialog.SelectedPath = Settings.GetExportImagesDirectory();
     SaveReportDialog.InitialDirectory = Settings.GetExportDirectory();
-    SaveImageDialog.InitialDirectory = Settings.GetExportImageDirectory();
+    SaveImageDialog.InitialDirectory = Settings.GetExportImagesDirectory();
     SaveGridDialog.InitialDirectory = Settings.GetExportDataDirectory();
-    SaveBoardDialog.InitialDirectory = Settings.GetExportBoardDirectory();
+    SaveBoardDialog.InitialDirectory = Settings.GetExportBoardsDirectory();
     SaveImageDialog.Filter = Program.ImageExportTargets.CreateFilters();
     SaveGridDialog.Filter = Program.GridExportTargets.CreateFilters();
     SaveBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();

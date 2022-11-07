@@ -141,6 +141,23 @@ static partial class HebrewTranslations
     {
       [Language.EN] = "Sukot",
       [Language.FR] = "Soukot"
+    },
+    // TODO check and uncomment when ready
+    //Tevet10,
+    //TouBichvat,
+    //Hanouka,
+    //Pourim,
+    //TaanitBekhorim,
+    //YomHaShoah,
+    //LagBahomer,
+    //Tammouz17,
+    //TishaBeAv,
+    //TouBeAv,
+    //ShimhatTorah,
+    [TorahCelebration.Shabat] = new TranslationsDictionary
+    {
+      [Language.EN] = "Shabat",
+      [Language.FR] = "Shabat"
     }
   };
 
@@ -150,7 +167,8 @@ static partial class HebrewTranslations
     [TorahCelebration.Chavouot] = "שבועות",
     [TorahCelebration.YomTerouah] = "יומ תרועה",
     [TorahCelebration.YomHaKipourim] = "יומ הכיפורים",
-    [TorahCelebration.Soukot] = "סכות"
+    [TorahCelebration.Soukot] = "סכות",
+    [TorahCelebration.Shabat] = "שבת"
   };
 
   static public string GetCelebrationDisplayText(TorahCelebration celebration)
@@ -165,8 +183,8 @@ static partial class HebrewTranslations
 
   static public string Shabat
     => HebrewDatabase.HebrewNamesInUnicode
-       ? "שבת"
-       : "Shabat";
+       ? CelebrationsInHebrewChars[TorahCelebration.Shabat]
+       : CelebrationsInLatinChars.GetLang(TorahCelebration.Shabat);
 
   static public string Parashah
     => HebrewDatabase.HebrewNamesInUnicode

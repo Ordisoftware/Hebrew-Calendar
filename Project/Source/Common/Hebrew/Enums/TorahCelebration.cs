@@ -11,9 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2021-09 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
+/// <summary>
+/// Torah celebrations steps.
+/// </summary>
 public enum TorahCelebration
 {
   None,
@@ -21,5 +24,18 @@ public enum TorahCelebration
   Chavouot,
   YomTerouah,
   YomHaKipourim,
-  Soukot
+  Soukot,
+  // TODO check and uncomment when ready
+  //Tevet10,
+  //TouBichvat,
+  //Hanouka,
+  //Pourim,
+  //TaanitBekhorim,
+  //YomHaShoah,
+  //LagBahomer,
+  //Tammouz17,
+  //TishaBeAv,
+  //TouBeAv,
+  //ShimhatTorah,
+  Shabat
 }
