@@ -360,13 +360,16 @@
     <Compile Include="Source\Common\Hebrew\Providers\Books\BookInfos.Hebrew.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\BookInfos.Transcriptions.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\BookInfos.Unicode.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.BibleHub.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.Chabad.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.Djep.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.LEvangile.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.MechonMamre.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.Sefaria.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.TorahBox.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot..cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.MyJewishLearning.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.TheYeshivaNet.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.TheTorahCom.cs" />
@@ -794,6 +797,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms\AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Common\Core\WinForms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>

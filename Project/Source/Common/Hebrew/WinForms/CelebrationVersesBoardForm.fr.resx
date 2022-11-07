@@ -138,13 +138,16 @@
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Lire en ligne</value>
   </data>
-  <data name="ActionStudyOnline.Text" xml:space="preserve">
-    <value>Étudier en ligne</value>
+  <data name="ActionStudyOnlineTexts.Text" xml:space="preserve">
+    <value>Textes en ligne</value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
     <value>Ouvrir avec Hebrew Words</value>
   </data>
   <data name="LabelInfoOccurences.Text" xml:space="preserve">
     <value>Utilisez les flèches pour basculer entre les listes</value>
+  </data>
+  <data name="ActionStudyOnlineVideos.Text" xml:space="preserve">
+    <value>Vidéos en ligne</value>
   </data>
 </root>

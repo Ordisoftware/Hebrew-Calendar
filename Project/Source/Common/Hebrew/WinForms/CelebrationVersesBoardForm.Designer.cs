@@ -31,22 +31,24 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CelebrationVersesBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.LabelInfoOccurences = new System.Windows.Forms.Label();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ListBoxVerses = new System.Windows.Forms.ListView();
-      this.ColumnBook = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.ColumnVerseBegin = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.ColumnVerseEnd = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.ColumnBook = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnVerseBegin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.ColumnVerseEnd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuVerse = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.ListBoxCelebrations = new System.Windows.Forms.ListView();
-      this.ColumnCelebration = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.ColumnCelebration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuCelebration = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionStudyOnlineTexts = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionStudyOnlineVideos = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panel2 = new System.Windows.Forms.Panel();
-      this.LabelInfoOccurences = new System.Windows.Forms.Label();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuVerse.SuspendLayout();
       this.ContextMenuCelebration.SuspendLayout();
@@ -61,6 +63,12 @@
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
+      // LabelInfoOccurences
+      // 
+      resources.ApplyResources(this.LabelInfoOccurences, "LabelInfoOccurences");
+      this.LabelInfoOccurences.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoOccurences.Name = "LabelInfoOccurences";
+      // 
       // ActionClose
       // 
       resources.ApplyResources(this.ActionClose, "ActionClose");
@@ -68,18 +76,18 @@
       this.ActionClose.Name = "ActionClose";
       this.ActionClose.Click += new System.EventHandler(this.ActionClose_Click);
       // 
-      // SelectVerse
+      // ListBoxVerses
       // 
       this.ListBoxVerses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColumnBook,
             this.ColumnVerseBegin,
             this.ColumnVerseEnd});
       this.ListBoxVerses.ContextMenuStrip = this.ContextMenuVerse;
-      resources.ApplyResources(this.ListBoxVerses, "SelectVerse");
+      resources.ApplyResources(this.ListBoxVerses, "ListBoxVerses");
       this.ListBoxVerses.FullRowSelect = true;
       this.ListBoxVerses.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
       this.ListBoxVerses.HideSelection = false;
-      this.ListBoxVerses.Name = "SelectVerse";
+      this.ListBoxVerses.Name = "ListBoxVerses";
       this.ListBoxVerses.UseCompatibleStateImageBehavior = false;
       this.ListBoxVerses.View = System.Windows.Forms.View.Details;
       this.ListBoxVerses.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListBoxes_KeyDown);
@@ -122,17 +130,17 @@
       this.ActionOpenHebrewWordsVerse.Name = "ActionOpenHebrewWordsVerse";
       this.ActionOpenHebrewWordsVerse.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
       // 
-      // SelectCelebration
+      // ListBoxCelebrations
       // 
       this.ListBoxCelebrations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColumnCelebration});
       this.ListBoxCelebrations.ContextMenuStrip = this.ContextMenuCelebration;
-      resources.ApplyResources(this.ListBoxCelebrations, "SelectCelebration");
+      resources.ApplyResources(this.ListBoxCelebrations, "ListBoxCelebrations");
       this.ListBoxCelebrations.FullRowSelect = true;
       this.ListBoxCelebrations.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
       this.ListBoxCelebrations.HideSelection = false;
       this.ListBoxCelebrations.MultiSelect = false;
-      this.ListBoxCelebrations.Name = "SelectCelebration";
+      this.ListBoxCelebrations.Name = "ListBoxCelebrations";
       this.ListBoxCelebrations.UseCompatibleStateImageBehavior = false;
       this.ListBoxCelebrations.View = System.Windows.Forms.View.Details;
       this.ListBoxCelebrations.SelectedIndexChanged += new System.EventHandler(this.ListBoxCelebrations_SelectedIndexChanged);
@@ -146,14 +154,21 @@
       // ContextMenuCelebration
       // 
       this.ContextMenuCelebration.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionStudyOnline});
+            this.ActionStudyOnlineTexts,
+            this.toolStripSeparator1,
+            this.ActionStudyOnlineVideos});
       this.ContextMenuCelebration.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuCelebration, "ContextMenuCelebration");
       // 
-      // ActionStudyOnline
+      // ActionStudyOnlineTexts
       // 
-      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
-      this.ActionStudyOnline.Name = "ActionStudyOnline";
+      resources.ApplyResources(this.ActionStudyOnlineTexts, "ActionStudyOnlineTexts");
+      this.ActionStudyOnlineTexts.Name = "ActionStudyOnlineTexts";
+      // 
+      // ActionStudyOnlineVideos
+      // 
+      resources.ApplyResources(this.ActionStudyOnlineVideos, "ActionStudyOnlineVideos");
+      this.ActionStudyOnlineVideos.Name = "ActionStudyOnlineVideos";
       // 
       // panel1
       // 
@@ -167,11 +182,10 @@
       resources.ApplyResources(this.panel2, "panel2");
       this.panel2.Name = "panel2";
       // 
-      // LabelInfoOccurences
+      // toolStripSeparator1
       // 
-      resources.ApplyResources(this.LabelInfoOccurences, "LabelInfoOccurences");
-      this.LabelInfoOccurences.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelInfoOccurences.Name = "LabelInfoOccurences";
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
       // CelebrationVersesBoardForm
       // 
@@ -213,9 +227,11 @@
     private System.Windows.Forms.ToolStripMenuItem ActionOpenHebrewWordsVerse;
     private System.Windows.Forms.ContextMenuStrip ContextMenuVerse;
     private System.Windows.Forms.ContextMenuStrip ContextMenuCelebration;
-    private System.Windows.Forms.ToolStripMenuItem ActionStudyOnline;
+    private System.Windows.Forms.ToolStripMenuItem ActionStudyOnlineTexts;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel2;
     private Label LabelInfoOccurences;
-  }
+    private ToolStripMenuItem ActionStudyOnlineVideos;
+        private ToolStripSeparator toolStripSeparator1;
+    }
 }
