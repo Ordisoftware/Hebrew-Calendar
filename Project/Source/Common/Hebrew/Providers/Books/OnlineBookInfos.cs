@@ -31,7 +31,7 @@ static partial class OnlineBookInfos
     var dispatch = new Dictionary<string, string>()
     {
       { "%BOOKBIBLEHUB%", BibleHub[(TanakBook)book] },
-      { "%BOOKCHABAD%", ( Chabad[(TanakBook)book] + chapter - 1 ).ToString() },
+      { "%BOOKCHABAD%", Chabad[(TanakBook)book].ToString() }, //( Chabad[(TanakBook)book] + chapter - 1 ).ToString() },
       { "%BOOKDJEP%", Djep[(TanakBook)book] },
       { "%BOOKLE%", LEvangile[(TanakBook)book] },
       { "%BOOKMM%", MechonMamre[(TanakBook)book] },
