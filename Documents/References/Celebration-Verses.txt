@@ -52,3 +52,55 @@ Soukot : Ezra - 3.1 - 3.4
 Soukot : Nehemiah - 8.13 - 8.18
 Soukot : Divrei_HaYamim_II - 5.1 - 5.14
 Soukot : Divrei_HaYamim_II - 7.1 - 7.22
+
+Shabat :           Bereshit - 2.1 - 2.3
+Shabat :           Bereshit - 8.4
+Shabat :           Shemot - 16.23 - 16.36
+Shabat :           Shemot - 20.8 - 20.11
+Shabat :           Shemot - 31.12 - 31.17
+Shabat :           Shemot - 35.2 - 35.3
+Shabat :           Vayiqra - 16.31
+Shabat :           Vayiqra - 19.3
+Shabat :           Vayiqra - 19.30
+Shabat :           Vayiqra - 23.3
+Shabat :           Vayiqra - 24.8
+Shabat :           Vayiqra - 25.2 - 25.6
+Shabat :           Vayiqra - 26.2
+Shabat :           Vayiqra - 26.34 - 26.35
+Shabat :           Vayiqra - 26.43
+Shabat :           Bamidbar - 15.32 - 15.36
+Shabat :           Bamidbar - 26.1
+Shabat :           Bamidbar - 28.1
+Shabat :           Bamidbar - 28.9 - 28.10
+Shabat :           Devarim - 5.12 - 5.15
+Shabat :           Melakim_II - 4.23
+Shabat :           Melakim_II - 11.5 - 11.9
+Shabat :           Melakim_II - 16.1
+Shabat :           Yeshayahou - 1.13
+Shabat :           Yeshayahou - 25.13 - 24.14
+Shabat :           Yeshayahou - 56.1 - 26.8
+Shabat :           Yeshayahou - 66.22 - 66.23
+Shabat :           Yirmeyahou - 17.19 - 17.27
+Shabat :           Yirmeyahou - 25.11
+Shabat :           Yehezqel - 16.1 - 16.12
+Shabat :           Yehezqel - 20.12 - 20.26
+Shabat :           Yehezqel - 22.8
+Shabat :           Yehezqel - 22.23 - 22.31
+Shabat :           Yehezqel - 22.38
+Shabat :           Yehezqel - 44.24
+Shabat :           Yehezqel - 45.17
+Shabat :           Hoshea 2.11
+Shabat :           Amos 8.5
+Shabat :           Tehilim 92.1
+Shabat :           Eikah - 1.7
+Shabat :           Eikah - 2.6
+Shabat :           Nehemiah - 9.14
+Shabat :           Nehemiah - 10.31 - 10.33
+Shabat :           Nehemiah - 13.15 - 13.22
+Shabat :           Divrei_HaYamim_I - 9.32
+Shabat :           Divrei_HaYamim_II - 23.31
+Shabat :           Divrei_HaYamim_II - 2.4
+Shabat :           Divrei_HaYamim_II - 8.12 - 8.13
+Shabat :           Divrei_HaYamim_II - 23.4 - 23.8
+Shabat :           Divrei_HaYamim_II - 31.3
+Shabat :           Divrei_HaYamim_II - 36.5 - 26.21
