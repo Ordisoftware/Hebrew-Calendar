@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -30,8 +30,8 @@ partial class MainForm
       MonthlyCalendar.CalendarDate = interval.Start.Value;
       countPages = interval.MonthsCount;
     }
-    int margin = Settings.PrintingMargin;
-    int margin2 = margin + margin;
+    int marginTopLeft = Settings.PrintingMargin;
+    int marginRightBottom = marginTopLeft + marginTopLeft;
     double ratio = (double)MonthlyCalendar.Height / MonthlyCalendar.Width;
     //
     ExportPrintRun(Settings.PrintImageInLandscape, (s, e) =>
@@ -52,29 +52,57 @@ partial class MainForm
           askToContinue = false;
       var bounds = e.PageBounds;
       bounds.Height = (int)( bounds.Width * ratio );
-      if ( bounds.Height > e.PageBounds.Height )
+      if ( bounds.Height > e.PageBounds.Height && bounds.Width <= e.PageBounds.Width )
       {
-        ratio = 1 / ratio;
+        bounds.Width = (int)( bounds.Width * ratio );
         bounds.Height = e.PageBounds.Height;
-        bounds.Width = (int)( bounds.Height * ratio );
       }
-      bool redone = false;
+      else
+      if ( bounds.Width > e.PageBounds.Width && bounds.Height <= e.PageBounds.Height )
+      {
+        bounds.Height = (int)( bounds.Height * ratio );
+        bounds.Width = e.PageBounds.Width;
+      }
+      else
+      if ( bounds.Width > e.PageBounds.Width && bounds.Height > e.PageBounds.Height )
+      {
+        var bounds1 = new Rectangle();
+        var bounds2 = new Rectangle();
+        bounds1.Width = (int)( bounds.Width * ratio );
+        bounds1.Height = e.PageBounds.Height;
+        bounds2.Height = (int)( bounds.Height * ratio );
+        bounds2.Width = e.PageBounds.Width;
+        if ( bounds1.Width <= e.PageBounds.Width && bounds1.Height <= e.PageBounds.Height )
+          bounds = bounds1;
+        else
+        if ( bounds2.Width <= e.PageBounds.Width && bounds2.Height <= e.PageBounds.Height )
+          bounds = bounds2;
+        else
+          DebugManager.Trace(LogTraceEvent.Error, "Error on resize image in ExportPrintMonth");
+      }
+      bool isSecondImage = false;
       process();
       //
       void process()
       {
         using var bitmap = MonthlyCalendar.GetBitmap();
-        int delta = !redone ? 0 : e.PageBounds.Height / 2;
-        e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
+        int secondImageHeightDelta = !isSecondImage ? 0 : e.PageBounds.Height / 2;
+        int marginLeft = ( e.PageBounds.Width - bounds.Width ) / 2;
+        int marginTop = ( e.PageBounds.Height - bounds.Height ) / 2;
+        e.Graphics.DrawImage(bitmap,
+                             marginTopLeft + marginLeft,
+                             marginTopLeft + marginTop + secondImageHeightDelta,
+                             bounds.Width - marginRightBottom,
+                             bounds.Height - marginRightBottom);
         if ( multi )
         {
           MonthlyCalendar.CalendarDate = MonthlyCalendar.CalendarDate.AddMonths(1);
           if ( MonthlyCalendar.CalendarDate <= interval.End )
           {
             e.HasMorePages = true;
-            if ( !redone && !e.PageSettings.Landscape )
+            if ( !isSecondImage && !e.PageSettings.Landscape )
             {
-              redone = true;
+              isSecondImage = true;
               process();
             }
           }
