@@ -50,7 +50,7 @@ static partial class AppTranslations
       [Language.EN] = "• Added verse references for Shabat in celebrations board." + Globals.NL +
                       "• Added option to select font names for texts in the monthly view." + Globals.NL +
                       "• Add option to select data layout order and sections to show in the monthly view." + Globals.NL +
-                      "• Added option to center or not printed images on pages." + Globals.NL +
+                      "• Add option to center printed images on pages." + Globals.NL +
                       "• Divided study context menu into `Online texts` and `Online videos` in celebrations board." + Globals.NL +
                       "• Fixed print monthly view image size and location on pages." + Globals.NL +
                       "• Some UI/UX fixes and improvements." + Globals.NL +
@@ -60,7 +60,7 @@ static partial class AppTranslations
       [Language.FR] = "• Ajout de références de versets pour le Shabat dans le tableau des célébrations." + Globals.NL +
                       "• Ajout d'une option pour sélectionner les noms de police pour les textes dans la vue mensuelle" + Globals.NL +
                       "• Ajout d'une option pour sélectionner la disposition des données et les sections à afficher dans la vue mensuelle." + Globals.NL +
-                      "• Ajout d'une option pour centrer ou non les images imprimées dans les pages." + Globals.NL +
+                      "• Ajout d'une option pour centrer les images imprimées dans les pages." + Globals.NL +
                       "• Division du menu contextuel d'étude `Textes en ligne` et `Vidéos en ligne` dans le tableau des célébrations." + Globals.NL +
                       "• Correction de la taille et de l'emplacement de l'image d'affichage mensuelle sur les pages." + Globals.NL +
                       "• Quelques correctifs et améliorations d'UI/UX." + Globals.NL +
