@@ -28,7 +28,9 @@ partial class MainForm
     if ( multi )
     {
       MonthlyCalendar.CalendarDate = interval.Start.Value;
-      countPages = interval.MonthsCount;
+      countPages = Settings.PrintImageInLandscape
+        ? interval.MonthsCount
+        : interval.MonthsCount / 2;
     }
     int marginTopLeft = Settings.PrintingMargin;
     int marginRightBottom = marginTopLeft + marginTopLeft;
