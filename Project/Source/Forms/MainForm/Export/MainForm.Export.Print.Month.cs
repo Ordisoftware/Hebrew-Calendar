@@ -32,12 +32,14 @@ partial class MainForm
     }
     int marginTopLeft = Settings.PrintingMargin;
     int marginRightBottom = marginTopLeft + marginTopLeft;
+    bool centerImage = Settings.PrintImageCenterOnPage;
+    int warningTrigger = Settings.PrintPageCountWarning;
     double ratio = (double)MonthlyCalendar.Height / MonthlyCalendar.Width;
     //
     ExportPrintRun(Settings.PrintImageInLandscape, (s, e) =>
     {
       if ( askToContinue )
-        if ( Settings.PrintPageCountWarning > 0 && countPages > Settings.PrintPageCountWarning )
+        if ( warningTrigger > 0 && countPages > warningTrigger )
           if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )
           {
             e.HasMorePages = false;
@@ -52,30 +54,34 @@ partial class MainForm
           askToContinue = false;
       var bounds = e.PageBounds;
       bounds.Height = (int)( bounds.Width * ratio );
-      if ( bounds.Height > e.PageBounds.Height && bounds.Width <= e.PageBounds.Width )
+      int maxWidth = e.PageBounds.Width;
+      int maxHeight = e.PageSettings.Landscape
+        ? e.PageBounds.Height
+        : e.PageBounds.Height / 2;
+      if ( bounds.Height > maxHeight && bounds.Width <= maxWidth )
       {
         bounds.Width = (int)( bounds.Width * ratio );
-        bounds.Height = e.PageBounds.Height;
+        bounds.Height = maxHeight;
       }
       else
-      if ( bounds.Width > e.PageBounds.Width && bounds.Height <= e.PageBounds.Height )
+      if ( bounds.Width > maxWidth && bounds.Height <= maxHeight )
       {
         bounds.Height = (int)( bounds.Height * ratio );
-        bounds.Width = e.PageBounds.Width;
+        bounds.Width = maxWidth;
       }
       else
-      if ( bounds.Width > e.PageBounds.Width && bounds.Height > e.PageBounds.Height )
+      if ( bounds.Width > maxWidth && bounds.Height > maxHeight )
       {
         var bounds1 = new Rectangle();
         var bounds2 = new Rectangle();
         bounds1.Width = (int)( bounds.Width * ratio );
-        bounds1.Height = e.PageBounds.Height;
+        bounds1.Height = maxHeight;
         bounds2.Height = (int)( bounds.Height * ratio );
-        bounds2.Width = e.PageBounds.Width;
-        if ( bounds1.Width <= e.PageBounds.Width && bounds1.Height <= e.PageBounds.Height )
+        bounds2.Width = maxWidth;
+        if ( bounds1.Width <= maxWidth && bounds1.Height <= maxHeight )
           bounds = bounds1;
         else
-        if ( bounds2.Width <= e.PageBounds.Width && bounds2.Height <= e.PageBounds.Height )
+        if ( bounds2.Width <= maxWidth && bounds2.Height <= maxHeight )
           bounds = bounds2;
         else
           DebugManager.Trace(LogTraceEvent.Error, "Error on resize image in ExportPrintMonth");
@@ -86,9 +92,14 @@ partial class MainForm
       void process()
       {
         using var bitmap = MonthlyCalendar.GetBitmap();
-        int secondImageHeightDelta = !isSecondImage ? 0 : e.PageBounds.Height / 2;
-        int marginLeft = ( e.PageBounds.Width - bounds.Width ) / 2;
-        int marginTop = ( e.PageBounds.Height - bounds.Height ) / 2;
+        int marginLeft = 0;
+        int marginTop = 0;
+        int secondImageHeightDelta = !isSecondImage ? 0 : maxHeight;
+        if ( centerImage )
+        {
+          marginLeft = ( maxWidth - bounds.Width ) / 2;
+          marginTop = ( maxHeight - bounds.Height ) / 2;
+        }
         e.Graphics.DrawImage(bitmap,
                              marginTopLeft + marginLeft,
                              marginTopLeft + marginTop + secondImageHeightDelta,

@@ -154,6 +154,7 @@ partial class PreferencesForm
     Settings.MonthViewOneLuminaryOneLineSign = EditMonthViewOneLuminaryOneLineSign.Checked;
     Settings.EphemerisSignBeforeElseAfter = EditEphemerisSignBeforeElseAfter.Checked;
     Settings.HideLuminarySigns = EditHideLuminarySigns.Checked;
+    Settings.PrintImageCenterOnPage = EditPrintImageCenterOnPage.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;
