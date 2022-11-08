@@ -1176,4 +1176,7 @@ Si activé, seul le nom sera recoché.</value>
   <data name="ActionSwitchToParashahSettings.Text" xml:space="preserve">
     <value>Paramètres de la parashah</value>
   </data>
+  <data name="EditPrintImageCenterOnPage.Text" xml:space="preserve">
+    <value>Centrer les images dans les pages</value>
+  </data>
 </root>

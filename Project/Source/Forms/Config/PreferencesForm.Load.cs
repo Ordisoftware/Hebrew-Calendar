@@ -151,6 +151,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditMonthViewOneLuminaryOneLineSign.Checked = Settings.MonthViewOneLuminaryOneLineSign);
     SystemManager.TryCatch(() => EditEphemerisSignBeforeElseAfter.Checked = Settings.EphemerisSignBeforeElseAfter);
     SystemManager.TryCatch(() => EditHideLuminarySigns.Checked = Settings.HideLuminarySigns);
+    SystemManager.TryCatch(() => EditPrintImageCenterOnPage.Checked = Settings.PrintImageCenterOnPage);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewLatinFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);

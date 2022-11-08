@@ -414,6 +414,7 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
+      this.EditPrintImageCenterOnPage = new System.Windows.Forms.CheckBox();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControlMain.SuspendLayout();
@@ -3296,6 +3297,7 @@
       this.TabPagePrinting.Controls.Add(this.LabelPrintMargin);
       this.TabPagePrinting.Controls.Add(this.LabelPrintingMarginIntervalInfo);
       this.TabPagePrinting.Controls.Add(this.EditShowPrintDialog);
+      this.TabPagePrinting.Controls.Add(this.EditPrintImageCenterOnPage);
       this.TabPagePrinting.Controls.Add(this.EditPrintImageInLandscape);
       this.TabPagePrinting.Controls.Add(this.EditPrintPageCountWarning);
       this.TabPagePrinting.Controls.Add(this.EditPrintingMargin);
@@ -3622,6 +3624,12 @@
       this.EditWeatherAppPath.Name = "EditWeatherAppPath";
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
+      // 
+      // EditPrintImageCenterOnPage
+      // 
+      resources.ApplyResources(this.EditPrintImageCenterOnPage, "EditPrintImageCenterOnPage");
+      this.EditPrintImageCenterOnPage.Name = "EditPrintImageCenterOnPage";
+      this.EditPrintImageCenterOnPage.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 
@@ -4099,5 +4107,6 @@
     private CheckBox EditHideLuminarySigns;
     private LinkLabel ActionSwitchToMonthViewLayoutSettings2;
     private LinkLabel ActionSwitchToParashahSettings;
-  }
+        private CheckBox EditPrintImageCenterOnPage;
+    }
 }

@@ -3416,5 +3416,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["HideLuminarySigns"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool PrintImageCenterOnPage {
+            get {
+                return ((bool)(this["PrintImageCenterOnPage"]));
+            }
+            set {
+                this["PrintImageCenterOnPage"] = value;
+            }
+        }
     }
 }

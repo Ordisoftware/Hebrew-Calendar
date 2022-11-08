@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -30,14 +30,16 @@ partial class MainForm
       MonthlyCalendar.CalendarDate = interval.Start.Value;
       countPages = interval.MonthsCount;
     }
-    int margin = Settings.PrintingMargin;
-    int margin2 = margin + margin;
+    int marginTopLeft = Settings.PrintingMargin;
+    int marginRightBottom = marginTopLeft + marginTopLeft;
+    bool centerImage = Settings.PrintImageCenterOnPage;
+    int warningTrigger = Settings.PrintPageCountWarning;
     double ratio = (double)MonthlyCalendar.Height / MonthlyCalendar.Width;
     //
     ExportPrintRun(Settings.PrintImageInLandscape, (s, e) =>
     {
       if ( askToContinue )
-        if ( Settings.PrintPageCountWarning > 0 && countPages > Settings.PrintPageCountWarning )
+        if ( warningTrigger > 0 && countPages > warningTrigger )
           if ( !DisplayManager.QueryYesNo(SysTranslations.AskToPrintLotsOfPages.GetLang(countPages)) )
           {
             e.HasMorePages = false;
@@ -52,29 +54,66 @@ partial class MainForm
           askToContinue = false;
       var bounds = e.PageBounds;
       bounds.Height = (int)( bounds.Width * ratio );
-      if ( bounds.Height > e.PageBounds.Height )
+      int maxWidth = e.PageBounds.Width;
+      int maxHeight = e.PageSettings.Landscape
+        ? e.PageBounds.Height
+        : e.PageBounds.Height / 2;
+      if ( bounds.Height > maxHeight && bounds.Width <= maxWidth )
       {
-        ratio = 1 / ratio;
-        bounds.Height = e.PageBounds.Height;
-        bounds.Width = (int)( bounds.Height * ratio );
+        bounds.Width = (int)( bounds.Width * ratio );
+        bounds.Height = maxHeight;
       }
-      bool redone = false;
+      else
+      if ( bounds.Width > maxWidth && bounds.Height <= maxHeight )
+      {
+        bounds.Height = (int)( bounds.Height * ratio );
+        bounds.Width = maxWidth;
+      }
+      else
+      if ( bounds.Width > maxWidth && bounds.Height > maxHeight )
+      {
+        var bounds1 = new Rectangle();
+        var bounds2 = new Rectangle();
+        bounds1.Width = (int)( bounds.Width * ratio );
+        bounds1.Height = maxHeight;
+        bounds2.Height = (int)( bounds.Height * ratio );
+        bounds2.Width = maxWidth;
+        if ( bounds1.Width <= maxWidth && bounds1.Height <= maxHeight )
+          bounds = bounds1;
+        else
+        if ( bounds2.Width <= maxWidth && bounds2.Height <= maxHeight )
+          bounds = bounds2;
+        else
+          DebugManager.Trace(LogTraceEvent.Error, "Error on resize image in ExportPrintMonth");
+      }
+      bool isSecondImage = false;
       process();
       //
       void process()
       {
         using var bitmap = MonthlyCalendar.GetBitmap();
-        int delta = !redone ? 0 : e.PageBounds.Height / 2;
-        e.Graphics.DrawImage(bitmap, margin, margin + delta, bounds.Width - margin2, bounds.Height - margin2);
+        int marginLeft = 0;
+        int marginTop = 0;
+        int secondImageHeightDelta = !isSecondImage ? 0 : maxHeight;
+        if ( centerImage )
+        {
+          marginLeft = ( maxWidth - bounds.Width ) / 2;
+          marginTop = ( maxHeight - bounds.Height ) / 2;
+        }
+        e.Graphics.DrawImage(bitmap,
+                             marginTopLeft + marginLeft,
+                             marginTopLeft + marginTop + secondImageHeightDelta,
+                             bounds.Width - marginRightBottom,
+                             bounds.Height - marginRightBottom);
         if ( multi )
         {
           MonthlyCalendar.CalendarDate = MonthlyCalendar.CalendarDate.AddMonths(1);
           if ( MonthlyCalendar.CalendarDate <= interval.End )
           {
             e.HasMorePages = true;
-            if ( !redone && !e.PageSettings.Landscape )
+            if ( !isSecondImage && !e.PageSettings.Landscape )
             {
-              redone = true;
+              isSecondImage = true;
               process();
             }
           }
