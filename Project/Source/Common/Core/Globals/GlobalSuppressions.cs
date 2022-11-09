@@ -5,8 +5,6 @@
 
 [assembly: SuppressMessage("Major Code Smell", "S1172:Unused method parameters should be removed", Justification = "Analysis error", Scope = "module")]
 
-
-
 [assembly: SuppressMessage("Critical Code Smell", "S1699:Constructors should only call non-overridable methods", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Critical Code Smell", "S2365:Properties should not make collection or array copies", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Critical Code Smell", "S2696:Instance members should not write to \"static\" fields", Justification = "Opinion", Scope = "module")]
@@ -94,3 +92,5 @@
 [assembly: SuppressMessage("Style", "GCop437:Complete the task associated to this \"TODO\" comment.", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Usage", "GCop511:Either remove the parameter documentation node, or describe it properly.", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion", Scope = "module")]
+
+[assembly: SuppressMessage("Critical Code Smell", "S2479:Whitespace and control characters in string literals should be explicit", Justification = "Analysis error (C# 11 Raw String Literal)", Scope = "module")]
