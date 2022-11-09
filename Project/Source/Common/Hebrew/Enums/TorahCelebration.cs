@@ -25,7 +25,7 @@ public enum TorahCelebration
   YomTerouah,
   YomHaKipourim,
   Soukot,
-  // TODO check and uncomment when ready
+  // TODO when ready : check and uncomment 
   //Tevet10,
   //TouBichvat,
   //Hanouka,

@@ -142,7 +142,7 @@ static class TorahCelebrationSettings
   static public readonly IEnumerable<TorahCelebrationDay> MinorEvents
     = Enums.GetValues<TorahCelebrationDay>()
            .SkipUntil(v => v == TorahCelebrationDay.SoukotD8)
-           .TakeWhile(v => v == TorahCelebrationDay.Shabat); // TODO update when ready
+           .TakeWhile(v => v == TorahCelebrationDay.Shabat); // TODO when ready : update 
 
   /// <summary>
   /// Indicates special celebration days.
@@ -192,7 +192,7 @@ static class TorahCelebrationSettings
     TorahCelebrationDay.YomHaKipourim => TorahCelebration.YomHaKipourim,
     TorahCelebrationDay.SoukotD1 => TorahCelebration.Soukot,
     TorahCelebrationDay.SoukotD8 => TorahCelebration.Soukot,
-    // TODO uncomment when ready
+    // TODO when ready : uncomment
     //TorahCelebrationDay.HanoukaD1 => TorahCelebration.Hanouka,
     //TorahCelebrationDay.HanoukaD8 => TorahCelebration.Hanouka,
     //TorahCelebrationDay.Pourim => TorahCelebration.Pourim,

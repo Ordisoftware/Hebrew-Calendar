@@ -64,9 +64,9 @@ partial class ManageBookmarksForm : Form
     ActiveControl = ListBox;
     ActionClear.Enabled = ListBox.Items.Count > 0;
     ActionSort.Enabled = ListBox.Items.Count > 0;
-    // TODO add when ready : && !Settings.AutoSortBookmarks;
-    // TODO add when ready : ActionUp.Enabled = !Settings.AutoSortBookmarks;
-    // TODO add when ready : ActionDown.Enabled = !Settings.AutoSortBookmarks;
+    // TODO when ready : add && !Settings.AutoSortBookmarks;
+    // TODO when ready : add ActionUp.Enabled = !Settings.AutoSortBookmarks;
+    // TODO when ready : add ActionDown.Enabled = !Settings.AutoSortBookmarks;
   }
 
   private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
