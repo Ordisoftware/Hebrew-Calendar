@@ -113,7 +113,7 @@ namespace Ordisoftware.Core
         }
       }
 
-      private class FileItem
+      private sealed class FileItem
       {
         public string FilePath;
         public DateTime Date;

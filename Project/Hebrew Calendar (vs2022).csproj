@@ -267,6 +267,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Common\Core\WinControls\ToolStripMenuItemHelper.cs" />
+    <Compile Include="Source\Common\Core\WinControls\ViewConnector.cs" />
     <Compile Include="Source\Common\Core\WinForms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,6 +411,9 @@
     <Compile Include="Source\Enums\CalendarSection.cs" />
     <Compile Include="Source\Common\Hebrew\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\TorahCelebrationVerses.cs" />
+    <Compile Include="Source\Forms\MainForm\UI\MainForm.SetView.Connectors.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Program\TorahCelebrationSettings.cs" />
     <Compile Include="Source\Enums\CalendarDoubleClickAction.cs" />
     <Compile Include="Source\Enums\ViewScrollOverride.cs" />

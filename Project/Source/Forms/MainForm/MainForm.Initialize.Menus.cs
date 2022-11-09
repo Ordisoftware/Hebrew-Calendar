@@ -111,8 +111,8 @@ partial class MainForm
   private void DoReadParashahSomeWeek(string url)
   {
     var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-    if ( weekParashah is not null );
-    HebrewTools.OpenBibleProvider(url, weekParashah.FullReferenceBegin);
+    if ( weekParashah is not null )
+      HebrewTools.OpenBibleProvider(url, weekParashah.FullReferenceBegin);
   }
 
 }

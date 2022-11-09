@@ -26,6 +26,7 @@ static class ParashotHelper
     bool withLinked,
     Func<Form> runBoard)
   {
+    if ( parashah is null ) return false;
     // Prepare
     var form = (MessageBoxEx)Application.OpenForms.GetAll(f => f is MessageBoxEx && f.Tag == parashah).FirstOrDefault();
     if ( form is not null )
@@ -34,7 +35,6 @@ static class ParashotHelper
       return true;
     }
     var linked = withLinked ? parashah.GetLinked(parashot) : null;
-    if ( parashah is null ) return false;
     // Message box
     var message = parashah.ToStringReadable();
     if ( linked is not null )
