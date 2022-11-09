@@ -229,6 +229,9 @@ partial class PreferencesForm
     else
     if ( SelectCalendarDoubleClickActionSelect.Checked )
       Settings.CalendarDoubleClickAction = CalendarDoubleClickAction.Select;
+    else
+    if ( SelectCalendarDoubleClickActionContextMenu.Checked )
+      Settings.CalendarDoubleClickAction = CalendarDoubleClickAction.ContextMenu;
     // Double buffering
     DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
   }

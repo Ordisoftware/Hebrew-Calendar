@@ -1182,4 +1182,7 @@ Si activé, seul le nom sera recoché.</value>
   <data name="LabelOnlineVerseURL.Text" xml:space="preserve">
     <value>Requête par défaut de recherche en ligne de verset</value>
   </data>
+  <data name="SelectCalendarDoubleClickActionContextMenu.Text" xml:space="preserve">
+    <value>Ouvrir le menu contextuel</value>
+  </data>
 </root>

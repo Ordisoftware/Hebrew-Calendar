@@ -33,6 +33,10 @@ public partial class MainForm
       if ( e.Clicks > 1 )
         switch ( Settings.CalendarDoubleClickAction )
         {
+          case CalendarDoubleClickAction.ContextMenu:
+            ContextMenuDayCurrentEvent = dayRow;
+            ContextMenuStripDay.Show(Cursor.Position);
+            break;
           case CalendarDoubleClickAction.SetActive:
             GoToDate(dayRow.Date);
             break;

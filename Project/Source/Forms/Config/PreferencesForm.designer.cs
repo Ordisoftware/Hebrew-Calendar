@@ -420,6 +420,7 @@
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
       this.MenuSelectOnlineVerseProviderURL = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.SelectCalendarDoubleClickActionContextMenu = new System.Windows.Forms.RadioButton();
       LabelOnlineVerseURL = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
@@ -2499,6 +2500,7 @@
       // TabPageMonthViewBehavior
       // 
       this.TabPageMonthViewBehavior.BackColor = System.Drawing.SystemColors.Window;
+      this.TabPageMonthViewBehavior.Controls.Add(this.SelectCalendarDoubleClickActionContextMenu);
       this.TabPageMonthViewBehavior.Controls.Add(this.EditCalendarUseHoverEffect);
       this.TabPageMonthViewBehavior.Controls.Add(this.EditMonthViewChangeDayOnClick);
       this.TabPageMonthViewBehavior.Controls.Add(this.EditCalendarShowSelectedBox);
@@ -3676,6 +3678,12 @@
       this.MenuSelectOnlineVerseProviderURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseProviderURL, "MenuSelectOnlineVerseProviderURL");
       // 
+      // SelectCalendarDoubleClickActionContextMenu
+      // 
+      resources.ApplyResources(this.SelectCalendarDoubleClickActionContextMenu, "SelectCalendarDoubleClickActionContextMenu");
+      this.SelectCalendarDoubleClickActionContextMenu.Name = "SelectCalendarDoubleClickActionContextMenu";
+      this.SelectCalendarDoubleClickActionContextMenu.UseVisualStyleBackColor = true;
+      // 
       // PreferencesForm
       // 
       resources.ApplyResources(this, "$this");
@@ -4157,5 +4165,6 @@
         private Button ActionSelectOnlineVerseURL;
         private TextBoxEx EditOpenVerseOnlineURL;
         private ContextMenuStrip MenuSelectOnlineVerseProviderURL;
+        private RadioButton SelectCalendarDoubleClickActionContextMenu;
     }
 }
