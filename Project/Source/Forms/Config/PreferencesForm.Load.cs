@@ -219,6 +219,9 @@ partial class PreferencesForm
       case CalendarDoubleClickAction.SetActive:
         SelectCalendarDoubleClickActionSetActive.Select();
         break;
+      case CalendarDoubleClickAction.ContextMenu:
+        SelectCalendarDoubleClickActionContextMenu.Select();
+        break;
       default:
         SelectCalendarDoubleClickActionSelect.Select();
         break;

@@ -18,5 +18,6 @@ public enum CalendarDoubleClickAction
 {
   Nothing,
   SetActive,
-  Select
+  Select,
+  ContextMenu
 }
