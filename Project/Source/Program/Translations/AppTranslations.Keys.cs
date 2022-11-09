@@ -28,123 +28,127 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary NoticeKeyboardShortcuts = new()
   {
-    [Language.EN] = "Ctrl + Tab : Next view" + Globals.NL +
-                    "Shift + Ctrl + Tab : Previous view" + Globals.NL +
-                    "F1 : Text report view" + Globals.NL +
-                    "F2 : Monthly view" + Globals.NL +
-                    "F3 : Database grid view" + Globals.NL +
-                    "F4 : Next celebrations window" + Globals.NL +
-                    "F5 : Search a celebration window" + Globals.NL +
-                    "F6 : Search a moon month window" + Globals.NL +
-                    "F7 : Search a gregorian month window" + Globals.NL +
-                    "F8 (or Ctrl + N) : Navigation window" + Globals.NL +
-                    "Ctrl + T (or Numpad0) : Go to today" + Globals.NL +
-                    "Ctrl + B (or Decimal) : Go to selected day" + Globals.NL +
-                    "Ctrl + D : Search a day" + Globals.NL +
-                    "Ctrl + S : Save current view to file" + Globals.NL +
-                    "Ctrl + C : Copy current view to clipboard" + Globals.NL +
-                    "Ctrl + P : Print current view" + Globals.NL +
-                    "Ctrl + Shift + C : Copy the text report selection to clipboard" + Globals.NL +
-                    "Alt + V : View menu" + Globals.NL +
-                    "Alt + T : Tools menu" + Globals.NL +
-                    "Alt + L : Web links menu" + Globals.NL +
-                    "Alt + I : Information menu" + Globals.NL +
-                    "Alt + S : Settings menu" + Globals.NL +
-                    "Alt + E : Export folder" + Globals.NL +
-                    "Alt + C : Windows calculator" + Globals.NL +
-                    "Alt + D : Windows date and time settings" + Globals.NL +
-                    "Alt + M : Windows weather" + Globals.NL +
-                    "Alt + W : Online weather" + Globals.NL +
-                    "Alt + G : Generate calendar" + Globals.NL +
-                    "Alt + P : Show online parashah menu" + Globals.NL +
-                    "Ctrl + F1 : Parashot board" + Globals.NL +
-                    "Ctrl + F2 : Celebration verses board" + Globals.NL +
-                    "Ctrl + F3 : Celebrations board" + Globals.NL +
-                    "Ctrl + F4 : New moons board" + Globals.NL +
-                    "Ctrl + F5 : Lunar months board" + Globals.NL +
-                    "Ctrl + Shift + D : Dates difference calculator" + Globals.NL +
-                    "Home : First month available in the database" + Globals.NL +
-                    "End : Last month available in the database" + Globals.NL +
-                    "Up (ou PageUp) : Previous year" + Globals.NL +
-                    "Down (ou PageDown) : Next year" + Globals.NL +
-                    "Left : Previous month" + Globals.NL +
-                    "Right : Next month" + Globals.NL +
-                    "Ctrl + Left : Previous month having a celebration" + Globals.NL +
-                    "Ctrl + Right : Next month having a celebration" + Globals.NL +
-                    "Ctrl + Home : First month having a celebration" + Globals.NL +
-                    "Ctrl + End : Last month having a celebration" + Globals.NL +
-                    "Shit + Up : Semaine précédente" + Globals.NL +
-                    "Shit + Down : Previous week" + Globals.NL +
-                    "Shit + Left : Next week" + Globals.NL +
-                    "Shit + Right : Next day" + Globals.NL +
-                    "Add or Sub : Change active day" + Globals.NL +
-                    "Shift + Click : Set active day" + Globals.NL +
-                    "Ctrl + Click : Select day" + Globals.NL +
-                    "F9 : Preferences" + Globals.NL +
-                    "F10 : Log file window" + Globals.NL +
-                    "F11 : Usage statistics window" + Globals.NL +
-                    "F12 : About" + Globals.NL +
-                    "Alt + F4 (ou Escape) : Close window" + Globals.NL +
-                    "Ctrl + Alt + F4 : Exit application",
+    [Language.EN] = """
+                    Ctrl + Tab : Next view
+                    Shift + Ctrl + Tab : Previous view
+                    F1 : Text report view
+                    F2 : Monthly view
+                    F3 : Database grid view
+                    F4 : Next celebrations window
+                    F5 : Search a celebration window
+                    F6 : Search a moon month window
+                    F7 : Search a gregorian month window
+                    F8 (or Ctrl + N) : Navigation window
+                    Ctrl + T (or Numpad0) : Go to today
+                    Ctrl + B (or Decimal) : Go to selected day
+                    Ctrl + D : Search a day
+                    Ctrl + S : Save current view to file
+                    Ctrl + C : Copy current view to clipboard
+                    Ctrl + P : Print current view
+                    Ctrl + Shift + C : Copy the text report selection to clipboard
+                    Alt + V : View menu
+                    Alt + T : Tools menu
+                    Alt + L : Web links menu
+                    Alt + I : Information menu
+                    Alt + S : Settings menu
+                    Alt + E : Export folder
+                    Alt + C : Windows calculator
+                    Alt + D : Windows date and time settings
+                    Alt + M : Windows weather
+                    Alt + W : Online weather
+                    Alt + G : Generate calendar
+                    Alt + P : Show online parashah menu
+                    Ctrl + F1 : Parashot board
+                    Ctrl + F2 : Celebration verses board
+                    Ctrl + F3 : Celebrations board
+                    Ctrl + F4 : New moons board
+                    Ctrl + F5 : Lunar months board
+                    Ctrl + Shift + D : Dates difference calculator
+                    Home : First month available in the database
+                    End : Last month available in the database
+                    Up (ou PageUp) : Previous year
+                    Down (ou PageDown) : Next year
+                    Left : Previous month
+                    Right : Next month
+                    Ctrl + Left : Previous month having a celebration
+                    Ctrl + Right : Next month having a celebration
+                    Ctrl + Home : First month having a celebration
+                    Ctrl + End : Last month having a celebration
+                    Shit + Up : Semaine précédente
+                    Shit + Down : Previous week
+                    Shit + Left : Next week
+                    Shit + Right : Next day
+                    Add or Sub : Change active day
+                    Shift + Click : Set active day
+                    Ctrl + Click : Select day
+                    F9 : Preferences
+                    F10 : Log file window
+                    F11 : Usage statistics window
+                    F12 : About
+                    Alt + F4 (ou Escape) : Close window
+                    Ctrl + Alt + F4 : Exit application
+                    """,
 
-    [Language.FR] = "Ctrl + Tab : Vue suivante" + Globals.NL +
-                    "Maj + Ctrl + Tab : Vue précédente" + Globals.NL +
-                    "F1 : Vue du rapport textuel" + Globals.NL +
-                    "F2 : Vue du mois" + Globals.NL +
-                    "F3 : Vue de la grille de données" + Globals.NL +
-                    "F4 : Fenêtre des prochaines célébrations" + Globals.NL +
-                    "F5 : Fenêtre de recherche de célébration" + Globals.NL +
-                    "F6 : Fenêtre de recherche de mois lunaire" + Globals.NL +
-                    "F7 : Fenêtre de recherche de mois grégorien" + Globals.NL +
-                    "F8 (ou Ctrl + N) : Fenêtre de navigation" + Globals.NL +
-                    "Ctrl + T (ou Numpad0) : Aller à aujourd'hui" + Globals.NL +
-                    "Ctrl + B (ou Décimal) : Aller au jour sélectionné" + Globals.NL +
-                    "Ctrl + D : Chercher un jour" + Globals.NL +
-                    "Ctrl + S : Sauvegarde la vue en cours dans un fichier" + Globals.NL +
-                    "Ctrl + C : Copie la vue en cours dans le presse-papier" + Globals.NL +
-                    "Ctrl + P : Imprime la vue en cours" + Globals.NL +
-                    "Ctrl + Maj + C : Copie la sélection du rapport textuel dans le presse-papier" + Globals.NL +
-                    "Alt + V : Menu des vues" + Globals.NL +
-                    "Alt + T : Menu des outils" + Globals.NL +
-                    "Alt + L : Menu des liens web" + Globals.NL +
-                    "Alt + I : Menu des informations" + Globals.NL +
-                    "Alt + S : Menu des paramètres" + Globals.NL +
-                    "Alt + E : Dossier d'export" + Globals.NL +
-                    "Alt + C : Calculatrice Windows" + Globals.NL +
-                    "Alt + D : Paramètres de date et heure de Windows" + Globals.NL +
-                    "Alt + M : Météo Windows" + Globals.NL +
-                    "Alt + W : Météo en ligne" + Globals.NL +
-                    "Alt + G : Génère le calendrier" + Globals.NL +
-                    "Alt + P : Affiche le menu de la parashah en ligne" + Globals.NL +
-                    "Ctrl + F1 : Tableau des parashot" + Globals.NL +
-                    "Ctrl + F2 : Tableau des versets des célébrations" + Globals.NL +
-                    "Ctrl + F3 : Tableau des célébrations" + Globals.NL +
-                    "Ctrl + F4 : Tableau des nouvelles lunes" + Globals.NL +
-                    "Ctrl + F5 : Tableau des mois lunaires" + Globals.NL +
-                    "Ctrl + Maj + D : Calculateur de différence de dates" + Globals.NL +
-                    "Début : Premier mois disponible dans la base de données" + Globals.NL +
-                    "Fin : Dernier mois disponible dans la base de données" + Globals.NL +
-                    "Haut (ou PagePrec) : Année précédente" + Globals.NL +
-                    "Bas (ou PageSuiv) : Année suivante" + Globals.NL +
-                    "Gauche : Mois précédent" + Globals.NL +
-                    "Droite : Mois suivant" + Globals.NL +
-                    "Ctrl + Gauche : Mois précédent ayant une célébration" + Globals.NL +
-                    "Ctrl + Droite : Mois suivant ayant une célébration" + Globals.NL +
-                    "Ctrl + Début : Premier mois ayant une célébration" + Globals.NL +
-                    "Ctrl + Fin : Dernier mois ayant une célébration" + Globals.NL +
-                    "Maj + Haut : Semaine précédente" + Globals.NL +
-                    "Maj + Bas : Semaine suivante" + Globals.NL +
-                    "Maj + Gauche : Jour précédent" + Globals.NL +
-                    "Maj + Droite : Jour suivant" + Globals.NL +
-                    "Plus ou Moins : Changer de jour actif" + Globals.NL +
-                    "Maj + Clic : Définir jour actif" + Globals.NL +
-                    "Ctrl + Clic : Sélectionner jour" + Globals.NL +
-                    "F9 : Préférences" + Globals.NL +
-                    "F10 : Fenêtre du fichier log" + Globals.NL +
-                    "F11 : Fenêtre des statistiques d'utilisation" + Globals.NL +
-                    "F12 : A propos" + Globals.NL +
-                    "Alt + F4 (ou Échap) : Ferme la fenêtre" + Globals.NL +
-                    "Ctrl + Alt + F4 : Ferme l'application",
+    [Language.FR] = """
+                    Ctrl + Tab : Vue suivante
+                    Maj + Ctrl + Tab : Vue précédente
+                    F1 : Vue du rapport textuel
+                    F2 : Vue du mois
+                    F3 : Vue de la grille de données
+                    F4 : Fenêtre des prochaines célébrations
+                    F5 : Fenêtre de recherche de célébration
+                    F6 : Fenêtre de recherche de mois lunaire
+                    F7 : Fenêtre de recherche de mois grégorien
+                    F8 (ou Ctrl + N) : Fenêtre de navigation
+                    Ctrl + T (ou Numpad0) : Aller à aujourd'hui
+                    Ctrl + B (ou Décimal) : Aller au jour sélectionné
+                    Ctrl + D : Chercher un jour
+                    Ctrl + S : Sauvegarde la vue en cours dans un fichier
+                    Ctrl + C : Copie la vue en cours dans le presse-papier
+                    Ctrl + P : Imprime la vue en cours
+                    Ctrl + Maj + C : Copie la sélection du rapport textuel dans le presse-papier
+                    Alt + V : Menu des vues
+                    Alt + T : Menu des outils
+                    Alt + L : Menu des liens web
+                    Alt + I : Menu des informations
+                    Alt + S : Menu des paramètres
+                    Alt + E : Dossier d'export
+                    Alt + C : Calculatrice Windows
+                    Alt + D : Paramètres de date et heure de Windows
+                    Alt + M : Météo Windows
+                    Alt + W : Météo en ligne
+                    Alt + G : Génère le calendrier
+                    Alt + P : Affiche le menu de la parashah en ligne
+                    Ctrl + F1 : Tableau des parashot
+                    Ctrl + F2 : Tableau des versets des célébrations
+                    Ctrl + F3 : Tableau des célébrations
+                    Ctrl + F4 : Tableau des nouvelles lunes
+                    Ctrl + F5 : Tableau des mois lunaires
+                    Ctrl + Maj + D : Calculateur de différence de dates
+                    Début : Premier mois disponible dans la base de données
+                    Fin : Dernier mois disponible dans la base de données
+                    Haut (ou PagePrec) : Année précédente
+                    Bas (ou PageSuiv) : Année suivante
+                    Gauche : Mois précédent
+                    Droite : Mois suivant
+                    Ctrl + Gauche : Mois précédent ayant une célébration
+                    Ctrl + Droite : Mois suivant ayant une célébration
+                    Ctrl + Début : Premier mois ayant une célébration
+                    Ctrl + Fin : Dernier mois ayant une célébration
+                    Maj + Haut : Semaine précédente
+                    Maj + Bas : Semaine suivante
+                    Maj + Gauche : Jour précédent
+                    Maj + Droite : Jour suivant
+                    Plus ou Moins : Changer de jour actif
+                    Maj + Clic : Définir jour actif
+                    Ctrl + Clic : Sélectionner jour
+                    F9 : Préférences
+                    F10 : Fenêtre du fichier log
+                    F11 : Fenêtre des statistiques d'utilisation
+                    F12 : A propos
+                    Alt + F4 (ou Échap) : Ferme la fenêtre
+                    Ctrl + Alt + F4 : Ferme l'application
+                    """,
   };
 
 }
