@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew;
 static class OnlineCelebration
 {
 
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public string GetUrl(string pattern, TorahCelebration celebration)
   {
     var dispatch = new Dictionary<string, string>()
@@ -48,7 +49,7 @@ static class OnlineCelebration
         var uri = new Uri(pattern);
         return new UriBuilder(uri.Scheme, uri.Host).ToString();
       }
-    return "";
+    return string.Empty;
   }
 
   static public readonly Dictionary<TorahCelebration, string> AishEN = new()

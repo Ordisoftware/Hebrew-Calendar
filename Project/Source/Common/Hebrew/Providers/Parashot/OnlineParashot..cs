@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew;
 static partial class OnlineParashot
 {
 
+  [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public string GetUrl(string pattern, Parashah parashah)
   {
     var dispatch = new Dictionary<string, string>()
@@ -44,7 +45,7 @@ static partial class OnlineParashot
         var uri = new Uri(pattern);
         return new UriBuilder(uri.Scheme, uri.Host).ToString();
       }
-    return "";
+    return string.Empty;
   }
 
 }
