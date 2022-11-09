@@ -17,16 +17,14 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides panel view connector for a component.
 /// </summary>
-public class ViewConnector<TView, TComponent>
-where TView : Enum
+public class ViewConnector<TComponent>
 where TComponent : Component
 {
 
   /// <summary>
   /// The control.
   /// </summary>
-  public TComponent Component
-  { get; set; }
+  public TComponent Component { get; set; }
 
   /// <summary>
   /// The panel.
@@ -42,7 +40,7 @@ where TComponent : Component
 /// <summary>
 /// Provides ViewConnector dictionary.
 /// </summary>
-public class ViewConnectors<TView, TComponent> : Dictionary<TView, ViewConnector<TView, TComponent>>
+public class ViewConnectors<TView, TComponent> : Dictionary<TView, ViewConnector<TComponent>>
 where TView : Enum
 where TComponent : Component
 {
