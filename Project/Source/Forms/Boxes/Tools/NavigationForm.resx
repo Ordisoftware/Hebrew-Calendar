@@ -559,30 +559,28 @@
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
   </data>
-  <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionVerseReadDefault.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
-        QXZRUNiwIi06tBQ6FIKE+Wfzl7UZ2rr0j1VCc2JLt5WVzu3p+7zv77Lo1AsPe3iez/P7vWOTv8/4Zal1
-        AjIUbRJEzlvRM2PnYv8+ziUJxa9vwNfJc8DSIFB0rNQzi7ethzL9Ll5+WEx1VAMLPcC8B/gswEdX9MwW
-        +zDVXs2HhNyZPbxa7FoliulbQLIKxbeC4rwfpewdI3pmpkvfBNmyrxNplpG54UMoJXeh8FrHn+pQmG1C
-        IeW3Um8y7ciQjVyQUXeuNwgIVt4HUEoo8ErfNHMAq8m9WPlQb0TPjB0Zsty4c/uA4js/uo4I2hsEwZNV
-        WJzYguXprUb0zNiRIVv+gIuC5cQx/B4XFJ4JJrsr0OurQPbpGiN6ZuzIkOXGnZtfAN+devwcUmBErzim
-        n8OCH0+s6E2mHRmy3LhzkcGzEvvyYDO6T6xDx0FBp171xnFB7rEVPTN2ZMhy485FmveIN9YqyA9swq9H
-        gt0b9S0PBZmwFT0zdvmBGpDlxp2bUxn2Sc+be3VIRYNIO7eRcu5irn+7Eb3JtCNDlhs71TMbDe2cGQ1m
-        FhJhrKbHgG/PgWwc2USfET0zdmTIcmPGmYkgctO90H8HkI8BOR0vvcSL+wE07lhrRM/MdGSU5YZbuXJ6
-        P1pP7UOLz4uWRo9+enD1TAMO1wiObrOiZ8bOMl6z4ZaX4H/6PyW1fwBTCxqo4cpHWAAAAABJRU5ErkJg
+        vAAADrwBlbxySQAAAnNJREFUOE+Nk0tPE1EcxWer7twajS5MQQMk+A00MSaujYmayM7oAoioVCx+BAVF
+        oUGjA0UlyqvaTl/Td0tBrMVSoNAWykAfkFaoRVqZ9nhvH4IGE05yksn/nvPLnXtzmX/lc45gK7kUDbh1
+        V0qj/UvT3314yj4EYIsYiMw5nfoRdsz8sQ8mZW/GqGRvGYdenynFi6qQ6oY9ExaE3SrMOgfwzTYI5DYL
+        APyMY4Z/gvgMh6TgweryPBb8XxHxj0LvGEOFVDvMSKR6rHpVyMdcSAf1mLQOAGKatPNANgG/4REiUyqk
+        oj7kfpXA+XWsebWQSHUoAKIeJcSoC6mADh7LLkAmgVkCWPF+wvqKF9uZFJnngO0kYpMqSJoLAAMiE4PY
+        3i8gXwREvoyQHeiLAOHzh/3voARYnhjYASy53v0NKB/i/wBiEsL4+zKAR9ipIIAxAtDDYyW3kM8UAdkk
+        ATzeA/CddN6WAPd5LNpYiLEiIEh+R/CZsLmxRoI/4OfbENkDsGhX7ABCllfIxcaRCvJITCsRdfdh3iZH
+        IjSKgLkDsWmOXOM0xCw9G6LcOkJWlgAMYCpbjBCcLJB0IytYkA5wCLt6MKluR8jxEnOmp/CZerAWdJGm
+        WAQggxXXG1S28GCqW42wv2iEtqsJXOcdaLruQiu/B7W8GWpFO9S9bVCTGdd5G9yzBqg76qF53ghbdwOq
+        SJeplek2qltNOC0z49QfW3DygQ0OVlYw/d5ZMxeytEO79DnUHL9Yf/3YhZvXCj5/4+qRs3WXamWaeM1D
+        E6irmvq5o+fqLtO1co52aJcCqA4RH9zlA8TVxPTlUZ8ozXZnSIdhfgNqobdbW7UN8AAAAABJRU5ErkJg
         gg==
 </value>
   </data>
-  <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionVerseReadDefault.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 22</value>
   </data>
-  <data name="ActionStudyOnline.Text" xml:space="preserve">
-    <value>Study online</value>
+  <data name="ActionVerseReadDefault.Text" xml:space="preserve">
+    <value>Default read</value>
   </data>
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -606,6 +604,31 @@
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Read online</value>
+  </data>
+  <data name="ActionStudyOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAjdJREFUOE+dkk9I02Ecxr8IdbAC6eCxgwQF0clLtyDIgxFsRWWX/tHJFTQqbUVo
+        QXZRUNiwIi06tBQ6FIKE+Wfzl7UZ2rr0j1VCc2JLt5WVzu3p+7zv77Lo1AsPe3iez/P7vWOTv8/4Zal1
+        AjIUbRJEzlvRM2PnYv8+ziUJxa9vwNfJc8DSIFB0rNQzi7ethzL9Ll5+WEx1VAMLPcC8B/gswEdX9MwW
+        +zDVXs2HhNyZPbxa7FoliulbQLIKxbeC4rwfpewdI3pmpkvfBNmyrxNplpG54UMoJXeh8FrHn+pQmG1C
+        IeW3Um8y7ciQjVyQUXeuNwgIVt4HUEoo8ErfNHMAq8m9WPlQb0TPjB0Zsty4c/uA4js/uo4I2hsEwZNV
+        WJzYguXprUb0zNiRIVv+gIuC5cQx/B4XFJ4JJrsr0OurQPbpGiN6ZuzIkOXGnZtfAN+devwcUmBErzim
+        n8OCH0+s6E2mHRmy3LhzkcGzEvvyYDO6T6xDx0FBp171xnFB7rEVPTN2ZMhy485FmveIN9YqyA9swq9H
+        gt0b9S0PBZmwFT0zdvmBGpDlxp2bUxn2Sc+be3VIRYNIO7eRcu5irn+7Eb3JtCNDlhs71TMbDe2cGQ1m
+        FhJhrKbHgG/PgWwc2USfET0zdmTIcmPGmYkgctO90H8HkI8BOR0vvcSL+wE07lhrRM/MdGSU5YZbuXJ6
+        P1pP7UOLz4uWRo9+enD1TAMO1wiObrOiZ8bOMl6z4ZaX4H/6PyW1fwBTCxqo4cpHWAAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <data name="ActionStudyOnline.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionStudyOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
+  </data>
+  <data name="ActionStudyOnline.Text" xml:space="preserve">
+    <value>Study online</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 6</value>
@@ -632,7 +655,7 @@
   <data name="ActionViewParashot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
+        vAAADrwBlbxySQAAAPFJREFUOE/Fkz0KwkAUhPcMdp7GM1h4A2tbS8EjiF0OoLGxU0Q9gpVpBbEINvZJ
         TKLzhTUiuv4hOPCRvLyZIVussRqKhagV03PhwUumUFUsRV30+fBCePCSIWtWoiW6whNN4RI7PHjJkDUb
         MRYjMRNrMXDADg9eMmTN4GQVx/Fec8eOd2Inz8GOzJReC7IsizHleX5ZlmhXFOh5tHZ3Ae+UhGFY8nHB
         I71d8JMjEPjLERJMXx8hiqKdZo+CJElujpCmKQGPv7T2smBu51MQBHPNE9F2MPF9v2ftFOA3DbEVU8EF
@@ -652,7 +675,7 @@
     <value>Parashot board</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 132</value>
+    <value>211, 176</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -1425,9 +1448,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>404, 381</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
   </data>
@@ -1480,6 +1500,12 @@
     <value>ActionViewParashot</value>
   </data>
   <data name="&gt;&gt;ActionViewParashot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionVerseReadDefault.Name" xml:space="preserve">
+    <value>ActionVerseReadDefault</value>
+  </data>
+  <data name="&gt;&gt;ActionVerseReadDefault.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

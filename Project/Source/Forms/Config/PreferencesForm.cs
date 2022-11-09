@@ -55,6 +55,14 @@ partial class PreferencesForm : Form
     this.InitDropDowns();
     if ( !SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO remove when sod will be ready
       SelectUseSodHaibour.Enabled = false;
+    foreach ( var item in HebrewGlobals.WebProvidersBible.Items )
+      if ( item.Name == "-" )
+        MenuSelectOnlineVerseProviderURL.Items.Add(new ToolStripSeparator());
+      else
+        MenuSelectOnlineVerseProviderURL.Items.Add(item.CreateMenuItem(openVerseOnline));
+    //
+    void openVerseOnline(object sender, EventArgs e)
+      => EditOpenVerseOnlineURL.Text = (string)( (ToolStripMenuItem)sender ).Tag;
   }
 
   /// <summary>
@@ -943,6 +951,16 @@ partial class PreferencesForm : Form
   private void ActionWeatherOnlineTest_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
     MainForm.Instance.ActionOnlineWeather.PerformClick();
+  }
+
+  private void ActionSelectOnlineVerseURL_Click(object sender, EventArgs e)
+  {
+    MenuSelectOnlineVerseProviderURL.Show(ActionSelectOnlineVerseURL, new Point(0, ActionSelectOnlineVerseURL.Height));
+  }
+
+  private void ActionOnlineVerseHelp_Click(object sender, EventArgs e)
+  {
+    DisplayManager.ShowInformation(HebrewTranslations.NoticeOnlineBibleProvider.GetLang());
   }
 
   #endregion

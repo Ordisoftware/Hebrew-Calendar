@@ -308,6 +308,14 @@ partial class ReminderForm : Form
     });
   }
 
+  private void ActionVerseReadDefault_Click(object sender, EventArgs e)
+  {
+    var day = (LunisolarDay)LabelParashahValue.Tag;
+    var parashah = ParashotFactory.Instance.Get(day.ParashahID);
+    string verse = $"{(int)parashah.Book}.{parashah.ReferenceBegin}";
+    HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, verse);
+  }
+
   #endregion
 
   #region Instance User Interactions
@@ -381,9 +389,12 @@ partial class ReminderForm : Form
         ParashotForm.Run();
       else
       {
-        CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
+        CelebrationVersesBoardForm.Run(Celebration,
+                                       nameof(Settings.CelebrationVersesBoardFormLocation),
                                        nameof(Settings.CelebrationVersesBoardFormClientSize),
-                                       Celebration);
+                                       Settings.OpenVerseOnlineURL,
+                                       Settings.DoubleClickOnVerseOpenDefaultReader,
+                                       value => Settings.DoubleClickOnVerseOpenDefaultReader = value);
       }
     }
     else
@@ -412,6 +423,6 @@ partial class ReminderForm : Form
     ContextMenuLockout.Show(ActionLockout, new Point(0, ActionLockout.Height));
   }
 
-  #endregion
+    #endregion
 
 }

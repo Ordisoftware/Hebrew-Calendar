@@ -1179,4 +1179,7 @@ Si activé, seul le nom sera recoché.</value>
   <data name="EditPrintImageCenterOnPage.Text" xml:space="preserve">
     <value>Centrer les images dans les pages</value>
   </data>
+  <data name="LabelOnlineVerseURL.Text" xml:space="preserve">
+    <value>Requête par défaut de recherche en ligne de verset</value>
+  </data>
 </root>

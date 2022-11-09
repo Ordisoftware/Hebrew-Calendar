@@ -117,59 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;LabelInfoOccurences.Name" xml:space="preserve">
-    <value>LabelInfoOccurences</value>
-  </data>
-  <data name="&gt;&gt;LabelInfoOccurences.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelInfoOccurences.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;LabelInfoOccurences.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Name" xml:space="preserve">
-    <value>ActionClose</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.Parent" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EditDoubleClickOnVerseOpenDefaultReader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="EditDoubleClickOnVerseOpenDefaultReader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 268</value>
+  <data name="EditDoubleClickOnVerseOpenDefaultReader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 25</value>
   </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 28</value>
+  <data name="EditDoubleClickOnVerseOpenDefaultReader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 17</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+  <data name="EditDoubleClickOnVerseOpenDefaultReader.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+  <data name="EditDoubleClickOnVerseOpenDefaultReader.Text" xml:space="preserve">
+    <value>Double-click open the default reader else the menu</value>
+  </data>
+  <data name="&gt;&gt;EditDoubleClickOnVerseOpenDefaultReader.Name" xml:space="preserve">
+    <value>EditDoubleClickOnVerseOpenDefaultReader</value>
+  </data>
+  <data name="&gt;&gt;EditDoubleClickOnVerseOpenDefaultReader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditDoubleClickOnVerseOpenDefaultReader.Parent" xml:space="preserve">
     <value>PanelBottom</value>
   </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LabelInfoOccurences.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="&gt;&gt;EditDoubleClickOnVerseOpenDefaultReader.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="LabelInfoOccurences.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelInfoOccurences.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
+    <value>0, 4</value>
   </data>
   <data name="LabelInfoOccurences.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 13</value>
@@ -202,7 +181,7 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;LabelInfoOccurences.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -211,7 +190,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 2</value>
+    <value>302, 17</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -232,7 +211,31 @@
     <value>PanelBottom</value>
   </data>
   <data name="&gt;&gt;ActionClose.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 268</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 43</value>
+  </data>
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="ColumnBook.Text" xml:space="preserve">
     <value>Book</value>
@@ -261,44 +264,28 @@
   <metadata name="ContextMenuVerse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>221, 20</value>
   </metadata>
-  <data name="ContextMenuVerse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 54</value>
+  <data name="ActionVerseReadDefault.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAnNJREFUOE+Nk0tPE1EcxWer7twajS5MQQMk+A00MSaujYmayM7oAoioVCx+BAVF
+        oUGjA0UlyqvaTl/Td0tBrMVSoNAWykAfkFaoRVqZ9nhvH4IGE05yksn/nvPLnXtzmX/lc45gK7kUDbh1
+        V0qj/UvT3314yj4EYIsYiMw5nfoRdsz8sQ8mZW/GqGRvGYdenynFi6qQ6oY9ExaE3SrMOgfwzTYI5DYL
+        APyMY4Z/gvgMh6TgweryPBb8XxHxj0LvGEOFVDvMSKR6rHpVyMdcSAf1mLQOAGKatPNANgG/4REiUyqk
+        oj7kfpXA+XWsebWQSHUoAKIeJcSoC6mADh7LLkAmgVkCWPF+wvqKF9uZFJnngO0kYpMqSJoLAAMiE4PY
+        3i8gXwREvoyQHeiLAOHzh/3voARYnhjYASy53v0NKB/i/wBiEsL4+zKAR9ipIIAxAtDDYyW3kM8UAdkk
+        ATzeA/CddN6WAPd5LNpYiLEiIEh+R/CZsLmxRoI/4OfbENkDsGhX7ABCllfIxcaRCvJITCsRdfdh3iZH
+        IjSKgLkDsWmOXOM0xCw9G6LcOkJWlgAMYCpbjBCcLJB0IytYkA5wCLt6MKluR8jxEnOmp/CZerAWdJGm
+        WAQggxXXG1S28GCqW42wv2iEtqsJXOcdaLruQiu/B7W8GWpFO9S9bVCTGdd5G9yzBqg76qF53ghbdwOq
+        SJeplek2qltNOC0z49QfW3DygQ0OVlYw/d5ZMxeytEO79DnUHL9Yf/3YhZvXCj5/4+qRs3WXamWaeM1D
+        E6irmvq5o+fqLtO1co52aJcCqA4RH9zlA8TVxPTlUZ8ozXZnSIdhfgNqobdbW7UN8AAAAABJRU5ErkJg
+        gg==
+</value>
   </data>
-  <data name="&gt;&gt;ContextMenuVerse.Name" xml:space="preserve">
-    <value>ContextMenuVerse</value>
+  <data name="ActionVerseReadDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 22</value>
   </data>
-  <data name="&gt;&gt;ContextMenuVerse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ListBoxVerses.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ListBoxVerses.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="ListBoxVerses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 0</value>
-  </data>
-  <data name="ListBoxVerses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ListBoxVerses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 248</value>
-  </data>
-  <data name="ListBoxVerses.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="&gt;&gt;ListBoxVerses.Name" xml:space="preserve">
-    <value>ListBoxVerses</value>
-  </data>
-  <data name="&gt;&gt;ListBoxVerses.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ListBoxVerses.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;ListBoxVerses.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="ActionVerseReadDefault.Text" xml:space="preserve">
+    <value>Default read</value>
   </data>
   <data name="ActionOpenVerseOnline.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -342,6 +329,45 @@
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
     <value>Open with Hebrew Words</value>
   </data>
+  <data name="ContextMenuVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 76</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuVerse.Name" xml:space="preserve">
+    <value>ContextMenuVerse</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuVerse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ListBoxVerses.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ListBoxVerses.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ListBoxVerses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 0</value>
+  </data>
+  <data name="ListBoxVerses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ListBoxVerses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 248</value>
+  </data>
+  <data name="ListBoxVerses.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;ListBoxVerses.Name" xml:space="preserve">
+    <value>ListBoxVerses</value>
+  </data>
+  <data name="&gt;&gt;ListBoxVerses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ListBoxVerses.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;ListBoxVerses.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ColumnCelebration.Text" xml:space="preserve">
     <value>Celebration</value>
   </data>
@@ -371,43 +397,43 @@
     <value>None</value>
   </data>
   <data name="ActionStudyOnlineTexts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="ActionStudyOnlineTexts.Text" xml:space="preserve">
     <value>Online texts</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
+    <value>143, 6</value>
   </data>
   <data name="ActionStudyOnlineVideos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALdSURBVDhPhZFtTI1hGMcfPpjNB8YKzQdvM2NethgZ3xLJ
-        1gvnOOd5nvPWeU7nnMdrH7ScUoSxeRdjRMhLQ0TqJE1FklU2GzLDJioxsclbrf3cPccHsvHfrt0f7uv+
-        Xf/r/ksWWSm1ygqyZQWKKQElaSmWxDjMCXGYEpZiTorHYjZhtcpYrEqX1F+yYkMckao5kXEnIfoS2IKQ
-        WgObG2B/M8RoW40eWVH7zj+l2hyoqordHM+cs6AUw/qbvWyv7eVQI5x4Cku0bFTZik01hv0pm91p0O3m
-        BJYUwbrybrbVfGN9+VfcV38QVQDL/FlGj1NV/gY4nMk4HA6clmXIZQJwo4fVpV2sLf2M68oPYi+A1ZeF
-        x2rCJ5v/BjhdboPuUlZgFrvbr0P6rW5yqr4TdfAZQ9LvMCi9jsEZDxieUc+YQMWe0MtfciV7cAmI266i
-        WeLRli/GkxTDqHVnmHGwgoYvfpp7M7j4zsPelxIzcgsJ31jX9uu5JLk1r+EgxaEw9gQsEinMOtLKlNwH
-        tHfDq95TXGn5wIXWNHY0x5L7SmLW4QOMzL6dYwA0jw9NS8HrsBopuEpgaKCcvQ+/0tgJ97pyCH6azOkO
-        Cf/dfUQXvWHTw4F9LkL/keLVDQc+p0KcSCG9UgA2BNnzCM69gGudiZz9IHG8XSKtycnc8+Kj788TgNoQ
-        wOtbidfrx++yGSmsDXYzLFDBjueHCdRDbosAdEocbZVYWNTD7ILvLLhYxqis6hDAr682HOieZEwiBbeA
-        jBCXzuoSksp6cFc3cerdAHKeLBQrpBFzuYRp+XcYnV0VAogUavWVa9D9OqtS3KRqNqJTdzN+VxOLij+K
-        nT8zvxABiCL/rVilTWLS7mLC9PxjBkBooqjI/hWWEeyYsLOeyNOvmVnwkcTyPLY8jmDq/nOEB2rei54I
-        Uf/UtDA9Ly8iu0LsW0l45m3CMusYoZ/pmzw91PJ/9U3p7+63yZL0E+aP1jd3FQuaAAAAAElFTkSuQmCC
+        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
 </value>
   </data>
   <data name="ActionStudyOnlineVideos.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="ActionStudyOnlineVideos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="ActionStudyOnlineVideos.Text" xml:space="preserve">
     <value>Online videos</value>
   </data>
   <data name="ContextMenuCelebration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 76</value>
+    <value>147, 54</value>
   </data>
   <data name="&gt;&gt;ContextMenuCelebration.Name" xml:space="preserve">
     <value>ContextMenuCelebration</value>
@@ -425,7 +451,7 @@
     <value>0, 0</value>
   </data>
   <data name="ListBoxCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 248</value>
+    <value>130, 248</value>
   </data>
   <data name="ListBoxCelebrations.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -452,7 +478,7 @@
     <value>0, 0, 0, 10</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 258</value>
+    <value>130, 258</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
@@ -473,13 +499,13 @@
     <value>Fill</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 10</value>
+    <value>140, 10</value>
   </data>
   <data name="panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 0, 10</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 258</value>
+    <value>254, 258</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
@@ -503,13 +529,16 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>384, 306</value>
+    <value>404, 321</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 500</value>
+    <value>420, 1000</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 345</value>
+    <value>420, 360</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
@@ -534,6 +563,12 @@
   </data>
   <data name="&gt;&gt;ColumnVerseEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionVerseReadDefault.Name" xml:space="preserve">
+    <value>ActionVerseReadDefault</value>
+  </data>
+  <data name="&gt;&gt;ActionVerseReadDefault.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionOpenVerseOnline.Name" xml:space="preserve">
     <value>ActionOpenVerseOnline</value>
@@ -565,17 +600,17 @@
   <data name="&gt;&gt;ActionStudyOnlineTexts.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionStudyOnlineVideos.Name" xml:space="preserve">
-    <value>ActionStudyOnlineVideos</value>
-  </data>
-  <data name="&gt;&gt;ActionStudyOnlineVideos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionStudyOnlineVideos.Name" xml:space="preserve">
+    <value>ActionStudyOnlineVideos</value>
+  </data>
+  <data name="&gt;&gt;ActionStudyOnlineVideos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CelebrationVersesBoardForm</value>

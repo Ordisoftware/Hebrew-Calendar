@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
+      System.Windows.Forms.Label LabelOnlineVerseURL;
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesForm));
       this.DialogColor = new System.Windows.Forms.ColorDialog();
       this.ActionClose = new System.Windows.Forms.Button();
@@ -379,10 +380,14 @@
       this.LabelPrintMargin = new System.Windows.Forms.Label();
       this.LabelPrintingMarginIntervalInfo = new System.Windows.Forms.Label();
       this.EditShowPrintDialog = new System.Windows.Forms.CheckBox();
+      this.EditPrintImageCenterOnPage = new System.Windows.Forms.CheckBox();
       this.EditPrintImageInLandscape = new System.Windows.Forms.CheckBox();
       this.EditPrintPageCountWarning = new System.Windows.Forms.NumericUpDown();
       this.EditPrintingMargin = new System.Windows.Forms.NumericUpDown();
       this.TabPagePaths = new System.Windows.Forms.TabPage();
+      this.ActionOnlineVerseHelp = new System.Windows.Forms.Button();
+      this.ActionSelectOnlineVerseURL = new System.Windows.Forms.Button();
+      this.EditOpenVerseOnlineURL = new Ordisoftware.Core.TextBoxEx();
       this.ActionResetCustomWebSearch = new System.Windows.Forms.Button();
       this.LabelCustomWebSearch = new System.Windows.Forms.Label();
       this.ActionResetHebrewWordsPath = new System.Windows.Forms.Button();
@@ -414,7 +419,8 @@
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
-      this.EditPrintImageCenterOnPage = new System.Windows.Forms.CheckBox();
+      this.MenuSelectOnlineVerseProviderURL = new System.Windows.Forms.ContextMenuStrip(this.components);
+      LabelOnlineVerseURL = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControlMain.SuspendLayout();
@@ -463,6 +469,11 @@
       this.TabPageWeather.SuspendLayout();
       this.PanelWeatherOnline.SuspendLayout();
       this.SuspendLayout();
+      // 
+      // LabelOnlineVerseURL
+      // 
+      resources.ApplyResources(LabelOnlineVerseURL, "LabelOnlineVerseURL");
+      LabelOnlineVerseURL.Name = "LabelOnlineVerseURL";
       // 
       // DialogColor
       // 
@@ -3338,6 +3349,12 @@
       this.EditShowPrintDialog.Name = "EditShowPrintDialog";
       this.EditShowPrintDialog.UseVisualStyleBackColor = true;
       // 
+      // EditPrintImageCenterOnPage
+      // 
+      resources.ApplyResources(this.EditPrintImageCenterOnPage, "EditPrintImageCenterOnPage");
+      this.EditPrintImageCenterOnPage.Name = "EditPrintImageCenterOnPage";
+      this.EditPrintImageCenterOnPage.UseVisualStyleBackColor = true;
+      // 
       // EditPrintImageInLandscape
       // 
       resources.ApplyResources(this.EditPrintImageInLandscape, "EditPrintImageInLandscape");
@@ -3362,6 +3379,10 @@
       // 
       this.TabPagePaths.BackColor = System.Drawing.SystemColors.Window;
       this.TabPagePaths.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.TabPagePaths.Controls.Add(this.ActionOnlineVerseHelp);
+      this.TabPagePaths.Controls.Add(this.ActionSelectOnlineVerseURL);
+      this.TabPagePaths.Controls.Add(LabelOnlineVerseURL);
+      this.TabPagePaths.Controls.Add(this.EditOpenVerseOnlineURL);
       this.TabPagePaths.Controls.Add(this.ActionResetCustomWebSearch);
       this.TabPagePaths.Controls.Add(this.LabelCustomWebSearch);
       this.TabPagePaths.Controls.Add(this.ActionResetHebrewWordsPath);
@@ -3383,6 +3404,31 @@
       this.TabPagePaths.Controls.Add(this.EditHebrewLettersPath);
       resources.ApplyResources(this.TabPagePaths, "TabPagePaths");
       this.TabPagePaths.Name = "TabPagePaths";
+      // 
+      // ActionOnlineVerseHelp
+      // 
+      this.ActionOnlineVerseHelp.AllowDrop = true;
+      resources.ApplyResources(this.ActionOnlineVerseHelp, "ActionOnlineVerseHelp");
+      this.ActionOnlineVerseHelp.FlatAppearance.BorderSize = 0;
+      this.ActionOnlineVerseHelp.Name = "ActionOnlineVerseHelp";
+      this.ActionOnlineVerseHelp.UseVisualStyleBackColor = true;
+      this.ActionOnlineVerseHelp.Click += new System.EventHandler(this.ActionOnlineVerseHelp_Click);
+      // 
+      // ActionSelectOnlineVerseURL
+      // 
+      this.ActionSelectOnlineVerseURL.AllowDrop = true;
+      resources.ApplyResources(this.ActionSelectOnlineVerseURL, "ActionSelectOnlineVerseURL");
+      this.ActionSelectOnlineVerseURL.FlatAppearance.BorderSize = 0;
+      this.ActionSelectOnlineVerseURL.Name = "ActionSelectOnlineVerseURL";
+      this.ActionSelectOnlineVerseURL.UseVisualStyleBackColor = true;
+      this.ActionSelectOnlineVerseURL.Click += new System.EventHandler(this.ActionSelectOnlineVerseURL_Click);
+      // 
+      // EditOpenVerseOnlineURL
+      // 
+      resources.ApplyResources(this.EditOpenVerseOnlineURL, "EditOpenVerseOnlineURL");
+      this.EditOpenVerseOnlineURL.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditOpenVerseOnlineURL.Name = "EditOpenVerseOnlineURL";
+      this.EditOpenVerseOnlineURL.SpellCheckAllowed = false;
       // 
       // ActionResetCustomWebSearch
       // 
@@ -3625,11 +3671,10 @@
       this.EditWeatherAppPath.ReadOnly = true;
       this.EditWeatherAppPath.SpellCheckAllowed = false;
       // 
-      // EditPrintImageCenterOnPage
+      // MenuSelectOnlineVerseProviderURL
       // 
-      resources.ApplyResources(this.EditPrintImageCenterOnPage, "EditPrintImageCenterOnPage");
-      this.EditPrintImageCenterOnPage.Name = "EditPrintImageCenterOnPage";
-      this.EditPrintImageCenterOnPage.UseVisualStyleBackColor = true;
+      this.MenuSelectOnlineVerseProviderURL.Name = "MenuSelectOnlineVerseURL";
+      resources.ApplyResources(this.MenuSelectOnlineVerseProviderURL, "MenuSelectOnlineVerseProviderURL");
       // 
       // PreferencesForm
       // 
@@ -4108,5 +4153,9 @@
     private LinkLabel ActionSwitchToMonthViewLayoutSettings2;
     private LinkLabel ActionSwitchToParashahSettings;
         private CheckBox EditPrintImageCenterOnPage;
+        private Button ActionOnlineVerseHelp;
+        private Button ActionSelectOnlineVerseURL;
+        private TextBoxEx EditOpenVerseOnlineURL;
+        private ContextMenuStrip MenuSelectOnlineVerseProviderURL;
     }
 }
