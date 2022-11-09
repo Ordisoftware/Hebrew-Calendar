@@ -21,11 +21,11 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class MainForm
 {
 
-  private Dictionary<ViewMode, ViewConnectorMenuItem> ViewPanels;
+  private Dictionary<ViewMode, ViewConnectorMenuItem> ViewConnectors;
 
-  private void InitializeViewPanels()
+  private void InitializeViewConnectors()
   {
-    ViewPanels = new Dictionary<ViewMode, ViewConnectorMenuItem>
+    ViewConnectors = new Dictionary<ViewMode, ViewConnectorMenuItem>
     {
       {
         ViewMode.Text,
@@ -75,11 +75,11 @@ partial class MainForm
       }
       if ( view == ViewMode.None || !Enum.IsDefined(typeof(ViewMode), view) )
         view = ViewMode.Month;
-      ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
-      ViewPanels[Settings.CurrentView].Panel.Parent = null;
-      ViewPanels[view].MenuItem.Checked = true;
-      ViewPanels[view].Panel.Parent = PanelMainInner2;
-      ViewPanels[view].Focused.Focus();
+      ViewConnectors[Settings.CurrentView].MenuItem.Checked = false;
+      ViewConnectors[Settings.CurrentView].Panel.Parent = null;
+      ViewConnectors[view].MenuItem.Checked = true;
+      ViewConnectors[view].Panel.Parent = PanelMainInner2;
+      ViewConnectors[view].Focused.Focus();
       Settings.CurrentView = view;
       UpdateButtons();
       if ( view == ViewMode.Text )
