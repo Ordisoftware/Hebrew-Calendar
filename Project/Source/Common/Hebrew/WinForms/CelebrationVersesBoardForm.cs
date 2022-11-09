@@ -57,7 +57,7 @@ public partial class CelebrationVersesBoardForm : Form
                                     Action<bool> doubleClickOnVerseOpenDefaultReaderChanged)
   {
     InitializeComponent();
-    InitializeMenu();
+    InitializeMenus();
     Icon = Globals.MainForm.Icon;
     ActiveControl = ListBoxCelebrations;
     LocationPropertyName = locationPropertyName;
@@ -67,42 +67,39 @@ public partial class CelebrationVersesBoardForm : Form
     EditDoubleClickOnVerseOpenDefaultReader.Checked = doubleClickOnVerseOpenDefaultReader;
   }
 
-  private void InitializeMenu()
+  private void InitializeMenus()
   {
-    ActionStudyOnlineTexts.InitializeFromProviders(HebrewGlobals.WebProvidersCelebrationTexts, (sender, e) =>
+    ActionStudyOnlineTexts.Initialize(HebrewGlobals.WebProvidersCelebrationTexts, (sender, e) =>
     {
       if ( ListBoxCelebrations.SelectedItems.Count <= 0 ) return;
       var menuitem = (ToolStripMenuItem)sender;
       var celebration = (TorahCelebration)ListBoxCelebrations.SelectedItems[0].Tag;
       HebrewTools.OpenCelebrationProvider((string)menuitem.Tag, celebration);
     });
-    ActionStudyOnlineVideos.InitializeFromProviders(HebrewGlobals.WebProvidersCelebrationVideos, (sender, e) =>
+    ActionStudyOnlineVideos.Initialize(HebrewGlobals.WebProvidersCelebrationVideos, (sender, _) =>
     {
       if ( ListBoxCelebrations.SelectedItems.Count <= 0 ) return;
       var menuitem = (ToolStripMenuItem)sender;
       var celebration = (TorahCelebration)ListBoxCelebrations.SelectedItems[0].Tag;
       HebrewTools.OpenCelebrationProvider((string)menuitem.Tag, celebration);
     });
-    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+    ActionOpenVerseOnline.Initialize(HebrewGlobals.WebProvidersBible,
+                                     (sender, _) => DoRead((string)( (ToolStripMenuItem)sender ).Tag));
+  }
+
+  private void DoRead(string url)
+  {
+    foreach ( string reference in GetSelectedReferences() )
     {
-      var menuitem = (ToolStripMenuItem)sender;
-      foreach ( string reference in GetSelectedReferences() )
-      {
-        HebrewTools.OpenBibleProvider((string)menuitem.Tag, reference);
-        if ( ListBoxVerses.SelectedItems.Count > 1 )
-          Thread.Sleep(1500);
-      }
-    });
+      HebrewTools.OpenBibleProvider(url, reference);
+      if ( ListBoxVerses.SelectedItems.Count > 1 )
+        Thread.Sleep(1500);
+    }
   }
 
   private void ActionVerseReadDefault_Click(object sender, EventArgs e)
   {
-    foreach ( string reference in GetSelectedReferences() )
-    {
-      HebrewTools.OpenBibleProvider(OpenVerseOnlineURL, reference);
-      if ( ListBoxVerses.SelectedItems.Count > 1 )
-        Thread.Sleep(1500);
-    }
+    DoRead(OpenVerseOnlineURL);
   }
 
   private IEnumerable<string> GetSelectedReferences()

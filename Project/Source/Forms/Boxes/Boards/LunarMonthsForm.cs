@@ -41,7 +41,7 @@ partial class LunarMonthsForm : Form
     CreateControls();
     ActiveControl = ActionClose;
     ActionEditFiles.Visible = Program.LunarMonthsMeanings[Languages.Current].Configurable;
-    ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+    ActionSearchOnline.Initialize(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       string word = HebrewMonths.Unicode[(int)LastControl.Tag]

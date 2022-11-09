@@ -49,7 +49,7 @@ static class OnlineCelebration
         var uri = new Uri(pattern);
         return new UriBuilder(uri.Scheme, uri.Host).ToString();
       }
-    return string.Empty;
+    return pattern;
   }
 
   static public readonly Dictionary<TorahCelebration, string> AishEN = new()

@@ -69,18 +69,18 @@ partial class ParashotForm : Form
 
   private void InitializeMenu()
   {
-    ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+    ActionStudyOnline.Initialize(HebrewGlobals.WebProvidersParashah, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       var parashah = ParashotFactory.Instance.Get(CurrentDataBoundItem.ID);
       HebrewTools.OpenParashahProvider((string)menuitem.Tag, parashah);
     });
-    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+    ActionOpenVerseOnline.Initialize(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, CurrentDataBoundItem.FullReferenceBegin);
     });
-    ActionSearchOnline.InitializeFromProviders(HebrewGlobals.WebProvidersWord, (sender, e) =>
+    ActionSearchOnline.Initialize(HebrewGlobals.WebProvidersWord, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
       HebrewTools.OpenWordProvider((string)menuitem.Tag, CurrentDataBoundItem.Hebrew);

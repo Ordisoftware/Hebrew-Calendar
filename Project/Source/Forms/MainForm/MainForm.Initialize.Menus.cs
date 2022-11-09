@@ -32,13 +32,13 @@ partial class MainForm
                                       ActionWebCheckUpdate_Click,
                                       ActionViewLog_Click,
                                       ActionViewStats_Click);
-    InitializeSpecialMenus();
+    InitializeMenus();
   }
 
   /// <summary>
   /// Initializes special menus (web links, tray icon and suspend).
   /// </summary>
-  public void InitializeSpecialMenus()
+  public void InitializeMenus()
   {
     CreateProvidersLinks();
     CommonMenusControl.Instance.ActionViewStats.Enabled = Settings.UsageStatisticsEnabled;
@@ -46,7 +46,7 @@ partial class MainForm
     ActionWebLinks.Visible = Settings.WebLinksMenuEnabled;
     if ( Settings.WebLinksMenuEnabled )
     {
-      ActionWebLinks.InitializeFromWebLinks(InitializeSpecialMenus);
+      ActionWebLinks.CreateWebLinks(InitializeMenus);
       ActionWebLinks.DuplicateTo(MenuWebLinks);
     }
     MenuWebLinks.Visible = Settings.WebLinksMenuEnabled;
@@ -76,43 +76,43 @@ partial class MainForm
   private void CreateProvidersLinks()
   {
     // Weekly parashah study
-    ActionWeeklyParashahStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+    ActionWeeklyParashahStudyOnline.Initialize(HebrewGlobals.WebProvidersParashah, (sender, _) =>
     {
-      var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
       if ( weekParashah.Factory is null ) return;
-      HebrewTools.OpenParashahProvider((string)menuitem.Tag,
+      HebrewTools.OpenParashahProvider((string)( (ToolStripMenuItem)sender ).Tag,
                                        weekParashah.Factory,
                                        weekParashah.Day.HasLinkedParashah);
     });
-    // Weekly parashah read
-    ActionWeeklyParashahReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-      if ( weekParashah.Factory is null ) return;
-      string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.ReferenceBegin}";
-      HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
-    });
-    // Visual month parashah read
-    ContextMenuDayParashahReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-      if ( weekParashah is null ) return;
-      string verse = $"{(int)weekParashah.Book}.{weekParashah.ReferenceBegin}";
-      HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
-    });
     // Visual month parashah study
-    ContextMenuDayParashahStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
+    ContextMenuDayParashahStudyOnline.Initialize(HebrewGlobals.WebProvidersParashah, (sender, _) =>
     {
-      var menuitem = (ToolStripMenuItem)sender;
       var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
       if ( weekParashah is null ) return;
-      HebrewTools.OpenParashahProvider((string)menuitem.Tag,
+      HebrewTools.OpenParashahProvider((string)( (ToolStripMenuItem)sender ).Tag,
                                        weekParashah,
                                        ContextMenuDayCurrentEvent.HasLinkedParashah);
     });
+    // Weekly parashah read
+    ActionWeeklyParashahReadOnline.Initialize(HebrewGlobals.WebProvidersParashah,
+                                 (sender, _) => DoReadParashahWeekly((string)( (ToolStripMenuItem)sender ).Tag));
+    // Visual month parashah read
+    ContextMenuDayParashahReadOnline.Initialize(HebrewGlobals.WebProvidersParashah,
+                                 (sender, _) => DoReadParashahSomeWeek((string)( (ToolStripMenuItem)sender ).Tag));
+  }
+
+  private void DoReadParashahWeekly(string url)
+  {
+    var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+    if ( weekParashah.Factory is not null )
+      HebrewTools.OpenBibleProvider(url, weekParashah.Factory.FullReferenceBegin);
+  }
+
+  private void DoReadParashahSomeWeek(string url)
+  {
+    var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
+    if ( weekParashah is not null );
+    HebrewTools.OpenBibleProvider(url, weekParashah.FullReferenceBegin);
   }
 
 }
