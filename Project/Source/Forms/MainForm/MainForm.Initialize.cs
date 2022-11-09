@@ -38,6 +38,7 @@ partial class MainForm
   private void DoConstructor()
   {
     Interlocks.Take();
+    InitializeViewPanels();
     new Task(InitializeIconsAndSound).Start();
     new Task(InitializeDialogsDirectory).Start();
     new Task(SelectCityForm.Preload).Start();

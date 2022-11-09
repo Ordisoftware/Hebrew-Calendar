@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -21,27 +21,40 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class MainForm
 {
 
-  /// <summary>
-  /// Provides view connector.
-  /// </summary>
-  private sealed class ViewConnector
+  private Dictionary<ViewMode, ViewConnectorMenuItem> ViewPanels;
+
+  private void InitializeViewPanels()
   {
-
-    /// <summary>
-    /// The menu item.
-    /// </summary>
-    public ToolStripMenuItem MenuItem;
-
-    /// <summary>
-    /// The panel.
-    /// </summary>
-    public Panel Panel;
-
-    /// <summary>
-    /// The focused control.
-    /// </summary>
-    public Control Focused;
-
+    ViewPanels = new Dictionary<ViewMode, ViewConnectorMenuItem>
+    {
+      {
+        ViewMode.Text,
+        new ViewConnectorMenuItem
+        {
+          MenuItem = ActionViewReport,
+          Panel = PanelViewTextReport,
+          Focused = TextReport
+        }
+      },
+      {
+        ViewMode.Month,
+        new ViewConnectorMenuItem
+        {
+          MenuItem = ActionViewMonth,
+          Panel = PanelViewMonthlyCalendar,
+          Focused = MonthlyCalendar
+        }
+      },
+      {
+        ViewMode.Grid,
+        new ViewConnectorMenuItem
+        {
+          MenuItem = ActionViewGrid,
+          Panel = PanelViewGrid,
+          Focused = DataGridView
+        }
+      }
+    };
   }
 
   /// <summary>
@@ -51,36 +64,6 @@ partial class MainForm
   /// <param name="first">true to first.</param>
   public void SetView(ViewMode view, bool first = false)
   {
-    var viewPanels = new Dictionary<ViewMode, ViewConnector>
-      {
-        {
-          ViewMode.Text,
-          new ViewConnector
-          {
-            MenuItem = ActionViewReport,
-            Panel = PanelViewTextReport,
-            Focused = TextReport
-          }
-        },
-        {
-          ViewMode.Month,
-          new ViewConnector
-          {
-            MenuItem = ActionViewMonth,
-            Panel = PanelViewMonthlyCalendar,
-            Focused = MonthlyCalendar
-          }
-        },
-        {
-          ViewMode.Grid,
-          new ViewConnector
-          {
-            MenuItem = ActionViewGrid,
-            Panel = PanelViewGrid,
-            Focused = DataGridView
-          }
-        }
-      };
     try
     {
       if ( Settings.CurrentView == view && !first ) return;
@@ -92,11 +75,11 @@ partial class MainForm
       }
       if ( view == ViewMode.None || !Enum.IsDefined(typeof(ViewMode), view) )
         view = ViewMode.Month;
-      viewPanels[Settings.CurrentView].MenuItem.Checked = false;
-      viewPanels[Settings.CurrentView].Panel.Parent = null;
-      viewPanels[view].MenuItem.Checked = true;
-      viewPanels[view].Panel.Parent = PanelMainInner2;
-      viewPanels[view].Focused.Focus();
+      ViewPanels[Settings.CurrentView].MenuItem.Checked = false;
+      ViewPanels[Settings.CurrentView].Panel.Parent = null;
+      ViewPanels[view].MenuItem.Checked = true;
+      ViewPanels[view].Panel.Parent = PanelMainInner2;
+      ViewPanels[view].Focused.Focus();
       Settings.CurrentView = view;
       UpdateButtons();
       if ( view == ViewMode.Text )
