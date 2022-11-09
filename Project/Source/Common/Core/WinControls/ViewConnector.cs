@@ -15,15 +15,18 @@
 namespace Ordisoftware.Core;
 
 /// <summary>
-/// Provides view connector.
+/// Provides panel view connector for a component.
 /// </summary>
-public class ViewConnectorMenuItem
+public class ViewConnector<TView, TComponent>
+where TView : Enum
+where TComponent : Component
 {
 
   /// <summary>
-  /// The menu item.
+  /// The control.
   /// </summary>
-  public ToolStripMenuItem MenuItem { get; set; }
+  public TComponent Component
+  { get; set; }
 
   /// <summary>
   /// The panel.
@@ -34,5 +37,13 @@ public class ViewConnectorMenuItem
   /// The focused control.
   /// </summary>
   public Control Focused { get; set; }
+}
 
+/// <summary>
+/// Provides ViewConnector dictionary.
+/// </summary>
+public class ViewConnectors<TView, TComponent> : Dictionary<TView, ViewConnector<TView, TComponent>>
+where TView : Enum
+where TComponent : Component
+{
 }

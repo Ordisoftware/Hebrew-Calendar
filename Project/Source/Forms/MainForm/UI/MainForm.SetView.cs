@@ -21,42 +21,6 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class MainForm
 {
 
-  private Dictionary<ViewMode, ViewConnectorMenuItem> ViewConnectors;
-
-  private void InitializeViewConnectors()
-  {
-    ViewConnectors = new Dictionary<ViewMode, ViewConnectorMenuItem>
-    {
-      {
-        ViewMode.Text,
-        new ViewConnectorMenuItem
-        {
-          MenuItem = ActionViewReport,
-          Panel = PanelViewTextReport,
-          Focused = TextReport
-        }
-      },
-      {
-        ViewMode.Month,
-        new ViewConnectorMenuItem
-        {
-          MenuItem = ActionViewMonth,
-          Panel = PanelViewMonthlyCalendar,
-          Focused = MonthlyCalendar
-        }
-      },
-      {
-        ViewMode.Grid,
-        new ViewConnectorMenuItem
-        {
-          MenuItem = ActionViewGrid,
-          Panel = PanelViewGrid,
-          Focused = DataGridView
-        }
-      }
-    };
-  }
-
   /// <summary>
   /// Sets the view panel.
   /// </summary>
@@ -75,9 +39,9 @@ partial class MainForm
       }
       if ( view == ViewMode.None || !Enum.IsDefined(typeof(ViewMode), view) )
         view = ViewMode.Month;
-      ViewConnectors[Settings.CurrentView].MenuItem.Checked = false;
+      ViewConnectors[Settings.CurrentView].Component.Checked = false;
       ViewConnectors[Settings.CurrentView].Panel.Parent = null;
-      ViewConnectors[view].MenuItem.Checked = true;
+      ViewConnectors[view].Component.Checked = true;
       ViewConnectors[view].Panel.Parent = PanelMainInner2;
       ViewConnectors[view].Focused.Focus();
       Settings.CurrentView = view;
