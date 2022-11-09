@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -341,7 +340,7 @@ partial class MainForm : Form
       }
       TimerBalloon.Interval = Settings.BalloonLoomingDelay;
       MonthlyCalendar.ShowEventTooltips = false;
-      InitializeSpecialMenus();
+      InitializeMenus();
       InitializeDialogsDirectory();
     }
     catch ( Exception ex )
@@ -614,6 +613,16 @@ partial class MainForm : Form
   private void ActionViewParashahInfos_Click(object sender, EventArgs e)
   {
     ApplicationDatabase.Instance.ShowWeeklyParashahDescription();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionParashahReadDefault for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionParashahReadDefault_Click(object sender, EventArgs e)
+  {
+    DoReadParashahWeekly(Settings.OpenVerseOnlineURL);
   }
 
   /// <summary>
@@ -1348,26 +1357,14 @@ partial class MainForm : Form
 
   private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
   {
-    if ( ManageBookmarksForm.Run() )
-      LoadMenuBookmarks(this);
-  }
-
-  #endregion
-
-  private void ActionParashahReadDefault_Click(object sender, EventArgs e)
-  {
-    var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
-    if ( weekParashah.Factory is null ) return;
-    string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.ReferenceBegin}";
-    HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, verse);
+    if ( ManageBookmarksForm.Run() ) LoadMenuBookmarks(this);
   }
 
   private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)
   {
-    var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-    if ( weekParashah is null ) return;
-    string verse = $"{(int)weekParashah.Book}.{weekParashah.ReferenceBegin}";
-    HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, verse);
+    DoReadParashahSomeWeek(Settings.OpenVerseOnlineURL);
   }
+
+  #endregion
 
 }

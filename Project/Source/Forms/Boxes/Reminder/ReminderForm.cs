@@ -48,7 +48,7 @@ partial class ReminderForm : Form
     bool doLockSession;
     var dateNow = DateTime.Now;
     doLockSession = dateNow >= times.DateStart && dateNow <= times.DateEnd;
-    bool isLockSessionIcon = doLockSession && Program.Settings.ReminderShowLockoutIcon;
+    bool isLockSessionIcon = doLockSession && Settings.ReminderShowLockoutIcon;
     try
     {
       ReminderForm form = null;
@@ -109,7 +109,7 @@ partial class ReminderForm : Form
       form.Text = " " + form.LabelTitle.Text;
       if ( isShabat )
       {
-        if ( Program.Settings.CalendarShowParashah && Program.Settings.ReminderShabatShowParashah )
+        if ( Settings.CalendarShowParashah && Settings.ReminderShabatShowParashah )
         {
           var rowParashah = row.GetParashahReadingDay();
           if ( rowParashah is not null )
@@ -133,16 +133,16 @@ partial class ReminderForm : Form
         }
       }
       form.ActionLockout.Visible = isLockSessionIcon;
-      form.LabelTitle.ForeColor = Program.Settings.CalendarColorTorahEvent;
-      form.LabelDate.LinkColor = Program.Settings.CalendarColorMoon;
-      form.LabelDate.ActiveLinkColor = Program.Settings.CalendarColorMoon;
-      form.LabelStartTime.ForeColor = Program.Settings.MonthViewTextColor;
-      form.LabelEndTime.ForeColor = Program.Settings.MonthViewTextColor;
-      form.LabelStartDay.ForeColor = Program.Settings.MonthViewTextColor;
-      form.LabelEndDay.ForeColor = Program.Settings.MonthViewTextColor;
-      form.LabelParashahValue.LinkColor = Program.Settings.CalendarColorMoon;
-      if ( Program.Settings.UseColors )
-        form.BackColor = doLockSession ? Program.Settings.EventColorTorah : Program.Settings.EventColorNext;
+      form.LabelTitle.ForeColor = Settings.CalendarColorTorahEvent;
+      form.LabelDate.LinkColor = Settings.CalendarColorMoon;
+      form.LabelDate.ActiveLinkColor = Settings.CalendarColorMoon;
+      form.LabelStartTime.ForeColor = Settings.MonthViewTextColor;
+      form.LabelEndTime.ForeColor = Settings.MonthViewTextColor;
+      form.LabelStartDay.ForeColor = Settings.MonthViewTextColor;
+      form.LabelEndDay.ForeColor = Settings.MonthViewTextColor;
+      form.LabelParashahValue.LinkColor = Settings.CalendarColorMoon;
+      if ( Settings.UseColors )
+        form.BackColor = doLockSession ? Settings.EventColorTorah : Settings.EventColorNext;
       if ( isShabat )
         MainForm.Instance.ShabatForm = form;
       else
@@ -166,7 +166,7 @@ partial class ReminderForm : Form
     }
     finally
     {
-      if ( doLockSession && Program.Settings.AutoLockSession )
+      if ( doLockSession && Settings.AutoLockSession )
         LockSessionForm.Run();
     }
   }
@@ -200,7 +200,7 @@ partial class ReminderForm : Form
       list.Add(MainForm.Instance.ShabatForm);
     list.AddRange(MainForm.Instance.RemindCelebrationDayForms.Values);
     list.AddRange(MainForm.Instance.RemindCelebrationForms);
-    var location = Program.Settings.ReminderBoxDesktopLocation;
+    var location = Settings.ReminderBoxDesktopLocation;
     int posY = 0;
     int posX = 0;
     bool first = true;
@@ -246,9 +246,9 @@ partial class ReminderForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    ShowInTaskbar = Program.Settings.ShowReminderInTaskBar;
+    ShowInTaskbar = Settings.ShowReminderInTaskBar;
     if ( Image is not null ) PictureBox.Image = Image;
-    InitializeParashahMenu();
+    InitializeMenus();
     this.InitDropDowns();
   }
 
@@ -263,9 +263,9 @@ partial class ReminderForm : Form
       item.Click += (senderItemClick, _) =>
       {
         var action = (PowerAction)( (ToolStripItem)senderItemClick ).Tag;
-        SystemManager.DoPowerAction(action, Program.Settings.LockSessionConfirmLogOffOrMore);
+        SystemManager.DoPowerAction(action, Settings.LockSessionConfirmLogOffOrMore);
       };
-      if ( Program.Settings.LockSessionDefaultAction == value )
+      if ( Settings.LockSessionDefaultAction == value )
         item.Image = MenuDefaultLockout.Image;
     }
   }
@@ -288,32 +288,39 @@ partial class ReminderForm : Form
     DoSound();
   }
 
-  private void InitializeParashahMenu()
+  #endregion
+
+  #region Context Menu Parashah
+
+  private (LunisolarDay Day, Parashah Parashah) GetDayAndParashah()
   {
-    ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, _) =>
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var day = (LunisolarDay)LabelParashahValue.Tag;
-      HebrewTools.OpenParashahProvider((string)menuitem.Tag,
-                                       ParashotFactory.Instance.Get(day.ParashahID),
-                                       day.HasLinkedParashah);
-    });
-    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, _) =>
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var day = (LunisolarDay)LabelParashahValue.Tag;
-      var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-      string verse = $"{(int)parashah.Book}.{parashah.ReferenceBegin}";
-      HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
-    });
+    var day = (LunisolarDay)LabelParashahValue.Tag;
+    var parashah = ParashotFactory.Instance.Get(day.ParashahID);
+    return (day, parashah);
+  }
+
+  private void InitializeMenus()
+  {
+    ActionStudyOnline.Initialize(HebrewGlobals.WebProvidersParashah,
+                                 (sender, _) => DoStudy((string)( (ToolStripMenuItem)sender ).Tag));
+    ActionOpenVerseOnline.Initialize(HebrewGlobals.WebProvidersBible,
+                                     (sender, _) => DoRead((string)( (ToolStripMenuItem)sender ).Tag));
+  }
+
+  private void DoStudy(string url)
+  {
+    (LunisolarDay day, Parashah parashah) = GetDayAndParashah();
+    HebrewTools.OpenParashahProvider(url, parashah, day.HasLinkedParashah);
+  }
+
+  private void DoRead(string url)
+  {
+    HebrewTools.OpenBibleProvider(url, GetDayAndParashah().Parashah.FullReferenceBegin);
   }
 
   private void ActionVerseReadDefault_Click(object sender, EventArgs e)
   {
-    var day = (LunisolarDay)LabelParashahValue.Tag;
-    var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-    string verse = $"{(int)parashah.Book}.{parashah.ReferenceBegin}";
-    HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, verse);
+    DoRead(Settings.OpenVerseOnlineURL);
   }
 
   #endregion
@@ -322,31 +329,31 @@ partial class ReminderForm : Form
 
   static private void DoSound()
   {
-    switch ( Program.Settings.ReminderBoxSoundSource )
+    switch ( Settings.ReminderBoxSoundSource )
     {
       case SoundSource.Dialog:
-        DisplayManager.DoSound(Program.Settings.ReminderBoxSoundDialog);
+        DisplayManager.DoSound(Settings.ReminderBoxSoundDialog);
         break;
       case SoundSource.Application:
-        new SoundItem(Program.Settings.ReminderBoxSoundApplication).Play();
+        new SoundItem(Settings.ReminderBoxSoundApplication).Play();
         break;
       case SoundSource.Windows:
-        new SoundItem(Program.Settings.ReminderBoxSoundWindows).Play();
+        new SoundItem(Settings.ReminderBoxSoundWindows).Play();
         break;
       case SoundSource.Custom:
-        new SoundItem(Program.Settings.ReminderBoxSoundPath).Play();
+        new SoundItem(Settings.ReminderBoxSoundPath).Play();
         break;
       default:
-        throw new AdvNotImplementedException(Program.Settings.ReminderBoxSoundSource);
+        throw new AdvNotImplementedException(Settings.ReminderBoxSoundSource);
     }
     Application.DoEvents();
-    if ( Program.Settings.ReminderBoxSoundSource != SoundSource.None )
+    if ( Settings.ReminderBoxSoundSource != SoundSource.None )
       Thread.Sleep(400);
   }
 
   private void Form_Click(object sender, EventArgs e)
   {
-    if ( Program.Settings.ReminderFormCloseOnClick )
+    if ( Settings.ReminderFormCloseOnClick )
       Close();
   }
 
@@ -423,6 +430,6 @@ partial class ReminderForm : Form
     ContextMenuLockout.Show(ActionLockout, new Point(0, ActionLockout.Height));
   }
 
-    #endregion
+  #endregion
 
 }

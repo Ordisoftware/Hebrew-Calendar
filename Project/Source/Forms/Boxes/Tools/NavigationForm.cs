@@ -180,7 +180,7 @@ partial class NavigationForm : Form
     Icon = MainForm.Instance.Icon;
     Text = DisplayManager.Title;
     SetColors(Settings.NavigateTopColor, Settings.NavigateMiddleColor, Settings.NavigateBottomColor);
-    InitializeMenu();
+    InitializeMenus();
     this.InitDropDowns();
   }
 
@@ -261,32 +261,35 @@ partial class NavigationForm : Form
     Hide();
   }
 
-  private void InitializeMenu()
+  private (LunisolarDay Day, Parashah Parashah) GetDayAndParashah()
   {
-    ActionStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var day = (LunisolarDay)LabelParashahValue.Tag;
-      HebrewTools.OpenParashahProvider((string)menuitem.Tag,
-                                       ParashotFactory.Instance.Get(day.ParashahID),
-                                       day.HasLinkedParashah);
-    });
-    ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var day = (LunisolarDay)LabelParashahValue.Tag;
-      var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-      string verse = $"{(int)parashah.Book}.{parashah.ReferenceBegin}";
-      HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
-    });
+    var day = (LunisolarDay)LabelParashahValue.Tag;
+    var parashah = ParashotFactory.Instance.Get(day.ParashahID);
+    return (day, parashah);
+  }
+
+  private void InitializeMenus()
+  {
+    ActionStudyOnline.Initialize(HebrewGlobals.WebProvidersParashah,
+                                 (sender, _) => DoStudy((string)( (ToolStripMenuItem)sender ).Tag));
+    ActionOpenVerseOnline.Initialize(HebrewGlobals.WebProvidersBible,
+                                     (sender, _) => DoRead((string)( (ToolStripMenuItem)sender ).Tag));
+  }
+
+  private void DoStudy(string url)
+  {
+    (LunisolarDay day, Parashah parashah) = GetDayAndParashah();
+    HebrewTools.OpenParashahProvider(url, parashah, day.HasLinkedParashah);
+  }
+
+  private void DoRead(string url)
+  {
+    HebrewTools.OpenBibleProvider(url, GetDayAndParashah().Parashah.FullReferenceBegin);
   }
 
   private void ActionVerseReadDefault_Click(object sender, EventArgs e)
   {
-    var day = (LunisolarDay)LabelParashahValue.Tag;
-    var parashah = ParashotFactory.Instance.Get(day.ParashahID);
-    string verse = $"{(int)parashah.Book}.{parashah.ReferenceBegin}";
-    HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, verse);
+    DoRead(Settings.OpenVerseOnlineURL);
   }
 
   private void ActionSelectDay_Click(object sender, EventArgs e)

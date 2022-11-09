@@ -45,7 +45,7 @@ static partial class OnlineParashot
         var uri = new Uri(pattern);
         return new UriBuilder(uri.Scheme, uri.Host).ToString();
       }
-    return string.Empty;
+    return pattern;
   }
 
 }
