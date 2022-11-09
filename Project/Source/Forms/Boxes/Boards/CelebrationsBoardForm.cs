@@ -45,12 +45,11 @@ partial class CelebrationsBoardForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    Text += $" ({Settings.GPSCountry}, {Settings.GPSCity})";
-    Text += $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
-    Text += " - ";
-    Text += Settings.TorahEventsCountAsMoon
-            ? AppTranslations.OmerMoon.GetLang()
-            : AppTranslations.OmerSun.GetLang();
+    Text += $" ({Settings.GPSCountry}, {Settings.GPSCity})" +
+            $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)} - " +
+            ( Settings.TorahEventsCountAsMoon
+              ? AppTranslations.OmerMoon.GetLang()
+              : AppTranslations.OmerSun.GetLang() );
     Title = $"{Text} - ";
     EditExportDataEnumsAsTranslations.Checked = Settings.ExportDataEnumsAsTranslations;
     EditUseRealDays.Checked = Settings.CelebrationsBoardFormUseRealDays;
