@@ -55,7 +55,7 @@ partial class MainForm
     MessageBoxEx.ForceTopMostExcludedForms.Add(typeof(ReminderForm));
     foreach ( var value in Enums.GetValues<TorahCelebrationDay>() )
       LastCelebrationReminded.Add(value, null);
-    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO remove when lunar months ready
+    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO when ready : remove
     {
       ActionShowLunarMonths.Enabled = false;
       ActionShowLunarMonths.Visible = false;
@@ -206,7 +206,7 @@ partial class MainForm
       ActionShowParashotBoard.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenWeeklyParashahBox )
       ActionWeeklyParashahDescription.PerformClick();
-    if ( SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO remove when lunar months ready
+    if ( SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO when ready : remove
       if ( ApplicationCommandLine.Instance.OpenLunarMonthsBoard )
         ActionShowLunarMonths.PerformClick();
   }

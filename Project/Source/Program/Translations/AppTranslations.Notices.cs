@@ -26,7 +26,7 @@ static partial class AppTranslations
     [Language.FR] = "Notice sur la génération des mois et des jours"
   };
 
-  // TODO update notice when sod will be ready
+  // TODO when ready : update notice with sod
   static public readonly TranslationsDictionary NoticeMonthsAndDays = new()
   {
     [Language.EN] = """

@@ -51,9 +51,9 @@ partial class PreferencesForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    ActionMonthViewThemeDark.Visible = SystemManager.CommandLineOptions.IsPreviewEnabled; // TODO remove when dark theme will be ready
+    ActionMonthViewThemeDark.Visible = SystemManager.CommandLineOptions.IsPreviewEnabled; // TODO when ready : remove
     this.InitDropDowns();
-    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO remove when sod will be ready
+    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled ) // TODO when ready : remove
       SelectUseSodHaibour.Enabled = false;
     foreach ( var item in HebrewGlobals.WebProvidersBible.Items )
       if ( item.Name == "-" )

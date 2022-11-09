@@ -202,7 +202,7 @@ static partial class Program
       if ( cmd.OpenNewMoonsBoard ) action = form.ActionShowNewMoonsBoard.PerformClick;
       if ( cmd.OpenParashotBoard ) action = form.ActionShowParashotBoard.PerformClick;
       if ( cmd.OpenWeeklyParashahBox ) action = form.ActionWeeklyParashahDescription.PerformClick;
-      // TODO update when lunar months ready
+      // TODO when ready : update
       if ( cmd.OpenLunarMonthsBoard ) action = SystemManager.CommandLineOptions.IsPreviewEnabled
                                                ? form.ActionShowLunarMonths.PerformClick
                                                : null;

@@ -29,7 +29,7 @@ partial class MainForm
     {
       {
         ViewMode.Text,
-        new ViewConnector<ViewMode, ToolStripMenuItem>
+        new ViewConnector<ToolStripMenuItem>
         {
           Component = ActionViewReport,
           Panel = PanelViewTextReport,
@@ -38,7 +38,7 @@ partial class MainForm
       },
       {
         ViewMode.Month,
-        new ViewConnector<ViewMode, ToolStripMenuItem>
+        new ViewConnector<ToolStripMenuItem>
         {
           Component = ActionViewMonth,
           Panel = PanelViewMonthlyCalendar,
@@ -47,7 +47,7 @@ partial class MainForm
       },
       {
         ViewMode.Grid,
-        new ViewConnector<ViewMode, ToolStripMenuItem>
+        new ViewConnector<ToolStripMenuItem>
         {
           Component = ActionViewGrid,
           Panel = PanelViewGrid,
