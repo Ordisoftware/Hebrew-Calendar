@@ -281,6 +281,14 @@ partial class NavigationForm : Form
     });
   }
 
+  private void ActionVerseReadDefault_Click(object sender, EventArgs e)
+  {
+    var day = (LunisolarDay)LabelParashahValue.Tag;
+    var parashah = ParashotFactory.Instance.Get(day.ParashahID);
+    string verse = $"{(int)parashah.Book}.{parashah.ReferenceBegin}";
+    HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, verse);
+  }
+
   private void ActionSelectDay_Click(object sender, EventArgs e)
   {
     ActiveControl = LabelDate;

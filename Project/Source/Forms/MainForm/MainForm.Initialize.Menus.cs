@@ -94,6 +94,15 @@ partial class MainForm
       string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.ReferenceBegin}";
       HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
+    // Visual month parashah read
+    ContextMenuDayParashahReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
+    {
+      var menuitem = (ToolStripMenuItem)sender;
+      var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
+      if ( weekParashah is null ) return;
+      string verse = $"{(int)weekParashah.Book}.{weekParashah.ReferenceBegin}";
+      HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
+    });
     // Visual month parashah study
     ContextMenuDayParashahStudyOnline.InitializeFromProviders(HebrewGlobals.WebProvidersParashah, (sender, e) =>
     {
@@ -103,15 +112,6 @@ partial class MainForm
       HebrewTools.OpenParashahProvider((string)menuitem.Tag,
                                        weekParashah,
                                        ContextMenuDayCurrentEvent.HasLinkedParashah);
-    });
-    // Visual month parashah read
-    ContextMenuDayParashahReadOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
-    {
-      var menuitem = (ToolStripMenuItem)sender;
-      var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
-      if ( weekParashah is null ) return;
-      string verse = $"{(int)weekParashah.Book}.{weekParashah.ReferenceBegin}";
-      HebrewTools.OpenBibleProvider((string)menuitem.Tag, verse);
     });
   }
 

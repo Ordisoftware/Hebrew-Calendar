@@ -668,4 +668,19 @@
   <data name="ActionTakeScreenshotWindow.Text" xml:space="preserve">
     <value>Copie écran de la fenêtre</value>
   </data>
+  <data name="ContextMenuShabatVerses.Text" xml:space="preserve">
+    <value>Versets sur le Shabat</value>
+  </data>
+  <data name="ActionShowShabatVerses.Text" xml:space="preserve">
+    <value>Versets sur le Shabat</value>
+  </data>
+  <data name="ActionShowLunarMonths.Text" xml:space="preserve">
+    <value>Tableau des mois lunaires</value>
+  </data>
+  <data name="ActionParashahReadDefault.Text" xml:space="preserve">
+    <value>Lecture par défaut</value>
+  </data>
+  <data name="ContextMenuParashahReadDefault.Text" xml:space="preserve">
+    <value>Lecture par défaut</value>
+  </data>
 </root>

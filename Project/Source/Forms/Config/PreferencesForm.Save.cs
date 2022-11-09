@@ -155,6 +155,7 @@ partial class PreferencesForm
     Settings.EphemerisSignBeforeElseAfter = EditEphemerisSignBeforeElseAfter.Checked;
     Settings.HideLuminarySigns = EditHideLuminarySigns.Checked;
     Settings.PrintImageCenterOnPage = EditPrintImageCenterOnPage.Checked;
+    Settings.OpenVerseOnlineURL = EditOpenVerseOnlineURL.Text;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;

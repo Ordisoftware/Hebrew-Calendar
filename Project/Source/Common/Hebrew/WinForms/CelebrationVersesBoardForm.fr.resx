@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 17</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Double-clic ouvre le lecteur par défaut sinon le menu</value>
+  </data>
+  <data name="LabelInfoOccurences.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 13</value>
+  </data>
+  <data name="LabelInfoOccurences.Text" xml:space="preserve">
+    <value>Utilisez les flèches pour basculer entre les listes</value>
+  </data>
   <data name="ActionClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
@@ -129,25 +142,52 @@
   <data name="ColumnVerseEnd.Text" xml:space="preserve">
     <value>Fin</value>
   </data>
-  <data name="ColumnCelebration.Text" xml:space="preserve">
-    <value>Célébration</value>
+  <data name="ContextMenuVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 76</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Tableau des versets des célébrations</value>
+  <data name="ActionVerseReadDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 22</value>
+  </data>
+  <data name="ActionVerseReadDefault.Text" xml:space="preserve">
+    <value>Lecture par défaut</value>
+  </data>
+  <data name="ActionOpenVerseOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 22</value>
   </data>
   <data name="ActionOpenVerseOnline.Text" xml:space="preserve">
     <value>Lire en ligne</value>
   </data>
-  <data name="ActionStudyOnlineTexts.Text" xml:space="preserve">
-    <value>Textes en ligne</value>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 6</value>
+  </data>
+  <data name="ActionOpenHebrewWordsVerse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 22</value>
   </data>
   <data name="ActionOpenHebrewWordsVerse.Text" xml:space="preserve">
     <value>Ouvrir avec Hebrew Words</value>
   </data>
-  <data name="LabelInfoOccurences.Text" xml:space="preserve">
-    <value>Utilisez les flèches pour basculer entre les listes</value>
+  <data name="ColumnCelebration.Text" xml:space="preserve">
+    <value>Célébration</value>
+  </data>
+  <data name="ContextMenuCelebration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 54</value>
+  </data>
+  <data name="ActionStudyOnlineTexts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
+  </data>
+  <data name="ActionStudyOnlineTexts.Text" xml:space="preserve">
+    <value>Textes en ligne</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 6</value>
+  </data>
+  <data name="ActionStudyOnlineVideos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 22</value>
   </data>
   <data name="ActionStudyOnlineVideos.Text" xml:space="preserve">
     <value>Vidéos en ligne</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tableau des versets des célébrations</value>
   </data>
 </root>

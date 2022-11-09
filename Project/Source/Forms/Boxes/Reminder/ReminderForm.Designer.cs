@@ -44,8 +44,9 @@
       this.ContextMenuParashah = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionViewParashahInfos = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionVerseReadDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -54,7 +55,7 @@
       this.ContextMenuLockout = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.MenuDefaultLockout = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionSetupSound = new System.Windows.Forms.Button();
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
       this.ContextMenuParashah.SuspendLayout();
       this.ContextMenuLockout.SuspendLayout();
       this.SuspendLayout();
@@ -96,7 +97,7 @@
       // LabelStartTime
       // 
       resources.ApplyResources(this.LabelStartTime, "LabelStartTime");
-      this.LabelStartTime.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelStartTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelStartTime.Name = "LabelStartTime";
       // 
       // ActionPreferences
@@ -111,25 +112,25 @@
       // LabelEndTime
       // 
       resources.ApplyResources(this.LabelEndTime, "LabelEndTime");
-      this.LabelEndTime.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelEndTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelEndTime.Name = "LabelEndTime";
       // 
       // LabelArrow
       // 
       resources.ApplyResources(this.LabelArrow, "LabelArrow");
-      this.LabelArrow.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelArrow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelArrow.Name = "LabelArrow";
       // 
       // LabelStartDay
       // 
       resources.ApplyResources(this.LabelStartDay, "LabelStartDay");
-      this.LabelStartDay.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelStartDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelStartDay.Name = "LabelStartDay";
       // 
       // LabelEndDay
       // 
       resources.ApplyResources(this.LabelEndDay, "LabelEndDay");
-      this.LabelEndDay.ForeColor = System.Drawing.Color.FromArgb(( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ), ( (int)( ( (byte)( 40 ) ) ) ));
+      this.LabelEndDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
       this.LabelEndDay.Name = "LabelEndDay";
       // 
       // LabelParashahValue
@@ -147,8 +148,9 @@
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
             this.toolStripSeparator1,
-            this.ActionStudyOnline,
+            this.ActionVerseReadDefault,
             this.ActionOpenVerseOnline,
+            this.ActionStudyOnline,
             this.toolStripSeparator2,
             this.ActionOpenHebrewWordsVerse,
             this.toolStripSeparator3,
@@ -167,15 +169,21 @@
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
       // 
-      // ActionStudyOnline
+      // ActionVerseReadDefault
       // 
-      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
-      this.ActionStudyOnline.Name = "ActionStudyOnline";
+      resources.ApplyResources(this.ActionVerseReadDefault, "ActionVerseReadDefault");
+      this.ActionVerseReadDefault.Name = "ActionVerseReadDefault";
+      this.ActionVerseReadDefault.Click += new System.EventHandler(this.ActionVerseReadDefault_Click);
       // 
       // ActionOpenVerseOnline
       // 
       resources.ApplyResources(this.ActionOpenVerseOnline, "ActionOpenVerseOnline");
       this.ActionOpenVerseOnline.Name = "ActionOpenVerseOnline";
+      // 
+      // ActionStudyOnline
+      // 
+      resources.ApplyResources(this.ActionStudyOnline, "ActionStudyOnline");
+      this.ActionStudyOnline.Name = "ActionStudyOnline";
       // 
       // toolStripSeparator2
       // 
@@ -258,7 +266,7 @@
       this.Load += new System.EventHandler(this.ReminderForm_Load);
       this.Shown += new System.EventHandler(this.ReminderForm_Shown);
       this.Click += new System.EventHandler(this.Form_Click);
-      ( (System.ComponentModel.ISupportInitialize)( this.PictureBox ) ).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
       this.ContextMenuParashah.ResumeLayout(false);
       this.ContextMenuLockout.ResumeLayout(false);
       this.ResumeLayout(false);
@@ -291,5 +299,6 @@
     private ToolStripMenuItem ActionOpenHebrewWordsVerse;
     private ToolStripSeparator toolStripSeparator1;
     private ToolStripSeparator toolStripSeparator3;
-  }
+        private ToolStripMenuItem ActionVerseReadDefault;
+    }
 }

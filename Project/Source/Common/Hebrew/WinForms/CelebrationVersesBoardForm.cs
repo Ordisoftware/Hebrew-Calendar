@@ -21,10 +21,19 @@ public partial class CelebrationVersesBoardForm : Form
 
   static public CelebrationVersesBoardForm Instance { get; private set; }
 
-  static public void Run(string locationPropertyName, string clientSizePropertyName, TorahCelebration celebration)
+  static public void Run(TorahCelebration celebration,
+                         string locationPropertyName,
+                         string clientSizePropertyName,
+                         string openVerseOnlineURL,
+                         bool doubleClickOnVerseOpenDefaultReader,
+                         Action<bool> doubleClickOnVerseOpenDefaultReaderChanged)
   {
     if ( Instance is null )
-      Instance = new CelebrationVersesBoardForm(locationPropertyName, clientSizePropertyName);
+      Instance = new CelebrationVersesBoardForm(locationPropertyName,
+                                                clientSizePropertyName,
+                                                openVerseOnlineURL,
+                                                doubleClickOnVerseOpenDefaultReader,
+                                                doubleClickOnVerseOpenDefaultReaderChanged);
     else
     if ( Instance.Visible )
     {
@@ -38,8 +47,14 @@ public partial class CelebrationVersesBoardForm : Form
 
   private readonly string LocationPropertyName;
   private readonly string ClientSizePropertyName;
+  private readonly string OpenVerseOnlineURL;
+  private readonly Action<bool> DoubleClickOnVerseOpenDefaultReaderChanged;
 
-  public CelebrationVersesBoardForm(string locationPropertyName, string clientSizePropertyName)
+  public CelebrationVersesBoardForm(string locationPropertyName,
+                                    string clientSizePropertyName,
+                                    string openVerseOnlineURL,
+                                    bool doubleClickOnVerseOpenDefaultReader,
+                                    Action<bool> doubleClickOnVerseOpenDefaultReaderChanged)
   {
     InitializeComponent();
     InitializeMenu();
@@ -47,6 +62,9 @@ public partial class CelebrationVersesBoardForm : Form
     ActiveControl = ListBoxCelebrations;
     LocationPropertyName = locationPropertyName;
     ClientSizePropertyName = clientSizePropertyName;
+    OpenVerseOnlineURL = openVerseOnlineURL;
+    DoubleClickOnVerseOpenDefaultReaderChanged = doubleClickOnVerseOpenDefaultReaderChanged;
+    EditDoubleClickOnVerseOpenDefaultReader.Checked = doubleClickOnVerseOpenDefaultReader;
   }
 
   private void InitializeMenu()
@@ -68,15 +86,32 @@ public partial class CelebrationVersesBoardForm : Form
     ActionOpenVerseOnline.InitializeFromProviders(HebrewGlobals.WebProvidersBible, (sender, e) =>
     {
       var menuitem = (ToolStripMenuItem)sender;
-      foreach ( ListViewItem item in ListBoxVerses.SelectedItems )
+      foreach ( string reference in GetSelectedReferences() )
       {
-        var verseitem = (Tuple<TanakBook, string, string>)item.Tag;
-        var reference = $"{(int)verseitem.Item1}.{verseitem.Item2}";
         HebrewTools.OpenBibleProvider((string)menuitem.Tag, reference);
         if ( ListBoxVerses.SelectedItems.Count > 1 )
           Thread.Sleep(1500);
       }
     });
+  }
+
+  private void ActionVerseReadDefault_Click(object sender, EventArgs e)
+  {
+    foreach ( string reference in GetSelectedReferences() )
+    {
+      HebrewTools.OpenBibleProvider(OpenVerseOnlineURL, reference);
+      if ( ListBoxVerses.SelectedItems.Count > 1 )
+        Thread.Sleep(1500);
+    }
+  }
+
+  private IEnumerable<string> GetSelectedReferences()
+  {
+    foreach ( ListViewItem item in ListBoxVerses.SelectedItems )
+    {
+      var verseitem = (Tuple<TanakBook, string, string>)item.Tag;
+      yield return $"{(int)verseitem.Item1}.{verseitem.Item2}";
+    }
   }
 
   [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
@@ -136,6 +171,11 @@ public partial class CelebrationVersesBoardForm : Form
     Close();
   }
 
+  private void EditDoubleClickOnVerseOpenDefaultReader_CheckedChanged(object sender, EventArgs e)
+  {
+    DoubleClickOnVerseOpenDefaultReaderChanged?.Invoke(EditDoubleClickOnVerseOpenDefaultReader.Checked);
+  }
+
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
     if ( ListBoxVerses.SelectedItems.Count <= 0 ) return;
@@ -151,7 +191,10 @@ public partial class CelebrationVersesBoardForm : Form
 
   private void ListBoxVerses_MouseDoubleClick(object sender, MouseEventArgs e)
   {
-    ListBoxVerses.ContextMenuStrip.Show(Cursor.Position);
+    if ( EditDoubleClickOnVerseOpenDefaultReader.Checked )
+      ActionVerseReadDefault.PerformClick();
+    else
+      ListBoxVerses.ContextMenuStrip.Show(Cursor.Position);
   }
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]

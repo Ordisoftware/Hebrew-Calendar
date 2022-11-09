@@ -143,10 +143,12 @@
       this.ActionWeeklyParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWeeklyParashahDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-      this.ActionWeeklyParashahStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionParashahReadDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWeeklyParashahReadOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionWeeklyParashahStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWeeklyParashahOpenWithHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowShabatVerses = new System.Windows.Forms.ToolStripMenuItem();
       this.WeeklyParashahSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionShowParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
@@ -213,12 +215,14 @@
       this.ContextMenuDayParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahDescription = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-      this.ContextMenuDayParashahStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuParashahReadDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayParashahReadOnline = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayParashahStudyOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuOpenWithHebrewWords = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayParashotBoard = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuShabatVerses = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuParashahSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayCelebrationVersesBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
@@ -995,6 +999,7 @@
             this.toolStripMenuItem1,
             this.toolStripSeparator10,
             this.ActionWeeklyParashah,
+            this.ActionShowShabatVerses,
             this.WeeklyParashahSeparator,
             this.ActionShowParashotBoard,
             this.ActionShowCelebrationVersesBoard,
@@ -1105,8 +1110,9 @@
       this.ActionWeeklyParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionWeeklyParashahDescription,
             this.toolStripSeparator13,
-            this.ActionWeeklyParashahStudyOnline,
+            this.ActionParashahReadDefault,
             this.ActionWeeklyParashahReadOnline,
+            this.ActionWeeklyParashahStudyOnline,
             this.toolStripSeparator1,
             this.ActionWeeklyParashahOpenWithHebrewWords});
       resources.ApplyResources(this.ActionWeeklyParashah, "ActionWeeklyParashah");
@@ -1123,15 +1129,21 @@
       this.toolStripSeparator13.Name = "toolStripSeparator13";
       resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
       // 
-      // ActionWeeklyParashahStudyOnline
+      // ActionParashahReadDefault
       // 
-      resources.ApplyResources(this.ActionWeeklyParashahStudyOnline, "ActionWeeklyParashahStudyOnline");
-      this.ActionWeeklyParashahStudyOnline.Name = "ActionWeeklyParashahStudyOnline";
+      resources.ApplyResources(this.ActionParashahReadDefault, "ActionParashahReadDefault");
+      this.ActionParashahReadDefault.Name = "ActionParashahReadDefault";
+      this.ActionParashahReadDefault.Click += new System.EventHandler(this.ActionParashahReadDefault_Click);
       // 
       // ActionWeeklyParashahReadOnline
       // 
       resources.ApplyResources(this.ActionWeeklyParashahReadOnline, "ActionWeeklyParashahReadOnline");
       this.ActionWeeklyParashahReadOnline.Name = "ActionWeeklyParashahReadOnline";
+      // 
+      // ActionWeeklyParashahStudyOnline
+      // 
+      resources.ApplyResources(this.ActionWeeklyParashahStudyOnline, "ActionWeeklyParashahStudyOnline");
+      this.ActionWeeklyParashahStudyOnline.Name = "ActionWeeklyParashahStudyOnline";
       // 
       // toolStripSeparator1
       // 
@@ -1143,6 +1155,12 @@
       resources.ApplyResources(this.ActionWeeklyParashahOpenWithHebrewWords, "ActionWeeklyParashahOpenWithHebrewWords");
       this.ActionWeeklyParashahOpenWithHebrewWords.Name = "ActionWeeklyParashahOpenWithHebrewWords";
       this.ActionWeeklyParashahOpenWithHebrewWords.Click += new System.EventHandler(this.ActionOpenHebrewWordsVerse_Click);
+      // 
+      // ActionShowShabatVerses
+      // 
+      resources.ApplyResources(this.ActionShowShabatVerses, "ActionShowShabatVerses");
+      this.ActionShowShabatVerses.Name = "ActionShowShabatVerses";
+      this.ActionShowShabatVerses.Click += new System.EventHandler(this.ActionShowShabatVerses_Click);
       // 
       // WeeklyParashahSeparator
       // 
@@ -1551,6 +1569,7 @@
             this.ContextMenuDayMoonset,
             this.ContextMenuDayTimesSeparator,
             this.ContextMenuDayParashah,
+            this.ContextMenuShabatVerses,
             this.ContextMenuParashahSeparator,
             this.ContextMenuDayCelebrationVersesBoard,
             this.toolStripSeparator18,
@@ -1624,8 +1643,9 @@
       this.ContextMenuDayParashah.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextMenuDayParashahDescription,
             this.toolStripSeparator24,
-            this.ContextMenuDayParashahStudyOnline,
+            this.ContextMenuParashahReadDefault,
             this.ContextMenuDayParashahReadOnline,
+            this.ContextMenuDayParashahStudyOnline,
             this.toolStripSeparator22,
             this.ContextMenuOpenWithHebrewWords,
             this.toolStripSeparator16,
@@ -1644,15 +1664,21 @@
       this.toolStripSeparator24.Name = "toolStripSeparator24";
       resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
       // 
-      // ContextMenuDayParashahStudyOnline
+      // ContextMenuParashahReadDefault
       // 
-      resources.ApplyResources(this.ContextMenuDayParashahStudyOnline, "ContextMenuDayParashahStudyOnline");
-      this.ContextMenuDayParashahStudyOnline.Name = "ContextMenuDayParashahStudyOnline";
+      resources.ApplyResources(this.ContextMenuParashahReadDefault, "ContextMenuParashahReadDefault");
+      this.ContextMenuParashahReadDefault.Name = "ContextMenuParashahReadDefault";
+      this.ContextMenuParashahReadDefault.Click += new System.EventHandler(this.ContextMenuParashahReadDefault_Click);
       // 
       // ContextMenuDayParashahReadOnline
       // 
       resources.ApplyResources(this.ContextMenuDayParashahReadOnline, "ContextMenuDayParashahReadOnline");
       this.ContextMenuDayParashahReadOnline.Name = "ContextMenuDayParashahReadOnline";
+      // 
+      // ContextMenuDayParashahStudyOnline
+      // 
+      resources.ApplyResources(this.ContextMenuDayParashahStudyOnline, "ContextMenuDayParashahStudyOnline");
+      this.ContextMenuDayParashahStudyOnline.Name = "ContextMenuDayParashahStudyOnline";
       // 
       // toolStripSeparator22
       // 
@@ -1675,6 +1701,12 @@
       resources.ApplyResources(this.ContextMenuDayParashotBoard, "ContextMenuDayParashotBoard");
       this.ContextMenuDayParashotBoard.Name = "ContextMenuDayParashotBoard";
       this.ContextMenuDayParashotBoard.Click += new System.EventHandler(this.ContextMenuDayParashah_Click);
+      // 
+      // ContextMenuShabatVerses
+      // 
+      resources.ApplyResources(this.ContextMenuShabatVerses, "ContextMenuShabatVerses");
+      this.ContextMenuShabatVerses.Name = "ContextMenuShabatVerses";
+      this.ContextMenuShabatVerses.Click += new System.EventHandler(this.ActionShowShabatVerses_Click);
       // 
       // ContextMenuParashahSeparator
       // 
@@ -2043,6 +2075,10 @@
     private ToolStripMenuItem ActionTakeScreenshotView;
     private ToolStripMenuItem ActionTakeScreenshotWindow;
     private ToolStripSeparator ContextMenuSunMoonSeparator;
+    internal ToolStripMenuItem ContextMenuShabatVerses;
+    internal ToolStripMenuItem ActionShowShabatVerses;
+    private ToolStripMenuItem ContextMenuParashahReadDefault;
+    private ToolStripMenuItem ActionParashahReadDefault;
   }
 }
 

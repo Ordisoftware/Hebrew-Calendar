@@ -77,6 +77,7 @@
       this.ActionViewCalendar = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.PanelSeparatorBottom = new System.Windows.Forms.Panel();
+      this.ActionVerseReadDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelTop.SuspendLayout();
       this.PanelMiddle.SuspendLayout();
       this.PanelAllExceptParashah.SuspendLayout();
@@ -206,8 +207,9 @@
       this.ContextMenuParashah.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ActionViewParashahInfos,
             this.toolStripSeparator1,
-            this.ActionStudyOnline,
+            this.ActionVerseReadDefault,
             this.ActionOpenVerseOnline,
+            this.ActionStudyOnline,
             this.toolStripSeparator2,
             this.ActionOpenHebrewWordsVerse,
             this.toolStripSeparator3,
@@ -399,6 +401,12 @@
       resources.ApplyResources(this.PanelSeparatorBottom, "PanelSeparatorBottom");
       this.PanelSeparatorBottom.Name = "PanelSeparatorBottom";
       // 
+      // ActionVerseReadDefault
+      // 
+      resources.ApplyResources(this.ActionVerseReadDefault, "ActionVerseReadDefault");
+      this.ActionVerseReadDefault.Name = "ActionVerseReadDefault";
+      this.ActionVerseReadDefault.Click += new System.EventHandler(this.ActionVerseReadDefault_Click);
+      // 
       // NavigationForm
       // 
       resources.ApplyResources(this, "$this");
@@ -475,5 +483,6 @@
     private ToolStripMenuItem ActionOpenHebrewWordsVerse;
     private ToolStripSeparator toolStripSeparator1;
     private ToolStripSeparator toolStripSeparator3;
-  }
+        private ToolStripMenuItem ActionVerseReadDefault;
+    }
 }

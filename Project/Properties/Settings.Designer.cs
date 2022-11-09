@@ -3428,5 +3428,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["PrintImageCenterOnPage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%")]
+        public string OpenVerseOnlineURL {
+            get {
+                return ((string)(this["OpenVerseOnlineURL"]));
+            }
+            set {
+                this["OpenVerseOnlineURL"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DoubleClickOnVerseOpenDefaultReader {
+            get {
+                return ((bool)(this["DoubleClickOnVerseOpenDefaultReader"]));
+            }
+            set {
+                this["DoubleClickOnVerseOpenDefaultReader"] = value;
+            }
+        }
     }
 }

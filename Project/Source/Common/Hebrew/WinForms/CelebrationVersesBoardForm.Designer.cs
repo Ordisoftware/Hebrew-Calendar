@@ -38,6 +38,7 @@
       this.ColumnVerseBegin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ColumnVerseEnd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuVerse = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.ActionVerseReadDefault = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenVerseOnline = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionOpenHebrewWordsVerse = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,10 +46,11 @@
       this.ColumnCelebration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ContextMenuCelebration = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ActionStudyOnlineTexts = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionStudyOnlineVideos = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panel2 = new System.Windows.Forms.Panel();
-      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.EditDoubleClickOnVerseOpenDefaultReader = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuVerse.SuspendLayout();
       this.ContextMenuCelebration.SuspendLayout();
@@ -58,6 +60,7 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.EditDoubleClickOnVerseOpenDefaultReader);
       this.PanelBottom.Controls.Add(this.LabelInfoOccurences);
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
@@ -108,11 +111,18 @@
       // ContextMenuVerse
       // 
       this.ContextMenuVerse.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ActionVerseReadDefault,
             this.ActionOpenVerseOnline,
             this.toolStripSeparator2,
             this.ActionOpenHebrewWordsVerse});
       this.ContextMenuVerse.Name = "ContextMenuStrip";
       resources.ApplyResources(this.ContextMenuVerse, "ContextMenuVerse");
+      // 
+      // ActionVerseReadDefault
+      // 
+      resources.ApplyResources(this.ActionVerseReadDefault, "ActionVerseReadDefault");
+      this.ActionVerseReadDefault.Name = "ActionVerseReadDefault";
+      this.ActionVerseReadDefault.Click += new System.EventHandler(this.ActionVerseReadDefault_Click);
       // 
       // ActionOpenVerseOnline
       // 
@@ -165,6 +175,11 @@
       resources.ApplyResources(this.ActionStudyOnlineTexts, "ActionStudyOnlineTexts");
       this.ActionStudyOnlineTexts.Name = "ActionStudyOnlineTexts";
       // 
+      // toolStripSeparator1
+      // 
+      this.toolStripSeparator1.Name = "toolStripSeparator1";
+      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      // 
       // ActionStudyOnlineVideos
       // 
       resources.ApplyResources(this.ActionStudyOnlineVideos, "ActionStudyOnlineVideos");
@@ -182,10 +197,12 @@
       resources.ApplyResources(this.panel2, "panel2");
       this.panel2.Name = "panel2";
       // 
-      // toolStripSeparator1
+      // EditDoubleClickOnVerseOpenDefaultReader
       // 
-      this.toolStripSeparator1.Name = "toolStripSeparator1";
-      resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+      resources.ApplyResources(this.EditDoubleClickOnVerseOpenDefaultReader, "EditDoubleClickOnVerseOpenDefaultReader");
+      this.EditDoubleClickOnVerseOpenDefaultReader.Name = "EditDoubleClickOnVerseOpenDefaultReader";
+      this.EditDoubleClickOnVerseOpenDefaultReader.UseVisualStyleBackColor = true;
+      this.EditDoubleClickOnVerseOpenDefaultReader.CheckedChanged += new System.EventHandler(this.EditDoubleClickOnVerseOpenDefaultReader_CheckedChanged);
       // 
       // CelebrationVersesBoardForm
       // 
@@ -233,5 +250,7 @@
     private Label LabelInfoOccurences;
     private ToolStripMenuItem ActionStudyOnlineVideos;
         private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem ActionVerseReadDefault;
+        private CheckBox EditDoubleClickOnVerseOpenDefaultReader;
     }
 }

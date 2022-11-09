@@ -633,9 +633,12 @@ partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
-    CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
-                                   nameof(Settings.CelebrationVersesBoardFormClientSize),
-                                   TorahCelebration.Pessah);
+    Hebrew.CelebrationVersesBoardForm.Run(TorahCelebration.Pessah,
+                                          nameof(Settings.CelebrationVersesBoardFormLocation),
+                                          nameof(Settings.CelebrationVersesBoardFormClientSize),
+                                          Settings.OpenVerseOnlineURL,
+                                          Settings.DoubleClickOnVerseOpenDefaultReader,
+                                          value => Settings.DoubleClickOnVerseOpenDefaultReader = value);
   }
 
   /// <summary>
@@ -1230,9 +1233,22 @@ partial class MainForm : Form
 
   private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
-    CelebrationVersesBoardForm.Run(nameof(Settings.CelebrationVersesBoardFormLocation),
+    CelebrationVersesBoardForm.Run((TorahCelebration)ContextMenuDayCelebrationVersesBoard.Tag,
+                                    nameof(Settings.CelebrationVersesBoardFormLocation),
+                                    nameof(Settings.CelebrationVersesBoardFormClientSize),
+                                    Settings.OpenVerseOnlineURL,
+                                    Settings.DoubleClickOnVerseOpenDefaultReader,
+                                    value => Settings.DoubleClickOnVerseOpenDefaultReader = value);
+  }
+
+  private void ActionShowShabatVerses_Click(object sender, EventArgs e)
+  {
+    CelebrationVersesBoardForm.Run(TorahCelebration.Shabat,
+                                   nameof(Settings.CelebrationVersesBoardFormLocation),
                                    nameof(Settings.CelebrationVersesBoardFormClientSize),
-                                   (TorahCelebration)ContextMenuDayCelebrationVersesBoard.Tag);
+                                   Settings.OpenVerseOnlineURL,
+                                   Settings.DoubleClickOnVerseOpenDefaultReader,
+                                   value => Settings.DoubleClickOnVerseOpenDefaultReader = value);
   }
 
   private void ContextMenuDayParashah_Click(object sender, EventArgs e)
@@ -1337,5 +1353,21 @@ partial class MainForm : Form
   }
 
   #endregion
+
+  private void ActionParashahReadDefault_Click(object sender, EventArgs e)
+  {
+    var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+    if ( weekParashah.Factory is null ) return;
+    string verse = $"{(int)weekParashah.Factory.Book}.{weekParashah.Factory.ReferenceBegin}";
+    HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, verse);
+  }
+
+  private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)
+  {
+    var weekParashah = ParashotFactory.Instance.Get(ContextMenuDayCurrentEvent.GetParashahReadingDay()?.ParashahID);
+    if ( weekParashah is null ) return;
+    string verse = $"{(int)weekParashah.Book}.{weekParashah.ReferenceBegin}";
+    HebrewTools.OpenBibleProvider(Settings.OpenVerseOnlineURL, verse);
+  }
 
 }

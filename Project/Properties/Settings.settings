@@ -854,5 +854,11 @@
     <Setting Name="PrintImageCenterOnPage" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="OpenVerseOnlineURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%</Value>
+    </Setting>
+    <Setting Name="DoubleClickOnVerseOpenDefaultReader" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
