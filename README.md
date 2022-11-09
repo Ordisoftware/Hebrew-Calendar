@@ -390,6 +390,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add verse references for Shabat in celebrations board.
 - Add option to select font names for texts in the monthly view.
 - Add option to select data layout order and sections to show in the monthly view.
+- Add option to set default online verse reader.
 - Add option to center printed images on pages.
 - Split study context menu into `Online texts` and `Online videos` in celebrations board.
 - Change export behavior to set default sub-folders to `Boards` and `Data` and `Images`.
