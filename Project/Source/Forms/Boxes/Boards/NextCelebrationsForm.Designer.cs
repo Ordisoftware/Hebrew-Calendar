@@ -32,8 +32,8 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ListView = new System.Windows.Forms.ListView();
-      this.columnHeader1 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
-      this.columnHeader2 = ( (System.Windows.Forms.ColumnHeader)( new System.Windows.Forms.ColumnHeader() ) );
+      this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -74,7 +74,7 @@
       // 
       resources.ApplyResources(this.columnHeader2, "columnHeader2");
       // 
-      // CelebrationsForm
+      // NextCelebrationsForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,8 +85,7 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Location = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.NextCelebrationsFormLocation;
       this.MaximizeBox = false;
-      this.MinimizeBox = false;
-      this.Name = "CelebrationsForm";
+      this.Name = "NextCelebrationsForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CelebrationsForm_FormClosing);
       this.Load += new System.EventHandler(this.CelebrationsForm_Load);
       this.PanelBottom.ResumeLayout(false);

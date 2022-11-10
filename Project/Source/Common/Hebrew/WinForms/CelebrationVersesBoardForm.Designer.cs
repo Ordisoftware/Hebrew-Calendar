@@ -31,6 +31,7 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CelebrationVersesBoardForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.EditDoubleClickOnVerseOpenDefaultReader = new System.Windows.Forms.CheckBox();
       this.LabelInfoOccurences = new System.Windows.Forms.Label();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ListBoxVerses = new System.Windows.Forms.ListView();
@@ -50,7 +51,6 @@
       this.ActionStudyOnlineVideos = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panel2 = new System.Windows.Forms.Panel();
-      this.EditDoubleClickOnVerseOpenDefaultReader = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
       this.ContextMenuVerse.SuspendLayout();
       this.ContextMenuCelebration.SuspendLayout();
@@ -65,6 +65,13 @@
       this.PanelBottom.Controls.Add(this.ActionClose);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // EditDoubleClickOnVerseOpenDefaultReader
+      // 
+      resources.ApplyResources(this.EditDoubleClickOnVerseOpenDefaultReader, "EditDoubleClickOnVerseOpenDefaultReader");
+      this.EditDoubleClickOnVerseOpenDefaultReader.Name = "EditDoubleClickOnVerseOpenDefaultReader";
+      this.EditDoubleClickOnVerseOpenDefaultReader.UseVisualStyleBackColor = true;
+      this.EditDoubleClickOnVerseOpenDefaultReader.CheckedChanged += new System.EventHandler(this.EditDoubleClickOnVerseOpenDefaultReader_CheckedChanged);
       // 
       // LabelInfoOccurences
       // 
@@ -197,13 +204,6 @@
       resources.ApplyResources(this.panel2, "panel2");
       this.panel2.Name = "panel2";
       // 
-      // EditDoubleClickOnVerseOpenDefaultReader
-      // 
-      resources.ApplyResources(this.EditDoubleClickOnVerseOpenDefaultReader, "EditDoubleClickOnVerseOpenDefaultReader");
-      this.EditDoubleClickOnVerseOpenDefaultReader.Name = "EditDoubleClickOnVerseOpenDefaultReader";
-      this.EditDoubleClickOnVerseOpenDefaultReader.UseVisualStyleBackColor = true;
-      this.EditDoubleClickOnVerseOpenDefaultReader.CheckedChanged += new System.EventHandler(this.EditDoubleClickOnVerseOpenDefaultReader_CheckedChanged);
-      // 
       // CelebrationVersesBoardForm
       // 
       resources.ApplyResources(this, "$this");
@@ -213,7 +213,6 @@
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.PanelBottom);
       this.MaximizeBox = false;
-      this.MinimizeBox = false;
       this.Name = "CelebrationVersesBoardForm";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
       this.Deactivate += new System.EventHandler(this.CelebrationVersesBoardForm_Deactivate);
