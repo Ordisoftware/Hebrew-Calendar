@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides messages and questions with waiting user communication feedback as well as UI sync.
 /// </summary>
-static partial class DisplayManager
+static public partial class DisplayManager
 {
 
   /// <summary>

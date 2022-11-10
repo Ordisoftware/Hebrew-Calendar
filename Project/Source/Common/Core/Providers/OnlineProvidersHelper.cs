@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides online providers list helper to create menu items.
 /// </summary>
-static class OnlineProvidersHelper
+static public class OnlineProvidersHelper
 {
 
   /// <summary>
@@ -66,11 +66,12 @@ static class OnlineProvidersHelper
   /// Creates a list of menu items.
   /// </summary>
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "N/A")]
-  static private void SetItems(ToolStripItemCollection items,
-                               OnlineProviders providers,
-                               EventHandler action,
-                               Action finished,
-                               Action reconstruct)
+  static private void SetItems(
+    ToolStripItemCollection items,
+    OnlineProviders providers,
+    EventHandler action,
+    Action finished,
+    Action reconstruct)
   {
     if ( providers is null || providers.Items.Count == 0 ) return;
     items.Clear();
@@ -92,10 +93,11 @@ static class OnlineProvidersHelper
   /// <summary>
   /// Creates sub-menu items for providers menu.
   /// </summary>
-  static public void Initialize(this ContextMenuStrip menu,
-                                     OnlineProviders providers,
-                                     EventHandler action,
-                                     Action finished = null)
+  static public void Initialize(
+    this ContextMenuStrip menu,
+    OnlineProviders providers,
+    EventHandler action,
+    Action finished = null)
   {
     SetItems(menu.Items, providers, action, finished, () => Initialize(menu, providers, action, finished));
   }
@@ -103,10 +105,11 @@ static class OnlineProvidersHelper
   /// <summary>
   /// Creates sub-menu items for providers menu.
   /// </summary>
-  static public void Initialize(this ToolStripMenuItem item,
-                                     OnlineProviders providers,
-                                     EventHandler action,
-                                     Action finished = null)
+  static public void Initialize(
+    this ToolStripMenuItem item,
+    OnlineProviders providers,
+    EventHandler action,
+    Action finished = null)
   {
     if ( providers is null ) return;
     SetItems(item.DropDownItems, providers, action, finished, () => Initialize(item, providers, action, finished));

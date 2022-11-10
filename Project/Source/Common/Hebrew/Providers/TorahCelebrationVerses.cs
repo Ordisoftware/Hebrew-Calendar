@@ -14,7 +14,7 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
-class TorahCelebrationVerses : ProviderSettings
+public class TorahCelebrationVerses : ProviderSettings
 {
 
   static public readonly TorahCelebrationVerses Instance = new();

@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
-partial class HebrewDatabase : SQLiteDatabase
+public partial class HebrewDatabase : SQLiteDatabase
 {
 
   static public HebrewDatabase Instance { get; protected set; }

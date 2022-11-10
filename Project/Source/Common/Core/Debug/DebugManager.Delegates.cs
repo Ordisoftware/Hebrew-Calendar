@@ -14,12 +14,14 @@
 /// <edited> 2020-08 </edited>
 namespace Ordisoftware.Core;
 
+public delegate void DebugManagerHandler(bool value);
+
 ///// <summary>
 ///// Delegate for trace file changed events.
 ///// </summary>
 ///// <param name="sender">Source of the event.</param>
 ///// <param name="filePath">The new file path.</param>
-//delegate void TraceFileChanged(DebugManager.Listener sender, string filePath);
+//public delegate void TraceFileChanged(DebugManager.Listener sender, string filePath);
 
 /// <summary>
 /// Delegate for handling before show exception events.
@@ -27,7 +29,7 @@ namespace Ordisoftware.Core;
 /// <param name="sender">Source of the event.</param>
 /// <param name="einfo">The einfo.</param>
 /// <param name="process">[in,out] The process.</param>
-delegate void BeforeShowExceptionEventHandler(object sender, ExceptionInfo einfo, ref bool process);
+public delegate void BeforeShowExceptionEventHandler(object sender, ExceptionInfo einfo, ref bool process);
 
 /// <summary>
 /// Delegate for handling after show exception events.
@@ -35,4 +37,4 @@ delegate void BeforeShowExceptionEventHandler(object sender, ExceptionInfo einfo
 /// <param name="sender">Source of the event.</param>
 /// <param name="einfo">The einfo.</param>
 /// <param name="processed">true if processed.</param>
-delegate void AfterShowExceptionEventHandler(object sender, ExceptionInfo einfo, bool processed);
+public delegate void AfterShowExceptionEventHandler(object sender, ExceptionInfo einfo, bool processed);

@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew;
 using Equin.ApplicationFramework;
 
 [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
-partial class HebrewDatabase : SQLiteDatabase
+public partial class HebrewDatabase : SQLiteDatabase
 {
 
   public List<TermHebrew> TermsHebrew { get; private set; }

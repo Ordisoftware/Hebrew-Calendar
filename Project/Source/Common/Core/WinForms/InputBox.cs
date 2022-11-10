@@ -24,7 +24,7 @@ where T : IConvertible
   /// <summary>
   /// The value.
   /// </summary>
-  internal T Value;
+  private T Value;
 
   /// <summary>
   /// The validator.

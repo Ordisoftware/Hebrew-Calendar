@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew;
 /// <summary>
 /// Provides Letters input panel Control.
 /// </summary>
-partial class LettersControl
+public partial class LettersControl
 {
 
   private bool RedrawMutex;

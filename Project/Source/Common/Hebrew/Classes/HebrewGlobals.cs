@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew;
 /// <summary>
 /// Provides Hebrew global variables.
 /// </summary>
-static partial class HebrewGlobals
+static public partial class HebrewGlobals
 {
 
   /// <summary>

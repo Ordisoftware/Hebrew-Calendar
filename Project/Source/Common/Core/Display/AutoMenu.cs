@@ -11,40 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-11 </edited>
 namespace Ordisoftware.Core;
 
-public class MenuChoice
+public readonly record struct AutoMenuChoice(string Title, Action Action);
+
+public record class AutoMenu(string Header, List<AutoMenuChoice> Choices, AutoMenu Root)
 {
-  public string Title { get; }
-  public Action Action { get; }
-  public MenuChoice(string title, Action action)
-  {
-    Title = title;
-    Action = action;
-  }
-}
-
-public partial class AutoMenu
-{
-  private string Separator => new('-', SeperatorLength);
-
-  private readonly string Header;
-
-  private readonly List<MenuChoice> Choices;
-
-  private readonly AutoMenu Root;
-
-  const int SeperatorLength = 100;
-
-  const string ExitMessage = "Goodbye.";
-
-  public AutoMenu(string header, List<MenuChoice> choices, AutoMenu root)
-  {
-    Header = header;
-    Choices = choices;
-    Root = root;
-  }
 
   private void Print()
   {
@@ -56,15 +29,15 @@ public partial class AutoMenu
   public void Run()
   {
     Console.Clear();
-    Console.WriteLine(Separator);
+    Console.WriteLine(AutoMenuManager.Separator);
     Console.WriteLine(Header);
     Console.WriteLine();
     Print();
-    Console.WriteLine(Separator);
+    Console.WriteLine(AutoMenuManager.Separator);
     int choice = (int)GetUserChoice();
     if ( choice == Choices.Count + 1 )
       if ( Root is null )
-        Console.WriteLine(ExitMessage);
+        Console.WriteLine(AutoMenuManager.ExitMessage);
       else
         Root.Run();
     else
@@ -92,11 +65,11 @@ public partial class AutoMenu
       Console.ReadKey();
       Console.Clear();
       Console.Clear();
-      Console.WriteLine(Separator);
+      Console.WriteLine(AutoMenuManager.Separator);
       Console.WriteLine(Header);
       Console.WriteLine();
       Print();
-      Console.WriteLine(Separator);
+      Console.WriteLine(AutoMenuManager.Separator);
       getInput();
     }
     return choice;
@@ -106,22 +79,6 @@ public partial class AutoMenu
       uint.TryParse(Console.ReadLine(), out choice);
       Console.WriteLine();
     }
-  }
-
-}
-
-public class MenuManager
-{
-  private readonly AutoMenu Root;
-
-  public MenuManager(AutoMenu root)
-  {
-    Root = root;
-  }
-
-  public void Run()
-  {
-    Root.Run();
   }
 
 }

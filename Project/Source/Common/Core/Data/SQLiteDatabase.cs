@@ -24,7 +24,7 @@ public delegate void DataLoadedEventHandler(string caption);
 /// <summary>
 /// Provides SQLite database wrapper.
 /// </summary>
-abstract class SQLiteDatabase : IDisposable
+public abstract class SQLiteDatabase : IDisposable
 {
 
   private bool Disposed;
@@ -65,7 +65,7 @@ abstract class SQLiteDatabase : IDisposable
 
   [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]
   [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
-  internal void AddToModified(object instance)
+  public void AddToModified(object instance)
   {
     if ( Loaded && !ModifiedObjects.Contains(instance) )
     {
@@ -93,6 +93,12 @@ abstract class SQLiteDatabase : IDisposable
     if ( Disposed ) return;
     if ( disposing ) Connection?.Dispose();
     Disposed = true;
+  }
+
+  protected virtual void ThrowIfDisposed()
+  {
+    if ( Disposed )
+      throw new ObjectDisposedException(GetType().FullName);
   }
 
   protected void CheckConnected()
@@ -266,11 +272,4 @@ abstract class SQLiteDatabase : IDisposable
     }
   }
 
-  protected virtual void ThrowIfDisposed()
-  {
-    if ( this.Disposed )
-    {
-      throw new ObjectDisposedException(this.GetType().FullName);
-    }
-  }
 }

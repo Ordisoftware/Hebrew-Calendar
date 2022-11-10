@@ -14,7 +14,7 @@
 /// <edited> 2022-02 </edited>
 namespace Ordisoftware.Hebrew;
 
-static partial class OnlineBookInfos
+static public partial class OnlineBookInfos
 {
 
   static public readonly Dictionary<TanakBook, string> TorahBox = new()

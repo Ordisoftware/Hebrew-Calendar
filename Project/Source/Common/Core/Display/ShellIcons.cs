@@ -21,7 +21,7 @@ using static Ordisoftware.Core.NativeMethods;
 /// <summary>
 /// Provides shell icons for message boxes.
 /// </summary>
-static class ShellIcons
+static public class ShellIcons
 {
   static public readonly Bitmap Warning;
   static public readonly Bitmap Error;
@@ -34,6 +34,7 @@ static class ShellIcons
     Question = process(SHSTOCKICONID.SIID_HELP);
     Warning = process(SHSTOCKICONID.SIID_WARNING);
     Error = process(SHSTOCKICONID.SIID_ERROR);
+    //
     Bitmap process(SHSTOCKICONID id)
     {
       Marshal.ThrowExceptionForHR(SHGetStockIconInfo(id, SHGSI.SHGSI_ICON, ref sii));

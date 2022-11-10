@@ -14,14 +14,7 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-public enum WebUpdateSelection
-{
-  None,
-  Install,
-  Download,
-}
-
-partial class WebUpdateForm : Form
+public partial class WebUpdateForm : Form
 {
 
   static public WebUpdateSelection Run(Version version)

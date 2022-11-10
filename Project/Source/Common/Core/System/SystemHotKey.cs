@@ -20,7 +20,7 @@ using GregsStack.InputSimulatorStandard.Native;
 /// <summary>
 /// Provides HotkeyManager wrapper.
 /// </summary>
-class SystemHotKey
+public class SystemHotKey
 {
 
   static private HotkeyManager Manager => _Manager ??= new HotkeyManager();

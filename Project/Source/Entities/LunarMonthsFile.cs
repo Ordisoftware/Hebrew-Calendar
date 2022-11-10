@@ -45,7 +45,7 @@ class LunarMonthsFile : DataFile
         string line = lines[index].Trim();
         if ( line.Length == 0 )
           continue;
-        if ( line.IsCommentedText() )
+        if ( line.IsCommented() )
           continue;
         var parts = line.Split(new char[] { '=' }, 2);
         Items.Add(parts[1].Trim());

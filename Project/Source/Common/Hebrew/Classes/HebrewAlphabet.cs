@@ -17,10 +17,10 @@ namespace Ordisoftware.Hebrew;
 using EllisWeb.Gematria;
 
 /// <summary>
-/// Provides Hebrew letters class to manage Hebrew font and Unicode chars
+/// Provides Hebrew letters public class to manage Hebrew font and Unicode chars
 /// from text available at www.fourmilab.ch/etexts/www/hebrew/Bible.
 /// </summary>
-static class HebrewAlphabet
+static public class HebrewAlphabet
 {
 
   public const int ConcordanceFirst = 1;

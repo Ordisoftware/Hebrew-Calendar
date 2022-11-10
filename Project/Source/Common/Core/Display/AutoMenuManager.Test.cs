@@ -14,14 +14,14 @@
 /// <edited> 2021-10 </edited>
 namespace Ordisoftware.Core;
 
-public partial class AutoMenu
+static class AutoMenuManagerTest
 {
 
-  static internal void Test()
+  static public void Run()
   {
-    var choicesMain = new List<MenuChoice>();
-    var choices1 = new List<MenuChoice>();
-    var choices2 = new List<MenuChoice>();
+    var choicesMain = new List<AutoMenuChoice>();
+    var choices1 = new List<AutoMenuChoice>();
+    var choices2 = new List<AutoMenuChoice>();
 
     const string headerMain = "WELCOME";
     const string header1 = "Menu 1";
@@ -31,18 +31,18 @@ public partial class AutoMenu
     var menu1 = new AutoMenu(header1, choices1, root);
     var menu2 = new AutoMenu(header2, choices2, root);
 
-    choicesMain.Add(new MenuChoice("Go to menu 1", menu1.Run));
-    choicesMain.Add(new MenuChoice("Go to menu 2", menu2.Run));
+    choicesMain.Add(new AutoMenuChoice("Go to menu 1", menu1.Run));
+    choicesMain.Add(new AutoMenuChoice("Go to menu 2", menu2.Run));
 
-    choices1.Add(new MenuChoice("Option 1", null));
-    choices1.Add(new MenuChoice("Option 2", null));
-    choices1.Add(new MenuChoice("Option 3", null));
-    choices1.Add(new MenuChoice("Option 4", null));
+    choices1.Add(new AutoMenuChoice("Option 1", null));
+    choices1.Add(new AutoMenuChoice("Option 2", null));
+    choices1.Add(new AutoMenuChoice("Option 3", null));
+    choices1.Add(new AutoMenuChoice("Option 4", null));
 
-    choices2.Add(new MenuChoice("Option 1", null));
-    choices2.Add(new MenuChoice("Option 2", null));
+    choices2.Add(new AutoMenuChoice("Option 1", null));
+    choices2.Add(new AutoMenuChoice("Option 2", null));
 
-    new MenuManager(root).Run();
+    new AutoMenuManager(root).Run();
   }
 
 }

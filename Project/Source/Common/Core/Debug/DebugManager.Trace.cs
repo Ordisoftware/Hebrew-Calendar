@@ -18,10 +18,10 @@ using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 
-static partial class DebugManager
+static public partial class DebugManager
 {
 
-  class ProcessIdEnricher : ILogEventEnricher
+  private sealed class ProcessIdEnricher : ILogEventEnricher
   {
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {
@@ -30,7 +30,7 @@ static partial class DebugManager
     }
   }
 
-  class ThreadIdEnricher : ILogEventEnricher
+  private sealed class ThreadIdEnricher : ILogEventEnricher
   {
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {

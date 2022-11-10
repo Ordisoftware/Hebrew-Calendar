@@ -15,7 +15,7 @@
 namespace Ordisoftware.Core;
 
 [SuppressMessage("Performance", "U2U1003:Avoid declaring methods used in delegate constructors static", Justification = "N/A")]
-partial class TextBoxEx
+public partial class TextBoxEx
 {
 
   static public TextBoxEx GetTextBox(object sender)

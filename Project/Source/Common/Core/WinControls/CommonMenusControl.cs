@@ -18,7 +18,7 @@ using Markdig;
 
 using TranslationPair = KeyValuePair<string, TranslationsDictionary>;
 
-partial class CommonMenusControl : UserControl
+public partial class CommonMenusControl : UserControl
 {
 
   private const int WidthButtonSmall = 35;

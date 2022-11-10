@@ -14,7 +14,7 @@
 /// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
-partial class TextBoxEx
+public partial class TextBoxEx
 {
 
   static private Container _Container;

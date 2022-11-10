@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Localization strings.
 /// </summary>
-static partial class SysTranslations
+static public partial class SysTranslations
 {
 
   static public TranslationsDictionary ContactSupport

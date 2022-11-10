@@ -15,7 +15,7 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 [Serializable]
-public class TooManyErrorsException : Exception
+class TooManyErrorsException : Exception
 {
   public TooManyErrorsException()
   {
@@ -67,7 +67,6 @@ partial class ApplicationDatabase
       ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
     return errors;
   }
-
 
   /// <summary>
   /// Creates the days.

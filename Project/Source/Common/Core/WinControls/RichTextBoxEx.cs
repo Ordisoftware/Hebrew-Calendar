@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 /// </remarks>
 [SuppressMessage("Performance", "CA1806:Ne pas ignorer les résultats des méthodes", Justification = "N/A")]
 [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
-class RichTextBoxEx : RichTextBox
+public class RichTextBoxEx : RichTextBox
 {
   /// <summary>
   /// Maintains performance while updating.

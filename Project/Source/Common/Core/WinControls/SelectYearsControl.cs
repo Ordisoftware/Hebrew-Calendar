@@ -14,7 +14,7 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-partial class SelectYearsControl : UserControl
+public partial class SelectYearsControl : UserControl
 {
 
   public event EventHandler SelectedIndexChanged

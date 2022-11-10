@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew;
 /// <summary>
 /// Provides Hebrew months names.
 /// </summary>
-static class HebrewMonths
+static public class HebrewMonths
 {
 
   /// <summary>

@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
-abstract class ProviderSettings
+public abstract class ProviderSettings
 {
 
   protected string FilePath;
@@ -43,7 +43,7 @@ abstract class ProviderSettings
       DoClear();
       using var stream = File.OpenText(FilePath);
       while ( ( line = stream.ReadLine() ) is not null )
-        if ( line.Trim().Length != 0 && !line.IsCommentedText() )
+        if ( line.Trim().Length != 0 && !line.IsCommented() )
           DoLoad(line);
     }
     catch ( Exception ex )

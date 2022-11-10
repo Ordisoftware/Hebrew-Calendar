@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
-static class ParashotHelper
+static public class ParashotHelper
 {
 
   [SuppressMessage("AsyncUsage", "AsyncFixer03:Fire-and-forget async-void methods or delegates", Justification = "N/A (event)")]

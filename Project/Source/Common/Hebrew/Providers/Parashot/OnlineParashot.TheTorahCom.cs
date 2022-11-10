@@ -14,7 +14,7 @@
 /// <edited> 2022-05 </edited>
 namespace Ordisoftware.Hebrew;
 
-static partial class OnlineParashot
+static public partial class OnlineParashot
 {
 
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TheTorahCom = new()

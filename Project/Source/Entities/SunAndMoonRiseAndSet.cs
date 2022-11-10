@@ -19,7 +19,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// </summary>
 [SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
 [StructLayout(LayoutKind.Auto)]
-public struct SunAndMoonRiseAndSet
+struct SunAndMoonRiseAndSet
 {
   public TimeSpan? Sunrise { get; set; }
   public TimeSpan? Sunset { get; set; }

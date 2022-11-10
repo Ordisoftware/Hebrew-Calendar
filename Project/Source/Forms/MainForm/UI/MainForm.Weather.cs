@@ -37,7 +37,7 @@ partial class MainForm
     }
   }
 
-  static public class WeatherProviders
+  static private class WeatherProviders
   {
     // Meteoblue
     public const string MeteoblueDotComQueryDay = "current";

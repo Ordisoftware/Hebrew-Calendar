@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides online providers list.
 /// </summary>
-class OnlineProviders : DataFile
+public class OnlineProviders : DataFile
 {
 
   static public bool MoveCurrentLanguageAtTop { get; set; } = true;
@@ -77,7 +77,7 @@ class OnlineProviders : DataFile
         }
         string line = lines[index].Trim();
         if ( line.Length == 0 ) continue;
-        if ( line.IsCommentedText() ) continue;
+        if ( line.IsCommented() ) continue;
         if ( line.StartsWith("FOLDER-SEPARATOR", StringComparison.OrdinalIgnoreCase) )
           SeparatorBeforeFolder = true;
         else

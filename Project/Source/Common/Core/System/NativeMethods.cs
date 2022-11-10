@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
 [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
-static class NativeMethods
+static public class NativeMethods
 {
 
   #region WorkStation
@@ -145,7 +145,6 @@ static class NativeMethods
 
   [DllImport("user32.dll")]
   static public extern IntPtr WindowFromPoint(PointStruct Point);
-
 
   #endregion
 

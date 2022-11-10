@@ -19,7 +19,7 @@ using CommandLine;
 /// <summary>
 /// Provides system command line options.
 /// </summary>
-class SystemCommandLine
+public class SystemCommandLine
 {
 
   [Option("withpreview", Required = false, HelpText = "Enable preview functionalities.")]

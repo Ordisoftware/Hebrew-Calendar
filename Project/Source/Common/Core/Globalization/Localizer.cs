@@ -18,7 +18,7 @@ namespace Ordisoftware.Core;
 /// Provides translations dictionary.
 /// </summary>
 [Serializable]
-class TranslationsDictionary : NullSafeOfStringDictionary<Language>
+public class TranslationsDictionary : NullSafeOfStringDictionary<Language>
 {
   public TranslationsDictionary()
   {
@@ -31,7 +31,7 @@ class TranslationsDictionary : NullSafeOfStringDictionary<Language>
 /// <summary>
 /// Provides localization helper.
 /// </summary>
-static class Localizer
+static public class Localizer
 {
 
   private const string ERR = "<Not translated>";

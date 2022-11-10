@@ -22,7 +22,7 @@ using Microsoft.Win32;
 /// </summary>
 [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "Opinion")]
 [SuppressMessage("Refactoring", "GCop647:Shorten this property by defining it as expression-bodied.", Justification = "Opinion")]
-static partial class SystemManager
+static public partial class SystemManager
 {
 
   static public List<PowerAction> GetAvailablePowerActions()

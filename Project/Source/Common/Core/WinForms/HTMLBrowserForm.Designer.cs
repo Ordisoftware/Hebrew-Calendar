@@ -149,7 +149,7 @@
     private System.Windows.Forms.Panel PanelMain;
     private System.Windows.Forms.Panel PanelMainOuter;
     private System.Windows.Forms.Panel PanelMainInner;
-    internal System.Windows.Forms.Panel PanelMainCenter;
-    internal System.Windows.Forms.WebBrowser WebBrowser;
+    private System.Windows.Forms.Panel PanelMainCenter;
+    private System.Windows.Forms.WebBrowser WebBrowser;
   }
 }

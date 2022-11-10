@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides system statistics.
 /// </summary>
-class SystemStatistics
+public class SystemStatistics
 {
 
   public const int TimerIntervalActive = 1000;

@@ -31,7 +31,7 @@ static public partial class DisplayManager
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
   static public InputValueResult QueryValue<T>(string caption, ref T value)
-    where T : IConvertible
+  where T : IConvertible
   {
     return QueryValue(caption, ref value, false);
   }
@@ -47,7 +47,7 @@ static public partial class DisplayManager
   /// <param name="value">[in,out] The value.</param>
   /// <param name="validator">The validator.</param>
   static public InputValueResult QueryValue<T>(string caption, ref T value, Func<T, bool> validator)
-    where T : IConvertible
+  where T : IConvertible
   {
     return QueryValue(caption, ref value, false, validator);
   }
@@ -63,7 +63,7 @@ static public partial class DisplayManager
   /// <param name="value">[in,out] The value.</param>
   /// <param name="ispassword">true to ispassword.</param>
   static public InputValueResult QueryValue<T>(string caption, ref T value, bool ispassword)
-    where T : IConvertible
+  where T : IConvertible
   {
     return QueryValue(caption, ref value, ispassword, null);
   }
@@ -80,7 +80,7 @@ static public partial class DisplayManager
   /// <param name="ispassword">true to ispassword.</param>
   /// <param name="validator">The validator.</param>
   static public InputValueResult QueryValue<T>(string caption, ref T value, bool ispassword, Func<T, bool> validator)
-    where T : IConvertible
+  where T : IConvertible
   {
     return QueryValue("ValueRequested", caption, ref value, ispassword, validator);
   }
@@ -96,7 +96,7 @@ static public partial class DisplayManager
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
   static public InputValueResult QueryValue<T>(string title, string caption, ref T value)
-    where T : IConvertible
+  where T : IConvertible
   {
     return QueryValue(title, caption, ref value, false);
   }
@@ -113,7 +113,7 @@ static public partial class DisplayManager
   /// <param name="value">[in,out] The value.</param>
   /// <param name="validator">The validator.</param>
   static public InputValueResult QueryValue<T>(string title, string caption, ref T value, Func<T, bool> validator)
-    where T : IConvertible
+  where T : IConvertible
   {
     return QueryValue(title, caption, ref value, false, validator);
   }
@@ -130,7 +130,7 @@ static public partial class DisplayManager
   /// <param name="value">[in,out] The value.</param>
   /// <param name="ispassword">true to ispassword.</param>
   static public InputValueResult QueryValue<T>(string title, string caption, ref T value, bool ispassword)
-    where T : IConvertible
+  where T : IConvertible
   {
     return QueryValue(title, caption, ref value, ispassword, null);
   }
@@ -148,7 +148,7 @@ static public partial class DisplayManager
   /// <param name="ispassword">true to ispassword.</param>
   /// <param name="validator">The validator.</param>
   static public InputValueResult QueryValue<T>(string title, string caption, ref T value, bool ispassword, Func<T, bool> validator)
-    where T : IConvertible
+  where T : IConvertible
   {
     return QueryValueWinForms(title, caption, ref value, ispassword, validator);
   }
@@ -165,9 +165,13 @@ static public partial class DisplayManager
   /// <param name="value">[in,out] The value.</param>
   /// <param name="ispassword">true to ispassword.</param>
   /// <param name="validator">The validator.</param>
-  static private InputValueResult QueryValueWinForms<T>(string title, string caption, ref T value,
-                                                        bool ispassword, Func<T, bool> validator)
-    where T : IConvertible
+  static private InputValueResult QueryValueWinForms<T>(
+    string title,
+    string caption,
+    ref T value,
+    bool ispassword,
+    Func<T, bool> validator)
+  where T : IConvertible
   {
     var res = InputValueResult.Unchanged;
     var newvalue = value;

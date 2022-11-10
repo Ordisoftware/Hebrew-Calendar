@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
-class ParashotFactory : ProviderSettings
+public class ParashotFactory : ProviderSettings
 {
 
   private const int DataColumnsCount = 6;
