@@ -14,7 +14,7 @@
 /// <edited> 2020-11 </edited>
 namespace Ordisoftware.Core;
 
-partial class ShowTextForm : Form
+public partial class ShowTextForm : Form
 {
 
   private readonly bool HideOnClose;

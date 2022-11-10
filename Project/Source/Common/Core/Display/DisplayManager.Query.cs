@@ -18,7 +18,7 @@ namespace Ordisoftware.Core;
 /// Provides messages and questions with waiting user communication feedback as well as UI sync.
 /// </summary>
 [SuppressMessage("Design", "GCop135:{0}", Justification = "<En attente>")]
-static partial class DisplayManager
+static public partial class DisplayManager
 {
 
   /// <summary>

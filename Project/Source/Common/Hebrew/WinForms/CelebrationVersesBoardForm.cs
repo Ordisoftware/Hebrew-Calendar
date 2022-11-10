@@ -21,12 +21,13 @@ public partial class CelebrationVersesBoardForm : Form
 
   static public CelebrationVersesBoardForm Instance { get; private set; }
 
-  static public void Run(TorahCelebration celebration,
-                         string locationPropertyName,
-                         string clientSizePropertyName,
-                         string openVerseOnlineURL,
-                         bool doubleClickOnVerseOpenDefaultReader,
-                         Action<bool> doubleClickOnVerseOpenDefaultReaderChanged)
+  static public void Run(
+    TorahCelebration celebration,
+    string locationPropertyName,
+    string clientSizePropertyName,
+    string openVerseOnlineURL,
+    bool doubleClickOnVerseOpenDefaultReader,
+    Action<bool> doubleClickOnVerseOpenDefaultReaderChanged)
   {
     if ( Instance is null )
       Instance = new CelebrationVersesBoardForm(locationPropertyName,

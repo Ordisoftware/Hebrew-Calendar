@@ -14,7 +14,7 @@
 /// <edited> 2021-12 </edited>
 namespace Ordisoftware.Core;
 
-partial class LoadingForm : Form
+public partial class LoadingForm : Form
 {
 
   public const int QuantaTotalDefault = 10;

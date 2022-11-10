@@ -14,12 +14,10 @@
 /// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
-using Meziantou.Framework.Win32;
-
 /// <summary>
 /// Provides global variables.
 /// </summary>
-static partial class Globals
+static public partial class Globals
 {
 
   /// <summary>
@@ -41,12 +39,12 @@ static partial class Globals
   public const int TrayIconTextLimit = 63;
   public const int WindowDetectionMargin = 80;
 
-  static public readonly int DaysOfWeekCount = Enums.GetValues<DayOfWeek>().Count;
-
   public const int MilliSecondsInOneMinute = 60000;
   public const int MilliSecondsInOneSecond = 1000;
   public const int SecondsInOneMinute = 60;
   public const int HoursInOneDay = 24;
+
+  static public readonly int DaysOfWeekCount = Enums.GetValues<DayOfWeek>().Count;
 
   static public readonly Size IconSize16 = new(16, 16);
 
@@ -88,7 +86,7 @@ static partial class Globals
   /// <summary>
   /// Indicates keyboard shortcuts notice form.
   /// </summary>
-  static public ShowTextForm NoticeKeyboardShortcutsForm { get; internal set; }
+  static public ShowTextForm KeyboardShortcutsNotice { get; internal set; }
 
   /// <summary>
   /// Indicates IDE name.
@@ -131,120 +129,6 @@ static partial class Globals
   /// </summary>
   static public string ApplicationGitHubCode
     => AssemblyTitle.Replace(' ', '-');
-
-  /// <summary>
-  /// Indicates the application process name.
-  /// </summary>
-  static public string ProcessName
-    => Path.GetFileNameWithoutExtension(Application.ExecutablePath);
-
-  /// <summary>
-  /// Indicates if the current process is in admin mode.
-  /// </summary>
-  static public bool IsCurrentProcessAdmin
-  {
-    get
-    {
-      using var identity = System.Security.Principal.WindowsIdentity.GetCurrent();
-      var principal = new System.Security.Principal.WindowsPrincipal(identity);
-      return principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
-    }
-  }
-
-  /// <summary>
-  /// Indicates if the current user is an admin.
-  /// </summary>
-  /// <remarks>
-  /// See https://www.meziantou.net/check-if-the-current-user-is-an-administrator.htm
-  /// </remarks>
-  static public bool IsCurrentUserAdmin
-  {
-    get
-    {
-      using var token = AccessToken.OpenCurrentProcessToken(TokenAccessLevels.Query);
-      if ( !IsAdministrator(token) && token.GetElevationType() == TokenElevationType.Limited )
-        using ( var linkedToken = token.GetLinkedToken() )
-          return IsAdministrator(linkedToken);
-      else
-        return false;
-      //
-      static bool IsAdministrator(AccessToken accessToken)
-      {
-        var adminSid = SecurityIdentifier.FromWellKnown(WellKnownSidType.WinBuiltinAdministratorsSid);
-        foreach ( var group in accessToken.EnumerateGroups() )
-          if ( group.Attributes.HasFlag(GroupSidAttributes.SE_GROUP_ENABLED) && group.Sid == adminSid )
-            return true;
-        return false;
-      }
-    }
-  }
-
-  /// <summary>
-  /// Indicates the application process ID.
-  /// </summary>
-  static public int ProcessId
-    => Process.GetCurrentProcess().Id;
-
-  /// <summary>
-  /// Indicates the number of application running processes count.
-  /// </summary>
-  static public int ApplicationInstancesCount
-    => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length;
-
-  /// <summary>
-  /// Indicates running processes whose names starts with "AssemblyCompany.".
-  /// </summary>
-  static public IEnumerable<Process> SameCompanyRunningProcesses
-    => Process.GetProcesses().Where(p => p.ProcessName.StartsWith($"{AssemblyCompany}.",
-                                                                  StringComparison.CurrentCultureIgnoreCase));
-
-  /// <summary>
-  /// Indicates running processes whose names starts with "[AssemblyCompany]." not being this one.
-  /// </summary>
-  static public IEnumerable<Process> ConcurrentRunningProcesses
-    => SameCompanyRunningProcesses.Where(p => p.Id != ProcessId);
-
-  /// <summary>
-  /// Indicates running processes being the same as this application not being this one.
-  /// </summary>
-  static public IEnumerable<Process> SameRunningProcessesNotThisOne
-    => ConcurrentRunningProcesses.Where(p => p.ProcessName == ProcessName);
-
-  /// <summary>
-  /// Indicates if the executable has been generated in debug mode.
-  /// </summary>
-  static public bool IsDebugExecutable
-  {
-    get
-    {
-      bool isDebug = false;
-      CheckDebugExecutable(ref isDebug);
-      return isDebug;
-    }
-  }
-
-  [Conditional("DEBUG")]
-  static private void CheckDebugExecutable(ref bool isDebug)
-    => isDebug = true;
-
-  /// <summary>
-  /// Indicates if the running app is from dev folder else user installed.
-  /// </summary>
-  static public bool IsDevExecutable
-    => Application.ExecutablePath.Contains(DebugDirectoryCombination)
-       || Application.ExecutablePath.Contains(ReleaseDirectoryCombination);
-
-  /// <summary>
-  /// Indicates if the code is in design time
-  /// </summary>
-  public static bool IsDesignTime
-    => LicenseManager.UsageMode == LicenseUsageMode.Designtime;
-
-  /// <summary>
-  /// Indicates if the code is executed from the IDE else from a running app.
-  /// </summary>
-  public static bool IsVisualStudioDesigner
-    => ProcessName == "devenv";
 
   /// <summary>
   /// Indicates the main form.

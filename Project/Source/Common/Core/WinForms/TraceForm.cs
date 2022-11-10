@@ -14,14 +14,13 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
-partial class TraceForm : Form
+public partial class TraceForm : Form
 {
 
   private readonly string LocationPropertyName;
   private readonly string ClientSizePropertyName;
   private readonly string FontSizepropertyName;
   private readonly string OnlyErrorsPropertyName;
-
 
   private TraceForm()
   {

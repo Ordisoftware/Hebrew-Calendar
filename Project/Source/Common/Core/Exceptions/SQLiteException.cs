@@ -18,7 +18,7 @@ namespace Ordisoftware.Core;
 /// Provides SQLite exception.
 /// </summary>
 [Serializable]
-class SQLiteException : System.Data.Common.DbException
+public class SQLiteException : System.Data.Common.DbException
 {
   public SQLiteException() { }
   public SQLiteException(string message) : base(message) { }

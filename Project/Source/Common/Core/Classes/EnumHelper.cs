@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides enum helper.
 /// </summary>
-static class EnumHelper
+static public class EnumHelper
 {
 
   /// <summary>

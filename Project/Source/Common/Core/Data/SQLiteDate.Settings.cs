@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides SQLite date helper.
 /// </summary>
-static partial class SQLiteDate
+static public partial class SQLiteDate
 {
 
   static public SQLiteDateDayTextOrder DayOrder

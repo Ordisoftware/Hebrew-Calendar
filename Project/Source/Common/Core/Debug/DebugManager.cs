@@ -18,8 +18,6 @@ using Serilog;
 using Serilog.Formatting.Display;
 using Serilog.Sinks.WinForms.Base;
 
-public delegate void DebugManagerHandler(bool value);
-
 /// <summary>
 /// Provides exception helper.
 /// </summary>
@@ -55,7 +53,7 @@ public delegate void DebugManagerHandler(bool value);
 /// }
 /// </para>
 /// </remarks>
-static partial class DebugManager
+static public partial class DebugManager
 {
 
   static public event DebugManagerHandler EnabledChanged;
@@ -131,7 +129,6 @@ static partial class DebugManager
     }
   }
   static private bool _TraceEnabled = false;
-
 
   /// <summary>
   /// Indicates if the debug manager is enabled or not.
@@ -368,7 +365,6 @@ static partial class DebugManager
           DisplayManager.ShowError("Error on AfterShowException :" + Globals.NL2 + err.Message);
       }
   }
-
 
   /// <summary>
   /// Shows an exception with the exception form else a message box.

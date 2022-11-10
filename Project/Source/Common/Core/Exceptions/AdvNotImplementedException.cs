@@ -18,7 +18,7 @@ namespace Ordisoftware.Core;
 /// Provides improved NotImplementedException.
 /// </summary>
 [Serializable]
-class AdvNotImplementedException : NotImplementedException
+public class AdvNotImplementedException : NotImplementedException
 {
 
   public override string Message => SysTranslations.NotImplemented.GetLang(base.Message);

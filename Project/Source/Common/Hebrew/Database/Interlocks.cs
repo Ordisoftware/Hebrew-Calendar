@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew;
 
-static class Interlocks
+static public class Interlocks
 {
 
   static public readonly string TableName = nameof(Interlocks);

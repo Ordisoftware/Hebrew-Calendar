@@ -27,15 +27,16 @@ public partial class Parashah : INotifyPropertyChanged
   {
   }
 
-  public Parashah(TorahBook book,
-                  int number,
-                  string name,
-                  string unicode,
-                  string referenceBegin,
-                  string referenceEnd,
-                  bool isLinkedToNext = false,
-                  string translation = "",
-                  string lettriq = "")
+  public Parashah(
+    TorahBook book,
+    int number,
+    string name,
+    string unicode,
+    string referenceBegin,
+    string referenceEnd,
+    bool isLinkedToNext = false,
+    string translation = "",
+    string lettriq = "")
   {
     try
     {

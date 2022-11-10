@@ -24,12 +24,12 @@ public enum LettersControlFocusSelect
 /// <summary>
 /// Provides view letter details delegate.
 /// </summary>
-delegate void ViewLetterDetails(LettersControl sender, string code);
+public delegate void ViewLetterDetails(LettersControl sender, string code);
 
 /// <summary>
 /// Provides Letters input panel Control.
 /// </summary>
-partial class LettersControl : UserControl
+public partial class LettersControl : UserControl
 {
 
   public const KnownColor DefaultInputBackColor = KnownColor.AliceBlue;
@@ -617,7 +617,7 @@ partial class LettersControl : UserControl
 /// <summary>
 /// Provides LetterEventArgs.
 /// </summary>
-class LetterEventArgs : EventArgs
+public class LetterEventArgs : EventArgs
 {
   public string LetterCode { get; }
   public LetterEventArgs(string lettercode) { LetterCode = lettercode; }

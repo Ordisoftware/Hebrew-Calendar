@@ -22,7 +22,7 @@ using Microsoft.Win32;
 /// <summary>
 /// Provides system management.
 /// </summary>
-static partial class SystemManager
+static public partial class SystemManager
 {
 
   private const int FilePathTruncatePosition = 25;

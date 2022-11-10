@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides online provider item.
 /// </summary>
-class OnlineProviderItem
+public class OnlineProviderItem
 {
 
   static public readonly Image FolderImage = CreateImage("folder_vertical_open.png");

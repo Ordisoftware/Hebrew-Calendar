@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
-partial class ComboBoxNavigator : UserControl
+public partial class ComboBoxNavigator : UserControl
 {
 
   private bool Mutex;

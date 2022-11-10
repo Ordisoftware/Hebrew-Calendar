@@ -81,7 +81,7 @@ static class NullSafeOfStringDictionaryHelper
     {
       list.Clear();
       foreach ( string line in File.ReadAllLines(filePath) )
-        if ( !line.IsCommentedText() )
+        if ( !line.IsCommented() )
         {
           var parts = line.SplitNoEmptyLines(separator);
           if ( parts.Length == 1 )
@@ -124,7 +124,7 @@ static class NullSafeOfStringDictionaryHelper
     try
     {
       foreach ( var item in list )
-        if ( item.Key.IsCommentedText() )
+        if ( item.Key.IsCommented() )
           stream.WriteLine(item.Key);
         else
           stream.WriteLine(item.Key + separator + item.Value);

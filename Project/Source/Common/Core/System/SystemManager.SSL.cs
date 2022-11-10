@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides system management.
 /// </summary>
-static partial class SystemManager
+static public partial class SystemManager
 {
 
   /// <summary>
@@ -61,7 +61,6 @@ static partial class SystemManager
       throw new UnauthorizedAccessException(msg);
     }
   }
-
 
   /// <summary>
   /// Indicates the application website SSL certificate information.

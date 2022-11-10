@@ -18,7 +18,7 @@ namespace Ordisoftware.Hebrew;
 /// Provides Hebrew tools.
 /// </summary>
 [SuppressMessage("Roslynator", "RCS1021:Convert lambda expression body to expression body.", Justification = "Opinion")]
-static class HebrewTools
+static public class HebrewTools
 {
 
   /// <summary>

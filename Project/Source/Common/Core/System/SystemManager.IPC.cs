@@ -21,7 +21,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 /// <summary>
 /// Provides system management.
 /// </summary>
-static partial class SystemManager
+static public partial class SystemManager
 {
 
   /// <summary>

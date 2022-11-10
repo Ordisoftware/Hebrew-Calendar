@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew;
 /// <summary>
 /// Localization strings.
 /// </summary>
-static partial class HebrewTranslations
+static public partial class HebrewTranslations
 {
 
   static public readonly TranslationsDictionary TranscriptionGuideTitle = new()

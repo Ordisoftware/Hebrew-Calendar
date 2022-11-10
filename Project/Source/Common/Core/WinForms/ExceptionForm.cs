@@ -20,7 +20,7 @@ using System.Net.Mail;
 /// <summary>
 /// Provides exception form.
 /// </summary>
-partial class ExceptionForm : Form
+public partial class ExceptionForm : Form
 {
 
   private const int BodyLengthLimit = 8000;

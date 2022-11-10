@@ -17,30 +17,17 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides panel view connector for a component.
 /// </summary>
-public class ViewConnector<TComponent>
-where TComponent : Component
-{
-
-  /// <summary>
-  /// The control.
-  /// </summary>
-  public TComponent Component { get; set; }
-
-  /// <summary>
-  /// The panel.
-  /// </summary>
-  public Panel Panel { get; set; }
-
-  /// <summary>
-  /// The focused control.
-  /// </summary>
-  public Control Focused { get; set; }
-}
+public readonly record struct ViewConnector<TComponent>(
+  TComponent Component,
+  Panel Panel,
+  Control Focused)
+where TComponent : Component;
 
 /// <summary>
 /// Provides ViewConnector dictionary.
 /// </summary>
-public class ViewConnectors<TView, TComponent> : Dictionary<TView, ViewConnector<TComponent>>
+[SuppressMessage("Major Code Smell", "S3925:\"ISerializable\" should be implemented correctly", Justification = "N/A")]
+public sealed class ViewConnectors<TView, TComponent> : Dictionary<TView, ViewConnector<TComponent>>
 where TView : Enum
 where TComponent : Component
 {

@@ -17,50 +17,8 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides object helper.
 /// </summary>
-static class ObjectHelper
+static public partial class ObjectHelper
 {
-
-  /// <summary>
-  /// Gets an IEnumerable&lt;ListViewItem&gt; from a ListView.ListViewItemCollection collection.
-  /// </summary>
-  /// <param name="collection">The collection.</param>
-  static public IEnumerable<ListViewItem> AsIEnumerable(this ListView.ListViewItemCollection collection)
-  {
-    foreach ( ListViewItem item in collection )
-      yield return item;
-  }
-
-  /// <summary>
-  /// Gets an IEnumerable<typeparamref name="T"/> from a ListBox.Items collection.
-  /// </summary>
-  /// <typeparam name="T">Generic type parameter.</typeparam>
-  /// <param name="collection">The collection.</param>
-  static public IEnumerable<T> AsIEnumerable<T>(this ListBox.ObjectCollection collection)
-  {
-    foreach ( T item in collection )
-      yield return item;
-  }
-
-  /// <summary>
-  /// Gets an IEnumerable<typeparamref name="T"/> from a ComboBox.Items collection.
-  /// </summary>
-  /// <typeparam name="T">Generic type parameter.</typeparam>
-  /// <param name="collection">The collection.</param>
-  static public IEnumerable<T> AsIEnumerable<T>(this ComboBox.ObjectCollection collection)
-  {
-    foreach ( T item in collection )
-      yield return item;
-  }
-
-  /// <summary>
-  /// Gets an IEnumerable<DataGridViewRow/> from a DataGridView.DataGridViewRowCollection.
-  /// </summary>
-  /// <param name="collection">The collection.</param>
-  static public IEnumerable<DataGridViewRow> AsIEnumerable(this DataGridViewRowCollection collection)
-  {
-    foreach ( DataGridViewRow item in collection )
-      yield return item;
-  }
 
   /// <summary>
   /// Converts the type of a convertible object to another type.
@@ -101,7 +59,7 @@ static class ObjectHelper
   }
 
   /// <summary>
-  /// A bool extension method that determine if one is true and some others not.
+  /// Indicates if one is true and some others not.
   /// </summary>
   /// <param name="first">The first to act on.</param>
   /// <param name="others">A variable-length parameters list containing others.</param>
@@ -114,7 +72,7 @@ static class ObjectHelper
   }
 
   /// <summary>
-  /// A bool extension method that determine if one is true and some others not.
+  /// Indicates if one is true and some others not.
   /// </summary>
   /// <param name="values">A variable-length parameters list containing values.</param>
   /// <returns>

@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
-static partial class OnlineBookInfos
+static public partial class OnlineBookInfos
 {
 
   static public string GetUrl(string pattern, int book, int chapter, int verse)

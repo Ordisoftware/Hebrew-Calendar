@@ -19,7 +19,7 @@ namespace Ordisoftware.Core;
 /// </summary>
 [SuppressMessage("Simplification", "RCS1214:Unnecessary interpolated string.", Justification = "Readability")]
 [SuppressMessage("Usage", "GCop505:Avoid interpolated string with no interpolation", Justification = "Opinion")]
-static partial class SysTranslations
+static public partial class SysTranslations
 {
 
   static public readonly TranslationsDictionary RunSystemManagerError = new()

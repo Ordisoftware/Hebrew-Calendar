@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides global variables.
 /// </summary>
-static partial class Globals
+static public partial class Globals
 {
 
   static public TraceFileRollOverMode TraceFileRollOverMode { get; set; }
@@ -43,7 +43,7 @@ static partial class Globals
   static public int SinkFileEventTemplateSize { get; set; }
     = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length - 1;
 
-  static internal readonly string OldTraceDirectoryName = "Logs";
+  static private readonly string OldTraceDirectoryName = "Logs";
 
   static public string TraceDirectoryName { get; set; }
     = "Serilog";

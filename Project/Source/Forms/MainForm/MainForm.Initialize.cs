@@ -127,15 +127,15 @@ partial class MainForm
       UpdateTextCalendar();
       MonthlyCalendar.CalendarDateChanged += date => GoToDate(date.Date);
       MenuShowHide.Text = SysTranslations.HideRestoreCaption.GetLang(Visible);
-      Globals.NoticeKeyboardShortcutsForm = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
+      Globals.KeyboardShortcutsNotice = new ShowTextForm(AppTranslations.NoticeKeyboardShortcutsTitle,
                                                              AppTranslations.NoticeKeyboardShortcuts,
                                                              true, false,
                                                              MessageBoxEx.DefaultWidthSmallMedium,
                                                              MessageBoxEx.DefaultHeightVeryHuge,
                                                              false, false);
-      Globals.NoticeKeyboardShortcutsForm.TextBox.BackColor = Globals.NoticeKeyboardShortcutsForm.BackColor;
-      Globals.NoticeKeyboardShortcutsForm.TextBox.BorderStyle = BorderStyle.None;
-      Globals.NoticeKeyboardShortcutsForm.Padding = new Padding(20, 20, 10, 10);
+      Globals.KeyboardShortcutsNotice.TextBox.BackColor = Globals.KeyboardShortcutsNotice.BackColor;
+      Globals.KeyboardShortcutsNotice.TextBox.BorderStyle = BorderStyle.None;
+      Globals.KeyboardShortcutsNotice.Padding = new Padding(20, 20, 10, 10);
       SetGlobalHotKey();
       Globals.IsReady = true;
       GoToDate(DateTime.Today);

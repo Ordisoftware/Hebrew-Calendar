@@ -14,7 +14,7 @@
 /// <edited> 2022-06 </edited>
 namespace Ordisoftware.Core;
 
-partial class MessageBoxEx : Form
+public partial class MessageBoxEx : Form
 {
 
   public const bool DefaultJustifyEnabled = true;

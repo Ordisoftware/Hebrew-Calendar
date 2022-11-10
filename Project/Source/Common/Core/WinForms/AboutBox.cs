@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides about box.
 /// </summary>
-partial class AboutBox : Form
+public partial class AboutBox : Form
 {
 
   /// <summary>

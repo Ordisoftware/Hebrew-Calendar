@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides web check update.
 /// </summary>
-static class WebCheckUpdate
+static public class WebCheckUpdate
 {
 
   static private bool Mutex;
@@ -296,31 +296,6 @@ static class WebCheckUpdate
                             status.ToStringFull() + Globals.NL +
                             code.ToStringFull());
     }
-  }
-
-}
-
-/// <summary>
-/// Provides web client with timeout.
-/// </summary>
-public class WebClientEx : WebClient
-{
-
-  static public int DefaultTimeOutSeconds { get; set; } = 5;
-
-  public int TimeOutSeconds { get; set; }
-
-  public WebClientEx(int timeOutSeconds = 0)
-  {
-    if ( timeOutSeconds <= 0 ) timeOutSeconds = DefaultTimeOutSeconds;
-    TimeOutSeconds = timeOutSeconds;
-  }
-
-  protected override WebRequest GetWebRequest(Uri address)
-  {
-    var result = base.GetWebRequest(address);
-    result.Timeout = TimeOutSeconds * 1000;
-    return result;
   }
 
 }

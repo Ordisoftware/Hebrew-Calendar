@@ -21,7 +21,7 @@ using Microsoft.Win32;
 /// <summary>
 /// Provides system management.
 /// </summary>
-static partial class SystemManager
+static public partial class SystemManager
 {
 
   private const string HKLMWinNTCurrent = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion";
@@ -160,7 +160,6 @@ static partial class SystemManager
     }
   }
   static private string _TotalVisibleMemory;
-
 
   /// <summary>
   /// Gets a Windows Management Object value.

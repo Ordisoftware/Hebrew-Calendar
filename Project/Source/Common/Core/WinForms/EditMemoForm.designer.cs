@@ -105,7 +105,7 @@
     private System.Windows.Forms.Panel PanelButtons;
     private System.Windows.Forms.Button ActionOk;
     private System.Windows.Forms.Button ActionCancel;
-    internal Ordisoftware.Core.RichTextBoxEx TextBox;
+    private Ordisoftware.Core.RichTextBoxEx TextBox;
     private System.Windows.Forms.Panel PanelSep;
     private Panel Panel;
   }

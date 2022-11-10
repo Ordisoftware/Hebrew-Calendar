@@ -14,7 +14,7 @@
 /// <edited> 2021-11 </edited>
 namespace Ordisoftware.Hebrew;
 
-partial class HebrewDatabase : SQLiteDatabase
+public partial class HebrewDatabase : SQLiteDatabase
 {
 
   public readonly string ParashotTableName = nameof(Parashot);

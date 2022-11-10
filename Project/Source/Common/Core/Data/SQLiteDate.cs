@@ -18,7 +18,7 @@ namespace Ordisoftware.Core;
 /// Provides SQLite date helper.
 /// </summary>
 [SuppressMessage("Performance ", "EPS05: Use in-modifier for a readonly struct", Justification = "Analysis error(https://docs.microsoft.com/dotnet/csharp/write-safe-efficient-code)")]
-static partial class SQLiteDate
+static public partial class SQLiteDate
 {
 
   /// <summary>

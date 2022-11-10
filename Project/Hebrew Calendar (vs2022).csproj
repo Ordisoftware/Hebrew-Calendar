@@ -82,6 +82,9 @@
   <PropertyGroup>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -138,6 +141,16 @@
     </Compile>
     <Compile Include="Dependencies\Windows Global Hotkey\HotkeyManager.cs" />
     <Compile Include="Source\Common\Core\Classes\CompilerHelper.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.Sanitize.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.Trim.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.Join.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.Multi.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.Raw.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.Indent.cs" />
+    <Compile Include="Source\Common\Core\Classes\StringHelper.Split.cs" />
+    <Compile Include="Source\Common\Core\Classes\WebClientEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source\Common\Core\Data\SQLiteDate.Enums.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteDate.Separators.cs" />
     <Compile Include="Source\Common\Core\Data\SQLiteDate.Settings.cs" />
@@ -150,7 +163,7 @@
     <Compile Include="Source\Common\Core\Classes\StringHelper.Format.cs" />
     <Compile Include="Source\Common\Core\Classes\WebCheckUpdate.cs" />
     <Compile Include="Source\Common\Core\Collections\AutoResizedList.cs" />
-    <Compile Include="Source\Common\Core\Collections\CollectionsHelper.cs" />
+    <Compile Include="Source\Common\Core\Classes\CollectionsHelper.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeList.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeOfEnumDictionary.cs" />
@@ -166,8 +179,9 @@
     <Compile Include="Source\Common\Core\Debug\DebugManager.cs" />
     <Compile Include="Source\Common\Core\Debug\DebugManager.Delegates.cs" />
     <Compile Include="Source\Common\Core\Debug\DebugManager.Trace.cs" />
+    <Compile Include="Source\Common\Core\Display\AutoMenuManager.cs" />
     <Compile Include="Source\Common\Core\Display\AutoMenu.cs" />
-    <Compile Include="Source\Common\Core\Display\AutoMenu.Test.cs" />
+    <Compile Include="Source\Common\Core\Display\AutoMenuManager.Test.cs" />
     <Compile Include="Source\Common\Core\Display\DisplayManager.cs" />
     <Compile Include="Source\Common\Core\Display\DisplayManager.Query.cs" />
     <Compile Include="Source\Common\Core\Display\DisplayManager.QueryValue.cs" />
@@ -201,6 +215,7 @@
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Settings.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.WebUpdate.cs" />
     <Compile Include="Source\Common\Core\Classes\CustomColor.cs" />
+    <Compile Include="Source\Common\Core\Globals\Globals.Process.cs" />
     <Compile Include="Source\Common\Core\Globals\GlobalSuppressions.cs" />
     <Compile Include="Source\Common\Core\Globals\Globals.Assembly.cs" />
     <Compile Include="Source\Common\Core\Globals\Globals.cs" />
@@ -292,6 +307,7 @@
     <Compile Include="Source\Common\Core\WinForms\ExceptionForm.designer.cs">
       <DependentUpon>ExceptionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Common\Core\Enums\WebUpdateSelection.cs" />
     <Compile Include="Source\Common\Core\WinForms\WinFormsHelper.cs" />
     <Compile Include="Source\Common\Core\WinForms\HTMLBrowserForm.cs">
       <SubType>Form</SubType>
