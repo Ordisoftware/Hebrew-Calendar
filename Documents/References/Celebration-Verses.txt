@@ -53,29 +53,22 @@ Soukot : Nehemiah - 8.13 - 8.18
 Soukot : Divrei_HaYamim_II - 5.1 - 5.14
 Soukot : Divrei_HaYamim_II - 7.1 - 7.22
 
-Shabat :           Bereshit - 2.1 - 2.3
-Shabat :           Bereshit - 8.4
-Shabat :           Shemot - 16.23 - 16.36
-Shabat :           Shemot - 20.8 - 20.11
-Shabat :           Shemot - 31.12 - 31.17
-Shabat :           Shemot - 35.2 - 35.3
-Shabat :           Vayiqra - 16.31
-Shabat :           Vayiqra - 19.3
-Shabat :           Vayiqra - 19.30
-Shabat :           Vayiqra - 23.3
-Shabat :           Vayiqra - 24.8
-Shabat :           Vayiqra - 25.2 - 25.6
-Shabat :           Vayiqra - 26.2
-Shabat :           Vayiqra - 26.34 - 26.35
-Shabat :           Vayiqra - 26.43
-Shabat :           Bamidbar - 15.32 - 15.36
-Shabat :           Bamidbar - 26.1
-Shabat :           Bamidbar - 28.1
-Shabat :           Bamidbar - 28.9 - 28.10
-Shabat :           Devarim - 5.12 - 5.15
-Shabat :           Melakim_II - 4.23
-Shabat :           Melakim_II - 11.5 - 11.9
-Shabat :           Melakim_II - 16.1
+Shabat : Bereshit - 2.1 - 2.3
+Shabat : Shemot - 16.23 - 16.36
+Shabat : Shemot - 20.8 - 20.11
+Shabat : Shemot - 31.12 - 31.18
+Shabat : Shemot - 35.2 - 35.3
+Shabat : Vayiqra - 19.3
+Shabat : Vayiqra - 19.30
+Shabat : Vayiqra - 23.3
+Shabat : Vayiqra - 24.8 - 24.9
+Shabat : Vayiqra - 25.1 - 25.13
+Shabat : Vayiqra - 26.1 - 26.46
+Shabat : Bamidbar - 15.32 - 15.36
+Shabat : Bamidbar - 28.9 - 28.10
+Shabat : Devarim - 5.12 - 5.15
+Shabat : Melakim_II - 4.23
+Shabat : Melakim_II - 11.5 - 11.9
 Shabat :           Yeshayahou - 1.13
 Shabat :           Yeshayahou - 25.13 - 24.14
 Shabat :           Yeshayahou - 56.1 - 26.8
