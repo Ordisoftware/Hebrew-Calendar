@@ -10,10 +10,13 @@
 ; Use the "-" char at the beginning of a line to insert a separator
 ; --------------------------------------------------------------------------------------------------
 
-Name = (EN) Wikipedia.org
+Name = (EN) Wikipedia.org Celebration
 URL = https://en.wikipedia.org/wiki/%WIKIPEDIA-EN%
 
-Name = (FR) Wikipedia.org
+Name = (EN) Wikipedia.org Biblical Shabbath
+URL = https://en.wikipedia.org/wiki/Biblical_Sabbath
+
+Name = (FR) Wikipedia.org Célébration
 URL = https://fr.wikipedia.org/wiki/%WIKIPEDIA-FR%
 
 -
