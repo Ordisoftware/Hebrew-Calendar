@@ -75,9 +75,8 @@ public partial class MessageBoxEx : Form
   private readonly MessageBoxIcon IconStyle;
   private readonly int LabelMaxWidth;
   private readonly bool Justify;
-  public bool AllowClose;
-
-  public bool DoShownSound = true;
+  public bool AllowClose { get; set; }
+  public bool DoShownSound { get; set; } = true;
 
   private MessageBoxEx()
   {
@@ -172,8 +171,9 @@ public partial class MessageBoxEx : Form
     Close();
   }
 
-  public bool ForceNoTopMost;
-  public bool ForceTopMost;
+  public bool ForceNoTopMost { get; set; }
+
+  public bool ForceTopMost { get; set; }
 
   private void MessageBoxEx_Shown(object sender, EventArgs e)
   {
