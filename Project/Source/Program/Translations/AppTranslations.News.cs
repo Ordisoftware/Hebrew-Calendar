@@ -59,8 +59,8 @@ static partial class AppTranslations
                       • Added option to center printed images on pages.
                       • Divided study context menu into `Online texts` and `Online videos` in celebrations board.
                       • Fixed print monthly view image size and location on pages.
+                      • Fixed some study web links.
                       • Some UI/UX fixes and improvements.
-                      • Updated web links.
                       """,
 
       [Language.FR] = """
@@ -71,8 +71,8 @@ static partial class AppTranslations
                       • Ajout d'une option pour centrer les images imprimées dans les pages.
                       • Division du menu contextuel d'étude `Textes en ligne` et `Vidéos en ligne` dans le tableau des célébrations.
                       • Correction de la taille et de l'emplacement de l'image d'affichage mensuelle sur les pages.
+                      • Correction de quelques liens web pour l'étude.
                       • Quelques correctifs et améliorations d'UI/UX.
-                      • Mise à jour des liens web.
                       """,
     },
 
@@ -292,7 +292,6 @@ static partial class AppTranslations
                       • Added debugger and logger.
                       • General improvement and some fixes.,
                       """,
-
 
       [Language.FR] = """ 
                       • Configuration de démarrage améliorée.
