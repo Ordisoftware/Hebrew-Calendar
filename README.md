@@ -76,9 +76,11 @@ A libre and open-source software written in C# that allows to generate a calenda
 **What's new in the latest version 10**
 
 - Adar II was renamed in VeAdar.
+- Added Shabat references in celebration verses board.
 - Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
 - Added option to select data layout order and sections to show in the monthly view.
 - Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
+- Fixed image printing.
 - Some fixes and improvements.
 - Optimized and refactored code.
 - Updated web links.
@@ -396,8 +398,8 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Change export behavior to set default sub-folders to `Boards` and `Data` and `Images`.
 - Fix export bookmarks default folder to be the app document root folder and not `Settings`.
 - Fix print monthly view image size and location on pages.
+- Fix some study web links.
 - Some UI/UX fixes and improvements.
-- Update web links.
 
 #### 2022.11.03 - Version 10.0
 

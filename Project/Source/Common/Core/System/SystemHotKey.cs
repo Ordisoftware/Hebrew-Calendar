@@ -72,7 +72,7 @@ public class SystemHotKey
       _Key = value;
     }
   }
-  public Keys _Key;
+  private Keys _Key;
 
   [SuppressMessage("Reliability", "CA2011:Éviter la récursivité infinie", Justification = "Required")]
   public Modifiers Modifiers
@@ -90,7 +90,7 @@ public class SystemHotKey
       _Modifiers = value;
     }
   }
-  public Modifiers _Modifiers;
+  private Modifiers _Modifiers;
 
   [SuppressMessage("Reliability", "CA2011:Éviter la récursivité infinie", Justification = "Required")]
   public Action KeyPressed

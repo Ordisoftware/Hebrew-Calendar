@@ -94,3 +94,6 @@
 [assembly: SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion", Scope = "module")]
 
 [assembly: SuppressMessage("Critical Code Smell", "S2479:Whitespace and control characters in string literals should be explicit", Justification = "Analysis error (C# 11 Raw String Literal)", Scope = "module")]
+
+[assembly: SuppressMessage("Minor Bug", "S3887:Mutable, non-private fields should not be \"readonly\"", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Minor Code Smell", "S2386:Mutable fields should not be \"public static\"", Justification = "Opinion", Scope = "module")]

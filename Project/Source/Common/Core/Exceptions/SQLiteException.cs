@@ -18,6 +18,7 @@ namespace Ordisoftware.Core;
 /// Provides SQLite exception.
 /// </summary>
 [Serializable]
+[SuppressMessage("Major Code Smell", "S3925:\"ISerializable\" should be implemented correctly", Justification = "<En attente>")]
 public class SQLiteException : System.Data.Common.DbException
 {
   public SQLiteException() { }

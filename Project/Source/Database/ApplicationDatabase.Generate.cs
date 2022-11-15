@@ -15,7 +15,8 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 [Serializable]
-class TooManyErrorsException : Exception
+[SuppressMessage("Critical Code Smell", "S3871:Exception types should be \"public\"", Justification = "Analysis error")]
+file class TooManyErrorsException : Exception
 {
   public TooManyErrorsException()
   {
