@@ -34,6 +34,9 @@ URL = https://www.youtube.com/channel/UC4OMlfV7DUiQhZDbCYdFyEQ
 Name = (FR) Torah Box
 URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
 
+Name = (FR) Torah de Vie
+URL = https://www.youtube.com/channel/UC89piZNg765Z9kz_BC3-pow
+
 Name = (FR) Torah Times
 URL = https://www.youtube.com/user/laparacha
 
