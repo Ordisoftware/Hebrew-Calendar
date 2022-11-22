@@ -15,6 +15,9 @@ FOLDER-SEPARATOR
 Lang/EN = Institutional websites
 Lang/FR = Sites Web institutionnels
 
+Name = (EN) World Jewish Congress
+URL = https://www.worldjewishcongress.org
+
 Name = (FR/EN) Conference of European Rabbis
 URL = https://rabbiscer.org
 
