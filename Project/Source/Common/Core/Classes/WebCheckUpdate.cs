@@ -82,26 +82,6 @@ static public class WebCheckUpdate
       if ( !auto )
         DisplayManager.ShowInformation(SysTranslations.NoNewVersionAvailable.GetLang());
     }
-    catch ( UnauthorizedAccessException ex )
-    {
-      CleanTemp();
-      if ( !auto )
-      {
-        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
-        if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
-          SystemManager.OpenGitHupRepo();
-      }
-    }
-    catch ( IOException ex )
-    {
-      CleanTemp();
-      if ( !auto )
-      {
-        DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
-        if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
-          SystemManager.OpenGitHupRepo();
-      }
-    }
     catch ( WebException ex )
     {
       // TODO create advanced box to retry-cancel
@@ -127,15 +107,14 @@ static public class WebCheckUpdate
     {
       CleanTemp();
       if ( !auto )
+      {
         DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
+        if ( ex is UnauthorizedAccessException || ex is IOException )
+          if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
+            SystemManager.OpenGitHupRepo();
+      }
     }
     finally
-    {
-      doFinally();
-    }
-    return false;
-    //
-    void doFinally()
     {
       Mutex = false;
       LoadingForm.Instance.Hidden = formHidden;
@@ -147,6 +126,7 @@ static public class WebCheckUpdate
         form.Enabled = formEnabled;
       }
     }
+    return false;
   }
 
   /// <summary>
