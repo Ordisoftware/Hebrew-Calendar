@@ -79,9 +79,9 @@ partial class LunisolarDay
     bool isShavouot = TorahEvent == TorahCelebrationDay.Chavouot1 || TorahEvent == TorahCelebrationDay.Chavouot2;
     if ( Settings.TorahEventsCountAsMoon && !isShavouot )
     {
-      bool isPreviousNotNull = rowPrevious is not null && rowPrevious.Moonset.HasValue;
-      bool isCurrentNotNull = Moonset is not null && Moonset.HasValue;
-      bool isNextNotNull = rowNext is not null && rowNext.Moonset.HasValue;
+      bool isPreviousNotNull = rowPrevious?.Moonset.HasValue ?? false;
+      bool isCurrentNotNull = Moonset.HasValue;
+      bool isNextNotNull = rowNext?.Moonset.HasValue ?? false;
       bool isNotNullCurrentAndPrevious = isCurrentNotNull && isPreviousNotNull;
       bool isNotNullCurrentAndNext = isCurrentNotNull && isNextNotNull;
       bool isNotNullPreviousAndNext = isCurrentNotNull && isPreviousNotNull && isNextNotNull;
