@@ -133,7 +133,7 @@ static public partial class SystemManager
       try
       {
         using var stream = new MemoryStream();
-        new BinaryFormatter().Serialize(stream, instance);
+        new BinaryFormatter().Serialize(stream, instance); // TODO REPLACE
         result = stream.Length;
       }
       catch ( Exception ex1 )
@@ -141,7 +141,7 @@ static public partial class SystemManager
         ex1.Manage(ShowExceptionMode.None);
         try
         {
-          result = System.Runtime.InteropServices.Marshal.SizeOf(instance);
+          result = Marshal.SizeOf(instance);
         }
         catch ( Exception ex2 )
         {

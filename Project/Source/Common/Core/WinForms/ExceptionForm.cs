@@ -16,6 +16,7 @@ namespace Ordisoftware.Core;
 
 using System.Net;
 using System.Net.Mail;
+using MoreLinq;
 
 /// <summary>
 /// Provides exception form.

@@ -99,5 +99,8 @@ URL = https://www.youtube.com/playlist?list=PLwh9wT44mCF9zBjafxjZdxTC4bz_8imf6
 
 - 
 
+Name = (FR) [Rav Joseph Haïm Sitruk] Cours du Lundi
+URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0i0uVZMj5Xc5IFqfsnVGC5b
+
 Name = (IW) [Rav Yossef Hay] Songs, chants, and meditations
 URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAFXH3y1mPVYdxB8IdZ3CBsO

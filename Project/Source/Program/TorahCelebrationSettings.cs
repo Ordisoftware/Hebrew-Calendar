@@ -14,6 +14,8 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using MoreLinq;
+
 /// <summary>
 /// Torah celebrations days and durations.
 /// </summary>

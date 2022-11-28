@@ -38,6 +38,5 @@ global using System.Windows.Forms;
 global using EnumsNET;
 global using FileHelpers;
 global using FileHelpers.Options;
-global using MoreLinq;
 global using Newtonsoft.Json;
 global using Ordisoftware.Core;
