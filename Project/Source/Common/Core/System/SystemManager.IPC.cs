@@ -147,7 +147,8 @@ static public partial class SystemManager
       client.Connect(2000);
       try
       {
-        new BinaryFormatter().Serialize(client, command);
+        using var writer = new BinaryWriter(client);
+        writer.Write(command);
       }
       finally
       {

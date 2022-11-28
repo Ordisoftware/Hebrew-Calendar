@@ -183,7 +183,9 @@ static partial class Program
     try
     {
       server.EndWaitForConnection(ar);
-      if ( new BinaryFormatter().Deserialize(server) is not string command ) return;
+      using var reader = new BinaryReader(server);
+      string command = reader.ReadString();
+      if ( command is null ) return;
       if ( !Globals.IsReady ) return;
       var lang = Settings.LanguageSelected;
       SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(command.SplitKeepEmptyLines(" "), ref lang);
