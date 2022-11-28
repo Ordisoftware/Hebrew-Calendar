@@ -20,6 +20,7 @@ using System.Xml;
 /// Provides form to edit the preferences.
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
+[SuppressMessage("CodeQuality", "IDE0052:Supprimer les membres privés non lus", Justification = "N/A")]
 partial class PreferencesForm
 {
 
