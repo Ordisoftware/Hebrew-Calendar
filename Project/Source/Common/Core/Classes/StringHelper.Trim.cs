@@ -14,6 +14,8 @@
 /// <edited> 2022-04 </edited>
 namespace Ordisoftware.Core;
 
+using MoreLinq;
+
 /// <summary>
 /// Provides string helper.
 /// </summary>

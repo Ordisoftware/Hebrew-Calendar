@@ -14,6 +14,8 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using MoreLinq;
+
 partial class SelectExportTargetForm : Form
 {
 

@@ -14,6 +14,8 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using MoreLinq;
+
 /// <summary>
 /// Provides form to edit the preferences.
 /// </summary>

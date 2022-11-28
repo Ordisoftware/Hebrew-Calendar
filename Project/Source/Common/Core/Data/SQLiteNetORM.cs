@@ -14,6 +14,7 @@
 /// <edited> 2022-06 </edited>
 namespace Ordisoftware.Core;
 
+using MoreLinq;
 using SQLite;
 
 /// <summary>

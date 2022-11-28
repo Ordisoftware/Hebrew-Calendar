@@ -41,7 +41,7 @@ partial class MainForm
       });
       using var dataset = new DataSet(Globals.AssemblyTitle);
       dataset.Tables.Add(data.ToDataTable(nameof(LunisolarDays)));
-      string result = JsonConvert.SerializeObject(dataset, Formatting.Indented);
+      string result = JsonConvert.SerializeObject(dataset, Newtonsoft.Json.Formatting.Indented);
       dataset.Tables.Clear();
       return result;
     }

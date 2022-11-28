@@ -56,7 +56,7 @@ partial class ManageBookmarksForm : Form
           var data = ListBox.Items.Cast<DateItem>().Select(item => new { item.Date });
           var dataset = new DataSet(Globals.AssemblyTitle);
           dataset.Tables.Add(data.ToDataTable(TableName));
-          string str = JsonConvert.SerializeObject(dataset, Formatting.Indented);
+          string str = JsonConvert.SerializeObject(dataset, Newtonsoft.Json.Formatting.Indented);
           File.WriteAllText(SaveBookmarksDialog.FileName, str, Encoding.UTF8);
           dataset.Tables.Clear();
           dataset.Dispose();

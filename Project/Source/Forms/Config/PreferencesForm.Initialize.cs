@@ -15,6 +15,7 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
+using MoreLinq;
 
 /// <summary>
 /// Provides form to edit the preferences.
