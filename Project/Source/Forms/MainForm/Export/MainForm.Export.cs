@@ -58,7 +58,7 @@ partial class MainForm
                                     .SkipWhile(line => filter(line, interval.Start.Value, true))
                                     .TakeWhile(line => filter(line, interval.End.Value, false));
     var result = TextReport.Lines.Take(3).Concat(linesFiltered);
-    return Enumerable.Append(result, TextReport.Lines[TextReport.Lines.Length - 1]);
+    return result.Append(TextReport.Lines[TextReport.Lines.Length - 1]);
     //
     bool filter(string line, DateTime dateTrigger, bool strict)
     {

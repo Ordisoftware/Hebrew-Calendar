@@ -69,6 +69,7 @@ static public class Interlocks
   }
 
   [SuppressMessage("Performance", "U2U1209:Use dictionaries efficiently", Justification = "N/A")]
+  [SuppressMessage("Performance", "CA1854:Préférer la méthode 'IDictionary.TryGetValue(TKey, out TValue)'", Justification = "N/A")]
   static public List<string> GetLockers(string name = null)
   {
     name = Convert(name);
