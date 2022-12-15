@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2022-12 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -66,6 +66,12 @@ static public partial class HebrewTranslations
   {
     [Language.EN] = "Lettriq",
     [Language.FR] = "Lettrique"
+  };
+
+  static public readonly TranslationsDictionary LetterDetails = new()
+  {
+    [Language.EN] = "View details about {0}",
+    [Language.FR] = "Voir les détails sur {0}"
   };
 
   static public readonly TranslationsDictionary AskToResetParashot = new()
