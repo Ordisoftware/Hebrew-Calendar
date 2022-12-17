@@ -3,12 +3,11 @@
 // Project-level suppressions either have no target or are given 
 // a specific target and scoped to a namespace, type, member, etc.
 
-[assembly: SuppressMessage("Major Code Smell", "S1172:Unused method parameters should be removed", Justification = "Analysis error", Scope = "module")]
-
 [assembly: SuppressMessage("Critical Code Smell", "S1699:Constructors should only call non-overridable methods", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Critical Code Smell", "S2365:Properties should not make collection or array copies", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Critical Code Smell", "S2696:Instance members should not write to \"static\" fields", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Critical Code Smell", "S3973:A conditionally executed single line should be denoted by indentation", Justification = "Opinion", Scope = "module")]
+//[assembly: SuppressMessage("Major Code Smell", "S1172:Unused method parameters should be removed", Justification = "Analysis error", Scope = "module")]
 [assembly: SuppressMessage("Info Code Smell", "S1135:Track uses of \"TODO\" tags", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Major Code Smell", "S1066:Collapsible \"if\" statements should be merged", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Major Code Smell", "S108:Nested blocks of code should not be left empty", Justification = "Opinion", Scope = "module")]
@@ -24,6 +23,8 @@
 [assembly: SuppressMessage("Minor Code Smell", "S101:Types should be named in PascalCase", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S2486:Generic exceptions should not be ignored", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S3963:\"static\" fields should be initialized inline", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Minor Code Smell", "S2386:Mutable fields should not be \"public static\"", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Minor Bug", "S3887:Mutable, non-private fields should not be \"readonly\"", Justification = "Opinion", Scope = "module")]
 
 [assembly: SuppressMessage("Style", "IDE0008:Utiliser un type explicite", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "IDE0011:Ajouter des accolades", Justification = "Opinion", Scope = "module")]
@@ -69,9 +70,7 @@
 [assembly: SuppressMessage("Usage", "MA0091:Sender should be 'this' for instance events", Justification = "N/A", Scope = "module")]
 
 [assembly: SuppressMessage("CodeSmell", "EPC12:Suspicious exception handling: only Message property is observed in exception block.", Justification = "Opinion based or N/A", Scope = "module")]
-
 [assembly: SuppressMessage("CodeSmell", "ERP022:Unobserved exception in generic exception handler", Justification = "Opinion", Scope = "module")]
-
 [assembly: SuppressMessage("PropertyChangedAnalyzers.PropertyChanged", "INPC001:The class has mutable properties and should implement INotifyPropertyChanged.", Justification = "Opinion", Scope = "module")]
 
 [assembly: SuppressMessage("Design", "GCop101:Too many parameters as argument. Define a container and encapsulate them", Justification = "Opinion", Scope = "module")]
@@ -82,6 +81,7 @@
 [assembly: SuppressMessage("Design", "GCop136:All constants and class fields should be defined at the top of the class, before all methods.", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Design", "GCop138:When you catch an exception you should throw exception or at least log error", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Design", "GCop148:All constructors should be before all methods in a class.", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Performance", "GCop302:Since '{0}' implements IDisposable, wrap it in a using() statement", Justification = "N/A (checked by another analyzer)", Scope = "module")]
 [assembly: SuppressMessage("Refactoring", "GCop627:{0}", Justification = "Opinion or doubtful", Scope = "module")]
 [assembly: SuppressMessage("Refactoring", "GCop656:Join string expressions", Justification = "Opinion", Scope = "module")]
@@ -91,9 +91,5 @@
 [assembly: SuppressMessage("Style", "GCop436:As the implementation is relatively long, change this into a standard method implementation.", Justification = "Opinion or N/A (need a parameter for the analyzer)", Scope = "module")]
 [assembly: SuppressMessage("Style", "GCop437:Complete the task associated to this \"TODO\" comment.", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Usage", "GCop511:Either remove the parameter documentation node, or describe it properly.", Justification = "Opinion", Scope = "module")]
-[assembly: SuppressMessage("Design", "GCop160:This is not readable. Either refactor into a method, or use If / else statement.", Justification = "Opinion", Scope = "module")]
 
-[assembly: SuppressMessage("Critical Code Smell", "S2479:Whitespace and control characters in string literals should be explicit", Justification = "Analysis error (C# 11 Raw String Literal)", Scope = "module")]
-
-[assembly: SuppressMessage("Minor Bug", "S3887:Mutable, non-private fields should not be \"readonly\"", Justification = "Opinion", Scope = "module")]
-[assembly: SuppressMessage("Minor Code Smell", "S2386:Mutable fields should not be \"public static\"", Justification = "Opinion", Scope = "module")]
+//[assembly: SuppressMessage("Critical Code Smell", "S2479:Whitespace and control characters in string literals should be explicit", Justification = "Analysis error (C# 11 Raw String Literal)", Scope = "module")]
