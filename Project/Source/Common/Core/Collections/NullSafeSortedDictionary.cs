@@ -42,7 +42,7 @@ where TValue : class
   {
     get
     {
-      return ContainsKey(key) ? base[key] : null;
+      return TryGetValue(key, out TValue value) ? value : null;
     }
     set
     {

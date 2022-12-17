@@ -54,7 +54,7 @@ where TValue : Enum
   {
     get
     {
-      return ContainsKey(key) ? base[key] : default;
+      return TryGetValue(key, out TValue value) ? value : default;
     }
     set
     {

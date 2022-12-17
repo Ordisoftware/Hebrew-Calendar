@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2022-12 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -475,8 +475,7 @@ public partial class LettersControl : UserControl
   private void ActionLetterViewDetails_Click(object sender, EventArgs e)
   {
     if ( ViewLetterDetails is null ) return;
-    var button = (Button)( (ContextMenuStrip)( (ToolStripMenuItem)sender ).Owner ).SourceControl;
-    ViewLetterDetails(this, button.Text);
+    ViewLetterDetails(this, (string)ActionLetterViewDetails.Tag);
   }
 
   /// <summary>
@@ -491,6 +490,10 @@ public partial class LettersControl : UserControl
     ActionLetterAddAtCaret.Enabled = ActionLetterAddAtStart.Enabled || TextBox.SelectionLength > 0;
     ActionLetterViewDetails.Enabled = ViewLetterDetails is not null;
     MenuItemSeparator.Enabled = ActionLetterViewDetails.Enabled;
+    var letterButton = (Button)( (ContextMenuStrip)( sender ) ).SourceControl;
+    string letterName = HebrewAlphabet.TranscriptionFromCodes.GetLang(letterButton.Text);
+    ActionLetterViewDetails.Tag = letterButton.Text;
+    ActionLetterViewDetails.Text = HebrewTranslations.LetterDetails.GetLang(letterName);
   }
 
   private void ActionLetterViewDetails_VisibleChanged(object sender, EventArgs e)

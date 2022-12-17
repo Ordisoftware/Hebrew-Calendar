@@ -42,10 +42,10 @@ where TValue : new()
   {
     get
     {
-      if ( ContainsKey(key) ) return base[key];
-      var value = new TValue();
-      Add(key, value);
-      return value;
+      if ( TryGetValue(key, out TValue value) ) return value;
+      var valueNew = new TValue();
+      Add(key, valueNew);
+      return valueNew;
     }
     set
     {

@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using Newtonsoft.Json.Linq;
+/// <license>
 /// This file is part of Ordisoftware Core Library.
 /// Copyright 2004-2022 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -53,7 +54,7 @@ public class NullSafeOfStringDictionary<T> : Dictionary<T, string>
   {
     get
     {
-      return ContainsKey(key) ? base[key] : null;
+      return TryGetValue(key, out string value) ? value : null;
     }
     set
     {
