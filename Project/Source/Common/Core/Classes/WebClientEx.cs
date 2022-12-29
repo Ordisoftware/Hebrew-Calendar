@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2022-12 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -28,6 +28,7 @@ public class WebClientEx : WebClient
   {
     if ( timeOutSeconds <= 0 ) timeOutSeconds = DefaultTimeOutSeconds;
     TimeOutSeconds = timeOutSeconds;
+    UseDefaultCredentials = true;
   }
 
   protected override WebRequest GetWebRequest(Uri address)
