@@ -19,6 +19,17 @@ URL = https://www.jewfaq.org
 Name = (EN) Mussar Center (Books and middot lists)
 URL = https://mussar.center/books.html
 
+- 
+
+Name = (FR) Pniné Halakha (Har Bracha Institut)
+URL = https://ph.yhb.org.il/fr/
+
+Name = (EN) Peninei Halakha (Har Bracha Institut)
+URL = https://ph.yhb.org.il/en/
+
+Name = (IW) Peninei Halakha (Har Bracha Institut)
+URL = https://ph.yhb.org.il/
+
 -
 
 Name = (FR) Beit HaZohar

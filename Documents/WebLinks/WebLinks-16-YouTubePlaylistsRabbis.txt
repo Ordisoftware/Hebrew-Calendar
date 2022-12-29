@@ -25,6 +25,9 @@ URL = https://www.youtube.com/playlist?list=PL20tCo26IlqSrsMqvdwOGTc_Dh9em1Hpo
 Name = (FR) [Rav Yehia Benchetrit] La spiritualite
 URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQ_FjcJbCV0zXc6dKeXuk6c
 
+Name = (FR) [Rav Yehia Benchetrit] Business Ethique
+URL = https://www.youtube.com/playlist?list=PL20tCo26IlqQWUChbtnQC1DQESNFL6ukH
+
 -
 
 Name = (FR) [Rav Menahem Berros] Les lois de la Techouva
