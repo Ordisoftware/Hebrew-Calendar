@@ -387,6 +387,13 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Check and fix weekly parashah generation with soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
+#### 2023.01.05 - Version 10.02
+
+- Code improvement and refactoring.
+- Improve web update checker security.
+- Improve IPC interop security.
+- Add links to Peninei Halakha and some other.
+
 #### 2022.11.15 - Version 10.1
 
 - Add verse references for Shabat in celebrations board.
