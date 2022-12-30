@@ -381,7 +381,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Add comments to bookmarks.
 >- Add auto sort bookmarks.
 >- Add auto backup bookmarks.
->- Add import button to the GPS box on the first start.
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
 >- Check and fix weekly parashah generation with soukot.
@@ -389,10 +388,11 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### 2023.01.05 - Version 10.02
 
-- Code improvement and refactoring.
+- Add import settings button in city selection box on first start.
 - Improve web update checker security.
-- Improve IPC interop security.
-- Add links to Peninei Halakha and some other.
+- Improve IPC interoperability security.
+- Code improvement and refactoring.
+- Add links for Peninei Halakha and some others.
 
 #### 2022.11.15 - Version 10.1
 
