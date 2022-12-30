@@ -383,6 +383,13 @@ partial class PreferencesForm : Form
     EditGPSLongitude.Text = Settings.GPSLongitude;
     EditTimeZone.Text = Settings.GetGPSText();
     MainForm.Instance.InitializeCurrentTimeZone();
+    if ( e is null && SelectCityForm.ConfigLoaded )
+    {
+      LanguageChanged = true;
+      DoReset = true;
+      Reseted = true;
+      Close();
+    }
   }
 
   private void SelectOmerMoon_CheckedChanged(object sender, EventArgs e)
