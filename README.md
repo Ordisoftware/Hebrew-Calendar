@@ -389,6 +389,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### 2023.01.05 - Version 10.02
 
 - Add import settings button in city selection box on first start.
+- Fix auto web check update showing some error message (must not).
 - Improve web update checker security.
 - Improve IPC interoperability security.
 - Code improvement and refactoring.

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Configuration;
@@ -281,6 +281,7 @@ partial class SelectCityForm : Form
     DoImportSettings();
   }
 
+  // TODO refactor from here and preferenceform (create local dialog)
   private void DoImportSettings()
   {
     OpenSettingsDialog.FileName = string.Empty;

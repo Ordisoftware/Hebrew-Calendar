@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2022-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -34,6 +34,18 @@ static partial class AppTranslations
   static public readonly NullSafeDictionary<string, TranslationsDictionary> NoticeNewFeatures = new()
   {
 
+    //Template
+    //["x.y"] = new TranslationsDictionary
+    //{
+    //  [Language.EN] = """
+
+    //                  """,
+
+    //  [Language.FR] = """
+
+    //                  """,
+    //},
+
     /*["x.y"] = new TranslationsDictionary
     {
       [Language.EN] = """
@@ -48,6 +60,25 @@ static partial class AppTranslations
                       • Quelques améliorations et corrections.
                       """,
     },*/
+
+    ["10.2"] = new TranslationsDictionary
+    {
+      [Language.EN] = """
+                      • Add import settings button in city selection box on first start.
+                      • Improve web update checker security.
+                      • Improve IPC interoperability security.
+                      • Code improvement and refactoring.
+                      • Add links for Peninei Halakha and some others.
+                      """,
+
+      [Language.FR] = """
+                      • Ajout d'un bouton d'importation des paramètres dans boite de sélection de la ville au premier démarrage.
+                      • Amélioration de la sécurité du vérificateur de mise à jour Web.
+                      • Amélioration de la sécurité de l'interopérabilité IPC.
+                      • Amélioration et refactorisation du code.
+                      • Ajouter des liens pour Peninei Halakha et quelques autres.
+                      """,
+    },
 
     ["10.1"] = new TranslationsDictionary
     {
