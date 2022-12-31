@@ -32,6 +32,7 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectCityForm));
       this.ActionOK = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
+      this.ActionImportSettings = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
       this.DummyButton = new System.Windows.Forms.Button();
       this.ListBoxCountries = new System.Windows.Forms.ListBox();
@@ -42,6 +43,7 @@
       this.LabelFilter = new System.Windows.Forms.Label();
       this.LabelTimeZone = new System.Windows.Forms.Label();
       this.EditTimeZone = new System.Windows.Forms.ComboBox();
+      this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
       this.PanelBottom.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -55,11 +57,21 @@
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionImportSettings);
       this.PanelBottom.Controls.Add(this.ActionCancel);
       this.PanelBottom.Controls.Add(this.ActionOK);
       this.PanelBottom.Controls.Add(this.DummyButton);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
+      // 
+      // ActionImportSettings
+      // 
+      this.ActionImportSettings.AllowDrop = true;
+      this.ActionImportSettings.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionImportSettings, "ActionImportSettings");
+      this.ActionImportSettings.Name = "ActionImportSettings";
+      this.ActionImportSettings.UseVisualStyleBackColor = true;
+      this.ActionImportSettings.Click += new System.EventHandler(this.ActionImportSettings_Click);
       // 
       // ActionCancel
       // 
@@ -102,6 +114,7 @@
       this.EditFilter.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
       resources.ApplyResources(this.EditFilter, "EditFilter");
       this.EditFilter.Name = "EditFilter";
+      this.EditFilter.SpellCheckAllowed = false;
       this.EditFilter.TextChanged += new System.EventHandler(this.EditFilter_TextChanged);
       // 
       // LabelFilter
@@ -162,5 +175,7 @@
     private System.Windows.Forms.Label LabelTimeZone;
     public System.Windows.Forms.ComboBox EditTimeZone;
     private System.Windows.Forms.Button DummyButton;
+    private Button ActionImportSettings;
+    private OpenFileDialog OpenSettingsDialog;
   }
 }

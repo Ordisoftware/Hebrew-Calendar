@@ -11,8 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2022-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
+
+using System.Configuration;
+using System.Xml.Linq;
+using System.Xml.XPath;
 
 partial class SelectCityForm : Form
 {
@@ -77,10 +81,14 @@ partial class SelectCityForm : Form
   private bool IsLoading;
   private bool IsReady;
 
+  static public bool ConfigLoaded { get; private set; }
+
   static public bool Run(bool canCancel)
   {
+    ConfigLoaded = false;
     using var form = new SelectCityForm();
     form.ActionCancel.Enabled = canCancel;
+    form.ActionImportSettings.Visible = !canCancel;
     if ( form.ShowDialog() != DialogResult.OK ) return false;
     if ( form.EditTimeZone.SelectedItem is not null )
       Settings.TimeZone = ( (TimeZoneInfo)form.EditTimeZone.SelectedItem ).Id;
@@ -96,6 +104,8 @@ partial class SelectCityForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
+    OpenSettingsDialog.InitialDirectory = Program.Settings.GetExportSettingsDirectory();
+    OpenSettingsDialog.Filter = ExportHelper.CreateExportTargets(DataExportTarget.XML).CreateFilters();
   }
 
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
@@ -264,6 +274,57 @@ partial class SelectCityForm : Form
   private void EditTimeZone_SelectedIndexChanged(object sender, EventArgs e)
   {
     ActionOK.Enabled = FoundCountry && FoundCity && EditTimeZone.SelectedItem is not null;
+  }
+
+  private void ActionImportSettings_Click(object sender, EventArgs e)
+  {
+    DoImportSettings();
+  }
+
+  // TODO refactor from here and preferenceform (create local dialog)
+  private void DoImportSettings()
+  {
+    OpenSettingsDialog.FileName = string.Empty;
+    if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
+    MainForm.Instance.MenuShowHide_Click(null, null);
+    LunarMonthsForm.Instance.Hide();
+    StatisticsForm.Instance.Hide();
+    long starttime = Settings.BenchmarkStartingApp;
+    long loadtime = Settings.BenchmarkLoadData;
+    try
+    {
+      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+      string context = Properties.Settings.Default.Context["GroupName"].ToString();
+      var xmldata = XDocument.Load(OpenSettingsDialog.FileName);
+      var settings = xmldata.XPathSelectElements("//" + context);
+      var section = config.GetSectionGroup("userSettings").Sections[context].SectionInformation;
+      section.SetRawXml(settings.Single().ToString());
+      config.Save(ConfigurationSaveMode.Modified);
+      ConfigurationManager.RefreshSection("userSettings");
+      Settings.Reload();
+      Settings.BenchmarkStartingApp = starttime;
+      Settings.BenchmarkLoadData = loadtime;
+      Settings.Retrieve();
+      SystemManager.TryCatch(Settings.Store);
+      Settings.SetFirstAndUpgradeFlagsOff();
+      Program.UpdateLocalization();
+      ConfigLoaded = true;
+      int indexCountry = ListBoxCountries.FindString(Settings.GPSCountry);
+      if ( indexCountry != -1 ) ListBoxCountries.SelectedIndex = indexCountry;
+      int indexCity = ListBoxCities.FindString(Settings.GPSCity);
+      if ( indexCity != -1 ) ListBoxCities.SelectedIndex = indexCity;
+      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+      {
+        int index = EditTimeZone.Items.Add(item);
+        if ( Settings.TimeZone == item.Id )
+          EditTimeZone.SelectedIndex = index;
+      }
+    }
+    catch ( Exception ex )
+    {
+      DisplayManager.ShowError(ex.Message);
+      Settings.Reload();
+    }
   }
 
 }
