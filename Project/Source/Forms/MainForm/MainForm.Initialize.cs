@@ -41,7 +41,7 @@ partial class MainForm
     InitializeViewConnectors();
     new Task(InitializeIconsAndSound).Start();
     new Task(InitializeDialogsDirectory).Start();
-    new Task(SelectCityForm.Preload).Start();
+    new Task(SelectCityForm.LoadGPS).Start();
     SystemManager.TryCatch(() => Icon = new Icon(Globals.ApplicationIconFilePath));
     Text = Globals.AssemblyTitle;
     ContextMenuStripDay.ImageList = ImageListRisesAndSets;
