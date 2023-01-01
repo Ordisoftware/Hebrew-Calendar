@@ -280,6 +280,7 @@
       this.TabPageMonthView = new System.Windows.Forms.TabPage();
       this.TabControlMonthView = new System.Windows.Forms.TabControl();
       this.TabPageMonthViewBehavior = new System.Windows.Forms.TabPage();
+      this.SelectCalendarDoubleClickActionContextMenu = new System.Windows.Forms.RadioButton();
       this.EditCalendarUseHoverEffect = new System.Windows.Forms.CheckBox();
       this.EditMonthViewChangeDayOnClick = new System.Windows.Forms.CheckBox();
       this.EditCalendarShowSelectedBox = new System.Windows.Forms.CheckBox();
@@ -420,7 +421,6 @@
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
       this.EditWeatherAppPath = new Ordisoftware.Core.TextBoxEx();
       this.MenuSelectOnlineVerseProviderURL = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.SelectCalendarDoubleClickActionContextMenu = new System.Windows.Forms.RadioButton();
       LabelOnlineVerseURL = new System.Windows.Forms.Label();
       this.PanelButtons.SuspendLayout();
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
@@ -2512,6 +2512,12 @@
       this.TabPageMonthViewBehavior.Name = "TabPageMonthViewBehavior";
       this.TabPageMonthViewBehavior.UseVisualStyleBackColor = true;
       // 
+      // SelectCalendarDoubleClickActionContextMenu
+      // 
+      resources.ApplyResources(this.SelectCalendarDoubleClickActionContextMenu, "SelectCalendarDoubleClickActionContextMenu");
+      this.SelectCalendarDoubleClickActionContextMenu.Name = "SelectCalendarDoubleClickActionContextMenu";
+      this.SelectCalendarDoubleClickActionContextMenu.UseVisualStyleBackColor = true;
+      // 
       // EditCalendarUseHoverEffect
       // 
       resources.ApplyResources(this.EditCalendarUseHoverEffect, "EditCalendarUseHoverEffect");
@@ -3677,12 +3683,6 @@
       // 
       this.MenuSelectOnlineVerseProviderURL.Name = "MenuSelectOnlineVerseURL";
       resources.ApplyResources(this.MenuSelectOnlineVerseProviderURL, "MenuSelectOnlineVerseProviderURL");
-      // 
-      // SelectCalendarDoubleClickActionContextMenu
-      // 
-      resources.ApplyResources(this.SelectCalendarDoubleClickActionContextMenu, "SelectCalendarDoubleClickActionContextMenu");
-      this.SelectCalendarDoubleClickActionContextMenu.Name = "SelectCalendarDoubleClickActionContextMenu";
-      this.SelectCalendarDoubleClickActionContextMenu.UseVisualStyleBackColor = true;
       // 
       // PreferencesForm
       // 

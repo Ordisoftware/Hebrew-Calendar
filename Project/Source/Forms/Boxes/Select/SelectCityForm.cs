@@ -11,12 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-10 </created>
-/// <edited> 2022-12 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
-
-using System.Configuration;
-using System.Xml.Linq;
-using System.Xml.XPath;
 
 partial class SelectCityForm : Form
 {
@@ -27,12 +23,12 @@ partial class SelectCityForm : Form
 
   static SelectCityForm()
   {
-    Preload();
+    LoadGPS();
   }
 
   [SuppressMessage("Performance", "U2U1003:Avoid declaring methods used in delegate constructors static", Justification = "N/A")]
   [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
-  static public void Preload()
+  static public void LoadGPS()
   {
     if ( GPS.Count > 0 ) return;
     try
@@ -276,55 +272,20 @@ partial class SelectCityForm : Form
     ActionOK.Enabled = FoundCountry && FoundCity && EditTimeZone.SelectedItem is not null;
   }
 
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   private void ActionImportSettings_Click(object sender, EventArgs e)
   {
-    DoImportSettings();
-  }
-
-  // TODO refactor from here and preferenceform (create local dialog)
-  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
-  private void DoImportSettings()
-  {
-    OpenSettingsDialog.FileName = string.Empty;
-    if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-    MainForm.Instance.MenuShowHide_Click(null, null);
-    LunarMonthsForm.Instance.Hide();
-    StatisticsForm.Instance.Hide();
-    long starttime = Settings.BenchmarkStartingApp;
-    long loadtime = Settings.BenchmarkLoadData;
-    try
+    if ( !Settings.Import(OpenSettingsDialog) ) return;
+    ConfigLoaded = true;
+    int indexCountry = ListBoxCountries.FindString(Settings.GPSCountry);
+    if ( indexCountry != -1 ) ListBoxCountries.SelectedIndex = indexCountry;
+    int indexCity = ListBoxCities.FindString(Settings.GPSCity);
+    if ( indexCity != -1 ) ListBoxCities.SelectedIndex = indexCity;
+    foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
     {
-      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-      string context = Properties.Settings.Default.Context["GroupName"].ToString();
-      var xmldata = XDocument.Load(OpenSettingsDialog.FileName);
-      var settings = xmldata.XPathSelectElements("//" + context);
-      var section = config.GetSectionGroup("userSettings").Sections[context].SectionInformation;
-      section.SetRawXml(settings.Single().ToString());
-      config.Save(ConfigurationSaveMode.Modified);
-      ConfigurationManager.RefreshSection("userSettings");
-      Settings.Reload();
-      Settings.BenchmarkStartingApp = starttime;
-      Settings.BenchmarkLoadData = loadtime;
-      Settings.Retrieve();
-      SystemManager.TryCatch(Settings.Store);
-      Settings.SetFirstAndUpgradeFlagsOff();
-      Program.UpdateLocalization();
-      ConfigLoaded = true;
-      int indexCountry = ListBoxCountries.FindString(Settings.GPSCountry);
-      if ( indexCountry != -1 ) ListBoxCountries.SelectedIndex = indexCountry;
-      int indexCity = ListBoxCities.FindString(Settings.GPSCity);
-      if ( indexCity != -1 ) ListBoxCities.SelectedIndex = indexCity;
-      foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-      {
-        int index = EditTimeZone.Items.Add(item);
-        if ( Settings.TimeZone == item.Id )
-          EditTimeZone.SelectedIndex = index;
-      }
-    }
-    catch ( Exception ex )
-    {
-      DisplayManager.ShowError(ex.Message);
-      Settings.Reload();
+      int index = EditTimeZone.Items.Add(item);
+      if ( Settings.TimeZone == item.Id )
+        EditTimeZone.SelectedIndex = index;
     }
   }
 

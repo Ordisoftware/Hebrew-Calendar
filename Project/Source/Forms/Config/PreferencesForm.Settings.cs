@@ -11,12 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
-
-using System.Configuration;
-using System.Xml.Linq;
-using System.Xml.XPath;
 
 /// <summary>
 /// Provides form to edit the preferences.
@@ -75,40 +71,11 @@ partial class PreferencesForm
 
   private void DoImportSettings()
   {
-    OpenSettingsDialog.FileName = string.Empty;
-    if ( OpenSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-    MainForm.Instance.MenuShowHide_Click(null, null);
-    LunarMonthsForm.Instance.Hide();
-    StatisticsForm.Instance.Hide();
-    long starttime = Settings.BenchmarkStartingApp;
-    long loadtime = Settings.BenchmarkLoadData;
-    try
-    {
-      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-      string context = Properties.Settings.Default.Context["GroupName"].ToString();
-      var xmldata = XDocument.Load(OpenSettingsDialog.FileName);
-      var settings = xmldata.XPathSelectElements("//" + context);
-      var section = config.GetSectionGroup("userSettings").Sections[context].SectionInformation;
-      section.SetRawXml(settings.Single().ToString());
-      config.Save(ConfigurationSaveMode.Modified);
-      ConfigurationManager.RefreshSection("userSettings");
-      Settings.Reload();
-      Settings.BenchmarkStartingApp = starttime;
-      Settings.BenchmarkLoadData = loadtime;
-      Settings.Retrieve();
-      SystemManager.TryCatch(Settings.Store);
-      Settings.SetFirstAndUpgradeFlagsOff();
-      Program.UpdateLocalization();
-      LanguageChanged = true;
-      DoReset = true;
-      Reseted = true;
-      Close();
-    }
-    catch ( Exception ex )
-    {
-      DisplayManager.ShowError(ex.Message);
-      Settings.Reload();
-    }
+    if ( !Settings.Import(OpenSettingsDialog) ) return;
+    LanguageChanged = true;
+    DoReset = true;
+    Reseted = true;
+    Close();
   }
 
   private void DoExportSettings()
@@ -118,13 +85,11 @@ partial class PreferencesForm
       ? AppTranslations.MainFormSubTitleSod.GetLang()
       : AppTranslations.MainFormSubTitleOmer[SelectOmerMoon.Checked][Language.EN];
     var shabat = ( (DayOfWeekItem)EditShabatDay.SelectedItem ).Day;
-    SaveSettingsDialog.FileName = $"Settings {city} {omer} {shabat}";
-    if ( SaveSettingsDialog.ShowDialog() != DialogResult.OK ) return;
-    TabControlMain.SelectedIndex = 0;
-    SaveSettings();
-    Settings.Store();
-    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-    config.SaveAs(SaveSettingsDialog.FileName);
+    Settings.Export(SaveSettingsDialog, $"Settings {city} {omer} {shabat}", () =>
+    {
+      TabControlMain.SelectedIndex = 0;
+      SaveSettings();
+    });
   }
 
 }

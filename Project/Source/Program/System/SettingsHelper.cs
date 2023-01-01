@@ -11,9 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using System.Configuration;
+using System.Xml.Linq;
+using System.Xml.XPath;
 using Ordisoftware.Hebrew.Calendar.Properties;
 
 /// <summary>
@@ -164,15 +167,56 @@ static class SettingsHelper
   }
 
   /// <summary>
-  /// Sets the upgrade flags off.
+  /// Exports the application's settings.
   /// </summary>
-  static internal void SetUpgradeFlagsOff(this Settings settings)
+  static internal bool Export(this Settings settings, SaveFileDialog dialog, string filename = null, Action saving = null)
   {
-    settings.UpgradeResetRequiredV3_0 = false;
-    settings.UpgradeResetRequiredV3_6 = false;
-    settings.UpgradeResetRequiredV4_1 = false;
-    settings.UpgradeResetRequiredV5_10 = false;
-    settings.UpgradeRequired = false;
+    dialog.FileName = filename;
+    if ( dialog.ShowDialog() != DialogResult.OK ) return false;
+    settings.Store();
+    saving?.Invoke();
+    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+    config.SaveAs(dialog.FileName);
+    return true;
+  }
+
+  /// <summary>
+  /// Imports the application's settings.
+  /// </summary>
+  static internal bool Import(this Settings settings, OpenFileDialog dialog, Action loading = null)
+  {
+    dialog.FileName = string.Empty;
+    if ( dialog.ShowDialog() != DialogResult.OK ) return false;
+    MainForm.Instance.MenuShowHide_Click(null, null);
+    LunarMonthsForm.Instance.Hide();
+    StatisticsForm.Instance.Hide();
+    loading?.Invoke();
+    long starttime = settings.BenchmarkStartingApp;
+    long loadtime = settings.BenchmarkLoadData;
+    try
+    {
+      var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+      string context = Settings.Default.Context["GroupName"].ToString();
+      var xmldata = XDocument.Load(dialog.FileName);
+      var settingsAsXML = xmldata.XPathSelectElements("//" + context);
+      var section = config.GetSectionGroup("userSettings").Sections[context].SectionInformation;
+      section.SetRawXml(settingsAsXML.Single().ToString());
+      config.Save(ConfigurationSaveMode.Modified);
+      ConfigurationManager.RefreshSection("userSettings");
+      settings.Reload();
+      settings.BenchmarkStartingApp = starttime;
+      settings.BenchmarkLoadData = loadtime;
+      settings.Retrieve();
+      SystemManager.TryCatch(settings.Store);
+      settings.SetFirstAndUpgradeFlagsOff();
+      Program.UpdateLocalization();
+    }
+    catch ( Exception ex )
+    {
+      DisplayManager.ShowError(ex.Message);
+      settings.Reload();
+    }
+    return true;
   }
 
   /// <summary>
@@ -191,39 +235,15 @@ static class SettingsHelper
   }
 
   /// <summary>
-  /// Returns a string representing the GPS location.
+  /// Sets the upgrade flags off.
   /// </summary>
-  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
-  static internal string GetGPSText(this Settings settings)
+  static internal void SetUpgradeFlagsOff(this Settings settings)
   {
-    var builder = new StringBuilder(128);
-    builder.Append("• ").AppendLine(settings.GPSCountry);
-    builder.Append("• ").Append(settings.GPSCity);
-    foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
-      if ( item.Id == settings.TimeZone )
-      {
-        builder.AppendLine();
-        builder.Append(item.DisplayName);
-        break;
-      }
-    return builder.ToString();
-  }
-
-  /// <summary>
-  /// Sets reminder boxes location.
-  /// </summary>
-  static internal void InitializeReminderBoxDesktopLocation(this Settings settings)
-  {
-    if ( settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
-    {
-      var anchor = DisplayManager.GetTaskbarAnchorStyle();
-      settings.ReminderBoxDesktopLocation = anchor switch
-      {
-        AnchorStyles.Top => ControlLocation.TopRight,
-        AnchorStyles.Left => ControlLocation.BottomLeft,
-        _ => ControlLocation.BottomRight,
-      };
-    }
+    settings.UpgradeResetRequiredV3_0 = false;
+    settings.UpgradeResetRequiredV3_6 = false;
+    settings.UpgradeResetRequiredV4_1 = false;
+    settings.UpgradeResetRequiredV5_10 = false;
+    settings.UpgradeRequired = false;
   }
 
   /// <summary>
@@ -274,6 +294,42 @@ static class SettingsHelper
     string result = Path.Combine(settings.GetExportDirectory(), "Data");
     if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
     return result;
+  }
+
+  /// <summary>
+  /// Returns a string representing the GPS location.
+  /// </summary>
+  [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  static internal string GetGPSText(this Settings settings)
+  {
+    var builder = new StringBuilder(128);
+    builder.Append("• ").AppendLine(settings.GPSCountry);
+    builder.Append("• ").Append(settings.GPSCity);
+    foreach ( var item in TimeZoneInfo.GetSystemTimeZones() )
+      if ( item.Id == settings.TimeZone )
+      {
+        builder.AppendLine();
+        builder.Append(item.DisplayName);
+        break;
+      }
+    return builder.ToString();
+  }
+
+  /// <summary>
+  /// Sets reminder boxes location.
+  /// </summary>
+  static internal void InitializeReminderBoxDesktopLocation(this Settings settings)
+  {
+    if ( settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
+    {
+      var anchor = DisplayManager.GetTaskbarAnchorStyle();
+      settings.ReminderBoxDesktopLocation = anchor switch
+      {
+        AnchorStyles.Top => ControlLocation.TopRight,
+        AnchorStyles.Left => ControlLocation.BottomLeft,
+        _ => ControlLocation.BottomRight,
+      };
+    }
   }
 
 }
