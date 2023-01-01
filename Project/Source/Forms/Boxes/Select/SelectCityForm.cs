@@ -282,6 +282,7 @@ partial class SelectCityForm : Form
   }
 
   // TODO refactor from here and preferenceform (create local dialog)
+  [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
   private void DoImportSettings()
   {
     OpenSettingsDialog.FileName = string.Empty;
