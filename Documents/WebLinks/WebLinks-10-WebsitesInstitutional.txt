@@ -15,13 +15,10 @@ FOLDER-SEPARATOR
 Lang/EN = Institutional websites
 Lang/FR = Sites Web institutionnels
 
-Name = (EN) World Jewish Congress
-URL = https://www.worldjewishcongress.org
-
 Name = (FR/EN) Conference of European Rabbis
 URL = https://rabbiscer.org
 
-Name = (FR) Conseil représentatif des institutions juives de France
+Name = (FR) Conseil Représentatif des Institutions juives de France
 URL = http://www.crif.org
 
 Name = (FR) Consistoire de Paris
@@ -41,6 +38,15 @@ URL = http://hassidout.org
 Name = (FR) Loubavitch France-Europe
 URL = https://www.loubavitchfrance.fr
 
+Name = (FR) Dossier sur Le Rabbi de Loubavitch
+URL = https://fr.chabad.org/library/article_cdo/aid/527991/jewish/Le-Rabbi.htm
+
+Name = (EN) Jewish Educational Media Loubavitch
+URL = https://jemcentral.org
+
+Name = (EN) File on The Rebbe of Lubavitch
+URL = https://www.chabad.org/therebbe/default_cdo/jewish/The-Rebbe.htm
+
 -
 
 Name = (EN) Agudath Israel of America
@@ -49,5 +55,11 @@ URL = https://agudah.org
 Name = (EN) The Rabbinical Assembly
 URL = https://www.rabbinicalassembly.org
 
+Name = (EN) Reform Judaism
+URL = https://reformjudaism.org
+
 Name = (EN) Union for Reform Judaism     
 URL = https://urj.org
+
+Name = (EN) World Jewish Congress
+URL = https://www.worldjewishcongress.org

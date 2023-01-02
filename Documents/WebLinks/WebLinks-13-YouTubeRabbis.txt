@@ -48,11 +48,17 @@ URL = https://www.youtube.com/channel/UC33ZSc-6eR7TlWw66Ll-TJA
 Name = (FR) Rav Avraham Ifrah
 URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
 
+Name = (FR) Rav Asher Marciano
+URL = https://www.youtube.com/@lebethhamidrashxveme-bethh4213
+
 Name = (FR) Rav Yves Marciano
 URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
 
 Name = (FR) Rav Nathan Mrejen
 URL = https://www.youtube.com/channel/UCx3wvPI8c-AHsRMjorGIWSw
+
+Name = (FR) Rav David Touitou
+URL = https://www.youtube.com/@RavTOUITOU
 
 -
 
