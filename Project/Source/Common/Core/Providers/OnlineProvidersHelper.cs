@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2022 Olivier Rogier.
+/// Copyright 2004-2023 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -188,12 +188,11 @@ static public class OnlineProvidersHelper
     int count = item.DropDownItems.ToEnumerable(item => item is not ToolStripSeparator).Count();
     string msg = SysTranslations.AskToOpenAllLinks.GetLang(item.Text, count);
     if ( DisplayManager.QueryYesNo(msg) )
-      foreach ( ToolStripItem subitem in item.DropDownItems )
-        if ( subitem.Tag is not null )
-        {
-          subitem.PerformClick();
-          Thread.Sleep(1500);
-        }
+      foreach ( var subitem in item.DropDownItems.ToEnumerable().Where(subitem => subitem.Tag is not null) )
+      {
+        subitem.PerformClick();
+        Thread.Sleep(1500);
+      }
   }
 
 }

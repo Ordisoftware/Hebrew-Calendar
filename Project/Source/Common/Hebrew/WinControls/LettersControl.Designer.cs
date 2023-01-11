@@ -45,9 +45,7 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.PanelGematria = new System.Windows.Forms.Panel();
       this.LabelGematriaSimple = new System.Windows.Forms.Label();
-      this.EditGematriaFull = new Ordisoftware.Core.TextBoxEx();
       this.LabelGematriaFull = new System.Windows.Forms.Label();
-      this.EditGematriaSimple = new Ordisoftware.Core.TextBoxEx();
       this.LabelClipboardContentType = new System.Windows.Forms.Label();
       this.ActionPaste = new System.Windows.Forms.Button();
       this.ActionCopyToHebrew = new System.Windows.Forms.Button();
@@ -58,13 +56,15 @@
       this.ActionSearchOnline = new System.Windows.Forms.Button();
       this.ContextMenuSearchOnline = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ToolTipClipboard = new System.Windows.Forms.ToolTip(this.components);
-      this.panel2 = new System.Windows.Forms.Panel();
+      this.PanelTextBox = new System.Windows.Forms.Panel();
       this.TextBox = new Ordisoftware.Core.TextBoxEx();
+      this.EditGematriaFull = new Ordisoftware.Core.TextBoxEx();
+      this.EditGematriaSimple = new Ordisoftware.Core.TextBoxEx();
       this.ContextMenuLetter.SuspendLayout();
       this.PanelSeparator.SuspendLayout();
       this.PanelBottom.SuspendLayout();
       this.PanelGematria.SuspendLayout();
-      this.panel2.SuspendLayout();
+      this.PanelTextBox.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelLetters
@@ -183,32 +183,10 @@
       resources.ApplyResources(this.LabelGematriaSimple, "LabelGematriaSimple");
       this.LabelGematriaSimple.Name = "LabelGematriaSimple";
       // 
-      // EditGematriaFull
-      // 
-      resources.ApplyResources(this.EditGematriaFull, "EditGematriaFull");
-      this.EditGematriaFull.BackColor = System.Drawing.Color.LavenderBlush;
-      this.EditGematriaFull.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditGematriaFull.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditGematriaFull.Name = "EditGematriaFull";
-      this.EditGematriaFull.ReadOnly = true;
-      this.EditGematriaFull.SpellCheckAllowed = false;
-      this.EditGematriaFull.TextChanged += new System.EventHandler(this.EditGematria_TextChanged);
-      // 
       // LabelGematriaFull
       // 
       resources.ApplyResources(this.LabelGematriaFull, "LabelGematriaFull");
       this.LabelGematriaFull.Name = "LabelGematriaFull";
-      // 
-      // EditGematriaSimple
-      // 
-      resources.ApplyResources(this.EditGematriaSimple, "EditGematriaSimple");
-      this.EditGematriaSimple.BackColor = System.Drawing.Color.LavenderBlush;
-      this.EditGematriaSimple.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.EditGematriaSimple.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
-      this.EditGematriaSimple.Name = "EditGematriaSimple";
-      this.EditGematriaSimple.ReadOnly = true;
-      this.EditGematriaSimple.SpellCheckAllowed = false;
-      this.EditGematriaSimple.TextChanged += new System.EventHandler(this.EditGematria_TextChanged);
       // 
       // LabelClipboardContentType
       // 
@@ -273,11 +251,11 @@
       this.ContextMenuSearchOnline.Name = "ContextMenuSearchOnline";
       resources.ApplyResources(this.ContextMenuSearchOnline, "ContextMenuSearchOnline");
       // 
-      // panel2
+      // PanelTextBox
       // 
-      this.panel2.Controls.Add(this.TextBox);
-      resources.ApplyResources(this.panel2, "panel2");
-      this.panel2.Name = "panel2";
+      this.PanelTextBox.Controls.Add(this.TextBox);
+      resources.ApplyResources(this.PanelTextBox, "PanelTextBox");
+      this.PanelTextBox.Name = "PanelTextBox";
       // 
       // TextBox
       // 
@@ -289,6 +267,28 @@
       this.TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_KeyPress);
       this.TextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_KeyUp);
       // 
+      // EditGematriaFull
+      // 
+      resources.ApplyResources(this.EditGematriaFull, "EditGematriaFull");
+      this.EditGematriaFull.BackColor = System.Drawing.Color.LavenderBlush;
+      this.EditGematriaFull.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditGematriaFull.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditGematriaFull.Name = "EditGematriaFull";
+      this.EditGematriaFull.ReadOnly = true;
+      this.EditGematriaFull.SpellCheckAllowed = false;
+      this.EditGematriaFull.TextChanged += new System.EventHandler(this.EditGematria_TextChanged);
+      // 
+      // EditGematriaSimple
+      // 
+      resources.ApplyResources(this.EditGematriaSimple, "EditGematriaSimple");
+      this.EditGematriaSimple.BackColor = System.Drawing.Color.LavenderBlush;
+      this.EditGematriaSimple.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditGematriaSimple.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditGematriaSimple.Name = "EditGematriaSimple";
+      this.EditGematriaSimple.ReadOnly = true;
+      this.EditGematriaSimple.SpellCheckAllowed = false;
+      this.EditGematriaSimple.TextChanged += new System.EventHandler(this.EditGematria_TextChanged);
+      // 
       // LettersControl
       // 
       resources.ApplyResources(this, "$this");
@@ -296,7 +296,7 @@
       this.BackColor = System.Drawing.Color.Transparent;
       this.Controls.Add(this.PanelLetters);
       this.Controls.Add(this.PanelSeparator);
-      this.Controls.Add(this.panel2);
+      this.Controls.Add(this.PanelTextBox);
       this.Controls.Add(this.PanelBottom);
       this.Name = "LettersControl";
       this.Load += new System.EventHandler(this.LettersControl_Load);
@@ -308,8 +308,8 @@
       this.PanelBottom.ResumeLayout(false);
       this.PanelGematria.ResumeLayout(false);
       this.PanelGematria.PerformLayout();
-      this.panel2.ResumeLayout(false);
-      this.panel2.PerformLayout();
+      this.PanelTextBox.ResumeLayout(false);
+      this.PanelTextBox.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -334,7 +334,7 @@
     internal ContextMenuStrip ContextMenuSearchOnline;
     internal Label LabelGematriaSimple;
     internal Label LabelGematriaFull;
-    private Panel panel2;
+    private Panel PanelTextBox;
     public Panel PanelSeparatorActionClear;
     public Panel PanelSeparatorActionSearch;
     public Button ActionPaste;
