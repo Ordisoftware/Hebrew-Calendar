@@ -11,11 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
-
-using System.IO.Pipes;
-using System.Runtime.Serialization.Formatters.Binary;
 
 /// <summary>
 /// Provides Program class.
@@ -69,6 +66,7 @@ static partial class Program
       Globals.ChronoStartingApp.Stop();
       ProcessCommandLineOptions();
       Globals.ChronoStartingApp.Start();
+      //
       LoadingForm.Instance.Hidden = Settings.LoadingFormHidden;
       AboutBox.LicenseAsRTF = Properties.Resources.MPL_2_0;
       AboutBox.DescriptionText = AppTranslations.ApplicationDescription;
@@ -147,176 +145,14 @@ static partial class Program
         if ( File.Exists(pathWordsDefault) )
           Settings.HebrewWordsExe = pathWordsDefault;
       // Save settings
-      CheckPreviewNotice();
+      bool previewModeNotified = Settings.PreviewModeNotified;
+      SystemCommandLine.CheckPreviewNotice(ref previewModeNotified);
+      Settings.PreviewModeNotified = previewModeNotified;
       SystemManager.TryCatch(Settings.Save);
     }
     catch ( Exception ex )
     {
       ex.Manage();
-    }
-  }
-
-  /// <summary>
-  /// Checks if the app is in preview mode or not and display a notice if needed.
-  /// </summary>
-  static internal void CheckPreviewNotice()
-  {
-    if ( CommonMenusControl.PreviewFunctions is null ) return;
-    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled || Settings.PreviewModeNotified ) return;
-    string msg = SysTranslations.AskForPreviewMode.GetLang(CommonMenusControl.PreviewFunctions[Languages.Current]);
-    if ( !DisplayManager.QueryYesNo(msg) )
-    {
-      SystemManager.CommandLineOptions.WithPreview = false;
-      SystemManager.CommandLineOptions.NoPreview = true;
-    }
-    Settings.PreviewModeNotified = true;
-  }
-
-  /// <summary>
-  /// IPC requests.
-  /// </summary>
-  [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
-  [SuppressMessage("Vulnerability", "SEC0029:Insecure Deserialization", Justification = "N/A")]
-  static void IPCRequests(IAsyncResult ar)
-  {
-    var server = ar.AsyncState as NamedPipeServerStream;
-    try
-    {
-      server.EndWaitForConnection(ar);
-      using var reader = new BinaryReader(server);
-      string command = reader.ReadString();
-      if ( command is null ) return;
-      if ( !Globals.IsReady ) return;
-      var lang = Settings.LanguageSelected;
-      SystemManager.CheckCommandLineArguments<ApplicationCommandLine>(command.SplitKeepEmptyLines(" "), ref lang);
-      var form = MainForm.Instance;
-      var cmd = ApplicationCommandLine.Instance;
-      if ( cmd is null ) return;
-      Action action = null;
-      if ( cmd.ShowMainForm ) action = () => form.MenuShowHide_Click(null, null);
-      if ( cmd.HideMainForm ) action = form.ForceHideToTray;
-      if ( cmd.Generate ) action = form.ActionGenerate.PerformClick;
-      if ( cmd.ResetReminder ) action = form.ActionResetReminder.PerformClick;
-      if ( cmd.OpenNavigation ) action = form.ActionNavigate.PerformClick;
-      if ( cmd.OpenDiffDates ) action = form.ActionCalculateDateDiff.PerformClick;
-      if ( cmd.OpenCelebrationVersesBoard ) action = form.ActionShowCelebrationVersesBoard.PerformClick;
-      if ( cmd.OpenCelebrationsBoard ) action = form.ActionShowCelebrationsBoard.PerformClick;
-      if ( cmd.OpenNewMoonsBoard ) action = form.ActionShowNewMoonsBoard.PerformClick;
-      if ( cmd.OpenParashotBoard ) action = form.ActionShowParashotBoard.PerformClick;
-      if ( cmd.OpenWeeklyParashahBox ) action = form.ActionWeeklyParashahDescription.PerformClick;
-      // TODO when ready : update
-      if ( cmd.OpenLunarMonthsBoard ) action = SystemManager.CommandLineOptions.IsPreviewEnabled
-                                               ? form.ActionShowLunarMonths.PerformClick
-                                               : null;
-      if ( action is not null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
-    }
-    finally
-    {
-      server.Close();
-      SystemManager.CreateIPCServer(IPCRequests);
-    }
-  }
-
-  /// <summary>
-  /// Processes command line options.
-  /// </summary>
-  static private void ProcessCommandLineOptions()
-  {
-    try
-    {
-      if ( SystemManager.CommandLineOptions is null ) return;
-      if ( SystemManager.CommandLineOptions.ResetSettings )
-      {
-        SystemManager.CleanAllLocalAppSettingsFolders();
-        CheckSettingsReset(true);
-      }
-      else
-      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions?.HideMainForm == true )
-        Globals.ForceStartupHide = true;
-    }
-    catch ( Exception ex )
-    {
-      ex.Manage();
-    }
-  }
-
-  /// <summary>
-  /// Updates localization strings to the whole application.
-  /// </summary>
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
-  static public void UpdateLocalization()
-  {
-    Globals.ChronoTranslate.Restart();
-    Task task = null;
-    try
-    {
-      static void update(Form form)
-      {
-        new Infralution.Localization.CultureManager().ManagedControl = form;
-        var resources = new ComponentResourceManager(form.GetType());
-        resources.ApplyResources(form.Controls);
-      }
-      string lang = "en-US";
-      if ( Settings.LanguageSelected == Language.FR ) lang = "fr-FR";
-      var culture = new CultureInfo(lang);
-      Thread.CurrentThread.CurrentCulture = culture;
-      Thread.CurrentThread.CurrentUICulture = culture;
-      task = new Task(HebrewGlobals.LoadProviders);
-      task.Start();
-      if ( Globals.IsReady )
-      {
-        MessageBoxEx.CloseAll();
-        AboutBox.Instance.Hide();
-        MainForm.Instance.ClearLists();
-      }
-      else
-        update(MainForm.Instance);
-      new Infralution.Localization.CultureManager().ManagedControl = StatisticsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = TranscriptionGuideForm;
-      new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
-      new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = CelebrationVersesBoardForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = NewMoonsBoardForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
-      Infralution.Localization.CultureManager.ApplicationUICulture = culture;
-      var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
-      foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
-      {
-        update(form);
-        if ( form is ShowTextForm formShowText )
-          formShowText.Relocalize();
-      }
-      // Various updates
-      if ( Globals.IsReady )
-      {
-        LoadingForm.Instance.Relocalize();
-        TextBoxEx.Relocalize();
-        AboutBox.Instance.AboutBox_Shown(null, null);
-        TranscriptionGuideForm.HTMLBrowserForm_Shown(null, null);
-        GrammarGuideForm.HTMLBrowserForm_Shown(null, null);
-        LunarMonthsForm.Instance.Relocalize();
-        NavigationForm.Instance.Relocalize();
-        ParashotFactory.Instance.Reset();
-        DatesDiffCalculatorForm.Instance.Relocalize();
-        SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage,
-                                     () => MainForm.Instance.LoadMenuBookmarks(MainForm.Instance));
-      }
-      MainForm.Instance.MonthlyCalendar._btnToday.ButtonText = AppTranslations.Today.GetLang();
-      task?.Wait();
-      MainForm.Instance.CreateSystemInformationMenu();
-    }
-    catch ( Exception ex )
-    {
-      ex.Manage();
-    }
-    finally
-    {
-      Globals.ChronoTranslate.Stop();
-      Settings.BenchmarkTranslate = Globals.ChronoTranslate.ElapsedMilliseconds;
     }
   }
 

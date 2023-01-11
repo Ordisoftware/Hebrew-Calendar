@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Core;
 
 using CommandLine;
@@ -41,5 +41,21 @@ public class SystemCommandLine
 
   [Option("lang", Required = false, HelpText = "Change the interface language.")]
   public string Language { get; set; }
+
+  /// <summary>
+  /// Checks if the app is in preview mode or not and display a notice if needed.
+  /// </summary>
+  static public void CheckPreviewNotice(ref bool previewModeNotified)
+  {
+    if ( CommonMenusControl.PreviewFunctions is null ) return;
+    if ( !SystemManager.CommandLineOptions.IsPreviewEnabled || previewModeNotified ) return;
+    string msg = SysTranslations.AskForPreviewMode.GetLang(CommonMenusControl.PreviewFunctions[Languages.Current]);
+    if ( !DisplayManager.QueryYesNo(msg) )
+    {
+      SystemManager.CommandLineOptions.WithPreview = false;
+      SystemManager.CommandLineOptions.NoPreview = true;
+    }
+    previewModeNotified = true;
+  }
 
 }
