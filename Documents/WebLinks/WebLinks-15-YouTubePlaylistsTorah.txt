@@ -67,6 +67,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BGZKgCVDgtZqHZCpU8ieK2
 Name = (FR) Rav Yonathan Benchetrit
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dh6eRE1EGpvsJM-Urlmdre
 
+Name = (FR) Rav Emmanuel Bensimon
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DXYZSVlH_4FQncGLE8uLEK
+
 Name = (FR) Rav Menahem Berros
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AVp4Ngd3XuciymreoELu-9
 
