@@ -384,6 +384,7 @@
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.LEvangile.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.MechonMamre.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.Sefaria.cs" />
+    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.MechaTranslation.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.StudyBible.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.TorahBox.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot..cs" />

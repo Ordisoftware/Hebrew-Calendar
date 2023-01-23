@@ -16,6 +16,9 @@ URL = https://studybible.info/IHOT/%BOOKSB% %CHAPTERNUM%:%VERSENUM%
 Name = (EN/IW) BibleHub.com (Literal with contextual concordances, and transcription)
 URL = https://biblehub.com/interlinear/%BOOKBIBLEHUB%/%CHAPTERNUM%-%VERSENUM%.htm
 
+Name = (EN/IW) Mechanical-Translation.org (Literal with contextual definitions)
+URL = https://www.mechanical-translation.org/mtt/%BOOKMT%%CHAPTERNUM%.html
+
 -
 
 ; Need to take each chapter number from the web site

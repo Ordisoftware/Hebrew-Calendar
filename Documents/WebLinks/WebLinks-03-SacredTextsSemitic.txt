@@ -78,6 +78,9 @@ URL = https://studybible.info/IHOT/
 Name = (EN) Interlinear Euangélion @ studybible.info
 URL = https://studybible.info/IGNT
 
+Name = (EN) Literal Torah @ mechanical-translation.org
+URL = https://www.mechanical-translation.org
+
 -
 
 Name = (EN) Interlinear Bible @ biblehub.com

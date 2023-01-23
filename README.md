@@ -386,6 +386,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Check and fix weekly parashah generation with soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
+#### 2023.01.24 - Version 10.3
+
+- Add links for ancient-hebrew.org (website and search words).
+
 #### 2023.01.08 - Version 10.2
 
 - Add import settings button in city selection box on first start.
