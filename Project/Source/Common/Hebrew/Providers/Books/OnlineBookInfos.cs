@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-09 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Hebrew;
 
 static public partial class OnlineBookInfos
@@ -35,6 +35,7 @@ static public partial class OnlineBookInfos
       { "%BOOKDJEP%", Djep[(TanakBook)book] },
       { "%BOOKLE%", LEvangile[(TanakBook)book] },
       { "%BOOKMM%", MechonMamre[(TanakBook)book] },
+      { "%BOOKMT%", MechanicalTranslation[(TanakBook)book] },
       { "%BOOKNUM#2%", book.ToString("00") },
       { "%BOOKNUM%", book.ToString() },
       { "%BOOKSB%", StudyBible[(TanakBook)book] },
@@ -46,7 +47,14 @@ static public partial class OnlineBookInfos
       { "%VERSENUM%", verse.ToString() }
     };
     foreach ( var item in dispatch.Where(item => pattern.Contains(item.Key)) )
-      pattern = pattern.Replace(item.Key, item.Value);
+      if ( item.Value.Length == 0 )
+      {
+        string msg = HebrewTranslations.BookNotAvailable.GetLang(BookInfos.Common.GetLang((TanakBook)book));
+        DisplayManager.ShowWarning(msg);
+        throw new AbortException();
+      }
+      else
+        pattern = pattern.Replace(item.Key, item.Value);
     if ( pattern.IndexOf('%') >= 0 )
     {
       var uri = new Uri(pattern);

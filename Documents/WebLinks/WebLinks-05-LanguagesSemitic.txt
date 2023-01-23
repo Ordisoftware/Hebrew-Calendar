@@ -49,7 +49,7 @@ URL = https://en.wikipedia.org/wiki/Modern_Hebrew_phonology
 Name = (FR) Prononciation de l'hébreu @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Prononciation_de_l%27h%C3%A9breu
 
-Name = (EN) Hebrew Alphabet@ en.wikipedia.org
+Name = (EN) Hebrew Alphabet @ en.wikipedia.org
 URL = https://en.wikipedia.org/wiki/Hebrew_alphabet
 
 Name = (FR) Alphabet hébreu @ fr.wikipedia.org
@@ -68,6 +68,9 @@ URL = https://www.pealim.com
 
 Name = (EN) Klein Dictionary @ sefaria.org
 URL = https://www.sefaria.org/Klein_Dictionary
+
+Name = (EN) Ancient Hebrew Lexicon @ ancient-hebrew.org
+URL = https://www.ancient-hebrew.org/ahlb/aleph.html
 
 -
 

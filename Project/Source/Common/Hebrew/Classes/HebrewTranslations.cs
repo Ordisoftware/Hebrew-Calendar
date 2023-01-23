@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-12 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -83,6 +83,12 @@ static public partial class HebrewTranslations
     [Language.FR] = "Les données seront restaurées à leurs valeurs par défaut, sauf les memos. Pour effacer les mémos, supprimez toutes les données d'abord." + Globals.NL2 +
                     "Toutes les modifications seront perdues et l'action ne pourra pas être annulée." + Globals.NL2 +
                     SysTranslations.AskToContinue[Language.FR]
+  };
+
+  static public readonly TranslationsDictionary BookNotAvailable = new()
+  {
+    [Language.EN] = "Book {0} is not yet available.",
+    [Language.FR] = "Le livre {0} n'est pas encore disponible."
   };
 
   static public readonly TranslationsDictionary ParashahNotFound = new()
