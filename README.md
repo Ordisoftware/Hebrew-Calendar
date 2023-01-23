@@ -388,7 +388,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### 2023.01.24 - Version 10.3
 
-- Add links for ancient-hebrew.org (website and search words).
+- Add links for ancient-hebrew.org and mechanical-translation.org (website, search words and read verses online).
 
 #### 2023.01.08 - Version 10.2
 
