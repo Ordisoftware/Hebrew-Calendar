@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-12 </edited>
+/// <edited> 2023-02 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -592,6 +592,7 @@ public partial class LettersControl : UserControl
     ActionClear.Enabled = enabled;
     ActionDelFirst.Enabled = enabled;
     ActionDelLast.Enabled = enabled;
+    ActionReverseWord.Enabled = TextBox.Text.Length >= 2;
     ActionCopyToHebrew.Enabled = enabled;
     ActionCopyToUnicode.Enabled = enabled;
     ActionSearchOnline.Enabled = enabled;
@@ -613,6 +614,11 @@ public partial class LettersControl : UserControl
     }
     else
       LabelClipboardContentType.Text = SysTranslations.UnknownSlot.GetLang().TrimFirstLast().Titleize();
+  }
+
+  private void ActionRevertWord_Click(object sender, EventArgs e)
+  {
+    TextBox.Text = new string(TextBox.Text.Reverse().ToArray());
   }
 
 }
