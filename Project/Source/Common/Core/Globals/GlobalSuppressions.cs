@@ -92,4 +92,7 @@
 [assembly: SuppressMessage("Style", "GCop437:Complete the task associated to this \"TODO\" comment.", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Usage", "GCop511:Either remove the parameter documentation node, or describe it properly.", Justification = "Opinion", Scope = "module")]
 
+[assembly: SuppressMessage("Minor Code Smell", "S4663:Comments should not be empty", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Correctness", "SS045:A static field relies on the value of another static field which is defined in the same type. Static fields are initialized in order of appearance.", Justification = "Analysis error when property", Scope = "module")]
+
 //[assembly: SuppressMessage("Critical Code Smell", "S2479:Whitespace and control characters in string literals should be explicit", Justification = "Analysis error (C# 11 Raw String Literal)", Scope = "module")]

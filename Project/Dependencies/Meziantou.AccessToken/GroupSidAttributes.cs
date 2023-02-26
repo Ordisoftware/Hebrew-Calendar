@@ -15,7 +15,9 @@ public enum GroupSidAttributes : uint
   SE_GROUP_INTEGRITY = 0x00000020,
   SE_GROUP_INTEGRITY_ENABLED = 0x00000040,
   SE_GROUP_RESOURCE = 0x20000000,
+  [SuppressMessage("Correctness", "SS007:[Flags] enum members need to be either powers of two, or bitwise OR expressions.", Justification = "N/A")]
   SE_GROUP_LOGON_ID = 0xC0000000,
   [SuppressMessage("Roslynator", "RCS1191:Declare enum value as combination of names.", Justification = "<En attente>")]
+  [SuppressMessage("Correctness", "SS007:[Flags] enum members need to be either powers of two, or bitwise OR expressions.", Justification = "N/A")]
   SE_GROUP_VALID_ATTRIBUTES = 0xE000007F
 }
