@@ -386,7 +386,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Check and fix weekly parashah generation with soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
-#### 2023.03.05 - Version 10.3
+#### 2023.03.03 - Version 10.3
 
 - Add links for ancient-hebrew.org and mechanical-translation.org (website, search words and read verses online).
 - Add links to study parashot and celebrations for yechiva.com and torathaim.net (french).
