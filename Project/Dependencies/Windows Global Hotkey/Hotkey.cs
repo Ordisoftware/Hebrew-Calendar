@@ -78,7 +78,6 @@ namespace Base.Hotkeys
       if ( Shift ) toString += "Shift + ";
       if ( Alt ) toString += "Alt + ";
       if ( Win ) toString += "Win + ";
-      //
       if ( IsOnlyModifiers )
         toString += "..";
       else
@@ -104,7 +103,6 @@ namespace Base.Hotkeys
         toString += KeyCode - Keys.NumPad0;
       else
         toString += KeyCode;
-      //
       return toString;
     }
 

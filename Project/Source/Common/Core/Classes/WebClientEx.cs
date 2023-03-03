@@ -26,8 +26,7 @@ public class WebClientEx : WebClient
 
   public WebClientEx(int timeOutSeconds = 0)
   {
-    if ( timeOutSeconds <= 0 ) timeOutSeconds = DefaultTimeOutSeconds;
-    TimeOutSeconds = timeOutSeconds;
+    TimeOutSeconds = timeOutSeconds <= 0 ? DefaultTimeOutSeconds : timeOutSeconds;
     UseDefaultCredentials = true;
   }
 

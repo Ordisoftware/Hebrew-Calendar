@@ -52,13 +52,13 @@ static public partial class Globals
     get
     {
       using var token = AccessToken.OpenCurrentProcessToken(TokenAccessLevels.Query);
-      if ( !IsAdministrator(token) && token.GetElevationType() == TokenElevationType.Limited )
+      if ( !isAdministrator(token) && token.GetElevationType() == TokenElevationType.Limited )
         using ( var linkedToken = token.GetLinkedToken() )
-          return IsAdministrator(linkedToken);
+          return isAdministrator(linkedToken);
       else
         return false;
       //
-      static bool IsAdministrator(AccessToken accessToken)
+      static bool isAdministrator(AccessToken accessToken)
       {
         var adminSid = SecurityIdentifier.FromWellKnown(WellKnownSidType.WinBuiltinAdministratorsSid);
         foreach ( var group in accessToken.EnumerateGroups() )

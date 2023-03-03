@@ -168,8 +168,8 @@ static public partial class SystemManager
   {
     try
     {
-      using ( FileStream stream = new FileInfo(filePath).Open(FileMode.Open, FileAccess.Read, FileShare.None) )
-        stream.Close();
+      using FileStream stream = new FileInfo(filePath).Open(FileMode.Open, FileAccess.Read, FileShare.None);
+      stream.Close();
       return false;
     }
     catch ( IOException )

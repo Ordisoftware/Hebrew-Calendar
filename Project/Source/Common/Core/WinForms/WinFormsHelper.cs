@@ -306,7 +306,7 @@ static class FormsHelper
     if ( form.InvokeRequired )
     {
       var method = new PopupMethod(Popup);
-      form.Invoke(method, new object[] { form, sender, dialog });
+      form.Invoke(method, form, sender, dialog);
       return;
     }
     if ( form.Visible )
