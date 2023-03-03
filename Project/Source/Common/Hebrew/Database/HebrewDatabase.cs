@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 public partial class HebrewDatabase : SQLiteDatabase
