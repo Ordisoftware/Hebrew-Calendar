@@ -383,7 +383,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Add auto backup bookmarks.
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
->- Check and fix weekly parashah generation with soukot.
+>- Check and fix weekly parashah generation with Soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
 #### 2023.03.03 - Version 10.3
