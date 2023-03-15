@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew;
 public partial class HebrewDatabase : SQLiteDatabase
 {
 
-  static public HebrewDatabase Instance { get; protected set; }
+  static public HebrewDatabase Instance { get; private set; }
 
   static public bool HebrewNamesInUnicode { get; set; }
   static public bool ArabicNumeralReferences { get; set; }

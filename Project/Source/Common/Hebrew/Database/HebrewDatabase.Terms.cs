@@ -17,13 +17,12 @@ namespace Ordisoftware.Hebrew;
 using Equin.ApplicationFramework;
 
 [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
-public partial class HebrewDatabase : SQLiteDatabase
+public sealed partial class HebrewDatabase : SQLiteDatabase
 {
 
   public List<TermHebrew> TermsHebrew { get; private set; }
   public List<TermLettriq> TermLettriqs { get; private set; }
   public List<TermAnalysis> TermAnalyzes { get; private set; }
-
 
   public BindingListView<TermHebrew> TermsHebrewAsBindingList { get; private set; }
   public BindingListView<TermLettriq> TermLettriqsAsBindingList { get; private set; }

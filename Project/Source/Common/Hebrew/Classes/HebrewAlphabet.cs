@@ -242,6 +242,7 @@ static public class HebrewAlphabet
   /// <summary>
   /// Converts Unicode Hebrew chars to Hebrew font chars.
   /// </summary>
+  [SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
   static public string ToHebrewFont(string unicode)
   {
     if ( unicode.IsNullOrEmpty() ) return string.Empty;
@@ -254,6 +255,7 @@ static public class HebrewAlphabet
   /// <summary>
   /// Converts Hebrew font chars to Unicode Hebrew chars.
   /// </summary>
+  [SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
   static public string ToUnicodeChars(string str)
   {
     if ( str.IsNullOrEmpty() ) return string.Empty;

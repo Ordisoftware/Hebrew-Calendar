@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
-public partial class DataFileEditorForm : Form
+public sealed partial class DataFileEditorForm : Form
 {
 
   [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]
