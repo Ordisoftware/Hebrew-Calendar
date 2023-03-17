@@ -14,7 +14,7 @@
 /// <edited> 2022-12 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class ApplicationDatabase
+sealed partial class ApplicationDatabase
 {
 
   private const int EquinoxeDayDelta = 30;

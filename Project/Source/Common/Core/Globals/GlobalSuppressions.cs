@@ -23,6 +23,7 @@
 [assembly: SuppressMessage("Minor Code Smell", "S2486:Generic exceptions should not be ignored", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S3963:\"static\" fields should be initialized inline", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S2386:Mutable fields should not be \"public static\"", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Minor Code Smell", "S4663:Comments should not be empty", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Minor Bug", "S3887:Mutable, non-private fields should not be \"readonly\"", Justification = "Opinion", Scope = "module")]
 
 [assembly: SuppressMessage("Style", "IDE0008:Utiliser un type explicite", Justification = "Opinion", Scope = "module")]
@@ -89,6 +90,3 @@
 [assembly: SuppressMessage("Style", "GCop436:As the implementation is relatively long, change this into a standard method implementation.", Justification = "Opinion or N/A (need a parameter for the analyzer)", Scope = "module")]
 [assembly: SuppressMessage("Style", "GCop437:Complete the task associated to this \"TODO\" comment.", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Usage", "GCop511:Either remove the parameter documentation node, or describe it properly.", Justification = "Opinion", Scope = "module")]
-
-[assembly: SuppressMessage("Minor Code Smell", "S4663:Comments should not be empty", Justification = "Opinion", Scope = "module")]
-[assembly: SuppressMessage("Correctness", "SS045:A static field relies on the value of another static field which is defined in the same type. Static fields are initialized in order of appearance.", Justification = "Analysis error when property", Scope = "module")]

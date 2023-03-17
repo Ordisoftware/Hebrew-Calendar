@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SelectSoundForm : Form
+sealed partial class SelectSoundForm : Form
 {
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
   static public int DefaultReminderSoundMaxDuration { get; set; } = 3000;

@@ -148,7 +148,7 @@ public partial class MainForm
             {
               TitleParashah = string.Empty;
               ActionWeeklyParashah.Enabled = false;
-              ActionWeeklyParashah.Text = new System.Resources.ResourceManager(GetType()).GetString("ActionWeeklyParashah.Text");
+              ActionWeeklyParashah.Text = new System.Resources.ResourceManager(typeof(MainForm)).GetString("ActionWeeklyParashah.Text");
               if ( MenuTools.DropDownItems.Count > 0 )
                 MenuTools.DropDownItems[0].Enabled = false;
             }

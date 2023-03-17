@@ -14,7 +14,7 @@
 /// <edited> 2022-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class DatesDiffCalculatorForm : Form
+sealed partial class DatesDiffCalculatorForm : Form
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;

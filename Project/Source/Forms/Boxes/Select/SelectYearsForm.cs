@@ -14,7 +14,7 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SelectYearsForm : Form
+sealed partial class SelectYearsForm : Form
 {
 
   static public readonly Properties.Settings Settings = Properties.Settings.Default;

@@ -16,7 +16,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Runtime.InteropServices;
 
-partial class LockSessionForm : Form
+sealed partial class LockSessionForm : Form
 {
 
   static public LockSessionForm Instance { get; private set; }

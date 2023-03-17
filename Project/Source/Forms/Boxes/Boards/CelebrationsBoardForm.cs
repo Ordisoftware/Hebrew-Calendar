@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class CelebrationsBoardForm : Form
+sealed partial class CelebrationsBoardForm : Form
 {
 
   private const string TableName = "Celebrations";

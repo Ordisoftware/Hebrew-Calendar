@@ -14,7 +14,7 @@
 /// <edited> 2020-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SelectDayForm : Form
+sealed partial class SelectDayForm : Form
 {
 
   static public bool Run(string title, ref DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealtime = false)
