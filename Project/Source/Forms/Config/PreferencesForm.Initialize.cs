@@ -22,7 +22,7 @@ using MoreLinq;
 /// </summary>
 /// <seealso cref="T:System.Windows.Forms.Form"/>
 [SuppressMessage("CodeQuality", "IDE0052:Supprimer les membres privés non lus", Justification = "N/A")]
-partial class PreferencesForm
+sealed partial class PreferencesForm
 {
 
   private sealed class LayoutSectionItem

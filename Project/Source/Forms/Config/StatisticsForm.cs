@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class StatisticsForm : Form
+sealed partial class StatisticsForm : Form
 {
 
   static public StatisticsForm Instance { get; private set; }

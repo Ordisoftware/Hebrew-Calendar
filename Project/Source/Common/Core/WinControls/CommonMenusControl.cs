@@ -18,7 +18,7 @@ using Markdig;
 
 using TranslationPair = KeyValuePair<string, TranslationsDictionary>;
 
-public partial class CommonMenusControl : UserControl
+public sealed partial class CommonMenusControl : UserControl
 {
 
   private const int WidthButtonSmall = 35;
@@ -180,6 +180,9 @@ public partial class CommonMenusControl : UserControl
           break;
         case Keys.End:
           form.ActionIgnore.PerformClick();
+          break;
+        default:
+          // Nothing to do
           break;
       }
     }

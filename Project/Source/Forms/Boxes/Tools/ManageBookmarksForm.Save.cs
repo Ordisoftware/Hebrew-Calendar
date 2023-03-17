@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class ManageBookmarksForm : Form
+sealed partial class ManageBookmarksForm : Form
 {
 
   private const string TableName = "Date Bookmarks";

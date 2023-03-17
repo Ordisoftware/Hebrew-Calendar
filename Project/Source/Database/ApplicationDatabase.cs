@@ -19,7 +19,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static public ApplicationDatabase Instance { get; protected set; }
+  static public ApplicationDatabase Instance { get; private set; }
 
   static ApplicationDatabase()
   {

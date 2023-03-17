@@ -21,7 +21,7 @@ using MoreLinq;
 /// <summary>
 /// Provides exception form.
 /// </summary>
-public partial class ExceptionForm : Form
+public sealed partial class ExceptionForm : Form
 {
 
   private const int BodyLengthLimit = 8000;

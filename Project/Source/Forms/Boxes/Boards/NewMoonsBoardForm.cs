@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class NewMoonsBoardForm : Form
+sealed partial class NewMoonsBoardForm : Form
 {
 
   private const string TableName = "New Moons";

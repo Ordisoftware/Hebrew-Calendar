@@ -14,7 +14,7 @@
 /// <edited> 2019-10 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SelectBirthTimeForm : Form
+sealed partial class SelectBirthTimeForm : Form
 {
 
   static public bool Run(out TimeSpan time)

@@ -19,7 +19,7 @@ using AASharp;
 /// <summary>
 /// Provides date item read only dictionary wher items are initialized each time a date is not present.
 /// </summary>
-class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
+sealed class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
 {
 
   static public readonly CalendarDates Instance = new();

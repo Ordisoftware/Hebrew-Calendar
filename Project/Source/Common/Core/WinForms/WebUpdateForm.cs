@@ -14,7 +14,7 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Core;
 
-public partial class WebUpdateForm : Form
+public sealed partial class WebUpdateForm : Form
 {
 
   static public WebUpdateSelection Run(Version version)
@@ -26,7 +26,7 @@ public partial class WebUpdateForm : Form
     if ( form.ShowDialog() != DialogResult.OK ) return WebUpdateSelection.None;
     if ( form.SelectInstall.Checked ) return WebUpdateSelection.Install;
     if ( form.SelectDownload.Checked ) return WebUpdateSelection.Download;
-    throw new AdvNotImplementedException($"User selection in {form.GetType().Name}.{nameof(Run)}");
+    throw new AdvNotImplementedException($"User selection in {typeof(WebUpdateForm).Name}.{nameof(Run)}");
   }
 
   private WebUpdateForm()
