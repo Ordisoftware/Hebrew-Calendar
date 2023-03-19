@@ -16,7 +16,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 
 using MoreLinq;
 
-partial class SelectExportTargetForm : Form
+sealed partial class SelectExportTargetForm : Form
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;
