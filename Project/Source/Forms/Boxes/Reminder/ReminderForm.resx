@@ -223,7 +223,7 @@
     <value>Flat</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 115</value>
+    <value>344, 125</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 26</value>
@@ -600,7 +600,7 @@
     <value>Parashot board</value>
   </data>
   <data name="ContextMenuParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 176</value>
+    <value>211, 154</value>
   </data>
   <data name="&gt;&gt;ContextMenuParashah.Name" xml:space="preserve">
     <value>ContextMenuParashah</value>
@@ -767,7 +767,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>384, 141</value>
+    <value>384, 151</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
