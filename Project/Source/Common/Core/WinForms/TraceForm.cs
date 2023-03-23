@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
-public partial class TraceForm : Form
+public sealed partial class TraceForm : Form
 {
 
   private readonly string LocationPropertyName;

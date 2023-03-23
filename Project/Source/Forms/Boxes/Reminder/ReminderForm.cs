@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class ReminderForm : Form
+sealed partial class ReminderForm : Form
 {
 
   #region Static Constructor and Run

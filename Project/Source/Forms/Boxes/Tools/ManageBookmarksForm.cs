@@ -14,7 +14,7 @@
 /// <edited> 2022-08 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class ManageBookmarksForm : Form
+sealed partial class ManageBookmarksForm : Form
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;

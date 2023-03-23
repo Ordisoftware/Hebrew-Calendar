@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class NextCelebrationsForm : Form
+sealed partial class NextCelebrationsForm : Form
 {
 
   static public NextCelebrationsForm Instance { get; private set; }

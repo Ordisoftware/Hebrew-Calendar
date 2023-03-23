@@ -14,7 +14,7 @@
 /// <edited> 2022-05 </edited>
 namespace Ordisoftware.Core;
 
-public partial class HTMLBrowserForm : Form
+public sealed partial class HTMLBrowserForm : Form
 {
 
   private readonly string LocationPropertyName;

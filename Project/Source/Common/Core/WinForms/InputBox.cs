@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides input box.
 /// </summary>
-public partial class InputBox<T> : Form
+public sealed partial class InputBox<T> : Form
 where T : IConvertible
 {
 
