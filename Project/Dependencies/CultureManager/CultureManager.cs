@@ -613,7 +613,7 @@ namespace Infralution.Localization
       string resourceName = $"{componentName}.{propertyName}";
       foreach ( string value in _excludeProperties )
       {
-        if ( value.IndexOf('.') >= 0 )
+        if ( value.Contains('.') )
         {
           if ( resourceName.Contains(value) ) return true;
         }
