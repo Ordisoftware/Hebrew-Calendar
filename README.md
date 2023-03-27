@@ -376,6 +376,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### TO DO Next
 
+>- Add previous and next buttons to parashah description box.
 >- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 >- Add command-line option `--lunarmonths` to show the lunar months board.
 >- Add comments to bookmarks.

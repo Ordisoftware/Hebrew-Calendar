@@ -14,7 +14,7 @@
 /// <edited> 2021-05 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SearchEventForm : Form
+sealed partial class SearchEventForm : Form
 {
 
   private readonly MainForm MainForm = MainForm.Instance;

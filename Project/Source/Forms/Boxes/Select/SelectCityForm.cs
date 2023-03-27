@@ -14,7 +14,7 @@
 /// <edited> 2023-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SelectCityForm : Form
+sealed partial class SelectCityForm : Form
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;

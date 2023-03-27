@@ -19,7 +19,7 @@ using Properties = Calendar.Properties;
 using MainForm = Calendar.MainForm;
 using System.Windows.Forms;
 
-partial class ParashotForm : Form
+sealed partial class ParashotForm : Form
 {
 
   static public ParashotForm Instance { get; private set; }

@@ -14,7 +14,7 @@
 /// <edited> 2022-04 </edited>
 namespace Ordisoftware.Core;
 
-public partial class EditMemoForm : Form
+public sealed partial class EditMemoForm : Form
 {
 
   static public readonly Point LocationZero;

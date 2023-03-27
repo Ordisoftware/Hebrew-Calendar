@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
-public partial class TraceForm : Form
+public sealed partial class TraceForm : Form
 {
 
   private readonly string LocationPropertyName;
@@ -154,8 +154,8 @@ public partial class TraceForm : Form
       else
       {
         var content = File.ReadAllText(file);
-        string strError = $"{LogTraceEvent.Error} {DebugManager.EventSeparator}";
-        string strException = $"{LogTraceEvent.Exception} {DebugManager.EventSeparator}";
+        string strError = $"{nameof(LogTraceEvent.Error)} {DebugManager.EventSeparator}";
+        string strException = $"{nameof(LogTraceEvent.Exception)} {DebugManager.EventSeparator}";
         if ( content.IndexOf(strError, StringComparison.OrdinalIgnoreCase) >= 0
           || content.IndexOf(strException, StringComparison.OrdinalIgnoreCase) >= 0 )
           SelectFile.Items.Add(file);

@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class NavigationForm : Form
+sealed partial class NavigationForm : Form
 {
 
   private const string NoDataField = "-";

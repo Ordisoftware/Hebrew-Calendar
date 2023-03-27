@@ -14,7 +14,7 @@
 /// <edited> 2021-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SelectSuspendDelayForm : Form
+sealed partial class SelectSuspendDelayForm : Form
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;

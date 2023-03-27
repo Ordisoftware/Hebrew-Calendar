@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SearchLunarMonthForm : Form
+sealed partial class SearchLunarMonthForm : Form
 {
 
   private readonly MainForm MainForm = MainForm.Instance;

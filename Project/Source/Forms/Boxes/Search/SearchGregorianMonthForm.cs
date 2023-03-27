@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class SearchGregorianMonthForm : Form
+sealed partial class SearchGregorianMonthForm : Form
 {
 
   private readonly MainForm MainForm = MainForm.Instance;

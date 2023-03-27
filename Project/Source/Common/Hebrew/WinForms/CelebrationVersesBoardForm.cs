@@ -14,7 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
-public partial class CelebrationVersesBoardForm : Form
+sealed public partial class CelebrationVersesBoardForm : Form
 {
 
   private const float FontFactor = 1.5f;
