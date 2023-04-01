@@ -133,7 +133,7 @@ static public partial class SystemManager
       try
       {
         using var stream = new MemoryStream();
-        new BinaryFormatter().Serialize(stream, instance); // TODO REPLACE
+        new BinaryFormatter().Serialize(stream, instance);
         result = stream.Length;
       }
       catch ( Exception ex1 )
