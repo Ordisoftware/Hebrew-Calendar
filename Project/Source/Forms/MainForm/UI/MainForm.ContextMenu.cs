@@ -104,6 +104,7 @@ public partial class MainForm
       ContextMenuDayDate.Text += $" - {torahEventText}";
       string celebrationName = HebrewTranslations.GetCelebrationDisplayText(torahEvent);
       ContextMenuDayCelebrationVersesBoard.Text = AppTranslations.VersesAboutCurrentCelebration.GetLang(celebrationName);
+      ContextMenuDayCelebrationVersesBoard.Tag = torahEvent;
     }
     else
     {
