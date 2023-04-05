@@ -61,37 +61,37 @@ static public partial class Globals
   /// Gets information describing the assembly.
   /// </summary>
   static public string AssemblyDescription
-    => GetAttribute<AssemblyDescriptionAttribute>().Description;
+    => GetAttribute<AssemblyDescriptionAttribute>()?.Description ?? string.Empty;
 
   /// <summary>
   /// Gets the assembly product.
   /// </summary>
   static public string AssemblyProduct
-    => GetAttribute<AssemblyProductAttribute>().Product;
+    => GetAttribute<AssemblyProductAttribute>()?.Product ?? string.Empty;
 
   /// <summary>
   /// Gets the assembly copyright.
   /// </summary>
   static public string AssemblyCopyright
-    => GetAttribute<AssemblyCopyrightAttribute>().Copyright;
+    => GetAttribute<AssemblyCopyrightAttribute>()?.Copyright ?? string.Empty;
 
   /// <summary>
   /// Gets the assembly company.
   /// </summary>
   static public string AssemblyCompany
-    => GetAttribute<AssemblyCompanyAttribute>().Company;
+    => GetAttribute<AssemblyCompanyAttribute>()?.Company ?? string.Empty;
 
   /// <summary>
   /// Gets the assembly trademark.
   /// </summary>
   static public string AssemblyTrademark
-    => GetAttribute<AssemblyTrademarkAttribute>().Trademark;
+    => GetAttribute<AssemblyTrademarkAttribute>()?.Trademark ?? string.Empty;
 
   /// <summary>
   /// Gets the assembly GUID.
   /// </summary>
   static public string AssemblyGUID
-    => GetAttribute<System.Runtime.InteropServices.GuidAttribute>().Value;
+    => GetAttribute<GuidAttribute>()?.Value ?? string.Empty;
 
   /// <summary>
   /// Gets the assembly compiled DateTime.

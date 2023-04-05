@@ -22,6 +22,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEv_KNGXktzeF8oBTXGoKR
 Name = (FR/EN) Bodybuilding et nutrition
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BEAk_k9s5tCMG5ZPwK6KVz
 
+Name = (FR/EN) Bodybuilding et nutrition selon JamCore
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Dxwct2znoLCEugMfSoFVlB
+
 Name = (FR) Mentalisme et psychologie
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B3m_jadFZi3rvJx9LPhHeG
 

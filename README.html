@@ -1,0 +1,1471 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hebrew Calendar</title>
+</head>
+<body>
+
+    <p><a href="LICENSE"><img src="https://img.shields.io/github/license/ordisoftware/hebrew-calendar" alt="License MPL 2.0" /></a> 
+<a href="https://github.com/Ordisoftware/Hebrew-Calendar/releases"><img src="https://img.shields.io/github/downloads/ordisoftware/hebrew-calendar/total" alt="GitHub all releases downloads" /></a> 
+<a href="https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest"><img src="https://img.shields.io/github/v/release/ordisoftware/hebrew-calendar" alt="GitHub release (latest by date)" /></a> 
+<a href="#"><img src="https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar" alt="GitHub repo size" /></a> 
+<a href="https://github.com/Ordisoftware/Hebrew-Calendar/tree/master/Project"><img src="https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar" alt="GitHub code size in bytes" /></a> 
+<a href="https://github.com/Ordisoftware/Hebrew-Calendar/tree/master/Project"><img src="https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-calendar" alt="Lines of code" /></a> <br/>
+<a href="https://www.microsoft.com/windows/"><img src="https://img.shields.io/badge/Windows%207%2B-279CE8?label=os" alt="OS: Windows" /></a> 
+<a href="https://github.com/dotnet/winforms"><img src="https://img.shields.io/badge/WinForms-279CE8?label=ui" alt="UI: WinForms" /></a> 
+<a href="https://dotnet.microsoft.com"><img src="https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework" alt="Framework: .Net" /></a> 
+<a href="https://visualstudio.microsoft.com"><img src="https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide" alt="IDE: Visual Studio" /></a> 
+<a href="https://docs.microsoft.com/dotnet/csharp/"><img src="https://img.shields.io/badge/C%23%2011-%23239120.svg?label=lang" alt="Lang: C#" /></a> 
+<a href="https://www.sqlite.org"><img src="https://img.shields.io/badge/SQLite%203.40-darkgoldenrod.svg?label=db" alt="DB: SQLite" /></a> <br/>
+<a href="https://www.ordisoftware.com/hebrew-calendar"><img src="https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&amp;logoColor=white" alt="Ordisoftware.com Project" /></a> 
+<a href="https://github.com/Ordisoftware/Guidelines"><img src="https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&amp;logoColor=white" alt="Manufacturing Software Guidelines" /></a> </p>
+<h1 id="hebrew-calendar">Hebrew Calendar</h1>
+<p>A libre and open-source software written in C# that allows to generate a calendar based on solar and lunar cycles in order to determine the new year and the celebration times according to the Hebrew Torah, as well as to remind Shabbat and Pessa'h, Shavuot, Rosh Hashanah, Kippur and Sukkot festivities.</p>
+<h2 id="table-of-content">Table of content</h2>
+<ol>
+<li><a href="#functionalities">Functionalities</a></li>
+<li><a href="#review">Review</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#download">Download</a></li>
+<li><a href="#screenshots">Screenshots</a></li>
+<li><a href="#videos">Videos</a></li>
+<li><a href="#system-frequently-asked-questions">System FAQ</a></li>
+<li><a href="#application-frequently-asked-questions">Application FAQ</a></li>
+<li><a href="#command-line-options">Command-line options</a></li>
+<li><a href="#keyboard-shortcuts">Keyboard shortcuts</a></li>
+<li><a href="#future-improvements">Future improvements</a></li>
+<li><a href="#changelog">Changelog</a></li>
+</ol>
+<h2 id="functionalities">Functionalities</h2>
+<ul>
+<li>Generate a calendar with sun and moon rises and sets.</li>
+<li>View by tabular text report, visual month or data grid.</li>
+<li>Balloon tip from the Tray Icon to navigate between days with a summary.</li>
+<li>Event reminder for Shabat and celebrations.</li>
+<li>Indicate the weekly parashah.</li>
+<li>Search for a day, a month, or a celebration.</li>
+<li>Window listing the next celebrations.</li>
+<li>Window showing a board of celebrations by years.</li>
+<li>Window showing a board of new moons by years.</li>
+<li>Window showing a board of lunar months with descriptions.</li>
+<li>Window showing a board of parashot with descriptions.</li>
+<li>Window showing a board of celebration verses.</li>
+<li>Tools for the study of parashot and celebrations.</li>
+<li>Calculate the difference between two dates with bookmarks.</li>
+<li>Advanced dialog to save, copy to the clipboard and print the view and the data.</li>
+<li>Supported export file formats: TXT, CSV, JSON, PNG, JPG, TIFF, BMP.</li>
+<li>English, French.</li>
+</ul>
+<h2 id="review">Review</h2>
+<ul>
+<li><p><a href="https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml">Softpedia.com</a></p>
+<p><em>&quot;Efficient and intuitive calendar and reminder app for the Hebrew Torah&quot;</em></p>
+<p><a href="https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml"><img src="https://www.ordisoftware.com/wp-content/theming/softpedia4.5-white.png" alt="Note" /></a></p>
+</li>
+<li><p><a href="https://www.anxz.com/down/141941.html">Anxz.com</a></p>
+<p><em>&quot;Powerful comprehensive Hebrew calendar software that any user can easily use&quot;</em></p>
+</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Screen 1024x768 or higher</li>
+<li>Windows 7 SP1 x32/x64 or higher</li>
+<li>Framework .NET 4.8</li>
+<li>SQLite 3.40.1</li>
+</ul>
+<h2 id="download">Download</h2>
+<p><strong>What's new in the latest version 10</strong></p>
+<ul>
+<li>Adar II was renamed in VeAdar.</li>
+<li>Added Shabat references in celebration verses board.</li>
+<li>Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.</li>
+<li>Added option to select data layout order and sections to show in the monthly view.</li>
+<li>Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.</li>
+<li>Fixed image printing.</li>
+<li>Some fixes and improvements.</li>
+<li>Optimized and refactored code.</li>
+<li>Updated web links.</li>
+</ul>
+<p><a href="https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest">Last release</a></p>
+<h2 id="screenshots">Screenshots</h2>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/01-hebrew-calendar-viewmonth-en-400x295.png" alt="Monthly view" /></a>    <a href="https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/02-hebrew-calendar-rawtext-en-400x295.png" alt="Text report view" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/05-hebrew-calendar-nextcelebrations-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/05-hebrew-calendar-nextcelebrations-en-282x300.png" alt="Next celebrations" /></a>    <a href="https://www.ordisoftware.com/uploads/2021/03/06-hebrew-calendar-board-parashot-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/06-hebrew-calendar-board-parashot-en-464x300.png" alt="Parashot board" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/07-hebrew-calendar-board-celebrations-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/07-hebrew-calendar-board-celebrations-en-300x206.png" alt="Celebrations board" /></a>    <a href="https://www.ordisoftware.com/uploads/2021/03/08-hebrew-calendar-board-newmoons-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/08-hebrew-calendar-board-newmoons-en-356x206.png" alt="New moons board" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/03-hebrew-calendar-navigation-en-254x300.png" alt="Navigation window" /></a>    <a href="https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/04-hebrew-calendar-diffdates-en-349x300.png" alt="Dates diff calculator" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/09-hebrew-calendar-reminderpopup-en-300x141.png" alt="Reminder box celebration" /></a>    <a href="https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/10-hebrew-calendar-reminderpopup-shabat-en-300x141.png" alt="Reminder box Shabat" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/11-hebrew-calendar-locksession-en-300x201.png" alt="Lock session box" /></a>    </p>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-1-en-300x266.png" alt="Preferences window 1" /></a>    <a href="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-2-en-300x266.png" alt="Preferences window 2" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-3-en-300x266.png" alt="Preferences window 3" /></a>    <a href="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-4-en-300x266.png" alt="Preferences window 4" /></a></p>
+<p><a href="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/15-hebrew-calendar-preferences-5-en-300x266.png" alt="Preferences window 5" /></a>    <a href="https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en.png"><img src="https://www.ordisoftware.com/uploads/2021/03/13-hebrew-calendar-export-en-223x266.png" alt="Export box" /></a></p>
+<h2 id="videos">Videos</h2>
+<p><a href="https://www.youtube.com/watch?v=EJni1fiXpMk"><img src="https://img.youtube.com/vi/EJni1fiXpMk/mqdefault.jpg" alt="Monthly view showing video" /></a>    <a href="https://www.youtube.com/watch?v=u9LD-0u3wdE"><img src="https://img.youtube.com/vi/u9LD-0u3wdE/mqdefault.jpg" alt="Showing video" /></a></p>
+<h2 id="system-frequently-asked-questions">System Frequently asked questions</h2>
+<h4 id="what-code-analyzers-are-used-in-addition-to-visual-studio">What code analyzers are used in addition to Visual Studio?</h4>
+<table>
+<thead>
+<tr>
+<th>IDE Extension</th>
+<th>Project NuGet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022">SonarLint</a><br><a href="https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022">Roslynator</a><br><a href="https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS">F0.Analyzers</a><br><a href="https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper">Parallel Helper</a><br><a href="https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker">Parallel Checker</a><br><a href="https://marketplace.visualstudio.com/items?itemName=SemihOkur.AsyncFixer2022">AsyncFixer</a><br><a href="https://marketplace.visualstudio.com/items?itemName=PRIYANSHUAGRAWAL92.AsyncMethodNameFixer">Async Method Name Fixer</a><br><a href="https://marketplace.visualstudio.com/items?itemName=vs-publisher-363830.U2UConsultPerformanceCodeAnalyzersforC7">U2U Consult Performance Analyzers</a><br><a href="https://github.com/Zefek/TSQLAnalyzer">TSQL Analyzer</a><br><a href="https://github.com/Suchiman/SerilogAnalyzer">Serilog Analyzer</a><br><a href="https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019">Security Code Scan</a><br><a href="https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan">Puma Scan</a><br><a href="https://github.com/microsoft/InclusivenessAnalyzerVisualStudio">Inclusiveness Analyzer</a></td>
+<td><a href="https://github.com/dotnet/roslyn-analyzers">Microsoft.CodeAnalysis.NetAnalyzers</a><br><a href="https://github.com/microsoft/vs-threading">Microsoft.VisualStudio.Threading.Analyzers</a><br><a href="https://github.com/cezarypiatek/MultithreadingAnalyzer">MultithreadingAnalyzer</a><br><a href="https://github.com/meziantou/Meziantou.Analyzer">Meziantou.Analyzer</a><br><a href="https://github.com/Geeksltd/GCop">GCop.All.Common</a><br><a href="https://github.com/DotNetAnalyzers/ReflectionAnalyzers">ReflectionAnalyzers</a><br><a href="https://github.com/DotNetAnalyzers/IDisposableAnalyzers">IDisposableAnalyzers</a><br><a href="https://github.com/SergeyTeplyakov/ErrorProne.NET">ErrorProne.NET.CoreAnalyzers</a><br><a href="https://github.com/SergeyTeplyakov/ErrorProne.NET">ErrorProne.NET.Structs</a><br><br><br><br><br></td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-to-do-if-the-check-update-tells-that-the-ssl-certificate-is-wrong-or-expired">What to do if the check update tells that the SSL certificate is wrong or expired?</h4>
+<p>The software verifies the validity of the certificate of the update server in addition to the SHA-512 checksum of the installation file before downloading and running it.</p>
+<p>You can manually check the latest version available online in case of problem.</p>
+<h4 id="what-to-do-if-the-application-does-not-work-normally-despite-restoring-settings">What to do if the application does not work normally despite restoring settings?</h4>
+<p>Use the Start Menu link:</p>
+<p> <code>Ordisoftware\Hebrew Calendar\Reset Hebrew Calendar settings</code></p>
+<p>This will erase all settings as well as those of old versions, which should resolve issues if there is a conflict, otherwise please contact support.</p>
+<h4 id="what-is-the-windows-double-buffering">What is the Windows double-buffering?</h4>
+<p>When enabled, this will speed up rendering of the main form when it is displayed, but it may cause a slight black flicker.</p>
+<p>When disabled, top menu and some controls painting may cause latency, and dynamic items can be generated slowly the larger the number.</p>
+<h4 id="what-to-do-if-the-monthly-view-is-ugly">What to do if the monthly view is ugly?</h4>
+<p>Reset the preferences to default: it will restore the corrupted values in case of a problem after install or upgrade.</p>
+<h4 id="what-are-known-problems">What are known problems?</h4>
+<p>Data generated for cities near the poles can be inconsistent the closer we get, especially with the moon omer, due to some weird ephemeris and various problems with ranges.</p>
+<p>Thus celebration dates may be wrong.</p>
+<h2 id="application-frequently-asked-questions">Application Frequently asked questions</h2>
+<h4 id="why-do-the-dates-generated-differ-from-those-in-the-hebrew-authorities-calendar">Why do the dates generated differ from those in the Hebrew authorities' calendar?</h4>
+<p>The dates generated with the strict omer of the moon or the sun can differ from those in the Hebrew authorities' calendar, but astronomically speaking, there is no mistake, unless there is a problem to be corrected.</p>
+<p>The software calculates the days according to the moon or the sun and various parameters relating to the stars and the seasons which mean that the dates can sometimes differ at certain points of the calendar established according to traditional standards.</p>
+<p>Thus the software can sometimes indicate the same days as the official calendar, and sometimes one to two or three days of shift, because of the new moon date which is sometimes not in astronomical correspondence, and the same goes for the calculation of holidays.</p>
+<p>It can also happen that over 10 or 20 years there is a lag of one month due to Adar II due to the calculation rule used to determine the 1st Nissan and Pessa'h which is that Pessa'h is the 14th day of the first seasonal month in the first full moon following the spring equinox.</p>
+<p>But even with these lags, Pessa'h, according to the software, is still the first new moon following the spring equinox, and if it lags it falls at worst as the traditional calendar's Pessa'h Sheni, or vice versa, and within a few hours which generally remain within the 3% universal margin.</p>
+<p>The software does not yet offer an option to generate a calendar conforming to the Halakhah of Sod HaH'ibur סוד העיבר or science of the moving stars.</p>
+<h4 id="what-are-the-times-of-celebration">What are the times of celebration?</h4>
+<p>The times of the Torah's celebrations are Pessa'h or Easter which is the liberation of illusions, Shavuh'ot or Weeks which is the gift of knowledge, Teruh'ah or Ringtone which is the joy of being freedom, Kipurim or Atonement which is the sorrows of losses, and Sukot or Tabernacles which is the construction of the future.</p>
+<p>These are important moments of the lunar year in the solar cycle whose purpose is to provide a benevolent evolution of consciousness by the knowledge of the laws of the universe and of life. The Torah says to count these days according to the moon, as opposed to Shabat which is counted according to the sun.</p>
+<p>The application uses by default moon omer for celebrations.</p>
+<p>If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set.</p>
+<p>You can use traditional sun days by modifying the option of the generator, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.</p>
+<h4 id="what-food-for-the-celebrations">What food for the celebrations?</h4>
+<p>A description of Torah recipes for celebrations will be available soon:</p>
+<ul>
+<li>Grilled Lamb for Pessa'h.</li>
+<li>Diet without grains nor seeds nor fruits nor vegetables from orchard between the end of the first seven-week Omer and the day after the next Shabat.</li>
+<li>Lamb stew or burger with wine for Shavuh'ot 1 after the first Omer of seven weeks.</li>
+<li>Lamb and veal hotpot with a kind of white beer for Shavouh'ot 2 after the second Omer.</li>
+<li>Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot.</li>
+</ul>
+<p>Regarding the author's current understanding of the main themes, the Torah describing many other more complex things.</p>
+<h4 id="what-is-shabat">What is Shabat?</h4>
+<p>The Shabat is the &quot;day of rest&quot; where one do not work for a livelihood. Unless there is a vital emergency, the body, the emotions and the spirit are resting there. The study of the Torah is a privileged activity.</p>
+<p>The tradition attributes this day to Saturday. We can however think according to Bereshit 1.1 that in the case where the first day is the day of birth as a corollary to the fusion of the gametes then it takes place the day before: thus a person coming to the world on a Sunday will have his Shabat the Saturday. From Bereshit 1.5 and 1.16 as well as from Shemot 20.8 it can be deduced that it lasts from sunset on the eve of the calendar day to sunset on the same day. For example, for a person born in Paris, the Shabat of February 19, 2019 takes place from Friday 18 at 17:25 to Saturday at 17:25 approximately.</p>
+<p>The personal Shabat of a married or concubin or divorced man is the previous day of the birth. A son follows his father's Shabat. The Shabat of a woman is the Shabat of her father or her husband or her concubin. So the man and the woman respect their mutual cycles. Indeed, during the period when the married or concubine or divorced woman is Nidah from the beginning to the end of the blood flow, her vital field is dissonant and the couple avoid touching each other (the virgin girl is not concerned as long as she had no relations through the openings of the begetting) to avoid to increase as well as to transmit this state to things and people (otherwise we follow the rules of the Torah about that).</p>
+<p>If the man were born between midnight and the sunset, the Shabat is the day before. Between sunset and midnight, the Shabat is that day. This day is from previous day (or previous previous day) at sunset to this day (or previous day) at sunset. The day of the Shabat goes from sunset on the previous calendar day to sunset of that day, with 3% of natural margin that to say about one hour. The day before, either the man keeps without going out and strengthens the couple during the Shabat, or he goes out and lights up the couple for Shabat, but on Shabat he does not go out of his temple, and except in case of emergency we do not produce, transform and destroys nothing, we don't plan anything, we don't work, we don't cook, we don't shave, we don't cut, we don't make fire, we don't care about information, etc. But we can for example take part in sports, study science and play with children.</p>
+<p>If you prefer to use the traditional group Shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.</p>
+<h4 id="what-are-parashot">What are parashot?</h4>
+<p>The study of the Weekly Torah portion begins at Shim'hat Torah with the Bereshit section on 22 Tishri in the Land of Israel, or on 23 in Mitsraïm and in the desert, that is on the last day of Sukot, or the next day.</p>
+<p>It ends with full reading on Shabat, or the next Shabat if Shim'hat Torah occurs on Shabat. The day after Shabat we move on to the next Parashah that we study during the week by reading comments, listening to conferences, learning about science, and examining letters, words and verses, to read it in full on Shabat. And so on from week to week to go through the Torah in a year to build a better future world for oneself, for one's family, for one's community, for one's country, for the Nations, and for the species, thanks to Pessa'h, Shavuh'ot, Teruh'ah, Kipurim, and Sukot.</p>
+<p>Israël is the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil. Shim'hat Torah means &quot;Joy [bestowed by the] Torah&quot; and a Lettriq of Shim'hat is &quot;Sharing of the Service which Sustains the Matter&quot;: it is therefore the joy resulting from the beneficial help of the Torah and those which follow the laws of the country where one lives and the Doctrine of YHVH which have for one and only fundamental purpose to protect the life and the goods of the people without harming even the wicked and the criminals.</p>
+<p>The number of Parashot is 54 that is to say נד which is the Power of the Student, and that root means Passing from the world of malevolence to that of benevolence.</p>
+<p>The generation of Parashot relating to Shabatot with the omer of the moon or the sun without the Sod HaH'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.</p>
+<h2 id="command-line-options">Command-line options</h2>
+<ul>
+<li><p>Change interface language (does not change the data unless using --generate):</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --lang [en|fr]</code></p>
+</li>
+<li><p>Enable or disable future functionalities preview:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --withpreview | --nopreview</code></p>
+</li>
+<li><p>Show the main window:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --show</code></p>
+</li>
+<li><p>Hide the main window:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --hide</code></p>
+</li>
+<li><p>Generate the calendar:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --generate</code></p>
+</li>
+<li><p>Reset the reminder:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --resetreminder</code></p>
+</li>
+<li><p>Show the navigation window:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --navigate</code></p>
+</li>
+<li><p>Show the dates difference calculator:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --diffdates</code></p>
+</li>
+<li><p>Show the celebration verses board:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --celebrationverses</code></p>
+</li>
+<li><p>Show the celebrations board:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --celebrations</code></p>
+</li>
+<li><p>Show the new moons board:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --newmoons</code></p>
+</li>
+<li><p>Show the lunar months board:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --lunarmonths</code></p>
+</li>
+<li><p>Show the parashot board:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --parashot</code></p>
+</li>
+<li><p>Show the weekly parashah description box:</p>
+<p><code>Ordisoftware.Hebrew.Calendar.exe --parashah</code></p>
+</li>
+</ul>
+<p>These options are cumulative, and can be used to control the software when it is already running, but if this case this only works for administrator users.</p>
+<h3 id="how-to-configure-autohotkey">How to configure AutoHotkey?</h3>
+<p>It is therefore possible to use <a href="https://www.autohotkey.com">AutoHotKey</a> to define for example this <code>Shift + Ctrl + Alt + P</code> command:</p>
+<pre><code>!^+P:: 
+  appPath := &quot;C:\Program Files\Ordisoftware\Hebrew Calendar\Bin\&quot;
+  appExe := &quot;Ordisoftware.Hebrew.Calendar.exe&quot;
+  sleep 500
+  Run %appPath%%appExe% --parashot
+  return
+</code></pre>
+<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Keys</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Tab</td>
+<td>Next view</td>
+</tr>
+<tr>
+<td>Shift + Ctrl + Tab</td>
+<td>Previous view</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>Text report view</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>monthly view</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Database grid view</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>Next celebrations window</td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Search a celebration window</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Search a moon month window</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>Search a gregorian month window</td>
+</tr>
+<tr>
+<td>F8 (or Ctrl + N)</td>
+<td>Navigation window</td>
+</tr>
+<tr>
+<td>Ctrl + T (or Numpad0)</td>
+<td>Go to today</td>
+</tr>
+<tr>
+<td>Ctrl + B (or Decimal)</td>
+<td>Go to selected day</td>
+</tr>
+<tr>
+<td>Ctrl + D</td>
+<td>Search a day</td>
+</tr>
+<tr>
+<td>Ctrl + S</td>
+<td>Save current view to a file</td>
+</tr>
+<tr>
+<td>Ctrl + C</td>
+<td>Copy current view to clipboard</td>
+</tr>
+<tr>
+<td>Ctrl + P</td>
+<td>Print current view</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + C</td>
+<td>Copy the text report selection to clipboard</td>
+</tr>
+<tr>
+<td>Alt + V</td>
+<td>Show view menu</td>
+</tr>
+<tr>
+<td>Alt + T</td>
+<td>Tools menu</td>
+</tr>
+<tr>
+<td>Alt + L</td>
+<td>Web links menu</td>
+</tr>
+<tr>
+<td>Alt + S</td>
+<td>Settings menu</td>
+</tr>
+<tr>
+<td>Alt + I</td>
+<td>Information menu</td>
+</tr>
+<tr>
+<td>Alt + E</td>
+<td>Export folder</td>
+</tr>
+<tr>
+<td>Alt + C</td>
+<td>Windows calculator</td>
+</tr>
+<tr>
+<td>Alt + D</td>
+<td>Windows date and time settings</td>
+</tr>
+<tr>
+<td>Alt + M</td>
+<td>Windows weather</td>
+</tr>
+<tr>
+<td>Alt + W</td>
+<td>Online weather</td>
+</tr>
+<tr>
+<td>Alt + G</td>
+<td>Generate calendar</td>
+</tr>
+<tr>
+<td>Alt + P</td>
+<td>Show online parashah menu</td>
+</tr>
+<tr>
+<td>Ctrl + F1</td>
+<td>Parashot board</td>
+</tr>
+<tr>
+<td>Ctrl + F2</td>
+<td>Celebration verses board</td>
+</tr>
+<tr>
+<td>Ctrl + F3</td>
+<td>Celebrations board</td>
+</tr>
+<tr>
+<td>Ctrl + F4</td>
+<td>New moons board</td>
+</tr>
+<tr>
+<td>Ctrl + F5</td>
+<td>Lunar months board</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + D</td>
+<td>Dates difference calculator</td>
+</tr>
+<tr>
+<td>Home</td>
+<td>First month available in the database</td>
+</tr>
+<tr>
+<td>End</td>
+<td>Last month available in the database</td>
+</tr>
+<tr>
+<td>Up (or PageUp)</td>
+<td>Previous year</td>
+</tr>
+<tr>
+<td>Down (or PageDown)</td>
+<td>Next year</td>
+</tr>
+<tr>
+<td>Left</td>
+<td>Previous month</td>
+</tr>
+<tr>
+<td>Right</td>
+<td>Next month</td>
+</tr>
+<tr>
+<td>Ctrl + Left</td>
+<td>Previous month having a celebration</td>
+</tr>
+<tr>
+<td>Ctrl + Right</td>
+<td>Next month having a celebration</td>
+</tr>
+<tr>
+<td>Ctrl + Home</td>
+<td>First month having a celebration</td>
+</tr>
+<tr>
+<td>Ctrl + End</td>
+<td>Last month having a celebration</td>
+</tr>
+<tr>
+<td>Shit + Up</td>
+<td>Semaine précédente</td>
+</tr>
+<tr>
+<td>Shit + Down</td>
+<td>Previous week</td>
+</tr>
+<tr>
+<td>Shit + Left</td>
+<td>Previous day</td>
+</tr>
+<tr>
+<td>Shit + Right</td>
+<td>Next day</td>
+</tr>
+<tr>
+<td>Add or Sub</td>
+<td>Change active day</td>
+</tr>
+<tr>
+<td>Shift + Click</td>
+<td>Set active day</td>
+</tr>
+<tr>
+<td>Ctrl + Click</td>
+<td>Select day</td>
+</tr>
+<tr>
+<td>F9</td>
+<td>Preferences</td>
+</tr>
+<tr>
+<td>F10</td>
+<td>Log file window</td>
+</tr>
+<tr>
+<td>F11</td>
+<td>Usage statistics window</td>
+</tr>
+<tr>
+<td>F12</td>
+<td>About</td>
+</tr>
+<tr>
+<td>Alt + F4 (or Escape)</td>
+<td>Close window</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + F4</td>
+<td>Exit application</td>
+</tr>
+</tbody>
+</table>
+<h2 id="future-improvements">Future improvements</h2>
+<h4 id="application">Application</h4>
+<ul>
+<li>Add option to set primary source for check update between author's website or GitHub.</li>
+<li>Add preference tab to setup keyboard shortcuts.</li>
+<li>Add dark theme for monthly view.</li>
+<li>Add print boards.</li>
+<li>Add option to generate a fixed interval (if the current year is within).</li>
+<li>Improve notices to be in only one window having a page control like preferences.</li>
+<li>Improve food notice with details and cooking recipes.</li>
+<li>Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.</li>
+<li>Rewrite the reminder.</li>
+</ul>
+<h4 id="data">Data</h4>
+<ul>
+<li>Add import parashot board.</li>
+<li>Add user reminders for other people's events like birthday and yahrzeit.</li>
+<li>Add user reminders for personal solar and lunar anniversary of birth.</li>
+<li>Add user reminders for small religious festivals.</li>
+<li>Add reminders for 'Hanouka and Pourim ancillary religious festivals and option to consider them or not in the calendar.</li>
+<li>Add option to generate calendar using the rules of the Sod HaH'ibur instead of the strict astronomical moon or sun omer.</li>
+</ul>
+<h2 id="changelog">Changelog</h2>
+<h4 id="to-do-next">TO DO Next</h4>
+<blockquote>
+<ul>
+<li>Add previous and next buttons to parashah description box.</li>
+<li>Add lunar months board with Hebrew names, meanings, lettriqs and tools.</li>
+<li>Add command-line option <code>--lunarmonths</code> to show the lunar months board.</li>
+<li>Add comments to bookmarks.</li>
+<li>Add auto sort bookmarks.</li>
+<li>Add auto backup bookmarks.</li>
+<li>Improve weekly parashah description box to have access to the tools for the study.</li>
+<li>Improve weekly parashah description box to have a screenshot button.</li>
+<li>Check and fix weekly parashah generation with Soukot.</li>
+<li>Check and Fix reminder behavior with Sim'hat Torah.</li>
+</ul>
+</blockquote>
+<h4 id="version-10.4">2023.04.05 - Version 10.4</h4>
+<ul>
+<li>Fix celebration day context menu for show verses item.</li>
+<li>Replace on-the-fly readme.html creation with MarkDig by a generated with VS.</li>
+</ul>
+<h4 id="version-10.3">2023.03.03 - Version 10.3</h4>
+<ul>
+<li>Add links for ancient-hebrew.org and mechanical-translation.org (website, search words and read verses online).</li>
+<li>Add links to study parashot and celebrations for yechiva.com and torathaim.net (french).</li>
+<li>Fix first launch crash for Parashot table since v10.x</li>
+</ul>
+<h4 id="version-10.2">2023.01.08 - Version 10.2</h4>
+<ul>
+<li>Add import settings button in city selection box on first start.</li>
+<li>Fix auto web check update showing some error message (must not).</li>
+<li>Improve web update checker security.</li>
+<li>Improve IPC interoperability security.</li>
+<li>Code improvement and refactoring.</li>
+<li>Add links for Peninei Halakha and some others.</li>
+</ul>
+<h4 id="version-10.1">2022.11.15 - Version 10.1</h4>
+<ul>
+<li>Add verse references for Shabat in celebrations board.</li>
+<li>Add option to select font names for texts in the monthly view.</li>
+<li>Add option to select data layout order and sections to show in the monthly view.</li>
+<li>Add option to set default online verse reader.</li>
+<li>Add option to center printed images on pages.</li>
+<li>Split study context menu into <code>Online texts</code> and <code>Online videos</code> in celebrations board.</li>
+<li>Change export behavior to set default sub-folders to <code>Boards</code> and <code>Data</code> and <code>Images</code>.</li>
+<li>Fix export bookmarks default folder to be the app document root folder and not <code>Settings</code>.</li>
+<li>Fix print monthly view image size and location on pages.</li>
+<li>Fix some study web links.</li>
+<li>Some UI/UX fixes and improvements.</li>
+</ul>
+<h4 id="version-10.0">2022.11.03 - Version 10.0</h4>
+<ul>
+<li>Rename Adar II in VeAdar.</li>
+<li>Add solar day in search a gregorian date box.</li>
+<li>Add option to have lunar date on a single line before the ephemeris in the monthly view.</li>
+<li>Add option to display book name and references of parashah in the monthly view.</li>
+<li>Add option to set events text alignment in the monthly view.</li>
+<li>Add option to insert separator between lunar date, ephemeris, celebration and parashah.</li>
+<li>Add option to display Hebrew names in Unicode chars or Latin transcription.</li>
+<li>Add option to keep Arabic numerals when using display Hebrew names in Unicode.</li>
+<li>Add option to set font size for Hebrew in Unicode chars.</li>
+<li>Add the ending verse of parashah when displaying the beginning one.</li>
+<li>Fix display ending verse of the parashah to indicate that of the linked if applicable.</li>
+<li>Fix parashah description box to have the linked parashah name in the title bar.</li>
+<li>Fix Hebrew date template for the monthly view that is capitalized on rendering.</li>
+<li>Fix screen location of the show &quot;new in version&quot; box when app starts minimized.</li>
+<li>Fix auto web check update shows some error message and must not.</li>
+<li>Some fixes and improvements.</li>
+<li>Code refactoring and optimization.</li>
+</ul>
+<h4 id="version-9.33">2022.09.25 - Version 9.33</h4>
+<ul>
+<li>Add search parashah text box in parashot board.</li>
+<li>Fix null exception when clicking on image in reminder box.</li>
+<li>Fix null exception can occur on session ending.</li>
+</ul>
+<h4 id="version-9.32">2022.09.14 - Version 9.32</h4>
+<ul>
+<li>Fix parashot board header growing on changing font size.</li>
+<li>Fix H'eqev parashah transcription.</li>
+<li>Update nugets SQLitePCL.raw, FileHelpers, Serilog and Serilog.Sinks.WinForms.</li>
+</ul>
+<h4 id="version-9.31">2022.08.10 - Version 9.31</h4>
+<ul>
+<li>Fix auto-generate years interval.</li>
+<li>Use a dedicated folder in application's document folder for exports and imports settings, themes and bookmarks.</li>
+<li>Update web links with Elamite language.</li>
+</ul>
+<h4 id="version-9.30">2022.08.05 - Version 9.30</h4>
+<ul>
+<li>Add menu items in Tools to take a screenshot of the window or the current view.</li>
+<li>Add menu item in Tools to open the database folder.</li>
+<li>Update AASharp dependency.</li>
+</ul>
+<h4 id="version-9.29">2022.06.21 - Version 9.29</h4>
+<ul>
+<li>Optimize populating monthly view and thus startup time.</li>
+<li>Add open system calculator button in DatesDiffCalculator form.</li>
+<li>Add parashah name in the title bar of description box.</li>
+<li>Add menu for celebrations food notice in Tools.</li>
+<li>Add menu for transcription guide in Tools and others windows.</li>
+<li>Add menu for grammar guide in Tools menu and others windows.</li>
+<li>Add option to use two days for Shebih'i Shel Pessa'h outside of Israël.</li>
+<li>Add option to retake or not the focus when clicking date in reminder box.</li>
+<li>Move all notices to a drop-down menu in Tools.</li>
+<li>Fix day of shavouh'ot 2 in case of moon omer that is wrong due to days without moonrise.</li>
+<li>Fix shavouh'ot 1 and 2 times to be solar like Shabat even using moon omer.</li>
+<li>Fix reset settings crashes the monthly view until restart.</li>
+<li>Fix multiple parashah description boxes at the same time which only displays the first one opened until closed.</li>
+<li>Fix save in parashot board causes a null exception in case of empty cells in the grid.</li>
+<li>Fix intermediate day names of weekly celebrations in case of moonrise occurring the next day (moon omer).</li>
+<li>Fix disable reminder button not disabled if disabling is not allowed in preferences.</li>
+<li>Improve transcriptions following a change to better distinguish between He, 'Het, H'ayin, T'et and Tav.</li>
+<li>Improve shortcut for boards.</li>
+<li>Improve IPC.</li>
+<li>Some UI/UX improvements and fixes.</li>
+<li>Reorganize and add some web links about Hebrew, Jewish institutions, Rabbis and YouTube.</li>
+<li>Add some YouTube celebration playlist links.</li>
+<li>Fix and add celebration study links about TheTorah.com and ReformJudaism.org.</li>
+<li>Serilog WinForms must remains at v2.3.1</li>
+</ul>
+<h4 id="version-9.28">2022.04.05 - Version 9.28</h4>
+<ul>
+<li>Add current day change when cursor changes line in text report.</li>
+<li>Improve lunar month names by adding English transcription in addition to French.</li>
+<li>Improve context menu of monthly view by disabling empty bookmarks in the Go To menu item.</li>
+<li>Improve the setting of the number of bookmarks by limiting it to the last index defined.</li>
+<li>Improve bookmark import to automatically extend the length to match.</li>
+<li>Improve parashot board to not delete memo on reset data but only using delete all before.</li>
+<li>Fix copy weekly parashah to clipboard to remove empty lines at the end.</li>
+<li>Some data generation improvements and fixes.</li>
+<li>Some UI/UX improvements and fixes.</li>
+<li>Some fixes.</li>
+<li>Some optimizations.</li>
+<li>Massive refactorings with new code analyzers.</li>
+<li>Improve setup to select hebrew font version.</li>
+<li>Update Aish web links for parashot study.</li>
+<li>Update grammar and lettriq method notices.</li>
+</ul>
+<h4 id="version-9.27">2022.03.20 - Version 9.27</h4>
+<ul>
+<li>Code refactoring.</li>
+<li>Fix open navigation window from calendar's context menu.</li>
+<li>Fix order of controls in generation tab of preferences.</li>
+<li>Disable IPC intercom for non-admin users.</li>
+<li>Update web links with more resources on Loubavitch.</li>
+<li>Update web links with several changes.</li>
+<li>Update FAQ and Help.</li>
+<li>Add Hebrew font version available on Fonts2u (can be manually installed).</li>
+</ul>
+<h4 id="version-9.26">2022.03.01 - Version 9.26</h4>
+<ul>
+<li>Fix and improve Tools menu.</li>
+<li>Add read online using Torah-Box.</li>
+<li>Update web links with more resources on hieroglyphs.</li>
+</ul>
+<h4 id="version-9.25">2022.02.22 - Version 9.25</h4>
+<ul>
+<li>Fix Tetsaveh Hebrew transcription by adding the ending <code>h</code>.</li>
+<li>Update web links with Tehilim playlist.</li>
+</ul>
+<h4 id="version-9.24">2022.02.08 - Version 9.24</h4>
+<ul>
+<li>Fix Tetsaveh Hebrew name and lettriq: parashot board need to be restored or edited, see ParashotFactory.txt and Parashot-Lettriqs.txt in application's document folder.</li>
+<li>Code refactoring.</li>
+<li>Update web links about celebrations, calendar and Judaism.</li>
+</ul>
+<h4 id="version-9.23">2022.02.01 - Version 9.23</h4>
+<ul>
+<li>Refactor and fix code.</li>
+<li>Update web links about languages, Judaism, rabbis and playlists.</li>
+</ul>
+<h4 id="version-9.22">2021.12.31 - Version 9.22</h4>
+<ul>
+<li>Improve and fix text of context menu item to open celebration verses in monthly view.</li>
+</ul>
+<h4 id="version-9.21">2021.12.28 - Version 9.21</h4>
+<ul>
+<li>Change context menu items order for monthly view.</li>
+<li>Fix context menu items sun icons for monthly view.</li>
+</ul>
+<h4 id="version-9.20">2021.12.24 - Version 9.20</h4>
+<ul>
+<li>Fix selecting sun omer in preferences form on first launch.</li>
+</ul>
+<h4 id="version-9.19">2021.12.23 - Version 9.19</h4>
+<ul>
+<li>Improve preferences form.</li>
+<li>Improve notices.</li>
+</ul>
+<h4 id="version-9.18">2021.12.21 - Version 9.18</h4>
+<ul>
+<li>Few fixes and improvements.</li>
+<li>Add Judaism 101 website link.</li>
+</ul>
+<h4 id="version-9.17">2021.12.19 - Version 9.17</h4>
+<ul>
+<li>Add open parashah in Hebrew Words menu items in main form, navigation window and reminder box.</li>
+<li>Improve weekly parashah menu items in main form, navigation window and reminder box.</li>
+<li>Remove upper case of parashah in main form title bar.</li>
+<li>Change items order of context menu of parashot board.</li>
+<li>Change items order of Tools menu.</li>
+<li>Fix monthly view parashah context menu.</li>
+<li>Fix generation of weekly parashah days concerning certain cases of Sukot and Shim'hat Torah.</li>
+<li>Few UI fixes.</li>
+</ul>
+<h4 id="version-9.16">2021.12.16 - Version 9.16</h4>
+<ul>
+<li>Maintenance release.</li>
+<li>Add months and days notice.</li>
+<li>Some fixes.</li>
+<li>Refactoring.</li>
+<li>Update help.</li>
+<li>Update web links.</li>
+<li>Update Hebrew applications' icons.</li>
+</ul>
+<h4 id="version-9.15">2021.12.05 - Version 9.15</h4>
+<ul>
+<li>Change web check update to use GitHub as an alternative if author's website is down.</li>
+<li>Improve database management code.</li>
+<li>Fix web check update to not display timeout error in auto check mode.</li>
+<li>Few fixes and improvements.</li>
+</ul>
+<h4 id="version-9.14">2021.11.30 - Version 9.14</h4>
+<ul>
+<li>Update WorldCities DB to the latest version (41,000 instead of 13,000 and some corrections).</li>
+<li>Improve loading cities to be done in background at the startup.</li>
+</ul>
+<h4 id="version-9.13">2021.11.25 - Version 9.13</h4>
+<ul>
+<li>Improve about box to dynamically display the list of dependencies and media used.</li>
+<li>Add show only log files having errors in trace form.</li>
+<li>Few fixes and improvements.</li>
+<li>Code refactoring.</li>
+</ul>
+<h4 id="version-9.12">2021.11.21 - Version 9.12</h4>
+<ul>
+<li>Fix second click on date in reminder box sometimes goes to the first day.</li>
+<li>Fix lock session link in auto-lock box that do a standby.</li>
+<li>Few fixes.</li>
+<li>Code refactoring.</li>
+<li>French and English corrections.</li>
+<li>Reorganize web links to avoid problems on small screens.</li>
+</ul>
+<h4 id="version-9.11">2021.11.14 - Version 9.11</h4>
+<ul>
+<li>Fix Windows version detection.</li>
+<li>French and English corrections.</li>
+<li>Upgrade to Visual Studio 2022 and C# 10.</li>
+<li>Update setup for Framework .NET 4.8</li>
+<li>Code refactoring.</li>
+</ul>
+<h4 id="version-9.10">2021.11.09 - Version 9.10</h4>
+<ul>
+<li>Fix UI refresh after showing main form.</li>
+<li>Update system menu.</li>
+<li>Update SQLitePCL.raw nuget.</li>
+</ul>
+<h4 id="version-9.9">2021.10.17 - Version 9.9</h4>
+<ul>
+<li>Fix null exception on select current day.</li>
+<li>Update web links.</li>
+</ul>
+<h4 id="version-9.8">2021.10.08 - Version 9.8</h4>
+<ul>
+<li>Fix main form title bar refresh.</li>
+<li>Fix open all links count.</li>
+<li>Code refactoring.</li>
+<li>Update and reorganize web links.</li>
+</ul>
+<h4 id="version-9.7">2021.10.02 - Version 9.7</h4>
+<ul>
+<li>Fix a bug introduced in previous version for the celebration verses board.</li>
+</ul>
+<h4 id="version-9.6">2021.09.29 - Version 9.6</h4>
+<ul>
+<li>Add option to show current celebration in the title bar.</li>
+<li>Fix title bar not updated in case of fullscreen or screensaver.</li>
+<li>Fix frozen reminder boxes while mouse is over the monthly view.</li>
+<li>Fix showing new parashah description box after Shabat when a celebration is in progress.</li>
+</ul>
+<h4 id="version-9.5">2021.09.26 - Version 9.5</h4>
+<ul>
+<li>Improve interaction with monthly view.</li>
+<li>Improve day context menu to indicate the celebration.</li>
+<li>Add some parashah and celebrations online providers for the study.</li>
+<li>Update web links.</li>
+</ul>
+<h4 id="version-9.4">2021.09.24 - Version 9.4</h4>
+<ul>
+<li>Add search next parashah from today in parashot board.</li>
+<li>Improve export filename for celebrations and new moons boards.</li>
+<li>Fix save and copy images to remove all special boxes.</li>
+<li>Fix some check boxes in celebrations and new moons boards.</li>
+<li>Few fixes and improvements.</li>
+</ul>
+<h4 id="version-9.3">2021.09.23 - Version 9.3</h4>
+<ul>
+<li>Add option to choose action for double-click in visual month: nothing, set active or select day.</li>
+<li>Add Ctrl + Click to select day even if the related option is disabled.</li>
+<li>Add Shift + Arrows keyboard shortcuts to move to previous or next day or week.</li>
+<li>Move day of Shabat selection to the generation tab of the preferences form.</li>
+<li>Fix printing to remove all special boxes.</li>
+<li>Some fixes and improvements.</li>
+</ul>
+<h4 id="version-9.2">2021.09.22 - Version 9.2</h4>
+<ul>
+<li>Add Shift + Click to change active day even if the related option is disabled.</li>
+<li>Add Apps keyboard shortcut to display the contextual menu in monthly view.</li>
+<li>Improve monthly view to display active day before month name.</li>
+<li>Improve alert box for big calendar generation to disable option to ask confirmation.</li>
+<li>Improve web links menus to display those in the current language to the top.</li>
+<li>Fix date difference from monthly view context menu when starting day is after the actual or selected.</li>
+<li>Fix hover effect not shown on selected or real today.</li>
+<li>Some fixes and improvements.</li>
+<li>Optimize code.</li>
+<li>Update web links.</li>
+</ul>
+<h4 id="version-9.1">2021.09.20 - Version 9.1</h4>
+<ul>
+<li>Add bookmarks to context menu in monthly view.</li>
+<li>Add parashot board link in Shabat reminder box when no weekly parashah available.</li>
+<li>Fix bug with no selected day on changing day at midnight.</li>
+</ul>
+<h4 id="version-9.0">2021.09.19 - Version 9.0</h4>
+<ul>
+<li>Add context menu for days in monthly view.</li>
+<li>Add change active day by click in monthly view.</li>
+<li>Add select day by double click in monthly view.</li>
+<li>Add options for that in preferences windows.</li>
+<li>Add mouse hover effect in monthly view.</li>
+<li>Add some options and colors for monthly view.</li>
+<li>Add Ctrl+B and Decimal shortcuts to go to selected day.</li>
+<li>Add celebration verses board.</li>
+<li>Add <code>--celebrationverses</code> command-line option to show this board.</li>
+<li>Add link in reminder box to open verses board.</li>
+<li>Add Tools folder in the application's system start menu.</li>
+<li>The monthly view displays solar hours in case of sun omer.</li>
+<li>Remove option to show sun times as tool tips because of the new context menu.</li>
+<li>Update web links.</li>
+<li>Some fixes and improvements.</li>
+<li>Code refactoring.</li>
+</ul>
+<h4 id="version-8.10">2021.09.06 - Version 8.10</h4>
+<ul>
+<li>Fix showing linked parashah even if not linked.</li>
+</ul>
+<h4 id="version-8.9">2021.09.05 - Version 8.9</h4>
+<ul>
+<li>Add copy to clipboard button in parashah description box.</li>
+<li>Fix preferences volume track bar on load.</li>
+<li>Update sqlite-net-pcl nuget.</li>
+</ul>
+<h4 id="version-8.8">2021.08.30 - Version 8.8</h4>
+<ul>
+<li>Add <code>--parashah</code> command-line option to show the weekly parashah description box.</li>
+<li>Add option to enable or disable Unicode icons in navigation window.</li>
+<li>Change weekly parashah main menu icon.</li>
+<li>Change database vacuum to be instantaneous.</li>
+<li>Fix additional title bar text unassigned immediately after refreshing reminder.</li>
+<li>Fix open Hebrew Letters for words ending by a single numbering letter.</li>
+<li>Some fixes and improvements.</li>
+</ul>
+<h4 id="version-8.7">2021.08.20 - Version 8.7</h4>
+<ul>
+<li>Fix wrong linked parashah description shown from the navigation window.</li>
+</ul>
+<h4 id="version-8.6">2021.08.13 - Version 8.6</h4>
+<ul>
+<li>Add option to show book name and verse reference in parashah labels.</li>
+</ul>
+<h4 id="version-8.5">2021.08.10 - Version 8.5</h4>
+<ul>
+<li>Fix navigation form that open the wrong (next book) parashah for reading online.</li>
+<li>Force showing loading form on web check update download.</li>
+</ul>
+<h4 id="version-8.4">2021.08.08 - Version 8.4</h4>
+<ul>
+<li>Fix main form and Shabat reminder box that open the wrong (next book) parashah for reading online.</li>
+</ul>
+<h4 id="version-8.3">2021.08.05 - Version 8.3</h4>
+<ul>
+<li>Add MSN weather online provider.</li>
+<li>Add option to close navigation window when clicked on show main form.</li>
+<li>Fix preferences and navigation window control tabs.</li>
+<li>Fix default Letters and Words paths in case of very old versions.</li>
+<li>Some improvements.</li>
+</ul>
+<h4 id="version-8.2">2021.07.23 - Version 8.2</h4>
+<ul>
+<li>Add option to show or hide lockout icon in reminder box.</li>
+<li>Add options to show the weekly parashah description box at startup and after Shabat while running.</li>
+<li>Add option to disable loading and processing boxes for powerful computers.</li>
+<li>Improve weekly parashah labels to show book name.</li>
+<li>Improve study parashah online to not open twice a website if link does not have a replacement pattern.</li>
+<li>Improve navigation window with more buttons.</li>
+<li>Fix weekly parashah description box that does not show linked parashah.</li>
+<li>Fix current day labels not correctly updated when new day is triggered.</li>
+<li>Fix Ctrl+Arrows doesn't work after opened preferences until clicked on the monthly view.</li>
+<li>Fix click on send to tray icon is selected when main form is reopened.</li>
+<li>Fix reminder bug introduced in previous version : events are not reminded n-hours before when returning from fullscreen.</li>
+<li>Fix suspend menu tray is disabled on start until preferences is opened and closed.</li>
+<li>Fix setup that creates the <em>Start with Windows</em> registry key even unchecked.</li>
+<li>Some fixes and improvements.</li>
+<li>Update web links.</li>
+</ul>
+<h4 id="version-8.1">2021.05.31 - Version 8.1</h4>
+<ul>
+<li>Fix error on opening online verse from reminder box and parashot board.</li>
+<li>Fix preferences and reminder box controls tab index.</li>
+<li>Improve parashot menus.</li>
+<li>Update web links.</li>
+</ul>
+<h4 id="version-8.0">2021.05.28 - Version 8.0</h4>
+<ul>
+<li>Switch from SQLite ODBC Driver to SQLite-Net with SQLitePCLraw nugets.</li>
+<li>Optimize overall performances.</li>
+<li>Improve auto-lock session box.</li>
+<li>Add option to choose default auto-lock action.</li>
+<li>Add lockout button for menu in active reminder box.</li>
+<li>Add parashot context menu in Shabat reminder box, navigation window, and tools menu.</li>
+<li>Add open main form when click on the moon image in navigation window.</li>
+<li>Add option to ask to regenerate data at startup if years interval is larger than 20% the default setting.</li>
+<li>Some fixes and improvements.</li>
+<li>Code refactoring and quality improvement.</li>
+<li>Replace custom TraceListener by SeriLog.</li>
+<li>Improve trace form.</li>
+</ul>
+<h4 id="version-7.3">2021.05.09 - Version 7.3</h4>
+<ul>
+<li>Add context menu to study and read online the weekly parashah in navigation and reminder boxes.</li>
+<li>Improve the main form weekly parashah tools menu.</li>
+<li>Fix tray balloon is displayed before the looming delay when mouse is no more over the tray icon if not auto-hidden.</li>
+</ul>
+<h4 id="version-7.2">2021.04.30 - Version 7.2</h4>
+<ul>
+<li>Improve parashot form to ensure visibility of the current one when opening.</li>
+<li>Improve web check update timeout to 5s.</li>
+<li>Fix drop down menus shown on another monitor instead of the same screen.</li>
+<li>Fix tray balloon is redisplayed if not auto-hidden and closed too quickly.</li>
+<li>Code refactoring and quality improvement.</li>
+</ul>
+<h4 id="version-7.1">2021.04.15 - Version 7.1</h4>
+<ul>
+<li>Add option to show the weekly parashah in the Shabat reminder box</li>
+<li>Improve the Shabat reminder box to show the weekly parashah.</li>
+<li>Improve tray icon to show special day color even when the reminder is disabled.</li>
+<li>Fix tray icon no more shown paused when reminder is disabled since previous version.</li>
+<li>Fix generate command-line option does nothing.</li>
+<li>Add command-line option to reset the reminder [--resetreminder].</li>
+<li>Some UI/UX fixes and improvements.</li>
+</ul>
+<h4 id="version-7.0">2021.03.23 - Version 7.0</h4>
+<ul>
+<li>Add parashah notice.</li>
+<li>Add parashot board with literal translations, lettriqs, verses references, study tools, edition and export.</li>
+<li>Add generate weekly parashah lecture in the database.</li>
+<li>Add menu item in Tools to the weekly parashah study page of some web sites.</li>
+<li>Add option to set parashah generation for inside or outside of Israël.</li>
+<li>Add option to set parashah reading always on Saturday.</li>
+<li>Add option to indicate parashah in the Shabatot of the monthly view.</li>
+<li>Add option to indicate current parashah in the application title bar.</li>
+<li>Add option to indicate current lunar day in the application title bar.</li>
+<li>Add option to set visual calendar events line spacing that is reduced to display parashah.</li>
+<li>Add common database in roaming to store parashot table and inter-process locking table.</li>
+<li>Add a different Tray Icon to indicate if a Shabat or a celebration day is running.</li>
+<li>Add option to enable or disable this special day Tray Icon.</li>
+<li>Add new in version notice in the Information menu.</li>
+<li>Add option to show the last new in version after a software update.</li>
+<li>Add show usage statistics from about box.</li>
+<li>Add check update from about box.</li>
+<li>Add export to TXT support for all boards.</li>
+<li>Add Ctrl + Home/End/Left/Right shortcut to navigate between months having celebrations.</li>
+<li>Add command-line options (see FAQ).</li>
+<li>Improve text report and monthly view to show long-week celebration intermediate days.</li>
+<li>Improve navigation form to show parashah long-week celebration intermediate days.</li>
+<li>Improve search event, lunar month and Gregorian month windows.</li>
+<li>Improve celebrations and new moons boards to allow the use of English columns title and exports.</li>
+<li>Improve celebrations board export file name to indicate moon or sun omer and set or rise.</li>
+<li>Improve Tray Icon mouse move management.</li>
+<li>Improve reminder box.</li>
+<li>Improve automatic web check update to not run when Shabat and a special celebration day but the next day.</li>
+<li>Change some keyboard shortcuts.</li>
+<li>Change the minimum year to generate to two years before instead of one in order to have consistency with the parashot.</li>
+<li>Change exported text files to be in UTF-8 encoding.</li>
+<li>Fix celebrations boards wrong times for sun omer that were from moon set or rise instead of sun.</li>
+<li>Fix lunar day without moon rise is not shown in text report and visual calendar in the case of sun omer.</li>
+<li>Fix moonrise sometimes attributed to previous day when being 00:00.</li>
+<li>Some fixes and UI/UX improvements.</li>
+<li>Some file and code refactoring.</li>
+<li>Add Serilog-sinks-winforms NuGet package.</li>
+<li>Add some online bible providers and update <em>chabad.org</em>.</li>
+<li>Update web links.</li>
+<li>Update help files.</li>
+</ul>
+<h4 id="version-6.8">2021.02.17 - Version 6.8</h4>
+<ul>
+<li>Fix the last day of Pessa'h and Sukot, when using moon omer, if moonrise occurs the next day, to be this day.</li>
+<li>Update web links.</li>
+</ul>
+<h4 id="version-6.7">2021.02.14 - Version 6.7</h4>
+<ul>
+<li>Reorganize, improve and update web links.</li>
+<li>Add more Jewish calendars entries.</li>
+<li>Add more languages entries.</li>
+</ul>
+<h4 id="version-6.6">2021.02.07 - Version 6.6</h4>
+<ul>
+<li>Fix visual calendar too optimized in v6.3 (not repainted when resizing the window).</li>
+</ul>
+<h4 id="version-6.5">2021.02.03 - Version 6.5</h4>
+<ul>
+<li>Add celebrations and new moons boards export.</li>
+<li>Improve names of export files.</li>
+</ul>
+<h4 id="version-6.4">2021.01.31 - Version 6.4</h4>
+<ul>
+<li>Add <em>country and city</em> label in the middle of the subtitle.</li>
+<li>Add <em>moon or sun omer</em> label in the right of the subtitle.</li>
+<li>Add <em>country and city</em> to the window's title bar of celebrations and new moons boards.</li>
+<li>Add option to choose online weather provider between <em>meteoblue.com</em> and <em>weather.com</em>.</li>
+<li>Add option to choose between daily or weekly mode for online weather.</li>
+<li>Add option to show or hide weather menu items.</li>
+<li>Add option to set the corner of the desktop to place reminder boxes, default being bottom-right.</li>
+<li>Improve preferences form to select <em>all</em>, <em>none</em> or <em>default</em> events in list boxes.</li>
+<li>Fix automatic position of the navigation window beside the Tray Icon when the Task Bar is not at the bottom of the screen.</li>
+<li>Fix date bookmarks count is not saved if changed in preferences.</li>
+<li>Fix sound is played when opening preferences form if volume is less than 100%.</li>
+<li>Update NuGet packages to last versions.</li>
+<li>Code refactoring and code quality improvements.</li>
+</ul>
+<h4 id="version-6.3">2021.01.10 - Version 6.3</h4>
+<ul>
+<li>Add launch system weather app like MSN Weather.</li>
+<li>Add option to define system weather app.</li>
+<li>Add option to enable Windows double-buffering drawing.</li>
+<li>Optimize monthly view painting speed.</li>
+<li>Fix Rotate view is done only between monthly view and grid.</li>
+<li>Fix null exception after changing current day once preferences form closed.</li>
+<li>Fix exception when running application having a config file but no database if deleted.</li>
+<li>Code refactoring (preferences).</li>
+<li>Update help.</li>
+</ul>
+<h4 id="version-6.2">2021.01.01 - Version 6.2</h4>
+<ul>
+<li>Add show online weather in browser using <em>meteoblue.com</em>.</li>
+<li>Add new moons board with click-able dates and selection of years interval.</li>
+<li>Add option for boards to use abbreviated names of month and day of week.</li>
+<li>Add option for boards to show real days having the moonset, else use the moonrise.</li>
+<li>Add option for boards to show or hide hours.</li>
+<li>Improve top menu bar.</li>
+<li>Improve information menu.</li>
+<li>Improve Tray Icon menu.</li>
+</ul>
+<h4 id="version-6.1">2020.12.27 - Version 6.1</h4>
+<ul>
+<li>Add export and import preferences.</li>
+<li>Add backup and restore date bookmarks.</li>
+<li>Add option to go to today when main form popup else keep the selected.</li>
+<li>Improve export dialog to select default image file format.</li>
+<li>Improve celebrations board to indicate the day of the Shabat in the title.</li>
+<li>Improve text report to always show selection.</li>
+<li>Fix text report to select the last character of the line.</li>
+<li>Fix print text report interval that prints all lines.</li>
+<li>Fix resizing celebrations board from the top or left, and un-maximize.</li>
+<li>Fix export dialog that has print image orientation option always enabled.</li>
+<li>Fix navigation form that doesn't ballon when app is started hidden.</li>
+<li>Fix help shortcuts.</li>
+<li>Some improvements.</li>
+<li>Code refactoring.</li>
+<li>Update web links.</li>
+</ul>
+<h4 id="version-6.0">2020.12.21 - Version 6.0</h4>
+<ul>
+<li>Add celebrations board with click-able dates and selection of years interval.</li>
+<li>Add advanced print preview window.</li>
+<li>Add select years interval to export/print, else process the entire report/grid or only the current monthly view.</li>
+<li>Add option to set the default print monthly view page orientation.</li>
+<li>Add option to set preferred data export file format (CSV/JSON)</li>
+<li>Add option to set preferred image export file format (PNG/JPEG/TIFF/BMP).</li>
+<li>Add export data to JSON file.</li>
+<li>Add option for grid export to use enumerations names instead of translations</li>
+<li>Add option to set global HotKey to popup the main form.</li>
+<li>Add some keyboard shortcuts and change few.</li>
+<li>Fix CSV export to add moon rise type field.</li>
+<li>Fix lunar months menu item not available yet in the main form is available in the Tray Icon menu.</li>
+<li>Few improvements.</li>
+<li>Few fixes.</li>
+<li>Code refactoring.</li>
+<li>Add Newtonsoft.Json NuGet package.</li>
+<li>Add MoreLINQ NuGet package.</li>
+<li>Add Enums.NET NuGet package.</li>
+<li>Add Windows Global Hotkey dependency.</li>
+<li>Add InputSimulatorStandard NuGet package.</li>
+<li>Add Serilog-sinks-file NuGet package.</li>
+<li>Update web links.</li>
+<li>Update help.</li>
+</ul>
+<h4 id="version-5.13">2020.12.13 - Version 5.13</h4>
+<ul>
+<li>Fix app does not start hidden at windows startup in v5.12.</li>
+<li>Fix web check update box remains on top if clicked on view release notes.</li>
+<li>Fix button print not disabled when data grid view and causes an unhandled error.</li>
+<li>Fix custom wav is played twice when clicking on the radio box.</li>
+<li>Fix visual calendar IDE design time exceptions.</li>
+<li>Add Serilog NuGet package.</li>
+</ul>
+<h4 id="version-5.12">2020.12.12 - Version 5.12</h4>
+<ul>
+<li>Optimize statistics initialization at startup to be in a background task.</li>
+<li>Fix usage statistics menu item not disabled in tray menu if stats are disabled at startup.</li>
+<li>Fix buttons position in search event, lunar month and Gregorian month windows.</li>
+<li>Fix file and memory sizes displayed only in English in usage statistics form.</li>
+<li>Fix date bookmarks storage format that altered the dates after language changed.</li>
+<li>Improve UI/UX.</li>
+<li>Few fixes.</li>
+<li>Replace AASharp source code dependency by the NuGet package.</li>
+<li>Replace GenericParsing dependency by FileHelpers NuGet package.</li>
+<li>Replace simple command-line parser by CommandLineParser NuGet package.</li>
+<li>Code refactoring.</li>
+<li>File system refactoring.</li>
+</ul>
+<h4 id="version-5.11">2020.12.06 - Version 5.11</h4>
+<ul>
+<li>Add navigation buttons to search event, lunar month and Gregorian month windows.</li>
+<li>Add save and load theme for monthly view, reminder boxes and navigation window.</li>
+<li>Add print text report.</li>
+<li>Add printing option tab in preferences form.</li>
+<li>Add open export folder in tools menu.</li>
+<li>Improve UI/UX</li>
+<li>Change Markdownsharp dependency by Markdig NuGet package.</li>
+<li>Update web links.</li>
+<li>Update help.</li>
+</ul>
+<h4 id="version-5.10">2020.12.01 - Version 5.10</h4>
+<ul>
+<li>Add view selection for save to file, copy to clipboard and print.</li>
+<li>Add preview dialog for print monthly view.</li>
+<li>Add option to show print preview dialog.</li>
+<li>Add option to set printing margin.</li>
+<li>Add option to auto-open exported file.</li>
+<li>Add option to set the number of date bookmarks.</li>
+<li>Add option to restore the last view at startup else go to the month.</li>
+<li>Add option to enable/disable usage statistics.</li>
+<li>Improve usage statistics form.</li>
+<li>Improve start menu reset settings to delete all previous app settings folders in AppData\Local.</li>
+<li>Improve print image quality.</li>
+<li>Improve UI/UX.</li>
+<li>Update help.</li>
+</ul>
+<h4 id="version-5.9">2020.11.26 - Version 5.9</h4>
+<ul>
+<li>Add option to set automatic db optimize frequency.</li>
+<li>Add option to set automatic web check update frequency.</li>
+<li>Add option to set export folder.</li>
+<li>Add option to set application's volume.</li>
+<li>Add option to show tray balloon only if main form is hidden.</li>
+<li>Add option to enable/disable success dialogs.</li>
+<li>Add sounds to export, clipboard and print actions.</li>
+<li>Improve reminder sound selection box with more choices.</li>
+<li>Improve preferences form.</li>
+<li>Improve information menu.</li>
+<li>Improve UI/UX.</li>
+<li>Optimize by pre-loading sounds lists in a thread.</li>
+<li>Refactor project folders hierarchy.</li>
+</ul>
+<h4 id="version-5.8">2020.11.22 - Version 5.8</h4>
+<ul>
+<li>Add change tab page using function keys in preferences form.</li>
+<li>Improve new version available form to show current version.</li>
+<li>Fix view log menu item not disabled when app started when log is disabled.</li>
+<li>Fix view log icon not disabled in stats form when log is disabled.</li>
+<li>Fix small defect with Tray Icon images.</li>
+<li>Update web links to improve playlists and add the calendar of Torah-box.</li>
+</ul>
+<h4 id="version-5.7">2020.11.18 - Version 5.7</h4>
+<ul>
+<li>Fix start menu icons lost since the v5.3 setup.</li>
+</ul>
+<h4 id="version-5.6">2020.11.15 - Version 5.6</h4>
+<ul>
+<li>Rework of the preferences form design to have a Tab Control with pages.</li>
+<li>Add keyboard shortcuts notice in windows settings menu.</li>
+<li>Add option to set the Calculator application path.</li>
+<li>Add option to set the Hebrew Letters application path.</li>
+<li>Add option for date difference calculator form to set right date to today when opened.</li>
+<li>Fix some preferences controls to be disabled when related options are disabled.</li>
+<li>Fix use no colors option.</li>
+<li>Fix print dialog does not have the focus when opened.</li>
+<li>Fix french help.</li>
+<li>Improve UI.</li>
+<li>Update web links with Quran Arabic lecture link.</li>
+</ul>
+<h4 id="version-5.5">2020.09.29 - Version 5.5</h4>
+<ul>
+<li>Fix current celebration reminder box closed when passing midnight.</li>
+<li>Fix &quot;bookmarks not found exception&quot; when reseting parameters.</li>
+<li>Remove title bar icon from reminder boxes.</li>
+</ul>
+<h4 id="version-5.4">2020.09.25 - Version 5.4</h4>
+<ul>
+<li>Add option to enable or disable start with Windows from the software that now runs from the registry.</li>
+<li>Improve weekly check update while running to manage on power resume event.</li>
+<li>Fix bookmarks numbering from 0 instead of 1 introduced in the previous version.</li>
+</ul>
+<h4 id="version-5.3">2020.09.18 - Version 5.3</h4>
+<ul>
+<li>Add &quot;Start and reset preferences&quot; link in Windows Start menu.</li>
+<li>Improve date bookmarks to be saved to a file in user roaming folder instead of using application settings.</li>
+<li>Fix the inconsequential error: &quot;The given key was missing from the dictionary in CheckCelebrationDay()&quot;.</li>
+<li>Rename 32x32 icon files.</li>
+</ul>
+<h4 id="version-5.2">2020.09.11 - Version 5.2</h4>
+<ul>
+<li>Improve check update to verify the SSL certificate of the website and the checksum of the setup file.</li>
+<li>Add sound selection for the reminder box.</li>
+<li>Add permanent database file locking while running.</li>
+<li>Fix justify text in advanced message boxes.</li>
+<li>More refactorings.</li>
+<li>Update help</li>
+</ul>
+<h4 id="version-5.1">2020.09.08 - Version 5.1</h4>
+<ul>
+<li>Fix that sometimes the application is in the system Tray Icon but does not start and freeze.</li>
+<li>More refactorings.</li>
+</ul>
+<h4 id="version-5.0">2020.09.06 - Version 5.0</h4>
+<ul>
+<li>Add keyboard shortcuts to navigate in the monthly view.</li>
+<li>Add search Gregorian month form.</li>
+<li>Add tools menu duplicated in the Tray Icon.</li>
+<li>Add force database optimize at next startup in tools menu</li>
+<li>Add option to define the years interval for auto-generation.</li>
+<li>Add option to enable or disable the web links menu.</li>
+<li>Add option to enable or disable the suspend reminder functionality.</li>
+<li>Add button to disable auto lock option in lock session form.</li>
+<li>Add option to auto generate calendar when expired else show dialog box.</li>
+<li>Add option to set the maximum years interval allowed to generate the data.</li>
+<li>Add mute windows volume in addition to stop media playing in auto lock form.</li>
+<li>Fix &quot;stop media playing&quot; to stop instead of play/pause media.</li>
+<li>Fix day selection to allow only generated years interval.</li>
+<li>Improve dates difference calculator to show more stats in a form having bookmarks.</li>
+<li>Improve generate years box with predefined intervals and change some constants.</li>
+<li>Improve GPS finder to try to auto-select time zone based on country or city names.</li>
+<li>Improve monthly view drawing speed by a half.</li>
+<li>Improve data generation speed by a half.</li>
+<li>Improve keyboard shortcuts.</li>
+<li>Remove the generate years selection box at startup if database is empty or new.</li>
+<li>Change default years interval generation to 10.</li>
+<li>Change text report that is no more stored in the database but in a file to avoid problems when using hudge interval.</li>
+<li>Add usage statistics form in tools menu.</li>
+<li>Add option to enable or disable message boxes sounds.</li>
+<li>Improve message boxes.</li>
+<li>Improve check update to allow auto update or direct download or open application web page.</li>
+<li>Improve debugger to support logging.</li>
+<li>Improve exception form to view log.</li>
+<li>Some UI/UX improvements.</li>
+<li>Massive code refactoring.</li>
+<li>Update help.</li>
+<li>Update to SQLite 3.32.3 ODBC Driver.</li>
+<li>Update Framework .NET version to 4.7.2 and supported Windows only 7 SP1 or higher.</li>
+<li>The application now automatically creates the ODBC DSN in the Windows registry.</li>
+<li>Improve setup.</li>
+</ul>
+<h4 id="version-4.1">2020.08.22 - Version 4.1</h4>
+<ul>
+<li>Add bring to front application if process is started again.</li>
+<li>Add choosing a delay to allow auto enabling when suspending reminder.</li>
+<li>Add left, right and up keys support to the navigation form.</li>
+<li>Add option to define moon day text format for monthly view.</li>
+<li>Add Windows date and time link in the tools menu.</li>
+<li>Add release notes link in the information menu.</li>
+<li>Add information menu duplicated in the Tray Icon.</li>
+<li>Add web links menu duplicated in the Tray Icon.</li>
+<li>Fix reset preferences generates data before setup GPS if undefined that causes an exception.</li>
+<li>Fix GPS labels appearance for Windows 10.</li>
+<li>Fix reminder form title bar for Windows 10.</li>
+<li>Fix Hebrew Letters path TextBox color for Windows 10.</li>
+<li>Fix long latency when opening preferences for the first time in Windows 10.</li>
+<li>Some fixes and improvements.</li>
+</ul>
+<h4 id="version-4.0">2020.04.24 - Version 4.0</h4>
+<ul>
+<li>Exit application at startup if user choose to download a newer version.</li>
+<li>Add F1/F2/F3 shortcuts to select the view.</li>
+<li>Add F4/F5/F6/F7 shortcuts to open searches windows.</li>
+<li>Add moon month name to all days in the monthly view.</li>
+<li>Add suspend reminder menu in the main form and the Tray Icon.</li>
+<li>Improve Tray Icon to show if the reminder is suspended.</li>
+<li>Add preferences menu in the Tray Icon.</li>
+<li>Add dialog box to choose sun or moon omer at first startup.</li>
+<li>Add celebrations dialog box notice.</li>
+<li>Improve personal Shabat dialog box notice.</li>
+<li>Improve preferences form.</li>
+<li>Improve search celebration and moon month forms to use a combo-box to select year.</li>
+<li>Improve text report : Ctrl+A select all text.</li>
+<li>Add month number column in the search moon month form.</li>
+<li>Add tools menu.</li>
+<li>Add celebrations and Shabat notices in tools menu.</li>
+<li>Add calculate number of days between two dates in tools menu.</li>
+<li>Add link to windows calculator in tools menu.</li>
+<li>Add option to change monthly view text size.</li>
+<li>Add option to change monthly view back and text colors for non-event days.</li>
+<li>Add option to auto open destination folder of exports after done.</li>
+<li>Fix controls tabs and focus in auto lock session form.</li>
+<li>Fix reset default monthly view colors in preferences form.</li>
+<li>Fix edit report text font size in preferences form.</li>
+<li>Fix print bitmap size if the main form is resized.</li>
+<li>Fix search celebration and moon month forms when closing using the top-right cross.</li>
+<li>Fix celebration reminder that can be shown even the next day too with bad times.</li>
+<li>Few UI fixes.</li>
+<li>Add menu for web links about Judaism.</li>
+<li>Add option to auto optimize database at startup once a week.</li>
+<li>Add option to enable debugger.</li>
+<li>Add debugger (exception information form with GitHub issue creation).</li>
+<li>Improve UI/UX.</li>
+<li>Code refactoring.</li>
+<li>Update help.</li>
+</ul>
+<h4 id="version-3.10">2019.11.12 - Version 3.10</h4>
+<ul>
+<li>Change dependency AAPlus for AASharp.</li>
+<li>Improve data generation to show all warnings.</li>
+<li>Fix data generation for south hemisphere for the last year when using moon omer.</li>
+</ul>
+<h4 id="version-3.9">2019.11.11 - Version 3.9</h4>
+<ul>
+<li>Add shutdown, hibernate and standby actions to auto lock session dialog box.</li>
+<li>Add option to stop current media playing to auto lock session dialog box.</li>
+</ul>
+<h4 id="version-3.8">2019.11.04 - Version 3.8</h4>
+<ul>
+<li>Add option to auto lock session during Shabat and celebrations days.</li>
+</ul>
+<h4 id="version-3.7">2019.11.01 - Version 3.7</h4>
+<ul>
+<li>Update current day highlighting when passing midnight.</li>
+<li>Fix first day of month not highlighted like other days.</li>
+<li>Fix sun rise and set on the first day of daylight saving time that was shifted by one day in the previous version.</li>
+<li>Fix the reminder that sometimes does not work anymore after a while if screensaver or fullscreen mode has been detected.</li>
+<li>Code refactoring.</li>
+</ul>
+<h4 id="version-3.6">2019.10.21 - Version 3.6</h4>
+<ul>
+<li>Add time zone setting to have good sun and moon rise and set in the whole world.</li>
+</ul>
+<h4 id="version-3.5">2019.10.21 - Version 3.5</h4>
+<ul>
+<li>Improve personal Shabat setup by asking birth time.</li>
+<li>Improve min and max years that can be generated (up to 2198).</li>
+<li>Improve reminder to change the window color when just passing the start date without waiting the remind delay.</li>
+<li>Fix reminder using moon days that stops remind after midnight.</li>
+<li>Add Ctrl+T shortcut to go to today.</li>
+<li>Add option to define the delay to open the looming navigation popup.</li>
+<li>Some improvements.</li>
+<li>Some fixes.</li>
+<li>Update help.</li>
+</ul>
+<h4 id="version-3.4">2019.10.19 - Version 3.4</h4>
+<ul>
+<li>Improve celebration and lunar month finder.</li>
+<li>Improve select city window.</li>
+<li>Change exit button now doesn't shutdown application but minimize to Tray Icon.</li>
+<li>Fix cities names having special diacritics.</li>
+<li>Fix lunar month's first day duplicated if no moon rise on the next sun day.</li>
+</ul>
+<h4 id="version-3.3">2019.10.18 - Version 3.3</h4>
+<ul>
+<li>Improve UI.</li>
+<li>Some fixes.</li>
+<li>Some code refactorings.</li>
+<li>Setup install SQLite ODBC Driver if not present.</li>
+</ul>
+<h4 id="version-3.2">2019.10.17 - Version 3.2</h4>
+<ul>
+<li>Add search month window.</li>
+<li>Fix soukot sun omer date.</li>
+<li>Fix calendar generated only for north hemisphere if moon omer.</li>
+<li>Some code refactorings.</li>
+</ul>
+<h4 id="version-3.1">2019.10.16 - Version 3.1</h4>
+<ul>
+<li>Add option to choose between sun or moon day count to determine celebrations to allow a more traditional use.</li>
+</ul>
+<h4 id="version-3.0">2019.10.14 - Version 3.0</h4>
+<ul>
+<li>Improve the reminder to remind during the celebration day like with the Shabat day.</li>
+<li>Improve the reminder to flash the form if already displayed.</li>
+<li>Improve reminder boxes location on the desktop.</li>
+<li>Improve session ending.</li>
+<li>Add loading data box instead of using a bottom progress bar.</li>
+<li>Add displaying begin and end dates and times in the celebration reminder form like with the Shabat.</li>
+<li>Add looming navigation popup from the Tray Icon when mouse is over.</li>
+<li>Add celebration weeks, Shabat days and reminders popup colorization.</li>
+<li>Add check end of calendar to automatically regenerate it.</li>
+<li>Add option to choose language.</li>
+<li>Add world cities GPS database.</li>
+<li>Improve UI.</li>
+<li>Improve speed.</li>
+<li>Update help.</li>
+<li>Some code refactorings.</li>
+</ul>
+<h4 id="version-2.4">2019.09.19 - Version 2.4</h4>
+<ul>
+<li>Add option to disable startup check update.</li>
+<li>Some code refactorings.</li>
+</ul>
+<h4 id="version-2.3">2019.09.15 - Version 2.3</h4>
+<ul>
+<li>Fix starting form location.</li>
+</ul>
+<h4 id="version-2.2">2019.09.10 - Version 2.2</h4>
+<ul>
+<li>Reminder is disabled if fullscreen or if screen saver is active.</li>
+</ul>
+<h4 id="version-2.1">2019.09.04 - Version 2.1</h4>
+<ul>
+<li>Improve Shabat reminder.</li>
+<li>Update controls tabs.</li>
+</ul>
+<h4 id="version-2.0">2019.08.26 - Version 2.0</h4>
+<ul>
+<li>Change Shabat reminder.</li>
+<li>Reorganize preferences form.</li>
+</ul>
+<h4 id="version-1.10">2019.08.25 - Version 1.10</h4>
+<ul>
+<li>Add colors parameters for monthly view.</li>
+</ul>
+<h4 id="version-1.9">2019.08.24 - Version 1.9</h4>
+<ul>
+<li>Improve check update.</li>
+</ul>
+<h4 id="version-1.8">2019.05.22 - Version 1.8</h4>
+<ul>
+<li>Add check update.</li>
+</ul>
+<h4 id="version-1.7">2019.04.25 - Version 1.7</h4>
+<ul>
+<li>Fix Pessa'h length.</li>
+</ul>
+<h4 id="version-1.6">2019.04.08 - Version 1.6</h4>
+<ul>
+<li>Fix Tray Icon.</li>
+</ul>
+<h4 id="version-1.5">2019.01.28 - Version 1.5</h4>
+<ul>
+<li>Change current day color in monthly view.</li>
+<li>Some code refactorings.</li>
+<li>Some improvements.</li>
+</ul>
+<h4 id="version-1.4">2019.01.21 - Version 1.4</h4>
+<ul>
+<li>Add an event reminder.</li>
+<li>Add help file.</li>
+</ul>
+<h4 id="version-1.3">2019.01.20 - Version 1.3</h4>
+<ul>
+<li>Add an option for the Tray Icon mouse click.</li>
+<li>Add an option to show/hide the main form at startup.</li>
+<li>Add a monthly view.</li>
+<li>Add a print menu.</li>
+<li>Improve the grid view.</li>
+</ul>
+<h4 id="version-1.2">2019.01.18 - Version 1.2</h4>
+<ul>
+<li>Add a celebrations window.</li>
+<li>Improve the navigation window.</li>
+<li>Improve the preferences window.</li>
+<li>Some bug fixes.</li>
+</ul>
+<h4 id="version-1.1">2019.01.17 - Version 1.1</h4>
+<ul>
+<li>Report is no more generated at every startup.</li>
+</ul>
+<h4 id="version-1.0">2019.01.14 - Version 1.0</h4>
+<ul>
+<li>Initial release.</li>
+</ul>
+
+
+</body>
+</html>

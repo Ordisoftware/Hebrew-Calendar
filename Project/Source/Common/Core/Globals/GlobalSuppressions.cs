@@ -90,3 +90,5 @@
 [assembly: SuppressMessage("Style", "GCop436:As the implementation is relatively long, change this into a standard method implementation.", Justification = "Opinion or N/A (need a parameter for the analyzer)", Scope = "module")]
 [assembly: SuppressMessage("Style", "GCop437:Complete the task associated to this \"TODO\" comment.", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Usage", "GCop511:Either remove the parameter documentation node, or describe it properly.", Justification = "Opinion", Scope = "module")]
+
+[assembly: SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "For GCop when no nuget added", Scope = "module")]
