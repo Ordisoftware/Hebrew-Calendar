@@ -85,7 +85,6 @@ public partial class MainForm
     ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
     ContextMenuDayParashah.Enabled = false;
     ContextMenuDayParashah.Visible = Settings.CalendarShowParashah;
-    //ContextMenuParashahSeparator.Visible = Settings.CalendarShowParashah;
     ContextMenuDayParashah.Text = new System.Resources.ResourceManager(typeof(MainForm)).GetString("ContextMenuDayParashah.Text");
     var weeklong = rowDay?.GetWeekLongCelebrationIntermediateDay();
     var torahEvent = ( weeklong?.Event ) ?? TorahCelebration.None;
