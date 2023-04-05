@@ -11,10 +11,8 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Core;
-
-using Markdig;
 
 using TranslationPair = KeyValuePair<string, TranslationsDictionary>;
 
@@ -241,6 +239,8 @@ public sealed partial class CommonMenusControl : UserControl
 
   private void ActionReadme_Click(object sender, EventArgs e)
   {
+    SystemManager.RunShell(Globals.ApplicationReadmeHtmlPath);
+    /* TODO remove that and markdig
     var fileLines = Markdown.ToHtml(File.ReadAllText(Globals.ApplicationReadmeMDPath),
                                     new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
     string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
@@ -253,7 +253,7 @@ public sealed partial class CommonMenusControl : UserControl
       SystemManager.TryCatch(() => File.Delete(filePath));
       timer.Dispose();
     };
-    timer.Start();
+    timer.Start();*/
   }
 
   private void ActionAbout_Click(object sender, EventArgs e)

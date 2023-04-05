@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -148,6 +148,12 @@ static public partial class Globals
   /// </summary>
   static public string ApplicationReadmeMDPath
     => Path.Combine(RootFolderPath, "README.md");
+
+  /// <summary>
+  /// Indicates the file path of the application's readme html file.
+  /// </summary>
+  static public string ApplicationReadmeHtmlPath
+    => Path.Combine(RootFolderPath, "README.html");
 
   /// <summary>
   /// Indicates the file path of the help.
