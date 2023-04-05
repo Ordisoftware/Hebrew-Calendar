@@ -387,6 +387,11 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Check and fix weekly parashah generation with Soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
+#### 2023.04.05 - Version 10.4
+
+- Fix celebration day context menu for show verses item.
+- Replace on-the-fly readme.html creation with MarkDig by a generated with VS.
+
 #### 2023.03.03 - Version 10.3
 
 - Add links for ancient-hebrew.org and mechanical-translation.org (website, search words and read verses online).
