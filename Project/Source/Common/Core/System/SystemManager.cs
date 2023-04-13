@@ -168,7 +168,7 @@ static public partial class SystemManager
   {
     try
     {
-      using FileStream stream = new FileInfo(filePath).Open(FileMode.Open, FileAccess.Read, FileShare.None);
+      using var stream = new FileInfo(filePath).Open(FileMode.Open, FileAccess.Read, FileShare.None);
       stream.Close();
       return false;
     }

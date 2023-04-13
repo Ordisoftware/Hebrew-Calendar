@@ -149,7 +149,6 @@ static public class HebrewAlphabet
   /// <summary>
   /// Converts an integer to its representation using Hebrew letters.
   /// </summary>
-  /// <param name="value"></param>
   static public string IntToUnicode(int value)
   {
     return Calculator.ConvertToGematriaNumericString(value, GematriaOptions);
