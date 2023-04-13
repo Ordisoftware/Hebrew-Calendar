@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew;
 
+using System.Reflection;
 using EllisWeb.Gematria;
 
 /// <summary>
@@ -246,10 +247,11 @@ static public class HebrewAlphabet
   static public string ToHebrewFont(string unicode)
   {
     if ( unicode.IsNullOrEmpty() ) return string.Empty;
-    string result = string.Empty;
+    int index = unicode.Length;
+    var letters = new char[index];
     foreach ( char c in unicode.RemoveDiacritics().ToLower() )
-      result = UnicodeToHebrew(c) + result;
-    return result;
+      letters[--index] = UnicodeToHebrew(c);
+    return new string(letters);
   }
 
   /// <summary>
@@ -259,10 +261,11 @@ static public class HebrewAlphabet
   static public string ToUnicodeChars(string str)
   {
     if ( str.IsNullOrEmpty() ) return string.Empty;
-    string result = string.Empty;
+    int index = str.Length;
+    var letters = new char[index];
     foreach ( char c in str.RemoveDiacritics().ToLower() )
-      result = HebrewToUnicode(c) + result;
-    return result;
+      letters[--index] = HebrewToUnicode(c);
+    return new string(letters);
   }
 
   /// <summary>

@@ -49,12 +49,13 @@ static public class DataTableHelper
         CsvEngine.DataTableToCsv(table, filePath, options);
         break;
       case DataExportTarget.JSON:
-        var dataset = new DataSet(Globals.AssemblyTitle);
-        dataset.Tables.Add(table);
-        string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
-        File.WriteAllText(filePath, lines, Encoding.UTF8);
-        dataset.Tables.Clear();
-        dataset.Dispose();
+        using ( var dataset = new DataSet(Globals.AssemblyTitle) )
+        {
+          dataset.Tables.Add(table);
+          string lines = JsonConvert.SerializeObject(dataset, Formatting.Indented);
+          File.WriteAllText(filePath, lines, Encoding.UTF8);
+          dataset.Tables.Clear();
+        }
         break;
       default:
         throw new AdvNotImplementedException(selected);
