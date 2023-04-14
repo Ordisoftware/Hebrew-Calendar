@@ -70,8 +70,8 @@ public class SQLiteNetORM : SQLiteConnection
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   public void InitializeVersion()
   {
-    ProviderName = this?.GetType().Name ?? SysTranslations.ErrorSlot.GetLang();
-    int vernum = this?.LibVersionNumber ?? -1;
+    ProviderName = GetType().Name;
+    int vernum = LibVersionNumber;
     if ( vernum == -1 )
       EngineNameAndVersion = SysTranslations.UnknownSlot.GetLang();
     else

@@ -113,7 +113,6 @@ namespace CodeProjectCalendar.NET
       }
     }
 
-
     /// <summary>
     /// Indicates the type of calendar to render, Month or Day view
     /// </summary>
@@ -801,7 +800,6 @@ namespace CodeProjectCalendar.NET
     //  return lastDay.AddDays(diff);
     //}
 
-
     //private int Max(params float[] value)
     //{
     //  return (int)value.Max(i => Math.Ceiling(i));
@@ -824,7 +822,8 @@ namespace CodeProjectCalendar.NET
       const int cellHourWidth = 60;
       const int cellHourHeight = 30;
       var bmp = new Bitmap(ClientSize.Width, cellHourWidth * 24);
-      Graphics g = Graphics.FromImage(bmp);
+
+      using var g = Graphics.FromImage(bmp);
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
 
       var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, _calendarDate.Day, 0, 0, 0);
@@ -885,7 +884,6 @@ namespace CodeProjectCalendar.NET
         yStart += cellHourHeight;
       }
 
-      g.Dispose();
       return bmp;
     }
 
@@ -942,8 +940,8 @@ namespace CodeProjectCalendar.NET
       bool selectedBoxOnlyCurrent = Program.Settings.SelectedDayBoxColorOnlyCurrent;
       _calendarDays.Clear();
       CalendarEvents.Clear();
-      var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
-      Graphics g = Graphics.FromImage(bmp);
+      using var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
+      using var g = Graphics.FromImage(bmp);
       e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
@@ -1420,9 +1418,7 @@ namespace CodeProjectCalendar.NET
       // ORDISOFTWARE MODIF END
 
       _rectangles.Clear();
-      g.Dispose();
       e.Graphics.DrawImage(bmp, 0, 0, ClientSize.Width, ClientSize.Height);
-      bmp.Dispose();
     }
 
     private bool NeedsRendering(IEvent evnt, DateTime day)

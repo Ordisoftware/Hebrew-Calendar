@@ -43,7 +43,8 @@ static public partial class Globals
   static public int SinkFileEventTemplateSize { get; set; }
     = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length - 1;
 
-  static private readonly string OldTraceDirectoryName = "Logs";
+  static private readonly string OldTraceDirectoryName
+    = "Logs";
 
   static public string TraceDirectoryName { get; set; }
     = "Serilog";
