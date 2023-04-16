@@ -51,7 +51,6 @@
 
 [assembly: SuppressMessage("Design", "MA0012:Do not raise reserved exception type", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Design", "MA0016:Prefer returning collection abstraction instead of implementation", Justification = "Opinion", Scope = "module")]
-[assembly: SuppressMessage("Design", "MA0018:Do not declare static members on generic types", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Design", "MA0026:Fix TODO comment", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Design", "MA0038:Make method static", Justification = "Opinion based and can reduce performances", Scope = "module")]
 [assembly: SuppressMessage("Design", "MA0041:Make property static", Justification = "Opinion", Scope = "module")]

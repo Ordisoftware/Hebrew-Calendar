@@ -40,6 +40,7 @@ where T : IConvertible
   /// <param name="title">The title.</param>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
+  [SuppressMessage("Design", "MA0018:Do not declare static members on generic types", Justification = "Opinion")]
   static public InputValueResult Run(string title, string caption, ref T value)
   {
     return Run(title, caption, ref value, false, null);
