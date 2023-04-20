@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-01 </created>
-/// <edited> 2021-07 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -21,5 +21,6 @@ public enum WeatherProvider
 {
   MeteoblueDotCom,
   WeatherDotCom,
-  MicrosoftNetworkDotCom
+  MicrosoftNetworkDotCom,
+  AccuWeatherDotCom
 }

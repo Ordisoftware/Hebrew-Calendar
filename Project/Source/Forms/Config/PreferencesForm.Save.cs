@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Base.Hotkeys;
@@ -232,8 +232,15 @@ partial class PreferencesForm
     else
     if ( SelectCalendarDoubleClickActionContextMenu.Checked )
       Settings.CalendarDoubleClickAction = CalendarDoubleClickAction.ContextMenu;
-    // Double buffering
-    DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
+    // Weather provider
+    if ( SelectWeatherOnlineAccuWeatherDotCom.Checked )
+      Settings.WeatherOnlineProvider = WeatherProvider.AccuWeatherDotCom;
+    if ( SelectWeatherOnlineMeteoblueDotCom.Checked )
+      Settings.WeatherOnlineProvider = WeatherProvider.MeteoblueDotCom;
+    if ( SelectWeatherOnlineMicrosoftNetworkDotCom.Checked )
+      Settings.WeatherOnlineProvider = WeatherProvider.MicrosoftNetworkDotCom;
+    if ( SelectWeatherOnlineWeatherDotCom.Checked )
+      Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
   }
 
 }

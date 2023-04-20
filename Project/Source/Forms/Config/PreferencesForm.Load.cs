@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -184,19 +184,10 @@ partial class PreferencesForm
     // System
     EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
     EditLogEnabled.Enabled = DebugManager.Enabled;
-    // Weather online provider
-    switch ( Settings.WeatherOnlineProvider )
-    {
-      case WeatherProvider.WeatherDotCom:
-        SelectWeatherOnlineWeatherDotCom.Select();
-        break;
-      case WeatherProvider.MicrosoftNetworkDotCom:
-        SelectWeatherOnlineMicrosoftNetworkDotCom.Select();
-        break;
-      default:
-        SelectWeatherOnlineMeteoblueDotCom.Select();
-        break;
-    }
+    // GPS
+    if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
+      ActionGetGPS_LinkClicked(null, null);
+    EditTimeZone.Text = Settings.GetGPSText();
     // TrayIcon
     switch ( Settings.TrayIconClickOpen )
     {
@@ -226,10 +217,22 @@ partial class PreferencesForm
         SelectCalendarDoubleClickActionSelect.Select();
         break;
     }
-    // GPS
-    if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
-      ActionGetGPS_LinkClicked(null, null);
-    EditTimeZone.Text = Settings.GetGPSText();
+    // Weather provider
+    switch ( Settings.WeatherOnlineProvider )
+    {
+      case WeatherProvider.AccuWeatherDotCom:
+        SelectWeatherOnlineAccuWeatherDotCom.Select();
+        break;
+      case WeatherProvider.MicrosoftNetworkDotCom:
+        SelectWeatherOnlineMicrosoftNetworkDotCom.Select();
+        break;
+      case WeatherProvider.WeatherDotCom:
+        SelectWeatherOnlineWeatherDotCom.Select();
+        break;
+      default:
+        SelectWeatherOnlineMeteoblueDotCom.Select();
+        break;
+    }
   }
 
 }

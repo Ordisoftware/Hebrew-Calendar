@@ -23,14 +23,17 @@ partial class MainForm
   {
     switch ( Settings.WeatherOnlineProvider )
     {
+      case WeatherProvider.AccuWeatherDotCom:
+        DoAccuWeatherDotCom();
+        break;
       case WeatherProvider.MeteoblueDotCom:
         DoOnlineWeatherMeteoBlueDotCom();
         break;
-      case WeatherProvider.WeatherDotCom:
-        DoOnlineWeatherWeatherDotCom();
-        break;
       case WeatherProvider.MicrosoftNetworkDotCom:
         DoMicrosoftNetworkDotCom();
+        break;
+      case WeatherProvider.WeatherDotCom:
+        DoOnlineWeatherWeatherDotCom();
         break;
       default:
         throw new AdvNotImplementedException(Settings.WeatherOnlineProvider);
@@ -50,8 +53,8 @@ partial class MainForm
     public const string WeatherDotComResult = "https://weather.com/%LANG%/weather/%MODE%/l/%LAT%,%LON%";
     // MSN
     public const string MicrosoftNetworkDotComResult = "https://a.msn.com/54/%LANG%/ct%LAT%,%LON%";
-    // TODO NEXT AccuWeather
-    public const string AccuWeatherDotComResult = "https://www.accuweather.com/search-locations?query=%LAT%,%LON%";
+    // AccuWeather
+    public const string AccuWeatherDotComResult = "https://www.accuweather.com/%LANG%/search-locations?query=%LAT%,%LON%";
   }
 
   private void DoOnlineWeatherWeatherDotCom()
@@ -113,6 +116,15 @@ partial class MainForm
   private void DoMicrosoftNetworkDotCom()
   {
     string cmd = WeatherProviders.MicrosoftNetworkDotComResult
+                                 .Replace("%LANG%", Thread.CurrentThread.CurrentCulture.ToString())
+                                 .Replace("%LAT%", Settings.GPSLatitude)
+                                 .Replace("%LON%", Settings.GPSLongitude);
+    SystemManager.RunShell(cmd);
+  }
+
+  private void DoAccuWeatherDotCom()
+  {
+    string cmd = WeatherProviders.AccuWeatherDotComResult
                                  .Replace("%LANG%", Thread.CurrentThread.CurrentCulture.ToString())
                                  .Replace("%LAT%", Settings.GPSLatitude)
                                  .Replace("%LON%", Settings.GPSLongitude);
