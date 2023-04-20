@@ -50,6 +50,8 @@ partial class MainForm
     public const string WeatherDotComResult = "https://weather.com/%LANG%/weather/%MODE%/l/%LAT%,%LON%";
     // MSN
     public const string MicrosoftNetworkDotComResult = "https://a.msn.com/54/%LANG%/ct%LAT%,%LON%";
+    // TODO NEXT AccuWeather
+    public const string AccuWeatherDotComResult = "https://www.accuweather.com/search-locations?query=%LAT%,%LON%";
   }
 
   private void DoOnlineWeatherWeatherDotCom()

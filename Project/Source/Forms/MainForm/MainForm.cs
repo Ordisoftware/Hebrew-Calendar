@@ -217,7 +217,7 @@ sealed partial class MainForm : Form
     {
       if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
       {
-        // TODO refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
+        // TODO NEXT refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
         var text = Text.IndexOf('(') >= 0
           ? new string(Text.ToCharArray().TakeWhile(c => c != '(').ToArray())
           : Text;

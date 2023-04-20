@@ -240,7 +240,7 @@ public sealed partial class CommonMenusControl : UserControl
   private void ActionReadme_Click(object sender, EventArgs e)
   {
     SystemManager.RunShell(Globals.ApplicationReadmeHtmlPath);
-    /* TODO remove that and markdig
+    /* TODO NEXT remove that and markdig
     var fileLines = Markdown.ToHtml(File.ReadAllText(Globals.ApplicationReadmeMDPath),
                                     new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
     string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");

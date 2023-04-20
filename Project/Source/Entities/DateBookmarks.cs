@@ -38,7 +38,7 @@ class DateBookmarks
     set
     {
       Items[index] = value;
-      // TODO auto sort bookmarks if ( Program.Settings.AutoSortBookmarks )
+      // TODO NEXT auto sort bookmarks if ( Program.Settings.AutoSortBookmarks )
       //  Array.Sort(Items, (dateFirst, dateLast) =>
       //  {
       //    if ( dateFirst == DateTime.MinValue ) dateFirst = DateTime.MaxValue;
