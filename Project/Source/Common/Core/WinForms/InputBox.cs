@@ -17,6 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides input box.
 /// </summary>
+[SuppressMessage("Design", "MA0018:Do not declare static members on generic types", Justification = "Opinion")]
 public sealed partial class InputBox<T> : Form
 where T : IConvertible
 {

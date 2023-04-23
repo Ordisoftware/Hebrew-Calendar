@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -234,6 +234,11 @@ sealed partial class PreferencesForm : Form
     StatisticsForm.Instance.Timer.Enabled = EditUsageStatisticsEnabled.Checked;
     if ( !EditUsageStatisticsEnabled.Checked )
       StatisticsForm.Instance.Close();
+  }
+
+  private void EditWindowsDoubleBufferingEnabled_CheckedChanged(object sender, EventArgs e)
+  {
+    DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
   }
 
   private void ActionManageBookmarks_Click(object sender, EventArgs e)
@@ -932,15 +937,15 @@ sealed partial class PreferencesForm : Form
       EditCustomWebSearch.Text = (string)Settings.Properties[nameof(Settings.CustomWebSearch)].DefaultValue;
   }
 
+  private void SelectWeatherOnlineAccuWeatherDotCom_CheckedChanged(object sender, EventArgs e)
+  {
+    Settings.WeatherOnlineProvider = WeatherProvider.AccuWeatherDotCom;
+    EditWeatherOnlineUseDay.Enabled = false;
+  }
+
   private void SelectWeatherOnlineMeteoblueDotCom_CheckedChanged(object sender, EventArgs e)
   {
     Settings.WeatherOnlineProvider = WeatherProvider.MeteoblueDotCom;
-    EditWeatherOnlineUseDay.Enabled = true;
-  }
-
-  private void SelectWeatherOnlineWeatherDotCom_CheckedChanged(object sender, EventArgs e)
-  {
-    Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
     EditWeatherOnlineUseDay.Enabled = true;
   }
 
@@ -948,6 +953,12 @@ sealed partial class PreferencesForm : Form
   {
     Settings.WeatherOnlineProvider = WeatherProvider.MicrosoftNetworkDotCom;
     EditWeatherOnlineUseDay.Enabled = false;
+  }
+
+  private void SelectWeatherOnlineWeatherDotCom_CheckedChanged(object sender, EventArgs e)
+  {
+    Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
+    EditWeatherOnlineUseDay.Enabled = true;
   }
 
   private void EditWeatherOnlineUseDay_CheckedChanged(object sender, EventArgs e)

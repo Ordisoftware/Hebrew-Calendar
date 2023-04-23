@@ -1117,27 +1117,6 @@
   <data name="&gt;&gt;TabPageStartup.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="EditTrayIconUseSpecialDayIcon.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditTrayIconUseSpecialDayIcon.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditTrayIconUseSpecialDayIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditTrayIconUseSpecialDayIcon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 20</value>
-  </data>
-  <data name="EditTrayIconUseSpecialDayIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 17</value>
-  </data>
-  <data name="EditTrayIconUseSpecialDayIcon.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
-    <value>Use a different icon when Shabat or a celebration day</value>
-  </data>
   <data name="&gt;&gt;EditTrayIconUseSpecialDayIcon.Name" xml:space="preserve">
     <value>EditTrayIconUseSpecialDayIcon</value>
   </data>
@@ -1149,272 +1128,6 @@
   </data>
   <data name="&gt;&gt;EditTrayIconUseSpecialDayIcon.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="ActionHotKeyInfo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionHotKeyInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
-        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
-        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
-        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
-        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
-        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
-        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
-        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
-        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
-        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
-        kM5gAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ActionHotKeyInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionHotKeyInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 23</value>
-  </data>
-  <data name="ActionHotKeyInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionHotKeyInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;ActionHotKeyInfo.Name" xml:space="preserve">
-    <value>ActionHotKeyInfo</value>
-  </data>
-  <data name="&gt;&gt;ActionHotKeyInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionHotKeyInfo.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;ActionHotKeyInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionHotKeyReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionHotKeyReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
-        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
-        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
-        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
-        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
-        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
-        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionHotKeyReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionHotKeyReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 23</value>
-  </data>
-  <data name="ActionHotKeyReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionHotKeyReset.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;ActionHotKeyReset.Name" xml:space="preserve">
-    <value>ActionHotKeyReset</value>
-  </data>
-  <data name="&gt;&gt;ActionHotKeyReset.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionHotKeyReset.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;ActionHotKeyReset.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormShift.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormShift.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormShift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 4</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormShift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 17</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormShift.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormShift.Text" xml:space="preserve">
-    <value>Shift +</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Name" xml:space="preserve">
-    <value>EditGlobalHotKeyPopupMainFormShift</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SelectGlobalHotKeyPopupMainFormKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 2</value>
-  </data>
-  <data name="SelectGlobalHotKeyPopupMainFormKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 21</value>
-  </data>
-  <data name="SelectGlobalHotKeyPopupMainFormKey.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Name" xml:space="preserve">
-    <value>SelectGlobalHotKeyPopupMainFormKey</value>
-  </data>
-  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormCtrl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormCtrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormCtrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 4</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormCtrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 17</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormCtrl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormCtrl.Text" xml:space="preserve">
-    <value>Ctrt +</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Name" xml:space="preserve">
-    <value>EditGlobalHotKeyPopupMainFormCtrl</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LabelHotKeyStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelHotKeyStatus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelHotKeyStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelHotKeyStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 30</value>
-  </data>
-  <data name="LabelHotKeyStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 13</value>
-  </data>
-  <data name="LabelHotKeyStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="LabelHotKeyStatus.Text" xml:space="preserve">
-    <value>     </value>
-  </data>
-  <data name="&gt;&gt;LabelHotKeyStatus.Name" xml:space="preserve">
-    <value>LabelHotKeyStatus</value>
-  </data>
-  <data name="&gt;&gt;LabelHotKeyStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelHotKeyStatus.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;LabelHotKeyStatus.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormAlt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormAlt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormAlt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 4</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormAlt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormAlt.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormAlt.Text" xml:space="preserve">
-    <value>Alt +</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Name" xml:space="preserve">
-    <value>EditGlobalHotKeyPopupMainFormAlt</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormWin.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormWin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormWin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 4</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormWin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 17</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormWin.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormWin.Text" xml:space="preserve">
-    <value>Win +</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Name" xml:space="preserve">
-    <value>EditGlobalHotKeyPopupMainFormWin</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Parent" xml:space="preserve">
-    <value>PanelHotKey</value>
-  </data>
-  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="PanelHotKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 120</value>
-  </data>
-  <data name="PanelHotKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 50</value>
-  </data>
-  <data name="PanelHotKey.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;PanelHotKey.Name" xml:space="preserve">
     <value>PanelHotKey</value>
@@ -1428,27 +1141,6 @@
   <data name="&gt;&gt;PanelHotKey.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LabelTrayIconClickOpen.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 190</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
-    <value>Tray Icon click opens:</value>
-  </data>
   <data name="&gt;&gt;LabelTrayIconClickOpen.Name" xml:space="preserve">
     <value>LabelTrayIconClickOpen</value>
   </data>
@@ -1460,27 +1152,6 @@
   </data>
   <data name="&gt;&gt;LabelTrayIconClickOpen.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="SelectOpenNextCelebrationsForm.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectOpenNextCelebrationsForm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectOpenNextCelebrationsForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectOpenNextCelebrationsForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 250</value>
-  </data>
-  <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 17</value>
-  </data>
-  <data name="SelectOpenNextCelebrationsForm.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
-    <value>Celebrations window</value>
   </data>
   <data name="&gt;&gt;SelectOpenNextCelebrationsForm.Name" xml:space="preserve">
     <value>SelectOpenNextCelebrationsForm</value>
@@ -1494,30 +1165,6 @@
   <data name="&gt;&gt;SelectOpenNextCelebrationsForm.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 70</value>
-  </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 17</value>
-  </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="EditReminderBoxRetakeFocusAfterDateClick.Text" xml:space="preserve">
-    <value>Reminder and navigation boxes retake focus after click on date (right click for the opposite)</value>
-  </data>
   <data name="&gt;&gt;EditReminderBoxRetakeFocusAfterDateClick.Name" xml:space="preserve">
     <value>EditReminderBoxRetakeFocusAfterDateClick</value>
   </data>
@@ -1529,27 +1176,6 @@
   </data>
   <data name="&gt;&gt;EditReminderBoxRetakeFocusAfterDateClick.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="SelectOpenMainForm.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectOpenMainForm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectOpenMainForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 210</value>
-  </data>
-  <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 17</value>
-  </data>
-  <data name="SelectOpenMainForm.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="SelectOpenMainForm.Text" xml:space="preserve">
-    <value>Application window</value>
   </data>
   <data name="&gt;&gt;SelectOpenMainForm.Name" xml:space="preserve">
     <value>SelectOpenMainForm</value>
@@ -1563,24 +1189,6 @@
   <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="EditGlobalHotKeyPopupMainFormEnabled.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 95</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 17</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
-    <value>Enable global HotKey to popup the application</value>
-  </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Name" xml:space="preserve">
     <value>EditGlobalHotKeyPopupMainFormEnabled</value>
   </data>
@@ -1592,27 +1200,6 @@
   </data>
   <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="EditMainFormShownGoToToday.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditMainFormShownGoToToday.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditMainFormShownGoToToday.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditMainFormShownGoToToday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 45</value>
-  </data>
-  <data name="EditMainFormShownGoToToday.Size" type="System.Drawing.Size, System.Drawing">
-    <value>317, 17</value>
-  </data>
-  <data name="EditMainFormShownGoToToday.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
-    <value>Go to today when main window popup else keep the selected</value>
   </data>
   <data name="&gt;&gt;EditMainFormShownGoToToday.Name" xml:space="preserve">
     <value>EditMainFormShownGoToToday</value>
@@ -1626,27 +1213,6 @@
   <data name="&gt;&gt;EditMainFormShownGoToToday.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="SelectOpenNavigationForm.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectOpenNavigationForm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectOpenNavigationForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 230</value>
-  </data>
-  <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
-  </data>
-  <data name="SelectOpenNavigationForm.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="SelectOpenNavigationForm.Text" xml:space="preserve">
-    <value>Navigation window</value>
-  </data>
   <data name="&gt;&gt;SelectOpenNavigationForm.Name" xml:space="preserve">
     <value>SelectOpenNavigationForm</value>
   </data>
@@ -1657,171 +1223,6 @@
     <value>TabPageTrayIcon</value>
   </data>
   <data name="&gt;&gt;SelectOpenNavigationForm.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="EditBalloon.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditBalloon.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditBalloon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditBalloon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 17</value>
-  </data>
-  <data name="EditBalloon.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="EditBalloon.Text" xml:space="preserve">
-    <value>Use balloon with looming delay in milliseconds</value>
-  </data>
-  <data name="&gt;&gt;EditBalloon.Name" xml:space="preserve">
-    <value>EditBalloon</value>
-  </data>
-  <data name="&gt;&gt;EditBalloon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditBalloon.Parent" xml:space="preserve">
-    <value>PanelBalloon</value>
-  </data>
-  <data name="&gt;&gt;EditBalloon.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditBalloonAutoHide.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditBalloonAutoHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditBalloonAutoHide.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 55</value>
-  </data>
-  <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 17</value>
-  </data>
-  <data name="EditBalloonAutoHide.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="EditBalloonAutoHide.Text" xml:space="preserve">
-    <value>Auto hide balloon</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonAutoHide.Name" xml:space="preserve">
-    <value>EditBalloonAutoHide</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonAutoHide.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonAutoHide.Parent" xml:space="preserve">
-    <value>PanelBalloon</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonAutoHide.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LabelLoomingDelayIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelLoomingDelayIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelLoomingDelayIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelLoomingDelayIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 29</value>
-  </data>
-  <data name="LabelLoomingDelayIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
-  </data>
-  <data name="LabelLoomingDelayIntervalInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="LabelLoomingDelayIntervalInfo.Text" xml:space="preserve">
-    <value>0 - 0</value>
-  </data>
-  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Name" xml:space="preserve">
-    <value>LabelLoomingDelayIntervalInfo</value>
-  </data>
-  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Parent" xml:space="preserve">
-    <value>PanelBalloon</value>
-  </data>
-  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 75</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 17</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
-    <value>Show only if application is hidden</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Name" xml:space="preserve">
-    <value>EditBalloonOnlyIfMainFormIsHidden</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Parent" xml:space="preserve">
-    <value>PanelBalloon</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="EditBalloonLoomingDelay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditBalloonLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 25</value>
-  </data>
-  <data name="EditBalloonLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
-  <data name="EditBalloonLoomingDelay.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonLoomingDelay.Name" xml:space="preserve">
-    <value>EditBalloonLoomingDelay</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonLoomingDelay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonLoomingDelay.Parent" xml:space="preserve">
-    <value>PanelBalloon</value>
-  </data>
-  <data name="&gt;&gt;EditBalloonLoomingDelay.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="PanelBalloon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 285</value>
-  </data>
-  <data name="PanelBalloon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>485, 97</value>
-  </data>
-  <data name="PanelBalloon.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="&gt;&gt;PanelBalloon.Name" xml:space="preserve">
@@ -2338,7 +1739,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2350,7 +1751,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2362,7 +1763,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -2374,7 +1775,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3664,7 +3065,7 @@
     <value>EditOpenVerseOnlineURL</value>
   </data>
   <data name="&gt;&gt;EditOpenVerseOnlineURL.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOpenVerseOnlineURL.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3844,7 +3245,7 @@
     <value>EditCustomWebSearch</value>
   </data>
   <data name="&gt;&gt;EditCustomWebSearch.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCustomWebSearch.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3856,7 +3257,7 @@
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3868,7 +3269,7 @@
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3880,7 +3281,7 @@
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3892,7 +3293,7 @@
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -3927,6 +3328,24 @@
   <data name="&gt;&gt;TabPagePaths.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <data name="LabelWeatherAppPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelWeatherAppPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 13</value>
+  </data>
+  <data name="LabelWeatherAppPath.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="LabelWeatherAppPath.Text" xml:space="preserve">
+    <value>Weather application</value>
+  </data>
   <data name="&gt;&gt;LabelWeatherAppPath.Name" xml:space="preserve">
     <value>LabelWeatherAppPath</value>
   </data>
@@ -3938,6 +3357,37 @@
   </data>
   <data name="&gt;&gt;LabelWeatherAppPath.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ActionSelectWeatherAppPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionSelectWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
+        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
+        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
+        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
+        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
+        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
+        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
+        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
+        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
+        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionSelectWeatherAppPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionSelectWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>487, 35</value>
+  </data>
+  <data name="ActionSelectWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionSelectWeatherAppPath.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="&gt;&gt;ActionSelectWeatherAppPath.Name" xml:space="preserve">
     <value>ActionSelectWeatherAppPath</value>
@@ -3951,6 +3401,240 @@
   <data name="&gt;&gt;ActionSelectWeatherAppPath.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="LabelSelectOnlineWeatherProvider.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="LabelSelectOnlineWeatherProvider.Text" xml:space="preserve">
+    <value>Online weather provider</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Name" xml:space="preserve">
+    <value>LabelSelectOnlineWeatherProvider</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Parent" xml:space="preserve">
+    <value>PanelWeatherOnline</value>
+  </data>
+  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 110</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 17</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
+    <value>Weather of the day, else of the week</value>
+  </data>
+  <data name="&gt;&gt;EditWeatherOnlineUseDay.Name" xml:space="preserve">
+    <value>EditWeatherOnlineUseDay</value>
+  </data>
+  <data name="&gt;&gt;EditWeatherOnlineUseDay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditWeatherOnlineUseDay.Parent" xml:space="preserve">
+    <value>PanelWeatherOnline</value>
+  </data>
+  <data name="&gt;&gt;EditWeatherOnlineUseDay.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 140</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="&gt;&gt;ActionWeatherOnlineTest.Name" xml:space="preserve">
+    <value>ActionWeatherOnlineTest</value>
+  </data>
+  <data name="&gt;&gt;ActionWeatherOnlineTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionWeatherOnlineTest.Parent" xml:space="preserve">
+    <value>PanelWeatherOnline</value>
+  </data>
+  <data name="&gt;&gt;ActionWeatherOnlineTest.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 80</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 17</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectWeatherOnlineWeatherDotCom.Text" xml:space="preserve">
+    <value>Weather.com</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Name" xml:space="preserve">
+    <value>SelectWeatherOnlineWeatherDotCom</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Parent" xml:space="preserve">
+    <value>PanelWeatherOnline</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SelectWeatherOnlineAccuWeatherDotCom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectWeatherOnlineAccuWeatherDotCom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 20</value>
+  </data>
+  <data name="SelectWeatherOnlineAccuWeatherDotCom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="SelectWeatherOnlineAccuWeatherDotCom.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="SelectWeatherOnlineAccuWeatherDotCom.Text" xml:space="preserve">
+    <value>Accuweather.Com</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineAccuWeatherDotCom.Name" xml:space="preserve">
+    <value>SelectWeatherOnlineAccuWeatherDotCom</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineAccuWeatherDotCom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineAccuWeatherDotCom.Parent" xml:space="preserve">
+    <value>PanelWeatherOnline</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineAccuWeatherDotCom.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
+  </data>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 17</value>
+  </data>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Text" xml:space="preserve">
+    <value>MSN.com</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Name" xml:space="preserve">
+    <value>SelectWeatherOnlineMicrosoftNetworkDotCom</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Parent" xml:space="preserve">
+    <value>PanelWeatherOnline</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 40</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SelectWeatherOnlineMeteoblueDotCom.Text" xml:space="preserve">
+    <value>Meteoblue.com</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Name" xml:space="preserve">
+    <value>SelectWeatherOnlineMeteoblueDotCom</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Parent" xml:space="preserve">
+    <value>PanelWeatherOnline</value>
+  </data>
+  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="PanelWeatherOnline.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 77</value>
+  </data>
+  <data name="PanelWeatherOnline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>460, 170</value>
+  </data>
+  <data name="PanelWeatherOnline.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
   <data name="&gt;&gt;PanelWeatherOnline.Name" xml:space="preserve">
     <value>PanelWeatherOnline</value>
   </data>
@@ -3962,6 +3646,34 @@
   </data>
   <data name="&gt;&gt;PanelWeatherOnline.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="ActionResetWeatherAppPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionResetWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
+        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
+        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
+        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
+        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
+        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
+        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionResetWeatherAppPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionResetWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>517, 35</value>
+  </data>
+  <data name="ActionResetWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionResetWeatherAppPath.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
   <data name="&gt;&gt;ActionResetWeatherAppPath.Name" xml:space="preserve">
     <value>ActionResetWeatherAppPath</value>
@@ -3975,11 +3687,20 @@
   <data name="&gt;&gt;ActionResetWeatherAppPath.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="EditWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 38</value>
+  </data>
+  <data name="EditWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 20</value>
+  </data>
+  <data name="EditWeatherAppPath.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
   <data name="&gt;&gt;EditWeatherAppPath.Name" xml:space="preserve">
     <value>EditWeatherAppPath</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
     <value>TabPageWeather</value>
@@ -5281,6 +5002,881 @@
   <data name="&gt;&gt;LabelOptimizeDatabaseIntervalInfo.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="EditTrayIconUseSpecialDayIcon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 20</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 17</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditTrayIconUseSpecialDayIcon.Text" xml:space="preserve">
+    <value>Use a different icon when Shabat or a celebration day</value>
+  </data>
+  <data name="&gt;&gt;EditTrayIconUseSpecialDayIcon.Name" xml:space="preserve">
+    <value>EditTrayIconUseSpecialDayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditTrayIconUseSpecialDayIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditTrayIconUseSpecialDayIcon.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditTrayIconUseSpecialDayIcon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Name" xml:space="preserve">
+    <value>ActionHotKeyInfo</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.Name" xml:space="preserve">
+    <value>ActionHotKeyReset</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormShift</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Name" xml:space="preserve">
+    <value>SelectGlobalHotKeyPopupMainFormKey</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormCtrl</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Name" xml:space="preserve">
+    <value>LabelHotKeyStatus</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormAlt</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormWin</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="PanelHotKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 120</value>
+  </data>
+  <data name="PanelHotKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 50</value>
+  </data>
+  <data name="PanelHotKey.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;PanelHotKey.Name" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;PanelHotKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelHotKey.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;PanelHotKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionHotKeyInfo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionHotKeyInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAkVJREFUOE99UN1LU2Ec3l9gw20XBtlNd3nRF12l3YiaJdH6WkcbI0QrQ6G8kEwL
+        KyhBo2yWtvIjSS3PmbuyLkpFBmNuprm1ndVsiEle2FVQXj29z7vj7It+8ON3nk94j+nPsVZobrND+252
+        qNgklpeYvGH599icWtFmpw+ujhA8E4sYnVmBN7wiLzF56vQZkY0hmXdhDL1TS2h7lUJJexhb6ydgqx2X
+        l5g8dfr+KskRzdr0F1T3xbCtYQpXvR/w6xCTp04f/UY0/ebGZ1HUDenYcz2AvGa/DE3qq9hSP4nx+KrE
+        25v8UqeP/sw/yVZGfnS+WUL+7RAKxO69EZSBsnuz2HEtgKOdcxLvaglInT76mZMFFkVDg3cBRe0zKL7z
+        FoVtYexvNcpuBhH5/E0W7LsVkh4u/czJAmu5hnODCZS532X2YMccCkXZ69hXGa4e0FF8dxaH7qd1+pmT
+        BbZyL5SeGI53R3CsK732hxEcECWcy6NJlIpv+4N5qdFHP3NGgbbm8ERR0atDeRKT63gcg70rilL3PA6L
+        spOe9xmNPvqZkwUW+6PhghY/qgY/4szTBFz9Opx9cZwQIQ4vMXnq9NHPnCwQk8v3OHviqBn5hLPDSVQK
+        0+n+hCzgJSZPnT7j/bnpuBhz/sWaHJcPlQMJXPItok5L4fyLBVQNJeUlJk+dPvqNaGaySFoUFSWtQdSq
+        KVx5uYzGsWV5iclTN8JZ6djvQ3K35Uj3c6uirmWfUrG+xOSpG77/Dt+2UyzN60u88ebMmEw/AdDTBeRn
+        kM5gAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ActionHotKeyInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionHotKeyInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 23</value>
+  </data>
+  <data name="ActionHotKeyInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionHotKeyInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Name" xml:space="preserve">
+    <value>ActionHotKeyInfo</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ActionHotKeyReset.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionHotKeyReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
+        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
+        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
+        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
+        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
+        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
+        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionHotKeyReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionHotKeyReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 23</value>
+  </data>
+  <data name="ActionHotKeyReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 26</value>
+  </data>
+  <data name="ActionHotKeyReset.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.Name" xml:space="preserve">
+    <value>ActionHotKeyReset</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;ActionHotKeyReset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 4</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormShift.Text" xml:space="preserve">
+    <value>Shift +</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormShift</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormShift.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectGlobalHotKeyPopupMainFormKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 2</value>
+  </data>
+  <data name="SelectGlobalHotKeyPopupMainFormKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 21</value>
+  </data>
+  <data name="SelectGlobalHotKeyPopupMainFormKey.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Name" xml:space="preserve">
+    <value>SelectGlobalHotKeyPopupMainFormKey</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;SelectGlobalHotKeyPopupMainFormKey.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 4</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormCtrl.Text" xml:space="preserve">
+    <value>Ctrt +</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormCtrl</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormCtrl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LabelHotKeyStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelHotKeyStatus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelHotKeyStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelHotKeyStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 30</value>
+  </data>
+  <data name="LabelHotKeyStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 13</value>
+  </data>
+  <data name="LabelHotKeyStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="LabelHotKeyStatus.Text" xml:space="preserve">
+    <value>     </value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Name" xml:space="preserve">
+    <value>LabelHotKeyStatus</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;LabelHotKeyStatus.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>124, 4</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormAlt.Text" xml:space="preserve">
+    <value>Alt +</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormAlt</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormAlt.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 4</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormWin.Text" xml:space="preserve">
+    <value>Win +</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormWin</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.Parent" xml:space="preserve">
+    <value>PanelHotKey</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormWin.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 190</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 13</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LabelTrayIconClickOpen.Text" xml:space="preserve">
+    <value>Tray Icon click opens:</value>
+  </data>
+  <data name="&gt;&gt;LabelTrayIconClickOpen.Name" xml:space="preserve">
+    <value>LabelTrayIconClickOpen</value>
+  </data>
+  <data name="&gt;&gt;LabelTrayIconClickOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelTrayIconClickOpen.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;LabelTrayIconClickOpen.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 250</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 17</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="SelectOpenNextCelebrationsForm.Text" xml:space="preserve">
+    <value>Celebrations window</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNextCelebrationsForm.Name" xml:space="preserve">
+    <value>SelectOpenNextCelebrationsForm</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNextCelebrationsForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNextCelebrationsForm.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNextCelebrationsForm.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 70</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>455, 17</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EditReminderBoxRetakeFocusAfterDateClick.Text" xml:space="preserve">
+    <value>Reminder and navigation boxes retake focus after click on date (right click for the opposite)</value>
+  </data>
+  <data name="&gt;&gt;EditReminderBoxRetakeFocusAfterDateClick.Name" xml:space="preserve">
+    <value>EditReminderBoxRetakeFocusAfterDateClick</value>
+  </data>
+  <data name="&gt;&gt;EditReminderBoxRetakeFocusAfterDateClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditReminderBoxRetakeFocusAfterDateClick.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditReminderBoxRetakeFocusAfterDateClick.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SelectOpenMainForm.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectOpenMainForm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectOpenMainForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectOpenMainForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 210</value>
+  </data>
+  <data name="SelectOpenMainForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 17</value>
+  </data>
+  <data name="SelectOpenMainForm.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="SelectOpenMainForm.Text" xml:space="preserve">
+    <value>Application window</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Name" xml:space="preserve">
+    <value>SelectOpenMainForm</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenMainForm.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 95</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 17</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditGlobalHotKeyPopupMainFormEnabled.Text" xml:space="preserve">
+    <value>Enable global HotKey to popup the application</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Name" xml:space="preserve">
+    <value>EditGlobalHotKeyPopupMainFormEnabled</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditGlobalHotKeyPopupMainFormEnabled.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 45</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 17</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="EditMainFormShownGoToToday.Text" xml:space="preserve">
+    <value>Go to today when main window popup else keep the selected</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Name" xml:space="preserve">
+    <value>EditMainFormShownGoToToday</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;EditMainFormShownGoToToday.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SelectOpenNavigationForm.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SelectOpenNavigationForm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SelectOpenNavigationForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectOpenNavigationForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 230</value>
+  </data>
+  <data name="SelectOpenNavigationForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
+  </data>
+  <data name="SelectOpenNavigationForm.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="SelectOpenNavigationForm.Text" xml:space="preserve">
+    <value>Navigation window</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Name" xml:space="preserve">
+    <value>SelectOpenNavigationForm</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;SelectOpenNavigationForm.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Name" xml:space="preserve">
+    <value>EditBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Name" xml:space="preserve">
+    <value>EditBalloonAutoHide</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Name" xml:space="preserve">
+    <value>LabelLoomingDelayIntervalInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Name" xml:space="preserve">
+    <value>EditBalloonOnlyIfMainFormIsHidden</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Name" xml:space="preserve">
+    <value>EditBalloonLoomingDelay</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PanelBalloon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 285</value>
+  </data>
+  <data name="PanelBalloon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 97</value>
+  </data>
+  <data name="PanelBalloon.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;PanelBalloon.Name" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;PanelBalloon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBalloon.Parent" xml:space="preserve">
+    <value>TabPageTrayIcon</value>
+  </data>
+  <data name="&gt;&gt;PanelBalloon.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="EditBalloon.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditBalloon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditBalloon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditBalloon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EditBalloon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 17</value>
+  </data>
+  <data name="EditBalloon.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EditBalloon.Text" xml:space="preserve">
+    <value>Use balloon with looming delay in milliseconds</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Name" xml:space="preserve">
+    <value>EditBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditBalloonAutoHide.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditBalloonAutoHide.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditBalloonAutoHide.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditBalloonAutoHide.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 55</value>
+  </data>
+  <data name="EditBalloonAutoHide.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 17</value>
+  </data>
+  <data name="EditBalloonAutoHide.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditBalloonAutoHide.Text" xml:space="preserve">
+    <value>Auto hide balloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Name" xml:space="preserve">
+    <value>EditBalloonAutoHide</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonAutoHide.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelLoomingDelayIntervalInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelLoomingDelayIntervalInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelLoomingDelayIntervalInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelLoomingDelayIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 29</value>
+  </data>
+  <data name="LabelLoomingDelayIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="LabelLoomingDelayIntervalInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LabelLoomingDelayIntervalInfo.Text" xml:space="preserve">
+    <value>0 - 0</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Name" xml:space="preserve">
+    <value>LabelLoomingDelayIntervalInfo</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;LabelLoomingDelayIntervalInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 75</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 17</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditBalloonOnlyIfMainFormIsHidden.Text" xml:space="preserve">
+    <value>Show only if application is hidden</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Name" xml:space="preserve">
+    <value>EditBalloonOnlyIfMainFormIsHidden</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonOnlyIfMainFormIsHidden.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditBalloonLoomingDelay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="EditBalloonLoomingDelay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 25</value>
+  </data>
+  <data name="EditBalloonLoomingDelay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="EditBalloonLoomingDelay.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Name" xml:space="preserve">
+    <value>EditBalloonLoomingDelay</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.Parent" xml:space="preserve">
+    <value>PanelBalloon</value>
+  </data>
+  <data name="&gt;&gt;EditBalloonLoomingDelay.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="ActionUseBlackAndWhiteColors.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -6550,7 +7146,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -6580,7 +7176,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -6604,7 +7200,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -6631,7 +7227,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -12217,7 +12813,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -12265,7 +12861,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditEphemerisPrefixMoon</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixMoon.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixMoon.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -12349,7 +12945,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditEphemerisPrefixSun</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixSun.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixSun.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -12590,7 +13186,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -12729,7 +13325,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditEphemerisPrefixMoon</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixMoon.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixMoon.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -12955,7 +13551,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditEphemerisPrefixSun</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixSun.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixSun.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -14257,7 +14853,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditOpenVerseOnlineURL</value>
   </data>
   <data name="&gt;&gt;EditOpenVerseOnlineURL.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOpenVerseOnlineURL.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -14800,7 +15396,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditCustomWebSearch</value>
   </data>
   <data name="&gt;&gt;EditCustomWebSearch.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCustomWebSearch.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -14821,7 +15417,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -14842,7 +15438,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -14863,7 +15459,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -14884,438 +15480,13 @@ If enabled only the name will be re-checked.</value>
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.ZOrder" xml:space="preserve">
     <value>22</value>
-  </data>
-  <data name="LabelWeatherAppPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelWeatherAppPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="LabelWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
-  </data>
-  <data name="LabelWeatherAppPath.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="LabelWeatherAppPath.Text" xml:space="preserve">
-    <value>Weather application</value>
-  </data>
-  <data name="&gt;&gt;LabelWeatherAppPath.Name" xml:space="preserve">
-    <value>LabelWeatherAppPath</value>
-  </data>
-  <data name="&gt;&gt;LabelWeatherAppPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelWeatherAppPath.Parent" xml:space="preserve">
-    <value>TabPageWeather</value>
-  </data>
-  <data name="&gt;&gt;LabelWeatherAppPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ActionSelectWeatherAppPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionSelectWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAkBJREFUOE+Nkd1LU3Ecxr0L6q5/oJuC7sKsIN+2trK7iPJCupG68CJQMSjlZLYK
-        CRZS23Ev1YWBN5aMvKguKkGhUhs7ezHS6V5sSqvGmGtRtrPt6TnHU+swFz3w3Bx+z+f7fc635rfm7x7L
-        hNxHEXQdQdBhQGC4CQGxAX572cq3kMuc0SJ6hVwmNRDxnEPaJyKffAEUwkCe/rmwaTmsQrSIXgGxEcBn
-        5JbGsDZ5GUG3GUHxAFYetSA1eRry/FlgQ1I30SJ6+W2HVQDWHwM/JE5egpx6jS+zd7Ds6UB07DgBXgIa
-        twZItnquHEIhIaAQ7YUcv4rCx/tA+glhi/Baawl4A79YpYJka2DPOQIGUIj1Q470sf4F5N+f50bvNMD0
-        vwD8BxtTBHBy/ArkqMAWF5Ff6ARyM/DeqiPoJStUA7Abvj9DYdXyF+ASAV1A5rkGeArf7XoEXOakFitL
-        Ihk5DwHXCBgoAxa7gZSHFQ4C3ybocZ7SULmFZG8GsqMEXNcB5HAP8OkB3loPEXQT+DoK5a0WK0sFrN9D
-        ce2GDlBKWBF9eAKR8VZeZIhbjvA/bAHwDxu5gR1IDqL4wQI5JkBe7gUSg/AO8UJZkWEnLzXCCsZKgM9h
-        ysQn2pCZ60SRlyitKucUCLBwZQOUAX7RqIb9TlNWi+m0z91d2z9tbZqR7EbEPK1Iv+pAaUVAwGFCe8uu
-        kz2ndp/pa9vbrrzdjFRqJ72HrnN37RemrM2zQaeZE83KxG30dnoH/V/6A6OrTKyp+QUhqPdPJK/KwgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionSelectWeatherAppPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionSelectWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 35</value>
-  </data>
-  <data name="ActionSelectWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionSelectWeatherAppPath.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectWeatherAppPath.Name" xml:space="preserve">
-    <value>ActionSelectWeatherAppPath</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectWeatherAppPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectWeatherAppPath.Parent" xml:space="preserve">
-    <value>TabPageWeather</value>
-  </data>
-  <data name="&gt;&gt;ActionSelectWeatherAppPath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Name" xml:space="preserve">
-    <value>LabelSelectOnlineWeatherProvider</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherOnlineUseDay.Name" xml:space="preserve">
-    <value>EditWeatherOnlineUseDay</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherOnlineUseDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherOnlineUseDay.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherOnlineUseDay.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ActionWeatherOnlineTest.Name" xml:space="preserve">
-    <value>ActionWeatherOnlineTest</value>
-  </data>
-  <data name="&gt;&gt;ActionWeatherOnlineTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionWeatherOnlineTest.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;ActionWeatherOnlineTest.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Name" xml:space="preserve">
-    <value>SelectWeatherOnlineWeatherDotCom</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Name" xml:space="preserve">
-    <value>SelectWeatherOnlineMicrosoftNetworkDotCom</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Name" xml:space="preserve">
-    <value>SelectWeatherOnlineMeteoblueDotCom</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="PanelWeatherOnline.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 77</value>
-  </data>
-  <data name="PanelWeatherOnline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 145</value>
-  </data>
-  <data name="PanelWeatherOnline.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="&gt;&gt;PanelWeatherOnline.Name" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;PanelWeatherOnline.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelWeatherOnline.Parent" xml:space="preserve">
-    <value>TabPageWeather</value>
-  </data>
-  <data name="&gt;&gt;PanelWeatherOnline.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LabelSelectOnlineWeatherProvider.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LabelSelectOnlineWeatherProvider.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="LabelSelectOnlineWeatherProvider.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LabelSelectOnlineWeatherProvider.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="LabelSelectOnlineWeatherProvider.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 13</value>
-  </data>
-  <data name="LabelSelectOnlineWeatherProvider.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="LabelSelectOnlineWeatherProvider.Text" xml:space="preserve">
-    <value>Online weather provider</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Name" xml:space="preserve">
-    <value>LabelSelectOnlineWeatherProvider</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;LabelSelectOnlineWeatherProvider.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="EditWeatherOnlineUseDay.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditWeatherOnlineUseDay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="EditWeatherOnlineUseDay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditWeatherOnlineUseDay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 90</value>
-  </data>
-  <data name="EditWeatherOnlineUseDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 17</value>
-  </data>
-  <data name="EditWeatherOnlineUseDay.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="EditWeatherOnlineUseDay.Text" xml:space="preserve">
-    <value>Weather of the day, else of the week</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherOnlineUseDay.Name" xml:space="preserve">
-    <value>EditWeatherOnlineUseDay</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherOnlineUseDay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherOnlineUseDay.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherOnlineUseDay.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ActionWeatherOnlineTest.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ActionWeatherOnlineTest.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="ActionWeatherOnlineTest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionWeatherOnlineTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 120</value>
-  </data>
-  <data name="ActionWeatherOnlineTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 13</value>
-  </data>
-  <data name="ActionWeatherOnlineTest.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="ActionWeatherOnlineTest.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
-  <data name="&gt;&gt;ActionWeatherOnlineTest.Name" xml:space="preserve">
-    <value>ActionWeatherOnlineTest</value>
-  </data>
-  <data name="&gt;&gt;ActionWeatherOnlineTest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionWeatherOnlineTest.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;ActionWeatherOnlineTest.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SelectWeatherOnlineWeatherDotCom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectWeatherOnlineWeatherDotCom.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectWeatherOnlineWeatherDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectWeatherOnlineWeatherDotCom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 40</value>
-  </data>
-  <data name="SelectWeatherOnlineWeatherDotCom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
-  </data>
-  <data name="SelectWeatherOnlineWeatherDotCom.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SelectWeatherOnlineWeatherDotCom.Text" xml:space="preserve">
-    <value>Weather.com</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Name" xml:space="preserve">
-    <value>SelectWeatherOnlineWeatherDotCom</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineWeatherDotCom.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 60</value>
-  </data>
-  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 17</value>
-  </data>
-  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SelectWeatherOnlineMicrosoftNetworkDotCom.Text" xml:space="preserve">
-    <value>MSN.com</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Name" xml:space="preserve">
-    <value>SelectWeatherOnlineMicrosoftNetworkDotCom</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMicrosoftNetworkDotCom.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="SelectWeatherOnlineMeteoblueDotCom.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SelectWeatherOnlineMeteoblueDotCom.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="SelectWeatherOnlineMeteoblueDotCom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SelectWeatherOnlineMeteoblueDotCom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 20</value>
-  </data>
-  <data name="SelectWeatherOnlineMeteoblueDotCom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 17</value>
-  </data>
-  <data name="SelectWeatherOnlineMeteoblueDotCom.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SelectWeatherOnlineMeteoblueDotCom.Text" xml:space="preserve">
-    <value>Meteoblue.com</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Name" xml:space="preserve">
-    <value>SelectWeatherOnlineMeteoblueDotCom</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.Parent" xml:space="preserve">
-    <value>PanelWeatherOnline</value>
-  </data>
-  <data name="&gt;&gt;SelectWeatherOnlineMeteoblueDotCom.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="ActionResetWeatherAppPath.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionResetWeatherAppPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAYxJREFUOE+lkt8rQ2EYx9/r3fsD1NzT3NocbEeSXChJxoV2RXElcbGdMUkxEbmy
-        Wmp+hAvbOWebNoxdKBKlMSkXk9pJrVEu9PW858rFe+HkqU/P+37P+3yf5307DMC/EIpWEIpWEIpWYPJc
-        inkIdyjJ2mZ1h6RoMVdA/XAGVDj9BM+ES9HQMqPH3LNJmyeUMus4jAT+IdqsaJtdC8dY0gtQ796QeSwT
-        hkm2aODw5hWBw1u0z6dBjdZ4U9OAOmI5+4ye1QukHwxEL0uYOipiKHKNwY0LeNdy8K6fY5AY37pCJP+C
-        AVrTxDumgdOfQMH4glZ4x8h+Ed2Re8iLOUj+RLXRFw7Z5eG+unZfP88OX3hOCmqfvSunoGuADGTTIP5Y
-        RV/sCd7dZ3Su5NE0EcswxuqJGsL2C75vcE1u61TMDcCaFRVnpW+MJssYSxuIFyroUA4OPPSofEQRFLXS
-        9N4JnflirUG1IpFJi5IgKAc18IcVFf6Gws6n4Qs+qkPA30L0c1hBKFpBKFpBKP4dsB8ReHHdeAdE8gAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ActionResetWeatherAppPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionResetWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 35</value>
-  </data>
-  <data name="ActionResetWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 26</value>
-  </data>
-  <data name="ActionResetWeatherAppPath.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;ActionResetWeatherAppPath.Name" xml:space="preserve">
-    <value>ActionResetWeatherAppPath</value>
-  </data>
-  <data name="&gt;&gt;ActionResetWeatherAppPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionResetWeatherAppPath.Parent" xml:space="preserve">
-    <value>TabPageWeather</value>
-  </data>
-  <data name="&gt;&gt;ActionResetWeatherAppPath.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="EditWeatherAppPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 38</value>
-  </data>
-  <data name="EditWeatherAppPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 20</value>
-  </data>
-  <data name="EditWeatherAppPath.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherAppPath.Name" xml:space="preserve">
-    <value>EditWeatherAppPath</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.2.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
-    <value>TabPageWeather</value>
-  </data>
-  <data name="&gt;&gt;EditWeatherAppPath.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <metadata name="MenuSelectOnlineVerseProviderURL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

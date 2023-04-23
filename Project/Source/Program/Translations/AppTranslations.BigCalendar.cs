@@ -22,7 +22,7 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary ClickOnIgnoreToDisableOption = new()
   {
-    [Language.EN] = "Click Cancel to process and disable this option.",
+    [Language.EN] = "Click Cancel to procfess and disable this option.",
 
     [Language.FR] = "Cliquez sur Annuler pour valider et désactiver cette option.",
   };

@@ -416,6 +416,7 @@
       this.EditWeatherOnlineUseDay = new System.Windows.Forms.CheckBox();
       this.ActionWeatherOnlineTest = new System.Windows.Forms.LinkLabel();
       this.SelectWeatherOnlineWeatherDotCom = new System.Windows.Forms.RadioButton();
+      this.SelectWeatherOnlineAccuWeatherDotCom = new System.Windows.Forms.RadioButton();
       this.SelectWeatherOnlineMicrosoftNetworkDotCom = new System.Windows.Forms.RadioButton();
       this.SelectWeatherOnlineMeteoblueDotCom = new System.Windows.Forms.RadioButton();
       this.ActionResetWeatherAppPath = new System.Windows.Forms.Button();
@@ -921,6 +922,7 @@
       resources.ApplyResources(this.EditWindowsDoubleBufferingEnabled, "EditWindowsDoubleBufferingEnabled");
       this.EditWindowsDoubleBufferingEnabled.Name = "EditWindowsDoubleBufferingEnabled";
       this.EditWindowsDoubleBufferingEnabled.UseVisualStyleBackColor = true;
+      this.EditWindowsDoubleBufferingEnabled.CheckedChanged += new System.EventHandler(this.EditWindowsDoubleBufferingEnabled_CheckedChanged);
       // 
       // EditWeatherMenuItemsEnabled
       // 
@@ -3610,6 +3612,7 @@
       this.PanelWeatherOnline.Controls.Add(this.EditWeatherOnlineUseDay);
       this.PanelWeatherOnline.Controls.Add(this.ActionWeatherOnlineTest);
       this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineWeatherDotCom);
+      this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineAccuWeatherDotCom);
       this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMicrosoftNetworkDotCom);
       this.PanelWeatherOnline.Controls.Add(this.SelectWeatherOnlineMeteoblueDotCom);
       resources.ApplyResources(this.PanelWeatherOnline, "PanelWeatherOnline");
@@ -3644,6 +3647,13 @@
       this.SelectWeatherOnlineWeatherDotCom.Name = "SelectWeatherOnlineWeatherDotCom";
       this.SelectWeatherOnlineWeatherDotCom.UseVisualStyleBackColor = true;
       this.SelectWeatherOnlineWeatherDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineWeatherDotCom_CheckedChanged);
+      // 
+      // SelectWeatherOnlineAccuWeatherDotCom
+      // 
+      resources.ApplyResources(this.SelectWeatherOnlineAccuWeatherDotCom, "SelectWeatherOnlineAccuWeatherDotCom");
+      this.SelectWeatherOnlineAccuWeatherDotCom.Name = "SelectWeatherOnlineAccuWeatherDotCom";
+      this.SelectWeatherOnlineAccuWeatherDotCom.UseVisualStyleBackColor = true;
+      this.SelectWeatherOnlineAccuWeatherDotCom.CheckedChanged += new System.EventHandler(this.SelectWeatherOnlineAccuWeatherDotCom_CheckedChanged);
       // 
       // SelectWeatherOnlineMicrosoftNetworkDotCom
       // 
@@ -4166,5 +4176,6 @@
         private TextBoxEx EditOpenVerseOnlineURL;
         private ContextMenuStrip MenuSelectOnlineVerseProviderURL;
         private RadioButton SelectCalendarDoubleClickActionContextMenu;
-    }
+    private RadioButton SelectWeatherOnlineAccuWeatherDotCom;
+  }
 }

@@ -376,16 +376,20 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### TO DO Next
 
->- Add previous and next buttons to parashah description box.
 >- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 >- Add command-line option `--lunarmonths` to show the lunar months board.
 >- Add comments to bookmarks.
->- Add auto sort bookmarks.
 >- Add auto backup bookmarks.
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
 >- Check and fix weekly parashah generation with Soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
+
+#### Version 10.5
+
+>- Add previous and next buttons to parashah description box.
+>- Add auto sort bookmarks.
+- Add Accuweather.com provider.
 
 #### 2023.04.05 - Version 10.4
 
