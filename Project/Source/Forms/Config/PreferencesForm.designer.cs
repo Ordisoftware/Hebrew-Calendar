@@ -80,7 +80,6 @@
       this.EditVolume = new System.Windows.Forms.TrackBar();
       this.LabelDateBookmarksCount = new System.Windows.Forms.Label();
       this.LabelChangeLangNotice = new System.Windows.Forms.Label();
-      this.label7 = new System.Windows.Forms.Label();
       this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
       this.ActionSelectLangEN = new System.Windows.Forms.Button();
@@ -798,7 +797,6 @@
       this.TabPageApplication.Controls.Add(this.EditVolume);
       this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.LabelChangeLangNotice);
-      this.TabPageApplication.Controls.Add(this.label7);
       this.TabPageApplication.Controls.Add(this.LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
       this.TabPageApplication.Controls.Add(this.ActionSelectLangEN);
@@ -875,11 +873,6 @@
       resources.ApplyResources(this.LabelChangeLangNotice, "LabelChangeLangNotice");
       this.LabelChangeLangNotice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelChangeLangNotice.Name = "LabelChangeLangNotice";
-      // 
-      // label7
-      // 
-      resources.ApplyResources(this.label7, "label7");
-      this.label7.Name = "label7";
       // 
       // LabelVolume
       // 
@@ -4100,7 +4093,6 @@
     private CheckBox EditAutoSortBookmarks;
     private TabPage TabPagePrinting;
     private Label LabelPrintingMarginInfo;
-    private Label label7;
     private CheckBox EditUseTwoDaysForLastPessahDayOutside;
     private CheckBox EditReminderBoxRetakeFocusAfterDateClick;
     internal LinkLabel ActionMonthViewThemeDark;
