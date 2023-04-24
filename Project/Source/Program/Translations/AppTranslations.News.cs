@@ -61,6 +61,21 @@ static partial class AppTranslations
                       """,
     },*/
 
+    ["10.5"] = new TranslationsDictionary
+    {
+      [Language.EN] = """
+                      • Add option to auto sort bookmarks.
+                      • Add previous and next buttons to parashah description box.
+                      • Add Accuweather.com provider.
+                      """,
+
+      [Language.FR] = """
+                      • Ajout d'une option de tri automatique des signets.
+                      • Ajout de boutons précédent et suivant à la boîte de description de parashah.
+                      • Ajout du fournisseur Accuweather.com.
+                      """,
+    },
+
     ["10.2"] = new TranslationsDictionary
     {
       [Language.EN] = """
