@@ -387,8 +387,8 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### Version 10.5
 
->- Add previous and next buttons to parashah description box.
->- Add auto sort bookmarks.
+- Add option to auto sort bookmarks.
+- Add previous and next buttons to parashah description box.
 - Add Accuweather.com provider.
 
 #### 2023.04.05 - Version 10.4
