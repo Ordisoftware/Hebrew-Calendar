@@ -36,6 +36,7 @@ partial class MainForm
       ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Enabled = false;
       Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
       Program.DateBookmarks.ApplyAutoSort();
+      LoadMenuBookmarks(this);
       SystemManager.TryCatch(Settings.Save);
 
     }
