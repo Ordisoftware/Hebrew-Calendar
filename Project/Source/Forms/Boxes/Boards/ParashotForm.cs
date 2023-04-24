@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Calendar.Program;

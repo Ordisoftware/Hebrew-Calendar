@@ -12,6 +12,7 @@
 /// </license>
 /// <created> 2021-02 </created>
 /// <edited> 2023-04 </edited>
+#if USEPARASHOT
 namespace Ordisoftware.Hebrew;
 
 using System.Windows.Forms;
@@ -165,3 +166,4 @@ static public class ParashotHelper
   }
 
 }
+#endif

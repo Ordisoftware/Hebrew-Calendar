@@ -43,7 +43,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\Bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;USEPARASHOT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Debug\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
@@ -58,7 +58,7 @@
     <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;USEPARASHOT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Release\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
