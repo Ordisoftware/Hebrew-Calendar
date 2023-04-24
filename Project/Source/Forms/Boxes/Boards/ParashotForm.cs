@@ -129,7 +129,7 @@ sealed partial class ParashotForm : Form
     EditFontSize_ValueChanged(null, null);
   }
 
-  private void Select(Parashah parashah)
+  public void Select(Parashah parashah)
   {
     if ( parashah is null ) return;
     foreach ( DataGridViewRow row in DataGridView.Rows )

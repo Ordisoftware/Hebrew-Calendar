@@ -18,7 +18,7 @@ using SQLite;
 
 [Serializable]
 [Table("Parashot")]
-public partial class Parashah : INotifyPropertyChanged
+public sealed partial class Parashah : INotifyPropertyChanged
 {
 
   public event PropertyChangedEventHandler PropertyChanged;

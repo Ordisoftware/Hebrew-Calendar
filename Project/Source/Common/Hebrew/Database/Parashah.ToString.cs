@@ -23,8 +23,7 @@ public partial class Parashah
   {
     string result = GetNameDisplayText();
     if ( withLinked ) result += GetLinked() is not null ? $" - {GetLinked().GetNameDisplayText()}" : string.Empty;
-    if ( withBookAndref )
-      result += $" ({ToStringWithBookAndReferences()})";
+    if ( withBookAndref ) result += $" ({ToStringWithBookAndReferences()})";
     return result;
   }
 
