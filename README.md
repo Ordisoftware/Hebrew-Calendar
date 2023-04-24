@@ -385,7 +385,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Check and fix weekly parashah generation with Soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
-#### Version 10.5
+#### 2023.04.30 - Version 10.5
 
 - Add option to auto sort bookmarks.
 - Add previous and next buttons to parashah description box.
