@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -35,6 +35,7 @@ partial class MainForm
       ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Text = menuitem.Text;
       ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Enabled = false;
       Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
+      Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);
 
     }
@@ -64,9 +65,9 @@ partial class MainForm
                                                                                    dateNew.ToShortDateString())) )
         return;
       menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
-      ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Text = menuitem.Text;
-      ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Enabled = true;
       Program.DateBookmarks[(int)menuitem.Tag] = ContextMenuDayCurrentEvent.Date;
+      Program.DateBookmarks.ApplyAutoSort();
+      LoadMenuBookmarks(this);
       SystemManager.TryCatch(Settings.Save);
     }
   }

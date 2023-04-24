@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class ManageBookmarksForm : Form
@@ -40,6 +40,7 @@ sealed partial class ManageBookmarksForm : Form
     finally
     {
       MainForm.Instance.MenuTray.Enabled = trayEnabled;
+      Program.DateBookmarks.ApplyAutoSort();
     }
   }
 
@@ -63,10 +64,9 @@ sealed partial class ManageBookmarksForm : Form
     ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
     ActionClear.Enabled = ListBox.Items.Count > 0;
-    ActionSort.Enabled = ListBox.Items.Count > 0;
-    // TODO when ready : add && !Settings.AutoSortBookmarks;
-    // TODO when ready : add ActionUp.Enabled = !Settings.AutoSortBookmarks;
-    // TODO when ready : add ActionDown.Enabled = !Settings.AutoSortBookmarks;
+    ActionSort.Enabled = ListBox.Items.Count > 0 && !Program.Settings.AutoSortBookmarks;
+    ActionUp.Enabled = !Settings.AutoSortBookmarks;
+    ActionDown.Enabled = !Settings.AutoSortBookmarks;
   }
 
   private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
@@ -74,13 +74,14 @@ sealed partial class ManageBookmarksForm : Form
     if ( DialogResult != DialogResult.OK ) return;
     for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
       Program.DateBookmarks[index] = ( (DateItem)ListBox.Items[index] ).Date;
+    Program.DateBookmarks.ApplyAutoSort();
     SystemManager.TryCatch(Settings.Save);
   }
 
   private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
   {
-    ActionUp.Enabled = /* !Settings.AutoSortBookmarks && */ ListBox.SelectedIndex != 0;
-    ActionDown.Enabled = /* !Settings.AutoSortBookmarks && */ ListBox.SelectedIndex != ListBox.Items.Count - 1;
+    ActionUp.Enabled = !Settings.AutoSortBookmarks && ListBox.SelectedIndex != 0;
+    ActionDown.Enabled = !Settings.AutoSortBookmarks && ListBox.SelectedIndex != ListBox.Items.Count - 1;
     ActionDelete.Enabled = ListBox.SelectedIndex >= 0
                         && ( (DateItem)ListBox.Items[ListBox.SelectedIndex] ).Date != DateTime.MinValue;
   }
@@ -127,8 +128,8 @@ sealed partial class ManageBookmarksForm : Form
     {
       var dateFirst = ( (DateItem)itemFirst ).Date;
       var dateLast = ( (DateItem)itemLast ).Date;
-      if ( dateFirst == DateTime.MinValue ) dateFirst = DateTime.MaxValue;
-      if ( dateLast == DateTime.MinValue ) dateLast = DateTime.MaxValue;
+      if ( dateFirst == DateTime.MinValue ) return 1;
+      if ( dateLast == DateTime.MinValue ) return -1;
       return dateFirst.CompareTo(dateLast);
     });
     ListBox_SelectedIndexChanged(null, null);

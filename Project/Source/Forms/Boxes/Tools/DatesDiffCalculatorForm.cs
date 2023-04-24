@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class DatesDiffCalculatorForm : Form
@@ -150,6 +150,7 @@ sealed partial class DatesDiffCalculatorForm : Form
             return;
           menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {SysTranslations.EmptySlot.GetLang()}";
           Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
+          Program.DateBookmarks.ApplyAutoSort();
           SystemManager.TryCatch(Settings.Save);
         }
     }
@@ -189,6 +190,7 @@ sealed partial class DatesDiffCalculatorForm : Form
       }
       menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
       Program.DateBookmarks[(int)menuitem.Tag] = dateNew.Date;
+      Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);
     }
   }

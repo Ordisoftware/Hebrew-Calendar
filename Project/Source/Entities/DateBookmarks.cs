@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 class DateBookmarks
@@ -38,13 +38,6 @@ class DateBookmarks
     set
     {
       Items[index] = value;
-      // TODO NEXT auto sort bookmarks if ( Program.Settings.AutoSortBookmarks )
-      //  Array.Sort(Items, (dateFirst, dateLast) =>
-      //  {
-      //    if ( dateFirst == DateTime.MinValue ) dateFirst = DateTime.MaxValue;
-      //    if ( dateLast == DateTime.MinValue ) dateLast = DateTime.MaxValue;
-      //    return dateFirst.CompareTo(dateLast);
-      //  });
       Save();
     }
   }
@@ -52,6 +45,18 @@ class DateBookmarks
   public void Resize(int size)
   {
     Array.Resize(ref Items, size);
+    Save();
+  }
+
+  public void ApplyAutoSort()
+  {
+    if ( !Program.Settings.AutoSortBookmarks ) return;
+    Array.Sort(Items, (dateFirst, dateLast) =>
+    {
+      if ( dateFirst == DateTime.MinValue ) dateFirst = DateTime.MaxValue;
+      if ( dateLast == DateTime.MinValue ) dateLast = DateTime.MaxValue;
+      return dateFirst.CompareTo(dateLast);
+    });
     Save();
   }
 
@@ -86,6 +91,7 @@ class DateBookmarks
         if ( ++index >= Program.Settings.DateBookmarksCount )
           break;
       }
+      ApplyAutoSort();
     });
   }
 

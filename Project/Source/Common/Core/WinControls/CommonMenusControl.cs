@@ -240,20 +240,6 @@ public sealed partial class CommonMenusControl : UserControl
   private void ActionReadme_Click(object sender, EventArgs e)
   {
     SystemManager.RunShell(Globals.ApplicationReadmeHtmlPath);
-    /* TODO NEXT remove that and markdig
-    var fileLines = Markdown.ToHtml(File.ReadAllText(Globals.ApplicationReadmeMDPath),
-                                    new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
-    string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
-    File.WriteAllText(filePath, fileLines, Encoding.UTF8);
-    SystemManager.RunShell(filePath);
-    var timer = new System.Windows.Forms.Timer { Interval = Globals.MilliSecondsInOneMinute };
-    timer.Tick += (_, _) =>
-    {
-      timer.Stop();
-      SystemManager.TryCatch(() => File.Delete(filePath));
-      timer.Dispose();
-    };
-    timer.Start();*/
   }
 
   private void ActionAbout_Click(object sender, EventArgs e)
