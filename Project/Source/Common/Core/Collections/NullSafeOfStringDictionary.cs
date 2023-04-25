@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
 /// Copyright 2004-2023 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -72,11 +71,10 @@ public class NullSafeOfStringDictionary<T> : Dictionary<T, string>
 static class NullSafeOfStringDictionaryHelper
 {
 
-  static public bool LoadKeyValuePairs(
-    this NullSafeOfStringDictionary<string> list,
-    string filePath,
-    string separator,
-    bool showError = true)
+  static public bool LoadKeyValuePairs(this NullSafeOfStringDictionary<string> list,
+                                       string filePath,
+                                       string separator,
+                                       bool showError = true)
   {
     try
     {

@@ -378,7 +378,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 >- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 >- Add command-line option `--lunarmonths` to show the lunar months board.
->- Add comments to bookmarks.
 >- Add auto backup bookmarks.
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
@@ -387,7 +386,8 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### 2023.04.30 - Version 10.5
 
-- Add option to auto sort bookmarks.
+- Add memos to date bookmarks.
+- Add option to auto sort date bookmarks.
 - Add previous and next buttons to parashah description box.
 - Add Accuweather.com provider.
 
