@@ -26,6 +26,7 @@ sealed partial class DatesDiffCalculatorForm : Form
     Instance = new DatesDiffCalculatorForm();
   }
 
+  // TODO refactor
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
   {
@@ -165,7 +166,7 @@ sealed partial class DatesDiffCalculatorForm : Form
       if ( control == ActionSetBookmarkEnd )
         setBookmark(DateEnd);
       else
-      if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
+      if ( DateTime.TryParse(new string(menuitem.Text.Skip(3).TakeWhile(c => c != '(').ToArray()), out DateTime date) )
         if ( control == ActionUseBookmarkStart )
           DateStart.SelectionStart = date;
         else
@@ -180,7 +181,7 @@ sealed partial class DatesDiffCalculatorForm : Form
       for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
       {
         var bookmark = Program.DateBookmarks[index];
-        if ( dateNew == bookmark.Date ) return;
+        if ( bookmark is not null && dateNew == bookmark.Date ) return;
       }
       var bookmarkOld = Program.DateBookmarks[(int)menuitem.Tag];
       if ( bookmarkOld is not null )
@@ -195,7 +196,10 @@ sealed partial class DatesDiffCalculatorForm : Form
                                      dateNew.ToLongDateString(),
                                      ref memo) == InputValueResult.Cancelled )
         return;
-      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
+      string dateText = dateNew.ToLongDateString();
+      string label = $"{(int)menuitem.Tag + 1:00}. {dateText}";
+      if ( !memo.IsNullOrEmpty() ) label += $" ({memo})";
+      menuitem.Text = label;
       Program.DateBookmarks[(int)menuitem.Tag] = new DateBookmarkItem(dateNew, memo);
       Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);

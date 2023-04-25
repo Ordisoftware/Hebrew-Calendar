@@ -36,9 +36,8 @@ partial class MainForm
       ContextMenuDayGoToBookmark.DropDownItems[(int)menuitem.Tag].Enabled = false;
       Program.DateBookmarks[(int)menuitem.Tag] = null;
       Program.DateBookmarks.ApplyAutoSort();
-      LoadMenuBookmarks(this);
       SystemManager.TryCatch(Settings.Save);
-
+      LoadMenuBookmarks(this);
     }
     else
     if ( e.Button == MouseButtons.Left )
@@ -46,7 +45,7 @@ partial class MainForm
       if ( control == ContextMenuDaySaveBookmark )
         setBookmark();
       else
-      if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
+      if ( DateTime.TryParse(new string(menuitem.Text.Skip(3).TakeWhile(c => c != '(').ToArray()), out DateTime date) )
         if ( control == ContextMenuDayGoToBookmark )
           GoToDate(date);
     }
@@ -73,10 +72,14 @@ partial class MainForm
                                      dateNew.ToLongDateString(),
                                      ref memo) == InputValueResult.Cancelled )
         return;
-      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
+      string dateText = dateNew.ToLongDateString();
+      string label = $"{(int)menuitem.Tag + 1:00}. {dateText}";
+      if ( !memo.IsNullOrEmpty() ) label += $" ({memo})";
+      menuitem.Text = label;
       Program.DateBookmarks[(int)menuitem.Tag] = new DateBookmarkItem(dateNew, memo);
       Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);
+      LoadMenuBookmarks(this);
     }
   }
 

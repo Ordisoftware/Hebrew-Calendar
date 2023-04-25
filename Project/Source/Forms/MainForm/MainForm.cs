@@ -1331,6 +1331,7 @@ sealed partial class MainForm : Form
 
   private ToolStripMenuItem CurrentBookmarkMenu;
 
+  // TODO refactor
   internal void LoadMenuBookmarks(Form caller)
   {
     DatesDiffCalculatorForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
@@ -1357,7 +1358,8 @@ sealed partial class MainForm : Form
 
   private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
   {
-    if ( ManageBookmarksForm.Run() ) LoadMenuBookmarks(this);
+    if ( ManageBookmarksForm.Run() )
+      LoadMenuBookmarks(this);
   }
 
   private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)

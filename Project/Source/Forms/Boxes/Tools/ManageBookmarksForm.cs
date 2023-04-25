@@ -1,5 +1,4 @@
-﻿using Ordisoftware.Core;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2023 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
