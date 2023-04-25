@@ -37,7 +37,7 @@ sealed partial class DatesDiffCalculatorForm : Form
       var bookmark = Program.DateBookmarks[index];
       string dateText = bookmark is null ? SysTranslations.EmptySlot.GetLang() : bookmark.Date.ToLongDateString();
       string label = $"{index + 1:00}. {dateText}";
-      if ( bookmark is not null && !bookmark.Memo.IsNullOrEmpty() ) label += $" ({bookmark.Memo})";
+      if ( bookmark?.Memo.IsNullOrEmpty() == false ) label += $" ({bookmark.Memo})";
       var menuitem = items.Add(label);
       menuitem.MouseUp += action;
       menuitem.Tag = index;

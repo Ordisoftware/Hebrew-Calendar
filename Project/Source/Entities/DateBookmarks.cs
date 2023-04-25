@@ -66,7 +66,7 @@ sealed class DateBookmarks
       if ( !File.Exists(FilePath) ) return;
       var values = new NullSafeOfStringDictionary<string>();
       values.LoadKeyValuePairs(FilePath, "=>");
-      if ( values.ContainsKey("0001-01-01") ) values.Remove("0001-01-01");
+      values.Remove("0001-01-01");
       if ( values.Count > Settings.DateBookmarksCount )
       {
         Settings.DateBookmarksCount = values.Count;

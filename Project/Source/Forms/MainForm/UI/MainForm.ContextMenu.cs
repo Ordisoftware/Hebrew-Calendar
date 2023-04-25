@@ -181,7 +181,8 @@ public partial class MainForm
       ContextMenuDayMoonset.ImageIndex = 3;
     }
     // Bookmarks
-    ContextMenuDaySaveBookmark.Enabled = Program.DateBookmarks.Items.FindIndex(item => item.Date == rowDay.Date) == -1;
+    date = rowDay.Date;
+    ContextMenuDaySaveBookmark.Enabled = Program.DateBookmarks.Items.FindIndex(item => item.Date == date) == -1;
   }
 
 }
