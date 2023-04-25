@@ -121,7 +121,7 @@ static public class ParashotHelper
     async void openBoard(object sender, EventArgs e)
     {
       Form form = null;
-      SystemManager.TryCatchManage(() => form = runBoard.Invoke());
+      SystemManager.TryCatchManage(() => form = runBoard?.Invoke());
       await Task.Delay(1000).ConfigureAwait(false);
       if ( form is not null ) SystemManager.TryCatchManage(() => form.Popup());
     }

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -1340,8 +1340,8 @@ sealed partial class MainForm : Form
     MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
     foreach ( ToolStripMenuItem menuitem in ContextMenuDayGoToBookmark.DropDownItems )
     {
-      var value = Program.DateBookmarks[(int)menuitem.Tag];
-      if ( value == DateTime.MinValue ) menuitem.Enabled = false;
+      var bookmark = Program.DateBookmarks[(int)menuitem.Tag];
+      if ( bookmark is null ) menuitem.Enabled = false;
     }
   }
 

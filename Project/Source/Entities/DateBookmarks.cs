@@ -14,25 +14,18 @@
 /// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-class DateBookmarks
+sealed record class DateBookmarkItem(DateTime Date, string Memo);
+
+sealed class DateBookmarks
 {
+
+  static private readonly Properties.Settings Settings = Program.Settings;
 
   private readonly string FilePath;
 
-  private DateTime[] Items = new DateTime[Program.Settings.DateBookmarksCount];
+  public NullSafeList<DateBookmarkItem> Items { get; private set; } = new(Settings.DateBookmarksCount);
 
-  public int MaxCount
-  {
-    get
-    {
-      for ( int index = Items.Length - 1; index >= 0; index-- )
-        if ( Items[index] != DateTime.MinValue )
-          return index + 1;
-      return 0;
-    }
-  }
-
-  public DateTime this[int index]
+  public DateBookmarkItem this[int index]
   {
     get => Items[index];
     set
@@ -42,20 +35,25 @@ class DateBookmarks
     }
   }
 
-  public void Resize(int size)
+  public int MinListSize
   {
-    Array.Resize(ref Items, size);
-    Save();
+    get
+    {
+      for ( int index = Items.Count - 1; index >= 0; index-- )
+        if ( Items[index] is not null )
+          return index + 1;
+      return 0;
+    }
   }
 
   public void ApplyAutoSort()
   {
-    if ( !Program.Settings.AutoSortBookmarks ) return;
-    Array.Sort(Items, (dateFirst, dateLast) =>
+    if ( !Settings.AutoSortBookmarks ) return;
+    Items.Sort((itemFirst, itemLast) =>
     {
-      if ( dateFirst == DateTime.MinValue ) dateFirst = DateTime.MaxValue;
-      if ( dateLast == DateTime.MinValue ) dateLast = DateTime.MaxValue;
-      return dateFirst.CompareTo(dateLast);
+      if ( itemFirst is null ) return 1;
+      if ( itemLast is null ) return -1;
+      return itemFirst.Date.CompareTo(itemLast.Date);
     });
     Save();
   }
@@ -66,43 +64,45 @@ class DateBookmarks
     SystemManager.TryCatchManage(() =>
     {
       if ( !File.Exists(FilePath) ) return;
-      var lines = File.ReadAllLines(FilePath);
-      if ( lines.Length > Items.Length )
+      var values = new NullSafeOfStringDictionary<string>();
+      values.LoadKeyValuePairs(FilePath, "=>");
+      if ( values.Count > Items.Count )
       {
-        Array.Resize(ref Items, lines.Length);
-        Program.Settings.DateBookmarksCount = lines.Length;
-        Program.Settings.Save();
+        Settings.DateBookmarksCount = values.Count;
+        Settings.Save();
       }
-      int index = 0;
-      foreach ( string item in lines )
+      Items = new NullSafeList<DateBookmarkItem>(values.Select(item => createBookmark(item.Key, item.Value)));
+      ApplyAutoSort();
+    });
+    //
+    DateBookmarkItem createBookmark(string date, string memo)
+    {
+      try
       {
-        if ( item.Length == 0 )
-          continue;
-        DateTime date;
+        return new DateBookmarkItem(SQLiteDate.ToDateTime(date), memo);
+      }
+      catch
+      {
         try
         {
-          date = SQLiteDate.ToDateTime(item);
+          return new DateBookmarkItem(DateTime.Parse(date), memo);
         }
         catch
         {
-          DateTime.TryParse(item, out date);
+          return null;
         }
-        Items[index] = date;
-        if ( ++index >= Program.Settings.DateBookmarksCount )
-          break;
       }
-      ApplyAutoSort();
-    });
+    }
   }
 
   private void Save()
   {
     SystemManager.TryCatchManage(() =>
     {
-      var items = new List<string>();
-      foreach ( var item in Items )
-        items.Add(SQLiteDate.ToString(item));
-      File.WriteAllLines(FilePath, items);
+      var dic = Items.Where(item => item is not null)
+                     .ToDictionary(item => SQLiteDate.ToString(item.Date), item => item.Memo);
+      var values = new NullSafeOfStringDictionary<string>(dic);
+      values.SaveKeyValuePairs(FilePath, "=>");
     });
   }
 
