@@ -58,8 +58,8 @@
       // ActionExport
       // 
       this.ActionExport.AllowDrop = true;
-      this.ActionExport.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionExport, "ActionExport");
+      this.ActionExport.FlatAppearance.BorderSize = 0;
       this.ActionExport.Name = "ActionExport";
       this.ActionExport.UseVisualStyleBackColor = true;
       this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
@@ -67,8 +67,8 @@
       // ActionImport
       // 
       this.ActionImport.AllowDrop = true;
-      this.ActionImport.FlatAppearance.BorderSize = 0;
       resources.ApplyResources(this.ActionImport, "ActionImport");
+      this.ActionImport.FlatAppearance.BorderSize = 0;
       this.ActionImport.Name = "ActionImport";
       this.ActionImport.UseVisualStyleBackColor = true;
       this.ActionImport.Click += new System.EventHandler(this.ActionImport_Click);
@@ -101,6 +101,7 @@
       this.ListBox.FormattingEnabled = true;
       this.ListBox.Name = "ListBox";
       this.ListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
+      this.ListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListBox_MouseDoubleClick);
       // 
       // ActionDelete
       // 

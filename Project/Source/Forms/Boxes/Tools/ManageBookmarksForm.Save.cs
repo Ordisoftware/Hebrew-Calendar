@@ -41,21 +41,21 @@ partial class ManageBookmarksForm : Form
       {
         case DataExportTarget.TXT:
           using ( var stream = File.CreateText(SaveBookmarksDialog.FileName) )
-            foreach ( ListItem item in ListBox.Items )
-              stream.WriteLine($"{SQLiteDate.ToString(item.BookmarkItem.Date)}=>{item.BookmarkItem.Memo}");
+            foreach ( DateBookmarkItem item in ListBox.Items )
+              stream.WriteLine($"{SQLiteDate.ToString(item.Date)}=>{item.Memo}");
           break;
         case DataExportTarget.CSV:
           using ( var stream = File.CreateText(SaveBookmarksDialog.FileName) )
           {
             stream.WriteLine("Date,Memo");
-            foreach ( ListItem item in ListBox.Items )
-              stream.WriteLine($"{SQLiteDate.ToString(item.BookmarkItem.Date)},{item.BookmarkItem.Memo}"); // TODO manage ,
+            foreach ( DateBookmarkItem item in ListBox.Items )
+              stream.WriteLine($"{SQLiteDate.ToString(item.Date)},{item.Memo}"); // TODO manage ,
           }
           break;
         case DataExportTarget.JSON:
           using ( var dataset = new DataSet(Globals.AssemblyTitle) )
           {
-            var data = ListBox.Items.Cast<ListItem>().Select(item => new { item.BookmarkItem });
+            var data = ListBox.Items.Cast<DateBookmarkItem>();
             dataset.Tables.Add(data.ToDataTable(TableName));
             string str = JsonConvert.SerializeObject(dataset, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(SaveBookmarksDialog.FileName, str, Encoding.UTF8);
@@ -95,9 +95,6 @@ partial class ManageBookmarksForm : Form
           throw new AdvNotImplementedException(selected);
       }
       //
-      for ( int index = ListBox.Items.Count; index < Settings.DateBookmarksCount; index++ )
-        ListBox.Items.Add(new ListItem(null));
-      //
       ActionClear.Enabled = ListBox.Items.Count > 0;
       ActionSort.Enabled = ListBox.Items.Count > 0;
     }
@@ -135,7 +132,7 @@ partial class ManageBookmarksForm : Form
         var date = DateTime.MinValue;
         try { date = SQLiteDate.ToDateTime(lines[index]); }
         catch { }
-        ListBox.Items.Add(new ListItem(new DateBookmarkItem(date, ""))); // TODO get memos
+        ListBox.Items.Add(new DateBookmarkItem(date, "")); // TODO get memos
       }
     }
     //
@@ -143,8 +140,8 @@ partial class ManageBookmarksForm : Form
     {
       int count = checkCount(dataset.Tables[0].Rows.Count);
       for ( int index = 0; index < count; index++ )
-        ListBox.Items.Add(new ListItem(new DateBookmarkItem((DateTime)dataset.Tables[0].Rows[index][0],
-                                                            (string)dataset.Tables[0].Rows[index][1])));
+        ListBox.Items.Add(new DateBookmarkItem((DateTime)dataset.Tables[0].Rows[index][0],
+                          (string)dataset.Tables[0].Rows[index][1]));
     }
   }
 

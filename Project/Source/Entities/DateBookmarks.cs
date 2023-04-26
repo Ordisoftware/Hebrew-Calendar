@@ -14,7 +14,20 @@
 /// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-sealed record class DateBookmarkItem(DateTime Date, string Memo);
+sealed record class DateBookmarkItem(DateTime Date, string Memo)
+{
+  public DateBookmarkItem(DateBookmarkItem item)
+  {
+    Date = item.Date;
+    Memo = item.Memo;
+  }
+  public override string ToString()
+  {
+    string result = Date.ToLongDateString();
+    if ( !Memo.IsNullOrEmpty() ) result += $" ({Memo})";
+    return result;
+  }
+}
 
 sealed class DateBookmarks
 {

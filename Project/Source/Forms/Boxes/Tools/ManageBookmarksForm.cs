@@ -17,11 +17,6 @@ namespace Ordisoftware.Hebrew.Calendar;
 sealed partial class ManageBookmarksForm : Form
 {
 
-  private sealed record class ListItem(DateBookmarkItem BookmarkItem)
-  {
-    public override string ToString() => BookmarkItem.Date.ToLongDateString();
-  }
-
   static private readonly Properties.Settings Settings = Program.Settings;
 
   static public bool Run()
@@ -54,7 +49,7 @@ sealed partial class ManageBookmarksForm : Form
   {
     this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
     if ( Settings.DateBookmarksCount == 0 ) return;
-    var items = Program.DateBookmarks.Items.Where(item => item is not null).Select(item => new ListItem(item));
+    var items = Program.DateBookmarks.Items.Where(item => item is not null).Select(item => new DateBookmarkItem(item));
     ListBox.Items.Clear();
     ListBox.Items.AddRange(items.ToArray());
     ListBox.SelectedIndex = 0;
@@ -68,7 +63,7 @@ sealed partial class ManageBookmarksForm : Form
   private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
   {
     if ( DialogResult != DialogResult.OK ) return;
-    var items = this.ListBox.Items.AsIEnumerable<ListItem>().Select(item => item.BookmarkItem);
+    var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
     Program.DateBookmarks.Items.Clear();
     Program.DateBookmarks.Items.AddRange(items);
     Program.DateBookmarks.ApplyAutoSort();
@@ -79,8 +74,20 @@ sealed partial class ManageBookmarksForm : Form
   {
     ActionUp.Enabled = !Settings.AutoSortBookmarks && ListBox.SelectedIndex != 0;
     ActionDown.Enabled = !Settings.AutoSortBookmarks && ListBox.SelectedIndex != ListBox.Items.Count - 1;
-    ActionDelete.Enabled = ListBox.SelectedIndex >= 0
-                        && ( (ListItem)ListBox.Items[ListBox.SelectedIndex] ).BookmarkItem is not null;
+    ActionDelete.Enabled = ListBox.SelectedIndex >= 0;
+  }
+
+  private void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+  {
+    var bookmark = ( (DateBookmarkItem)ListBox.SelectedItem );
+    string memo = bookmark.Memo;
+    if ( DisplayManager.QueryValue(SysTranslations.Memo.GetLang(),
+                                   bookmark.Date.ToLongDateString(),
+                                   ref memo) == InputValueResult.Modified )
+    {
+      int index = ListBox.SelectedIndex;
+      ListBox.Items[index] = new DateBookmarkItem(bookmark.Date, memo);
+    }
   }
 
   private void ActionExport_Click(object sender, EventArgs e)
@@ -122,8 +129,8 @@ sealed partial class ManageBookmarksForm : Form
   {
     ListBox.Sort((itemFirst, itemLast) =>
     {
-      var first = ( (ListItem)itemFirst ).BookmarkItem;
-      var last = ( (ListItem)itemLast ).BookmarkItem;
+      var first = ( (DateBookmarkItem)itemFirst );
+      var last = ( (DateBookmarkItem)itemLast );
       if ( first is null ) return 1;
       if ( last is null ) return -1;
       return first.Date.CompareTo(last.Date);
