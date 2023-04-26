@@ -319,6 +319,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
 | Alt + P | Show online parashah menu |
+| Alt + B | Manage bookmarks |
 | Ctrl + F1 | Parashot board |
 | Ctrl + F2 | Celebration verses board |
 | Ctrl + F3 | Celebrations board |
@@ -387,6 +388,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### 2023.04.30 - Version 10.5
 
 - Add memos to date bookmarks.
+- Add manage bookmarks menu item in Tools and Ctrl + B shortcut. 
 - Add option to auto sort date bookmarks.
 - Add previous and next buttons to parashah description box.
 - Add Accuweather.com provider.
