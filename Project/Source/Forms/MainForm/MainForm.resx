@@ -229,7 +229,7 @@
     <value>MonthlyCalendar</value>
   </data>
   <data name="&gt;&gt;MonthlyCalendar.Type" xml:space="preserve">
-    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>CodeProjectCalendar.NET.Calendar, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;MonthlyCalendar.Parent" xml:space="preserve">
     <value>PanelViewMonthlyCalendar</value>
@@ -2431,6 +2431,37 @@
   <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
     <value>281, 6</value>
   </data>
+  <data name="ActionManageBookmarks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAlVJREFUOE+Vk0tPE1EYhrv0D2iCwELZuMBw0aSiUFJCXenSuNGIxugeRS5KL1gJ
+        xisIJgZxRUAjCYlcWpBLC6UtRSgBdYEiIRojMtMpirZQ9PHMgGikXfglb76ZOed95j2Zb3Rqma71KAX2
+        Hoz2XvQ1w9w7XsTYgTTqRN9fPcQhi4Ncc9e6LF0YbN0U2p2KZlZLNY/NhcixOJmIwWhmEpw9QiAjibEo
+        TMo/mZTWNvUqjAbZsOt0hQJw8oEXvdmBLwKejJ2snDDhE704AKWDCmX9EqVCJX0SwcUfWpINu3qEXk41
+        +kQCB+5vKiCZyDEDvsxkLk1A5bCC2S1R6ZKoGJQY/bS2FVDU6NcA/csCIIzLR/X4spIpD4LFo2AVAFVm
+        ARn5GIsPOCgAziUVkMLXw5kaqGQcyl0KFQOLXBFvN7tkBj/EyNsCeLgO6FRgJCuVsGEPbnGUf6tySOb5
+        /EpiQHtIALJTUXJ2C0AKxSLBhQGZi32fKRMprMMy3XOJAFYnbTJ4s1MIiU8ZL8FVT4hn76IY4gHUgXmy
+        IOZg73bCu7bhS9+BZQpsXoUqj4TdK1PjD9E+mwCQa+nm8XvoPH+O+x1B3CY916di3AgscXNU0XQrEObp
+        20QAMaots6vcmY5y++Uqdf4F7gaXqR0PU/tCWZe4bn0T2Qo4LQB5AtA8E6Vh8gv1wSXqf/eJ8KYaxH3z
+        TIR861+jbKru5UyTX3vYMhvj0evvNCWQutYq9hirHH8AxsttLhWi/hNGm0MD5YuIcSXWVHOBrWN+w65V
+        mtC+/1S6TqfT/QI/WGQSDJUWBAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ActionManageBookmarks.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ActionManageBookmarks.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+B</value>
+  </data>
+  <data name="ActionManageBookmarks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 22</value>
+  </data>
+  <data name="ActionManageBookmarks.Text" xml:space="preserve">
+    <value>Manage bookmarks</value>
+  </data>
+  <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 6</value>
+  </data>
   <data name="ActionCalculateDateDiff.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3924,7 +3955,7 @@
     <value>Navigation window</value>
   </data>
   <data name="ContextMenuStripDay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 498</value>
+    <value>243, 476</value>
   </data>
   <data name="&gt;&gt;ContextMenuStripDay.Name" xml:space="preserve">
     <value>ContextMenuStripDay</value>
@@ -3940,7 +3971,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC8
-        CQAAAk1TRnQBSQFMAgEBBAEAAagBAwGoAQMBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAcABAwHAAQMBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -4177,7 +4208,7 @@
     <value>EditExportDataEnumsAsTranslations</value>
   </data>
   <data name="&gt;&gt;EditExportDataEnumsAsTranslations.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.ToolStripCheckBoxItem, Ordisoftware.Hebrew.Calendar, Version=10.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.ToolStripCheckBoxItem, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;LabelEnumsAsTranslations.Name" xml:space="preserve">
     <value>LabelEnumsAsTranslations</value>
@@ -4615,6 +4646,18 @@
     <value>toolStripSeparator8</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionManageBookmarks.Name" xml:space="preserve">
+    <value>ActionManageBookmarks</value>
+  </data>
+  <data name="&gt;&gt;ActionManageBookmarks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Name" xml:space="preserve">
+    <value>toolStripSeparator11</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator11.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionCalculateDateDiff.Name" xml:space="preserve">

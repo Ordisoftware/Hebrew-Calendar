@@ -1356,7 +1356,7 @@ sealed partial class MainForm : Form
     DoBookmarksMouseUp(sender, e);
   }
 
-  private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
+  private void ActionManageBookmark_Click(object sender, EventArgs e)
   {
     if ( ManageBookmarksForm.Run() )
       LoadMenuBookmarks(this);
@@ -1369,4 +1369,8 @@ sealed partial class MainForm : Form
 
   #endregion
 
+  private void ActionManageBookmarks_Click(object sender, EventArgs e)
+  {
+
+  }
 }

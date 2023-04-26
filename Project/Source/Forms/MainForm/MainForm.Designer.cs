@@ -156,6 +156,8 @@
       this.ActionShowNewMoonsBoard = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionShowLunarMonths = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+      this.ActionManageBookmarks = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionCalculateDateDiff = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenSystemDateAndTime = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionOpenCalculator = new System.Windows.Forms.ToolStripMenuItem();
@@ -1007,6 +1009,8 @@
             this.ActionShowNewMoonsBoard,
             this.ActionShowLunarMonths,
             this.toolStripSeparator8,
+            this.ActionManageBookmarks,
+            this.toolStripSeparator11,
             this.ActionCalculateDateDiff,
             this.ActionOpenSystemDateAndTime,
             this.ActionOpenCalculator,
@@ -1201,6 +1205,17 @@
       // 
       this.toolStripSeparator8.Name = "toolStripSeparator8";
       resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+      // 
+      // ActionManageBookmarks
+      // 
+      resources.ApplyResources(this.ActionManageBookmarks, "ActionManageBookmarks");
+      this.ActionManageBookmarks.Name = "ActionManageBookmarks";
+      this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmark_Click);
+      // 
+      // toolStripSeparator11
+      // 
+      this.toolStripSeparator11.Name = "toolStripSeparator11";
+      resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
       // 
       // ActionCalculateDateDiff
       // 
@@ -1780,7 +1795,7 @@
       // 
       resources.ApplyResources(this.ContextMenuDayManageBookmark, "ContextMenuDayManageBookmark");
       this.ContextMenuDayManageBookmark.Name = "ContextMenuDayManageBookmark";
-      this.ContextMenuDayManageBookmark.Click += new System.EventHandler(this.ContextMenuDayManageBookmark_Click);
+      this.ContextMenuDayManageBookmark.Click += new System.EventHandler(this.ActionManageBookmark_Click);
       // 
       // toolStripSeparator21
       // 
@@ -2079,6 +2094,8 @@
     internal ToolStripMenuItem ActionShowShabatVerses;
     private ToolStripMenuItem ContextMenuParashahReadDefault;
     private ToolStripMenuItem ActionParashahReadDefault;
+    private ToolStripMenuItem ActionManageBookmarks;
+    public ToolStripSeparator toolStripSeparator11;
   }
 }
 
