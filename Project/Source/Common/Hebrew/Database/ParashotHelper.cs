@@ -25,6 +25,7 @@ static public class ParashotHelper
 
   [SuppressMessage("Usage", "VSTHRD101:Avoid unsupported async delegates", Justification = "<En attente>")]
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Usage", "VSTHRD100:Avoid async void methods", Justification = "<En attente>")]
   static public bool ShowDescription(this List<Parashah> parashot,
                                      Parashah parashah,
                                      bool withLinked,
@@ -120,7 +121,7 @@ static public class ParashotHelper
     async void openBoard(object sender, EventArgs e)
     {
       Form form = null;
-      SystemManager.TryCatchManage(() => form = runBoard.Invoke());
+      SystemManager.TryCatchManage(() => form = runBoard?.Invoke());
       await Task.Delay(1000).ConfigureAwait(false);
       if ( form is not null ) SystemManager.TryCatchManage(() => form.Popup());
     }

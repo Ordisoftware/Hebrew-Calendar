@@ -244,8 +244,8 @@ sealed partial class PreferencesForm : Form
   private void ActionManageBookmarks_Click(object sender, EventArgs e)
   {
     if ( !ManageBookmarksForm.Run() ) return;
-    int countBookmarks = Math.Max(Program.DateBookmarks.MaxCount, DateBookmarksCountInterval.Item1);
-    if ( countBookmarks == -1 ) countBookmarks = DateBookmarksCountInterval.Item1;
+    int countBookmarks = Math.Max(Program.DateBookmarks.MinListSize, DateBookmarksCountInterval.Item1);
+    if ( countBookmarks == 0 ) countBookmarks = DateBookmarksCountInterval.Item1;
     DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
     EditDateBookmarksCount.Minimum = countBookmarks;
     EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
@@ -256,7 +256,6 @@ sealed partial class PreferencesForm : Form
   {
     if ( !IsReady ) return;
     Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
-    Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
     DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
   }
 

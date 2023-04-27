@@ -26,6 +26,7 @@ sealed partial class DatesDiffCalculatorForm : Form
     Instance = new DatesDiffCalculatorForm();
   }
 
+  // TODO refactor
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
   {
@@ -33,13 +34,15 @@ sealed partial class DatesDiffCalculatorForm : Form
     items.Clear();
     for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
     {
-      var date = Program.DateBookmarks[index];
-      string dateText = date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : date.ToLongDateString();
-      var menuitem = items.Add($"{index + 1:00}. {dateText}");
+      var bookmark = Program.DateBookmarks[index];
+      string dateText = bookmark is null ? SysTranslations.EmptySlot.GetLang() : bookmark.Date.ToLongDateString();
+      string label = $"{index + 1:00}. {dateText}";
+      if ( bookmark?.Memo.IsNullOrEmpty() == false ) label += $" ({bookmark.Memo})";
+      var menuitem = items.Add(label);
       menuitem.MouseUp += action;
       menuitem.Tag = index;
-      if ( onlyCalendar && date != DateTime.MinValue )
-        if ( date < MainForm.Instance.DateFirst || date > MainForm.Instance.DateLast )
+      if ( onlyCalendar && bookmark is not null )
+        if ( bookmark.Date < MainForm.Instance.DateFirst || bookmark.Date > MainForm.Instance.DateLast )
           menuitem.Enabled = false;
     }
   }
@@ -145,11 +148,11 @@ sealed partial class DatesDiffCalculatorForm : Form
       if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
         if ( !menuitem.Text.EndsWith(")", StringComparison.Ordinal) )
         {
-          var date = Program.DateBookmarks[(int)menuitem.Tag].ToLongDateString();
+          string date = Program.DateBookmarks[(int)menuitem.Tag].Date.ToLongDateString();
           if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
             return;
           menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {SysTranslations.EmptySlot.GetLang()}";
-          Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
+          Program.DateBookmarks[(int)menuitem.Tag] = null;
           Program.DateBookmarks.ApplyAutoSort();
           SystemManager.TryCatch(Settings.Save);
         }
@@ -163,7 +166,7 @@ sealed partial class DatesDiffCalculatorForm : Form
       if ( control == ActionSetBookmarkEnd )
         setBookmark(DateEnd);
       else
-      if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
+      if ( DateTime.TryParse(new string(menuitem.Text.Skip(3).TakeWhile(c => c != '(').ToArray()), out DateTime date) )
         if ( control == ActionUseBookmarkStart )
           DateStart.SelectionStart = date;
         else
@@ -171,25 +174,33 @@ sealed partial class DatesDiffCalculatorForm : Form
           DateEnd.SelectionStart = date;
     }
     MainForm.Instance.LoadMenuBookmarks(this);
-    //
+    // TODO refactor with mainform.bookmarks
     void setBookmark(MonthCalendar calendar)
     {
       var dateNew = calendar.SelectionStart.Date;
       for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
       {
-        var date = Program.DateBookmarks[index];
-        if ( dateNew == date ) return;
+        var bookmark = Program.DateBookmarks[index];
+        if ( bookmark is not null && dateNew == bookmark.Date ) return;
       }
-      var dateOld = Program.DateBookmarks[(int)menuitem.Tag];
-      if ( dateOld != DateTime.MinValue )
+      var bookmarkOld = Program.DateBookmarks[(int)menuitem.Tag];
+      if ( bookmarkOld is not null )
       {
-        string date1 = dateOld.ToShortDateString();
+        string date1 = bookmarkOld.Date.ToShortDateString();
         string date2 = dateNew.ToShortDateString();
         string msg = SysTranslations.AskToReplaceBookmark.GetLang(date1, date2);
         if ( !DisplayManager.QueryYesNo(msg) ) return;
       }
-      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
-      Program.DateBookmarks[(int)menuitem.Tag] = dateNew.Date;
+      string memo = string.Empty;
+      if ( DisplayManager.QueryValue(SysTranslations.Memo.GetLang(),
+                                     dateNew.ToLongDateString(),
+                                     ref memo) == InputValueResult.Cancelled )
+        return;
+      string dateText = dateNew.ToLongDateString();
+      string label = $"{(int)menuitem.Tag + 1:00}. {dateText}";
+      if ( !memo.IsNullOrEmpty() ) label += $" ({memo})";
+      menuitem.Text = label;
+      Program.DateBookmarks[(int)menuitem.Tag] = new DateBookmarkItem(dateNew, memo);
       Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);
     }

@@ -224,8 +224,8 @@ partial class PreferencesForm
     InitializeNumericInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
     InitializeNumericInterval(EditMonthViewSeparatorSize, LabelMonthViewSeparatorSizeInfo, SeparatorSizeInterval);
     InitializeNumericInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
-    int countBookmarks = Program.DateBookmarks.MaxCount;
-    if ( countBookmarks == -1 ) countBookmarks = DateBookmarksCountInterval.Item1;
+    int countBookmarks = Program.DateBookmarks.MinListSize;
+    if ( countBookmarks == 0 ) countBookmarks = DateBookmarksCountInterval.Item1;
     LabelDateBookmarksCountIntervalInfo.Text = countBookmarks.ToString();
     EditDateBookmarksCount.Minimum = countBookmarks;
     SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);

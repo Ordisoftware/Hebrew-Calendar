@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -1331,6 +1331,7 @@ sealed partial class MainForm : Form
 
   private ToolStripMenuItem CurrentBookmarkMenu;
 
+  // TODO refactor
   internal void LoadMenuBookmarks(Form caller)
   {
     DatesDiffCalculatorForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
@@ -1340,8 +1341,8 @@ sealed partial class MainForm : Form
     MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
     foreach ( ToolStripMenuItem menuitem in ContextMenuDayGoToBookmark.DropDownItems )
     {
-      var value = Program.DateBookmarks[(int)menuitem.Tag];
-      if ( value == DateTime.MinValue ) menuitem.Enabled = false;
+      var bookmark = Program.DateBookmarks[(int)menuitem.Tag];
+      if ( bookmark is null ) menuitem.Enabled = false;
     }
   }
 
@@ -1355,9 +1356,10 @@ sealed partial class MainForm : Form
     DoBookmarksMouseUp(sender, e);
   }
 
-  private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
+  private void ActionManageBookmark_Click(object sender, EventArgs e)
   {
-    if ( ManageBookmarksForm.Run() ) LoadMenuBookmarks(this);
+    if ( ManageBookmarksForm.Run() )
+      LoadMenuBookmarks(this);
   }
 
   private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)
@@ -1367,4 +1369,8 @@ sealed partial class MainForm : Form
 
   #endregion
 
+  private void ActionManageBookmarks_Click(object sender, EventArgs e)
+  {
+
+  }
 }

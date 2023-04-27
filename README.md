@@ -319,6 +319,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
 | Alt + P | Show online parashah menu |
+| Alt + B | Manage bookmarks |
 | Ctrl + F1 | Parashot board |
 | Ctrl + F2 | Celebration verses board |
 | Ctrl + F3 | Celebrations board |
@@ -374,20 +375,21 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Changelog
 
-#### TO DO Next
+#### TO DO
 
+>- Add auto backup bookmarks.
 >- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 >- Add command-line option `--lunarmonths` to show the lunar months board.
->- Add comments to bookmarks.
->- Add auto backup bookmarks.
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
 >- Check and fix weekly parashah generation with Soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
-#### Version 10.5
+#### 2023 - Version 11
 
-- Add option to auto sort bookmarks.
+- Add memos to date bookmarks.
+- Add option to automatically sort date bookmarks.
+- Add manage bookmarks menu item in Tools and Ctrl + B shortcut. 
 - Add previous and next buttons to parashah description box.
 - Add Accuweather.com provider.
 

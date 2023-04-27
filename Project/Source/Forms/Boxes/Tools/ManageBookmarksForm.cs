@@ -19,15 +19,6 @@ sealed partial class ManageBookmarksForm : Form
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  private sealed class DateItem
-  {
-    public DateTime Date { get; set; }
-    public override string ToString()
-    {
-      return Date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : Date.ToLongDateString();
-    }
-  }
-
   static public bool Run()
   {
     bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
@@ -57,10 +48,10 @@ sealed partial class ManageBookmarksForm : Form
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
   {
     this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
-    ListBox.Items.Clear();
     if ( Settings.DateBookmarksCount == 0 ) return;
-    for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
-      ListBox.Items.Add(new DateItem { Date = Program.DateBookmarks[index] });
+    var items = Program.DateBookmarks.Items.Where(item => item is not null).Select(item => new DateBookmarkItem(item));
+    ListBox.Items.Clear();
+    ListBox.Items.AddRange(items.ToArray());
     ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
     ActionClear.Enabled = ListBox.Items.Count > 0;
@@ -72,8 +63,9 @@ sealed partial class ManageBookmarksForm : Form
   private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
   {
     if ( DialogResult != DialogResult.OK ) return;
-    for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
-      Program.DateBookmarks[index] = ( (DateItem)ListBox.Items[index] ).Date;
+    var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
+    Program.DateBookmarks.Items.Clear();
+    Program.DateBookmarks.Items.AddRange(items);
     Program.DateBookmarks.ApplyAutoSort();
     SystemManager.TryCatch(Settings.Save);
   }
@@ -82,8 +74,20 @@ sealed partial class ManageBookmarksForm : Form
   {
     ActionUp.Enabled = !Settings.AutoSortBookmarks && ListBox.SelectedIndex != 0;
     ActionDown.Enabled = !Settings.AutoSortBookmarks && ListBox.SelectedIndex != ListBox.Items.Count - 1;
-    ActionDelete.Enabled = ListBox.SelectedIndex >= 0
-                        && ( (DateItem)ListBox.Items[ListBox.SelectedIndex] ).Date != DateTime.MinValue;
+    ActionDelete.Enabled = ListBox.SelectedIndex >= 0;
+  }
+
+  private void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+  {
+    var bookmark = ( (DateBookmarkItem)ListBox.SelectedItem );
+    string memo = bookmark.Memo;
+    if ( DisplayManager.QueryValue(SysTranslations.Memo.GetLang(),
+                                   bookmark.Date.ToLongDateString(),
+                                   ref memo) == InputValueResult.Modified )
+    {
+      int index = ListBox.SelectedIndex;
+      ListBox.Items[index] = new DateBookmarkItem(bookmark.Date, memo);
+    }
   }
 
   private void ActionExport_Click(object sender, EventArgs e)
@@ -99,13 +103,12 @@ sealed partial class ManageBookmarksForm : Form
   private void ActionClear_Click(object sender, EventArgs e)
   {
     if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) ) return;
-    for ( int index = 0; index < ListBox.Items.Count; index++ )
-      ListBox.Items[index] = new DateItem { Date = DateTime.MinValue };
+    ListBox.Items.Clear();
   }
 
   private void ActionDelete_Click(object sender, EventArgs e)
   {
-    ListBox.Items[ListBox.SelectedIndex] = new DateItem { Date = DateTime.MinValue };
+    ListBox.Items.RemoveAt(ListBox.SelectedIndex);
     ListBox.Focus();
   }
 
@@ -126,11 +129,11 @@ sealed partial class ManageBookmarksForm : Form
   {
     ListBox.Sort((itemFirst, itemLast) =>
     {
-      var dateFirst = ( (DateItem)itemFirst ).Date;
-      var dateLast = ( (DateItem)itemLast ).Date;
-      if ( dateFirst == DateTime.MinValue ) return 1;
-      if ( dateLast == DateTime.MinValue ) return -1;
-      return dateFirst.CompareTo(dateLast);
+      var first = ( (DateBookmarkItem)itemFirst );
+      var last = ( (DateBookmarkItem)itemLast );
+      if ( first is null ) return 1;
+      if ( last is null ) return -1;
+      return first.Date.CompareTo(last.Date);
     });
     ListBox_SelectedIndexChanged(null, null);
     ListBox.Focus();

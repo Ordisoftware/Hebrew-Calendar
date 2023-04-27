@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -180,6 +180,9 @@ public partial class MainForm
       ContextMenuDayMoonrise.ImageIndex = 2;
       ContextMenuDayMoonset.ImageIndex = 3;
     }
+    // Bookmarks
+    date = rowDay.Date;
+    ContextMenuDaySaveBookmark.Enabled = Program.DateBookmarks.Items.FindIndex(item => item.Date == date) == -1;
   }
 
 }
