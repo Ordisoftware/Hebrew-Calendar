@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-12 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -61,83 +61,59 @@ static partial class AppTranslations
                       """,
     },*/
 
-    ["10.5"] = new TranslationsDictionary
+    ["11.0"] = new TranslationsDictionary
     {
       [Language.EN] = """
-                      • Add option to auto sort bookmarks.
-                      • Add previous and next buttons to parashah description box.
-                      • Add Accuweather.com provider.
+                      • Added memos to date bookmarks.
+                      • Added option to automatically sort date bookmarks.
+                      • Added manage bookmarks menu item in Tools and Ctrl + B shortcut. 
+                      • Added previous and next buttons to parashah description box.
+                      • Added Accuweather.com provider.
                       """,
 
       [Language.FR] = """
-                      • Ajout d'une option de tri automatique des signets.
+                      • Ajout des mémos aux signets de date.
+                      • Ajout d'une option pour trier automatiquement les signets de date.
+                      • Ajout d'un élément de menu pour la gestion des signets dans les outils et le raccourci Ctrl + B.
                       • Ajout de boutons précédent et suivant à la boîte de description de parashah.
                       • Ajout du fournisseur Accuweather.com.
                       """,
     },
 
-    ["10.2"] = new TranslationsDictionary
-    {
-      [Language.EN] = """
-                      • Add import settings button in city selection box on first start.
-                      • Improve web update checker security.
-                      • Improve IPC interoperability security.
-                      • Code improvement and refactoring.
-                      • Add links for Peninei Halakha and some others.
-                      """,
-
-      [Language.FR] = """
-                      • Ajout d'un bouton d'importation des paramètres dans boite de sélection de la ville au premier démarrage.
-                      • Amélioration de la sécurité du vérificateur de mise à jour Web.
-                      • Amélioration de la sécurité de l'interopérabilité IPC.
-                      • Amélioration et refactorisation du code.
-                      • Ajouter des liens pour Peninei Halakha et quelques autres.
-                      """,
-    },
-
-    ["10.1"] = new TranslationsDictionary
-    {
-      [Language.EN] = """
-                      • Added verse references for Shabat in celebrations board.
-                      • Added option to select font names for texts in the monthly view.
-                      • Added option to select data layout order and sections to show in the monthly view.
-                      • Added option to set default online verses reader.
-                      • Added option to center printed images on pages.
-                      • Divided study context menu into `Online texts` and `Online videos` in celebrations board.
-                      • Fixed print monthly view image size and location on pages.
-                      • Fixed some study web links.
-                      • Some UI/UX fixes and improvements.
-                      """,
-
-      [Language.FR] = """
-                      • Ajout de références de versets pour le Shabat dans le tableau des célébrations.
-                      • Ajout d'une option pour sélectionner les noms de police pour les textes dans la vue mensuelle
-                      • Ajout d'une option pour sélectionner la disposition des données et les sections à afficher dans la vue mensuelle.
-                      • Ajout d'une option pour définir le lecteur de versets en ligne par défaut.
-                      • Ajout d'une option pour centrer les images imprimées dans les pages.
-                      • Division du menu contextuel d'étude `Textes en ligne` et `Vidéos en ligne` dans le tableau des célébrations.
-                      • Correction de la taille et de l'emplacement de l'image d'affichage mensuelle sur les pages.
-                      • Correction de quelques liens web pour l'étude.
-                      • Quelques correctifs et améliorations d'UI/UX.
-                      """,
-    },
-
-    ["10.0"] = new TranslationsDictionary
+    ["10.x"] = new TranslationsDictionary
     {
       [Language.EN] = """
                       • Adar II was renamed in VeAdar.
+                      • Added import settings button in city selection box on first start.
+                      • Added verse references for Shabat in celebrations board.
                       • Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
+                      • Added options to select font names for texts in the monthly view.
+                      • Added option to select data layout order and sections to show in the monthly view.
+                      • Added option to set default online verses reader.
+                      • Added option to center printed images on pages.
                       • Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
+                      • Divided study context menu into `Online texts` and `Online videos` in celebrations board.
+                      • Improved web update checker security.
+                      • Improved IPC interoperability security.
                       • Some fixes and improvements.
                       • Optimized and refactored code.
-                      • Updated web links.,
+                      • Updated web links.
                       """,
 
       [Language.FR] = """
                       • Adar II a été renommé en VeAdar.
+                      • Ajout d'un bouton d'importation des paramètres dans boite de sélection de la ville au premier démarrage.
+                      • Ajout de références de versets pour le Shabat dans le tableau des célébrations.
                       • Ajout d'options pour la disposition des données dans la vue mensuelle : pour mettre la date lunaire sur une seule ligne avant les éphémérides, pour afficher le nom du livre avec les références de la parashah, pour définir l'alignement du texte et pour insérer un séparateur entre les sections.
                       • Ajout d'options pour afficher les noms hébreux en caractères Unicode ou en transcription latine, et pour conserver les chiffres arabes en cas d'Unicode.
-                      • Quelques correctifs et améliorations.
+                      • Ajout d'une option pour sélectionner les noms de police pour les textes dans la vue mensuelle
+                      • Ajout d'une option pour sélectionner la disposition des données et les sections à afficher dans la vue mensuelle.
+                      • Ajout d'une option pour définir le lecteur de versets en ligne par défaut.
+                      • Ajout d'options pour centrer les images imprimées dans les pages.
+                      • Division du menu contextuel d'étude `Textes en ligne` et `Vidéos en ligne` dans le tableau des célébrations.                      • Quelques correctifs et améliorations.
+                      • Amélioration de la sécurité du vérificateur de mise à jour Web.
+                      • Amélioration de la sécurité de l'interopérabilité IPC.
+                      • Quelques corrections et améliorations.
                       • Code optimisé et refactorisé.
                       • Mise à jour des liens Web.
                       """,

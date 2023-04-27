@@ -375,21 +375,21 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Changelog
 
-#### TO DO Next
+#### TO DO
 
+>- Add auto backup bookmarks.
 >- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
 >- Add command-line option `--lunarmonths` to show the lunar months board.
->- Add auto backup bookmarks.
 >- Improve weekly parashah description box to have access to the tools for the study.
 >- Improve weekly parashah description box to have a screenshot button.
 >- Check and fix weekly parashah generation with Soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
-#### 2023.04.30 - Version 10.5
+#### 2023 - Version 11
 
 - Add memos to date bookmarks.
+- Add option to automatically sort date bookmarks.
 - Add manage bookmarks menu item in Tools and Ctrl + B shortcut. 
-- Add option to auto sort date bookmarks.
 - Add previous and next buttons to parashah description box.
 - Add Accuweather.com provider.
 
