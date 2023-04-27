@@ -62,7 +62,7 @@ partial class PreferencesForm
 
   // Numeric intervals as (Min, Max, Default, Increment)
   static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
-  static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 40, 20, 1);
+  static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 50, 20, 1);
   static public readonly (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
   static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 5, 1);
   static public readonly (int, int, int, int) SeparatorSizeInterval = (0, 10, 3, 1);

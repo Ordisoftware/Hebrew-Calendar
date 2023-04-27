@@ -35,6 +35,10 @@ sealed partial class ManageBookmarksForm : Form
     }
   }
 
+  private bool AllowClose;
+  private bool Ready;
+  private bool Modified;
+
   private ManageBookmarksForm()
   {
     InitializeComponent();
@@ -54,27 +58,49 @@ sealed partial class ManageBookmarksForm : Form
     ListBox.Items.AddRange(items.ToArray());
     ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
-    ActionClear.Enabled = ListBox.Items.Count > 0;
-    ActionSort.Enabled = ListBox.Items.Count > 0 && !Program.Settings.AutoSortBookmarks;
-    ActionUp.Enabled = !Settings.AutoSortBookmarks;
-    ActionDown.Enabled = !Settings.AutoSortBookmarks;
+    AllowClose = true;
+    Ready = true;
   }
 
-  private void ManageDateBookmarks_FormClosed(object sender, FormClosedEventArgs e)
+  private void ManageBookmarksForm_FormClosing(object sender, FormClosingEventArgs e)
   {
-    if ( DialogResult != DialogResult.OK ) return;
+    if ( !AllowClose ) e.Cancel = true;
+  }
+
+  private void ActionOK_Click(object sender, EventArgs e)
+  {
+    AllowClose = true;
     var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
     Program.DateBookmarks.Items.Clear();
     Program.DateBookmarks.Items.AddRange(items);
     Program.DateBookmarks.ApplyAutoSort();
     SystemManager.TryCatch(Settings.Save);
+    Close();
+  }
+
+  private void ActionCancel_Click(object sender, EventArgs e)
+  {
+    AllowClose = true;
+    Close();
+  }
+
+  private void EditAutoSort_CheckedChanged(object sender, EventArgs e)
+  {
+    if ( !Ready ) return;
+    if ( EditAutoSort.Checked ) ActionSort.PerformClick();
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
   {
-    ActionUp.Enabled = !Settings.AutoSortBookmarks && ListBox.SelectedIndex != 0;
-    ActionDown.Enabled = !Settings.AutoSortBookmarks && ListBox.SelectedIndex != ListBox.Items.Count - 1;
+    ActionSort.Enabled = !EditAutoSort.Checked && ListBox.Items.Count > 0;
+    ActionUp.Enabled = !EditAutoSort.Checked && ListBox.SelectedIndex != 0;
+    ActionDown.Enabled = !EditAutoSort.Checked && ListBox.SelectedIndex != ListBox.Items.Count - 1;
     ActionDelete.Enabled = ListBox.SelectedIndex >= 0;
+    ActionClear.Enabled = ListBox.Items.Count > 0;
+    ActionOK.Enabled = Modified;
+    AllowClose = !Modified;
+    ListBox.Focus();
   }
 
   private void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -83,45 +109,54 @@ sealed partial class ManageBookmarksForm : Form
     string memo = bookmark.Memo;
     if ( DisplayManager.QueryValue(SysTranslations.Memo.GetLang(),
                                    bookmark.Date.ToLongDateString(),
-                                   ref memo) == InputValueResult.Modified )
-    {
-      int index = ListBox.SelectedIndex;
-      ListBox.Items[index] = new DateBookmarkItem(bookmark.Date, memo);
-    }
+                                   ref memo) != InputValueResult.Modified ) return;
+    int index = ListBox.SelectedIndex;
+    ListBox.Items[index] = new DateBookmarkItem(bookmark.Date, memo);
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   private void ActionExport_Click(object sender, EventArgs e)
   {
     DoActionExport();
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   private void ActionImport_Click(object sender, EventArgs e)
   {
     DoActionImport();
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   private void ActionClear_Click(object sender, EventArgs e)
   {
     if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) ) return;
     ListBox.Items.Clear();
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   private void ActionDelete_Click(object sender, EventArgs e)
   {
     ListBox.Items.RemoveAt(ListBox.SelectedIndex);
-    ListBox.Focus();
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   private void ActionUp_Click(object sender, EventArgs e)
   {
     ListBox.MoveSelectedItem(-1);
-    ListBox.Focus();
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   private void ActionDown_Click(object sender, EventArgs e)
   {
     ListBox.MoveSelectedItem(1);
-    ListBox.Focus();
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   // https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
@@ -135,8 +170,8 @@ sealed partial class ManageBookmarksForm : Form
       if ( last is null ) return -1;
       return first.Date.CompareTo(last.Date);
     });
+    Modified = true;
     ListBox_SelectedIndexChanged(null, null);
-    ListBox.Focus();
   }
 
 }
