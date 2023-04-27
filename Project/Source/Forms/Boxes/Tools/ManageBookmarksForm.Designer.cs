@@ -40,10 +40,12 @@
       this.ActionUp = new System.Windows.Forms.Button();
       this.ActionDown = new System.Windows.Forms.Button();
       this.ActionSort = new System.Windows.Forms.Button();
-      this.PanelSeparator = new System.Windows.Forms.Panel();
       this.SaveBookmarksDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenBookmarksDialog = new System.Windows.Forms.OpenFileDialog();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.EditAutoSort = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
+      this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // PanelBottom
@@ -78,6 +80,7 @@
       resources.ApplyResources(this.ActionCancel, "ActionCancel");
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.ActionCancel.Name = "ActionCancel";
+      this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
       // ActionOK
       // 
@@ -85,6 +88,7 @@
       this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
       this.ActionOK.Name = "ActionOK";
       this.ActionOK.UseVisualStyleBackColor = true;
+      this.ActionOK.Click += new System.EventHandler(this.ActionOK_Click);
       // 
       // ActionClear
       // 
@@ -135,32 +139,45 @@
       this.ActionSort.UseVisualStyleBackColor = true;
       this.ActionSort.Click += new System.EventHandler(this.ActionSort_Click);
       // 
-      // PanelSeparator
+      // panel1
       // 
-      resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
-      this.PanelSeparator.Name = "PanelSeparator";
+      this.panel1.Controls.Add(this.EditAutoSort);
+      this.panel1.Controls.Add(this.ActionClear);
+      this.panel1.Controls.Add(this.ListBox);
+      this.panel1.Controls.Add(this.ActionDelete);
+      this.panel1.Controls.Add(this.ActionUp);
+      this.panel1.Controls.Add(this.ActionDown);
+      this.panel1.Controls.Add(this.ActionSort);
+      resources.ApplyResources(this.panel1, "panel1");
+      this.panel1.Name = "panel1";
+      // 
+      // EditAutoSort
+      // 
+      resources.ApplyResources(this.EditAutoSort, "EditAutoSort");
+      this.EditAutoSort.Checked = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.AutoSortBookmarks;
+      this.EditAutoSort.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditAutoSort.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "AutoSortBookmarks", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+      this.EditAutoSort.Name = "EditAutoSort";
+      this.EditAutoSort.UseVisualStyleBackColor = true;
+      this.EditAutoSort.CheckedChanged += new System.EventHandler(this.EditAutoSort_CheckedChanged);
       // 
       // ManageBookmarksForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ManageDateBookmarksFormClientSize;
-      this.Controls.Add(this.ActionClear);
-      this.Controls.Add(this.ListBox);
-      this.Controls.Add(this.PanelSeparator);
-      this.Controls.Add(this.ActionDown);
-      this.Controls.Add(this.ActionSort);
-      this.Controls.Add(this.ActionUp);
-      this.Controls.Add(this.ActionDelete);
+      this.Controls.Add(this.panel1);
       this.Controls.Add(this.PanelBottom);
       this.DataBindings.Add(new System.Windows.Forms.Binding("ClientSize", global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default, "ManageDateBookmarksFormClientSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "ManageBookmarksForm";
       this.ShowInTaskbar = false;
-      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageDateBookmarks_FormClosed);
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageBookmarksForm_FormClosing);
       this.Load += new System.EventHandler(this.ManageDateBookmarks_Load);
       this.PanelBottom.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
+      this.panel1.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -176,10 +193,11 @@
     private System.Windows.Forms.Button ActionUp;
     private System.Windows.Forms.Button ActionDown;
     private System.Windows.Forms.Button ActionClear;
-    private System.Windows.Forms.Panel PanelSeparator;
     private System.Windows.Forms.Button ActionExport;
     private System.Windows.Forms.Button ActionImport;
     private System.Windows.Forms.SaveFileDialog SaveBookmarksDialog;
     private System.Windows.Forms.OpenFileDialog OpenBookmarksDialog;
+    private Panel panel1;
+    private CheckBox EditAutoSort;
   }
 }

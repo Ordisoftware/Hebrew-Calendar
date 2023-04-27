@@ -117,18 +117,91 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;ActionExport.Name" xml:space="preserve">
+    <value>ActionExport</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionExport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Name" xml:space="preserve">
+    <value>ActionImport</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionImport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Name" xml:space="preserve">
+    <value>ActionCancel</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Name" xml:space="preserve">
+    <value>ActionOK</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.Parent" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 273</value>
+  </data>
+  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 28</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
+    <value>PanelBottom</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="ActionExport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="ActionExport.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ActionExport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAeVJREFUOE+tkklrFFEUhQtFuzrBAVcGFRJduRHBhX/AARH8Af4DwYXDzkxKxKhI
+        vAAADrwBlbxySQAAAeVJREFUOE+tkklrFFEUhQtFuzrBAVcGFRJduRHBhX/AARH8Af4DwYXDzkxKxKhI
         MGA0gRYMUcxGO4Hu6g7dGkKwxYVdOMSq1iRWk4UKojiP8fPeV5VKm5VBDxzuqXr3nPte1bP+GWs7RoZW
         tjkkWxwSzQ62YTaq81rXtU/7I2sIfbkYrJL+yBoi2ZINV8Z3wJ09UNpNW3YG7u4yNLokurTTtNW3LgyQ
         LSpah6dozwR0OAGduWlOOs8NO/PTnMoFnMkHHBz2zJEiawi7OWMCKp9g8jME3+Bc1qMqtfodzucrvJb1
@@ -148,7 +221,6 @@
   <data name="ActionExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ActionExport.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -173,7 +245,7 @@
   <data name="ActionImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAchJREFUOE+tUk1LW1EQvY3F5GEp7jRxoYX+gIJ/obT4W6R14aZqEshHcaNUCaVV
+        vAAADrwBlbxySQAAAchJREFUOE+tUk1LW1EQvY3F5GEp7jRxoYX+gIJ/obT4W6R14aZqEshHcaNUCaVV
         jMXGlSgtJu8lkvhRsHaVtAv1JUKTaKF1IcRPVKw9zkye+aAbiz1w3hzuzJw7996n/itaAwsf73sNaG4D
         9gEDDqFuxarmPNe1BhMlq7UMXvwXcL3VWgbvIFh9DHzuAtaewqv/AL48EYpeI815gubWqwYtgQQaXkQl
         4Y/l4dOLCBhFDMbzCBoFIWu/XoBn/rvUabSh1U7jv4zgQcYB9WwWv34DO+fANnFINyVe68IZsHUi/XQf
@@ -241,6 +313,9 @@
   <data name="ActionOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="ActionOK.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ActionOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -268,30 +343,6 @@
   <data name="&gt;&gt;ActionOK.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="PanelBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 273</value>
-  </data>
-  <data name="PanelBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 28</value>
-  </data>
-  <data name="PanelBottom.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Name" xml:space="preserve">
-    <value>PanelBottom</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelBottom.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="ActionClear.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -304,7 +355,7 @@
   <data name="ActionClear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAB5BJREFUWEetl+tvE9kZxmmr9lMrVWyX/gH93n7ZT/3Uqv8FEu1C2a202kplpVZa
+        vAAADrwBlbxySQAAB5BJREFUWEetl+tvE9kZxmmr9lMrVWyX/gH93n7ZT/3Uqv8FEu1C2a202kplpVZa
         qV2Euly0rbTAwkKAXIhzIYE4Nji+x46vc/XY47HnZnvGlzgXnIRcnQQIT8+xaT9UKg4lr/TI9vi8v/PM
         ey4z59gh4jtf3nN9cNHh/eNFh//W5dFg5NJIQKC6PBrg/63/XBsLRi6TdrQ9zaP5Xczbx3evOPx/ItBo
         gNNqitVobe7sPMchYrvdfl6w51tBXqvRfMqhvC72cPG9r8YCU+54tkyB63vAwjrQ2gKWNoBK6xXkxgsw
@@ -343,7 +394,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 205</value>
+    <value>202, 195</value>
   </data>
   <data name="ActionClear.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -358,10 +409,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionClear.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionClear.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="ListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -376,10 +427,10 @@
     <value>15</value>
   </data>
   <data name="ListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
+    <value>0, 0</value>
   </data>
   <data name="ListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 253</value>
+    <value>196, 237</value>
   </data>
   <data name="ListBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -391,10 +442,10 @@
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ListBox.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;ListBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ActionDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -435,7 +486,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 155</value>
+    <value>202, 145</value>
   </data>
   <data name="ActionDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -450,10 +501,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionDelete.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionDelete.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="ActionUp.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -467,7 +518,7 @@
   <data name="ActionUp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAnhJREFUWEftlFtIk2EYx3dR311QF3XVXdcR3Rh00J2izBKLpEYnKYkoqKAu6qo2
+        vAAADrwBlbxySQAAAnhJREFUWEftlFtIk2EYx3dR311QF3XVXdcR3Rh00J2izBKLpEYnKYkoqKAu6qo2
         D8uZDWdamYrUwg6uUFyb01ZOdnDNHE5Xa0hSbN82S2SleVH8e96PBWKwDs7RxfeHH7y8H7zP7+V73kci
         RowYMQsMR6xIwdZZDScv7waD1huI1WyPfchGOKnaigZ76KuhZ3RWqrEyic1EViQ4qcaC5r430yUPQiht
         D6O2e2RGprZkRYJuboHR+Xa64LYfe1oC2Hc3CFVbGDX28DeZ+imT2EIsioRQ/P5gBNtv+FDY5Mfe1gBU
@@ -485,7 +536,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 60</value>
+    <value>202, 50</value>
   </data>
   <data name="ActionUp.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -500,10 +551,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionUp.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionUp.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="ActionDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -517,7 +568,7 @@
   <data name="ActionDown.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAn9JREFUWEftlFtIU3Ecx/dQvQX1UE+99RzRi0IX3cUos8QiqdFNSkISKqiHfKrN
+        vAAADrwBlbxySQAAAn9JREFUWEftlFtIU3Ecx/dQvQX1UE+99RzRi0IX3cUos8QiqdFNSkISKqiHfKrN
         y3JWw5lWpiK1sIsrFNfmtJWTXTzNHE5Xa0hS7OIskZXmQ/Ltd+bObBFTc0rE+cD35ZzD+X7O+f/+fwEP
         Dw/Pv8ZKyhrK+iRmHWU1ZQVlTtjyLRnFuq8SuR5i2XOI/hS693uEckMs6bL4sNfEcl3bTEViWGOxpFiP
         sjfTKGEmUWoPQ2Ebx1XrGJSWz7hmHYXKGoLaGkS1NYDbdj/q7AE0Mn5oHH487PVD6wyg1RWAfiAAozuI
@@ -535,7 +586,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 105</value>
+    <value>202, 95</value>
   </data>
   <data name="ActionDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -550,10 +601,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionDown.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionDown.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="ActionSort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -567,7 +618,7 @@
   <data name="ActionSort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAABLJJREFUWEe1V31MVWUc5kukhBZNzhUC14ZJIh83YHzD5UMwXZusrLWW64NgAmGa
+        vAAADrwBlbxySQAABLJJREFUWEe1V31MVWUc5kukhBZNzhUC14ZJIh83YHzD5UMwXZusrLWW64NgAmGa
         4UCZINqiYgn4AXFBSKYxlyTiBdytZlGzrZK+tL/6njBEM0Ci/mi/fs/73kN3eA/3HGfP9uy+5/d73nOe
         9z3v+zvv9fif4BNSZzsTvG+IQpih3EZMpozDN/9VO+FXXupCQPDeITp4YZoKB69SKJtATKaMwSutvO3x
         /L2DZKnsaeRrbxl2iyBT3QA1fTlJS5t/ZAODMBAkU8bgl73rvUtram2UU9P/F18vkWG3UJQ9MDBFyw//
@@ -594,7 +645,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 10</value>
+    <value>202, 0</value>
   </data>
   <data name="ActionSort.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -609,34 +660,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ActionSort.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;ActionSort.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="PanelSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="PanelSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 263</value>
-  </data>
-  <data name="PanelSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 10</value>
-  </data>
-  <data name="PanelSeparator.TabIndex" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
-  <data name="&gt;&gt;PanelSeparator.Name" xml:space="preserve">
-    <value>PanelSeparator</value>
-  </data>
-  <data name="&gt;&gt;PanelSeparator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PanelSeparator.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <metadata name="SaveBookmarksDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -644,17 +671,71 @@
   <metadata name="OpenBookmarksDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>186, 17</value>
   </metadata>
+  <data name="EditAutoSort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditAutoSort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditAutoSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 242</value>
+  </data>
+  <data name="EditAutoSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="EditAutoSort.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EditAutoSort.Text" xml:space="preserve">
+    <value>Auto sort</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSort.Name" xml:space="preserve">
+    <value>EditAutoSort</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSort.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;EditAutoSort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 20</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 263</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>600, 580</value>
+    <value>800, 700</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>280, 350</value>
