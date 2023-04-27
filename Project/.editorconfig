@@ -8,3 +8,9 @@ MA0051.skip_local_functions = false # skip local functions when counting stateme
 
 # MA0037: Remove empty statement
 dotnet_diagnostic.MA0037.severity = warning
+
+# MT1012: Acquiring lock without guarantee of releasing
+dotnet_diagnostic.MT1012.severity = warning
+
+# MT1013: Releasing lock without guarantee of execution
+dotnet_diagnostic.MT1013.severity = warning
