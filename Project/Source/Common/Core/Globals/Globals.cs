@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -62,6 +62,11 @@ static public partial class Globals
   /// Indicates CSV separator.
   /// </summary>
   static public char CSVSeparator { get; set; } = ';';
+
+  /// <summary>
+  /// Indicates CSV separator.
+  /// </summary>
+  static public string KeyValuePairSeparator { get; set; } = "=>";
 
   /// <summary>
   /// Indicates if SSL certificate is preloaded.
