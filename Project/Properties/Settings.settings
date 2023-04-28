@@ -426,7 +426,7 @@
       <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="ManageDateBookmarksFormClientSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">264, 311</Value>
+      <Value Profile="(Default)">404, 321</Value>
     </Setting>
     <Setting Name="AutoOpenExportedFile" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

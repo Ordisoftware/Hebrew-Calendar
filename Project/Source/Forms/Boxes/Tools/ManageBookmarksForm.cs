@@ -1,4 +1,5 @@
-﻿/// <license>
+﻿using Ordisoftware.Core;
+/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2016-2023 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -35,7 +36,6 @@ sealed partial class ManageBookmarksForm : Form
     }
   }
 
-  private bool AllowClose;
   private bool Ready;
   private bool Modified;
 
@@ -51,37 +51,47 @@ sealed partial class ManageBookmarksForm : Form
 
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
   {
-    this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
+    this.CheckLocationOrCenterToMainFormElseScreen();
     if ( Settings.DateBookmarksCount == 0 ) return;
     var items = Program.DateBookmarks.Items.Where(item => item is not null).Select(item => new DateBookmarkItem(item));
     ListBox.Items.Clear();
     ListBox.Items.AddRange(items.ToArray());
-    ListBox.SelectedIndex = 0;
+    if ( ListBox.Items.Count != 0 ) ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
-    AllowClose = true;
     Ready = true;
   }
 
   private void ManageBookmarksForm_FormClosing(object sender, FormClosingEventArgs e)
   {
-    if ( !AllowClose ) e.Cancel = true;
+    if ( !ActionSave.Enabled ) return;
+    if ( Globals.IsExiting )
+    {
+      this.Popup();
+      DisplayManager.QueryYesNo(SysTranslations.AskToSaveChanges.GetLang(Text), Save);
+    }
+    else
+      DisplayManager.QueryYesNoCancel(SysTranslations.AskToSaveChanges.GetLang(Text), Save, null, () => e.Cancel = true);
   }
 
-  private void ActionOK_Click(object sender, EventArgs e)
+  private void ActionSave_Click(object sender, EventArgs e)
   {
-    AllowClose = true;
-    var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
-    Program.DateBookmarks.Items.Clear();
-    Program.DateBookmarks.Items.AddRange(items);
-    Program.DateBookmarks.ApplyAutoSort();
-    SystemManager.TryCatch(Settings.Save);
+    Save();
+    ActionSave.Enabled = false;
     Close();
   }
 
   private void ActionCancel_Click(object sender, EventArgs e)
   {
-    AllowClose = true;
-    Close();
+    ActionSave.Enabled = false;
+  }
+
+  private void Save()
+  {
+    var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
+    Program.DateBookmarks.Items.Clear();
+    Program.DateBookmarks.Items.AddRange(items);
+    Program.DateBookmarks.ApplyAutoSort();
+    SystemManager.TryCatch(Settings.Save);
   }
 
   private void EditAutoSort_CheckedChanged(object sender, EventArgs e)
@@ -98,8 +108,7 @@ sealed partial class ManageBookmarksForm : Form
     ActionDown.Enabled = !EditAutoSort.Checked && ListBox.SelectedIndex != ListBox.Items.Count - 1;
     ActionDelete.Enabled = ListBox.SelectedIndex >= 0;
     ActionClear.Enabled = ListBox.Items.Count > 0;
-    ActionOK.Enabled = Modified;
-    AllowClose = !Modified;
+    ActionSave.Enabled = Modified;
     ListBox.Focus();
   }
 
@@ -162,6 +171,7 @@ sealed partial class ManageBookmarksForm : Form
   // https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
   private void ActionSort_Click(object sender, EventArgs e)
   {
+    var item = ListBox.SelectedItem;
     ListBox.Sort((itemFirst, itemLast) =>
     {
       var first = ( (DateBookmarkItem)itemFirst );
@@ -171,6 +181,7 @@ sealed partial class ManageBookmarksForm : Form
       return first.Date.CompareTo(last.Date);
     });
     Modified = true;
+    ListBox.SelectedItem = item;
     ListBox_SelectedIndexChanged(null, null);
   }
 

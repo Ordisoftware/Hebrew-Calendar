@@ -33,7 +33,7 @@
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionImport = new System.Windows.Forms.Button();
       this.ActionCancel = new System.Windows.Forms.Button();
-      this.ActionOK = new System.Windows.Forms.Button();
+      this.ActionSave = new System.Windows.Forms.Button();
       this.ActionClear = new System.Windows.Forms.Button();
       this.ListBox = new System.Windows.Forms.ListBox();
       this.ActionDelete = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
       this.SaveBookmarksDialog = new System.Windows.Forms.SaveFileDialog();
       this.OpenBookmarksDialog = new System.Windows.Forms.OpenFileDialog();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.LabelInfoEditMemo = new System.Windows.Forms.Label();
       this.EditAutoSort = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
       this.panel1.SuspendLayout();
@@ -53,7 +54,7 @@
       this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionImport);
       this.PanelBottom.Controls.Add(this.ActionCancel);
-      this.PanelBottom.Controls.Add(this.ActionOK);
+      this.PanelBottom.Controls.Add(this.ActionSave);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
@@ -82,13 +83,13 @@
       this.ActionCancel.Name = "ActionCancel";
       this.ActionCancel.Click += new System.EventHandler(this.ActionCancel_Click);
       // 
-      // ActionOK
+      // ActionSave
       // 
-      resources.ApplyResources(this.ActionOK, "ActionOK");
-      this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionOK.Name = "ActionOK";
-      this.ActionOK.UseVisualStyleBackColor = true;
-      this.ActionOK.Click += new System.EventHandler(this.ActionOK_Click);
+      resources.ApplyResources(this.ActionSave, "ActionSave");
+      this.ActionSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+      this.ActionSave.Name = "ActionSave";
+      this.ActionSave.UseVisualStyleBackColor = true;
+      this.ActionSave.Click += new System.EventHandler(this.ActionSave_Click);
       // 
       // ActionClear
       // 
@@ -141,15 +142,22 @@
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.ListBox);
+      this.panel1.Controls.Add(this.LabelInfoEditMemo);
       this.panel1.Controls.Add(this.EditAutoSort);
       this.panel1.Controls.Add(this.ActionClear);
-      this.panel1.Controls.Add(this.ListBox);
       this.panel1.Controls.Add(this.ActionDelete);
       this.panel1.Controls.Add(this.ActionUp);
       this.panel1.Controls.Add(this.ActionDown);
       this.panel1.Controls.Add(this.ActionSort);
       resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
+      // 
+      // LabelInfoEditMemo
+      // 
+      resources.ApplyResources(this.LabelInfoEditMemo, "LabelInfoEditMemo");
+      this.LabelInfoEditMemo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+      this.LabelInfoEditMemo.Name = "LabelInfoEditMemo";
       // 
       // EditAutoSort
       // 
@@ -165,6 +173,7 @@
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.CancelButton = this.ActionCancel;
       this.ClientSize = global::Ordisoftware.Hebrew.Calendar.Properties.Settings.Default.ManageDateBookmarksFormClientSize;
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.PanelBottom);
@@ -186,7 +195,7 @@
 
     private System.Windows.Forms.Panel PanelBottom;
     private System.Windows.Forms.Button ActionCancel;
-    private System.Windows.Forms.Button ActionOK;
+    private System.Windows.Forms.Button ActionSave;
     private System.Windows.Forms.ListBox ListBox;
     private System.Windows.Forms.Button ActionSort;
     private System.Windows.Forms.Button ActionDelete;
@@ -199,5 +208,6 @@
     private System.Windows.Forms.OpenFileDialog OpenBookmarksDialog;
     private Panel panel1;
     private CheckBox EditAutoSort;
+    private Label LabelInfoEditMemo;
   }
 }

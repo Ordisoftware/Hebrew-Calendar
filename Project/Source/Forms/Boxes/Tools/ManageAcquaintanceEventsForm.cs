@@ -48,7 +48,7 @@ sealed partial class ManageAcquaintanceEventsForm : Form
 
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
   {
-    this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
+    this.CheckLocationOrCenterToMainFormElseScreen();
     //ListBox.Items.Clear();
     //for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
     //  ListBox.Items.Add(new DateItem { Date = Program.DateBookmarks[index] });

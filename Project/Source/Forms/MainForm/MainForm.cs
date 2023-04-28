@@ -1369,8 +1369,4 @@ sealed partial class MainForm : Form
 
   #endregion
 
-  private void ActionManageBookmarks_Click(object sender, EventArgs e)
-  {
-
-  }
 }
