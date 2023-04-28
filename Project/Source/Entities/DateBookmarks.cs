@@ -16,6 +16,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 
 sealed record class DateBookmarkItem(DateTime Date, string Memo)
 {
+  public const char MemoSeparator = '-';
   public DateBookmarkItem(DateBookmarkItem item)
   {
     Date = item.Date;
@@ -24,7 +25,7 @@ sealed record class DateBookmarkItem(DateTime Date, string Memo)
   public override string ToString()
   {
     string result = Date.ToLongDateString();
-    if ( !Memo.IsNullOrEmpty() ) result += $" ({Memo})";
+    if ( !Memo.IsNullOrEmpty() ) result += $" {MemoSeparator} {Memo}";
     return result;
   }
 }
@@ -78,7 +79,7 @@ sealed class DateBookmarks
     {
       if ( !File.Exists(FilePath) ) return;
       var values = new NullSafeOfStringDictionary<string>();
-      values.LoadKeyValuePairs(FilePath, "=>");
+      values.LoadKeyValuePairs(FilePath, Globals.KeyValuePairSeparator);
       values.Remove(SQLiteDate.ToString(DateTime.MinValue));
       if ( values.Count > Settings.DateBookmarksCount )
       {
@@ -116,7 +117,7 @@ sealed class DateBookmarks
       var dic = Items.Where(item => item is not null)
                      .ToDictionary(item => SQLiteDate.ToString(item.Date), item => item.Memo);
       var values = new NullSafeOfStringDictionary<string>(dic);
-      values.SaveKeyValuePairs(FilePath, "=>");
+      values.SaveKeyValuePairs(FilePath, Globals.KeyValuePairSeparator);
     });
   }
 

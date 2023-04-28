@@ -64,6 +64,9 @@ static partial class AppTranslations
     ["11.0"] = new TranslationsDictionary
     {
       [Language.EN] = """
+                      WARNING
+                      The date bookmark system has been updated: earlier versions of the software will not be able to load them and any modification will cause the bookmarks to be lost.
+
                       • Added memos to date bookmarks.
                       • Added option to automatically sort date bookmarks.
                       • Added manage bookmarks menu item in Tools and Ctrl + B shortcut. 
@@ -72,6 +75,9 @@ static partial class AppTranslations
                       """,
 
       [Language.FR] = """
+                      AVERTISSEMENT
+                      Le système de signets de dates a été mis à jour : les versions antérieures du logiciel ne pourront pas les charger et toute modification entraînera la perte des signets.
+
                       • Ajout des mémos aux signets de date.
                       • Ajout d'une option pour trier automatiquement les signets de date.
                       • Ajout d'un élément de menu pour la gestion des signets dans les outils et le raccourci Ctrl + B.

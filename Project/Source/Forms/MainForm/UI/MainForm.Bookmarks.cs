@@ -45,9 +45,12 @@ partial class MainForm
       if ( control == ContextMenuDaySaveBookmark )
         setBookmark();
       else
-      if ( DateTime.TryParse(new string(menuitem.Text.Skip(3).TakeWhile(c => c != '(').ToArray()), out DateTime date) )
-        if ( control == ContextMenuDayGoToBookmark )
-          GoToDate(date);
+      {
+        var partDate = menuitem.Text.Skip(3).TakeWhile(c => c != DateBookmarkItem.MemoSeparator);
+        if ( DateTime.TryParse(new string(partDate.ToArray()), out DateTime date) )
+          if ( control == ContextMenuDayGoToBookmark )
+            GoToDate(date);
+      }
     }
     DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
     // TODO refactor with datediffcalc form
@@ -72,10 +75,6 @@ partial class MainForm
                                      dateNew.ToLongDateString(),
                                      ref memo) == InputValueResult.Cancelled )
         return;
-      string dateText = dateNew.ToLongDateString();
-      string label = $"{(int)menuitem.Tag + 1:00}. {dateText}";
-      if ( !memo.IsNullOrEmpty() ) label += $" ({memo})";
-      menuitem.Text = label;
       Program.DateBookmarks[(int)menuitem.Tag] = new DateBookmarkItem(dateNew, memo);
       Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);

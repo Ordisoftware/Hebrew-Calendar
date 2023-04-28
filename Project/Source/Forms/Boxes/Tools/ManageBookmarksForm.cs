@@ -38,6 +38,7 @@ sealed partial class ManageBookmarksForm : Form
   private bool Ready;
   private bool Modified;
 
+  // TODO ne pas connecter le setting autosort pour gérer save / cancel
   private ManageBookmarksForm()
   {
     InitializeComponent();

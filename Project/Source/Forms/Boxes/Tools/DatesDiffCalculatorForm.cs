@@ -166,12 +166,15 @@ sealed partial class DatesDiffCalculatorForm : Form
       if ( control == ActionSetBookmarkEnd )
         setBookmark(DateEnd);
       else
-      if ( DateTime.TryParse(new string(menuitem.Text.Skip(3).TakeWhile(c => c != '(').ToArray()), out DateTime date) )
-        if ( control == ActionUseBookmarkStart )
-          DateStart.SelectionStart = date;
-        else
-        if ( control == ActionUseBookmarkEnd )
-          DateEnd.SelectionStart = date;
+      {
+        var partDate = menuitem.Text.Skip(3).TakeWhile(c => c != DateBookmarkItem.MemoSeparator);
+        if ( DateTime.TryParse(new string(partDate.ToArray()), out DateTime date) )
+          if ( control == ActionUseBookmarkStart )
+            DateStart.SelectionStart = date;
+          else
+          if ( control == ActionUseBookmarkEnd )
+            DateEnd.SelectionStart = date;
+      }
     }
     MainForm.Instance.LoadMenuBookmarks(this);
     // TODO refactor with mainform.bookmarks
@@ -196,13 +199,10 @@ sealed partial class DatesDiffCalculatorForm : Form
                                      dateNew.ToLongDateString(),
                                      ref memo) == InputValueResult.Cancelled )
         return;
-      string dateText = dateNew.ToLongDateString();
-      string label = $"{(int)menuitem.Tag + 1:00}. {dateText}";
-      if ( !memo.IsNullOrEmpty() ) label += $" ({memo})";
-      menuitem.Text = label;
       Program.DateBookmarks[(int)menuitem.Tag] = new DateBookmarkItem(dateNew, memo);
       Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);
+      LoadMenuBookmarks(this);
     }
   }
 
