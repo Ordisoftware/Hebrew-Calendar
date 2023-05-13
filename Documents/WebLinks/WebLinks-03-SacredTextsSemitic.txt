@@ -111,5 +111,8 @@ URL = http://corpus.quran.com/wordbyword.jsp
 Name = (FR) Quran Interlinéaire @ coran-seul.com
 URL = http://coran-seul.com/index.php/home
 
+Name = (FR) Quran en français @ coran-en-ligne.com
+URL = http://www.coran-en-ligne.com/coran-en-francais.html
+
 Name = (FR/EN) Quran arabic lecture @ notequran.com
 URL = https://www.notequran.com

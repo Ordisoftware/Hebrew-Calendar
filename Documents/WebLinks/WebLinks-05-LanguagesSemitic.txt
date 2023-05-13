@@ -80,6 +80,9 @@ URL = https://en.wikipedia.org/wiki/Arabic
 Name = (FR) Arabe @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Arabe
 
+Name = (FR) Grammaire arabe @ monsieurboursier.fr
+URL = https://monsieurboursier.fr/arabe/index.html
+
 -
 
 Name = (EN) Sumerian @ en.wikipedia.org
