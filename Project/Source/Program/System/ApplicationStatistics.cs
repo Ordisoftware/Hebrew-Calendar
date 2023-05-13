@@ -87,7 +87,7 @@ class ApplicationStatistics
   public string DBEventsCount
     => Globals.IsGenerating
        ? SysTranslations.Processing.GetLang()
-       : LunisolarDays?.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString()
+       : LunisolarDays?.Count(d => d.TorahEvent != TorahCelebrationDay.None || d.SeasonChange != SeasonChange.None).ToString()
          ?? SysTranslations.NullSlot.GetLang();
 
   public string MonthViewEventsCount
