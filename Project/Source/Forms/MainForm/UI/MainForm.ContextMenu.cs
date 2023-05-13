@@ -75,8 +75,6 @@ public partial class MainForm
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   private void DoContextMenuStripDay_Opened(object sender, EventArgs e)
   {
-    ContextMenuDayGoToBookmark.Enabled = Settings.DateBookmarksCount > 0;
-    ContextMenuDaySaveBookmark.Enabled = Settings.DateBookmarksCount > 0;
     // Day
     var date = Program.Settings.TorahEventsCountAsMoon
       ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
@@ -182,7 +180,9 @@ public partial class MainForm
     }
     // Bookmarks
     date = rowDay.Date;
-    ContextMenuDaySaveBookmark.Enabled = Program.DateBookmarks.Items.FindIndex(item => item.Date == date) == -1;
+    ContextMenuDayGoToBookmark.Enabled = Settings.DateBookmarksCount > 0;
+    ContextMenuDaySaveBookmark.Enabled = Settings.DateBookmarksCount > 0
+                                      && Program.DateBookmarks.Items.FindIndex(item => item.Date == date) == -1;
   }
 
 }
