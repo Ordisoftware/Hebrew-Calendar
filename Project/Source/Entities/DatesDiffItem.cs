@@ -93,7 +93,7 @@ class DatesDiffItem
     }
     finally
     {
-      if ( sender?.Enabled == false ) sender.Enabled = true;
+      if ( sender is not null && !sender.Enabled ) sender.Enabled = true;
       if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
     }
   }

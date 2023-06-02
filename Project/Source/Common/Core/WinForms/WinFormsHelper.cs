@@ -250,7 +250,7 @@ static class FormsHelper
   static public void CenterToFormElseMainFormElseScreen(this Form form, Form source)
   {
     if ( form is null ) return;
-    if ( source?.Visible == true && source.WindowState != FormWindowState.Minimized )
+    if ( source is not null && source.Visible && source.WindowState != FormWindowState.Minimized )
       form.Center(source.Bounds);
     else
       form.CenterToMainFormElseScreen();
@@ -302,7 +302,8 @@ static class FormsHelper
   /// <param name="dialog">True if show dialog.</param>
   static public void Popup(this Form form, Form sender = null, bool dialog = false)
   {
-    if ( form?.IsDisposed != false ) return;
+    if ( form is null ) return;
+    if ( form.IsDisposed != false ) return;
     if ( form.InvokeRequired )
     {
       var method = new PopupMethod(Popup);

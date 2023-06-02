@@ -357,7 +357,7 @@ sealed partial class PreferencesForm : Form
 
   private void PredefinedYearsItem_Click(object sender, EventArgs e)
   {
-    var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag ).OriginalValue;
+    var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag )?.OriginalValue ?? -1;
     EditAutoGenerateYearsInterval.Text = value.ToString();
   }
 
