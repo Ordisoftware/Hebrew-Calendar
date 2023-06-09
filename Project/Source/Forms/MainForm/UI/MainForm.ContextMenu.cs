@@ -80,6 +80,7 @@ public partial class MainForm
       ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
       : ContextMenuDayCurrentEvent.Sunrise ?? ContextMenuDayCurrentEvent.Date;
     var rowDay = ApplicationDatabase.Instance.GetDay(date);
+    if ( rowDay is null ) return;
     ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
     ContextMenuDayParashah.Enabled = false;
     ContextMenuDayParashah.Visible = Settings.CalendarShowParashah;
@@ -131,7 +132,7 @@ public partial class MainForm
       if ( ( show1 && show2 ) || isSimhatTorah1 || isSimhatTorah2 || rowDay == dayParashah )
       {
         var parashah = ParashotFactory.Instance.Get(dayParashah?.ParashahID);
-        if ( parashah is not null )
+        if ( dayParashah is not null && parashah is not null )
         {
           string captionParashah = parashah.ToStringShort(false, dayParashah.HasLinkedParashah);
           ContextMenuDayDate.Text += $" - {captionParashah}";

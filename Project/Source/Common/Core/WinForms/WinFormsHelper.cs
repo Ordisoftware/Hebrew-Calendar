@@ -247,6 +247,7 @@ static class FormsHelper
   /// </summary>
   /// <param name="form">The form.</param>
   /// <param name="source">The source form.</param>
+  [SuppressMessage("Roslynator", "RCS1146:Use conditional access.", Justification = "N/A")]
   static public void CenterToFormElseMainFormElseScreen(this Form form, Form source)
   {
     if ( form is null ) return;
@@ -303,7 +304,7 @@ static class FormsHelper
   static public void Popup(this Form form, Form sender = null, bool dialog = false)
   {
     if ( form is null ) return;
-    if ( form.IsDisposed != false ) return;
+    if ( form.IsDisposed ) return;
     if ( form.InvokeRequired )
     {
       var method = new PopupMethod(Popup);
