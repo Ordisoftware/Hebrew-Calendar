@@ -25,6 +25,9 @@ URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
 Name = (FR) Espace Torah
 URL = https://www.youtube.com/channel/UCS3TXWo_jE-_hzG5tCzfTkA
 
+Name = (FR) Inspiration Juive
+URL = https://www.youtube.com/@InspirationJuive
+
 Name = (FR) Israël Torah
 URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
 
