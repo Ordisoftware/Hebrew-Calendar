@@ -27,7 +27,7 @@ partial class LunisolarDay
         int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah
           ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
           : -1;
-        if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
+        if ( day > 0 && day <= TorahCelebrationSettings.PessahLength )
           return (TorahCelebration.Pessah, day, AppTranslations.GetPessahDayDisplayText(day));
       }
       else
@@ -36,7 +36,7 @@ partial class LunisolarDay
         int day = LunarDay >= TorahCelebrationSettings.SoukotStartDay
           ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
           : -1;
-        if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
+        if ( day > 0 && day <= TorahCelebrationSettings.SoukotLength )
           return (TorahCelebration.Soukot, day, AppTranslations.GetSoukotDayDisplayText(day));
       }
       else
