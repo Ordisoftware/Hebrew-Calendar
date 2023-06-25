@@ -185,17 +185,17 @@ sealed partial class ApplicationDatabase
         calculate(dayDate, 0, TorahCelebrationDay.NewYearD1, false);
         calculate(dayDate, TorahCelebrationSettings.NewLambDay - 1, TorahCelebrationDay.NewYearD10, false);
         dayDate = calculate(dayDate, TorahCelebrationSettings.PessahStartDay - 1 + delta, TorahCelebrationDay.PessahD1, false);
-        int lengthPessah = TorahCelebrationSettings.PessahLenght;
+        int lengthPessah = TorahCelebrationSettings.PessahLength;
         if ( !Settings.UseTwoDaysForLastPessahDayOutside ) lengthPessah--;
         calculate(dayDate, lengthPessah, TorahCelebrationDay.PessahD7, false);
-        dayDate = calculate(dayDate, TorahCelebrationSettings.ChavouotLenght - 1 - delta, TorahCelebrationDay.ChavouotDiet, true);
+        dayDate = calculate(dayDate, TorahCelebrationSettings.ChavouotLength - 1 - delta, TorahCelebrationDay.ChavouotDiet, true);
         var shabatDay = (DayOfWeek)Settings.ShabatDay;
         while ( dayDate.DayOfWeek != shabatDay )
           dayDate = dayDate.AddDays(1);
         SystemManager.TryCatch(() =>
         {
           calculate(dayDate, 1, TorahCelebrationDay.Chavouot1, true);
-          calculate(dayDate, 1 + TorahCelebrationSettings.ChavouotLenght - 1, TorahCelebrationDay.Chavouot2, true);
+          calculate(dayDate, 1 + TorahCelebrationSettings.ChavouotLength - 1, TorahCelebrationDay.Chavouot2, true);
         });
       }
       else
@@ -206,7 +206,7 @@ sealed partial class ApplicationDatabase
         dayDate = calculate(dayDate, TorahCelebrationSettings.YomTerouahDay - 1, TorahCelebrationDay.YomTerouah, false);
         calculate(dayDate, TorahCelebrationSettings.YomHaKipourimDay - 1, TorahCelebrationDay.YomHaKipourim, false);
         dayDate = calculate(dayDate, TorahCelebrationSettings.SoukotStartDay - 1, TorahCelebrationDay.SoukotD1, false);
-        calculate(dayDate, TorahCelebrationSettings.SoukotLenght - 1, TorahCelebrationDay.SoukotD8, false);
+        calculate(dayDate, TorahCelebrationSettings.SoukotLength - 1, TorahCelebrationDay.SoukotD8, false);
       }
     }
     catch ( Exception ex )

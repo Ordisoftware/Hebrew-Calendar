@@ -194,7 +194,7 @@ sealed partial class NavigationForm : Form
 
   private void SetLocation()
   {
-    switch ( DisplayManager.GetTaskbarAnchorStyle() )
+    switch ( DisplayManager.GetTaskBarAnchorStyle() )
     {
       case AnchorStyles.Top:
         this.SetLocation(ControlLocation.TopRight);

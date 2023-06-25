@@ -151,7 +151,7 @@ static public partial class DebugManager
     return sortByDateOnly ? list : list.ThenBy(f => new FileInfo(f).CreationTime).ThenBy(f => f);
   }
 
-  static public void ClearTraces(bool norestart = false, bool all = false)
+  static public void ClearTraces(bool noRestart = false, bool all = false)
   {
     try
     {
@@ -184,7 +184,7 @@ static public partial class DebugManager
       }
       finally
       {
-        if ( !norestart && isEnabled )
+        if ( !noRestart && isEnabled )
         {
           Start();
           if ( all ) Trace(LogTraceEvent.Completed, $"{nameof(DebugManager)}.{nameof(ClearTraces)}(all)");

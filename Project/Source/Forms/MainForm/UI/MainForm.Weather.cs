@@ -69,6 +69,7 @@ partial class MainForm
     SystemManager.RunShell(cmd);
   }
 
+  [SuppressMessage("Roslynator", "RCS1146:Use conditional access.", Justification = "N/A")]
   private void DoOnlineWeatherMeteoBlueDotCom()
   {
     string server = new Uri(WeatherProviders.MeteoblueDotComResult).Host;
@@ -95,8 +96,8 @@ partial class MainForm
     }
     string location = string.Empty;
     var results = data["results"];
-    if ( results?.Any() == true )
-      location = results[0]["url"]?.ToString();
+    if ( results is not null && results.Any() )
+      location = results[0]["url"].ToString();
     if ( !string.IsNullOrEmpty(location) )
     {
       string cmd = WeatherProviders.MeteoblueDotComResult

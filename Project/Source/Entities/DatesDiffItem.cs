@@ -50,6 +50,7 @@ class DatesDiffItem
     Calculate(sender);
   }
 
+  [SuppressMessage("Roslynator", "RCS1146:Use conditional access.", Justification = "N/A")]
   private void Calculate(Form sender)
   {
     try

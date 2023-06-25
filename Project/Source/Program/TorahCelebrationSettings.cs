@@ -40,17 +40,17 @@ static class TorahCelebrationSettings
   /// <summary>
   /// Pessa'h length.
   /// </summary>
-  static public readonly int PessahLenght = 7;
+  static public readonly int PessahLength = 7;
 
   /// <summary>
   /// Pessa'h last day.
   /// </summary>
-  static public readonly int PessahEndDay = PessahStartDay + PessahLenght - 1;
+  static public readonly int PessahEndDay = PessahStartDay + PessahLength - 1;
 
   /// <summary>
   /// Shavouh'ot length.
   /// </summary>
-  static public readonly int ChavouotLenght = 50;
+  static public readonly int ChavouotLength = 50;
 
   /// <summary>
   /// 'Hanouka month.
@@ -80,12 +80,12 @@ static class TorahCelebrationSettings
   /// <summary>
   /// Soukot length.
   /// </summary>
-  static public readonly int SoukotLenght = 7 + 1;
+  static public readonly int SoukotLength = 7 + 1;
 
   /// <summary>
   /// Soukot last day.
   /// </summary>
-  static public readonly int SoukotEndDay = SoukotStartDay + SoukotLenght - 1;
+  static public readonly int SoukotEndDay = SoukotStartDay + SoukotLength - 1;
 
   /// <summary>
   /// Pessa'h month.
@@ -105,7 +105,7 @@ static class TorahCelebrationSettings
   /// <summary>
   /// 'Hanouka length.
   /// </summary>
-  static public readonly int HanoukaLenght = 7 + 1;
+  static public readonly int HanoukaLength = 7 + 1;
 
   /// <summary>
   /// 'Hanouka last day.

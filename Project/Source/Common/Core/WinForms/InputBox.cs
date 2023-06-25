@@ -55,10 +55,10 @@ where T : IConvertible
   /// <param name="title">The title.</param>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="ispassword">true to ispassword.</param>
-  static public InputValueResult Run(string title, string caption, ref T value, bool ispassword)
+  /// <param name="isPassword">true to isPassword.</param>
+  static public InputValueResult Run(string title, string caption, ref T value, bool isPassword)
   {
-    return Run(title, caption, ref value, ispassword, null);
+    return Run(title, caption, ref value, isPassword, null);
   }
 
   /// <summary>

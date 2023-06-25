@@ -322,7 +322,7 @@ static class SettingsHelper
   {
     if ( settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
     {
-      var anchor = DisplayManager.GetTaskbarAnchorStyle();
+      var anchor = DisplayManager.GetTaskBarAnchorStyle();
       settings.ReminderBoxDesktopLocation = anchor switch
       {
         AnchorStyles.Top => ControlLocation.TopRight,

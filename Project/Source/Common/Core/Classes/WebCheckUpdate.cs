@@ -43,19 +43,19 @@ static public class WebCheckUpdate
   /// <returns>
   /// True if application must exist else false.
   /// </returns>
-  /// <param name="lastdone">The last done date.</param>
+  /// <param name="lastDone">The last done date.</param>
   /// <param name="interval">Days interval to check.</param>
   /// <param name="auto">True if no user interaction else false.</param>
   /// <param name="checkAtStartup">True if it is a startup check.</param>
   /// <param name="useGitHub">True to use GitHub.</param>
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
-  static public bool Run(ref DateTime lastdone, int interval, bool auto, bool checkAtStartup, bool useGitHub = false)
+  static public bool Run(ref DateTime lastDone, int interval, bool auto, bool checkAtStartup, bool useGitHub = false)
   {
     if ( interval == -1 ) interval = DefaultCheckDaysInterval;
     CleanTemp();
     if ( Mutex ) return false;
     if ( auto && !checkAtStartup ) return false;
-    if ( auto && lastdone.AddDays(interval) >= DateTime.Now ) return false;
+    if ( auto && lastDone.AddDays(interval) >= DateTime.Now ) return false;
     var form = FormsHelper.GetActiveForm();
     bool formEnabled = form?.Enabled ?? false;
     bool formTopMost = form?.TopMost ?? false;
@@ -75,7 +75,7 @@ static public class WebCheckUpdate
       LoadingForm.Instance.DoProgress();
       using var client = new WebClientEx();
       var fileInfo = GetVersionAndChecksum(client, useGitHub);
-      lastdone = DateTime.Now;
+      lastDone = DateTime.Now;
       if ( fileInfo.Item1.CompareTo(Assembly.GetExecutingAssembly().GetName().Version) > 0 )
         return GetUserChoice(client, fileInfo, useGitHub);
       else
@@ -93,12 +93,12 @@ static public class WebCheckUpdate
           if ( useGitHub )
             return false;
           else
-            return Run(ref lastdone, interval, auto, checkAtStartup, true);
+            return Run(ref lastDone, interval, auto, checkAtStartup, true);
         else
         if ( useGitHub )
           msg += Globals.NL2 + SysTranslations.CheckInternetConnection.GetLang();
         else
-          return Run(ref lastdone, interval, auto, checkAtStartup, true);
+          return Run(ref lastDone, interval, auto, checkAtStartup, true);
       }
       if ( !auto )
         DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), msg);

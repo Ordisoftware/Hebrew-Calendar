@@ -117,31 +117,21 @@ partial class MainForm
           SystemManager.InputSimulator.Mouse.RightButtonClick();
           return true;
       }
-    // Visual month navigation
-    void search(bool isFuture, Func<int, bool> check)
-    {
-      var date = CurrentDay.Date.Change(day: 1);
-      if ( isFuture ) date = date.AddMonths(1);
-      var query = from day in LunisolarDays
-                  where check(day.Date.CompareTo(date)) && ( day.HasTorahEvent || day.HasSeasonChange ) && !day.IsNewYear
-                  select day;
-      var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
-      if ( found is not null ) GoToDate(found.Date);
-    }
+    // Gregorian navigation
     if ( Settings.CurrentView == ViewMode.Month && CurrentDay is not null )
       switch ( keyData )
       {
         case Keys.Control | Keys.Home:
-          search(true, v => v < 0);
+          searchEvent(true, v => v < 0);
           return true;
         case Keys.Control | Keys.End:
-          search(false, v => v >= 0);
+          searchEvent(false, v => v >= 0);
           return true;
         case Keys.Control | Keys.Left:
-          search(false, v => v < 0);
+          searchEvent(false, v => v < 0);
           return true;
         case Keys.Control | Keys.Right:
-          search(true, v => v >= 0);
+          searchEvent(true, v => v >= 0);
           return true;
         case Keys.Home:
           GoToDate(new DateTime(YearFirst, 1, 1));
@@ -178,6 +168,67 @@ partial class MainForm
           GoToDate(CurrentDay.Date.AddDays(+Globals.DaysOfWeekCount));
           return true;
       }
+    void searchEvent(bool isFuture, Func<int, bool> check)
+    {
+      var date = CurrentDay.Date.Change(day: 1);
+      if ( isFuture ) date = date.AddMonths(1);
+      var query = from day in LunisolarDays
+                  where check(day.Date.CompareTo(date)) && ( day.HasTorahEvent || day.HasSeasonChange ) && !day.IsNewYear
+                  select day;
+      var found = isFuture ? query.FirstOrDefault() : query.LastOrDefault();
+      if ( found is not null ) GoToDate(found.Date);
+    }
+    // Lunar navigation
+    if ( Settings.CurrentView == ViewMode.Month && CurrentDay is not null )
+      switch ( keyData )
+      {
+        case Keys.Up | Keys.Alt:
+        case Keys.PageUp | Keys.Alt:
+          moveToYearOfLunarDay(CurrentDay.Date, -1);
+          return true;
+        case Keys.Down | Keys.Alt:
+        case Keys.PageDown | Keys.Alt:
+          moveToYearOfLunarDay(CurrentDay.Date, +1);
+          return true;
+        case Keys.Left | Keys.Alt:
+          moveToMonthOfLunarDay(CurrentDay.Date, -1);
+          return true;
+        case Keys.Right | Keys.Alt:
+          moveToMonthOfLunarDay(CurrentDay.Date, +1);
+          return true;
+      }
+    void moveToYearOfLunarDay(DateTime date, int deltaYear)
+    {
+      var row = LunisolarDays.Find(day => day.Date == date);
+      if ( row is null ) return;
+      int dayLunar = row.LunarDay;
+      int monthLunar = row.LunarMonth;
+      int year = row.Date.Year + deltaYear;
+      row = LunisolarDays.Find(day => day.Date.Year == year && day.LunarMonth == monthLunar && day.LunarDay == dayLunar);
+      if ( row is not null ) GoToDate(row.Date);
+    }
+    void moveToMonthOfLunarDay(DateTime date, int deltaMonth)
+    {
+      var row = LunisolarDays.Find(day => day.Date == date);
+      if ( row is null ) return;
+      int dayLunar = row.LunarDay;
+      int index = LunisolarDays.FindIndex(day => day.Date == date);
+      if ( index == -1 ) return;
+      int indexEnd = deltaMonth > 0 ? LunisolarDays.Count : -1;
+      index += deltaMonth;
+      if ( !index.IsInRange(0, LunisolarDays.Count - 1) ) return;
+      do
+      {
+        row = LunisolarDays[index];
+        if ( row.LunarDay == dayLunar )
+        {
+          GoToDate(row.Date);
+          break;
+        }
+        index += deltaMonth;
+      }
+      while ( index != indexEnd );
+    }
     return base.ProcessCmdKey(ref msg, keyData);
   }
 

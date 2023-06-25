@@ -65,7 +65,7 @@ static partial class AppTranslations
     {
       [Language.EN] = """
                       WARNING
-                      The date bookmark system has been updated: earlier versions of the software will not be able to load them and any modification will cause the bookmarks to be lost.
+                      The date bookmark system has been updated: earlier versions of the software will not be able to load them and any modification will cause the bookmarks to be lost .
 
                       • Added memos to date bookmarks.
                       • Added option to automatically sort date bookmarks.
