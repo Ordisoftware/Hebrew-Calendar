@@ -20,7 +20,10 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
+
+#pragma warning disable VSSpell001 // Spell Check
 namespace Infralution.Localization
+#pragma warning restore VSSpell001 // Spell Check
 {
   /// <summary>
   /// Defines a component for managing the User Interface culture for
@@ -122,7 +125,6 @@ namespace Infralution.Localization
       }
     }
 
-
     /// <summary>
     /// If set to true then the <see cref="Thread.CurrentCulture"/> property is changed
     /// to match the current <see cref="UICulture"/>
@@ -160,7 +162,6 @@ namespace Infralution.Localization
         }
       }
     }
-
 
     #endregion
 
@@ -530,8 +531,6 @@ namespace Infralution.Localization
       }
       control.Location = location;
     }
-
-
 
     /// <summary>
     /// Apply a resource for an extender provider to the given control

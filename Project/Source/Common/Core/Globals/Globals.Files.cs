@@ -146,13 +146,13 @@ static public partial class Globals
   /// <summary>
   /// Indicates the file path of the application's readme markdown file.
   /// </summary>
-  static public string ApplicationReadmeMDPath
+  static public string ApplicationReadMeMDPath
     => Path.Combine(RootFolderPath, "README.md");
 
   /// <summary>
   /// Indicates the file path of the application's readme html file.
   /// </summary>
-  static public string ApplicationReadmeHtmlPath
+  static public string ApplicationReadMeHtmlPath
     => Path.Combine(RootFolderPath, "README.html");
 
   /// <summary>

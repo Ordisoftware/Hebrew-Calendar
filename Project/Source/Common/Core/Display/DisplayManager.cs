@@ -40,7 +40,7 @@ static public partial class DisplayManager
   /// </summary>
   static public AnchorStyles GetTaskBarAnchorStyle()
   {
-    var coordonates = StackMethods.GetTaskbarCoordonates();
+    var coordonates = StackMethods.GetTaskbarCoordinates();
     if ( coordonates.Left == 0 && coordonates.Top == 0 )
       if ( coordonates.Width > TaskBarWidthCheckTrigger )
         return AnchorStyles.Top;

@@ -9,6 +9,7 @@ using static Ordisoftware.Core.NativeMethods;
 [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "N/A")]
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
 [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "N/A")]
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class MediaMixer
 {
 

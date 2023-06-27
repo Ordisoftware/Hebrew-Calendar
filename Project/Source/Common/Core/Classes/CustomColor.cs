@@ -14,6 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class CustomColor
 {
   static public readonly Color BlackLight = Color.FromArgb(20, 20, 20);

@@ -24,6 +24,7 @@ using System.Runtime.InteropServices;
 [SuppressMessage("Major Code Smell", "S4200:Native methods should be wrapped", Justification = "N/A")]
 [SuppressMessage("Major Code Smell", "S4214:\"P/Invoke\" methods should not be visible", Justification = "N/A")]
 [SuppressMessage("Interoperability", "CA1401:Les P/Invoke ne doivent pas être visibles", Justification = "N/A")]
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class NativeMethods
 {
 

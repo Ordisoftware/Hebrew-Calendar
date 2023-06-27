@@ -218,7 +218,7 @@ public sealed partial class CommonMenusControl : UserControl
 
   private void ActionGitHubRepo_Click(object sender, EventArgs e)
   {
-    SystemManager.OpenGitHupRepo();
+    SystemManager.OpenGitHubRepo();
   }
 
   private void ActionSubmitBug_Click(object sender, EventArgs e)
@@ -239,7 +239,7 @@ public sealed partial class CommonMenusControl : UserControl
 
   private void ActionReadme_Click(object sender, EventArgs e)
   {
-    SystemManager.RunShell(Globals.ApplicationReadmeHtmlPath);
+    SystemManager.RunShell(Globals.ApplicationReadMeHtmlPath);
   }
 
   private void ActionAbout_Click(object sender, EventArgs e)

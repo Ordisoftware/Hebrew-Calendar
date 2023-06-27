@@ -23,10 +23,10 @@ static public partial class SystemManager
   /// <summary>
   /// Checks the validity of the remote website SSL certificate.
   /// </summary>
-  static public void CheckServerCertificate(string url, bool useGitHib, bool isGitHubContent)
+  static public void CheckServerCertificate(string url, bool useGitHub, bool isGitHubContent)
   {
     var uri = new Uri(url);
-    var certificate = useGitHib
+    var certificate = useGitHub
       ? isGitHubContent
         ? GitHubUserContentSSLCertificate
           : GitHubSSLCertificate

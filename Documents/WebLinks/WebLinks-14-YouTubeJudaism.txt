@@ -34,6 +34,9 @@ URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
 Name = (FR) Judaïsme En Mouvement
 URL = https://www.youtube.com/channel/UC4OMlfV7DUiQhZDbCYdFyEQ
 
+Name = (FR) Ohel TV
+URL = https://www.youtube.com/@OhelTV
+
 Name = (FR) La Yéchiva des étudiants
 URL = https://www.youtube.com/@yechivaetudiants
 
