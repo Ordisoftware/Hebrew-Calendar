@@ -70,7 +70,7 @@ sealed partial class DatesDiffCalculatorForm : Form
     if ( !initOnly ) Instance.Popup();
   }
 
-  private DatesDiffItem Stats;
+  private DatesDifferenceItem Stats;
 
   private Button CurrentBookmarkButton;
 
@@ -273,7 +273,7 @@ sealed partial class DatesDiffCalculatorForm : Form
     {
       if ( Stats is null )
       {
-        Stats = new DatesDiffItem(this, DateStart.SelectionStart, DateEnd.SelectionStart);
+        Stats = new DatesDifferenceItem(this, DateStart.SelectionStart, DateEnd.SelectionStart);
         DatesDiffItemBindingSource.DataSource = Stats;
       }
       else

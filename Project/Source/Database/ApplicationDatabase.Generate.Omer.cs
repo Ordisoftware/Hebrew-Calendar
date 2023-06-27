@@ -53,7 +53,7 @@ sealed partial class ApplicationDatabase
           day.LunarMonth = month;
           if ( day.IsNewMoon )
             delta = 0;
-          if ( day.MoonriseOccuring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon )
+          if ( day.MoonriseOccurring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon )
             delta = 1;
           day.LunarDay -= delta;
           checkParashah(day);
@@ -145,12 +145,12 @@ sealed partial class ApplicationDatabase
           var rowStart = LunisolarDays.Find(d => d.Date == thedate);
           int index = LunisolarDays.IndexOf(rowStart);
           for ( int indexToAdd = 0; indexToAdd < daysToAdd; indexToAdd++, count++ )
-            if ( LunisolarDays[index + indexToAdd].MoonriseOccuring == MoonriseOccurring.NextDay )
+            if ( LunisolarDays[index + indexToAdd].MoonriseOccurring == MoonriseOccurring.NextDay )
               count++;
         }
         thedate = thedate.AddDays(count);
         var row = LunisolarDays.Find(d => d.Date == thedate);
-        if ( row?.MoonriseOccuring == MoonriseOccurring.NextDay )
+        if ( row?.MoonriseOccurring == MoonriseOccurring.NextDay )
           thedate = thedate.AddDays(1);
       }
       else

@@ -19,6 +19,7 @@ using MoreLinq;
 /// <summary>
 /// Torah celebrations days and durations.
 /// </summary>
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static class TorahCelebrationSettings
 {
 

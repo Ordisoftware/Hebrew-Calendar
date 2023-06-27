@@ -268,16 +268,16 @@ partial class MainForm
             if ( aloneOneLine )
               addMoonWithSun();
             else
-            if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+            if ( row.MoonriseOccurring == MoonriseOccurring.AfterSet )
             {
               if ( row.Moonset is not null )
                 addLine(colorText, strSet + row.MoonsetAsString, CalendarSection.Ephemeris);
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 addLine(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}", CalendarSection.Ephemeris);
             }
             else
             {
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 addLine(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}", CalendarSection.Ephemeris);
               if ( row.Moonset is not null )
                 addLine(colorText, strSet + row.MoonsetAsString, CalendarSection.Ephemeris);
@@ -306,7 +306,7 @@ partial class MainForm
             string set = $"{strSet}{row.MoonsetAsString}";
             string rise = $"{strRise}{row.MoonriseAsString}";
             string str = string.Empty;
-            if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+            if ( row.MoonriseOccurring == MoonriseOccurring.AfterSet )
               setMoonWithSun_RiseAfterSet();
             else
               setMoonWithSun_RiseBeforeSet();
@@ -322,7 +322,7 @@ partial class MainForm
             {
               if ( row.Moonset is not null )
                 str = $"{set}";
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
               {
                 if ( str.Length != 0 ) str += " - ";
                 str += $"{rise}{strDate}";
@@ -331,7 +331,7 @@ partial class MainForm
             //
             void setMoonWithSun_RiseBeforeSet()
             {
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 str = $"{rise}";
               if ( row.Moonset is not null )
               {

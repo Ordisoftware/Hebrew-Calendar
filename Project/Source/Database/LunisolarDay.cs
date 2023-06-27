@@ -36,7 +36,8 @@ public partial class LunisolarDay
   public string SunsetAsString { get; set; }
   public string MoonriseAsString { get; set; }
   public string MoonsetAsString { get; set; }
-  public MoonriseOccurring MoonriseOccuring { get; set; }
+  [Column("MoonriseOccuring")]
+  public MoonriseOccurring MoonriseOccurring { get; set; }
   public bool IsNewMoon { get; set; }
   public bool IsFullMoon { get; set; }
   public MoonPhase MoonPhase { get; set; }

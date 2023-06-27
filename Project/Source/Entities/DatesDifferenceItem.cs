@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// <summary>
 /// Provides dates difference item.
 /// </summary>
-class DatesDiffItem
+class DatesDifferenceItem
 {
 
   private DateTime DateStart;
@@ -31,7 +31,7 @@ class DatesDiffItem
   public int LunarMonths { get; set; }
   public int MoonYears { get; set; }
 
-  public DatesDiffItem(Form sender, DateTime date1, DateTime date2)
+  public DatesDifferenceItem(Form sender, DateTime date1, DateTime date2)
   {
     SetDates(sender, date1, date2);
   }
@@ -57,11 +57,11 @@ class DatesDiffItem
     {
       int count = (int)( DateEnd - DateStart ).TotalDays;
       int countData = CalendarDates.Instance.Count;
-      if ( count - countData >= Program.LoadingFormDatesDiff )
+      if ( count - countData >= Program.LoadingFormDatesDifference )
       {
         LoadingForm.Instance.Initialize(AppTranslations.ProgressCreateDays.GetLang(),
                                         count,
-                                        Program.LoadingFormDatesDiff + 1);
+                                        Program.LoadingFormDatesDifference + 1);
         if ( sender is not null ) sender.Enabled = false;
       }
       var data = CalendarDates.Instance[DateStart];

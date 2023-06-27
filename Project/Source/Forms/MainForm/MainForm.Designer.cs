@@ -471,7 +471,7 @@
       // 
       // GridColumnMoonriseOccuring
       // 
-      this.GridColumnMoonriseOccuring.DataPropertyName = "MoonriseOccuring";
+      this.GridColumnMoonriseOccuring.DataPropertyName = "MoonriseOccurring";
       resources.ApplyResources(this.GridColumnMoonriseOccuring, "GridColumnMoonriseOccuring");
       this.GridColumnMoonriseOccuring.Name = "GridColumnMoonriseOccuring";
       this.GridColumnMoonriseOccuring.ReadOnly = true;

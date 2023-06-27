@@ -162,7 +162,7 @@ partial class ApplicationDatabase
         moonrisetype = MoonriseOccurring.BeforeSet;
       else
         moonrisetype = MoonriseOccurring.AfterSet;
-      day.MoonriseOccuring = moonrisetype;
+      day.MoonriseOccurring = moonrisetype;
       day.SeasonChange = data.RealSeasonChange;
       day.TorahEvent = TorahCelebrationDay.None;
       day.TorahEventText = string.Empty;

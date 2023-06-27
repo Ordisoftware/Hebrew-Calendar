@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 sealed partial class SelectDayForm : Form
 {
 
-  static public bool Run(string title, ref DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealtime = false)
+  static public bool Run(string title, ref DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealTime = false)
   {
     using var form = new SelectDayForm();
     if ( isOnlyAvailable )
@@ -39,7 +39,7 @@ sealed partial class SelectDayForm : Form
       form.Text = title;
     else
       form.MonthCalendar.SelectionStart = form.CurrentDay.Date;
-    form.IsGotoRealtime = isGotoRealtime;
+    form.IsGotoRealtime = isGotoRealTime;
     form.TopMost = topmost;
     bool result = form.ShowDialog() == DialogResult.OK;
     date = result ? form.MonthCalendar.SelectionStart : DateTime.MinValue;

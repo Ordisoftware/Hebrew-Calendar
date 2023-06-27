@@ -42,7 +42,7 @@ partial class MainForm
 
   static private class WeatherProviders
   {
-    // Meteoblue
+    // Ignore spelling: Meteoblue
     public const string MeteoblueDotComQueryDay = "current";
     public const string MeteoblueDotComQueryWeek = "week";
     public const string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";

@@ -25,7 +25,7 @@ partial class MainForm
                        bool bringToFront = false,
                        bool onlyIfOpened = true,
                        bool onlyIfNotMinimized = false,
-                       Form regetFocus = null,
+                       Form retakeFocus = null,
                        ViewScrollOverride scroll = ViewScrollOverride.None)
   {
     if ( !Globals.IsReady ) return;
@@ -97,8 +97,8 @@ partial class MainForm
           else
           if ( Visible && !this.IsVisibleOnTop(Globals.WindowDetectionMargin) )
             this.Popup();
-          if ( regetFocus is not null )
-            regetFocus.Popup();
+          if ( retakeFocus is not null )
+            retakeFocus.Popup();
           else
             this.Popup();
         });

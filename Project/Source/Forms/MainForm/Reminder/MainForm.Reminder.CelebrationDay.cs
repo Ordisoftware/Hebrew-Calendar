@@ -32,7 +32,7 @@ partial class MainForm
     if ( row is null ) return result;
     var torahevent = row.TorahEvent;
     if ( row.Date.Day < dateNow.Day )
-      if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuring == MoonriseOccurring.BeforeSet )
+      if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccurring == MoonriseOccurring.BeforeSet )
         return result;
     var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
     if ( times is null ) return result;

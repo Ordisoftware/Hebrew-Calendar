@@ -117,7 +117,7 @@ static partial class AppTranslations
     [Language.FR] = "Voulez-vous configurer le Shabat personnel ?"
   };
 
-  static public readonly TranslationsDictionary AskToUseLastDayOfSukotForSimhatTorah = new()
+  static public readonly TranslationsDictionary AskToUseLastDayOfSoukotForSimhatTorah = new()
   {
     [Language.EN] = "Do you want to use the last day of Sukot for Shim'hat Torah, otherwise outside?",
     [Language.FR] = "Voulez-vous utiliser le dernier jour de Soukot pour Shim'hat Torah, sinon en dehors ?"

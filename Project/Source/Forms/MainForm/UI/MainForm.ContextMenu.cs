@@ -157,12 +157,12 @@ public partial class MainForm
     ContextMenuDaySunset.Visible = !ContextMenuDayCurrentEvent?.SunsetAsString.IsNullOrEmpty() ?? false;
     ContextMenuDaySunrise.Text = AppTranslations.Sunrise.GetLang(ContextMenuDayCurrentEvent?.SunriseAsString ?? "-");
     ContextMenuDaySunset.Text = AppTranslations.Sunset.GetLang(ContextMenuDayCurrentEvent?.SunsetAsString ?? "-");
-    if ( ContextMenuDayCurrentEvent.MoonriseOccuring == MoonriseOccurring.AfterSet )
+    if ( ContextMenuDayCurrentEvent.MoonriseOccurring == MoonriseOccurring.AfterSet )
     {
       ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.Moonset is not null;
       if ( ContextMenuDayMoonrise.Visible )
         ContextMenuDayMoonrise.Text = AppTranslations.Moonset.GetLang(ContextMenuDayCurrentEvent?.MoonsetAsString ?? "-");
-      ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.MoonriseOccuring != MoonriseOccurring.NextDay;
+      ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.MoonriseOccurring != MoonriseOccurring.NextDay;
       if ( ContextMenuDayMoonset.Visible )
         ContextMenuDayMoonset.Text = AppTranslations.Moonrise.GetLang(ContextMenuDayCurrentEvent?.MoonriseAsString ?? "-");
       ContextMenuDayMoonrise.ImageIndex = 3;
@@ -170,7 +170,7 @@ public partial class MainForm
     }
     else
     {
-      ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.MoonriseOccuring != MoonriseOccurring.NextDay;
+      ContextMenuDayMoonrise.Visible = ContextMenuDayCurrentEvent.MoonriseOccurring != MoonriseOccurring.NextDay;
       if ( ContextMenuDayMoonrise.Visible )
         ContextMenuDayMoonrise.Text = AppTranslations.Moonrise.GetLang(ContextMenuDayCurrentEvent?.MoonriseAsString ?? "-");
       ContextMenuDayMoonset.Visible = ContextMenuDayCurrentEvent.Moonset is not null;

@@ -21,7 +21,7 @@ partial class LunisolarDay
   public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay(bool onlyPessah = false)
   {
     int deltaPessah = Settings.TorahEventsCountAsMoon ? 0 : -1;
-    if ( MoonriseOccuring != MoonriseOccurring.NextDay || deltaPessah != 0 )
+    if ( MoonriseOccurring != MoonriseOccurring.NextDay || deltaPessah != 0 )
       if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
       {
         int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah

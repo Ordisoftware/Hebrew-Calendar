@@ -323,7 +323,7 @@
       // 
       // DatesDiffItemBindingSource
       // 
-      this.DatesDiffItemBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DatesDiffItem);
+      this.DatesDiffItemBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DatesDifferenceItem);
       // 
       // DatesDiffCalculatorForm
       // 

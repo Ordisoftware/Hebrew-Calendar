@@ -600,7 +600,7 @@
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\CalendarDateItem.cs" />
     <Compile Include="Source\Entities\CalendarDates.cs" />
-    <Compile Include="Source\Entities\DatesDiffItem.cs" />
+    <Compile Include="Source\Entities\DatesDifferenceItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
     <Compile Include="Source\Entities\LunarMonthsFile.cs" />
     <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.cs">

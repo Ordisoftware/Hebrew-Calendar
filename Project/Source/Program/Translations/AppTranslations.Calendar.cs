@@ -131,7 +131,7 @@ static partial class AppTranslations
     }
   };
 
-  static public readonly NullSafeDictionary<MoonriseOccurring, TranslationsDictionary> MoonriseOccurings = new()
+  static public readonly NullSafeDictionary<MoonriseOccurring, TranslationsDictionary> MoonriseOccurrences = new()
   {
     [MoonriseOccurring.AfterSet] = new TranslationsDictionary
     {

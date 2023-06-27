@@ -1113,7 +1113,7 @@ sealed partial class MainForm : Form
   private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
     if ( e.ColumnIndex == GridColumnMoonriseOccuring.Index )
-      e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
+      e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurrences);
     else
     if ( e.ColumnIndex == GridColumnNewMoon.Index || e.ColumnIndex == GridColumnFullMoon.Index )
       e.Value = (bool)e.Value

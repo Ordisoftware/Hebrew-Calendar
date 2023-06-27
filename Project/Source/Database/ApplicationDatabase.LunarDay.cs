@@ -34,11 +34,11 @@ partial class ApplicationDatabase : SQLiteDatabase
     return LastCheck;
   }
 
-  public LunisolarDay GetDay(DateTime datetime)
+  public LunisolarDay GetDay(DateTime date)
   {
     return Settings.TorahEventsCountAsMoon && !Settings.UseSodHaibour
-      ? GetDayMoon(datetime)
-      : GetDaySun(datetime);
+      ? GetDayMoon(date)
+      : GetDaySun(date);
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
@@ -80,10 +80,10 @@ partial class ApplicationDatabase : SQLiteDatabase
         break;
       }
     }
-    if ( rowFirst?.MoonriseOccuring == MoonriseOccurring.AfterSet )
+    if ( rowFirst?.MoonriseOccurring == MoonriseOccurring.AfterSet )
       return rowFirst;
     else
-    if ( rowLast?.MoonriseOccuring == MoonriseOccurring.BeforeSet )
+    if ( rowLast?.MoonriseOccurring == MoonriseOccurring.BeforeSet )
       return rowLast;
     else
     if ( rowFirst is not null && rowLast is not null )

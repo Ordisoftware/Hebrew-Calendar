@@ -124,7 +124,7 @@ sealed partial class NavigationForm : Form
         //
         var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
         PictureMoon.Image = image.Resize(100, 100);
-        if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+        if ( row.MoonriseOccurring == MoonriseOccurring.AfterSet )
         {
           LabelMoonrise.Top = 125;
           LabelMoonriseValue.Top = 125;

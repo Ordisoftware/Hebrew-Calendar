@@ -73,9 +73,9 @@ static partial class Program
   public const int LoadingFormGenerate = 5000;
 
   /// <summary>
-  /// Indicates minimum items for calc dates diff to show the loading form.
+  /// Indicates minimum items for calc dates difference to show the loading form.
   /// </summary>
-  public const int LoadingFormDatesDiff = 15 * 365;
+  public const int LoadingFormDatesDifference = 15 * 365;
 
   /// <summary>
   /// Indicates minimum torah years interval that can be generated.

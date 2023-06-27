@@ -159,7 +159,7 @@ partial class PreferencesForm
       if ( Settings.FirstLaunchV7_0 )
       {
         MainForm.Instance.ActionShowParashahNotice_Click(null, null);
-        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
+        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSoukotForSimhatTorah.GetLang(),
                                   () => EditUseSimhatTorahOutside.Checked = false,
                                   () => EditUseSimhatTorahOutside.Checked = true);
       }
