@@ -27,8 +27,8 @@ sealed partial class SelectDayForm : Form
     }
     else
     {
-      form.MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-      form.MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+      form.MonthCalendar.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+      form.MonthCalendar.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
     }
     if ( date < form.MonthCalendar.MinDate ) date = form.MonthCalendar.MinDate;
     if ( date > form.MonthCalendar.MaxDate ) date = form.MonthCalendar.MaxDate;

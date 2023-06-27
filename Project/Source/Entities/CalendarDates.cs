@@ -63,7 +63,7 @@ sealed class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
       value = new CalendarDateItem
       {
         Date = key,
-        MoonDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(key),
+        MoonDay = AstronomyHelper.LunisolarCalendar.GetDayOfMonth(key),
         MoonPhase = key.GetMoonPhase(),
         Ephemeris = key.GetSunMoonEphemeris()
       };

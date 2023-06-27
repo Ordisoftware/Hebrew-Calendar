@@ -78,14 +78,14 @@ sealed partial class DatesDiffCalculatorForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    DateStart.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DateStart.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    DateEnd.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DateEnd.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    DatePickerStart.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DatePickerStart.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    DatePickerEnd.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DatePickerEnd.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+    DateStart.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+    DateStart.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
+    DateEnd.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+    DateEnd.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
+    DatePickerStart.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+    DatePickerStart.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
+    DatePickerEnd.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+    DatePickerEnd.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
   }
 
   private void DateDiffForm_Load(object sender, EventArgs e)
