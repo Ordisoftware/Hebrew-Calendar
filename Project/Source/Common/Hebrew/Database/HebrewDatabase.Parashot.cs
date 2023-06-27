@@ -88,10 +88,10 @@ public partial class HebrewDatabase : SQLiteDatabase
     }
   }
 
-  public void DeleteParashot(bool nocheckaccess = false)
+  public void DeleteParashot(bool noCheckAccess = false)
   {
     CheckConnected();
-    if ( !nocheckaccess ) CheckAccess(Parashot, nameof(Parashot));
+    if ( !noCheckAccess ) CheckAccess(Parashot, nameof(Parashot));
     Connection.DeleteAll<Parashah>();
     Parashot?.Clear();
   }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
+#pragma warning disable VSSpell001 // Spell Check
 namespace Base.Hotkeys
 {
 
@@ -109,3 +110,4 @@ namespace Base.Hotkeys
   }
 
 }
+#pragma warning restore VSSpell001 // Spell Check

@@ -19,11 +19,11 @@ public partial class Parashah
 
   public string GetNameDisplayText() => HebrewDatabase.HebrewNamesInUnicode ? Unicode : Name;
 
-  public string ToStringShort(bool withBookAndref, bool withLinked)
+  public string ToStringShort(bool withBookAndRef, bool withLinked)
   {
     string result = GetNameDisplayText();
     if ( withLinked ) result += GetLinked() is not null ? $" - {GetLinked().GetNameDisplayText()}" : string.Empty;
-    if ( withBookAndref ) result += $" ({ToStringWithBookAndReferences()})";
+    if ( withBookAndRef ) result += $" ({ToStringWithBookAndReferences()})";
     return result;
   }
 

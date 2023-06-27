@@ -126,7 +126,7 @@ static public partial class DebugManager
     try { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join($" {EventSeparator} "); }
     catch { platform = "Unknown platform"; }
     Trace(LogTraceEvent.Start, Globals.AssemblyTitle);
-    Trace(LogTraceEvent.Start, Globals.ApplicationExeFullPath);
+    Trace(LogTraceEvent.Start, Globals.ApplicationExecutableFullPath);
     Trace(LogTraceEvent.Start, platform);
     Trace(LogTraceEvent.Start, $"FreeMem: {SystemStatistics.Instance.PhysicalMemoryFree}" +
                                $" {EventSeparator} RAM: {SystemStatistics.Instance.TotalVisibleMemory}");

@@ -14,6 +14,7 @@
 /// <edited> 2019-09 </edited>
 namespace Ordisoftware.Hebrew;
 
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public partial class OnlineBookInfos
 {
 

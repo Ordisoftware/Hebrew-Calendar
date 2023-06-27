@@ -29,8 +29,10 @@ static public partial class Globals
   static public readonly string NL4 = NL3 + NL;
   static public readonly string NL5 = NL4 + NL;
 
+#pragma warning disable VSSpell001 // Spell Check
   public const int WS_EX_COMPOSITED = 0x02000000;
   public const int WS_CLIPCHILDREN = ~0x02000000;
+#pragma warning restore VSSpell001 // Spell Check
 
   public const int MaxErrorsAllowed = 20;
   public const int MaxFilesAllowed = 20;

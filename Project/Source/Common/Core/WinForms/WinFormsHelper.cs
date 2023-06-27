@@ -396,7 +396,7 @@ static class FormsHelper
   /// <summary>
   /// Duplicate menu subitems.
   /// </summary>
-  static public void DuplicateTo(this ToolStripDropDownItem source, ToolStripMenuItem destination, bool noshortcuts = true)
+  static public void DuplicateTo(this ToolStripDropDownItem source, ToolStripMenuItem destination, bool noShortcuts = true)
   {
     var items = new List<ToolStripItem>();
     foreach ( ToolStripItem item in source.DropDownItems )
@@ -404,7 +404,7 @@ static class FormsHelper
         if ( item is ToolStripMenuItem menuItem )
         {
           var newitem = menuItem.Clone();
-          if ( noshortcuts ) newitem.ShortcutKeys = Keys.None;
+          if ( noShortcuts ) newitem.ShortcutKeys = Keys.None;
           items.Add(newitem);
         }
         else
@@ -417,7 +417,7 @@ static class FormsHelper
   /// <summary>
   /// Duplicate menu sub-items.
   /// </summary>
-  static public void DuplicateTo(this ContextMenuStrip source, ToolStripMenuItem destination, bool noshortcuts = true)
+  static public void DuplicateTo(this ContextMenuStrip source, ToolStripMenuItem destination, bool noShortcuts = true)
   {
     var items = new List<ToolStripItem>();
     foreach ( ToolStripItem item in source.Items )
@@ -425,7 +425,7 @@ static class FormsHelper
         if ( item is ToolStripMenuItem menuItem )
         {
           var newitem = menuItem.Clone();
-          if ( noshortcuts ) newitem.ShortcutKeys = Keys.None;
+          if ( noShortcuts ) newitem.ShortcutKeys = Keys.None;
           items.Add(newitem);
         }
         else

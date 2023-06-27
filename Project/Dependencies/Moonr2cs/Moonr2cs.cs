@@ -1,4 +1,5 @@
 // http://samik26.webgarden.cz/temata/class-sun-moonrise-set
+#pragma warning disable VSSpell001 // Spell Check
 namespace Keith_Burnett_moonr2cs
 {
 
@@ -549,3 +550,4 @@ namespace Keith_Burnett_moonr2cs
     } // end of main program
   }
 }
+#pragma warning restore VSSpell001 // Spell Check

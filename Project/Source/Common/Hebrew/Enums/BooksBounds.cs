@@ -21,6 +21,7 @@ public readonly record struct BookBound(int Min, int Max)
   public bool IsIn(int index) => index >= Min && index <= Max;
 }
 
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class BooksBounds
 {
   static public readonly BookBound Torah = Create<TorahBook>();

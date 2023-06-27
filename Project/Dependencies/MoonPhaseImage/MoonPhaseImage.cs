@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
+#pragma warning disable VSSpell001 // Spell Check
 namespace MostafaKaisoun
 {
 
@@ -108,3 +109,4 @@ namespace MostafaKaisoun
   }
 
 }
+#pragma warning restore VSSpell001 // Spell Check

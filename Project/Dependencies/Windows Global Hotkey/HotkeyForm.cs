@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+#pragma warning disable VSSpell001 // Spell Check
 namespace Base.Hotkeys
 {
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
@@ -102,3 +103,4 @@ namespace Base.Hotkeys
 
   }
 }
+#pragma warning restore VSSpell001 // Spell Check

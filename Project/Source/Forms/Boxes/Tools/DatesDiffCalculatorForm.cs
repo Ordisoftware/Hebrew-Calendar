@@ -45,7 +45,7 @@ sealed partial class DatesDiffCalculatorForm : Form
     }
   }
 
-  static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false, bool ensureOrder = false)
+  static public void Run(Tuple<DateTime, DateTime> dates = null, bool initOnly = false, bool ensureOrder = false)
   {
     if ( dates is not null )
     {
@@ -67,7 +67,7 @@ sealed partial class DatesDiffCalculatorForm : Form
     Instance.DateStart.Tag = Instance.DateStart.SelectionStart;
     Instance.DateEnd.Tag = Instance.DateEnd.SelectionStart;
     Instance.DateChanged(true);
-    if ( !initonly ) Instance.Popup();
+    if ( !initOnly ) Instance.Popup();
   }
 
   private DatesDiffItem Stats;
@@ -227,8 +227,8 @@ sealed partial class DatesDiffCalculatorForm : Form
 
   private void ActionHelp_Click(object sender, EventArgs e)
   {
-    MessageBoxEx.ShowDialogOrSystem(AppTranslations.NoticeDatesDiffTitle,
-                                    AppTranslations.NoticeDatesDiff,
+    MessageBoxEx.ShowDialogOrSystem(AppTranslations.NoticeDatesDifferenceTitle,
+                                    AppTranslations.NoticeDatesDifference,
                                     width: MessageBoxEx.DefaultWidthMedium);
   }
 

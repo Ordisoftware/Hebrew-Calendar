@@ -200,7 +200,7 @@ static public partial class SystemManager
   /// <summary>
   /// Opens GitHub repository.
   /// </summary>
-  static public void OpenGitHupRepo()
+  static public void OpenGitHubRepo()
   {
     OpenWebLink(Globals.GitHubRepositoryURL);
   }
@@ -216,7 +216,7 @@ static public partial class SystemManager
   /// <summary>
   /// Gets the SHA-512 checksum of a file.
   /// </summary>
-  static public string GetChecksumSha512(string filePath)
+  static public string GetChecksumSHA512(string filePath)
   {
     try
     {

@@ -38,7 +38,7 @@ static public partial class SystemManager
   {
     try
     {
-      string filter = Globals.ApplicationExeFileName.Substring(0, FilePathTruncatePosition) + "*";
+      string filter = Globals.ApplicationExecutableFileName.Substring(0, FilePathTruncatePosition) + "*";
       string filterold = filter.Replace("Hebrew.", "Hebrew");
       var list = Directory.GetDirectories(Globals.UserLocalDataFolderPath, filter)
                           .Concat(Directory.GetDirectories(Globals.UserLocalDataFolderPath, filterold));

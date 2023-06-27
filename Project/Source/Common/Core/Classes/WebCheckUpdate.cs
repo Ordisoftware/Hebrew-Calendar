@@ -111,7 +111,7 @@ static public class WebCheckUpdate
         DisplayManager.ShowWarning(SysTranslations.CheckUpdate.GetLang(Globals.AssemblyTitle), ex.Message);
         if ( ex is UnauthorizedAccessException || ex is IOException )
           if ( DisplayManager.QueryYesNo(SysTranslations.AskToOpenGitHubPage.GetLang()) )
-            SystemManager.OpenGitHupRepo();
+            SystemManager.OpenGitHubRepo();
       }
     }
     finally
@@ -239,7 +239,7 @@ static public class WebCheckUpdate
       if ( ex is not null ) throw ex;
       if ( !SystemManager.CheckIfFileIsExecutable(filePathTemp) )
         throw new IOException(SysTranslations.NotAnExecutableFile.GetLang(filePathTemp));
-      if ( SystemManager.GetChecksumSha512(filePathTemp) != fileInfo.checksum )
+      if ( SystemManager.GetChecksumSHA512(filePathTemp) != fileInfo.checksum )
         throw new IOException(SysTranslations.WrongFileChecksum.GetLang(filePathTemp));
       using var process = SystemManager.GetRunShell(filePathTemp, "/SP- /SILENT");
       if ( process is not null )

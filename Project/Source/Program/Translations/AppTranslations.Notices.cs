@@ -244,13 +244,13 @@ static partial class AppTranslations
                     """,
   };
 
-  static public readonly TranslationsDictionary NoticeDatesDiffTitle = new()
+  static public readonly TranslationsDictionary NoticeDatesDifferenceTitle = new()
   {
     [Language.EN] = "Dates difference notice",
     [Language.FR] = "Notice de différence de dates"
   };
 
-  static public readonly TranslationsDictionary NoticeDatesDiff = new()
+  static public readonly TranslationsDictionary NoticeDatesDifference = new()
   {
     [Language.EN] = """
                     The values shown include the current periods.
