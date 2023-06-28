@@ -340,6 +340,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Shit + Down | Previous week |
 | Shit + Left | Previous day |
 | Shit + Right | Next day |
+| Alt + Left : Previous lunar month |
+| Alt + Right : Next lunar month |
+| Alt + Up (or PageUp) : Previous lunar year |
+| Alt + Down (or PageDown) : Next lunar year |
 | Add or Sub | Change active day |
 | Shift + Click | Set active day |
 | Ctrl + Click | Select day |
@@ -385,7 +389,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Check and fix weekly parashah generation with Soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
-#### 2023 - Version 11
+#### 2023 - Version 11.0
 
 - Add memos to date bookmarks.
 - Add option to automatically sort date bookmarks.
