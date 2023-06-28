@@ -68,7 +68,7 @@ partial class ApplicationDatabase
       LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                       LunisolarDays.Count,
                                       Program.LoadingFormLoadDB);
-      foreach ( LunisolarDay day in LunisolarDays )
+      foreach ( LunisolarDayRow day in LunisolarDays )
         try
         {
           if ( processInsert ) Connection.Insert(day);

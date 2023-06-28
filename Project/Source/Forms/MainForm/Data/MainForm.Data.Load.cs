@@ -105,7 +105,7 @@ partial class MainForm
     Globals.ChronoStartingApp.Start();
     if ( errors is not null )
     {
-      SystemManager.TryCatch(() => ApplicationDatabase.Instance.DeleteAll());
+      SystemManager.TryCatch(() => ApplicationDatabase.Instance.EmptyLunisolerDays());
       throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
     }
   }

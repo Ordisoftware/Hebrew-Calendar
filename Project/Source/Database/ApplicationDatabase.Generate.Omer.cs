@@ -35,8 +35,8 @@ sealed partial class ApplicationDatabase
     int simhatTorah = TorahCelebrationSettings.SimhatTorah;
     if ( Settings.UseSimhatTorahOutside ) simhatTorah++;
     int simhatTorahRoot = simhatTorah;
-    LunisolarDay dayRemapStart = null;
-    LunisolarDay dayRemapEnd = null;
+    LunisolarDayRow dayRemapStart = null;
+    LunisolarDayRow dayRemapEnd = null;
     DateTime date;
     var chrono = new Stopwatch();
     chrono.Start();
@@ -75,7 +75,7 @@ sealed partial class ApplicationDatabase
     }
     return true;
     //
-    void checkParashah(LunisolarDay day)
+    void checkParashah(LunisolarDayRow day)
     {
       if ( day.TorahEvent == TorahCelebrationDay.PessahD1 )
         shabatMutex = true;
@@ -102,7 +102,7 @@ sealed partial class ApplicationDatabase
         shabatMutex = false;
     }
     //
-    void remap(LunisolarDay day)
+    void remap(LunisolarDayRow day)
     {
       if ( indexParashah > 0 && indexParashah < parashot.Count )
       {
@@ -131,7 +131,7 @@ sealed partial class ApplicationDatabase
   /// <summary>
   /// Analyzes a day.
   /// </summary>
-  private bool AnalyzeDayOmer(LunisolarDay day, DateTime dayDate, ref int monthMoon)
+  private bool AnalyzeDayOmer(LunisolarDayRow day, DateTime dayDate, ref int monthMoon)
   {
     DateTime calculate(DateTime thedate, int daysToAdd, TorahCelebrationDay type, bool forceSunOmer)
     {
@@ -162,7 +162,7 @@ sealed partial class ApplicationDatabase
     }
     try
     {
-      bool check(LunisolarDay row)
+      bool check(LunisolarDayRow row)
       {
         var dateRow = row.Date;
         return dateRow.Year == dayDate.Year && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;

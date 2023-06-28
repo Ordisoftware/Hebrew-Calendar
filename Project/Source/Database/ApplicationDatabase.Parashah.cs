@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ApplicationDatabase : SQLiteDatabase
 {
 
-  public (LunisolarDay Day, Parashah Factory) GetWeeklyParashah()
+  public (LunisolarDayRow Day, Parashah Factory) GetWeeklyParashah()
   {
     var today = Settings.TorahEventsCountAsMoon ? GetDayMoon(DateTime.Now) : GetDaySun(DateTime.Now);
     if ( today is null ) return (today, null);

@@ -93,7 +93,7 @@ partial class ApplicationDatabase
             try
             {
               LoadingForm.Instance.DoProgress();
-              var row = new LunisolarDay { Date = new DateTime(year, month, day) };
+              var row = new LunisolarDayRow { Date = new DateTime(year, month, day) };
               if ( !InitializeDay(row) ) break;
               LunisolarDays.Add(row);
             }
@@ -120,7 +120,7 @@ partial class ApplicationDatabase
   /// <summary>
   /// Initializes a day.
   /// </summary>
-  private bool InitializeDay(LunisolarDay day)
+  private bool InitializeDay(LunisolarDayRow day)
   {
     try
     {

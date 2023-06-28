@@ -21,9 +21,9 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   private DateTime DayChecked = DateTime.MinValue;
 
-  private LunisolarDay LastCheck;
+  private LunisolarDayRow LastCheck;
 
-  public LunisolarDay GetToday()
+  public LunisolarDayRow GetToday()
   {
     var now = DateTime.Now;
     var diff = now - DayChecked;
@@ -34,7 +34,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     return LastCheck;
   }
 
-  public LunisolarDay GetDay(DateTime date)
+  public LunisolarDayRow GetDay(DateTime date)
   {
     return Settings.TorahEventsCountAsMoon && !Settings.UseSodHaibour
       ? GetDayMoon(date)
@@ -42,15 +42,15 @@ partial class ApplicationDatabase : SQLiteDatabase
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
-  private LunisolarDay GetDayMoon(DateTime datetime)
+  private LunisolarDayRow GetDayMoon(DateTime datetime)
   {
     var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
     int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
     int indexStart = Math.Max(0, indexRowCurrent - Globals.DaysOfWeekCount);
     int indexEnd = Math.Min(indexRowCurrent + Globals.DaysOfWeekCount, LunisolarDays.Count - 1);
     bool isInBounds = false;
-    LunisolarDay rowFirst = null;
-    LunisolarDay rowLast = null;
+    LunisolarDayRow rowFirst = null;
+    LunisolarDayRow rowLast = null;
     var rowPrevious = rowCurrent;
     for ( int index = indexStart; index <= indexEnd; index++ )
     {
@@ -101,7 +101,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
-  private LunisolarDay GetDaySun(DateTime datetime)
+  private LunisolarDayRow GetDaySun(DateTime datetime)
   {
     var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
     if ( datetime < rowCurrent.Sunset )

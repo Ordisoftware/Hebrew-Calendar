@@ -39,7 +39,7 @@ partial class MainForm
       LabelSubTitleGPS.Text = SysTranslations.CreatingData.GetLang();
       TextReport.Clear();
       MonthlyCalendar.TheEvents.Clear();
-      ApplicationDatabase.Instance.DeleteAll();
+      ApplicationDatabase.Instance.EmptyLunisolerDays();
       try
       {
         bool success = false;

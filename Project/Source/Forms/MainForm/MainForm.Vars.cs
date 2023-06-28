@@ -33,7 +33,7 @@ public partial class MainForm
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+  static private List<LunisolarDayRow> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
   static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 
@@ -64,7 +64,7 @@ public partial class MainForm
   public int YearsInterval { get; private set; }
   public int[] YearsIntervalArray { get; private set; }
 
-  public LunisolarDay CurrentDay { get; private set; }
+  public LunisolarDayRow CurrentDay { get; private set; }
 
   public int CurrentDayYear => CurrentDay?.Date.Year ?? 0;
 
@@ -81,7 +81,7 @@ public partial class MainForm
     }
   }
 
-  private LunisolarDay ContextMenuDayCurrentEvent;
+  private LunisolarDayRow ContextMenuDayCurrentEvent;
 
   private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = new();
 

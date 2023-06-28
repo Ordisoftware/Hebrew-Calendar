@@ -1150,7 +1150,7 @@ sealed partial class MainForm : Form
     SystemManager.TryCatch(() =>
     {
       if ( LunisolarDaysBindingSource.Current is not null )
-        GoToDate(( (LunisolarDay)LunisolarDaysBindingSource.Current ).Date);
+        GoToDate(( (LunisolarDayRow)LunisolarDaysBindingSource.Current ).Date);
     });
   }
 
@@ -1262,7 +1262,7 @@ sealed partial class MainForm : Form
 
   private void ContextMenuDayParashah_Click(object sender, EventArgs e)
   {
-    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
+    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDayRow day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
         if ( sender == ContextMenuDayParashahDescription )
           UserParashot.ShowDescription(parashah, day.HasLinkedParashah, () => ParashotForm.Run(parashah));
@@ -1273,7 +1273,7 @@ sealed partial class MainForm : Form
 
   private void ContextMenuOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
+    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDayRow day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
         HebrewTools.OpenHebrewWordsGoToVerse(parashah.FullReferenceBegin);
   }

@@ -48,7 +48,7 @@ sealed partial class SelectDayForm : Form
 
   private bool IsGotoRealtime;
 
-  private LunisolarDay CurrentDay;
+  private LunisolarDayRow CurrentDay;
 
   private SelectDayForm()
   {

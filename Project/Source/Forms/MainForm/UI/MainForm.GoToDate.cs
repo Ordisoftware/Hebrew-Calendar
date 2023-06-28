@@ -50,7 +50,7 @@ partial class MainForm
         if ( position >= 0 )
         {
           LunisolarDaysBindingSource.Position = position;
-          CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
+          CurrentDay = (LunisolarDayRow)LunisolarDaysBindingSource.Current;
         }
       });
       // Visual month and text report

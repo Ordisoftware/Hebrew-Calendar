@@ -19,7 +19,7 @@ sealed partial class SearchGregorianMonthForm : Form
 
   private readonly MainForm MainForm = MainForm.Instance;
 
-  public LunisolarDay CurrentDay { get; private set; }
+  public LunisolarDayRow CurrentDay { get; private set; }
 
   private int CurrentDayIndex = -1;
 

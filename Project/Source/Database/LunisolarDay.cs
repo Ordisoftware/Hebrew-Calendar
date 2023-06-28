@@ -18,7 +18,7 @@ using SQLite;
 
 [Serializable]
 [Table("LunisolarDays")]
-public partial class LunisolarDay
+public partial class LunisolarDayRow
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;
@@ -50,7 +50,7 @@ public partial class LunisolarDay
   public bool HasLinkedParashah
     => !LinkedParashahID.IsNullOrEmpty();
 
-  public List<LunisolarDay> Table
+  public List<LunisolarDayRow> Table
     => ApplicationDatabase.Instance.LunisolarDays;
 
   public bool IsNewYear

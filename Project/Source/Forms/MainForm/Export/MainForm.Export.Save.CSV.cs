@@ -38,7 +38,7 @@ partial class MainForm
       LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                       items.Count,
                                       Program.LoadingFormLoadDB);
-      foreach ( LunisolarDay day in items )
+      foreach ( LunisolarDayRow day in items )
       {
         LoadingForm.Instance.DoProgress();
         var dayDate = day.Date;

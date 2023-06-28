@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -79,6 +79,10 @@ static partial class AppTranslations
                     Shit + Down : Previous week
                     Shit + Left : Next week
                     Shit + Right : Next day
+                    Alt + Left : Previous lunar month
+                    Alt + Right : Next lunar month
+                    Alt + Up (or PageUp) : Previous lunar year
+                    Alt + Down (or PageDown) : Next lunar year
                     Add or Sub : Change active day
                     Shift + Click : Set active day
                     Ctrl + Click : Select day
@@ -141,6 +145,10 @@ static partial class AppTranslations
                     Maj + Bas : Semaine suivante
                     Maj + Gauche : Jour précédent
                     Maj + Droite : Jour suivant
+                    Alt + Gauche : Mois lunaire précédent
+                    Alt + Droite : Mois lunaire suivant
+                    Alt + Haut (or PagePrec) : Année lunaire précédente
+                    Alt + bas (or PageSuiv) : Année lunaire suivante
                     Plus ou Moins : Changer de jour actif
                     Maj + Clic : Définir jour actif
                     Ctrl + Clic : Sélectionner jour

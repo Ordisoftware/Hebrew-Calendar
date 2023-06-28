@@ -22,7 +22,7 @@ class ApplicationStatistics
 
   static public readonly ApplicationStatistics Instance = new();
 
-  static private List<LunisolarDay> LunisolarDays
+  static private List<LunisolarDayRow> LunisolarDays
     => ApplicationDatabase.Instance.LunisolarDays;
 
   public string StartingTime
