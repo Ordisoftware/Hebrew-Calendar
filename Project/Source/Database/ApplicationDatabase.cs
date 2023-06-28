@@ -32,10 +32,10 @@ partial class ApplicationDatabase : SQLiteDatabase
   }
 
   public List<LunisolarDayRow> LunisolarDays { get; private set; }
-  public List<BookmarkRow> Bookmarks { get; private set; }
+  public List<DateBookmarkRow> Bookmarks { get; private set; }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
-  public BindingListView<BookmarkRow> BookmarksAsList { get; private set; }
+  public BindingListView<DateBookmarkRow> BookmarksAsList { get; private set; }
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
@@ -68,61 +68,25 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void CreateTables()
   {
     Connection.CreateTable<LunisolarDayRow>();
-    Connection.CreateTable<BookmarkRow>();
+    Connection.CreateTable<DateBookmarkRow>();
   }
 
   protected override void DoLoadAll()
   {
     LunisolarDays = Connection.Table<LunisolarDayRow>().ToList();
-    Bookmarks = Connection.Table<BookmarkRow>().ToList();
+    Bookmarks = Connection.Table<DateBookmarkRow>().ToList();
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
   {
-    if ( File.Exists(Program.DateBookmarksFilePath) && Bookmarks.Count == 0 )
-    {
-      bool hasErrors = false;
-      var bookmarks = File.ReadLines(Program.DateBookmarksFilePath)
-                          .Select(line => getBookmark(line))
-                          .Where(bookmark => bookmark.Date != DateTime.MinValue);
-      foreach ( var bookmark in bookmarks )
-      {
-        Connection.Insert(bookmark);
-        Bookmarks.Add(bookmark);
-      }
-      string message = "The text file used to store the date bookmarks has been imported in a new database table." + Globals.NL2;
-      message += hasErrors
-        ? "There were the previously mentioned errors." + Globals.NL2 + "Do you want to open its folder?"
-        : "There was no error detected." + Globals.NL2 + "Do you want to open its folder to be able to delete it?";
-      if ( DisplayManager.QueryYesNo(message) )
-        SystemManager.RunShell(Path.GetDirectoryName(Program.DateBookmarksFilePath));
-      //
-      BookmarkRow getBookmark(string line)
-      {
-        string[] parts = line.SplitNoEmptyLines("=>");
-        DateTime date;
-        string memo = string.Empty;
-        try
-        {
-          date = parts.Length >= 1 ? SQLiteDate.ToDateTime(parts[0].Substring(0, 10)) : DateTime.MinValue;
-        }
-        catch
-        {
-          hasErrors = true;
-          date = DateTime.MinValue;
-          DisplayManager.ShowError("Invalid date bookmark:" + Globals.NL2 + line);
-        }
-        if ( parts.Length >= 2 ) memo = parts[1];
-        return new BookmarkRow { Date = date, Memo = memo };
-      }
-    }
+    ImportOldBookmarksIfNeeded();
     return false;
   }
 
   protected override void CreateBindingLists()
   {
     BookmarksAsList?.Dispose();
-    BookmarksAsList = new BindingListView<BookmarkRow>(Bookmarks);
+    BookmarksAsList = new BindingListView<DateBookmarkRow>(Bookmarks);
   }
 
   protected override void DoSaveAll()
@@ -133,12 +97,11 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   public void SaveBookmarks()
   {
-    //if ( !HasChanges ) return;
     CheckAccess(Bookmarks, BookmarksTableName);
     Connection.UpdateAll(Bookmarks);
   }
 
-  public void EmptyLunisolerDays()
+  public void EmptyLunisolarDays()
   {
     CheckConnected();
     CheckAccess(LunisolarDays, nameof(LunisolarDays));

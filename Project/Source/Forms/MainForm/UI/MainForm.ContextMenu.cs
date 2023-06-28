@@ -26,7 +26,7 @@ public partial class MainForm
   {
     var dayEvent = MonthlyCalendar.CalendarEvents.Find(item => item.EventArea.Contains(e.X, e.Y));
     if ( dayEvent is null ) return;
-    var dayRow = ApplicationDatabase.Instance.LunisolarDays.Find(day => day.Date == dayEvent.Date);
+    var dayRow = Database.LunisolarDays.Find(day => day.Date == dayEvent.Date);
     if ( dayRow is null ) return;
     if ( e.Button == MouseButtons.Left )
     {
@@ -79,7 +79,7 @@ public partial class MainForm
     var date = Program.Settings.TorahEventsCountAsMoon
       ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
       : ContextMenuDayCurrentEvent.Sunrise ?? ContextMenuDayCurrentEvent.Date;
-    var rowDay = ApplicationDatabase.Instance.GetDay(date);
+    var rowDay = Database.GetDay(date);
     if ( rowDay is null ) return;
     ContextMenuDayDate.Text = rowDay?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang();
     ContextMenuDayParashah.Enabled = false;
@@ -93,7 +93,7 @@ public partial class MainForm
     string torahEventText = rowDay.TorahEventText;
     if ( torahEventText.Length == 0 )
     {
-      var rowOmerDay = ApplicationDatabase.Instance.GetDay(rowDay.Date);
+      var rowOmerDay = Database.GetDay(rowDay.Date);
       if ( rowOmerDay is not null )
         (torahEvent, _, torahEventText) = rowOmerDay.GetWeekLongCelebrationIntermediateDay();
     }
@@ -106,7 +106,7 @@ public partial class MainForm
     }
     else
     {
-      var rowNextCelebration = ApplicationDatabase.Instance.GetCurrentOrNextCelebration(date);
+      var rowNextCelebration = Database.GetCurrentOrNextCelebration(date);
       if ( rowNextCelebration is not null )
       {
         var weeklongNext = rowNextCelebration?.GetWeekLongCelebrationIntermediateDay();
@@ -126,7 +126,7 @@ public partial class MainForm
     {
       var dayParashah = rowDay?.GetParashahReadingDay();
       bool isSimhatTorah1 = rowDay?.TorahEvent == TorahCelebrationDay.SoukotD8 && !Settings.UseSimhatTorahOutside;
-      bool isSimhatTorah2 = ApplicationDatabase.Instance.GetDay(date.AddDays(-1)).TorahEvent == TorahCelebrationDay.SoukotD8 && Settings.UseSimhatTorahOutside;
+      bool isSimhatTorah2 = Database.GetDay(date.AddDays(-1)).TorahEvent == TorahCelebrationDay.SoukotD8 && Settings.UseSimhatTorahOutside;
       bool show1 = weeklong?.Event != TorahCelebration.Pessah;
       bool show2 = !( weeklong?.Event == TorahCelebration.Soukot && dayParashah?.ParashahID == "1.1" );
       if ( ( show1 && show2 ) || isSimhatTorah1 || isSimhatTorah2 || rowDay == dayParashah )
@@ -181,9 +181,9 @@ public partial class MainForm
     }
     // Bookmarks
     date = rowDay.Date;
-    ContextMenuDayGoToBookmark.Enabled = Settings.DateBookmarksCount > 0;
-    ContextMenuDaySaveBookmark.Enabled = Settings.DateBookmarksCount > 0
-                                      && Program.DateBookmarks.Items.FindIndex(item => item.Date == date) == -1;
+    ContextMenuDayGoToBookmark.Enabled = Database.Bookmarks.Count > 0;
+    ContextMenuDaySaveBookmark.Enabled = ContextMenuDayGoToBookmark.Enabled
+                                      && Database.Bookmarks.Find(item => item.Date == date) is not null;
   }
 
 }

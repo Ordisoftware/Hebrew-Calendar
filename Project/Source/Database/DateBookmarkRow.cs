@@ -14,12 +14,16 @@
 /// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew;
 
+using Ordisoftware.Hebrew.Calendar;
+using Ordisoftware.Hebrew.Calendar.Properties;
 using SQLite;
 
 [Serializable]
-[Table("Bookmarks")]
-public class BookmarkRow
+[Table("DateBookmarks")]
+public class DateBookmarkRow
 {
+
+  public const char MemoSeparator = '-';
 
   [PrimaryKey]
   public Guid ID { get; set; } = Guid.NewGuid();
@@ -29,5 +33,28 @@ public class BookmarkRow
 
   [NotNull]
   public string Memo { get; set; } = string.Empty;
+
+  public override string ToString()
+  {
+    string result = Date.ToLongDateString();
+    if ( !Memo.IsNullOrEmpty() ) result += $" {MemoSeparator} {Memo}";
+    return result;
+  }
+
+  public DateBookmarkRow()
+  {
+  }
+
+  public DateBookmarkRow(DateTime date, string memo)
+  {
+    Date = date;
+    Memo = memo;
+  }
+
+  public DateBookmarkRow(DateBookmarkRow item)
+  {
+    Date = item.Date;
+    Memo = item.Memo;
+  }
 
 }

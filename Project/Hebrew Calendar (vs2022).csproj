@@ -412,6 +412,7 @@
     <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Database\ApplicationDatabase.ImportOldBookmarks.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Sod.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Report.cs" />
@@ -424,7 +425,7 @@
     <Compile Include="Source\Database\ApplicationDatabase.Parashah.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.LoadBoard.cs" />
     <Compile Include="Source\Database\LunisolarDay.cs" />
-    <Compile Include="Source\Database\BookmarkRow.cs" />
+    <Compile Include="Source\Database\DateBookmarkRow.cs" />
     <Compile Include="Source\Enums\MonthlyViewLayoutSection.cs" />
     <Compile Include="Source\Enums\CalendarSection.cs" />
     <Compile Include="Source\Common\Hebrew\Enums\TorahCelebrationDay.cs" />

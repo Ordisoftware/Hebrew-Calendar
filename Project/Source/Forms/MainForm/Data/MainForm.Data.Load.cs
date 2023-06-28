@@ -60,8 +60,8 @@ partial class MainForm
   private void LoadDataInit()
   {
     Globals.ChronoLoadData.Start();
-    ApplicationDatabase.Instance.Open();
-    LunisolarDaysBindingSource.DataSource = ApplicationDatabase.Instance.LunisolarDays;
+    Database.Open();
+    LunisolarDaysBindingSource.DataSource = Database.LunisolarDays;
     UserParashot = HebrewDatabase.Instance.TakeParashot();
     HebrewDatabase.Instance.ReleaseParashot();
     Globals.ChronoLoadData.Stop();
@@ -94,7 +94,7 @@ partial class MainForm
         Globals.ChronoStartingApp.Start();
       }
     if ( !isTextReportLoaded )
-      TextReport.Text = ApplicationDatabase.Instance.GenerateReport();
+      TextReport.Text = Database.GenerateReport();
   }
 
   private void LoadDataGenerate(bool keepYears, bool runPreferences)
@@ -105,7 +105,7 @@ partial class MainForm
     Globals.ChronoStartingApp.Start();
     if ( errors is not null )
     {
-      SystemManager.TryCatch(() => ApplicationDatabase.Instance.EmptyLunisolerDays());
+      SystemManager.TryCatch(() => Database.EmptyLunisolarDays());
       throw new Exception(string.Format(SysTranslations.FatalGenerateError.GetLang(), errors));
     }
   }
