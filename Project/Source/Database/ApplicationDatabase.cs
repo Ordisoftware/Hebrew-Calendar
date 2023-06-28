@@ -14,8 +14,13 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using Equin.ApplicationFramework;
+
 partial class ApplicationDatabase : SQLiteDatabase
 {
+
+  static public readonly string LunisolarDaysTableName = nameof(LunisolarDays);
+  static public readonly string BookmarksTableName = nameof(Bookmarks);
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
@@ -26,7 +31,11 @@ partial class ApplicationDatabase : SQLiteDatabase
     Instance = new ApplicationDatabase();
   }
 
-  public List<LunisolarDay> LunisolarDays { get; private set; }
+  public List<LunisolarDayRow> LunisolarDays { get; private set; }
+  public List<BookmarkRow> Bookmarks { get; private set; }
+
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
+  public BindingListView<BookmarkRow> BookmarksAsList { get; private set; }
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
@@ -48,26 +57,72 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoClose()
   {
     if ( LunisolarDays is null ) return;
-    if ( ClearListsOnCloseOrRelease ) LunisolarDays.Clear();
+    if ( ClearListsOnCloseOrRelease )
+    {
+      LunisolarDays.Clear();
+      Bookmarks.Clear();
+    }
     LunisolarDays = null;
   }
 
   protected override void CreateTables()
   {
-    Connection.CreateTable<LunisolarDay>();
+    Connection.CreateTable<LunisolarDayRow>();
+    Connection.CreateTable<BookmarkRow>();
   }
 
   protected override void DoLoadAll()
   {
-    LunisolarDays = Connection.Table<LunisolarDay>().ToList();
+    LunisolarDays = Connection.Table<LunisolarDayRow>().ToList();
+    Bookmarks = Connection.Table<BookmarkRow>().ToList();
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
-    => false;
+  {
+    if ( File.Exists(Program.DateBookmarksFilePath) && Bookmarks.Count == 0 )
+    {
+      bool hasErrors = false;
+      var bookmarks = File.ReadLines(Program.DateBookmarksFilePath)
+                          .Select(line => getBookmark(line))
+                          .Where(bookmark => bookmark.Date != DateTime.MinValue);
+      foreach ( var bookmark in bookmarks )
+      {
+        Connection.Insert(bookmark);
+        Bookmarks.Add(bookmark);
+      }
+      string message = "The text file used to store the date bookmarks has been imported in a new database table." + Globals.NL2;
+      message += hasErrors
+        ? "There were the previously mentioned errors." + Globals.NL2 + "Do you want to open its folder?"
+        : "There was no error detected." + Globals.NL2 + "Do you want to open its folder to be able to delete it?";
+      if ( DisplayManager.QueryYesNo(message) )
+        SystemManager.RunShell(Path.GetDirectoryName(Program.DateBookmarksFilePath));
+      //
+      BookmarkRow getBookmark(string line)
+      {
+        string[] parts = line.SplitNoEmptyLines("=>");
+        DateTime date;
+        string memo = string.Empty;
+        try
+        {
+          date = parts.Length >= 1 ? SQLiteDate.ToDateTime(parts[0].Substring(0, 10)) : DateTime.MinValue;
+        }
+        catch
+        {
+          hasErrors = true;
+          date = DateTime.MinValue;
+          DisplayManager.ShowError("Invalid date bookmark:" + Globals.NL2 + line);
+        }
+        if ( parts.Length >= 2 ) memo = parts[1];
+        return new BookmarkRow { Date = date, Memo = memo };
+      }
+    }
+    return false;
+  }
 
   protected override void CreateBindingLists()
   {
-    // NOP
+    BookmarksAsList?.Dispose();
+    BookmarksAsList = new BindingListView<BookmarkRow>(Bookmarks);
   }
 
   protected override void DoSaveAll()
@@ -76,11 +131,18 @@ partial class ApplicationDatabase : SQLiteDatabase
     throw new NotSupportedException(message);
   }
 
-  public void DeleteAll()
+  public void SaveBookmarks()
+  {
+    //if ( !HasChanges ) return;
+    CheckAccess(Bookmarks, BookmarksTableName);
+    Connection.UpdateAll(Bookmarks);
+  }
+
+  public void EmptyLunisolerDays()
   {
     CheckConnected();
     CheckAccess(LunisolarDays, nameof(LunisolarDays));
-    Connection.DeleteAll<LunisolarDay>();
+    Connection.DeleteAll<LunisolarDayRow>();
     LunisolarDays.Clear();
   }
 
@@ -89,12 +151,12 @@ partial class ApplicationDatabase : SQLiteDatabase
     base.UpgradeSchema();
     if ( Connection.CheckTable(nameof(LunisolarDays)) )
     {
-      if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDay.TorahEvent)) )
+      if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDayRow.TorahEvent)) )
         Connection.DropTableIfExists(nameof(LunisolarDays));
     }
   }
 
-  public LunisolarDay GetCurrentOrNextCelebration(DateTime date)
+  public LunisolarDayRow GetCurrentOrNextCelebration(DateTime date)
     => LunisolarDays.Find(day => day.Date >= date && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
 
 }

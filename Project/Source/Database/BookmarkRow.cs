@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// This file is part of Ordisoftware Hebrew Calendar.
 /// Copyright 2012-2023 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -17,11 +17,17 @@ namespace Ordisoftware.Hebrew;
 using SQLite;
 
 [Serializable]
-[Table("Bookmark")]
-public class Bookmark
+[Table("Bookmarks")]
+public class BookmarkRow
 {
+
   [PrimaryKey]
-  public string ID { get; set; }
-  public string Date { get; set; }
-  public string Memo { get; set; }
+  public Guid ID { get; set; } = Guid.NewGuid();
+
+  [NotNull]
+  public DateTime Date { get; set; } = DateTime.Now;
+
+  [NotNull]
+  public string Memo { get; set; } = string.Empty;
+
 }
