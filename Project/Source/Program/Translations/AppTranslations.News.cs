@@ -65,7 +65,7 @@ static partial class AppTranslations
     {
       [Language.EN] = """
                       WARNING
-                      The date bookmark system has been updated: earlier versions of the software will not be able to load them and any modification will cause the bookmarks to be lost .
+                      The date bookmarks system has been updated to be stored in database: earlier versions of the software will not be able to load them.
 
                       • Added memos to date bookmarks.
                       • Added option to automatically sort date bookmarks.
@@ -73,11 +73,12 @@ static partial class AppTranslations
                       • Added keyboard shortcuts Alt+Left/Right/Up/Down to navigate between years and months while keeping the lunar day.
                       • Added previous and next buttons to parashah description box.
                       • Added Accuweather.com provider.
+                      • Updated web links.
                       """,
 
       [Language.FR] = """
                       AVERTISSEMENT
-                      Le système de signets de dates a été mis à jour : les versions antérieures du logiciel ne pourront pas les charger et toute modification entraînera la perte des signets.
+                      Le système de signets de dates a été mis à jour pour être stockés dans la base de données : les versions antérieures du logiciel ne pourront pas les charger.
 
                       • Ajout des mémos aux signets de date.
                       • Ajout d'une option pour trier automatiquement les signets de date.
@@ -85,6 +86,7 @@ static partial class AppTranslations
                       • Ajout de raccourcis clavier Alt+Gauche/Droite/Haut/Bas pour naviguer entre les années et les mois tout en gardant le jour lunaire.
                       • Ajout de boutons précédent et suivant à la boîte de description de parashah.
                       • Ajout du fournisseur Accuweather.com.
+                      • Mise à jour des liens Web.
                       """,
     },
 

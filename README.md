@@ -397,6 +397,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add keyboard shortcuts Alt+Left/Right/Up/Down to navigate between years and months while keeping the lunar day.
 - Add previous and next buttons to parashah description box.
 - Add Accuweather.com provider.
+- Update web links.
 
 #### 2023.04.05 - Version 10.4
 
