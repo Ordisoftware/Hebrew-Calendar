@@ -12,10 +12,8 @@
 /// </license>
 /// <created> 2023-06 </created>
 /// <edited> 2023-06 </edited>
-namespace Ordisoftware.Hebrew;
+namespace Ordisoftware.Hebrew.Calendar;
 
-using Ordisoftware.Hebrew.Calendar;
-using Ordisoftware.Hebrew.Calendar.Properties;
 using SQLite;
 
 [Serializable]

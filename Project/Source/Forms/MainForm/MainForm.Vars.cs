@@ -33,11 +33,13 @@ public partial class MainForm
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
+  static private HebrewDatabase HebrewDatabase => HebrewDatabase.Instance;
+
   static private ApplicationDatabase Database => ApplicationDatabase.Instance;
 
   static private List<LunisolarDayRow> LunisolarDays => Database.LunisolarDays;
 
-  static private List<DateBookmarkRow> Bookmarks => Database.Bookmarks;
+  static private List<DateBookmarkRow> Bookmarks => Database.DateBookmarks;
 
   static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 

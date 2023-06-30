@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class ManageBookmarksForm : Form
@@ -31,7 +31,7 @@ sealed partial class ManageBookmarksForm : Form
     finally
     {
       MainForm.Instance.MenuTray.Enabled = trayEnabled;
-      Program.DateBookmarks.ApplyAutoSort();
+      //Program.DateBookmarks.ApplyAutoSort();
     }
   }
 
@@ -53,9 +53,9 @@ sealed partial class ManageBookmarksForm : Form
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
     if ( Settings.DateBookmarksCount == 0 ) return;
-    var items = Program.DateBookmarks.Items.Where(item => item is not null).Select(item => new DateBookmarkItem(item));
+    //var items = Program.DateBookmarks.Items.Where(item => item is not null).Select(item => new DateBookmarkItem(item));
     ListBox.Items.Clear();
-    ListBox.Items.AddRange(items.ToArray());
+    //ListBox.Items.AddRange(items.ToArray());
     if ( ListBox.Items.Count != 0 ) ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
     Ready = true;
@@ -87,11 +87,11 @@ sealed partial class ManageBookmarksForm : Form
 
   private void Save()
   {
-    var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
+    /*var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
     Program.DateBookmarks.Items.Clear();
     Program.DateBookmarks.Items.AddRange(items);
     Program.DateBookmarks.ApplyAutoSort();
-    SystemManager.TryCatch(Settings.Save);
+    SystemManager.TryCatch(Settings.Save);*/
   }
 
   private void EditAutoSort_CheckedChanged(object sender, EventArgs e)
@@ -114,13 +114,13 @@ sealed partial class ManageBookmarksForm : Form
 
   private void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
   {
-    var bookmark = ( (DateBookmarkItem)ListBox.SelectedItem );
+    var bookmark = ( (DateBookmarkRow)ListBox.SelectedItem );
     string memo = bookmark.Memo;
     if ( DisplayManager.QueryValue(SysTranslations.Memo.GetLang(),
                                    bookmark.Date.ToLongDateString(),
                                    ref memo) != InputValueResult.Modified ) return;
     int index = ListBox.SelectedIndex;
-    ListBox.Items[index] = new DateBookmarkItem(bookmark.Date, memo);
+    ListBox.Items[index] = new DateBookmarkRow(bookmark.Date, memo);
     Modified = true;
     ListBox_SelectedIndexChanged(null, null);
   }
@@ -171,7 +171,7 @@ sealed partial class ManageBookmarksForm : Form
   // https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
   private void ActionSort_Click(object sender, EventArgs e)
   {
-    var item = ListBox.SelectedItem;
+    /*var item = ListBox.SelectedItem;
     ListBox.Sort((itemFirst, itemLast) =>
     {
       var first = ( (DateBookmarkItem)itemFirst );
@@ -182,7 +182,7 @@ sealed partial class ManageBookmarksForm : Form
     });
     Modified = true;
     ListBox.SelectedItem = item;
-    ListBox_SelectedIndexChanged(null, null);
+    ListBox_SelectedIndexChanged(null, null);*/
   }
 
 }

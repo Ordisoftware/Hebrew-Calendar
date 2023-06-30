@@ -11,26 +11,26 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-sealed partial class DatesDiffCalculatorForm : Form
+sealed partial class DatesDifferenceForm : Form
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static public DatesDiffCalculatorForm Instance { get; private set; }
+  static public DatesDifferenceForm Instance { get; private set; }
 
-  static DatesDiffCalculatorForm()
+  static DatesDifferenceForm()
   {
-    Instance = new DatesDiffCalculatorForm();
+    Instance = new DatesDifferenceForm();
   }
 
   // TODO refactor
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
   {
-    bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
+    /*bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
     items.Clear();
     for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
     {
@@ -42,7 +42,7 @@ sealed partial class DatesDiffCalculatorForm : Form
       if ( onlyCalendar && bookmark is not null )
         if ( bookmark.Date < MainForm.Instance.DateFirst || bookmark.Date > MainForm.Instance.DateLast )
           menuitem.Enabled = false;
-    }
+    }*/
   }
 
   static public void Run(Tuple<DateTime, DateTime> dates = null, bool initOnly = false, bool ensureOrder = false)
@@ -74,7 +74,7 @@ sealed partial class DatesDiffCalculatorForm : Form
 
   private Button CurrentBookmarkButton;
 
-  private DatesDiffCalculatorForm()
+  private DatesDifferenceForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
@@ -109,7 +109,7 @@ sealed partial class DatesDiffCalculatorForm : Form
     var date2 = DateEnd.SelectionStart;
     bool isVisible = Instance.Visible;
     var location = Instance.Location;
-    Instance = new DatesDiffCalculatorForm();
+    Instance = new DatesDifferenceForm();
     Run(new Tuple<DateTime, DateTime>(date1, date2), true);
     Instance.DateStart.Tag = date1;
     Instance.DateEnd.Tag = date2;
@@ -139,7 +139,7 @@ sealed partial class DatesDiffCalculatorForm : Form
 
   private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
   {
-    var menuitem = (ToolStripMenuItem)sender;
+    /*var menuitem = (ToolStripMenuItem)sender;
     var control = CurrentBookmarkButton;
     if ( e.Button == MouseButtons.Right )
     {
@@ -201,7 +201,7 @@ sealed partial class DatesDiffCalculatorForm : Form
       Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);
       LoadMenuBookmarks(this);
-    }
+    }*/
   }
 
   private void ActionBookmarksButton_Click(object sender, EventArgs e)
@@ -274,12 +274,12 @@ sealed partial class DatesDiffCalculatorForm : Form
       if ( Stats is null )
       {
         Stats = new DatesDifferenceItem(this, DateStart.SelectionStart, DateEnd.SelectionStart);
-        DatesDiffItemBindingSource.DataSource = Stats;
+        DatesDifferenceItemBindingSource.DataSource = Stats;
       }
       else
       {
         Stats.SetDates(this, DateStart.SelectionStart, DateEnd.SelectionStart);
-        DatesDiffItemBindingSource.ResetBindings(false);
+        DatesDifferenceItemBindingSource.ResetBindings(false);
       }
     }
     finally

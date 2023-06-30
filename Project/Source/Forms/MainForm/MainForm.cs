@@ -612,7 +612,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewParashahInfos_Click(object sender, EventArgs e)
   {
-    ApplicationDatabase.Instance.ShowWeeklyParashahDescription();
+    Database.ShowWeeklyParashahDescription();
   }
 
   /// <summary>
@@ -632,7 +632,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin);
+    HebrewTools.OpenHebrewWordsGoToVerse(Database.GetWeeklyParashah().Factory.FullReferenceBegin);
   }
 
   /// <summary>
@@ -687,7 +687,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowParashot_Click(object sender, EventArgs e)
   {
-    ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah().Factory);
+    ParashotForm.Run(Database.GetWeeklyParashah().Factory);
   }
 
   /// <summary>
@@ -717,7 +717,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
   {
-    DatesDiffCalculatorForm.Run();
+    DatesDifferenceForm.Run();
   }
 
   /// <summary>
@@ -806,12 +806,11 @@ sealed partial class MainForm : Form
   [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void ActionVacuumDB_Click(object sender, EventArgs e)
   {
-    Settings.VacuumLastDone = ApplicationDatabase.Instance
-                                                 .Connection
-                                                 .Optimize(Settings.VacuumLastDone,
-                                                           Settings.VacuumAtStartupDaysInterval,
-                                                           true);
-    HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
+    Settings.VacuumLastDone = Database.Connection
+                                      .Optimize(Settings.VacuumLastDone,
+                                                Settings.VacuumAtStartupDaysInterval,
+                                                true);
+    HebrewDatabase.Connection.Optimize(DateTime.MinValue, force: true);
     ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
     ApplicationStatistics.UpdateDBFileSizeRequired = true;
     DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
@@ -1326,7 +1325,7 @@ sealed partial class MainForm : Form
   private void ContextMenuDayDatesDiffTo(DateTime date)
   {
     var tuple = new Tuple<DateTime, DateTime>(ContextMenuDayCurrentEvent.Date, date);
-    DatesDiffCalculatorForm.Run(tuple, ensureOrder: true);
+    DatesDifferenceForm.Run(tuple, ensureOrder: true);
   }
 
   private ToolStripMenuItem CurrentBookmarkMenu;
@@ -1334,15 +1333,15 @@ sealed partial class MainForm : Form
   // TODO refactor
   internal void LoadMenuBookmarks(Form caller)
   {
-    DatesDiffCalculatorForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
-    if ( caller != DatesDiffCalculatorForm.Instance )
-      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+    DatesDifferenceForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
+    if ( caller != DatesDifferenceForm.Instance )
+      DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
     MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
     MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
     foreach ( ToolStripMenuItem menuitem in ContextMenuDayGoToBookmark.DropDownItems )
     {
-      var bookmark = Program.DateBookmarks[(int)menuitem.Tag];
-      if ( bookmark is null ) menuitem.Enabled = false;
+      //var bookmark = Program.DateBookmarks[(int)menuitem.Tag];
+      //if ( bookmark is null ) menuitem.Enabled = false;
     }
   }
 

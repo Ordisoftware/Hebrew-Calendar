@@ -823,7 +823,6 @@
       resources.ApplyResources(this.ActionManageBookmarks, "ActionManageBookmarks");
       this.ActionManageBookmarks.Name = "ActionManageBookmarks";
       this.ActionManageBookmarks.UseVisualStyleBackColor = true;
-      this.ActionManageBookmarks.Click += new System.EventHandler(this.ActionManageBookmarks_Click);
       // 
       // LabelDateBookmarksCountIntervalInfo
       // 
@@ -4162,12 +4161,12 @@
     private CheckBox EditHideLuminarySigns;
     private LinkLabel ActionSwitchToMonthViewLayoutSettings2;
     private LinkLabel ActionSwitchToParashahSettings;
-        private CheckBox EditPrintImageCenterOnPage;
-        private Button ActionOnlineVerseHelp;
-        private Button ActionSelectOnlineVerseURL;
-        private TextBoxEx EditOpenVerseOnlineURL;
-        private ContextMenuStrip MenuSelectOnlineVerseProviderURL;
-        private RadioButton SelectCalendarDoubleClickActionContextMenu;
+    private CheckBox EditPrintImageCenterOnPage;
+    private Button ActionOnlineVerseHelp;
+    private Button ActionSelectOnlineVerseURL;
+    private TextBoxEx EditOpenVerseOnlineURL;
+    private ContextMenuStrip MenuSelectOnlineVerseProviderURL;
+    private RadioButton SelectCalendarDoubleClickActionContextMenu;
     private RadioButton SelectWeatherOnlineAccuWeatherDotCom;
   }
 }

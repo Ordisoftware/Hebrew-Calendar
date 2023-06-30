@@ -41,21 +41,21 @@ partial class ManageBookmarksForm : Form
       {
         case DataExportTarget.TXT:
           using ( var stream = File.CreateText(SaveBookmarksDialog.FileName) )
-            foreach ( DateBookmarkItem item in ListBox.Items )
+            foreach ( DateBookmarkRow item in ListBox.Items )
               stream.WriteLine($"{SQLiteDate.ToString(item.Date)}=>{item.Memo}");
           break;
         case DataExportTarget.CSV:
           using ( var stream = File.CreateText(SaveBookmarksDialog.FileName) )
           {
             stream.WriteLine("Date,Memo");
-            foreach ( DateBookmarkItem item in ListBox.Items )
+            foreach ( DateBookmarkRow item in ListBox.Items )
               stream.WriteLine($"{SQLiteDate.ToString(item.Date)},{item.Memo}"); // TODO manage ,
           }
           break;
         case DataExportTarget.JSON:
           using ( var dataset = new DataSet(Globals.AssemblyTitle) )
           {
-            var data = ListBox.Items.Cast<DateBookmarkItem>();
+            var data = ListBox.Items.Cast<DateBookmarkRow>();
             dataset.Tables.Add(data.ToDataTable(TableName));
             string str = JsonConvert.SerializeObject(dataset, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(SaveBookmarksDialog.FileName, str, Encoding.UTF8);
@@ -74,7 +74,7 @@ partial class ManageBookmarksForm : Form
 
   private void DoActionImport()
   {
-    if ( !RunDialog(OpenBookmarksDialog, string.Empty) ) return;
+    /*if ( !RunDialog(OpenBookmarksDialog, string.Empty) ) return;
     try
     {
       ListBox.Items.Clear();
@@ -142,7 +142,7 @@ partial class ManageBookmarksForm : Form
       for ( int index = 0; index < count; index++ )
         ListBox.Items.Add(new DateBookmarkItem((DateTime)dataset.Tables[0].Rows[index][0],
                           (string)dataset.Tables[0].Rows[index][1]));
-    }
+    }*/
   }
 
 }

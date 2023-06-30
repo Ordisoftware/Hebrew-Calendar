@@ -62,8 +62,8 @@ partial class MainForm
     Globals.ChronoLoadData.Start();
     Database.Open();
     LunisolarDaysBindingSource.DataSource = Database.LunisolarDays;
-    UserParashot = HebrewDatabase.Instance.TakeParashot();
-    HebrewDatabase.Instance.ReleaseParashot();
+    UserParashot = HebrewDatabase.TakeParashot();
+    HebrewDatabase.ReleaseParashot();
     Globals.ChronoLoadData.Stop();
     Settings.BenchmarkLoadData = Globals.ChronoLoadData.ElapsedMilliseconds;
     SystemManager.TryCatch(Settings.Store);

@@ -363,7 +363,7 @@ sealed partial class NavigationForm : Form
   private void ActionDatesDiff_Click(object sender, EventArgs e)
   {
     ActiveControl = LabelDate;
-    DatesDiffCalculatorForm.Run();
+    DatesDifferenceForm.Run();
   }
 
   private void ActionSettings_Click(object sender, EventArgs e)

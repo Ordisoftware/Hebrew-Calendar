@@ -121,17 +121,17 @@ partial class MainForm
     void ShowNewParashah()
     {
       bool doshow = false;
-      if ( Program.Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtStartup && !IsSpecialDay && !WeeklyParashahShownAtStartup )
+      if ( Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtStartup && !IsSpecialDay && !WeeklyParashahShownAtStartup )
         doshow = true;
       else
-      if ( Program.Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtNewWeek && !WeeklyParashahShownAtNewWeek && !IsSpecialDay )
+      if ( Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtNewWeek && !WeeklyParashahShownAtNewWeek && !IsSpecialDay )
         doshow = true;
       else
       if ( IsSpecialDay )
         WeeklyParashahShownAtNewWeek = false;
       if ( doshow )
       {
-        var dayInfos = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay();
+        var dayInfos = Database.GetToday()?.GetWeekLongCelebrationIntermediateDay();
         if ( dayInfos is not null )
         {
           doshow = dayInfos.Value.Event == TorahCelebration.None

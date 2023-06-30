@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Equin.ApplicationFramework;
@@ -20,7 +20,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 {
 
   static public readonly string LunisolarDaysTableName = nameof(LunisolarDays);
-  static public readonly string BookmarksTableName = nameof(Bookmarks);
+  static public readonly string DateBookmarksTableName = nameof(DateBookmarks);
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
@@ -32,7 +32,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   }
 
   public List<LunisolarDayRow> LunisolarDays { get; private set; }
-  public List<DateBookmarkRow> Bookmarks { get; private set; }
+  public List<DateBookmarkRow> DateBookmarks { get; private set; }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
   public BindingListView<DateBookmarkRow> BookmarksAsList { get; private set; }
@@ -60,7 +60,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     if ( ClearListsOnCloseOrRelease )
     {
       LunisolarDays.Clear();
-      Bookmarks.Clear();
+      DateBookmarks.Clear();
     }
     LunisolarDays = null;
   }
@@ -74,7 +74,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoLoadAll()
   {
     LunisolarDays = Connection.Table<LunisolarDayRow>().ToList();
-    Bookmarks = Connection.Table<DateBookmarkRow>().ToList();
+    DateBookmarks = Connection.Table<DateBookmarkRow>().ToList();
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
@@ -86,7 +86,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void CreateBindingLists()
   {
     BookmarksAsList?.Dispose();
-    BookmarksAsList = new BindingListView<DateBookmarkRow>(Bookmarks);
+    BookmarksAsList = new BindingListView<DateBookmarkRow>(DateBookmarks);
   }
 
   protected override void DoSaveAll()
@@ -95,10 +95,10 @@ partial class ApplicationDatabase : SQLiteDatabase
     throw new NotSupportedException(message);
   }
 
-  public void SaveBookmarks()
+  public void SaveDateBookmarks()
   {
-    CheckAccess(Bookmarks, BookmarksTableName);
-    Connection.UpdateAll(Bookmarks);
+    CheckAccess(DateBookmarks, DateBookmarksTableName);
+    Connection.UpdateAll(DateBookmarks);
   }
 
   public void EmptyLunisolarDays()

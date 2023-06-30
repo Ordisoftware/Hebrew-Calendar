@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -23,7 +23,7 @@ partial class MainForm
 
   private void DoBookmarksMouseUp(object sender, MouseEventArgs e)
   {
-    var menuitem = (ToolStripMenuItem)sender;
+    /*var menuitem = (ToolStripMenuItem)sender;
     var control = CurrentBookmarkMenu;
     if ( e.Button == MouseButtons.Right && control == ContextMenuDaySaveBookmark
       && !menuitem.Text.EndsWith(")", StringComparison.Ordinal) )
@@ -79,7 +79,7 @@ partial class MainForm
       Program.DateBookmarks.ApplyAutoSort();
       SystemManager.TryCatch(Settings.Save);
       LoadMenuBookmarks(this);
-    }
+    }*/
   }
 
 }

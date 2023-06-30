@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class LunisolarDayRow
+public partial class LunisolarDayRow
 {
 
   static private readonly int SearchParashahInterval = Globals.DaysOfWeekCount * 2;

@@ -19,16 +19,17 @@ partial class ApplicationDatabase
 
   private void ImportOldBookmarksIfNeeded()
   {
-    if ( File.Exists(Program.DateBookmarksFilePath) && Bookmarks.Count == 0 )
+    if ( File.Exists(Program.DateBookmarksFilePath) && DateBookmarks.Count == 0 )
     {
       bool hasErrors = false;
       var bookmarks = File.ReadLines(Program.DateBookmarksFilePath)
                           .Select(line => getBookmark(line))
                           .Where(bookmark => bookmark.Date != DateTime.MinValue);
+      if ( !bookmarks.Any() ) return;
       foreach ( var bookmark in bookmarks )
       {
         Connection.Insert(bookmark);
-        Bookmarks.Add(bookmark);
+        DateBookmarks.Add(bookmark);
       }
       string message = "The text file used to store the date bookmarks has been imported in a new database table." + Globals.NL2;
       message = hasErrors

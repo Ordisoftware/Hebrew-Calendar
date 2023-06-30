@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -241,22 +241,23 @@ sealed partial class PreferencesForm : Form
     DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
   }
 
-  private void ActionManageBookmarks_Click(object sender, EventArgs e)
-  {
-    if ( !ManageBookmarksForm.Run() ) return;
-    int countBookmarks = Math.Max(Program.DateBookmarks.MinListSize, DateBookmarksCountInterval.Item1);
-    if ( countBookmarks == 0 ) countBookmarks = DateBookmarksCountInterval.Item1;
-    DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
-    EditDateBookmarksCount.Minimum = countBookmarks;
-    EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
-    SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
-  }
+  //TODO delete 
+  //private void ActionManageBookmarks_Click(object sender, EventArgs e)
+  //{
+  //  if ( !ManageBookmarksForm.Run() ) return;
+  //  int countBookmarks = Math.Max(Program.DateBookmarks.MinListSize, DateBookmarksCountInterval.Item1);
+  //  if ( countBookmarks == 0 ) countBookmarks = DateBookmarksCountInterval.Item1;
+  //  DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+  //  EditDateBookmarksCount.Minimum = countBookmarks;
+  //  EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
+  //  SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
+  //}
 
   private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
   {
     if ( !IsReady ) return;
     Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
-    DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+    DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
   }
 
   private void EditVolume_ValueChanged(object sender, EventArgs e)

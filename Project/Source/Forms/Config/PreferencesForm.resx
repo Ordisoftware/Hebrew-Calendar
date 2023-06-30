@@ -582,13 +582,16 @@
     <value>NoControl</value>
   </data>
   <data name="ActionManageBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 333</value>
+    <value>423, 127</value>
   </data>
   <data name="ActionManageBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
   <data name="ActionManageBookmarks.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
+  </data>
+  <data name="ActionManageBookmarks.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;ActionManageBookmarks.Name" xml:space="preserve">
     <value>ActionManageBookmarks</value>
@@ -612,7 +615,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 340</value>
+    <value>455, 134</value>
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -622,6 +625,9 @@
   </data>
   <data name="LabelDateBookmarksCountIntervalInfo.Text" xml:space="preserve">
     <value>0 - 0</value>
+  </data>
+  <data name="LabelDateBookmarksCountIntervalInfo.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;LabelDateBookmarksCountIntervalInfo.Name" xml:space="preserve">
     <value>LabelDateBookmarksCountIntervalInfo</value>
@@ -639,13 +645,16 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="EditDateBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 335</value>
+    <value>372, 129</value>
   </data>
   <data name="EditDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
   </data>
   <data name="EditDateBookmarksCount.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
+  </data>
+  <data name="EditDateBookmarksCount.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;EditDateBookmarksCount.Name" xml:space="preserve">
     <value>EditDateBookmarksCount</value>
@@ -666,7 +675,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 416</value>
+    <value>18, 411</value>
   </data>
   <data name="EditVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>500, 18</value>
@@ -696,7 +705,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelDateBookmarksCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 315</value>
+    <value>369, 109</value>
   </data>
   <data name="LabelDateBookmarksCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 13</value>
@@ -706,6 +715,9 @@
   </data>
   <data name="LabelDateBookmarksCount.Text" xml:space="preserve">
     <value>Number of date bookmarks</value>
+  </data>
+  <data name="LabelDateBookmarksCount.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;LabelDateBookmarksCount.Name" xml:space="preserve">
     <value>LabelDateBookmarksCount</value>
@@ -759,7 +771,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 397</value>
+    <value>20, 392</value>
   </data>
   <data name="LabelVolume.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 13</value>
@@ -792,7 +804,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelVolumeValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>524, 416</value>
+    <value>524, 411</value>
   </data>
   <data name="LabelVolumeValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -906,7 +918,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditLoadingFormHidden.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 195</value>
+    <value>23, 200</value>
   </data>
   <data name="EditLoadingFormHidden.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 17</value>
@@ -936,7 +948,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 175</value>
+    <value>23, 180</value>
   </data>
   <data name="EditWindowsDoubleBufferingEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 17</value>
@@ -966,7 +978,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWeatherMenuItemsEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 155</value>
+    <value>23, 160</value>
   </data>
   <data name="EditWeatherMenuItemsEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 17</value>
@@ -996,7 +1008,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 135</value>
+    <value>23, 140</value>
   </data>
   <data name="EditWebLinksMenuEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
@@ -1026,7 +1038,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditAutoSortBookmarks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 362</value>
+    <value>23, 320</value>
   </data>
   <data name="EditAutoSortBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 17</value>
@@ -1056,7 +1068,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMainFormTitleBarShowCelebration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 245</value>
+    <value>23, 250</value>
   </data>
   <data name="EditMainFormTitleBarShowCelebration.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 17</value>
@@ -1086,7 +1098,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditHebrewInUnicodeKeepArabicNumerals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 285</value>
+    <value>23, 290</value>
   </data>
   <data name="EditHebrewInUnicodeKeepArabicNumerals.Size" type="System.Drawing.Size, System.Drawing">
     <value>372, 17</value>
@@ -1116,7 +1128,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditHebrewNamesInUnicode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 265</value>
+    <value>23, 270</value>
   </data>
   <data name="EditHebrewNamesInUnicode.Size" type="System.Drawing.Size, System.Drawing">
     <value>370, 17</value>
@@ -1146,7 +1158,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 225</value>
+    <value>23, 230</value>
   </data>
   <data name="EditMainFormTitleBarShowToday.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 17</value>
@@ -1176,7 +1188,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditDebuggerEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 65</value>
+    <value>23, 70</value>
   </data>
   <data name="EditDebuggerEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 17</value>
@@ -1206,7 +1218,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditUsageStatisticsEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 105</value>
+    <value>23, 110</value>
   </data>
   <data name="EditUsageStatisticsEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 17</value>
@@ -1236,7 +1248,7 @@
     <value>NoControl</value>
   </data>
   <data name="EditLogEnabled.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 85</value>
+    <value>23, 90</value>
   </data>
   <data name="EditLogEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 17</value>
@@ -1326,7 +1338,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLastDBOptimizeDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 432</value>
+    <value>134, 420</value>
   </data>
   <data name="LabelLastDBOptimizeDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1365,7 +1377,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLastDBOptimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 432</value>
+    <value>20, 420</value>
   </data>
   <data name="LabelLastDBOptimize.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1398,7 +1410,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLastStartupCheckDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 412</value>
+    <value>134, 400</value>
   </data>
   <data name="LabelLastStartupCheckDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 13</value>
@@ -1437,7 +1449,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelLastStartupCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 412</value>
+    <value>20, 400</value>
   </data>
   <data name="LabelLastStartupCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -3856,7 +3868,7 @@
     <value>EditGPSLatitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLatitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3886,7 +3898,7 @@
     <value>EditTimeZone</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditTimeZone.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3910,7 +3922,7 @@
     <value>EditGPSLongitude</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditGPSLongitude.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -3937,7 +3949,7 @@
     <value>EditAutoGenerateYearsInterval</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditAutoGenerateYearsInterval.Parent" xml:space="preserve">
     <value>TabPageGeneration</value>
@@ -8651,7 +8663,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditMoonDayTextFormat</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditMoonDayTextFormat.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -8790,7 +8802,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditEphemerisPrefixMoon</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixMoon.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixMoon.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -9016,7 +9028,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditEphemerisPrefixSun</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixSun.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditEphemerisPrefixSun.Parent" xml:space="preserve">
     <value>TabPageMonthViewDisplay</value>
@@ -10477,7 +10489,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditOpenVerseOnlineURL</value>
   </data>
   <data name="&gt;&gt;EditOpenVerseOnlineURL.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditOpenVerseOnlineURL.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -11020,7 +11032,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditCustomWebSearch</value>
   </data>
   <data name="&gt;&gt;EditCustomWebSearch.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCustomWebSearch.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -11041,7 +11053,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditHebrewWordsPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewWordsPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -11062,7 +11074,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditExportFolder</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditExportFolder.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -11083,7 +11095,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditCalculatorPath</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditCalculatorPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -11104,7 +11116,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditHebrewLettersPath</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditHebrewLettersPath.Parent" xml:space="preserve">
     <value>TabPagePaths</value>
@@ -11511,7 +11523,7 @@ If enabled only the name will be re-checked.</value>
     <value>EditWeatherAppPath</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=10.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;EditWeatherAppPath.Parent" xml:space="preserve">
     <value>TabPageWeather</value>

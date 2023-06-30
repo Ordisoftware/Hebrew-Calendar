@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -76,7 +76,7 @@ public partial class MainForm
   private void DoContextMenuStripDay_Opened(object sender, EventArgs e)
   {
     // Day
-    var date = Program.Settings.TorahEventsCountAsMoon
+    var date = Settings.TorahEventsCountAsMoon
       ? ContextMenuDayCurrentEvent.Moonrise ?? ContextMenuDayCurrentEvent.Date
       : ContextMenuDayCurrentEvent.Sunrise ?? ContextMenuDayCurrentEvent.Date;
     var rowDay = Database.GetDay(date);
@@ -181,9 +181,9 @@ public partial class MainForm
     }
     // Bookmarks
     date = rowDay.Date;
-    ContextMenuDayGoToBookmark.Enabled = Database.Bookmarks.Count > 0;
+    ContextMenuDayGoToBookmark.Enabled = Database.DateBookmarks.Count > 0;
     ContextMenuDaySaveBookmark.Enabled = ContextMenuDayGoToBookmark.Enabled
-                                      && Database.Bookmarks.Find(item => item.Date == date) is not null;
+                                      && Database.DateBookmarks.Find(item => item.Date == date) is not null;
   }
 
 }
