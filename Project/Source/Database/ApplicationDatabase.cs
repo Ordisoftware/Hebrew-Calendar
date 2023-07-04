@@ -34,8 +34,24 @@ partial class ApplicationDatabase : SQLiteDatabase
   public List<LunisolarDayRow> LunisolarDays { get; private set; }
   public List<DateBookmarkRow> DateBookmarks { get; private set; }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "<En attente>")]
-  public BindingListView<DateBookmarkRow> BookmarksAsList { get; private set; }
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
+  public BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView { get; private set; }
+
+  public List<DateBookmarkRow> DateBookmarksSorted
+    => DateBookmarks.OrderBy(bookmark => bookmark.Date).ToList();
+
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
+  public BindingListView<DateBookmarkRow> DateBookmarksSortedAsBindingListView
+    => new(DateBookmarksSorted);
+
+  public List<DateBookmarkRow> DateBookmarksSortedOrNot
+    => Settings.AutoSortBookmarks
+       ? DateBookmarks.OrderBy(bookmark => bookmark.Date).ToList()
+       : DateBookmarks;
+
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
+  public BindingListView<DateBookmarkRow> DateBookmarksSortedOrNotAsBindingListView
+    => new(DateBookmarksSortedOrNot);
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
@@ -85,8 +101,8 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void CreateBindingLists()
   {
-    BookmarksAsList?.Dispose();
-    BookmarksAsList = new BindingListView<DateBookmarkRow>(DateBookmarks);
+    DateBookmarksAsBindingListView?.Dispose();
+    DateBookmarksAsBindingListView = new BindingListView<DateBookmarkRow>(DateBookmarks);
   }
 
   protected override void DoSaveAll()

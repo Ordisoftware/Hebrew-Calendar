@@ -19,7 +19,7 @@ partial class ManageBookmarksForm : Form
 
   private const string TableName = "Date Bookmarks";
 
-  private bool RunDialog(FileDialog dialog, string filename)
+  private bool RunDialog(SaveFileDialog dialog, string filename)
   {
     dialog.FileName = filename;
     for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )

@@ -30,11 +30,12 @@ sealed partial class DatesDifferenceForm : Form
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
   {
-    /*bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
+    var bookmarks = ApplicationDatabase.Instance.DateBookmarksSorted.ToList();
+    bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
     items.Clear();
-    for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
+    for ( int index = 0; index < bookmarks.Count; index++ )
     {
-      var bookmark = Program.DateBookmarks[index];
+      var bookmark = bookmarks[index];
       string dateText = bookmark is null ? SysTranslations.EmptySlot.GetLang() : bookmark.ToString();
       var menuitem = items.Add($"{index + 1:00}. {dateText}");
       menuitem.MouseUp += action;
@@ -42,7 +43,7 @@ sealed partial class DatesDifferenceForm : Form
       if ( onlyCalendar && bookmark is not null )
         if ( bookmark.Date < MainForm.Instance.DateFirst || bookmark.Date > MainForm.Instance.DateLast )
           menuitem.Enabled = false;
-    }*/
+    }
   }
 
   static public void Run(Tuple<DateTime, DateTime> dates = null, bool initOnly = false, bool ensureOrder = false)
@@ -139,9 +140,9 @@ sealed partial class DatesDifferenceForm : Form
 
   private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
   {
-    /*var menuitem = (ToolStripMenuItem)sender;
+    var menuitem = (ToolStripMenuItem)sender;
     var control = CurrentBookmarkButton;
-    if ( e.Button == MouseButtons.Right )
+    /*if ( e.Button == MouseButtons.Right )
     {
       if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
         if ( !menuitem.Text.EndsWith(")", StringComparison.Ordinal) )
@@ -155,17 +156,17 @@ sealed partial class DatesDifferenceForm : Form
           SystemManager.TryCatch(Settings.Save);
         }
     }
-    else
+    else*/
     if ( e.Button == MouseButtons.Left )
     {
-      if ( control == ActionSetBookmarkStart )
+      /*if ( control == ActionSetBookmarkStart )
         setBookmark(DateStart);
       else
       if ( control == ActionSetBookmarkEnd )
         setBookmark(DateEnd);
-      else
+      else*/
       {
-        var partDate = menuitem.Text.Skip(3).TakeWhile(c => c != DateBookmarkItem.MemoSeparator);
+        var partDate = menuitem.Text.Skip(3).TakeWhile(c => c != DateBookmarkRow.MemoSeparator);
         if ( DateTime.TryParse(new string(partDate.ToArray()), out DateTime date) )
           if ( control == ActionUseBookmarkStart )
             DateStart.SelectionStart = date;
@@ -176,7 +177,7 @@ sealed partial class DatesDifferenceForm : Form
     }
     MainForm.Instance.LoadMenuBookmarks(this);
     // TODO refactor with mainform.bookmarks
-    void setBookmark(MonthCalendar calendar)
+    /*void setBookmark(MonthCalendar calendar)
     {
       var dateNew = calendar.SelectionStart.Date;
       for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
