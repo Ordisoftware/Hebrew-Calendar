@@ -54,6 +54,14 @@ URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
 
 -
 
+Name = (FR) Shuva Israël France (diction en français)
+URL = https://www.youtube.com/@shuvaisraelfrance
+
+Name = (FR) Shuva Israël France (hébreu sous-titré)
+URL = https://www.youtube.com/@shouvaisrael-france7166
+
+-
+
 Name = (FR) Aish
 URL = https://www.youtube.com/user/AishFr
 

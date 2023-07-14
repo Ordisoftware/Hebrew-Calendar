@@ -41,6 +41,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     => DateBookmarks.OrderBy(bookmark => bookmark.Date).ToList();
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP012:Property should not return created disposable", Justification = "N/A")]
   public BindingListView<DateBookmarkRow> DateBookmarksSortedAsBindingListView
     => new(DateBookmarksSorted);
 
@@ -50,6 +51,7 @@ partial class ApplicationDatabase : SQLiteDatabase
        : DateBookmarks;
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP012:Property should not return created disposable", Justification = "N/A")]
   public BindingListView<DateBookmarkRow> DateBookmarksSortedOrNotAsBindingListView
     => new(DateBookmarksSortedOrNot);
 

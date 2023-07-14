@@ -16,7 +16,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 
 [Serializable]
 [SuppressMessage("Critical Code Smell", "S3871:Exception types should be \"public\"", Justification = "Analysis error")]
-file class TooManyErrorsException : Exception
+sealed file class TooManyErrorsException : Exception
 {
   public TooManyErrorsException()
   {
@@ -27,7 +27,7 @@ file class TooManyErrorsException : Exception
   public TooManyErrorsException(string message, Exception innerException) : base(message, innerException)
   {
   }
-  protected TooManyErrorsException(SerializationInfo info, StreamingContext context) : base(info, context)
+  private TooManyErrorsException(SerializationInfo info, StreamingContext context) : base(info, context)
   {
   }
 }

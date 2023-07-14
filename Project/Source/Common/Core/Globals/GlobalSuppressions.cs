@@ -91,3 +91,6 @@
 [assembly: SuppressMessage("Usage", "GCop511:Either remove the parameter documentation node, or describe it properly.", Justification = "Opinion", Scope = "module")]
 
 [assembly: SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "For GCop when no nuget added", Scope = "module")]
+
+// TODO remove if not using .NET Framework 4.8
+[assembly: SuppressMessage("Minor Code Smell", "S6605:Collection-specific \"Exists\" method should be used instead of the \"Any\" extension", Justification = "N/A", Scope = "N/A for .NET Framework 4.8")]
