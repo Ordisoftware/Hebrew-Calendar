@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using CodeProjectCalendar.NET;
@@ -109,6 +109,7 @@ public partial class MainForm
   [SuppressMessage("Performance", "U2U1210:Do not materialize an IEnumerable<T> unnecessarily", Justification = "N/A")]
   public void ClearLists()
   {
+    if ( Globals.IsExiting ) return;
     SystemManager.TryCatchManage(() =>
     {
       Text = Globals.AssemblyTitle;
@@ -119,9 +120,9 @@ public partial class MainForm
       CelebrationVersesBoardForm.Instance?.Close();
       NewMoonsBoardForm.Instance?.Close();
       NextCelebrationsForm.Instance?.Hide();
-      TorahEventRemindList.Clear();
-      TorahEventRemindDayList.Clear();
-      RemindCelebrationDates.Clear();
+      TorahEventRemindList?.Clear();
+      TorahEventRemindDayList?.Clear();
+      RemindCelebrationDates?.Clear();
       LastShabatReminded = null;
       ShabatForm?.Close();
       LockSessionForm.Instance?.Close();
