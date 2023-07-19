@@ -129,6 +129,8 @@
       this.ToolStripTopSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionTools = new System.Windows.Forms.ToolStripDropDownButton();
       this.ActionShowNotices = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
+      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
       this.ActionWeeklyParashah = new System.Windows.Forms.ToolStripMenuItem();
       this.ActionWeeklyParashahDescription = new System.Windows.Forms.ToolStripMenuItem();
@@ -235,8 +237,7 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionShowTranscriptionGuide = new System.Windows.Forms.ToolStripMenuItem();
-      this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMainOuter1.SuspendLayout();
       this.PanelMainOuter2.SuspendLayout();
       this.PanelMainInner1.SuspendLayout();
@@ -990,10 +991,6 @@
       // 
       this.ActionTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
       this.ActionTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ActionShowNotices,
-            this.ActionShowTranscriptionGuide,
-            this.ActionShowGrammarGuide,
-            this.toolStripSeparator10,
             this.ActionWeeklyParashah,
             this.ActionShowShabatVerses,
             this.WeeklyParashahSeparator,
@@ -1002,6 +999,11 @@
             this.ActionShowCelebrationsBoard,
             this.ActionShowNewMoonsBoard,
             this.ActionShowLunarMonths,
+            this.toolStripSeparator10,
+            this.ActionShowNotices,
+            this.toolStripSeparator4,
+            this.ActionShowTranscriptionGuide,
+            this.ActionShowGrammarGuide,
             this.toolStripSeparator8,
             this.ActionManageBookmarks,
             this.toolStripSeparator11,
@@ -1030,6 +1032,18 @@
       resources.ApplyResources(this.ActionShowNotices, "ActionShowNotices");
       this.ActionShowNotices.Name = "ActionShowNotices";
       this.ActionShowNotices.Click += new System.EventHandler(this.ActionShowNotices_Click);
+      // 
+      // ActionShowTranscriptionGuide
+      // 
+      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
+      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
+      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
+      // 
+      // ActionShowGrammarGuide
+      // 
+      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
+      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
+      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
       // 
       // toolStripSeparator10
       // 
@@ -1767,17 +1781,10 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
-      // ActionShowTranscriptionGuide
+      // toolStripSeparator4
       // 
-      resources.ApplyResources(this.ActionShowTranscriptionGuide, "ActionShowTranscriptionGuide");
-      this.ActionShowTranscriptionGuide.Name = "ActionShowTranscriptionGuide";
-      this.ActionShowTranscriptionGuide.Click += new System.EventHandler(this.ActionShowTranscriptionGuide_Click);
-      // 
-      // ActionShowGrammarGuide
-      // 
-      resources.ApplyResources(this.ActionShowGrammarGuide, "ActionShowGrammarGuide");
-      this.ActionShowGrammarGuide.Name = "ActionShowGrammarGuide";
-      this.ActionShowGrammarGuide.Click += new System.EventHandler(this.ActionShowGrammarGuide_Click);
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
       // 
       // MainForm
       // 
@@ -2027,5 +2034,6 @@
     public ToolStripSeparator toolStripSeparator11;
     private ToolStripMenuItem ActionShowTranscriptionGuide;
     private ToolStripMenuItem ActionShowGrammarGuide;
+    private ToolStripSeparator toolStripSeparator4;
   }
 }
