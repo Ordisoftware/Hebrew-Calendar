@@ -686,4 +686,7 @@
   <data name="ActionManageBookmarks.Text" xml:space="preserve">
     <value>Gestionnaire des signets de dates</value>
   </data>
+  <data name="ActionShowNotices.Text" xml:space="preserve">
+    <value>Notices du calendrier</value>
+  </data>
 </root>

@@ -430,6 +430,12 @@
     <Compile Include="Source\Enums\CalendarSection.cs" />
     <Compile Include="Source\Common\Hebrew\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\TorahCelebrationVerses.cs" />
+    <Compile Include="Source\Forms\Boxes\Tools\NoticesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\NoticesForm.Designer.cs">
+      <DependentUpon>NoticesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\UI\MainForm.SetView.Connectors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1002,6 +1008,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectSoundForm.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\NoticesForm.fr.resx">
+      <DependentUpon>NoticesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\NoticesForm.resx">
+      <DependentUpon>NoticesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.fr.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>

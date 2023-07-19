@@ -1368,4 +1368,17 @@ sealed partial class MainForm : Form
 
   #endregion
 
+  private void ActionShowNotices_Click(object sender, EventArgs e)
+  {
+    MenuTray.Enabled = false;
+    try
+    {
+      new NoticesForm().ShowDialog();
+    }
+    finally
+    {
+      MenuTray.Enabled = true;
+    }
+  }
+
 }
