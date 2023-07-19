@@ -100,7 +100,7 @@ static partial class AppTranslations
   static public readonly TranslationsDictionary NoticeCelebrationsFood = new()
   {
     [Language.EN] = """
-                    A description of Torah recipes for celebrations will be available with version 9.30: 
+                    A description of Torah recipes for celebrations will be available later: 
 
                     • Grilled Lamb for Pessa'h.
 
@@ -108,7 +108,7 @@ static partial class AppTranslations
 
                     • Lamb stew or burger with wine for Shavuh'ot 1 after the first Omer of seven weeks.
 
-                    • Lamb and veal hotpot with a kind of white beer for Shavouh'ot 2 after the second Omer.
+                    • Lamb and veal hotpot with a kind of beer for Shavouh'ot 2 after the second Omer.
 
                     • Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot.
 
@@ -116,7 +116,7 @@ static partial class AppTranslations
                     """,
 
     [Language.FR] = """
-                    Une description des recettes de la Torah pour les célébrations sera disponible avec la version 9.30 :
+                    Une description des recettes de la Torah pour les célébrations sera disponible prochainement :
 
                     • Agneau grillé non saignant sans os coupé et non bouilli pour Pessa'h.
 
@@ -124,7 +124,7 @@ static partial class AppTranslations
 
                     • Ragoût ou burger d'agneau au vin pour Shavouh'ot 1 après le premier Omer.
 
-                    • Potée d'agneau et veau avec une sorte de bière blanche pour Shavouh'ot 2 après le deuxième Omer.
+                    • Potée d'agneau et veau avec une sorte de bière pour Shavouh'ot 2 après le deuxième Omer.
 
                     • Burgers d'agneau, de veau et de cerf pour Terouh'ah, HaKipourim et Soukot.
 

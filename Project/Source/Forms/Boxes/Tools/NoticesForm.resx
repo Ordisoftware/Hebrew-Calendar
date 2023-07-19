@@ -135,10 +135,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PanelButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 453</value>
+    <value>10, 423</value>
   </data>
   <data name="PanelButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 28</value>
+    <value>664, 28</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PanelButtons.TabIndex" type="System.Int32, mscorlib">
@@ -163,7 +163,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 3</value>
+    <value>586, 3</value>
   </data>
   <data name="ActionClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -193,10 +193,10 @@
     <value>Bottom</value>
   </data>
   <data name="PanelBottomSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 448</value>
+    <value>10, 418</value>
   </data>
   <data name="PanelBottomSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 5</value>
+    <value>664, 5</value>
   </data>
   <data name="PanelBottomSeparator.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
@@ -211,7 +211,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelBottomSeparator.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="MenuPredefinedYears.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>182, 134</value>
@@ -247,7 +247,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="TabPageNoticeParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 405</value>
+    <value>556, 414</value>
   </data>
   <data name="TabPageNoticeParashah.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -274,7 +274,7 @@
     <value>10, 10</value>
   </data>
   <data name="NoticeParashah.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 383</value>
+    <value>534, 392</value>
   </data>
   <data name="NoticeParashah.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -313,7 +313,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="TabPageNoticeShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 405</value>
+    <value>556, 414</value>
   </data>
   <data name="TabPageNoticeShabat.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -340,7 +340,7 @@
     <value>10, 10</value>
   </data>
   <data name="NoticeShabat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 383</value>
+    <value>534, 392</value>
   </data>
   <data name="NoticeShabat.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -360,16 +360,460 @@
   <data name="&gt;&gt;NoticeShabat.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;NoticeFood.Name" xml:space="preserve">
-    <value>NoticeFood</value>
+  <data name="NoticeFoodMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;NoticeFood.Type" xml:space="preserve">
+  <data name="NoticeFoodMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="NoticeFoodMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 316</value>
+  </data>
+  <data name="NoticeFoodMain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="NoticeFoodMain.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;NoticeFoodMain.Name" xml:space="preserve">
+    <value>NoticeFoodMain</value>
+  </data>
+  <data name="&gt;&gt;NoticeFoodMain.Type" xml:space="preserve">
     <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;NoticeFood.Parent" xml:space="preserve">
+  <data name="&gt;&gt;NoticeFoodMain.Parent" xml:space="preserve">
+    <value>TabPageFoodMain</value>
+  </data>
+  <data name="&gt;&gt;NoticeFoodMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFoodMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TabPageFoodMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 336</value>
+  </data>
+  <data name="TabPageFoodMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodMain.Text" xml:space="preserve">
+    <value>Principles</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodMain.Name" xml:space="preserve">
+    <value>TabPageFoodMain</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodMain.Parent" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="richTextBoxEx1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxEx1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="richTextBoxEx1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 316</value>
+  </data>
+  <data name="richTextBoxEx1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxEx1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxEx1.Name" xml:space="preserve">
+    <value>richTextBoxEx1</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx1.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx1.Parent" xml:space="preserve">
+    <value>TabPageFoodPessah</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodPessah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFoodPessah.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TabPageFoodPessah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 336</value>
+  </data>
+  <data name="TabPageFoodPessah.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TabPageFoodPessah.Text" xml:space="preserve">
+    <value>Pessah</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodPessah.Name" xml:space="preserve">
+    <value>TabPageFoodPessah</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodPessah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodPessah.Parent" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodPessah.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="richTextBoxEx2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxEx2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="richTextBoxEx2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 316</value>
+  </data>
+  <data name="richTextBoxEx2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxEx2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxEx2.Name" xml:space="preserve">
+    <value>richTextBoxEx2</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx2.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx2.Parent" xml:space="preserve">
+    <value>TabPageFoodShavuhotDiet</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodShavuhotDiet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFoodShavuhotDiet.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TabPageFoodShavuhotDiet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 336</value>
+  </data>
+  <data name="TabPageFoodShavuhotDiet.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TabPageFoodShavuhotDiet.Text" xml:space="preserve">
+    <value>Shavuh'ot Diet</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuhotDiet.Name" xml:space="preserve">
+    <value>TabPageFoodShavuhotDiet</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuhotDiet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuhotDiet.Parent" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuhotDiet.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="richTextBoxEx3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxEx3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="richTextBoxEx3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 316</value>
+  </data>
+  <data name="richTextBoxEx3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxEx3.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxEx3.Name" xml:space="preserve">
+    <value>richTextBoxEx3</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx3.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx3.Parent" xml:space="preserve">
+    <value>TabPageFoodShavuhotLamb</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodShavuhotLamb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFoodShavuhotLamb.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TabPageFoodShavuhotLamb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 336</value>
+  </data>
+  <data name="TabPageFoodShavuhotLamb.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="TabPageFoodShavuhotLamb.Text" xml:space="preserve">
+    <value>Shavuh'ot Lamb</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuhotLamb.Name" xml:space="preserve">
+    <value>TabPageFoodShavuhotLamb</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuhotLamb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuhotLamb.Parent" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuhotLamb.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxEx4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxEx4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="richTextBoxEx4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 316</value>
+  </data>
+  <data name="richTextBoxEx4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxEx4.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxEx4.Name" xml:space="preserve">
+    <value>richTextBoxEx4</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx4.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx4.Parent" xml:space="preserve">
+    <value>TabPageFoodShavuotEnd</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodShavuotEnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFoodShavuotEnd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TabPageFoodShavuotEnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 336</value>
+  </data>
+  <data name="TabPageFoodShavuotEnd.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="TabPageFoodShavuotEnd.Text" xml:space="preserve">
+    <value>Shavuh'ot End</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuotEnd.Name" xml:space="preserve">
+    <value>TabPageFoodShavuotEnd</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuotEnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuotEnd.Parent" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodShavuotEnd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="richTextBoxEx5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxEx5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="richTextBoxEx5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 316</value>
+  </data>
+  <data name="richTextBoxEx5.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxEx5.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxEx5.Name" xml:space="preserve">
+    <value>richTextBoxEx5</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx5.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx5.Parent" xml:space="preserve">
+    <value>TabPageFoodTeruhah</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodTeruhah.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFoodTeruhah.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TabPageFoodTeruhah.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 336</value>
+  </data>
+  <data name="TabPageFoodTeruhah.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="TabPageFoodTeruhah.Text" xml:space="preserve">
+    <value>Yom Teruh'ah</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodTeruhah.Name" xml:space="preserve">
+    <value>TabPageFoodTeruhah</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodTeruhah.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodTeruhah.Parent" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodTeruhah.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="richTextBoxEx6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxEx6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="richTextBoxEx6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 316</value>
+  </data>
+  <data name="richTextBoxEx6.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxEx6.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxEx6.Name" xml:space="preserve">
+    <value>richTextBoxEx6</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx6.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx6.Parent" xml:space="preserve">
+    <value>TabPageFoodKipur</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodKipur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFoodKipur.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TabPageFoodKipur.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 336</value>
+  </data>
+  <data name="TabPageFoodKipur.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="TabPageFoodKipur.Text" xml:space="preserve">
+    <value>Yom HaKipurim</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodKipur.Name" xml:space="preserve">
+    <value>TabPageFoodKipur</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodKipur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodKipur.Parent" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodKipur.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="richTextBoxEx7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="richTextBoxEx7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="richTextBoxEx7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>606, 316</value>
+  </data>
+  <data name="richTextBoxEx7.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="richTextBoxEx7.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBoxEx7.Name" xml:space="preserve">
+    <value>richTextBoxEx7</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx7.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx7.Parent" xml:space="preserve">
+    <value>TabPageFoodSukot</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxEx7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TabPageFoodSukot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPageFoodSukot.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="TabPageFoodSukot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 336</value>
+  </data>
+  <data name="TabPageFoodSukot.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="TabPageFoodSukot.Text" xml:space="preserve">
+    <value>Sukot</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodSukot.Name" xml:space="preserve">
+    <value>TabPageFoodSukot</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodSukot.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodSukot.Parent" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabPageFoodSukot.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TabControlFood.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TabControlFood.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 10</value>
+  </data>
+  <data name="TabControlFood.Size" type="System.Drawing.Size, System.Drawing">
+    <value>634, 362</value>
+  </data>
+  <data name="TabControlFood.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="&gt;&gt;TabControlFood.Name" xml:space="preserve">
+    <value>TabControlFood</value>
+  </data>
+  <data name="&gt;&gt;TabControlFood.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControlFood.Parent" xml:space="preserve">
     <value>TabPageNoticeFood</value>
   </data>
-  <data name="&gt;&gt;NoticeFood.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TabControlFood.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="TabPageNoticeFood.Location" type="System.Drawing.Point, System.Drawing">
@@ -379,7 +823,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="TabPageNoticeFood.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 405</value>
+    <value>656, 384</value>
   </data>
   <data name="TabPageNoticeFood.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -398,33 +842,6 @@
   </data>
   <data name="&gt;&gt;TabPageNoticeFood.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="NoticeFood.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="NoticeFood.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
-  </data>
-  <data name="NoticeFood.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 383</value>
-  </data>
-  <data name="NoticeFood.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="NoticeFood.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;NoticeFood.Name" xml:space="preserve">
-    <value>NoticeFood</value>
-  </data>
-  <data name="&gt;&gt;NoticeFood.Type" xml:space="preserve">
-    <value>Ordisoftware.Core.RichTextBoxEx, Ordisoftware.Hebrew.Calendar, Version=11.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;NoticeFood.Parent" xml:space="preserve">
-    <value>TabPageNoticeFood</value>
-  </data>
-  <data name="&gt;&gt;NoticeFood.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;NoticeCelebrations.Name" xml:space="preserve">
     <value>NoticeCelebrations</value>
@@ -445,7 +862,7 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="TabPageNoticeCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 405</value>
+    <value>556, 414</value>
   </data>
   <data name="TabPageNoticeCelebrations.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -472,7 +889,7 @@
     <value>10, 10</value>
   </data>
   <data name="NoticeCelebrations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 383</value>
+    <value>534, 392</value>
   </data>
   <data name="NoticeCelebrations.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -571,7 +988,7 @@
     <value>10, 10</value>
   </data>
   <data name="TabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>564, 443</value>
+    <value>664, 413</value>
   </data>
   <data name="TabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -595,7 +1012,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 491</value>
+    <value>684, 461</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>1000, 1000</value>

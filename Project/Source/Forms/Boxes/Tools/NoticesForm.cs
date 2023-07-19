@@ -22,9 +22,10 @@ sealed partial class NoticesForm : Form
   public NoticesForm()
   {
     InitializeComponent();
+    Icon = Globals.MainForm.Icon;
     NoticeGeneration.Text = AppTranslations.NoticeMonthsAndDays.GetLang();
     NoticeCelebrations.Text = AppTranslations.NoticeCelebrations.GetLang();
-    NoticeFood.Text = AppTranslations.NoticeCelebrationsFood.GetLang();
+    NoticeFoodMain.Text = AppTranslations.NoticeCelebrationsFood.GetLang();
     NoticeShabat.Text = AppTranslations.NoticeShabat.GetLang();
     NoticeParashah.Text = AppTranslations.NoticeParashah.GetLang();
   }
