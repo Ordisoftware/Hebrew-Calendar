@@ -356,6 +356,17 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Future improvements
 
+#### Priority
+
+- Add auto backup bookmarks.
+- Add import parashot board.
+- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
+- Add command-line option `--lunarmonths` to show the lunar months board.
+- Improve food notice with details and cooking recipes.
+- Improve notices to be in only one window having a page control like preferences.
+- Improve weekly parashah description box to have access to the tools for the study.
+- Improve weekly parashah description box to have a screenshot button.
+
 #### Application
 
 - Add option to set primary source for check update between author's website or GitHub.
@@ -363,14 +374,13 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add dark theme for monthly view.
 - Add print boards.
 - Add option to generate a fixed interval (if the current year is within).
-- Improve notices to be in only one window having a page control like preferences.
-- Improve food notice with details and cooking recipes.
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Check and fix weekly parashah generation with Soukot.
+- Check and Fix reminder behavior with Sim'hat Torah.
 - Rewrite the reminder.
 
 #### Data
 
-- Add import parashot board.
 - Add user reminders for other people's events like birthday and yahrzeit.
 - Add user reminders for personal solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -379,20 +389,9 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Changelog
 
-#### TO DO
+#### In progress - Version 11.0
 
->- Add auto backup bookmarks.
->- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
->- Add command-line option `--lunarmonths` to show the lunar months board.
->- Improve weekly parashah description box to have access to the tools for the study.
->- Improve weekly parashah description box to have a screenshot button.
->- Check and fix weekly parashah generation with Soukot.
->- Check and Fix reminder behavior with Sim'hat Torah.
-
-#### 2023 - Version 11.0
-
-- Add memos to date bookmarks.
-- Add option to automatically sort date bookmarks.
+- Add memos to date bookmarks that are now automatically sorted.
 - Add manage bookmarks menu item in Tools and Ctrl + B shortcut.
 - Add keyboard shortcuts Alt+Left/Right/Up/Down to navigate between years and months while keeping the lunar day.
 - Add previous and next buttons to parashah description box.
