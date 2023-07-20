@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -19,6 +19,54 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// </summary>
 static partial class AppTranslations
 {
+
+  /// <summary>
+  /// Shows a notice.
+  /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
+  static public void ShowNotice(TranslationsDictionary title, TranslationsDictionary text, int width)
+  {
+    switch ( DisplayManager.FormStyle )
+    {
+      case MessageBoxFormStyle.System:
+        DisplayManager.Show(title.GetLang(), text.GetLang());
+        break;
+      case MessageBoxFormStyle.Advanced:
+        string titleTranslated = title.GetLang();
+        var form = MessageBoxEx.Instances.Find(f => f.Text == titleTranslated)
+                   ?? new MessageBoxEx(title, text, width: width);
+        form.ShowInTaskbar = true;
+        form.Popup(null, true);
+        break;
+      default:
+        throw new AdvNotImplementedException(DisplayManager.FormStyle);
+    }
+  }
+
+  static public void ShowMonthsAndDaysNotice()
+  {
+    ShowNotice(NoticeMonthsAndDaysTitle, NoticeMonthsAndDays, MessageBoxEx.DefaultWidthMedium);
+  }
+
+  static public void ShowCelebrationsNotice()
+  {
+    ShowNotice(NoticeCelebrationsTitle, NoticeCelebrations, MessageBoxEx.DefaultWidthMedium);
+  }
+
+  static private void ShowFoodNotice()
+  {
+    ShowNotice(NoticeCelebrationsFoodTitle, NoticeCelebrationsFood, MessageBoxEx.DefaultWidthLarge);
+  }
+
+  static public void ShowShabatNotice()
+  {
+    ShowNotice(NoticeShabatTitle, NoticeShabat, MessageBoxEx.DefaultWidthLarge);
+  }
+
+  static public void ShowParashahNotice()
+  {
+    ShowNotice(NoticeParashahTitle, NoticeParashah, MessageBoxEx.DefaultWidthMedium);
+  }
 
   static public readonly TranslationsDictionary NoticeMonthsAndDaysTitle = new()
   {

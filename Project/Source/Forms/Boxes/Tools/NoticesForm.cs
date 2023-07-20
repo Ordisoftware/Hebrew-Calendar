@@ -17,7 +17,23 @@ namespace Ordisoftware.Hebrew.Calendar;
 sealed partial class NoticesForm : Form
 {
 
-  // TODO singleton & save location and size
+  static private readonly Properties.Settings Settings = Program.Settings;
+
+  static public NoticesForm Instance { get; private set; }
+
+  static public void Run()
+  {
+    if ( Instance is null )
+      Instance = new NoticesForm();
+    else
+    if ( Instance.Visible )
+    {
+      Instance.Popup();
+      return;
+    }
+    Instance.Show();
+    Instance.ForceBringToFront();
+  }
 
   public NoticesForm()
   {
@@ -28,14 +44,28 @@ sealed partial class NoticesForm : Form
     NoticeFoodMain.Text = AppTranslations.NoticeCelebrationsFood.GetLang();
     NoticeShabat.Text = AppTranslations.NoticeShabat.GetLang();
     NoticeParashah.Text = AppTranslations.NoticeParashah.GetLang();
+    NoticeFoodPessah.Text = SysTranslations.NotYetAvailable.GetLang();
+    NoticeFoodShavuhotDiet.Text = SysTranslations.NotYetAvailable.GetLang();
+    NoticeFoodShavuhotLamb.Text = SysTranslations.NotYetAvailable.GetLang();
+    NoticeFoodShavuhotEnd.Text = SysTranslations.NotYetAvailable.GetLang();
+    NoticeFoodTeruhah.Text = SysTranslations.NotYetAvailable.GetLang();
+    NoticeFoodKipur.Text = SysTranslations.NotYetAvailable.GetLang();
+    NoticeFoodSukot.Text = SysTranslations.NotYetAvailable.GetLang();
   }
 
   private void NoticesForm_Load(object sender, EventArgs e)
   {
-    if ( MainForm.Instance.Visible )
-      this.CenterToMainFormElseScreen();
-    else
-      this.SetLocation(ControlLocation.Center);
+    TabControlMain.SelectedIndex = Settings.NoticesFormMainPageIndex;
+    TabControlFood.SelectedIndex = Settings.NoticesFormFoodPageIndex;
+    this.CheckLocationOrCenterToMainFormElseScreen();
+  }
+
+  private void NoticesForm_FormClosing(object sender, FormClosingEventArgs e)
+  {
+    Settings.NoticesFormMainPageIndex = TabControlMain.SelectedIndex;
+    Settings.NoticesFormFoodPageIndex = TabControlFood.SelectedIndex;
+    e.Cancel = true;
+    Hide();
   }
 
   private void ActionClose_Click(object sender, EventArgs e)

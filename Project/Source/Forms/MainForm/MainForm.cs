@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -496,94 +496,6 @@ sealed partial class MainForm : Form
   #endregion
 
   #region Menu Tools
-
-  /// <summary>
-  /// Shows a notice.
-  /// </summary>
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
-  private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
-  {
-    switch ( DisplayManager.FormStyle )
-    {
-      case MessageBoxFormStyle.System:
-        DisplayManager.Show(title.GetLang(), text.GetLang());
-        break;
-      case MessageBoxFormStyle.Advanced:
-        string titleTranslated = title.GetLang();
-        var form = MessageBoxEx.Instances.Find(f => f.Text == titleTranslated)
-                   ?? new MessageBoxEx(title, text, width: width);
-        form.ShowInTaskbar = true;
-        form.Popup(null, sender is null);
-        break;
-      default:
-        throw new AdvNotImplementedException(DisplayManager.FormStyle);
-    }
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowMonthsAndDaysNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowMonthsAndDaysNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeMonthsAndDaysTitle,
-               AppTranslations.NoticeMonthsAndDays,
-               MessageBoxEx.DefaultWidthMedium);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowCelebrationsNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeCelebrationsTitle,
-               AppTranslations.NoticeCelebrations,
-               MessageBoxEx.DefaultWidthMedium);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowFoodNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionShowFoodNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeCelebrationsFoodTitle,
-               AppTranslations.NoticeCelebrationsFood,
-               MessageBoxEx.DefaultWidthLarge);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowShabatNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowShabatNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeShabatTitle,
-               AppTranslations.NoticeShabat,
-               MessageBoxEx.DefaultWidthLarge);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowParashahNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowParashahNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeParashahTitle,
-               AppTranslations.NoticeParashah,
-               MessageBoxEx.DefaultWidthMedium);
-  }
 
   /// <summary>
   /// Event handler. Called by ActionShowTranscriptionGuide for click events.
@@ -1239,6 +1151,11 @@ sealed partial class MainForm : Form
     NavigationForm.Instance.Date = ContextMenuDayCurrentEvent.Date;
   }
 
+  private void ActionShowNotices_Click(object sender, EventArgs e)
+  {
+    NoticesForm.Run();
+  }
+
   private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
     CelebrationVersesBoardForm.Run((TorahCelebration)ContextMenuDayCelebrationVersesBoard.Tag,
@@ -1367,18 +1284,5 @@ sealed partial class MainForm : Form
   }
 
   #endregion
-
-  private void ActionShowNotices_Click(object sender, EventArgs e)
-  {
-    MenuTray.Enabled = false;
-    try
-    {
-      new NoticesForm().ShowDialog();
-    }
-    finally
-    {
-      MenuTray.Enabled = true;
-    }
-  }
 
 }

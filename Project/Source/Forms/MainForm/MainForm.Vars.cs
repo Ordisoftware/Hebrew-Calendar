@@ -115,6 +115,7 @@ public partial class MainForm
       Text = Globals.AssemblyTitle;
       TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
       Application.OpenForms.GetAll(f => f is ManageBookmarksForm)?.ToList().ForEach(f => f.Close());
+      NoticesForm.Instance?.Close();
       ParashotForm.Instance?.Close();
       CelebrationsBoardForm.Instance?.Close();
       CelebrationVersesBoardForm.Instance?.Close();

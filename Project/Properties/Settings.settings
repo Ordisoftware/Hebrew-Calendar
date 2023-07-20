@@ -860,5 +860,17 @@
     <Setting Name="DoubleClickOnVerseOpenDefaultReader" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="NoticesFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="NoticesFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">684, 461</Value>
+    </Setting>
+    <Setting Name="NoticesFormMainPageIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="NoticesFormFoodPageIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

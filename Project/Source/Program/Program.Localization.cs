@@ -55,6 +55,7 @@ static partial class Program
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = TranscriptionGuideForm;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+      new Infralution.Localization.CultureManager().ManagedControl = NoticesForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationVersesBoardForm.Instance;

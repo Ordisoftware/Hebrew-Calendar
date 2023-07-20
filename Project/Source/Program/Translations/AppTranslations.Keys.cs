@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-06 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -59,6 +59,7 @@ static partial class AppTranslations
                     Alt + G : Generate calendar
                     Alt + P : Show online parashah menu
                     Alt + B : Manage bookmarks
+                    Alt + N : Notice window
                     Ctrl + F1 : Parashot board
                     Ctrl + F2 : Celebration verses board
                     Ctrl + F3 : Celebrations board
@@ -125,6 +126,7 @@ static partial class AppTranslations
                     Alt + G : Génère le calendrier
                     Alt + P : Affiche le menu de la parashah en ligne
                     Alt + B : Gérer les favoris
+                    Alt + N : Fenêtre des notices
                     Ctrl + F1 : Tableau des parashot
                     Ctrl + F2 : Tableau des versets des célébrations
                     Ctrl + F3 : Tableau des célébrations
