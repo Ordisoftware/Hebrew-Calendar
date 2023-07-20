@@ -392,11 +392,13 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 11.0
 
+- Move notices boxes in one form and Alt + N shortcut.
 - Add memos to date bookmarks that are now automatically sorted.
 - Add manage bookmarks menu item in Tools and Ctrl + B shortcut.
 - Add keyboard shortcuts Alt+Left/Right/Up/Down to navigate between years and months while keeping the lunar day.
 - Add previous and next buttons to parashah description box.
 - Add Accuweather.com provider.
+- Code refactoring.
 - Update web links.
 
 #### 2023.04.05 - Version 10.4
