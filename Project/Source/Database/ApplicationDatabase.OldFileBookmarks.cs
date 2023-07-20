@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ApplicationDatabase
 {
 
-  private void ImportOldBookmarksIfNeeded()
+  private void ImportOldFileBookmarksIfNeeded()
   {
     if ( File.Exists(Program.DateBookmarksFilePath) && DateBookmarks.Count == 0 )
     {
