@@ -395,7 +395,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Move notices boxes in one form and Alt + N shortcut.
 - Add memos to date bookmarks that are now automatically sorted.
 - Add manage bookmarks menu item in Tools and Ctrl + B shortcut.
-- Add keyboard shortcuts Alt+Left/Right/Up/Down to navigate between years and months while keeping the lunar day.
+- Add keyboard shortcuts Alt + Arrows to navigate between years and months while keeping the lunar day.
 - Add previous and next buttons to parashah description box.
 - Add Accuweather.com provider.
 - Code refactoring.
