@@ -63,6 +63,7 @@ partial class MainForm
     ActionOnlineWeather.Tag = isVisible;
     SeparatorMenuWeather.Tag = isVisible;
     ActionTools.DuplicateTo(MenuTools);
+    ActionHelp.DuplicateTo(MenuHelp);
     ActionInformation.DuplicateTo(MenuInformation);
     if ( !Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
       ActionEnableReminder.PerformClick();

@@ -239,6 +239,8 @@
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.MenuHelp = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
       this.PanelMainOuter1.SuspendLayout();
       this.PanelMainOuter2.SuspendLayout();
       this.PanelMainInner1.SuspendLayout();
@@ -714,7 +716,9 @@
             this.MenuTools,
             this.MenuWebLinks,
             this.SeparatorTrayMenu5,
+            this.MenuHelp,
             this.MenuInformation,
+            this.toolStripSeparator4,
             this.MenuPreferences,
             this.toolStripSeparator6,
             this.MenuExit});
@@ -1468,8 +1472,8 @@
             this.ToolStripTopSeparator5,
             this.ActionTools,
             this.ActionWebLinks,
-            this.ActionInformation,
             this.ActionHelp,
+            this.ActionInformation,
             this.ToolStripTopSeparator6,
             this.ActionPreferences,
             this.ActionSettings});
@@ -1796,6 +1800,16 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
+      // MenuHelp
+      // 
+      resources.ApplyResources(this.MenuHelp, "MenuHelp");
+      this.MenuHelp.Name = "MenuHelp";
+      // 
+      // toolStripSeparator4
+      // 
+      this.toolStripSeparator4.Name = "toolStripSeparator4";
+      resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+      // 
       // MainForm
       // 
       resources.ApplyResources(this, "$this");
@@ -2046,5 +2060,7 @@
     private ToolStripSeparator toolStripSeparator7;
     private ToolStripMenuItem ActionShowTranscriptionGuide;
     private ToolStripMenuItem ActionShowGrammarGuide;
+    private ToolStripMenuItem MenuHelp;
+    private ToolStripSeparator toolStripSeparator4;
   }
 }

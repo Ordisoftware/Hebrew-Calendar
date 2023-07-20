@@ -689,4 +689,7 @@
   <data name="ActionShowNotices.Text" xml:space="preserve">
     <value>Notices du calendrier</value>
   </data>
+  <data name="MenuHelp.Text" xml:space="preserve">
+    <value>Aide</value>
+  </data>
 </root>
