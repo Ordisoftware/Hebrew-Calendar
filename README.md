@@ -320,6 +320,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Alt + G | Generate calendar |
 | Alt + P | Show online parashah menu |
 | Alt + B | Manage bookmarks |
+| Alt + N | Notices window |
 | Ctrl + F1 | Parashot board |
 | Ctrl + F2 | Celebration verses board |
 | Ctrl + F3 | Celebrations board |
