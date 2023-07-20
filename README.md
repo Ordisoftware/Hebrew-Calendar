@@ -393,6 +393,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### In progress - Version 11.0
 
 - Move notices boxes in one form and Alt + N shortcut.
+- Move notices and guides menu items in a global Help menu.
 - Add memos to date bookmarks that are now automatically sorted.
 - Add manage bookmarks menu item in Tools and Ctrl + B shortcut.
 - Add keyboard shortcuts Alt + Arrows to navigate between years and months while keeping the lunar day.
