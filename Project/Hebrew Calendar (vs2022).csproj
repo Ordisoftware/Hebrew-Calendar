@@ -412,7 +412,7 @@
     <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Database\ApplicationDatabase.ImportOldBookmarks.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.OldFileBookmarks.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Sod.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Report.cs" />
