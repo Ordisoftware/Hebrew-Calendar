@@ -97,7 +97,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override bool CreateDataIfNotExist(bool reset = false)
   {
-    ImportOldBookmarksIfNeeded();
+    ImportOldFileBookmarksIfNeeded();
     return false;
   }
 
