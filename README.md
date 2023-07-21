@@ -307,9 +307,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
 | Ctrl + Shift + C | Copy the text report selection to clipboard |
-| Alt + V | Show view menu |
+| Alt + V | View menu |
 | Alt + T | Tools menu |
 | Alt + L | Web links menu |
+| Alt + H | Help menu |
 | Alt + S | Settings menu |
 | Alt + I | Information menu |
 | Alt + E | Export folder |
@@ -326,6 +327,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Ctrl + F3 | Celebrations board |
 | Ctrl + F4 | New moons board |
 | Ctrl + F5 | Lunar months board |
+| Ctrl + Shift + S | Verses on Shabat |
 | Ctrl + Shift + D | Dates difference calculator |
 | Home | First month available in the database |
 | End | Last month available in the database |

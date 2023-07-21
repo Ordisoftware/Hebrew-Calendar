@@ -49,6 +49,7 @@ static partial class AppTranslations
                     Alt + V : View menu
                     Alt + T : Tools menu
                     Alt + L : Web links menu
+                    Alt + H : Help menu
                     Alt + I : Information menu
                     Alt + S : Settings menu
                     Alt + E : Export folder
@@ -65,6 +66,7 @@ static partial class AppTranslations
                     Ctrl + F3 : Celebrations board
                     Ctrl + F4 : New moons board
                     Ctrl + F5 : Lunar months board
+                    Ctrl + Shift + S : Verses on Shabat
                     Ctrl + Shift + D : Dates difference calculator
                     Home : First month available in the database
                     End : Last month available in the database
@@ -116,6 +118,7 @@ static partial class AppTranslations
                     Alt + V : Menu des vues
                     Alt + T : Menu des outils
                     Alt + L : Menu des liens web
+                    Alt + H : Menu de l'aide
                     Alt + I : Menu des informations
                     Alt + S : Menu des paramètres
                     Alt + E : Dossier d'export
@@ -132,6 +135,7 @@ static partial class AppTranslations
                     Ctrl + F3 : Tableau des célébrations
                     Ctrl + F4 : Tableau des nouvelles lunes
                     Ctrl + F5 : Tableau des mois lunaires
+                    Ctrl + Maj + S : Versets sur le Shabat
                     Ctrl + Maj + D : Calculateur de différence de dates
                     Début : Premier mois disponible dans la base de données
                     Fin : Dernier mois disponible dans la base de données
