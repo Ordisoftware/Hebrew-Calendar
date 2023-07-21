@@ -75,11 +75,11 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 **What's new in the latest version 11**
 
-- Add new help menu.
+- Add help menu.
 - Add window for all notices.
 - Add memos for bookmarks.
 - Add previous and next buttons in parashah description box.
-- Add some keyboard shortcuts:
+- Add keyboard shortcuts:
     * Alt + H for help menu,
     * Alt + N for notices window,
     * Alt + B for bookmarks manager,
