@@ -73,17 +73,19 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 ## Download
 
-**What's new in the latest version 10**
+**What's new in the latest version 11**
 
-- Adar II was renamed in VeAdar.
-- Added Shabat references in celebration verses board.
-- Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
-- Added option to select data layout order and sections to show in the monthly view.
-- Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
-- Fixed image printing.
-- Some fixes and improvements.
-- Optimized and refactored code.
-- Updated web links.
+- Add new help menu.
+- Add window for all notices.
+- Add memos for bookmarks.
+- Add previous and next buttons in parashah description box.
+- Add some keyboard shortcuts:
+    * Alt + H for help menu,
+    * Alt + N for notices window,
+    * Alt + B for bookmarks manager,
+    * Alt + Arrows to navigate between lunar days.
+- Some improvements.
+- Update web links.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -394,12 +396,12 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 11.0
 
-- Move notices boxes in one form and Alt + N shortcut.
-- Move notices and guides menu items in a global Help menu.
+- Add help menu, and Alt + H shortcut.
+- Add window for all notices, and Alt + N shortcut.
 - Add memos to date bookmarks that are now automatically sorted.
-- Add manage bookmarks menu item in Tools and Ctrl + B shortcut.
-- Add keyboard shortcuts Alt + Arrows to navigate between years and months while keeping the lunar day.
-- Add previous and next buttons to parashah description box.
+- Add manage bookmarks menu item in Tools, and Alt + B shortcut.
+- Add Alt + Arrows shortcuts to navigate between lunar days.
+- Add previous and next buttons in parashah description box.
 - Add Accuweather.com provider.
 - Code refactoring.
 - Update web links.
