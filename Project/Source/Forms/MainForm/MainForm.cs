@@ -103,6 +103,11 @@ sealed partial class MainForm : Form
     EditScreenNone.PerformClick();
   }
 
+  private void MainForm_Resize(object sender, EventArgs e)
+  {
+    MainMenuSeparatorLeftButtons.Visible = Width < MinimumSize.Width + 50;
+  }
+
   #endregion
 
   #region Top Menu Tool-Tips

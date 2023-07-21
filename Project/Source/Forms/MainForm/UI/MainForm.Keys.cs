@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -49,11 +49,14 @@ partial class MainForm
         if ( ActionWebLinks.Enabled )
           ActionWebLinks.ShowDropDown();
         return true;
-      case Keys.Alt | Keys.S:
-        ActionSettings.ShowDropDown();
+      case Keys.Alt | Keys.H:
+        ActionHelp.ShowDropDown();
         return true;
       case Keys.Alt | Keys.I:
         ActionInformation.ShowDropDown();
+        return true;
+      case Keys.Alt | Keys.S:
+        ActionSettings.ShowDropDown();
         return true;
       case Keys.F9:
         ActionPreferences.PerformClick();
