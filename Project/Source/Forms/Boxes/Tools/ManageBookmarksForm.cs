@@ -21,9 +21,6 @@ sealed partial class ManageBookmarksForm : Form
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static private BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView
-    => ApplicationDatabase.Instance.DateBookmarksAsBindingListView;
-
   static public bool Run()
   {
     bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
@@ -55,7 +52,7 @@ sealed partial class ManageBookmarksForm : Form
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
-    BindingSource.DataSource = DateBookmarksAsBindingListView;
+    BindingSource.DataSource = ApplicationDatabase.Instance.DateBookmarksAsBindingListView;
     if ( ListBox.Items.Count != 0 ) ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
     Ready = true;
@@ -69,13 +66,16 @@ sealed partial class ManageBookmarksForm : Form
   private void ManageBookmarksForm_FormClosing(object sender, FormClosingEventArgs e)
   {
     if ( !ActionSave.Enabled ) return;
+    string message = SysTranslations.AskToSaveChanges.GetLang(Text);
     if ( Globals.IsExiting )
     {
       this.Popup();
-      DisplayManager.QueryYesNo(SysTranslations.AskToSaveChanges.GetLang(Text), Save);
+      DisplayManager.QueryYesNo(message, Save);
     }
     else
-      DisplayManager.QueryYesNoCancel(SysTranslations.AskToSaveChanges.GetLang(Text), Save, null, () => e.Cancel = true);
+    {
+      DisplayManager.QueryYesNoCancel(message, Save, null, () => e.Cancel = true);
+    }
   }
 
   private void ActionSave_Click(object sender, EventArgs e)
@@ -88,29 +88,13 @@ sealed partial class ManageBookmarksForm : Form
   private void ActionCancel_Click(object sender, EventArgs e)
   {
     ActionSave.Enabled = false;
-    try
-    {
-      ApplicationDatabase.Instance.Rollback();
-    }
-    catch
-    {
-      //TODO manage rollback error
-      throw;
-    }
+    ApplicationDatabase.Instance.Rollback();
     ApplicationDatabase.Instance.ReLoadBookmarksAndCreateBindingList();
   }
 
   private void Save()
   {
-    try
-    {
-      ApplicationDatabase.Instance.Commit();
-    }
-    catch
-    {
-      //TODO manage commit error
-      throw;
-    }
+    ApplicationDatabase.Instance.Commit();
   }
 
   private void ActionDelete_Click(object sender, EventArgs e)
