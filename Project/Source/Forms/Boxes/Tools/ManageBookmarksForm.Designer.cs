@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBookmarksForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionExport = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
       this.ActionSave = new System.Windows.Forms.Button();
       this.ActionClear = new System.Windows.Forms.Button();
       this.ListBox = new System.Windows.Forms.ListBox();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ActionDelete = new System.Windows.Forms.Button();
       this.ActionUp = new System.Windows.Forms.Button();
       this.ActionDown = new System.Windows.Forms.Button();
@@ -46,6 +48,7 @@
       this.LabelInfoEditMemo = new System.Windows.Forms.Label();
       this.EditAutoSort = new System.Windows.Forms.CheckBox();
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
       this.panel1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -103,10 +106,15 @@
       // ListBox
       // 
       resources.ApplyResources(this.ListBox, "ListBox");
+      this.ListBox.DataSource = this.BindingSource;
       this.ListBox.FormattingEnabled = true;
       this.ListBox.Name = "ListBox";
       this.ListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox_SelectedIndexChanged);
       this.ListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ListBox_MouseDoubleClick);
+      // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DateBookmarkRow);
       // 
       // ActionDelete
       // 
@@ -122,7 +130,6 @@
       this.ActionUp.FlatAppearance.BorderSize = 0;
       this.ActionUp.Name = "ActionUp";
       this.ActionUp.UseVisualStyleBackColor = true;
-      this.ActionUp.Click += new System.EventHandler(this.ActionUp_Click);
       // 
       // ActionDown
       // 
@@ -130,7 +137,6 @@
       this.ActionDown.FlatAppearance.BorderSize = 0;
       this.ActionDown.Name = "ActionDown";
       this.ActionDown.UseVisualStyleBackColor = true;
-      this.ActionDown.Click += new System.EventHandler(this.ActionDown_Click);
       // 
       // ActionSort
       // 
@@ -138,7 +144,6 @@
       this.ActionSort.FlatAppearance.BorderSize = 0;
       this.ActionSort.Name = "ActionSort";
       this.ActionSort.UseVisualStyleBackColor = true;
-      this.ActionSort.Click += new System.EventHandler(this.ActionSort_Click);
       // 
       // panel1
       // 
@@ -184,7 +189,9 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageBookmarksForm_FormClosing);
       this.Load += new System.EventHandler(this.ManageDateBookmarks_Load);
+      this.Shown += new System.EventHandler(this.ManageBookmarksForm_Shown);
       this.PanelBottom.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
       this.panel1.ResumeLayout(false);
       this.panel1.PerformLayout();
       this.ResumeLayout(false);
@@ -209,5 +216,6 @@
     private Panel panel1;
     private CheckBox EditAutoSort;
     private Label LabelInfoEditMemo;
+    private BindingSource BindingSource;
   }
 }

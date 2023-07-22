@@ -37,13 +37,13 @@ partial class ApplicationDatabase : SQLiteDatabase
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
   public BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView { get; private set; }
 
-  public List<DateBookmarkRow> DateBookmarksSorted
-    => DateBookmarks.OrderBy(bookmark => bookmark.Date).ToList();
+  //public List<DateBookmarkRow> DateBookmarksSorted
+  //  => DateBookmarks.OrderBy(bookmark => bookmark.Date).ToList();
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP012:Property should not return created disposable", Justification = "N/A")]
-  public BindingListView<DateBookmarkRow> DateBookmarksSortedAsBindingListView
-    => new(DateBookmarksSorted);
+  //[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
+  //[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP012:Property should not return created disposable", Justification = "N/A")]
+  //public BindingListView<DateBookmarkRow> DateBookmarksSortedAsBindingListView
+  //  => new(DateBookmarksSorted);
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
@@ -82,7 +82,15 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoLoadAll()
   {
     LunisolarDays = Connection.Table<LunisolarDayRow>().ToList();
+    ReLoadBookmarksAndCreateBindingList();
+  }
+
+  public void ReLoadBookmarksAndCreateBindingList()
+  {
     DateBookmarks = Connection.Table<DateBookmarkRow>().ToList();
+    DateBookmarksAsBindingListView?.Dispose();
+    DateBookmarksAsBindingListView = new BindingListView<DateBookmarkRow>(DateBookmarks);
+    DateBookmarksAsBindingListView.ApplySort(nameof(DateBookmarkRow.Date));
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
@@ -93,8 +101,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void CreateBindingLists()
   {
-    DateBookmarksAsBindingListView?.Dispose();
-    DateBookmarksAsBindingListView = new BindingListView<DateBookmarkRow>(DateBookmarks);
+    // NOP
   }
 
   protected override void DoSaveAll()
@@ -103,11 +110,11 @@ partial class ApplicationDatabase : SQLiteDatabase
     throw new NotSupportedException(message);
   }
 
-  public void SaveDateBookmarks()
-  {
-    CheckAccess(DateBookmarks, DateBookmarksTableName);
-    Connection.UpdateAll(DateBookmarks);
-  }
+  //public void SaveDateBookmarks()
+  //{
+  //  CheckAccess(DateBookmarks, DateBookmarksTableName);
+  //  Connection.UpdateAll(DateBookmarks);
+  //}
 
   public void EmptyLunisolarDays()
   {

@@ -30,7 +30,7 @@ sealed partial class DatesDifferenceForm : Form
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
   {
-    var bookmarks = ApplicationDatabase.Instance.DateBookmarksSorted.ToList();
+    var bookmarks = ApplicationDatabase.Instance.DateBookmarks.ToList();
     bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
     items.Clear();
     for ( int index = 0; index < bookmarks.Count; index++ )

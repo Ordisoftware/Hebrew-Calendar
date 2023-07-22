@@ -11,13 +11,18 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2023-06 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
+
+using Equin.ApplicationFramework;
 
 sealed partial class ManageBookmarksForm : Form
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;
+
+  static private BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView
+    => ApplicationDatabase.Instance.DateBookmarksAsBindingListView;
 
   static public bool Run()
   {
@@ -31,14 +36,12 @@ sealed partial class ManageBookmarksForm : Form
     finally
     {
       MainForm.Instance.MenuTray.Enabled = trayEnabled;
-      //Program.DateBookmarks.ApplyAutoSort();
     }
   }
 
   private bool Ready;
   private bool Modified;
 
-  // TODO ne pas connecter le setting autosort pour gérer save / cancel
   private ManageBookmarksForm()
   {
     InitializeComponent();
@@ -52,13 +55,15 @@ sealed partial class ManageBookmarksForm : Form
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
-    if ( Settings.DateBookmarksCount == 0 ) return;
-    //var items = Program.DateBookmarks.Items.Where(item => item is not null).Select(item => new DateBookmarkItem(item));
-    ListBox.Items.Clear();
-    //ListBox.Items.AddRange(items.ToArray());
+    BindingSource.DataSource = DateBookmarksAsBindingListView;
     if ( ListBox.Items.Count != 0 ) ListBox.SelectedIndex = 0;
     ActiveControl = ListBox;
     Ready = true;
+  }
+
+  private void ManageBookmarksForm_Shown(object sender, EventArgs e)
+  {
+    ApplicationDatabase.Instance.BeginTransaction();
   }
 
   private void ManageBookmarksForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -83,29 +88,59 @@ sealed partial class ManageBookmarksForm : Form
   private void ActionCancel_Click(object sender, EventArgs e)
   {
     ActionSave.Enabled = false;
+    try
+    {
+      ApplicationDatabase.Instance.Rollback();
+    }
+    catch
+    {
+      //TODO manage rollback error
+      throw;
+    }
+    ApplicationDatabase.Instance.ReLoadBookmarksAndCreateBindingList();
   }
 
   private void Save()
   {
-    /*var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
-    Program.DateBookmarks.Items.Clear();
-    Program.DateBookmarks.Items.AddRange(items);
-    Program.DateBookmarks.ApplyAutoSort();
-    SystemManager.TryCatch(Settings.Save);*/
+    try
+    {
+      ApplicationDatabase.Instance.Commit();
+    }
+    catch
+    {
+      //TODO manage commit error
+      throw;
+    }
+  }
+
+  private void ActionDelete_Click(object sender, EventArgs e)
+  {
+    var item = (ObjectView<DateBookmarkRow>)ListBox.SelectedItem;
+    ApplicationDatabase.Instance.Connection.Delete(item.Object);
+    BindingSource.Remove(item.Object);
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
+  }
+
+  private void ActionClear_Click(object sender, EventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) ) return;
+    ApplicationDatabase.Instance.Connection.DeleteAll<DateBookmarkRow>();
+    int count = BindingSource.Count;
+    for ( int index = 0; index < count; index++ )
+      BindingSource.RemoveAt(0);
+    Modified = true;
+    ListBox_SelectedIndexChanged(null, null);
   }
 
   private void EditAutoSort_CheckedChanged(object sender, EventArgs e)
   {
     if ( !Ready ) return;
-    if ( EditAutoSort.Checked ) ActionSort.PerformClick();
     ListBox_SelectedIndexChanged(null, null);
   }
 
   private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
   {
-    ActionSort.Enabled = !EditAutoSort.Checked && ListBox.Items.Count > 0;
-    ActionUp.Enabled = !EditAutoSort.Checked && ListBox.SelectedIndex != 0;
-    ActionDown.Enabled = !EditAutoSort.Checked && ListBox.SelectedIndex != ListBox.Items.Count - 1;
     ActionDelete.Enabled = ListBox.SelectedIndex >= 0;
     ActionClear.Enabled = ListBox.Items.Count > 0;
     ActionSave.Enabled = Modified;
@@ -120,7 +155,7 @@ sealed partial class ManageBookmarksForm : Form
                                    bookmark.Date.ToLongDateString(),
                                    ref memo) != InputValueResult.Modified ) return;
     int index = ListBox.SelectedIndex;
-    ListBox.Items[index] = new DateBookmarkRow(bookmark.Date, memo);
+    ( (DateBookmarkRow)ListBox.Items[index] ).Memo = memo;
     Modified = true;
     ListBox_SelectedIndexChanged(null, null);
   }
@@ -137,52 +172,6 @@ sealed partial class ManageBookmarksForm : Form
     DoActionImport();
     Modified = true;
     ListBox_SelectedIndexChanged(null, null);
-  }
-
-  private void ActionClear_Click(object sender, EventArgs e)
-  {
-    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) ) return;
-    ListBox.Items.Clear();
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  private void ActionDelete_Click(object sender, EventArgs e)
-  {
-    ListBox.Items.RemoveAt(ListBox.SelectedIndex);
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  private void ActionUp_Click(object sender, EventArgs e)
-  {
-    ListBox.MoveSelectedItem(-1);
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  private void ActionDown_Click(object sender, EventArgs e)
-  {
-    ListBox.MoveSelectedItem(1);
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  // https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
-  private void ActionSort_Click(object sender, EventArgs e)
-  {
-    /*var item = ListBox.SelectedItem;
-    ListBox.Sort((itemFirst, itemLast) =>
-    {
-      var first = ( (DateBookmarkItem)itemFirst );
-      var last = ( (DateBookmarkItem)itemLast );
-      if ( first is null ) return 1;
-      if ( last is null ) return -1;
-      return first.Date.CompareTo(last.Date);
-    });
-    Modified = true;
-    ListBox.SelectedItem = item;
-    ListBox_SelectedIndexChanged(null, null);*/
   }
 
 }
