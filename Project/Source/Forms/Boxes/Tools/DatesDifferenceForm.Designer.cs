@@ -46,6 +46,7 @@
       this.DateStart = new System.Windows.Forms.MonthCalendar();
       this.DateEnd = new System.Windows.Forms.MonthCalendar();
       this.lunationsLabel1 = new System.Windows.Forms.Label();
+      this.DatesDifferenceItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.moonDaysLabel1 = new System.Windows.Forms.Label();
       this.solarDaysLabel1 = new System.Windows.Forms.Label();
       this.solarMonthsLabel1 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
       this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSwapDates = new System.Windows.Forms.Button();
-      this.DatesDifferenceItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -71,9 +71,9 @@
       solarYearsLabel = new System.Windows.Forms.Label();
       moonYearsLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDifferenceItemBindingSource)).BeginInit();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DatesDifferenceItemBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // lunationsLabel
@@ -184,6 +184,10 @@
       this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDifferenceItemBindingSource, "LunarMonths", true));
       resources.ApplyResources(this.lunationsLabel1, "lunationsLabel1");
       this.lunationsLabel1.Name = "lunationsLabel1";
+      // 
+      // DatesDifferenceItemBindingSource
+      // 
+      this.DatesDifferenceItemBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DatesDifferenceItem);
       // 
       // moonDaysLabel1
       // 
@@ -321,11 +325,7 @@
       this.ActionSwapDates.UseVisualStyleBackColor = true;
       this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
       // 
-      // DatesDiffItemBindingSource
-      // 
-      this.DatesDifferenceItemBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DatesDifferenceItem);
-      // 
-      // DatesDiffCalculatorForm
+      // DatesDifferenceForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -345,16 +345,16 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "DatesDiffCalculatorForm";
+      this.Name = "DatesDifferenceForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatesDiffCalculatorForm_FormClosing);
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDifferenceItemBindingSource)).EndInit();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DatesDifferenceItemBindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }

@@ -30,17 +30,18 @@ sealed partial class DatesDifferenceForm : Form
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
   {
-    var bookmarks = ApplicationDatabase.Instance.DateBookmarks.ToList();
-    bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
     items.Clear();
-    for ( int index = 0; index < bookmarks.Count; index++ )
+    var bookmarks = ApplicationDatabase.Instance.DateBookmarks;
+    bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
+    string digits = bookmarks.Count < 10 ? "0" : bookmarks.Count < 100 ? "00" : bookmarks.Count < 1000 ? "000" : "0000";
+    int index = 0;
+    foreach ( var bookmark in bookmarks )
     {
-      var bookmark = bookmarks[index];
-      string dateText = bookmark is null ? SysTranslations.EmptySlot.GetLang() : bookmark.ToString();
-      var menuitem = items.Add($"{index + 1:00}. {dateText}");
+      index++;
+      var menuitem = items.Add($"{index.ToString(digits)}. {bookmark}");
       menuitem.MouseUp += action;
-      menuitem.Tag = index;
-      if ( onlyCalendar && bookmark is not null )
+      menuitem.Tag = bookmark;
+      if ( onlyCalendar )
         if ( bookmark.Date < MainForm.Instance.DateFirst || bookmark.Date > MainForm.Instance.DateLast )
           menuitem.Enabled = false;
     }
@@ -142,6 +143,9 @@ sealed partial class DatesDifferenceForm : Form
   {
     var menuitem = (ToolStripMenuItem)sender;
     var control = CurrentBookmarkButton;
+
+    // TODO use tag as bookmark row
+
     /*if ( e.Button == MouseButtons.Right )
     {
       if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )

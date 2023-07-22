@@ -454,7 +454,7 @@
   <data name="ActionOpecCalc.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAhVJREFUOE+VkT9v01AUxd83AZWVjc/CxIKKqGgTCsyFJjDRtGlVhmy2m6QhDLAi
+        vgAADr4B6kKxwAAAAhVJREFUOE+VkT9v01AUxd83AZWVjc/CxIKKqGgTCsyFJjDRtGlVhmy2m6QhDLAi
         2BAjAwKklrYoaRPZsZ3ajv+kLk6dHO599UAKqOJJRz6+7/xubq4Fn8Z2fdCoaWhUVZJyiSjDWWIkzIcL
         b3+M8e7gJ95fIs5wlpkMF+JlTcX2lwS3mxZmmybuvPq7+I4znGUmw4Vo1rew+glY/pigQCr+Q3zHGc4y
         k+H0F+o1FJYfo/hkCUV6PpVawrNM7LnGd5zhLDMZLkS1ugXfD+AOAjhBDCeMMQhChEGAKAyl5xrLpRxn
@@ -969,7 +969,7 @@
     <value>6</value>
   </data>
   <metadata name="MenuBookmarks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>221, 17</value>
+    <value>267, 20</value>
   </metadata>
   <data name="MenuBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 4</value>
@@ -1213,7 +1213,7 @@
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>DatesDiffCalculatorForm</value>
+    <value>DatesDifferenceForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
