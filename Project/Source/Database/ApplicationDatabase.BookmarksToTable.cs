@@ -11,13 +11,13 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2023-06 </created>
-/// <edited> 2023-06 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class ApplicationDatabase
 {
 
-  private void ImportOldFileBookmarksIfNeeded()
+  private void ImportFileBookmarksInTableIfNeeded()
   {
     if ( File.Exists(Program.DateBookmarksFilePath) && DateBookmarks.Count == 0 )
     {
@@ -31,11 +31,7 @@ partial class ApplicationDatabase
         Connection.Insert(bookmark);
         DateBookmarks.Add(bookmark);
       }
-      string message = "The text file used to store the date bookmarks has been imported in a new database table." + Globals.NL2;
-      message = hasErrors
-        ? message + "There were the previously mentioned errors." + Globals.NL2 + "Do you want to open its folder?"
-        : message + "There was no error detected." + Globals.NL2 + "Do you want to open its folder to be able to delete it?";
-      if ( DisplayManager.QueryYesNo(message) )
+      if ( DisplayManager.QueryYesNo(AppTranslations.BookmarksFileToTableHasErrorsElseSuccess[hasErrors].GetLang()) )
         SystemManager.RunShell(Path.GetDirectoryName(Program.DateBookmarksFilePath));
       //
       DateBookmarkRow getBookmark(string line)

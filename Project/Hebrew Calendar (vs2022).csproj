@@ -412,7 +412,7 @@
     <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Database\ApplicationDatabase.OldFileBookmarks.cs" />
+    <Compile Include="Source\Database\ApplicationDatabase.BookmarksToTable.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Sod.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Report.cs" />
@@ -430,6 +430,7 @@
     <Compile Include="Source\Enums\CalendarSection.cs" />
     <Compile Include="Source\Common\Hebrew\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\TorahCelebrationVerses.cs" />
+    <Compile Include="Source\Entities\DateBookmarkItem.cs" />
     <Compile Include="Source\Forms\Boxes\Tools\NoticesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -523,7 +524,7 @@
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Entities\GPS.cs" />
-    <Compile Include="Source\Entities\DateBookmarks.cs" />
+    <Compile Include="Source\Entities\_ObsoleteDateBookmarks.cs" />
     <Compile Include="Source\Forms\Boxes\Select\SelectExportTargetForm.cs">
       <SubType>Form</SubType>
     </Compile>

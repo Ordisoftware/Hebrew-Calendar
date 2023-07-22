@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -225,6 +225,57 @@ static partial class AppTranslations
     [Language.FR] = "Erreur lors du calcul des dates et heures de célébration pour le soleil."
   };
 
+  static public readonly TranslationsDictionary FileBookmarksImportedInDatabase = new()
+  {
+    [Language.EN] = "The text file used to store the date bookmarks has been imported in a new database table.",
+    [Language.FR] = "Le fichier texte utilisé pour stocker les signets de date a été importé dans une nouvelle table de la base de données."
+  };
+
+  static public readonly NullSafeDictionary<bool, TranslationsDictionary> BookmarksFileToTableHasErrorsElseSuccess = new()
+  {
+    {
+      true,
+      new TranslationsDictionary
+      {
+        [Language.EN] = $"""
+                         {FileBookmarksImportedInDatabase[Language.EN]}
+
+                         There were the previously mentioned errors.
+                    
+                         Do you want to open its folder?
+                         """,
+
+        [Language.FR] = $"""
+                         {FileBookmarksImportedInDatabase[Language.FR]}
+                     
+                         Il y avait les erreurs mentionnées précédemment.
+                     
+                         Voulez-vous ouvrir son dossier ?
+                         """
+      }
+    },
+    {
+      false,
+      new TranslationsDictionary
+      {
+        [Language.EN] = $"""
+                         {FileBookmarksImportedInDatabase[Language.EN]}
+                     
+                         There was no error detected.
+                     
+                         Do you want to open its folder to be able to move or delete it?
+                         """,
+        [Language.FR] = $"""
+                         {FileBookmarksImportedInDatabase[Language.FR]}
+                     
+                         Aucune erreur n'a été détectée.
+                     
+                         Voulez-vous ouvrir son dossier pour pouvoir le déplacer ou le supprimer ?
+                         """
+      }
+    }
+  };
+
   static public readonly NullSafeDictionary<bool, TranslationsDictionary> BoardTimingsTitle = new()
   {
     {
@@ -235,11 +286,9 @@ static partial class AppTranslations
         [Language.FR] = "Jours ayant le coucher"
       }
     },
-    {
-      false,
-      new TranslationsDictionary
-      {
-        [Language.EN] = "Days having the rise",
+    {false,new TranslationsDictionary
+                        {
+                          [Language.EN] = "Days having the rise",
         [Language.FR] = "Jours ayant le lever"
       }
     }
@@ -255,11 +304,9 @@ static partial class AppTranslations
         [Language.FR] = "Voulez-vous activer toutes les options de parashah ?"
       }
     },
-    {
-      false,
-      new TranslationsDictionary
-      {
-        [Language.EN] = "Do you want to disable all parashah options?",
+    {false,new TranslationsDictionary
+                        {
+                          [Language.EN] = "Do you want to disable all parashah options?",
         [Language.FR] = "Voulez-vous désactiver toutes les options de parashah ?"
       }
     }

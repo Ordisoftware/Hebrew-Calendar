@@ -45,16 +45,6 @@ partial class ApplicationDatabase : SQLiteDatabase
   public BindingListView<DateBookmarkRow> DateBookmarksSortedAsBindingListView
     => new(DateBookmarksSorted);
 
-  public List<DateBookmarkRow> DateBookmarksSortedOrNot
-    => Settings.AutoSortBookmarks
-       ? DateBookmarks.OrderBy(bookmark => bookmark.Date).ToList()
-       : DateBookmarks;
-
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP012:Property should not return created disposable", Justification = "N/A")]
-  public BindingListView<DateBookmarkRow> DateBookmarksSortedOrNotAsBindingListView
-    => new(DateBookmarksSortedOrNot);
-
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
   }
@@ -97,7 +87,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override bool CreateDataIfNotExist(bool reset = false)
   {
-    ImportOldFileBookmarksIfNeeded();
+    ImportFileBookmarksInTableIfNeeded();
     return false;
   }
 
