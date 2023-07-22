@@ -75,6 +75,9 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 **What's new in the latest version 11**
 
+WARNING
+The date bookmarks system has been updated to be stored in database: earlier versions of the software will not be able to load them.
+
 - Add help menu.
 - Add window for all notices.
 - Add memos for bookmarks.
@@ -396,6 +399,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 11.0
 
+- Move date bookmarks in text file to a database table.
 - Add help menu, and Alt + H shortcut.
 - Add window for all notices, and Alt + N shortcut.
 - Add memos to date bookmarks that are now automatically sorted.
