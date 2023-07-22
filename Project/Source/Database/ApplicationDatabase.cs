@@ -37,14 +37,6 @@ partial class ApplicationDatabase : SQLiteDatabase
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
   public BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView { get; private set; }
 
-  //public List<DateBookmarkRow> DateBookmarksSorted
-  //  => DateBookmarks.OrderBy(bookmark => bookmark.Date).ToList();
-
-  //[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
-  //[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP012:Property should not return created disposable", Justification = "N/A")]
-  //public BindingListView<DateBookmarkRow> DateBookmarksSortedAsBindingListView
-  //  => new(DateBookmarksSorted);
-
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
   }
@@ -82,10 +74,10 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoLoadAll()
   {
     LunisolarDays = Connection.Table<LunisolarDayRow>().ToList();
-    ReLoadBookmarksAndCreateBindingList();
+    LoadBookmarksAndCreateBindingList();
   }
 
-  public void ReLoadBookmarksAndCreateBindingList()
+  public void LoadBookmarksAndCreateBindingList()
   {
     DateBookmarks = Connection.Table<DateBookmarkRow>().ToList();
     DateBookmarksAsBindingListView?.Dispose();
@@ -95,7 +87,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override bool CreateDataIfNotExist(bool reset = false)
   {
-    ImportFileBookmarksInTableIfNeeded();
+    ImportFileBookmarksIfNeeded();
     return false;
   }
 
@@ -109,12 +101,6 @@ partial class ApplicationDatabase : SQLiteDatabase
     string message = SysTranslations.NotImplemented.GetLang($"{nameof(ApplicationDatabase)}.{nameof(DoSaveAll)}");
     throw new NotSupportedException(message);
   }
-
-  //public void SaveDateBookmarks()
-  //{
-  //  CheckAccess(DateBookmarks, DateBookmarksTableName);
-  //  Connection.UpdateAll(DateBookmarks);
-  //}
 
   public void EmptyLunisolarDays()
   {

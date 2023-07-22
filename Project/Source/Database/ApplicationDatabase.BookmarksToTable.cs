@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ApplicationDatabase
 {
 
-  private void ImportFileBookmarksInTableIfNeeded()
+  private void ImportFileBookmarksIfNeeded()
   {
     if ( File.Exists(Program.DateBookmarksFilePath) && DateBookmarks.Count == 0 )
     {
@@ -31,7 +31,7 @@ partial class ApplicationDatabase
         Connection.Insert(bookmark);
         DateBookmarks.Add(bookmark);
       }
-      ReLoadBookmarksAndCreateBindingList();
+      LoadBookmarksAndCreateBindingList();
       if ( DisplayManager.QueryYesNo(AppTranslations.BookmarksFileToTableHasErrorsElseSuccess[hasErrors].GetLang()) )
         SystemManager.RunShell(Path.GetDirectoryName(Program.DateBookmarksFilePath));
       //

@@ -89,7 +89,7 @@ sealed partial class ManageBookmarksForm : Form
   {
     ActionSave.Enabled = false;
     ApplicationDatabase.Instance.Rollback();
-    ApplicationDatabase.Instance.ReLoadBookmarksAndCreateBindingList();
+    ApplicationDatabase.Instance.LoadBookmarksAndCreateBindingList();
   }
 
   private void Save()
