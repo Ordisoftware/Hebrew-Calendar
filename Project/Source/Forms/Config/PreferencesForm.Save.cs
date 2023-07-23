@@ -128,7 +128,6 @@ partial class PreferencesForm
     Settings.WeeklyParashahShowAtStartup = EditWeeklyParashahShowAtStartup.Checked;
     Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
     Settings.CustomWebSearch = EditCustomWebSearch.Text;
-    Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     Settings.UseTwoDaysForLastPessahDayOutside = EditUseTwoDaysForLastPessahDayOutside.Checked;
     Settings.BoxesRetakeFocusAfterDateClick = EditReminderBoxRetakeFocusAfterDateClick.Checked;
     Settings.CalendarHebrewDateSingleLine = EditCalendarHebrewDateSingleLine.Checked;

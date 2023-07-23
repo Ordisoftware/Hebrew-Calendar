@@ -194,7 +194,7 @@ partial class MainForm
       ActionResetReminder.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenNavigation )
       ActionNavigate.PerformClick();
-    if ( ApplicationCommandLine.Instance.OpenDiffDates )
+    if ( ApplicationCommandLine.Instance.OpenDatesDifference )
       ActionCalculateDateDiff.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenCelebrationVersesBoard )
       ActionShowCelebrationVersesBoard.PerformClick();
@@ -214,7 +214,7 @@ partial class MainForm
   /// <summary>
   /// Sets global HotKey combination.
   /// </summary>
-  public void SetGlobalHotKey(bool noactive = false)
+  public void SetGlobalHotKey(bool noActive = false)
   {
     var shortcutKey = DefaultHotKeyKey;
     var shortcutModifiers = DefaultHotKeyModifiers;
@@ -225,7 +225,7 @@ partial class MainForm
     Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKeyPressed;
     SystemManager.TryCatch(() =>
     {
-      if ( !noactive ) Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled;
+      if ( !noActive ) Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled;
     });
   }
 

@@ -73,17 +73,17 @@ static public class ExportHelper
   /// <summary>
   /// Fills a combo box with the specified list of targets.
   /// </summary>
-  /// <param name="combobox">The combobox.</param>
+  /// <param name="comboBox">The combo box.</param>
   /// <param name="list">The list.</param>
   /// <param name="valueDefault">The default value.</param>
-  static public void Fill<T>(this ComboBox combobox, NullSafeOfStringDictionary<T> list, T valueDefault)
+  static public void Fill<T>(this ComboBox comboBox, NullSafeOfStringDictionary<T> list, T valueDefault)
   where T : struct, Enum
   {
     foreach ( KeyValuePair<T, string> item in list )
     {
-      int index = combobox.Items.Add(item);
+      int index = comboBox.Items.Add(item);
       if ( item.Key.Equals(valueDefault) )
-        combobox.SelectedIndex = index;
+        comboBox.SelectedIndex = index;
     }
   }
 

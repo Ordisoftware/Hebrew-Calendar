@@ -24,7 +24,7 @@ static public partial class Globals
     = TraceFileRollOverMode.Session;
 
   static public Serilog.RollingInterval SinkFileRollingInterval { get; set; }
-    = IsVisualStudioDesigner ? 0 : Serilog.RollingInterval.Day;
+    = IsVisualStudioDesigner ? Serilog.RollingInterval.Infinite : Serilog.RollingInterval.Day;
 
   static public int SinkFileRetainedFileCountLimit { get; set; }
     = DaysOfWeekCount;

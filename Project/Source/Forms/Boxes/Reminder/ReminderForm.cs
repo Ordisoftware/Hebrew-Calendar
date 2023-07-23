@@ -42,7 +42,7 @@ sealed partial class ReminderForm : Form
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
-  static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
+  static public void Run(LunisolarDayRow row, TorahCelebrationDay celebration, ReminderTimes times)
   {
     bool isShabat = celebration == TorahCelebrationDay.Shabat;
     bool doLockSession;
@@ -292,9 +292,9 @@ sealed partial class ReminderForm : Form
 
   #region Context Menu Parashah
 
-  private (LunisolarDay Day, Parashah Parashah) GetDayAndParashah()
+  private (LunisolarDayRow Day, Parashah Parashah) GetDayAndParashah()
   {
-    var day = (LunisolarDay)LabelParashahValue.Tag;
+    var day = (LunisolarDayRow)LabelParashahValue.Tag;
     var parashah = ParashotFactory.Instance.Get(day.ParashahID);
     return (day, parashah);
   }
@@ -309,7 +309,7 @@ sealed partial class ReminderForm : Form
 
   private void DoStudy(string url)
   {
-    (LunisolarDay day, Parashah parashah) = GetDayAndParashah();
+    (LunisolarDayRow day, Parashah parashah) = GetDayAndParashah();
     HebrewTools.OpenParashahProvider(url, parashah, day.HasLinkedParashah);
   }
 

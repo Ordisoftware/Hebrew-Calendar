@@ -10,6 +10,7 @@ using Microsoft.Win32;
  * documentation for personal, non-commercial use is hereby granted provided that
  * this copyright notice appears in all copies.
  */
+#pragma warning disable VSSpell001 // Spell Check
 namespace System.Globalization
 {
   /// <summary>
@@ -933,3 +934,4 @@ namespace System.Globalization
     #endregion
   }
 }
+#pragma warning restore VSSpell001 // Spell Check

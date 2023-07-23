@@ -42,22 +42,25 @@ public partial class TextBoxEx
           control = ( form.ActiveControl as UserControl )?.ActiveControl as TextBoxEx;
       }
     }
-    if ( doFocus && control?.Enabled == true && !control.Focused )
-      control.Focus();
+    if ( control is not null )
+      if ( doFocus && control.Enabled && !control.Focused )
+        control.Focus();
     return control;
   }
 
   static private void ActionSelectAll_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     textbox.SelectAll();
   }
 
   static private void ActionCopy_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.SelectedText.IsNullOrEmpty() ) return;
     Clipboard.SetText(textbox.SelectedText);
   }
@@ -65,7 +68,8 @@ public partial class TextBoxEx
   static private void ActionCut_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     if ( textbox.SelectedText.IsNullOrEmpty() ) return;
     try
@@ -86,7 +90,8 @@ public partial class TextBoxEx
   static private void ActionDelete_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     if ( textbox.SelectedText.IsNullOrEmpty() ) return;
     try
@@ -107,7 +112,8 @@ public partial class TextBoxEx
   static private void ActionPaste_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     if ( Clipboard.GetText().IsNullOrEmpty() ) return;
     try
@@ -161,7 +167,8 @@ public partial class TextBoxEx
     //}
 
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     //if ( textbox.UndoStack.Count == 0 ) return;
     try

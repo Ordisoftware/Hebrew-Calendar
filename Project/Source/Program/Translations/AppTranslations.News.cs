@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -64,19 +64,29 @@ static partial class AppTranslations
     ["11.0"] = new TranslationsDictionary
     {
       [Language.EN] = """
+                      WARNING
+                      The date bookmarks system has been updated to be stored in database: earlier versions of the software will not be able to load them.
+
                       • Added memos to date bookmarks.
                       • Added option to automatically sort date bookmarks.
                       • Added manage bookmarks menu item in Tools and Ctrl + B shortcut. 
+                      • Added keyboard shortcuts Alt+Left/Right/Up/Down to navigate between years and months while keeping the lunar day.
                       • Added previous and next buttons to parashah description box.
                       • Added Accuweather.com provider.
+                      • Updated web links.
                       """,
 
       [Language.FR] = """
+                      AVERTISSEMENT
+                      Le système de signets de dates a été mis à jour pour être stockés dans la base de données : les versions antérieures du logiciel ne pourront pas les charger.
+
                       • Ajout des mémos aux signets de date.
                       • Ajout d'une option pour trier automatiquement les signets de date.
                       • Ajout d'un élément de menu pour la gestion des signets dans les outils et le raccourci Ctrl + B.
+                      • Ajout de raccourcis clavier Alt+Gauche/Droite/Haut/Bas pour naviguer entre les années et les mois tout en gardant le jour lunaire.
                       • Ajout de boutons précédent et suivant à la boîte de description de parashah.
                       • Ajout du fournisseur Accuweather.com.
+                      • Mise à jour des liens Web.
                       """,
     },
 

@@ -1,6 +1,6 @@
 ﻿namespace Ordisoftware.Hebrew.Calendar
 {
-  partial class DatesDiffCalculatorForm
+  partial class DatesDifferenceForm
   {
     /// <summary>
     /// Required designer variable.
@@ -30,7 +30,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.Windows.Forms.Label lunationsLabel;
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatesDiffCalculatorForm));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatesDifferenceForm));
       System.Windows.Forms.Label moonDaysLabel;
       System.Windows.Forms.Label solarDaysLabel;
       System.Windows.Forms.Label solarMonthsLabel;
@@ -40,12 +40,13 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.EditAutoSetRightToToday = new System.Windows.Forms.CheckBox();
       this.ActionHelp = new System.Windows.Forms.Button();
-      this.ActionOpecCalc = new System.Windows.Forms.Button();
+      this.ActionOpenCalc = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
       this.DateStart = new System.Windows.Forms.MonthCalendar();
       this.DateEnd = new System.Windows.Forms.MonthCalendar();
       this.lunationsLabel1 = new System.Windows.Forms.Label();
+      this.DatesDifferenceItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.moonDaysLabel1 = new System.Windows.Forms.Label();
       this.solarDaysLabel1 = new System.Windows.Forms.Label();
       this.solarMonthsLabel1 = new System.Windows.Forms.Label();
@@ -56,13 +57,12 @@
       this.label2 = new System.Windows.Forms.Label();
       this.DatePickerStart = new System.Windows.Forms.DateTimePicker();
       this.DatePickerEnd = new System.Windows.Forms.DateTimePicker();
-      this.ActionSetBookmarkStart = new System.Windows.Forms.Button();
+      this.ActionSaveBookmarkStart = new System.Windows.Forms.Button();
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionUseBookmarkStart = new System.Windows.Forms.Button();
-      this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
-      this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
+      this.ActionGoToBookmarkStart = new System.Windows.Forms.Button();
+      this.ActionGoToBookmarkEnd = new System.Windows.Forms.Button();
+      this.ActionSaveBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSwapDates = new System.Windows.Forms.Button();
-      this.DatesDiffItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
       solarDaysLabel = new System.Windows.Forms.Label();
@@ -71,9 +71,9 @@
       solarYearsLabel = new System.Windows.Forms.Label();
       moonYearsLabel = new System.Windows.Forms.Label();
       this.PanelBottom.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDifferenceItemBindingSource)).BeginInit();
       this.GroupBoxSun.SuspendLayout();
       this.groupBox1.SuspendLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DatesDiffItemBindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // lunationsLabel
@@ -115,7 +115,7 @@
       // 
       this.PanelBottom.Controls.Add(this.EditAutoSetRightToToday);
       this.PanelBottom.Controls.Add(this.ActionHelp);
-      this.PanelBottom.Controls.Add(this.ActionOpecCalc);
+      this.PanelBottom.Controls.Add(this.ActionOpenCalc);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionManageBookmarks);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
@@ -139,15 +139,15 @@
       this.ActionHelp.UseVisualStyleBackColor = true;
       this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
-      // ActionOpecCalc
+      // ActionOpenCalc
       // 
-      this.ActionOpecCalc.AllowDrop = true;
-      this.ActionOpecCalc.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionOpecCalc, "ActionOpecCalc");
-      this.ActionOpecCalc.Name = "ActionOpecCalc";
-      this.ActionOpecCalc.TabStop = false;
-      this.ActionOpecCalc.UseVisualStyleBackColor = true;
-      this.ActionOpecCalc.Click += new System.EventHandler(this.ActionOpecCalc_Click);
+      this.ActionOpenCalc.AllowDrop = true;
+      this.ActionOpenCalc.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOpenCalc, "ActionOpenCalc");
+      this.ActionOpenCalc.Name = "ActionOpenCalc";
+      this.ActionOpenCalc.TabStop = false;
+      this.ActionOpenCalc.UseVisualStyleBackColor = true;
+      this.ActionOpenCalc.Click += new System.EventHandler(this.ActionOpenCalc_Click);
       // 
       // ActionClose
       // 
@@ -181,37 +181,41 @@
       // 
       // lunationsLabel1
       // 
-      this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "LunarMonths", true));
+      this.lunationsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDifferenceItemBindingSource, "LunarMonths", true));
       resources.ApplyResources(this.lunationsLabel1, "lunationsLabel1");
       this.lunationsLabel1.Name = "lunationsLabel1";
       // 
+      // DatesDifferenceItemBindingSource
+      // 
+      this.DatesDifferenceItemBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DatesDifferenceItem);
+      // 
       // moonDaysLabel1
       // 
-      this.moonDaysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "MoonDays", true));
+      this.moonDaysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDifferenceItemBindingSource, "MoonDays", true));
       resources.ApplyResources(this.moonDaysLabel1, "moonDaysLabel1");
       this.moonDaysLabel1.Name = "moonDaysLabel1";
       // 
       // solarDaysLabel1
       // 
-      this.solarDaysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "SolarDays", true));
+      this.solarDaysLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDifferenceItemBindingSource, "SolarDays", true));
       resources.ApplyResources(this.solarDaysLabel1, "solarDaysLabel1");
       this.solarDaysLabel1.Name = "solarDaysLabel1";
       // 
       // solarMonthsLabel1
       // 
-      this.solarMonthsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "SolarMonths", true));
+      this.solarMonthsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDifferenceItemBindingSource, "SolarMonths", true));
       resources.ApplyResources(this.solarMonthsLabel1, "solarMonthsLabel1");
       this.solarMonthsLabel1.Name = "solarMonthsLabel1";
       // 
       // solarWeeksLabel1
       // 
-      this.solarWeeksLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "SolarWeeks", true));
+      this.solarWeeksLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDifferenceItemBindingSource, "SolarWeeks", true));
       resources.ApplyResources(this.solarWeeksLabel1, "solarWeeksLabel1");
       this.solarWeeksLabel1.Name = "solarWeeksLabel1";
       // 
       // solarYearsLabel1
       // 
-      this.solarYearsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "SolarYears", true));
+      this.solarYearsLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDifferenceItemBindingSource, "SolarYears", true));
       resources.ApplyResources(this.solarYearsLabel1, "solarYearsLabel1");
       this.solarYearsLabel1.Name = "solarYearsLabel1";
       // 
@@ -243,7 +247,7 @@
       // 
       // label2
       // 
-      this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDiffItemBindingSource, "MoonYears", true));
+      this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DatesDifferenceItemBindingSource, "MoonYears", true));
       resources.ApplyResources(this.label2, "label2");
       this.label2.Name = "label2";
       // 
@@ -261,16 +265,16 @@
       this.DatePickerEnd.ShowUpDown = true;
       this.DatePickerEnd.ValueChanged += new System.EventHandler(this.DatePickerEnd_ValueChanged);
       // 
-      // ActionSetBookmarkStart
+      // ActionSaveBookmarkStart
       // 
-      this.ActionSetBookmarkStart.AllowDrop = true;
-      this.ActionSetBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
-      this.ActionSetBookmarkStart.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSetBookmarkStart, "ActionSetBookmarkStart");
-      this.ActionSetBookmarkStart.Name = "ActionSetBookmarkStart";
-      this.ActionSetBookmarkStart.TabStop = false;
-      this.ActionSetBookmarkStart.UseVisualStyleBackColor = true;
-      this.ActionSetBookmarkStart.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
+      this.ActionSaveBookmarkStart.AllowDrop = true;
+      this.ActionSaveBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionSaveBookmarkStart.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSaveBookmarkStart, "ActionSaveBookmarkStart");
+      this.ActionSaveBookmarkStart.Name = "ActionSaveBookmarkStart";
+      this.ActionSaveBookmarkStart.TabStop = false;
+      this.ActionSaveBookmarkStart.UseVisualStyleBackColor = true;
+      this.ActionSaveBookmarkStart.Click += new System.EventHandler(this.ActionSaveBookmark_Click);
       // 
       // MenuBookmarks
       // 
@@ -278,38 +282,38 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
-      // ActionUseBookmarkStart
+      // ActionGoToBookmarkStart
       // 
-      this.ActionUseBookmarkStart.AllowDrop = true;
-      this.ActionUseBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
-      this.ActionUseBookmarkStart.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionUseBookmarkStart, "ActionUseBookmarkStart");
-      this.ActionUseBookmarkStart.Name = "ActionUseBookmarkStart";
-      this.ActionUseBookmarkStart.TabStop = false;
-      this.ActionUseBookmarkStart.UseVisualStyleBackColor = true;
-      this.ActionUseBookmarkStart.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
+      this.ActionGoToBookmarkStart.AllowDrop = true;
+      this.ActionGoToBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionGoToBookmarkStart.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionGoToBookmarkStart, "ActionGoToBookmarkStart");
+      this.ActionGoToBookmarkStart.Name = "ActionGoToBookmarkStart";
+      this.ActionGoToBookmarkStart.TabStop = false;
+      this.ActionGoToBookmarkStart.UseVisualStyleBackColor = true;
+      this.ActionGoToBookmarkStart.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
       // 
-      // ActionUseBookmarkEnd
+      // ActionGoToBookmarkEnd
       // 
-      this.ActionUseBookmarkEnd.AllowDrop = true;
-      this.ActionUseBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
-      this.ActionUseBookmarkEnd.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionUseBookmarkEnd, "ActionUseBookmarkEnd");
-      this.ActionUseBookmarkEnd.Name = "ActionUseBookmarkEnd";
-      this.ActionUseBookmarkEnd.TabStop = false;
-      this.ActionUseBookmarkEnd.UseVisualStyleBackColor = true;
-      this.ActionUseBookmarkEnd.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
+      this.ActionGoToBookmarkEnd.AllowDrop = true;
+      this.ActionGoToBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionGoToBookmarkEnd.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionGoToBookmarkEnd, "ActionGoToBookmarkEnd");
+      this.ActionGoToBookmarkEnd.Name = "ActionGoToBookmarkEnd";
+      this.ActionGoToBookmarkEnd.TabStop = false;
+      this.ActionGoToBookmarkEnd.UseVisualStyleBackColor = true;
+      this.ActionGoToBookmarkEnd.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
       // 
-      // ActionSetBookmarkEnd
+      // ActionSaveBookmarkEnd
       // 
-      this.ActionSetBookmarkEnd.AllowDrop = true;
-      this.ActionSetBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
-      this.ActionSetBookmarkEnd.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSetBookmarkEnd, "ActionSetBookmarkEnd");
-      this.ActionSetBookmarkEnd.Name = "ActionSetBookmarkEnd";
-      this.ActionSetBookmarkEnd.TabStop = false;
-      this.ActionSetBookmarkEnd.UseVisualStyleBackColor = true;
-      this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
+      this.ActionSaveBookmarkEnd.AllowDrop = true;
+      this.ActionSaveBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionSaveBookmarkEnd.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSaveBookmarkEnd, "ActionSaveBookmarkEnd");
+      this.ActionSaveBookmarkEnd.Name = "ActionSaveBookmarkEnd";
+      this.ActionSaveBookmarkEnd.TabStop = false;
+      this.ActionSaveBookmarkEnd.UseVisualStyleBackColor = true;
+      this.ActionSaveBookmarkEnd.Click += new System.EventHandler(this.ActionSaveBookmark_Click);
       // 
       // ActionSwapDates
       // 
@@ -321,20 +325,16 @@
       this.ActionSwapDates.UseVisualStyleBackColor = true;
       this.ActionSwapDates.Click += new System.EventHandler(this.ActionSwapDates_Click);
       // 
-      // DatesDiffItemBindingSource
-      // 
-      this.DatesDiffItemBindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DatesDiffItem);
-      // 
-      // DatesDiffCalculatorForm
+      // DatesDifferenceForm
       // 
       resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.ActionSwapDates);
-      this.Controls.Add(this.ActionSetBookmarkEnd);
-      this.Controls.Add(this.ActionUseBookmarkEnd);
-      this.Controls.Add(this.ActionSetBookmarkStart);
-      this.Controls.Add(this.ActionUseBookmarkStart);
+      this.Controls.Add(this.ActionSaveBookmarkEnd);
+      this.Controls.Add(this.ActionGoToBookmarkEnd);
+      this.Controls.Add(this.ActionSaveBookmarkStart);
+      this.Controls.Add(this.ActionGoToBookmarkStart);
       this.Controls.Add(this.DatePickerEnd);
       this.Controls.Add(this.DatePickerStart);
       this.Controls.Add(this.groupBox1);
@@ -345,16 +345,16 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Name = "DatesDiffCalculatorForm";
+      this.Name = "DatesDifferenceForm";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatesDiffCalculatorForm_FormClosing);
       this.Load += new System.EventHandler(this.DateDiffForm_Load);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.DatesDifferenceItemBindingSource)).EndInit();
       this.GroupBoxSun.ResumeLayout(false);
       this.GroupBoxSun.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
-      ( (System.ComponentModel.ISupportInitialize)( this.DatesDiffItemBindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -365,7 +365,7 @@
     private System.Windows.Forms.Button ActionClose;
     private System.Windows.Forms.MonthCalendar DateStart;
     private System.Windows.Forms.MonthCalendar DateEnd;
-    private System.Windows.Forms.BindingSource DatesDiffItemBindingSource;
+    private System.Windows.Forms.BindingSource DatesDifferenceItemBindingSource;
     private System.Windows.Forms.Label lunationsLabel1;
     private System.Windows.Forms.Label moonDaysLabel1;
     private System.Windows.Forms.Label solarDaysLabel1;
@@ -377,15 +377,15 @@
     private System.Windows.Forms.DateTimePicker DatePickerStart;
     private System.Windows.Forms.DateTimePicker DatePickerEnd;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.Button ActionSetBookmarkStart;
-    private System.Windows.Forms.Button ActionUseBookmarkStart;
-    private System.Windows.Forms.Button ActionUseBookmarkEnd;
-    private System.Windows.Forms.Button ActionSetBookmarkEnd;
+    private System.Windows.Forms.Button ActionSaveBookmarkStart;
+    private System.Windows.Forms.Button ActionGoToBookmarkStart;
+    private System.Windows.Forms.Button ActionGoToBookmarkEnd;
+    private System.Windows.Forms.Button ActionSaveBookmarkEnd;
     private System.Windows.Forms.ContextMenuStrip MenuBookmarks;
     private System.Windows.Forms.Button ActionHelp;
     private System.Windows.Forms.Button ActionSwapDates;
     private System.Windows.Forms.Button ActionManageBookmarks;
     private System.Windows.Forms.CheckBox EditAutoSetRightToToday;
-    private Button ActionOpecCalc;
+    private Button ActionOpenCalc;
   }
 }

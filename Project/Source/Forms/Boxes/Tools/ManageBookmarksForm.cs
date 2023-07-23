@@ -11,33 +11,36 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
+
+using Equin.ApplicationFramework;
 
 sealed partial class ManageBookmarksForm : Form
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static public bool Run()
+  static private ApplicationDatabase DBApp => ApplicationDatabase.Instance;
+
+  static public void Run()
   {
     bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
     MainForm.Instance.MenuTray.Enabled = false;
     try
     {
       using var form = new ManageBookmarksForm();
-      return form.ShowDialog() == DialogResult.OK;
+      form.ShowDialog();
     }
     finally
     {
       MainForm.Instance.MenuTray.Enabled = trayEnabled;
-      Program.DateBookmarks.ApplyAutoSort();
     }
   }
 
-  private bool AllowClose;
-  private bool Ready;
   private bool Modified;
+
+  private string OriginalMemoBeforeEdit;
 
   private ManageBookmarksForm()
   {
@@ -51,127 +54,197 @@ sealed partial class ManageBookmarksForm : Form
 
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
   {
-    this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
-    if ( Settings.DateBookmarksCount == 0 ) return;
-    var items = Program.DateBookmarks.Items.Where(item => item is not null).Select(item => new DateBookmarkItem(item));
-    ListBox.Items.Clear();
-    ListBox.Items.AddRange(items.ToArray());
-    ListBox.SelectedIndex = 0;
-    ActiveControl = ListBox;
-    AllowClose = true;
-    Ready = true;
+    this.CheckLocationOrCenterToMainFormElseScreen();
+    BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
+    if ( EditBookmarks.Rows.Count > 0 ) EditBookmarks.Rows[0].Selected = true;
+    ActiveControl = EditBookmarks;
+    UpdateDataControls();
   }
 
   private void ManageBookmarksForm_FormClosing(object sender, FormClosingEventArgs e)
   {
-    if ( !AllowClose ) e.Cancel = true;
-  }
-
-  private void ActionOK_Click(object sender, EventArgs e)
-  {
-    AllowClose = true;
-    var items = ListBox.Items.AsIEnumerable<DateBookmarkItem>().Select(item => new DateBookmarkItem(item));
-    Program.DateBookmarks.Items.Clear();
-    Program.DateBookmarks.Items.AddRange(items);
-    Program.DateBookmarks.ApplyAutoSort();
-    SystemManager.TryCatch(Settings.Save);
-    Close();
-  }
-
-  private void ActionCancel_Click(object sender, EventArgs e)
-  {
-    AllowClose = true;
-    Close();
-  }
-
-  private void EditAutoSort_CheckedChanged(object sender, EventArgs e)
-  {
-    if ( !Ready ) return;
-    if ( EditAutoSort.Checked ) ActionSort.PerformClick();
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
-  {
-    ActionSort.Enabled = !EditAutoSort.Checked && ListBox.Items.Count > 0;
-    ActionUp.Enabled = !EditAutoSort.Checked && ListBox.SelectedIndex != 0;
-    ActionDown.Enabled = !EditAutoSort.Checked && ListBox.SelectedIndex != ListBox.Items.Count - 1;
-    ActionDelete.Enabled = ListBox.SelectedIndex >= 0;
-    ActionClear.Enabled = ListBox.Items.Count > 0;
-    ActionOK.Enabled = Modified;
-    AllowClose = !Modified;
-    ListBox.Focus();
-  }
-
-  private void ListBox_MouseDoubleClick(object sender, MouseEventArgs e)
-  {
-    var bookmark = ( (DateBookmarkItem)ListBox.SelectedItem );
-    string memo = bookmark.Memo;
-    if ( DisplayManager.QueryValue(SysTranslations.Memo.GetLang(),
-                                   bookmark.Date.ToLongDateString(),
-                                   ref memo) != InputValueResult.Modified ) return;
-    int index = ListBox.SelectedIndex;
-    ListBox.Items[index] = new DateBookmarkItem(bookmark.Date, memo);
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
+    if ( Globals.IsExiting ) return;
+    if ( Globals.IsSessionEnding ) return;
+    if ( !ActionClose.Enabled ) e.Cancel = true;
   }
 
   private void ActionExport_Click(object sender, EventArgs e)
   {
     DoActionExport();
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
+    UpdateDataControls();
   }
 
   private void ActionImport_Click(object sender, EventArgs e)
   {
     DoActionImport();
     Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
+    UpdateDataControls();
+  }
+
+  private void UpdateDataControls(bool forceEditMode = false)
+  {
+    try
+    {
+      forceEditMode = forceEditMode || EditBookmarks.IsCurrentCellInEditMode;
+      ActionDelete.Enabled = !forceEditMode && EditBookmarks.Rows.Count > 0;
+      ActionClear.Enabled = ActionDelete.Enabled;
+      ActionAdd.Enabled = ActionDelete.Enabled;
+      ActionSave.Enabled = Modified;
+      ActionUndo.Enabled = Modified;
+      ActionClose.Enabled = !ActionSave.Enabled && !forceEditMode;
+      ActionImport.Enabled = ActionClose.Enabled;
+      ActionExport.Enabled = ActionClose.Enabled;
+      Globals.AllowClose = ActionClose.Enabled;
+    }
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+  }
+
+  private void ActionSave_Click(object sender, EventArgs e)
+  {
+    DBApp.SaveBookmarks();
+    Modified = false;
+    UpdateDataControls();
+    EditBookmarks.Focus();
+    ApplicationStatistics.UpdateDBFileSizeRequired = true;
+    ApplicationStatistics.UpdateDBMemorySizeRequired = true;
+  }
+
+  private void ActionUndo_Click(object sender, EventArgs e)
+  {
+    DBApp.LoadBookmarks();
+    BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
+    Modified = false;
+    UpdateDataControls();
+    EditBookmarks.Focus();
+  }
+
+  private void ActionAdd_Click(object sender, EventArgs e)
+  {
+    var date = DateTime.Today;
+    if ( !SelectDayForm.Run(null, ref date) ) return;
+    var row = DBApp.DateBookmarks.Find(item => item.Date == date);
+    if ( row is not null )
+    {
+      BindingSource.Position = BindingSource.Find("ID", row.ID);
+      return;
+    }
+    var list = (BindingListView<DateBookmarkRow>)BindingSource.DataSource;
+    var bookmark = DateBookmarkRow.CreateFromUserInput(date, true, list);
+    BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
+    BindingSource.Position = BindingSource.Find("ID", bookmark.ID);
+    Modified = true;
+    UpdateDataControls();
+  }
+
+  private void ActionDelete_Click(object sender, EventArgs e)
+  {
+    if ( BindingSource.Count < 1 ) return;
+    var bookmark = ( (ObjectView<DateBookmarkRow>)BindingSource.Current ).Object;
+    DBApp.BeginTransaction();
+    DBApp.Connection.Delete(bookmark);
+    DBApp.DateBookmarks.Remove(bookmark);
+    BindingSource.RemoveCurrent();
+    int count = BindingSource.Count;
+    if ( count > 1 )
+    {
+      int index = BindingSource.Position;
+      if ( index >= count )
+      {
+        BindingSource.MoveFirst();
+        BindingSource.MoveLast();
+      }
+      else
+        BindingSource.Position = index;
+    }
+    Modified = true;
+    UpdateDataControls();
   }
 
   private void ActionClear_Click(object sender, EventArgs e)
   {
     if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) ) return;
-    ListBox.Items.Clear();
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  private void ActionDelete_Click(object sender, EventArgs e)
-  {
-    ListBox.Items.RemoveAt(ListBox.SelectedIndex);
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  private void ActionUp_Click(object sender, EventArgs e)
-  {
-    ListBox.MoveSelectedItem(-1);
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  private void ActionDown_Click(object sender, EventArgs e)
-  {
-    ListBox.MoveSelectedItem(1);
-    Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
-  }
-
-  // https://stackoverflow.com/questions/3012647/custom-listbox-sorting#3013558
-  private void ActionSort_Click(object sender, EventArgs e)
-  {
-    ListBox.Sort((itemFirst, itemLast) =>
+    DBApp.BeginTransaction();
+    DBApp.Connection.DeleteAll<DateBookmarkRow>();
+    int count = BindingSource.Count;
+    for ( int index = 0; index < count; index++ )
     {
-      var first = ( (DateBookmarkItem)itemFirst );
-      var last = ( (DateBookmarkItem)itemLast );
-      if ( first is null ) return 1;
-      if ( last is null ) return -1;
-      return first.Date.CompareTo(last.Date);
-    });
+      BindingSource.RemoveAt(0);
+      DBApp.DateBookmarks.RemoveAt(0);
+    }
     Modified = true;
-    ListBox_SelectedIndexChanged(null, null);
+    UpdateDataControls();
+  }
+
+  private void EditBookmarks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( EditBookmarks.IsCurrentCellInEditMode ) return;
+    EditBookmarks.BeginEdit(false);
+  }
+
+  private void EditBookmarks_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+  {
+    if ( !Globals.IsReady ) return;
+    var cell = EditBookmarks[e.ColumnIndex, e.RowIndex];
+    OriginalMemoBeforeEdit = (string)cell.Value;
+    UpdateDataControls(true);
+  }
+
+  private void EditBookmarks_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( !Globals.IsReady ) return;
+    var cell = EditBookmarks[e.ColumnIndex, e.RowIndex];
+    var str = (string)cell.Value;
+    if ( str.StartsWith(" ", StringComparison.Ordinal) || str.EndsWith(" ", StringComparison.Ordinal) )
+      cell.Value = str.Trim();
+    Modified = Modified || OriginalMemoBeforeEdit != str;
+    UpdateDataControls();
+  }
+
+  private void EditBookmarks_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+  {
+    if ( !Globals.IsReady ) return;
+    if ( e.FormattedValue == DBNull.Value )
+      e.Cancel = true;
+    else
+      UpdateDataControls();
+  }
+
+  private void EditBookmarks_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( !Globals.IsReady ) return;
+    if ( Globals.IsReadOnly ) return;
+    if ( e.ColumnIndex == -1 || e.RowIndex == -1 ) return;
+    UpdateDataControls();
+  }
+
+  private void EditBookmarks_KeyDown(object sender, KeyEventArgs e)
+  {
+    if ( ( e.Control && e.KeyCode == Keys.Delete ) || ( e.Control && e.KeyCode == Keys.Subtract ) )
+      ActionDelete.PerformClick();
+    else
+    if ( e.KeyCode == Keys.Enter && !EditBookmarks.IsCurrentCellInEditMode )
+      EditBookmarks.BeginEdit(false);
+    else
+      return;
+    e.Handled = true;
+    e.SuppressKeyPress = true;
+  }
+
+  private void EditBookmarks_DataError(object sender, DataGridViewDataErrorEventArgs e)
+  {
+    if ( !Globals.IsReady ) return;
+    if ( e.Exception is ArgumentOutOfRangeException || e.Exception is IndexOutOfRangeException )
+    {
+      DisplayManager.ShowError($"DB Index error.{Globals.NL2}{SysTranslations.ApplicationMustExit.GetLang()}");
+      e.Exception.Manage();
+      DBApp.Connection.Rollback();
+      Application.Exit();
+    }
+    else
+      e.Exception.Manage();
   }
 
 }

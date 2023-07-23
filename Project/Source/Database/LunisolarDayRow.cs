@@ -18,7 +18,7 @@ using SQLite;
 
 [Serializable]
 [Table("LunisolarDays")]
-public partial class LunisolarDay
+public partial class LunisolarDayRow
 {
 
   static private readonly Properties.Settings Settings = Program.Settings;
@@ -36,7 +36,8 @@ public partial class LunisolarDay
   public string SunsetAsString { get; set; }
   public string MoonriseAsString { get; set; }
   public string MoonsetAsString { get; set; }
-  public MoonriseOccurring MoonriseOccuring { get; set; }
+  [Column("MoonriseOccuring")]
+  public MoonriseOccurring MoonriseOccurring { get; set; }
   public bool IsNewMoon { get; set; }
   public bool IsFullMoon { get; set; }
   public MoonPhase MoonPhase { get; set; }
@@ -49,7 +50,7 @@ public partial class LunisolarDay
   public bool HasLinkedParashah
     => !LinkedParashahID.IsNullOrEmpty();
 
-  public List<LunisolarDay> Table
+  public List<LunisolarDayRow> Table
     => ApplicationDatabase.Instance.LunisolarDays;
 
   public bool IsNewYear

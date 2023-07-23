@@ -27,13 +27,13 @@ public class SQLiteNetORM : SQLiteConnection
   /// Indicates the database engine name and version.
   /// </summary>
   static public string EngineNameAndVersion { get; private set; }
-    = SysTranslations.NonthingSlot.GetLang().TrimFirstLast().Titleize();
+    = SysTranslations.NothingSlot.GetLang().TrimFirstLast().Titleize();
 
   /// <summary>
   /// Indicates the provider name.
   /// </summary>
   static public string ProviderName { get; private set; }
-    = SysTranslations.NonthingSlot.GetLang().TrimFirstLast().Titleize();
+    = SysTranslations.NothingSlot.GetLang().TrimFirstLast().Titleize();
 
   static public int DefaultOptimizeDaysInterval { get; set; } = Globals.DaysOfWeekCount;
 
@@ -46,7 +46,7 @@ public class SQLiteNetORM : SQLiteConnection
   /// <summary>
   /// Gets a single line of a string.
   /// </summary>
-  public string UnformatSQL(string sql)
+  public string UnFormatSQL(string sql)
   {
     return sql.SplitNoEmptyLines().Select(line => line.Trim()).AsMultiSpace();
   }
@@ -55,7 +55,7 @@ public class SQLiteNetORM : SQLiteConnection
   /// Returns true if only one instance of the process is running else false.
   /// </summary>
   /// <param name="silent">True if no message is shown else shown.</param>
-  public bool CheckProcessConcurency(bool silent = false)
+  public bool CheckProcessConcurrency(bool silent = false)
   {
     var list = Process.GetProcessesByName(Globals.ProcessName);
     bool valid = list.Length == 1;
@@ -98,20 +98,20 @@ public class SQLiteNetORM : SQLiteConnection
   /// <summary>
   /// Optimizes the database.
   /// </summary>
-  /// <param name="lastdone">The last done date.</param>
+  /// <param name="lastDone">The last done date.</param>
   /// <param name="interval">Days interval to check.</param>
   /// <param name="force">True to force check.</param>
-  /// <returns>The new date if done else lastdone.</returns>
-  public DateTime Optimize(DateTime lastdone, int interval = -1, bool force = false)
+  /// <returns>The new date if done else lastDone.</returns>
+  public DateTime Optimize(DateTime lastDone, int interval = -1, bool force = false)
   {
     if ( interval == -1 ) interval = DefaultOptimizeDaysInterval;
-    if ( force || lastdone.AddDays(interval) < DateTime.Now )
+    if ( force || lastDone.AddDays(interval) < DateTime.Now )
     {
       CheckIntegrity();
       Vacuum();
-      lastdone = DateTime.Now;
+      lastDone = DateTime.Now;
     }
-    return lastdone;
+    return lastDone;
   }
 
   /// <summary>
@@ -221,7 +221,7 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(table, UnformatSQL(sql)), ex);
+          throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(table, UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )
@@ -251,7 +251,7 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateIndexError.GetLang(index, UnformatSQL(sql)), ex);
+          throw new SQLiteException(SysTranslations.DBCreateIndexError.GetLang(index, UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )
@@ -287,7 +287,7 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnformatSQL(sql)), ex);
+          throw new SQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )

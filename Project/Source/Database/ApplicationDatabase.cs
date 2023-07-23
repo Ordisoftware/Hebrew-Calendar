@@ -11,11 +11,16 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
+
+using Equin.ApplicationFramework;
 
 partial class ApplicationDatabase : SQLiteDatabase
 {
+
+  static public readonly string LunisolarDaysTableName = nameof(LunisolarDays);
+  static public readonly string DateBookmarksTableName = nameof(DateBookmarks);
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
@@ -26,7 +31,12 @@ partial class ApplicationDatabase : SQLiteDatabase
     Instance = new ApplicationDatabase();
   }
 
-  public List<LunisolarDay> LunisolarDays { get; private set; }
+  public List<LunisolarDayRow> LunisolarDays { get; private set; }
+  public List<DateBookmarkRow> DateBookmarks { get; private set; }
+
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
+  public BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView
+    => new(DateBookmarks.OrderBy(row => row.Date).ToList());
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
@@ -48,22 +58,52 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoClose()
   {
     if ( LunisolarDays is null ) return;
-    if ( ClearListsOnCloseOrRelease ) LunisolarDays.Clear();
+    if ( ClearListsOnCloseOrRelease )
+    {
+      LunisolarDays.Clear();
+      DateBookmarks.Clear();
+    }
     LunisolarDays = null;
   }
 
   protected override void CreateTables()
   {
-    Connection.CreateTable<LunisolarDay>();
+    Connection.CreateTable<LunisolarDayRow>();
+    Connection.CreateTable<DateBookmarkRow>();
   }
 
   protected override void DoLoadAll()
   {
-    LunisolarDays = Connection.Table<LunisolarDay>().ToList();
+    LunisolarDays = Connection.Table<LunisolarDayRow>().ToList();
+    LoadBookmarks();
+  }
+
+  public void LoadBookmarks()
+  {
+    Rollback();
+    DateBookmarks = Connection.Table<DateBookmarkRow>().ToList();
+  }
+
+  public void SaveBookmarks()
+  {
+    CheckConnected();
+    if ( !Connection.IsInTransaction ) return;
+    try
+    {
+      Connection.Commit();
+    }
+    catch
+    {
+      Rollback();
+      throw;
+    }
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)
-    => false;
+  {
+    ImportFileBookmarksIfNeeded();
+    return false;
+  }
 
   protected override void CreateBindingLists()
   {
@@ -76,11 +116,11 @@ partial class ApplicationDatabase : SQLiteDatabase
     throw new NotSupportedException(message);
   }
 
-  public void DeleteAll()
+  public void EmptyLunisolarDays()
   {
     CheckConnected();
     CheckAccess(LunisolarDays, nameof(LunisolarDays));
-    Connection.DeleteAll<LunisolarDay>();
+    Connection.DeleteAll<LunisolarDayRow>();
     LunisolarDays.Clear();
   }
 
@@ -89,12 +129,12 @@ partial class ApplicationDatabase : SQLiteDatabase
     base.UpgradeSchema();
     if ( Connection.CheckTable(nameof(LunisolarDays)) )
     {
-      if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDay.TorahEvent)) )
+      if ( !Connection.CheckColumn(nameof(LunisolarDays), nameof(LunisolarDayRow.TorahEvent)) )
         Connection.DropTableIfExists(nameof(LunisolarDays));
     }
   }
 
-  public LunisolarDay GetCurrentOrNextCelebration(DateTime date)
+  public LunisolarDayRow GetCurrentOrNextCelebration(DateTime date)
     => LunisolarDays.Find(day => day.Date >= date && TorahCelebrationSettings.MajorEvents.Contains(day.TorahEvent));
 
 }

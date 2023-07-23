@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -73,9 +73,9 @@ static partial class Program
   public const int LoadingFormGenerate = 5000;
 
   /// <summary>
-  /// Indicates minimum items for calc dates diff to show the loading form.
+  /// Indicates minimum items for calc dates difference to show the loading form.
   /// </summary>
-  public const int LoadingFormDatesDiff = 15 * 365;
+  public const int LoadingFormDatesDifference = 15 * 365;
 
   /// <summary>
   /// Indicates minimum torah years interval that can be generated.
@@ -127,14 +127,11 @@ static partial class Program
   /// <summary>
   /// Indicates file path of date bookmarks.
   /// </summary>
+  /// <remarks>
+  /// Obsolete : replaced by a db table.
+  /// </remarks>
   static public string DateBookmarksFilePath
     => Path.Combine(Globals.UserDataFolderPath, "DateBookmarks.txt");
-
-  /// <summary>
-  /// Indicates date bookmarks.
-  /// </summary>
-  static public readonly DateBookmarks DateBookmarks
-    = new(DateBookmarksFilePath);
 
   /// <summary>
   /// Indicates world cities documents folder.

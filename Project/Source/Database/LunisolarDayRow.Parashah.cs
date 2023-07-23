@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class LunisolarDay
+public partial class LunisolarDayRow
 {
 
   static private readonly int SearchParashahInterval = Globals.DaysOfWeekCount * 2;
@@ -28,9 +28,9 @@ partial class LunisolarDay
       : SysTranslations.UndefinedSlot.GetLang();
   }
 
-  public LunisolarDay GetParashahReadingDay()
+  public LunisolarDayRow GetParashahReadingDay()
   {
-    LunisolarDay result = null;
+    LunisolarDayRow result = null;
     var shabatDay = (DayOfWeek)Settings.ShabatDay;
     int indexStart = Table.IndexOf(this);
     int indexEnd = Math.Min(indexStart + SearchParashahInterval, Table.Count);

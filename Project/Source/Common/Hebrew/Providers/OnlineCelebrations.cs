@@ -14,6 +14,7 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew;
 
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class OnlineCelebration
 {
 

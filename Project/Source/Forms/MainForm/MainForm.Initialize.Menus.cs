@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -63,6 +63,7 @@ partial class MainForm
     ActionOnlineWeather.Tag = isVisible;
     SeparatorMenuWeather.Tag = isVisible;
     ActionTools.DuplicateTo(MenuTools);
+    ActionHelp.DuplicateTo(MenuHelp);
     ActionInformation.DuplicateTo(MenuInformation);
     if ( !Settings.AllowSuspendReminder && ActionEnableReminder.Enabled )
       ActionEnableReminder.PerformClick();
@@ -78,7 +79,7 @@ partial class MainForm
     // Weekly parashah study
     ActionWeeklyParashahStudyOnline.Initialize(HebrewGlobals.WebProvidersParashah, (sender, _) =>
     {
-      var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+      var weekParashah = DBApp.GetWeeklyParashah();
       if ( weekParashah.Factory is null ) return;
       HebrewTools.OpenParashahProvider((string)( (ToolStripMenuItem)sender ).Tag,
                                        weekParashah.Factory,
@@ -103,7 +104,7 @@ partial class MainForm
 
   private void DoReadParashahWeekly(string url)
   {
-    var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+    var weekParashah = DBApp.GetWeeklyParashah();
     if ( weekParashah.Factory is not null )
       HebrewTools.OpenBibleProvider(url, weekParashah.Factory.FullReferenceBegin);
   }

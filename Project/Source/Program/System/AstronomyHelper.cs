@@ -26,13 +26,12 @@ static class AstronomyHelper
   /// <summary>
   /// Indicates the system lunisolar calendar instance.
   /// </summary>
-  static public readonly VietnameseCalendar LunisolerCalendar = new();
+  static public readonly VietnameseCalendar LunisolarCalendar = new();
 
   /// <summary>
   /// Indicates the SunMoon instance.
   /// </summary>
   static public readonly SunMoon SunMoon = new();
-
 
   /// <summary>
   /// Gets the moon phase type.

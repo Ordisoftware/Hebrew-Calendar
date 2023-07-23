@@ -16,7 +16,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 
 [Serializable]
 [SuppressMessage("Critical Code Smell", "S3871:Exception types should be \"public\"", Justification = "Analysis error")]
-file class TooManyErrorsException : Exception
+sealed file class TooManyErrorsException : Exception
 {
   public TooManyErrorsException()
   {
@@ -27,7 +27,7 @@ file class TooManyErrorsException : Exception
   public TooManyErrorsException(string message, Exception innerException) : base(message, innerException)
   {
   }
-  protected TooManyErrorsException(SerializationInfo info, StreamingContext context) : base(info, context)
+  private TooManyErrorsException(SerializationInfo info, StreamingContext context) : base(info, context)
   {
   }
 }
@@ -93,7 +93,7 @@ partial class ApplicationDatabase
             try
             {
               LoadingForm.Instance.DoProgress();
-              var row = new LunisolarDay { Date = new DateTime(year, month, day) };
+              var row = new LunisolarDayRow { Date = new DateTime(year, month, day) };
               if ( !InitializeDay(row) ) break;
               LunisolarDays.Add(row);
             }
@@ -120,7 +120,7 @@ partial class ApplicationDatabase
   /// <summary>
   /// Initializes a day.
   /// </summary>
-  private bool InitializeDay(LunisolarDay day)
+  private bool InitializeDay(LunisolarDayRow day)
   {
     try
     {
@@ -162,7 +162,7 @@ partial class ApplicationDatabase
         moonrisetype = MoonriseOccurring.BeforeSet;
       else
         moonrisetype = MoonriseOccurring.AfterSet;
-      day.MoonriseOccuring = moonrisetype;
+      day.MoonriseOccurring = moonrisetype;
       day.SeasonChange = data.RealSeasonChange;
       day.TorahEvent = TorahCelebrationDay.None;
       day.TorahEventText = string.Empty;

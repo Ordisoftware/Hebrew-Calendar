@@ -216,7 +216,7 @@ static public partial class SysTranslations
     [Language.FR] = "Valeur incorrecte"
   };
 
-  static public readonly TranslationsDictionary NonthingSlot = new()
+  static public readonly TranslationsDictionary NothingSlot = new()
   {
     [Language.EN] = "(nothing)",
     [Language.FR] = "(aucun)"

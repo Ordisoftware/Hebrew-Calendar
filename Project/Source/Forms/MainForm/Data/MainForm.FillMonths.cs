@@ -143,7 +143,7 @@ partial class MainForm
       bool isCelebrationWeekStart = false;
       bool isOmerSun = !Settings.TorahEventsCountAsMoon;
       bool useUnicode = Settings.HebrewNamesInUnicode;
-      var shabatday = (DayOfWeek)Settings.ShabatDay;
+      var shabatDay = (DayOfWeek)Settings.ShabatDay;
       Parashah parashah = null;
       DayBrushes = new Brush[YearsInterval, 13, 35];
       var fontEventHebrew = new Font(Settings.MonthViewFontNameHebrew, Settings.MonthViewHebrewFontSize);
@@ -182,7 +182,7 @@ partial class MainForm
           else
           if ( isCelebrationWeekStart || eventTorah != TorahCelebrationDay.None )
             color2 = colorEventTorah;
-          if ( row.Date.DayOfWeek == shabatday )
+          if ( row.Date.DayOfWeek == shabatDay )
             color3 = colorEventShabat;
           if ( color1 is not null && color2 is not null && color3 is not null )
             color1 = MixColor(color1.Value, color2.Value, color3.Value);
@@ -212,13 +212,13 @@ partial class MainForm
           // Initialize dispatch table
           int rank = 0;
           string strDate = string.Empty;
-          bool hasPreviousSeperator = false;
-          Action addsun = bothTimes ? addSunWithMoon : showSun ? addSunAlone : null;
-          Action addmoon = bothTimes ? addMoonWithSun : showMoon ? addMoonAlone : null;
+          bool hasPreviousSeparator = false;
+          Action addSun = bothTimes ? addSunWithMoon : showSun ? addSunAlone : null;
+          Action addMoon = bothTimes ? addMoonWithSun : showMoon ? addMoonAlone : null;
           addSectionsMethods.Clear();
           addSectionsMethods.Add(Settings.MonthViewLayoutLunarDatePosition, addLunarDateSingleLine);
-          addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisSunPosition, addsun);
-          addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisMoonPosition, addmoon);
+          addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisSunPosition, addSun);
+          addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisMoonPosition, addMoon);
           addSectionsMethods.Add(Settings.MonthViewLayoutSeasonChangePosition, addSeason);
           addSectionsMethods.Add(Settings.MonthViewLayoutCelebrationPosition, addCelebration);
           addSectionsMethods.Add(Settings.MonthViewLayoutParashahNamePosition, addParashahName);
@@ -268,16 +268,16 @@ partial class MainForm
             if ( aloneOneLine )
               addMoonWithSun();
             else
-            if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+            if ( row.MoonriseOccurring == MoonriseOccurring.AfterSet )
             {
               if ( row.Moonset is not null )
                 addLine(colorText, strSet + row.MoonsetAsString, CalendarSection.Ephemeris);
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 addLine(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}", CalendarSection.Ephemeris);
             }
             else
             {
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 addLine(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}", CalendarSection.Ephemeris);
               if ( row.Moonset is not null )
                 addLine(colorText, strSet + row.MoonsetAsString, CalendarSection.Ephemeris);
@@ -306,7 +306,7 @@ partial class MainForm
             string set = $"{strSet}{row.MoonsetAsString}";
             string rise = $"{strRise}{row.MoonriseAsString}";
             string str = string.Empty;
-            if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+            if ( row.MoonriseOccurring == MoonriseOccurring.AfterSet )
               setMoonWithSun_RiseAfterSet();
             else
               setMoonWithSun_RiseBeforeSet();
@@ -322,7 +322,7 @@ partial class MainForm
             {
               if ( row.Moonset is not null )
                 str = $"{set}";
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
               {
                 if ( str.Length != 0 ) str += " - ";
                 str += $"{rise}{strDate}";
@@ -331,7 +331,7 @@ partial class MainForm
             //
             void setMoonWithSun_RiseBeforeSet()
             {
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 str = $"{rise}";
               if ( row.Moonset is not null )
               {
@@ -346,7 +346,7 @@ partial class MainForm
           void addSeason()
           {
             if ( !showSeason ) return;
-            if ( row.SeasonChange != 0 )
+            if ( row.SeasonChange != SeasonChange.None )
             {
               string str = AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange);
               addLine(colorSeason, str, CalendarSection.Ephemeris);
@@ -409,12 +409,12 @@ partial class MainForm
           {
             if ( section == CalendarSection.Separator )
             {
-              if ( hasPreviousSeperator ) return;
-              hasPreviousSeperator = true;
+              if ( hasPreviousSeparator ) return;
+              hasPreviousSeparator = true;
             }
             else
             {
-              hasPreviousSeperator = false;
+              hasPreviousSeparator = false;
             }
             var item = new CustomEvent
             {
@@ -442,10 +442,10 @@ partial class MainForm
         }
         catch ( Exception ex )
         {
-          if ( ApplicationDatabase.Instance.AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
+          if ( DBApp.AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
           {
-            if ( !Globals.IsGenerating && ApplicationDatabase.Instance.LastGenerationErrors.Count != 0 )
-              ApplicationDatabase.Instance.ShowLastGenerationErrors(Text);
+            if ( !Globals.IsGenerating && DBApp.LastGenerationErrors.Count != 0 )
+              DBApp.ShowLastGenerationErrors(Text);
             return;
           }
         }
@@ -464,4 +464,3 @@ partial class MainForm
   }
 
 }
-

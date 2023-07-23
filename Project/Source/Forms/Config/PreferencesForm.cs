@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -137,22 +137,22 @@ sealed partial class PreferencesForm : Form
 
   private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+    AppTranslations.ShowCelebrationsNotice();
   }
 
   private void ActionParashahHelp_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionShowParashahNotice_Click(null, null);
+    AppTranslations.ShowParashahNotice();
   }
 
   private void ActionAstronomyInfo_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionShowMonthsAndDaysNotice_Click(null, null);
+    AppTranslations.ShowMonthsAndDaysNotice();
   }
 
   private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+    AppTranslations.ShowShabatNotice();
   }
 
   private void ActionHotKeyInfo_Click(object sender, EventArgs e)
@@ -239,24 +239,6 @@ sealed partial class PreferencesForm : Form
   private void EditWindowsDoubleBufferingEnabled_CheckedChanged(object sender, EventArgs e)
   {
     DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
-  }
-
-  private void ActionManageBookmarks_Click(object sender, EventArgs e)
-  {
-    if ( !ManageBookmarksForm.Run() ) return;
-    int countBookmarks = Math.Max(Program.DateBookmarks.MinListSize, DateBookmarksCountInterval.Item1);
-    if ( countBookmarks == 0 ) countBookmarks = DateBookmarksCountInterval.Item1;
-    DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
-    EditDateBookmarksCount.Minimum = countBookmarks;
-    EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
-    SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
-  }
-
-  private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
-  {
-    if ( !IsReady ) return;
-    Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
-    DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
   }
 
   private void EditVolume_ValueChanged(object sender, EventArgs e)
@@ -357,7 +339,7 @@ sealed partial class PreferencesForm : Form
 
   private void PredefinedYearsItem_Click(object sender, EventArgs e)
   {
-    var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag ).OriginalValue;
+    var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag )?.OriginalValue ?? -1;
     EditAutoGenerateYearsInterval.Text = value.ToString();
   }
 

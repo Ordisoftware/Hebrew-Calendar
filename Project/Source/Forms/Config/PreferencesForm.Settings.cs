@@ -38,14 +38,12 @@ partial class PreferencesForm
     long starttime = Settings.BenchmarkStartingApp;
     long loadtime = Settings.BenchmarkLoadData;
     int Shabat = EditShabatDay.SelectedIndex;
-    int bookmarksCount = Settings.DateBookmarksCount;
     var lastupdate = Settings.CheckUpdateLastDone;
     var lastvacuum = Settings.VacuumLastDone;
     Settings.Reset();
     Settings.SetFirstAndUpgradeFlagsOff();
     Settings.CheckUpdateLastDone = lastupdate;
     Settings.VacuumLastDone = lastvacuum;
-    Settings.DateBookmarksCount = bookmarksCount;
     Settings.GPSCountry = country;
     Settings.GPSCity = city;
     Settings.GPSLatitude = lat;

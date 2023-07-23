@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -101,6 +101,11 @@ sealed partial class MainForm : Form
     if ( Globals.IsExiting ) return;
     if ( WindowState != FormWindowState.Normal ) return;
     EditScreenNone.PerformClick();
+  }
+
+  private void MainForm_Resize(object sender, EventArgs e)
+  {
+    MainMenuSeparatorLeftButtons.Visible = Width < MinimumSize.Width + 50;
   }
 
   #endregion
@@ -498,94 +503,6 @@ sealed partial class MainForm : Form
   #region Menu Tools
 
   /// <summary>
-  /// Shows a notice.
-  /// </summary>
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
-  private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
-  {
-    switch ( DisplayManager.FormStyle )
-    {
-      case MessageBoxFormStyle.System:
-        DisplayManager.Show(title.GetLang(), text.GetLang());
-        break;
-      case MessageBoxFormStyle.Advanced:
-        string titleTranslated = title.GetLang();
-        var form = MessageBoxEx.Instances.Find(f => f.Text == titleTranslated)
-                   ?? new MessageBoxEx(title, text, width: width);
-        form.ShowInTaskbar = true;
-        form.Popup(null, sender is null);
-        break;
-      default:
-        throw new AdvNotImplementedException(DisplayManager.FormStyle);
-    }
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowMonthsAndDaysNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowMonthsAndDaysNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeMonthsAndDaysTitle,
-               AppTranslations.NoticeMonthsAndDays,
-               MessageBoxEx.DefaultWidthMedium);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowCelebrationsNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeCelebrationsTitle,
-               AppTranslations.NoticeCelebrations,
-               MessageBoxEx.DefaultWidthMedium);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowFoodNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionShowFoodNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeCelebrationsFoodTitle,
-               AppTranslations.NoticeCelebrationsFood,
-               MessageBoxEx.DefaultWidthLarge);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowShabatNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowShabatNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeShabatTitle,
-               AppTranslations.NoticeShabat,
-               MessageBoxEx.DefaultWidthLarge);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowParashahNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowParashahNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeParashahTitle,
-               AppTranslations.NoticeParashah,
-               MessageBoxEx.DefaultWidthMedium);
-  }
-
-  /// <summary>
   /// Event handler. Called by ActionShowTranscriptionGuide for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -612,7 +529,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewParashahInfos_Click(object sender, EventArgs e)
   {
-    ApplicationDatabase.Instance.ShowWeeklyParashahDescription();
+    DBApp.ShowWeeklyParashahDescription();
   }
 
   /// <summary>
@@ -632,7 +549,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin);
+    HebrewTools.OpenHebrewWordsGoToVerse(DBApp.GetWeeklyParashah().Factory.FullReferenceBegin);
   }
 
   /// <summary>
@@ -687,7 +604,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowParashot_Click(object sender, EventArgs e)
   {
-    ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah().Factory);
+    ParashotForm.Run(DBApp.GetWeeklyParashah().Factory);
   }
 
   /// <summary>
@@ -717,7 +634,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
   {
-    DatesDiffCalculatorForm.Run();
+    DatesDifferenceForm.Run();
   }
 
   /// <summary>
@@ -806,12 +723,11 @@ sealed partial class MainForm : Form
   [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void ActionVacuumDB_Click(object sender, EventArgs e)
   {
-    Settings.VacuumLastDone = ApplicationDatabase.Instance
-                                                 .Connection
-                                                 .Optimize(Settings.VacuumLastDone,
-                                                           Settings.VacuumAtStartupDaysInterval,
-                                                           true);
-    HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
+    Settings.VacuumLastDone = DBApp.Connection
+                                      .Optimize(Settings.VacuumLastDone,
+                                                Settings.VacuumAtStartupDaysInterval,
+                                                true);
+    HebrewDatabase.Connection.Optimize(DateTime.MinValue, force: true);
     ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
     ApplicationStatistics.UpdateDBFileSizeRequired = true;
     DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
@@ -1113,7 +1029,7 @@ sealed partial class MainForm : Form
   private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
     if ( e.ColumnIndex == GridColumnMoonriseOccuring.Index )
-      e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
+      e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurrences);
     else
     if ( e.ColumnIndex == GridColumnNewMoon.Index || e.ColumnIndex == GridColumnFullMoon.Index )
       e.Value = (bool)e.Value
@@ -1150,7 +1066,7 @@ sealed partial class MainForm : Form
     SystemManager.TryCatch(() =>
     {
       if ( LunisolarDaysBindingSource.Current is not null )
-        GoToDate(( (LunisolarDay)LunisolarDaysBindingSource.Current ).Date);
+        GoToDate(( (LunisolarDayRow)LunisolarDaysBindingSource.Current ).Date);
     });
   }
 
@@ -1240,6 +1156,11 @@ sealed partial class MainForm : Form
     NavigationForm.Instance.Date = ContextMenuDayCurrentEvent.Date;
   }
 
+  private void ActionShowNotices_Click(object sender, EventArgs e)
+  {
+    NoticesForm.Run();
+  }
+
   private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
     CelebrationVersesBoardForm.Run((TorahCelebration)ContextMenuDayCelebrationVersesBoard.Tag,
@@ -1262,7 +1183,7 @@ sealed partial class MainForm : Form
 
   private void ContextMenuDayParashah_Click(object sender, EventArgs e)
   {
-    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
+    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDayRow day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
         if ( sender == ContextMenuDayParashahDescription )
           UserParashot.ShowDescription(parashah, day.HasLinkedParashah, () => ParashotForm.Run(parashah));
@@ -1273,7 +1194,7 @@ sealed partial class MainForm : Form
 
   private void ContextMenuOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
+    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDayRow day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
         HebrewTools.OpenHebrewWordsGoToVerse(parashah.FullReferenceBegin);
   }
@@ -1326,24 +1247,17 @@ sealed partial class MainForm : Form
   private void ContextMenuDayDatesDiffTo(DateTime date)
   {
     var tuple = new Tuple<DateTime, DateTime>(ContextMenuDayCurrentEvent.Date, date);
-    DatesDiffCalculatorForm.Run(tuple, ensureOrder: true);
+    DatesDifferenceForm.Run(tuple, ensureOrder: true);
   }
 
   private ToolStripMenuItem CurrentBookmarkMenu;
 
-  // TODO refactor
   internal void LoadMenuBookmarks(Form caller)
   {
-    DatesDiffCalculatorForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
-    if ( caller != DatesDiffCalculatorForm.Instance )
-      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+    DatesDifferenceForm.LoadMenuBookmarks(MenuBookmarks.Items, ContextMenuDayGoToBookmark_MouseUp);
+    if ( caller != DatesDifferenceForm.Instance )
+      DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
     MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
-    MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
-    foreach ( ToolStripMenuItem menuitem in ContextMenuDayGoToBookmark.DropDownItems )
-    {
-      var bookmark = Program.DateBookmarks[(int)menuitem.Tag];
-      if ( bookmark is null ) menuitem.Enabled = false;
-    }
   }
 
   private void ContextMenuDayGoToBookmark_DropDownOpened(object sender, EventArgs e)
@@ -1351,15 +1265,37 @@ sealed partial class MainForm : Form
     CurrentBookmarkMenu = sender as ToolStripMenuItem;
   }
 
-  private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
+  // TODO refactor with datesdiff
+  private void ContextMenuDayGoToBookmark_MouseUp(object sender, MouseEventArgs e)
   {
-    DoBookmarksMouseUp(sender, e);
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = CurrentBookmarkMenu;
+    var bookmark = (DateBookmarkRow)menuitem.Tag;
+    if ( e.Button == MouseButtons.Right )
+    {
+      string date = bookmark.Date.ToLongDateString();
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
+        return;
+      ApplicationDatabase.Instance.Connection.Delete(bookmark);
+      ApplicationDatabase.Instance.DateBookmarks.Remove(bookmark);
+      LoadMenuBookmarks(this);
+    }
+    else
+    if ( e.Button == MouseButtons.Left )
+      GoToDate(bookmark.Date);
+  }
+
+  private void ContextMenuDaySaveBookmark_Click(object sender, EventArgs e)
+  {
+    var date = ContextMenuDayCurrentEvent.Date;
+    DateBookmarkRow.CreateFromUserInput(date);
+    LoadMenuBookmarks(this);
   }
 
   private void ActionManageBookmark_Click(object sender, EventArgs e)
   {
-    if ( ManageBookmarksForm.Run() )
-      LoadMenuBookmarks(this);
+    ManageBookmarksForm.Run();
+    LoadMenuBookmarks(this);
   }
 
   private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)
@@ -1369,8 +1305,4 @@ sealed partial class MainForm : Form
 
   #endregion
 
-  private void ActionManageBookmarks_Click(object sender, EventArgs e)
-  {
-
-  }
 }

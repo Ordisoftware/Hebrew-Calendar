@@ -14,6 +14,8 @@
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
 
+#pragma warning disable VSSpell001 // Spell Check
+
 public enum TanakBook
 {
   // Torah
@@ -79,3 +81,5 @@ public enum KetouvimBook
   Divrei_HaYamim_I = TanakBook.Divrei_HaYamim_I,
   Divrei_HaYamim_II = TanakBook.Divrei_HaYamim_II
 };
+
+#pragma warning restore VSSpell001 // Spell Check

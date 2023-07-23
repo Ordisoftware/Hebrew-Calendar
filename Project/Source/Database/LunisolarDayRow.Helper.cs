@@ -14,20 +14,20 @@
 /// <edited> 2022-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class LunisolarDay
+public partial class LunisolarDayRow
 {
 
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay(bool onlyPessah = false)
   {
     int deltaPessah = Settings.TorahEventsCountAsMoon ? 0 : -1;
-    if ( MoonriseOccuring != MoonriseOccurring.NextDay || deltaPessah != 0 )
+    if ( MoonriseOccurring != MoonriseOccurring.NextDay || deltaPessah != 0 )
       if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
       {
         int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah
           ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
           : -1;
-        if ( day > 0 && day <= TorahCelebrationSettings.PessahLenght )
+        if ( day > 0 && day <= TorahCelebrationSettings.PessahLength )
           return (TorahCelebration.Pessah, day, AppTranslations.GetPessahDayDisplayText(day));
       }
       else
@@ -36,7 +36,7 @@ partial class LunisolarDay
         int day = LunarDay >= TorahCelebrationSettings.SoukotStartDay
           ? LunarDay - TorahCelebrationSettings.SoukotStartDay + 1
           : -1;
-        if ( day > 0 && day <= TorahCelebrationSettings.SoukotLenght )
+        if ( day > 0 && day <= TorahCelebrationSettings.SoukotLength )
           return (TorahCelebration.Soukot, day, AppTranslations.GetSoukotDayDisplayText(day));
       }
       else
@@ -45,8 +45,8 @@ partial class LunisolarDay
         int indexCurrent = Table.IndexOf(this);
         int indexStart = Math.Max(0, indexCurrent - Globals.DaysOfWeekCount);
         int indexEnd = Math.Min(indexCurrent + Globals.DaysOfWeekCount, Table.Count - 1);
-        LunisolarDay first = null;
-        LunisolarDay last = null;
+        LunisolarDayRow first = null;
+        LunisolarDayRow last = null;
         for ( int index = indexStart; index <= indexEnd; index++ )
         {
           var row = Table[index];

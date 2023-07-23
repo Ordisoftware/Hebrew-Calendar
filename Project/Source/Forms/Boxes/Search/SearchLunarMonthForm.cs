@@ -19,9 +19,9 @@ sealed partial class SearchLunarMonthForm : Form
 
   private readonly MainForm MainForm = MainForm.Instance;
 
-  private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+  private List<LunisolarDayRow> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
-  public LunisolarDay CurrentDay { get; private set; }
+  public LunisolarDayRow CurrentDay { get; private set; }
 
   private int CurrentDayIndex = -1;
 
@@ -44,7 +44,7 @@ sealed partial class SearchLunarMonthForm : Form
     int month = CurrentDay.LunarMonth;
     var item = ListItems.Items
                         .AsIEnumerable()
-                        .FirstOrDefault(item => ( (LunisolarDay)item.Tag ).LunarMonth == month);
+                        .FirstOrDefault(item => ( (LunisolarDayRow)item.Tag ).LunarMonth == month);
     if ( item is not null )
     {
       item.Focused = true;
@@ -113,7 +113,7 @@ sealed partial class SearchLunarMonthForm : Form
   private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( ListItems.SelectedItems.Count <= 0 ) return;
-    var row = (LunisolarDay)ListItems.SelectedItems[0].Tag;
+    var row = (LunisolarDayRow)ListItems.SelectedItems[0].Tag;
     SelectDay.Items.Clear();
     int year = SelectYear.Value;
     var days = LunisolarDays.Where(day => day.Date.Year == year && day.LunarMonth == row.LunarMonth);
@@ -126,14 +126,14 @@ sealed partial class SearchLunarMonthForm : Form
 
   private void SelectDay_Format(object sender, ListControlConvertEventArgs e)
   {
-    e.Value = ( (LunisolarDay)e.ListItem ).LunarDay.ToString();
+    e.Value = ( (LunisolarDayRow)e.ListItem ).LunarDay.ToString();
   }
 
   private void SelectDay_SelectedIndexChanged(object sender, EventArgs e)
   {
     CurrentDayIndex = SelectDay.SelectedIndex;
     if ( !GoToDateMutex && SelectDay.SelectedItem is not null )
-      MainForm.GoToDate(( (LunisolarDay)SelectDay.SelectedItem ).Date);
+      MainForm.GoToDate(( (LunisolarDayRow)SelectDay.SelectedItem ).Date);
   }
 
 }

@@ -44,9 +44,9 @@ static public partial class StringHelper
   /// True if it succeeds, false if it fails.
   /// </returns>
   /// <param name="str">The string to act on.</param>
-  /// <param name="substr">The substring.</param>
-  static public int RawIndexOf(this string str, string substr)
-    => RawComparer.IndexOf(str, substr, RawContainsFlags);
+  /// <param name="subStr">The substring.</param>
+  static public int RawIndexOf(this string str, string subStr)
+    => RawComparer.IndexOf(str, subStr, RawContainsFlags);
 
   /// <summary>
   /// Indicates if a string contains a substring ignoring case, diacritics and symbols.
@@ -55,9 +55,9 @@ static public partial class StringHelper
   /// True if it succeeds, false if it fails.
   /// </returns>
   /// <param name="str">The string to act on.</param>
-  /// <param name="substr">The substring.</param>
-  static public bool RawContains(this string str, string substr)
-    => str.RawIndexOf(substr) >= 0;
+  /// <param name="subStr">The substring.</param>
+  static public bool RawContains(this string str, string subStr)
+    => str.RawIndexOf(subStr) >= 0;
 
   /// <summary>
   /// Indicates if a string starts with a substring ignoring case, diacritics and symbols.
@@ -66,8 +66,8 @@ static public partial class StringHelper
   /// True if it succeeds, false if it fails.
   /// </returns>
   /// <param name="str">The string to act on.</param>
-  /// <param name="substr">The substring.</param>
-  static public bool RawStartsWith(this string str, string substr)
-    => str.RawIndexOf(substr) == 0;
+  /// <param name="subStr">The substring.</param>
+  static public bool RawStartsWith(this string str, string subStr)
+    => str.RawIndexOf(subStr) == 0;
 
 }

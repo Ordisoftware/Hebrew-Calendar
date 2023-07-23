@@ -77,5 +77,8 @@ URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4JU-Fzk35sLraFAraj5RsEm
 
 -
 
+Name = (FR) [Shuva Israël France] Pensée Juive
+URL = https://www.youtube.com/playlist?list=PLxRqUzrUqpdoj8lqgx2Y9mu4RyUqvkao4
+
 Name = (FR) [Beit Ha-Zohar] Le Mystère des sacrifices et la prière de Rabbi Shimon Bar Yohay
 URL = https://www.youtube.com/playlist?list=PL86uz8xgnyq6WC8AlR4DkqLVCKNutJMgM

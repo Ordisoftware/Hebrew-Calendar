@@ -16,7 +16,7 @@
 <a href="https://dotnet.microsoft.com"><img src="https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework" alt="Framework: .Net" /></a> 
 <a href="https://visualstudio.microsoft.com"><img src="https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide" alt="IDE: Visual Studio" /></a> 
 <a href="https://docs.microsoft.com/dotnet/csharp/"><img src="https://img.shields.io/badge/C%23%2011-%23239120.svg?label=lang" alt="Lang: C#" /></a> 
-<a href="https://www.sqlite.org"><img src="https://img.shields.io/badge/SQLite%203.40-darkgoldenrod.svg?label=db" alt="DB: SQLite" /></a> <br/>
+<a href="https://www.sqlite.org"><img src="https://img.shields.io/badge/SQLite%203.41-darkgoldenrod.svg?label=db" alt="DB: SQLite" /></a> <br/>
 <a href="https://www.ordisoftware.com/hebrew-calendar"><img src="https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&amp;logoColor=white" alt="Ordisoftware.com Project" /></a> 
 <a href="https://github.com/Ordisoftware/Guidelines"><img src="https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&amp;logoColor=white" alt="Manufacturing Software Guidelines" /></a> </p>
 <h1 id="hebrew-calendar">Hebrew Calendar</h1>
@@ -71,20 +71,27 @@
 <li>Screen 1024x768 or higher</li>
 <li>Windows 7 SP1 x32/x64 or higher</li>
 <li>Framework .NET 4.8</li>
-<li>SQLite 3.40.1</li>
+<li>SQLite 3.41.2</li>
 </ul>
 <h2 id="download">Download</h2>
-<p><strong>What's new in the latest version 10</strong></p>
+<p><strong>What's new in the latest version 11</strong></p>
+<p>WARNING
+The date bookmarks system has been updated to be stored in database: earlier versions of the software will not be able to load them.</p>
 <ul>
-<li>Adar II was renamed in VeAdar.</li>
-<li>Added Shabat references in celebration verses board.</li>
-<li>Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.</li>
-<li>Added option to select data layout order and sections to show in the monthly view.</li>
-<li>Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.</li>
-<li>Fixed image printing.</li>
-<li>Some fixes and improvements.</li>
-<li>Optimized and refactored code.</li>
-<li>Updated web links.</li>
+<li>Add help menu.</li>
+<li>Add window for all notices.</li>
+<li>Add memos for bookmarks.</li>
+<li>Add previous and next buttons in parashah description box.</li>
+<li>Add keyboard shortcuts:
+<ul>
+<li>Alt + H for help menu,</li>
+<li>Alt + N for notices window,</li>
+<li>Alt + B for bookmarks manager,</li>
+<li>Alt + Arrows to navigate between lunar days.</li>
+</ul>
+</li>
+<li>Some improvements.</li>
+<li>Update web links.</li>
 </ul>
 <p><a href="https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest">Last release</a></p>
 <h2 id="screenshots">Screenshots</h2>
@@ -300,7 +307,7 @@
 </tr>
 <tr>
 <td>Alt + V</td>
-<td>Show view menu</td>
+<td>View menu</td>
 </tr>
 <tr>
 <td>Alt + T</td>
@@ -309,6 +316,10 @@
 <tr>
 <td>Alt + L</td>
 <td>Web links menu</td>
+</tr>
+<tr>
+<td>Alt + H</td>
+<td>Help menu</td>
 </tr>
 <tr>
 <td>Alt + S</td>
@@ -351,6 +362,10 @@
 <td>Manage bookmarks</td>
 </tr>
 <tr>
+<td>Alt + N</td>
+<td>Notices window</td>
+</tr>
+<tr>
 <td>Ctrl + F1</td>
 <td>Parashot board</td>
 </tr>
@@ -369,6 +384,10 @@
 <tr>
 <td>Ctrl + F5</td>
 <td>Lunar months board</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + S</td>
+<td>Verses on Shabat</td>
 </tr>
 <tr>
 <td>Ctrl + Shift + D</td>
@@ -431,6 +450,22 @@
 <td>Next day</td>
 </tr>
 <tr>
+<td>Alt + Left : Previous lunar month</td>
+<td></td>
+</tr>
+<tr>
+<td>Alt + Right : Next lunar month</td>
+<td></td>
+</tr>
+<tr>
+<td>Alt + Up (or PageUp) : Previous lunar year</td>
+<td></td>
+</tr>
+<tr>
+<td>Alt + Down (or PageDown) : Next lunar year</td>
+<td></td>
+</tr>
+<tr>
 <td>Add or Sub</td>
 <td>Change active day</td>
 </tr>
@@ -469,6 +504,17 @@
 </tbody>
 </table>
 <h2 id="future-improvements">Future improvements</h2>
+<h4 id="priority">Priority</h4>
+<ul>
+<li>Add auto backup bookmarks.</li>
+<li>Add import parashot board.</li>
+<li>Add lunar months board with Hebrew names, meanings, lettriqs and tools.</li>
+<li>Add command-line option <code>--lunarmonths</code> to show the lunar months board.</li>
+<li>Improve food notice with details and cooking recipes.</li>
+<li>Improve notices to be in only one window having a page control like preferences.</li>
+<li>Improve weekly parashah description box to have access to the tools for the study.</li>
+<li>Improve weekly parashah description box to have a screenshot button.</li>
+</ul>
 <h4 id="application">Application</h4>
 <ul>
 <li>Add option to set primary source for check update between author's website or GitHub.</li>
@@ -476,14 +522,13 @@
 <li>Add dark theme for monthly view.</li>
 <li>Add print boards.</li>
 <li>Add option to generate a fixed interval (if the current year is within).</li>
-<li>Improve notices to be in only one window having a page control like preferences.</li>
-<li>Improve food notice with details and cooking recipes.</li>
 <li>Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.</li>
+<li>Check and fix weekly parashah generation with Soukot.</li>
+<li>Check and Fix reminder behavior with Sim'hat Torah.</li>
 <li>Rewrite the reminder.</li>
 </ul>
 <h4 id="data">Data</h4>
 <ul>
-<li>Add import parashot board.</li>
 <li>Add user reminders for other people's events like birthday and yahrzeit.</li>
 <li>Add user reminders for personal solar and lunar anniversary of birth.</li>
 <li>Add user reminders for small religious festivals.</li>
@@ -491,25 +536,18 @@
 <li>Add option to generate calendar using the rules of the Sod HaH'ibur instead of the strict astronomical moon or sun omer.</li>
 </ul>
 <h2 id="changelog">Changelog</h2>
-<h4 id="to-do">TO DO</h4>
-<blockquote>
+<h4 id="in-progress-version-11.0">In progress - Version 11.0</h4>
 <ul>
-<li>Add auto backup bookmarks.</li>
-<li>Add lunar months board with Hebrew names, meanings, lettriqs and tools.</li>
-<li>Add command-line option <code>--lunarmonths</code> to show the lunar months board.</li>
-<li>Improve weekly parashah description box to have access to the tools for the study.</li>
-<li>Improve weekly parashah description box to have a screenshot button.</li>
-<li>Check and fix weekly parashah generation with Soukot.</li>
-<li>Check and Fix reminder behavior with Sim'hat Torah.</li>
-</ul>
-</blockquote>
-<h4 id="version-11">2023 - Version 11</h4>
-<ul>
-<li>Add memos to date bookmarks.</li>
-<li>Add option to automatically sort date bookmarks.</li>
-<li>Add manage bookmarks menu item in Tools and Ctrl + B shortcut.</li>
-<li>Add previous and next buttons to parashah description box.</li>
+<li>Move date bookmarks in text file to a database table.</li>
+<li>Add help menu, and Alt + H shortcut.</li>
+<li>Add window for all notices, and Alt + N shortcut.</li>
+<li>Add memos to date bookmarks that are now automatically sorted.</li>
+<li>Add manage bookmarks menu item in Tools, and Alt + B shortcut.</li>
+<li>Add Alt + Arrows shortcuts to navigate between lunar days.</li>
+<li>Add previous and next buttons in parashah description box.</li>
 <li>Add Accuweather.com provider.</li>
+<li>Code refactoring.</li>
+<li>Update web links.</li>
 </ul>
 <h4 id="version-10.4">2023.04.05 - Version 10.4</h4>
 <ul>

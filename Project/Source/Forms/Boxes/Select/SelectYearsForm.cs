@@ -46,8 +46,8 @@ sealed partial class SelectYearsForm : Form
   private void SelectYearsRangeForm_Load(object sender, EventArgs e)
   {
     Mutex = true;
-    int yearMin = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year;
-    int yearMax = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year;
+    int yearMin = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime.Year;
+    int yearMax = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime.Year;
     const int min = Program.GenerateIntervalMinimum;
     int max = Settings.GenerateIntervalMaximum;
     CurrentYear = DateTime.Today.AddYears(-Program.GenerateIntervalPreviousYears).Year;

@@ -34,7 +34,7 @@ partial class MainForm
         day.Sunset,
         day.Moonrise,
         day.Moonset,
-        MoonRiseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccurings),
+        MoonRiseType = day.MoonriseOccurring.ToStringExport(AppTranslations.MoonriseOccurrences),
         MoonPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhases),
         SeasonChange = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges),
         TorahEvent = day.TorahEvent.ToStringExport(AppTranslations.CelebrationDays),

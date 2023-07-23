@@ -9,7 +9,7 @@
 [![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
 [![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
 [![Lang: C#](https://img.shields.io/badge/C%23%2011-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
-[![DB: SQLite](https://img.shields.io/badge/SQLite%203.40-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
+[![DB: SQLite](https://img.shields.io/badge/SQLite%203.41-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-calendar)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
@@ -69,21 +69,26 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.8
-- SQLite 3.40.1
+- SQLite 3.41.2
 
 ## Download
 
-**What's new in the latest version 10**
+**What's new in the latest version 11**
 
-- Adar II was renamed in VeAdar.
-- Added Shabat references in celebration verses board.
-- Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
-- Added option to select data layout order and sections to show in the monthly view.
-- Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
-- Fixed image printing.
-- Some fixes and improvements.
-- Optimized and refactored code.
-- Updated web links.
+WARNING
+The date bookmarks system has been updated to be stored in database: earlier versions of the software will not be able to load them.
+
+- Add help menu.
+- Add window for all notices.
+- Add memos for bookmarks.
+- Add previous and next buttons in parashah description box.
+- Add keyboard shortcuts:
+    * Alt + H for help menu,
+    * Alt + N for notices window,
+    * Alt + B for bookmarks manager,
+    * Alt + Arrows to navigate between lunar days.
+- Some improvements.
+- Update web links.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -307,9 +312,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
 | Ctrl + Shift + C | Copy the text report selection to clipboard |
-| Alt + V | Show view menu |
+| Alt + V | View menu |
 | Alt + T | Tools menu |
 | Alt + L | Web links menu |
+| Alt + H | Help menu |
 | Alt + S | Settings menu |
 | Alt + I | Information menu |
 | Alt + E | Export folder |
@@ -320,11 +326,13 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Alt + G | Generate calendar |
 | Alt + P | Show online parashah menu |
 | Alt + B | Manage bookmarks |
+| Alt + N | Notices window |
 | Ctrl + F1 | Parashot board |
 | Ctrl + F2 | Celebration verses board |
 | Ctrl + F3 | Celebrations board |
 | Ctrl + F4 | New moons board |
 | Ctrl + F5 | Lunar months board |
+| Ctrl + Shift + S | Verses on Shabat |
 | Ctrl + Shift + D | Dates difference calculator |
 | Home | First month available in the database |
 | End | Last month available in the database |
@@ -340,6 +348,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Shit + Down | Previous week |
 | Shit + Left | Previous day |
 | Shit + Right | Next day |
+| Alt + Left : Previous lunar month |
+| Alt + Right : Next lunar month |
+| Alt + Up (or PageUp) : Previous lunar year |
+| Alt + Down (or PageDown) : Next lunar year |
 | Add or Sub | Change active day |
 | Shift + Click | Set active day |
 | Ctrl + Click | Select day |
@@ -352,6 +364,17 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Future improvements
 
+#### Priority
+
+- Add auto backup bookmarks.
+- Add import parashot board.
+- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
+- Add command-line option `--lunarmonths` to show the lunar months board.
+- Improve food notice with details and cooking recipes.
+- Improve notices to be in only one window having a page control like preferences.
+- Improve weekly parashah description box to have access to the tools for the study.
+- Improve weekly parashah description box to have a screenshot button.
+
 #### Application
 
 - Add option to set primary source for check update between author's website or GitHub.
@@ -359,14 +382,13 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add dark theme for monthly view.
 - Add print boards.
 - Add option to generate a fixed interval (if the current year is within).
-- Improve notices to be in only one window having a page control like preferences.
-- Improve food notice with details and cooking recipes.
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Check and fix weekly parashah generation with Soukot.
+- Check and Fix reminder behavior with Sim'hat Torah.
 - Rewrite the reminder.
 
 #### Data
 
-- Add import parashot board.
 - Add user reminders for other people's events like birthday and yahrzeit.
 - Add user reminders for personal solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -375,23 +397,18 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Changelog
 
-#### TO DO
+#### In progress - Version 11.0
 
->- Add auto backup bookmarks.
->- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
->- Add command-line option `--lunarmonths` to show the lunar months board.
->- Improve weekly parashah description box to have access to the tools for the study.
->- Improve weekly parashah description box to have a screenshot button.
->- Check and fix weekly parashah generation with Soukot.
->- Check and Fix reminder behavior with Sim'hat Torah.
-
-#### 2023 - Version 11
-
-- Add memos to date bookmarks.
-- Add option to automatically sort date bookmarks.
-- Add manage bookmarks menu item in Tools and Ctrl + B shortcut. 
-- Add previous and next buttons to parashah description box.
+- Move date bookmarks in text file to a database table.
+- Add help menu, and Alt + H shortcut.
+- Add window for all notices, and Alt + N shortcut.
+- Add memos to date bookmarks that are now automatically sorted.
+- Add manage bookmarks menu item in Tools, and Alt + B shortcut.
+- Add Alt + Arrows shortcuts to navigate between lunar days.
+- Add previous and next buttons in parashah description box.
 - Add Accuweather.com provider.
+- Code refactoring.
+- Update web links.
 
 #### 2023.04.05 - Version 10.4
 

@@ -19,9 +19,9 @@ class AutoMenuManager
 
   static public string ExitMessage { get; set; } = "Goodbye.";
 
-  static public int SeperatorLength { get; set; } = 100;
+  static public int SeparatorLength { get; set; } = 100;
 
-  static public string Separator => new('-', SeperatorLength);
+  static public string Separator => new('-', SeparatorLength);
 
   public AutoMenu Root { get; init; }
 

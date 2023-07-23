@@ -68,7 +68,7 @@ partial class ApplicationDatabase
       LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                       LunisolarDays.Count,
                                       Program.LoadingFormLoadDB);
-      foreach ( LunisolarDay day in LunisolarDays )
+      foreach ( LunisolarDayRow day in LunisolarDays )
         try
         {
           if ( processInsert ) Connection.Insert(day);
@@ -80,7 +80,7 @@ partial class ApplicationDatabase
           string strMonth = day.IsNewMoon && day.LunarMonth != 0
             ? $"{day.LunarMonth:00}"
             : "  ";
-          string strDay = day.MoonriseOccuring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon
+          string strDay = day.MoonriseOccurring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon
             ? "  "
             : $"{day.LunarDay:00}";
           strDay += " ";
@@ -106,7 +106,7 @@ partial class ApplicationDatabase
           string strMoonset = day.Moonset is null
             ? MoonNoText
             : AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + day.MoonsetAsString;
-          string strMoon = day.MoonriseOccuring == MoonriseOccurring.BeforeSet
+          string strMoon = day.MoonriseOccurring == MoonriseOccurring.BeforeSet
             ? strMoonrise + ColumnSepInner + strMoonset
             : strMoonset + ColumnSepInner + strMoonrise;
           string textDay = AppTranslations.DaysOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);

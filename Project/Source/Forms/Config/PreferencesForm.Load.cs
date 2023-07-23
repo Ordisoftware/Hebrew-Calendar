@@ -125,7 +125,6 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditWeeklyParashahShowAtStartup.Checked = Settings.WeeklyParashahShowAtStartup);
     SystemManager.TryCatch(() => EditWeeklyParashahShowAtNewWeek.Checked = Settings.WeeklyParashahShowAtNewWeek);
     SystemManager.TryCatch(() => EditCustomWebSearch.Text = Settings.CustomWebSearch);
-    SystemManager.TryCatch(() => EditAutoSortBookmarks.Checked = Settings.AutoSortBookmarks);
     SystemManager.TryCatch(() => EditUseTwoDaysForLastPessahDayOutside.Checked = Settings.UseTwoDaysForLastPessahDayOutside);
     SystemManager.TryCatch(() => EditReminderBoxRetakeFocusAfterDateClick.Checked = Settings.BoxesRetakeFocusAfterDateClick);
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLine.Checked = Settings.CalendarHebrewDateSingleLine);
@@ -156,7 +155,6 @@ partial class PreferencesForm
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewLatinFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);
-    SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);
     SystemManager.TryCatch(() => EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay);
     // Special
     SystemManager.TryCatch(() => LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString());

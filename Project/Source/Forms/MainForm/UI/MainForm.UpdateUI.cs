@@ -114,13 +114,13 @@ public partial class MainForm
         LabelSubTitleOmer.Text = TitleOmer;
         // Today
         if ( Settings.MainFormTitleBarShowToday )
-          Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
+          Text += " - " + ( DBApp.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
         // Celebration
         if ( Settings.MainFormTitleBarShowCelebration )
         {
           if ( force || TitleCelebration.IsNullOrEmpty() )
           {
-            var today = ApplicationDatabase.Instance.GetToday();
+            var today = DBApp.GetToday();
             TitleCelebration = today?.GetWeekLongCelebrationIntermediateDay().Text ?? string.Empty;
             if ( !TitleCelebration.IsNullOrEmpty() )
               TitleCelebration = " - " + TitleCelebration;
@@ -132,13 +132,13 @@ public partial class MainForm
         {
           if ( force || TitleParashah.IsNullOrEmpty() )
           {
-            var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+            var weekParashah = DBApp.GetWeeklyParashah();
             if ( weekParashah.Factory is not null )
             {
               if ( MenuTools.DropDownItems.Count > 0 )
                 MenuTools.DropDownItems[0].Enabled = true;
               var parashah = weekParashah.Factory;
-              TitleParashah = parashah.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
+              TitleParashah = parashah.ToStringShort(Settings.ParashahCaptionWithBookAndRef,
                                                      weekParashah.Day.HasLinkedParashah);
               TitleParashah = $"{HebrewTranslations.Parashah} {TitleParashah}";
               ActionWeeklyParashah.Text = $"{HebrewTranslations.Parashah} {parashah.ToStringShort(false, weekParashah.Day.HasLinkedParashah)}";

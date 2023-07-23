@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew;
 static public partial class OnlineParashot
 {
 
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> AishEN = new()
   {
     [TorahBook.Bereshit] = new NullSafeList<string>

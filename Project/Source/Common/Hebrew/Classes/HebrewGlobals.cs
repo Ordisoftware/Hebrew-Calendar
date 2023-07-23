@@ -113,17 +113,17 @@ static public partial class HebrewGlobals
   /// <summary>
   /// Indicates Calendar executable path.
   /// </summary>
-  static public Func<string> GetHebrewCalendarExePath { get; set; }
+  static public Func<string> GetHebrewCalendarExecutablePath { get; set; }
 
   /// <summary>
   /// Indicates Letters executable path.
   /// </summary>
-  static public Func<string> GetHebrewLettersExePath { get; set; }
+  static public Func<string> GetHebrewLettersExecutablePath { get; set; }
 
   /// <summary>
   /// Indicates Words executable path.
   /// </summary>
-  static public Func<string> GetHebrewWordsExePath { get; set; }
+  static public Func<string> GetHebrewWordsExecutablePath { get; set; }
 
   /// <summary>
   /// Indicates custom web search pattern.

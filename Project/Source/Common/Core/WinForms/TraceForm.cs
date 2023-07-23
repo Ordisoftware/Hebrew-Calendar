@@ -28,19 +28,19 @@ public sealed partial class TraceForm : Form
     ActiveControl = TabControl;
   }
 
-  public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName, string onlyErrorsPropertyName)
+  public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizePropertyName, string onlyErrorsPropertyName)
   : this()
   {
     LocationPropertyName = locationPropertyName;
     ClientSizePropertyName = clientSizePropertyName;
-    FontSizepropertyName = fontSizepropertyName;
+    FontSizepropertyName = fontSizePropertyName;
     OnlyErrorsPropertyName = onlyErrorsPropertyName;
     if ( Globals.Settings is not null )
       try
       {
         Location = (Point)Globals.Settings[locationPropertyName];
         ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-        TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
+        TrackBarFontSize.Value = (int)Globals.Settings[fontSizePropertyName];
         EditOnlyErrors.Checked = (bool)Globals.Settings[onlyErrorsPropertyName];
       }
       catch

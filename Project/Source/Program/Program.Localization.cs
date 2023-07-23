@@ -55,13 +55,14 @@ static partial class Program
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = TranscriptionGuideForm;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+      new Infralution.Localization.CultureManager().ManagedControl = NoticesForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationVersesBoardForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = NewMoonsBoardForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = DatesDifferenceForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
       foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
@@ -81,7 +82,7 @@ static partial class Program
         LunarMonthsForm.Instance.Relocalize();
         NavigationForm.Instance.Relocalize();
         ParashotFactory.Instance.Reset();
-        DatesDiffCalculatorForm.Instance.Relocalize();
+        DatesDifferenceForm.Instance.Relocalize();
         SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage,
                                      () => MainForm.Instance.LoadMenuBookmarks(MainForm.Instance));
       }

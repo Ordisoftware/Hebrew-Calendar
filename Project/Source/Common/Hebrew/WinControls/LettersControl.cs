@@ -58,7 +58,7 @@ public partial class LettersControl : UserControl
   /// <summary>
   /// Indicates the initial word.
   /// </summary>
-  public string InititialWord
+  public string InitialWord
   {
     get;
     set;
@@ -533,7 +533,7 @@ public partial class LettersControl : UserControl
 
   private void ActionReset_Click(object sender, EventArgs e)
   {
-    TextBox.Text = InititialWord;
+    TextBox.Text = InitialWord;
     Focus(LettersControlFocusSelect.None);
   }
 
@@ -587,7 +587,7 @@ public partial class LettersControl : UserControl
   public bool UpdateControls()
   {
     bool enabled = TextBox.Text.Length >= 1;
-    ActionReset.Enabled = !InititialWord.IsNullOrEmpty();
+    ActionReset.Enabled = !InitialWord.IsNullOrEmpty();
     ActionReset.Text = ActionReset.Enabled ? "-" : string.Empty;
     ActionClear.Enabled = enabled;
     ActionDelFirst.Enabled = enabled;
@@ -629,5 +629,5 @@ public partial class LettersControl : UserControl
 public class LetterEventArgs : EventArgs
 {
   public string LetterCode { get; }
-  public LetterEventArgs(string lettercode) { LetterCode = lettercode; }
+  public LetterEventArgs(string letterCode) { LetterCode = letterCode; }
 }

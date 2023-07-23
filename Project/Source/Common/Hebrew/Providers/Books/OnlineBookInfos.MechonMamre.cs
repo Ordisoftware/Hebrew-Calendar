@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew;
 static public partial class OnlineBookInfos
 {
 
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly Dictionary<TanakBook, string> MechonMamre = new()
   {
     // Torah

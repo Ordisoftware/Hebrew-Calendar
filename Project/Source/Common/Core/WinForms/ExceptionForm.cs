@@ -43,28 +43,28 @@ public sealed partial class ExceptionForm : Form
   /// <summary>
   /// Runs the form.
   /// </summary>
-  static public void Run(ExceptionInfo einfo, bool isInner = false)
+  static public void Run(ExceptionInfo eInfo, bool isInner = false)
   {
     using var form = new ExceptionForm { IsInner = isInner };
     form.PictureBox.Image = ShellIcons.Error;
     form.ActionViewLog.Enabled = DebugManager.TraceEnabled;
-    form.ActionViewInner.Enabled = einfo.InnerInfo is not null;
+    form.ActionViewInner.Enabled = eInfo.InnerInfo is not null;
     form.ActionTerminate.Enabled = DebugManager.UserCanTerminate && !isInner;
     if ( isInner )
     {
       form.ActionSendToGitHub.Enabled = false;
       form.ActionClose.Text = SysTranslations.NextException.GetLang();
     }
-    form.EditType.Text = einfo.TypeText;
-    form.EditMessage.Text = einfo.Message;
-    form.LabelInfoProgram.Text += einfo.Emitter;
-    form.EditStack.Text = einfo.StackText;
+    form.EditType.Text = eInfo.TypeText;
+    form.EditMessage.Text = eInfo.Message;
+    form.LabelInfoProgram.Text += eInfo.Emitter;
+    form.EditStack.Text = eInfo.StackText;
     form.ErrorMessages.Add(form.EditType.Text);
     form.ErrorMessages.Add(Globals.NL);
     form.ErrorMessages.Add(form.EditMessage.Text);
     form.ErrorMessages.Add(Globals.NL);
     form.ErrorMessages.Add(form.EditStack.Text);
-    form.ErrorInfo = einfo;
+    form.ErrorInfo = eInfo;
     if ( !DebugManager.UseStack )
     {
       int deltaHeight = form.EditStack.Height + form.Padding.Bottom;

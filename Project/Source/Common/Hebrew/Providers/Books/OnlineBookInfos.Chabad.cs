@@ -19,6 +19,7 @@ static public partial class OnlineBookInfos
 
   // TODO need to take each chapter number from the web site for french AND english
 
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly Dictionary<TanakBook, int> Chabad = new()
   {
     // Torah

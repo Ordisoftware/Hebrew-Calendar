@@ -21,6 +21,7 @@ using MoreLinq;
 [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "N/A")]
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
 [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "N/A")]
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class StackMethods
 {
 
@@ -412,16 +413,16 @@ static public class StackMethods
   #region WinTaskBar
 
   /// <summary>
-  /// Gets task bar coordonates.
+  /// Gets task bar coordinates.
   /// </summary>
   /// From https://stackoverflow.com/questions/3677182/taskbar-location
-  static public Rectangle GetTaskbarCoordonates()
+  static public Rectangle GetTaskbarCoordinates()
   {
     var data = new APPBARDATA();
     data.cbSize = System.Runtime.InteropServices.Marshal.SizeOf(data);
     IntPtr retval = SHAppBarMessage(ABM_GETTASKBARPOS, ref data);
     if ( retval == IntPtr.Zero )
-      throw new Win32Exception("Windows Taskbar Error in " + nameof(GetTaskbarCoordonates));
+      throw new Win32Exception("Windows TaskBar Error in " + nameof(GetTaskbarCoordinates));
     return new Rectangle(data.rc.left, data.rc.top, data.rc.right - data.rc.left, data.rc.bottom - data.rc.top);
   }
 

@@ -48,7 +48,7 @@ static partial class Program
       if ( cmd.Generate ) action = form.ActionGenerate.PerformClick;
       if ( cmd.ResetReminder ) action = form.ActionResetReminder.PerformClick;
       if ( cmd.OpenNavigation ) action = form.ActionNavigate.PerformClick;
-      if ( cmd.OpenDiffDates ) action = form.ActionCalculateDateDiff.PerformClick;
+      if ( cmd.OpenDatesDifference ) action = form.ActionCalculateDateDiff.PerformClick;
       if ( cmd.OpenCelebrationVersesBoard ) action = form.ActionShowCelebrationVersesBoard.PerformClick;
       if ( cmd.OpenCelebrationsBoard ) action = form.ActionShowCelebrationsBoard.PerformClick;
       if ( cmd.OpenNewMoonsBoard ) action = form.ActionShowNewMoonsBoard.PerformClick;

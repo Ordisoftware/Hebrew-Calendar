@@ -33,21 +33,21 @@ static public partial class DisplayManager
     MainThread = Thread.CurrentThread;
   }
 
-  public const int TaskbarWidthCheckTrigger = 250;
+  public const int TaskBarWidthCheckTrigger = 250;
 
   /// <summary>
   /// Gets task bar anchor style.
   /// </summary>
-  static public AnchorStyles GetTaskbarAnchorStyle()
+  static public AnchorStyles GetTaskBarAnchorStyle()
   {
-    var coordonates = StackMethods.GetTaskbarCoordonates();
+    var coordonates = StackMethods.GetTaskbarCoordinates();
     if ( coordonates.Left == 0 && coordonates.Top == 0 )
-      if ( coordonates.Width > TaskbarWidthCheckTrigger )
+      if ( coordonates.Width > TaskBarWidthCheckTrigger )
         return AnchorStyles.Top;
       else
         return AnchorStyles.Left;
     else
-    if ( coordonates.Width > TaskbarWidthCheckTrigger )
+    if ( coordonates.Width > TaskBarWidthCheckTrigger )
       return AnchorStyles.Bottom;
     else
       return AnchorStyles.Right;

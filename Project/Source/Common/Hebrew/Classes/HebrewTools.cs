@@ -52,7 +52,7 @@ static public class HebrewTools
   /// </summary>
   static public void OpenHebrewWordsGoToVerse(string reference)
   {
-    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExePath, path =>
+    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExecutablePath, path =>
     {
       SystemManager.RunShell(path, "--verse " + reference);
     });
@@ -63,7 +63,7 @@ static public class HebrewTools
   /// </summary>
   static public void OpenHebrewWordsSearchWord(string word)
   {
-    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExePath, path =>
+    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExecutablePath, path =>
     {
       SystemManager.RunShell(path, "--word " + word);
     });
@@ -74,7 +74,7 @@ static public class HebrewTools
   /// </summary>
   static public void OpenHebrewWordsSearchTranslated(string word)
   {
-    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExePath, path =>
+    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewWords, HebrewGlobals.GetHebrewWordsExecutablePath, path =>
     {
       SystemManager.RunShell(path, "--translated " + word);
     });
@@ -87,7 +87,7 @@ static public class HebrewTools
   [SuppressMessage("Style", "IDE0042:Déconstruire la déclaration de variable", Justification = "Opinion")]
   static public void OpenHebrewLetters(string word)
   {
-    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewLetters, HebrewGlobals.GetHebrewLettersExePath, path =>
+    ProcessHebrewSoftware(HebrewGlobals.AppCodeHebrewLetters, HebrewGlobals.GetHebrewLettersExecutablePath, path =>
     {
       if ( word.IsNullOrEmpty() )
         SystemManager.RunShell(path);

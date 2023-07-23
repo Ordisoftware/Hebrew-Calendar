@@ -95,9 +95,9 @@ static public partial class DebugManager
   static public bool UserCanTerminate { get; set; } = true;
 
   /// <summary>
-  /// Indicates if a specialized form is used to show Exception.
+  /// Indicates default showing exception mode
   /// </summary>
-  static public ShowExceptionMode DeaultShowExceptionMode { get; set; }
+  static public ShowExceptionMode DefaultShowExceptionMode { get; set; }
     = ShowExceptionMode.Advanced;
 
   /// <summary>
@@ -258,7 +258,7 @@ static public partial class DebugManager
   /// <param name="ex">The Exception to act on.</param>
   static public void Manage(this Exception ex)
   {
-    Manage(ex, null, DeaultShowExceptionMode);
+    Manage(ex, null, DefaultShowExceptionMode);
   }
 
   /// <summary>
@@ -280,7 +280,7 @@ static public partial class DebugManager
   [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   static public void Manage(this Exception ex, object sender)
   {
-    Manage(ex, sender, DeaultShowExceptionMode);
+    Manage(ex, sender, DefaultShowExceptionMode);
   }
 
   /// <summary>
@@ -306,7 +306,7 @@ static public partial class DebugManager
   /// <param name="ex">The ex.</param>
   static private void ManageInternal(object sender, Exception ex)
   {
-    ManageInternal(sender, ex, DeaultShowExceptionMode);
+    ManageInternal(sender, ex, DefaultShowExceptionMode);
   }
 
   /// <summary>
