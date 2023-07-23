@@ -40,7 +40,7 @@
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.EditAutoSetRightToToday = new System.Windows.Forms.CheckBox();
       this.ActionHelp = new System.Windows.Forms.Button();
-      this.ActionOpecCalc = new System.Windows.Forms.Button();
+      this.ActionOpenCalc = new System.Windows.Forms.Button();
       this.ActionClose = new System.Windows.Forms.Button();
       this.ActionManageBookmarks = new System.Windows.Forms.Button();
       this.DateStart = new System.Windows.Forms.MonthCalendar();
@@ -57,11 +57,11 @@
       this.label2 = new System.Windows.Forms.Label();
       this.DatePickerStart = new System.Windows.Forms.DateTimePicker();
       this.DatePickerEnd = new System.Windows.Forms.DateTimePicker();
-      this.ActionSetBookmarkStart = new System.Windows.Forms.Button();
+      this.ActionSaveBookmarkStart = new System.Windows.Forms.Button();
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ActionUseBookmarkStart = new System.Windows.Forms.Button();
-      this.ActionUseBookmarkEnd = new System.Windows.Forms.Button();
-      this.ActionSetBookmarkEnd = new System.Windows.Forms.Button();
+      this.ActionGoToBookmarkStart = new System.Windows.Forms.Button();
+      this.ActionGoToBookmarkEnd = new System.Windows.Forms.Button();
+      this.ActionSaveBookmarkEnd = new System.Windows.Forms.Button();
       this.ActionSwapDates = new System.Windows.Forms.Button();
       lunationsLabel = new System.Windows.Forms.Label();
       moonDaysLabel = new System.Windows.Forms.Label();
@@ -115,7 +115,7 @@
       // 
       this.PanelBottom.Controls.Add(this.EditAutoSetRightToToday);
       this.PanelBottom.Controls.Add(this.ActionHelp);
-      this.PanelBottom.Controls.Add(this.ActionOpecCalc);
+      this.PanelBottom.Controls.Add(this.ActionOpenCalc);
       this.PanelBottom.Controls.Add(this.ActionClose);
       this.PanelBottom.Controls.Add(this.ActionManageBookmarks);
       resources.ApplyResources(this.PanelBottom, "PanelBottom");
@@ -139,15 +139,15 @@
       this.ActionHelp.UseVisualStyleBackColor = true;
       this.ActionHelp.Click += new System.EventHandler(this.ActionHelp_Click);
       // 
-      // ActionOpecCalc
+      // ActionOpenCalc
       // 
-      this.ActionOpecCalc.AllowDrop = true;
-      this.ActionOpecCalc.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionOpecCalc, "ActionOpecCalc");
-      this.ActionOpecCalc.Name = "ActionOpecCalc";
-      this.ActionOpecCalc.TabStop = false;
-      this.ActionOpecCalc.UseVisualStyleBackColor = true;
-      this.ActionOpecCalc.Click += new System.EventHandler(this.ActionOpecCalc_Click);
+      this.ActionOpenCalc.AllowDrop = true;
+      this.ActionOpenCalc.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionOpenCalc, "ActionOpenCalc");
+      this.ActionOpenCalc.Name = "ActionOpenCalc";
+      this.ActionOpenCalc.TabStop = false;
+      this.ActionOpenCalc.UseVisualStyleBackColor = true;
+      this.ActionOpenCalc.Click += new System.EventHandler(this.ActionOpenCalc_Click);
       // 
       // ActionClose
       // 
@@ -265,16 +265,16 @@
       this.DatePickerEnd.ShowUpDown = true;
       this.DatePickerEnd.ValueChanged += new System.EventHandler(this.DatePickerEnd_ValueChanged);
       // 
-      // ActionSetBookmarkStart
+      // ActionSaveBookmarkStart
       // 
-      this.ActionSetBookmarkStart.AllowDrop = true;
-      this.ActionSetBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
-      this.ActionSetBookmarkStart.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSetBookmarkStart, "ActionSetBookmarkStart");
-      this.ActionSetBookmarkStart.Name = "ActionSetBookmarkStart";
-      this.ActionSetBookmarkStart.TabStop = false;
-      this.ActionSetBookmarkStart.UseVisualStyleBackColor = true;
-      this.ActionSetBookmarkStart.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
+      this.ActionSaveBookmarkStart.AllowDrop = true;
+      this.ActionSaveBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionSaveBookmarkStart.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSaveBookmarkStart, "ActionSaveBookmarkStart");
+      this.ActionSaveBookmarkStart.Name = "ActionSaveBookmarkStart";
+      this.ActionSaveBookmarkStart.TabStop = false;
+      this.ActionSaveBookmarkStart.UseVisualStyleBackColor = true;
+      this.ActionSaveBookmarkStart.Click += new System.EventHandler(this.ActionSaveBookmark_Click);
       // 
       // MenuBookmarks
       // 
@@ -282,38 +282,38 @@
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
       // 
-      // ActionUseBookmarkStart
+      // ActionGoToBookmarkStart
       // 
-      this.ActionUseBookmarkStart.AllowDrop = true;
-      this.ActionUseBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
-      this.ActionUseBookmarkStart.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionUseBookmarkStart, "ActionUseBookmarkStart");
-      this.ActionUseBookmarkStart.Name = "ActionUseBookmarkStart";
-      this.ActionUseBookmarkStart.TabStop = false;
-      this.ActionUseBookmarkStart.UseVisualStyleBackColor = true;
-      this.ActionUseBookmarkStart.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
+      this.ActionGoToBookmarkStart.AllowDrop = true;
+      this.ActionGoToBookmarkStart.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionGoToBookmarkStart.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionGoToBookmarkStart, "ActionGoToBookmarkStart");
+      this.ActionGoToBookmarkStart.Name = "ActionGoToBookmarkStart";
+      this.ActionGoToBookmarkStart.TabStop = false;
+      this.ActionGoToBookmarkStart.UseVisualStyleBackColor = true;
+      this.ActionGoToBookmarkStart.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
       // 
-      // ActionUseBookmarkEnd
+      // ActionGoToBookmarkEnd
       // 
-      this.ActionUseBookmarkEnd.AllowDrop = true;
-      this.ActionUseBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
-      this.ActionUseBookmarkEnd.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionUseBookmarkEnd, "ActionUseBookmarkEnd");
-      this.ActionUseBookmarkEnd.Name = "ActionUseBookmarkEnd";
-      this.ActionUseBookmarkEnd.TabStop = false;
-      this.ActionUseBookmarkEnd.UseVisualStyleBackColor = true;
-      this.ActionUseBookmarkEnd.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
+      this.ActionGoToBookmarkEnd.AllowDrop = true;
+      this.ActionGoToBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionGoToBookmarkEnd.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionGoToBookmarkEnd, "ActionGoToBookmarkEnd");
+      this.ActionGoToBookmarkEnd.Name = "ActionGoToBookmarkEnd";
+      this.ActionGoToBookmarkEnd.TabStop = false;
+      this.ActionGoToBookmarkEnd.UseVisualStyleBackColor = true;
+      this.ActionGoToBookmarkEnd.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
       // 
-      // ActionSetBookmarkEnd
+      // ActionSaveBookmarkEnd
       // 
-      this.ActionSetBookmarkEnd.AllowDrop = true;
-      this.ActionSetBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
-      this.ActionSetBookmarkEnd.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionSetBookmarkEnd, "ActionSetBookmarkEnd");
-      this.ActionSetBookmarkEnd.Name = "ActionSetBookmarkEnd";
-      this.ActionSetBookmarkEnd.TabStop = false;
-      this.ActionSetBookmarkEnd.UseVisualStyleBackColor = true;
-      this.ActionSetBookmarkEnd.Click += new System.EventHandler(this.ActionBookmarksButton_Click);
+      this.ActionSaveBookmarkEnd.AllowDrop = true;
+      this.ActionSaveBookmarkEnd.ContextMenuStrip = this.MenuBookmarks;
+      this.ActionSaveBookmarkEnd.FlatAppearance.BorderSize = 0;
+      resources.ApplyResources(this.ActionSaveBookmarkEnd, "ActionSaveBookmarkEnd");
+      this.ActionSaveBookmarkEnd.Name = "ActionSaveBookmarkEnd";
+      this.ActionSaveBookmarkEnd.TabStop = false;
+      this.ActionSaveBookmarkEnd.UseVisualStyleBackColor = true;
+      this.ActionSaveBookmarkEnd.Click += new System.EventHandler(this.ActionSaveBookmark_Click);
       // 
       // ActionSwapDates
       // 
@@ -331,10 +331,10 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionClose;
       this.Controls.Add(this.ActionSwapDates);
-      this.Controls.Add(this.ActionSetBookmarkEnd);
-      this.Controls.Add(this.ActionUseBookmarkEnd);
-      this.Controls.Add(this.ActionSetBookmarkStart);
-      this.Controls.Add(this.ActionUseBookmarkStart);
+      this.Controls.Add(this.ActionSaveBookmarkEnd);
+      this.Controls.Add(this.ActionGoToBookmarkEnd);
+      this.Controls.Add(this.ActionSaveBookmarkStart);
+      this.Controls.Add(this.ActionGoToBookmarkStart);
       this.Controls.Add(this.DatePickerEnd);
       this.Controls.Add(this.DatePickerStart);
       this.Controls.Add(this.groupBox1);
@@ -377,15 +377,15 @@
     private System.Windows.Forms.DateTimePicker DatePickerStart;
     private System.Windows.Forms.DateTimePicker DatePickerEnd;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.Button ActionSetBookmarkStart;
-    private System.Windows.Forms.Button ActionUseBookmarkStart;
-    private System.Windows.Forms.Button ActionUseBookmarkEnd;
-    private System.Windows.Forms.Button ActionSetBookmarkEnd;
+    private System.Windows.Forms.Button ActionSaveBookmarkStart;
+    private System.Windows.Forms.Button ActionGoToBookmarkStart;
+    private System.Windows.Forms.Button ActionGoToBookmarkEnd;
+    private System.Windows.Forms.Button ActionSaveBookmarkEnd;
     private System.Windows.Forms.ContextMenuStrip MenuBookmarks;
     private System.Windows.Forms.Button ActionHelp;
     private System.Windows.Forms.Button ActionSwapDates;
     private System.Windows.Forms.Button ActionManageBookmarks;
     private System.Windows.Forms.CheckBox EditAutoSetRightToToday;
-    private Button ActionOpecCalc;
+    private Button ActionOpenCalc;
   }
 }

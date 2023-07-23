@@ -21,7 +21,7 @@ sealed partial class ManageBookmarksForm : Form
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  public ApplicationDatabase DBApp => ApplicationDatabase.Instance;
+  static private ApplicationDatabase DBApp => ApplicationDatabase.Instance;
 
   static public void Run()
   {

@@ -1254,7 +1254,7 @@ sealed partial class MainForm : Form
 
   internal void LoadMenuBookmarks(Form caller)
   {
-    DatesDifferenceForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
+    DatesDifferenceForm.LoadMenuBookmarks(MenuBookmarks.Items, ContextMenuDayGoToBookmark_MouseUp);
     if ( caller != DatesDifferenceForm.Instance )
       DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
     MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
@@ -1265,20 +1265,37 @@ sealed partial class MainForm : Form
     CurrentBookmarkMenu = sender as ToolStripMenuItem;
   }
 
-  private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
+  // TODO refactor with datesdiff
+  private void ContextMenuDayGoToBookmark_MouseUp(object sender, MouseEventArgs e)
   {
-    DoBookmarksMouseUp(sender, e);
+    var menuitem = (ToolStripMenuItem)sender;
+    var control = CurrentBookmarkMenu;
+    var bookmark = (DateBookmarkRow)menuitem.Tag;
+    if ( e.Button == MouseButtons.Right )
+    {
+      string date = bookmark.Date.ToLongDateString();
+      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
+        return;
+      ApplicationDatabase.Instance.Connection.Delete(bookmark);
+      ApplicationDatabase.Instance.DateBookmarks.Remove(bookmark);
+      LoadMenuBookmarks(this);
+    }
+    else
+    if ( e.Button == MouseButtons.Left )
+      GoToDate(bookmark.Date);
   }
 
+  // TODO refactor with datesdiff
   private void ContextMenuDaySaveBookmark_Click(object sender, EventArgs e)
   {
+    var date = ContextMenuDayCurrentEvent.Date;
     string memo = string.Empty;
-    if ( DisplayManager.QueryValue(SysTranslations.Memo.GetLang(), ref memo) == InputValueResult.Cancelled ) return;
-    var objectview = DBApp.DateBookmarksAsBindingListView.AddNew();
-    objectview.Object.Date = ContextMenuDayCurrentEvent.Date;
-    objectview.Object.Memo = memo;
-    DBApp.Connection.Insert(objectview.Object);
-    DBApp.DateBookmarks.Add(objectview.Object);
+    string title = SysTranslations.Memo.GetLang();
+    string caption = date.ToLongDateString();
+    if ( DisplayManager.QueryValue(title, caption, ref memo) == InputValueResult.Cancelled ) return;
+    var bookmark = new DateBookmarkRow(date, memo);
+    DBApp.Connection.Insert(bookmark);
+    DBApp.DateBookmarks.Add(bookmark);
     LoadMenuBookmarks(this);
   }
 

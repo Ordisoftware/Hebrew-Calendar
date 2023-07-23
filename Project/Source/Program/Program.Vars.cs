@@ -127,6 +127,9 @@ static partial class Program
   /// <summary>
   /// Indicates file path of date bookmarks.
   /// </summary>
+  /// <remarks>
+  /// Obsolete : replaced by a db table.
+  /// </remarks>
   static public string DateBookmarksFilePath
     => Path.Combine(Globals.UserDataFolderPath, "DateBookmarks.txt");
 

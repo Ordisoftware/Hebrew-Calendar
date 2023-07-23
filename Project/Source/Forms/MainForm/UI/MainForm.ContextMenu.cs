@@ -181,9 +181,8 @@ public partial class MainForm
     }
     // Bookmarks
     date = rowDay.Date;
+    ContextMenuDaySaveBookmark.Enabled = DBApp.DateBookmarks.Find(item => item.Date == date) is null;
     ContextMenuDayGoToBookmark.Enabled = DBApp.DateBookmarks.Count > 0;
-    // TODO disallow duplicated dates for different memo ? (else update manager)
-    ContextMenuDaySaveBookmark.Enabled = true; // DBApp.DateBookmarks.Find(item => item.Date == date) is null;
   }
 
 }

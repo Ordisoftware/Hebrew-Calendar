@@ -583,9 +583,6 @@
     <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\UI\MainForm.Bookmarks.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.Menus.cs">
       <SubType>Form</SubType>
     </Compile>
