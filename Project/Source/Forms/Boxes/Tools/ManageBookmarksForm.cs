@@ -98,6 +98,12 @@ sealed partial class ManageBookmarksForm : Form
   {
     var date = DateTime.Today;
     if ( !SelectDayForm.Run(null, ref date) ) return;
+    var row = DBApp.DateBookmarks.Find(item => item.Date == date);
+    if ( row is not null )
+    {
+      BindingSource.Position = BindingSource.Find("ID", row.ID);
+      return;
+    }
     string memo = string.Empty;
     if ( DisplayManager.QueryValue(ColumnMemo.HeaderText, ref memo) == InputValueResult.Cancelled ) return;
     DBApp.BeginTransaction();
@@ -107,6 +113,7 @@ sealed partial class ManageBookmarksForm : Form
     DBApp.Connection.Insert(objectview.Object);
     DBApp.DateBookmarks.Add(objectview.Object);
     BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
+    BindingSource.Position = BindingSource.Find("ID", objectview.Object.ID);
     Modified = true;
     UpdateDataControls();
   }
