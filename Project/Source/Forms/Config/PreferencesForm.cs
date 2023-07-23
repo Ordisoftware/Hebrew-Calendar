@@ -241,25 +241,6 @@ sealed partial class PreferencesForm : Form
     DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
   }
 
-  //TODO delete 
-  //private void ActionManageBookmarks_Click(object sender, EventArgs e)
-  //{
-  //  if ( !ManageBookmarksForm.Run() ) return;
-  //  int countBookmarks = Math.Max(Program.DateBookmarks.MinListSize, DateBookmarksCountInterval.Item1);
-  //  if ( countBookmarks == 0 ) countBookmarks = DateBookmarksCountInterval.Item1;
-  //  DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
-  //  EditDateBookmarksCount.Minimum = countBookmarks;
-  //  EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
-  //  SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
-  //}
-
-  private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
-  {
-    if ( !IsReady ) return;
-    Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
-    DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
-  }
-
   private void EditVolume_ValueChanged(object sender, EventArgs e)
   {
     MediaMixer.SetApplicationVolume(Globals.ProcessId, EditVolume.Value);

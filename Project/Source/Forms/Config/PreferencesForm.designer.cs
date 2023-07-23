@@ -74,11 +74,7 @@
       this.OpenSettingsDialog = new System.Windows.Forms.OpenFileDialog();
       this.TabControlMain = new System.Windows.Forms.TabControl();
       this.TabPageApplication = new System.Windows.Forms.TabPage();
-      this.ActionManageBookmarks = new System.Windows.Forms.Button();
-      this.LabelDateBookmarksCountIntervalInfo = new System.Windows.Forms.Label();
-      this.EditDateBookmarksCount = new System.Windows.Forms.NumericUpDown();
       this.EditVolume = new System.Windows.Forms.TrackBar();
-      this.LabelDateBookmarksCount = new System.Windows.Forms.Label();
       this.LabelChangeLangNotice = new System.Windows.Forms.Label();
       this.LabelVolume = new System.Windows.Forms.Label();
       this.LabelVolumeValue = new System.Windows.Forms.Label();
@@ -88,7 +84,6 @@
       this.EditWindowsDoubleBufferingEnabled = new System.Windows.Forms.CheckBox();
       this.EditWeatherMenuItemsEnabled = new System.Windows.Forms.CheckBox();
       this.EditWebLinksMenuEnabled = new System.Windows.Forms.CheckBox();
-      this.EditAutoSortBookmarks = new System.Windows.Forms.CheckBox();
       this.EditMainFormTitleBarShowCelebration = new System.Windows.Forms.CheckBox();
       this.EditHebrewInUnicodeKeepArabicNumerals = new System.Windows.Forms.CheckBox();
       this.EditHebrewNamesInUnicode = new System.Windows.Forms.CheckBox();
@@ -426,7 +421,6 @@
       this.MenuSelectMoonDayTextFormat.SuspendLayout();
       this.TabControlMain.SuspendLayout();
       this.TabPageApplication.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).BeginInit();
       this.TabPageStartup.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditCheckUpdateAtStartupInterval)).BeginInit();
@@ -791,11 +785,7 @@
       // 
       this.TabPageApplication.BackColor = System.Drawing.SystemColors.Window;
       this.TabPageApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TabPageApplication.Controls.Add(this.ActionManageBookmarks);
-      this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCountIntervalInfo);
-      this.TabPageApplication.Controls.Add(this.EditDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.EditVolume);
-      this.TabPageApplication.Controls.Add(this.LabelDateBookmarksCount);
       this.TabPageApplication.Controls.Add(this.LabelChangeLangNotice);
       this.TabPageApplication.Controls.Add(this.LabelVolume);
       this.TabPageApplication.Controls.Add(this.LabelVolumeValue);
@@ -805,7 +795,6 @@
       this.TabPageApplication.Controls.Add(this.EditWindowsDoubleBufferingEnabled);
       this.TabPageApplication.Controls.Add(this.EditWeatherMenuItemsEnabled);
       this.TabPageApplication.Controls.Add(this.EditWebLinksMenuEnabled);
-      this.TabPageApplication.Controls.Add(this.EditAutoSortBookmarks);
       this.TabPageApplication.Controls.Add(this.EditMainFormTitleBarShowCelebration);
       this.TabPageApplication.Controls.Add(this.EditHebrewInUnicodeKeepArabicNumerals);
       this.TabPageApplication.Controls.Add(this.EditHebrewNamesInUnicode);
@@ -816,43 +805,6 @@
       resources.ApplyResources(this.TabPageApplication, "TabPageApplication");
       this.TabPageApplication.Name = "TabPageApplication";
       // 
-      // ActionManageBookmarks
-      // 
-      this.ActionManageBookmarks.AllowDrop = true;
-      this.ActionManageBookmarks.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionManageBookmarks, "ActionManageBookmarks");
-      this.ActionManageBookmarks.Name = "ActionManageBookmarks";
-      this.ActionManageBookmarks.UseVisualStyleBackColor = true;
-      // 
-      // LabelDateBookmarksCountIntervalInfo
-      // 
-      resources.ApplyResources(this.LabelDateBookmarksCountIntervalInfo, "LabelDateBookmarksCountIntervalInfo");
-      this.LabelDateBookmarksCountIntervalInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-      this.LabelDateBookmarksCountIntervalInfo.Name = "LabelDateBookmarksCountIntervalInfo";
-      // 
-      // EditDateBookmarksCount
-      // 
-      this.EditDateBookmarksCount.BackColor = System.Drawing.SystemColors.Window;
-      resources.ApplyResources(this.EditDateBookmarksCount, "EditDateBookmarksCount");
-      this.EditDateBookmarksCount.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-      this.EditDateBookmarksCount.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-      this.EditDateBookmarksCount.Name = "EditDateBookmarksCount";
-      this.EditDateBookmarksCount.ReadOnly = true;
-      this.EditDateBookmarksCount.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-      this.EditDateBookmarksCount.ValueChanged += new System.EventHandler(this.EditDateBookmarksCount_ValueChanged);
-      // 
       // EditVolume
       // 
       resources.ApplyResources(this.EditVolume, "EditVolume");
@@ -861,11 +813,6 @@
       this.EditVolume.TickFrequency = 10;
       this.EditVolume.Value = 100;
       this.EditVolume.ValueChanged += new System.EventHandler(this.EditVolume_ValueChanged);
-      // 
-      // LabelDateBookmarksCount
-      // 
-      resources.ApplyResources(this.LabelDateBookmarksCount, "LabelDateBookmarksCount");
-      this.LabelDateBookmarksCount.Name = "LabelDateBookmarksCount";
       // 
       // LabelChangeLangNotice
       // 
@@ -928,12 +875,6 @@
       resources.ApplyResources(this.EditWebLinksMenuEnabled, "EditWebLinksMenuEnabled");
       this.EditWebLinksMenuEnabled.Name = "EditWebLinksMenuEnabled";
       this.EditWebLinksMenuEnabled.UseVisualStyleBackColor = true;
-      // 
-      // EditAutoSortBookmarks
-      // 
-      resources.ApplyResources(this.EditAutoSortBookmarks, "EditAutoSortBookmarks");
-      this.EditAutoSortBookmarks.Name = "EditAutoSortBookmarks";
-      this.EditAutoSortBookmarks.UseVisualStyleBackColor = true;
       // 
       // EditMainFormTitleBarShowCelebration
       // 
@@ -3708,7 +3649,6 @@
       this.TabControlMain.ResumeLayout(false);
       this.TabPageApplication.ResumeLayout(false);
       this.TabPageApplication.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditDateBookmarksCount)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.EditVolume)).EndInit();
       this.TabPageStartup.ResumeLayout(false);
       this.TabPageStartup.PerformLayout();
@@ -3798,7 +3738,6 @@
     private System.Windows.Forms.Button ActionHotKeyInfo;
     private System.Windows.Forms.Button ActionHotKeyReset;
     private System.Windows.Forms.Button ActionImportSettings;
-    private System.Windows.Forms.Button ActionManageBookmarks;
     private System.Windows.Forms.Button ActionMoonDayTextFormatHelp;
     private System.Windows.Forms.Button ActionMoonDayTextFormatReset;
     private System.Windows.Forms.Button ActionOpenTheme;
@@ -3905,8 +3844,6 @@
     private System.Windows.Forms.Label LabelColorTodayBack;
     private System.Windows.Forms.Label LabelColorTorah;
     private System.Windows.Forms.Label LabelDataExportFileFormat;
-    private System.Windows.Forms.Label LabelDateBookmarksCount;
-    private System.Windows.Forms.Label LabelDateBookmarksCountIntervalInfo;
     private System.Windows.Forms.Label LabelDefaultLockoutAction;
     private System.Windows.Forms.Label LabelExportFolder;
     private System.Windows.Forms.Label LabelFontName;
@@ -3970,7 +3907,6 @@
     private System.Windows.Forms.NumericUpDown EditBalloonLoomingDelay;
     private System.Windows.Forms.NumericUpDown EditCalendarLineSpacing;
     private System.Windows.Forms.NumericUpDown EditCheckUpdateAtStartupInterval;
-    private System.Windows.Forms.NumericUpDown EditDateBookmarksCount;
     private System.Windows.Forms.NumericUpDown EditMaxYearsInterval;
     private System.Windows.Forms.NumericUpDown EditMonthViewLatinFontSize;
     private System.Windows.Forms.NumericUpDown EditPrintingMargin;
@@ -4089,7 +4025,6 @@
     private Button ActionResetCustomWebSearch;
     private Label LabelCustomWebSearch;
     private TextBoxEx EditCustomWebSearch;
-    private CheckBox EditAutoSortBookmarks;
     private TabPage TabPagePrinting;
     private Label LabelPrintingMarginInfo;
     private CheckBox EditUseTwoDaysForLastPessahDayOutside;

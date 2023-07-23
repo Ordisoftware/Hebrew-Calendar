@@ -38,8 +38,9 @@ sealed partial class ManageBookmarksForm : Form
     }
   }
 
-  //private bool Ready;
   private bool Modified;
+
+  private string OriginalMemoBeforeEdit;
 
   private ManageBookmarksForm()
   {
@@ -80,18 +81,43 @@ sealed partial class ManageBookmarksForm : Form
     UpdateDataControls();
   }
 
-  private void EditBookmarks_DataError(object sender, DataGridViewDataErrorEventArgs e)
+  private void UpdateDataControls(bool forceEditMode = false)
   {
-    if ( !Globals.IsReady ) return;
-    if ( e.Exception is ArgumentOutOfRangeException || e.Exception is IndexOutOfRangeException )
+    try
     {
-      DisplayManager.ShowError($"DB Index error.{Globals.NL2}{SysTranslations.ApplicationMustExit.GetLang()}");
-      e.Exception.Manage();
-      DBApp.Connection.Rollback();
-      Application.Exit();
+      forceEditMode = forceEditMode || EditBookmarks.IsCurrentCellInEditMode;
+      ActionDelete.Enabled = !Globals.IsReadOnly && !forceEditMode && EditBookmarks.Rows.Count > 0;
+      ActionClear.Enabled = ActionDelete.Enabled;
+      ActionSave.Enabled = Modified && !forceEditMode;
+      ActionUndo.Enabled = ActionSave.Enabled;
+      ActionClose.Enabled = !ActionSave.Enabled;
+      ActionImport.Enabled = ActionClose.Enabled;
+      ActionExport.Enabled = ActionClose.Enabled;
+      Globals.AllowClose = ActionClose.Enabled;
     }
-    else
-      e.Exception.Manage();
+    catch ( Exception ex )
+    {
+      ex.Manage();
+    }
+  }
+
+  private void ActionSave_Click(object sender, EventArgs e)
+  {
+    DBApp.SaveBookmarks();
+    Modified = false;
+    UpdateDataControls();
+    EditBookmarks.Focus();
+    ApplicationStatistics.UpdateDBFileSizeRequired = true;
+    ApplicationStatistics.UpdateDBMemorySizeRequired = true;
+  }
+
+  private void ActionUndo_Click(object sender, EventArgs e)
+  {
+    DBApp.LoadBookmarks();
+    BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
+    Modified = false;
+    UpdateDataControls();
+    EditBookmarks.Focus();
   }
 
   private void ActionAdd_Click(object sender, EventArgs e)
@@ -163,8 +189,6 @@ sealed partial class ManageBookmarksForm : Form
     EditBookmarks.BeginEdit(false);
   }
 
-  private string OriginalMemoBeforeEdit;
-
   private void EditBookmarks_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
   {
     if ( !Globals.IsReady ) return;
@@ -214,43 +238,18 @@ sealed partial class ManageBookmarksForm : Form
     e.SuppressKeyPress = true;
   }
 
-  private void ActionSave_Click(object sender, EventArgs e)
+  private void EditBookmarks_DataError(object sender, DataGridViewDataErrorEventArgs e)
   {
-    DBApp.SaveBookmarks();
-    Modified = false;
-    UpdateDataControls();
-    EditBookmarks.Focus();
-    ApplicationStatistics.UpdateDBFileSizeRequired = true;
-    ApplicationStatistics.UpdateDBMemorySizeRequired = true;
-  }
-
-  private void ActionUndo_Click(object sender, EventArgs e)
-  {
-    DBApp.LoadBookmarks();
-    BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
-    Modified = false;
-    UpdateDataControls();
-    EditBookmarks.Focus();
-  }
-
-  private void UpdateDataControls(bool forceEditMode = false)
-  {
-    try
+    if ( !Globals.IsReady ) return;
+    if ( e.Exception is ArgumentOutOfRangeException || e.Exception is IndexOutOfRangeException )
     {
-      forceEditMode = forceEditMode || EditBookmarks.IsCurrentCellInEditMode;
-      ActionDelete.Enabled = !Globals.IsReadOnly && !forceEditMode && EditBookmarks.Rows.Count > 0;
-      ActionClear.Enabled = ActionDelete.Enabled;
-      ActionSave.Enabled = Modified && !forceEditMode;
-      ActionUndo.Enabled = ActionSave.Enabled;
-      ActionClose.Enabled = !ActionSave.Enabled;
-      ActionImport.Enabled = ActionClose.Enabled;
-      ActionExport.Enabled = ActionClose.Enabled;
-      Globals.AllowClose = ActionClose.Enabled;
+      DisplayManager.ShowError($"DB Index error.{Globals.NL2}{SysTranslations.ApplicationMustExit.GetLang()}");
+      e.Exception.Manage();
+      DBApp.Connection.Rollback();
+      Application.Exit();
     }
-    catch ( Exception ex )
-    {
-      ex.Manage();
-    }
+    else
+      e.Exception.Manage();
   }
 
 }
