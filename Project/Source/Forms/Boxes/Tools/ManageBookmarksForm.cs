@@ -133,7 +133,7 @@ sealed partial class ManageBookmarksForm : Form
     string memo = string.Empty;
     if ( DisplayManager.QueryValue(ColumnMemo.HeaderText, ref memo) == InputValueResult.Cancelled ) return;
     DBApp.BeginTransaction();
-    var objectview = DBApp.DateBookmarksAsBindingListView.AddNew();
+    var objectview = ( (BindingListView<DateBookmarkRow>)BindingSource.DataSource ).AddNew();
     objectview.Object.Date = date;
     objectview.Object.Memo = memo;
     DBApp.Connection.Insert(objectview.Object);
