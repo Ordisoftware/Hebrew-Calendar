@@ -30,9 +30,9 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBookmarksForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionImport = new System.Windows.Forms.Button();
@@ -46,9 +46,9 @@
       this.ActionUndo = new System.Windows.Forms.Button();
       this.ActionSave = new System.Windows.Forms.Button();
       this.EditBookmarks = new System.Windows.Forms.DataGridView();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.PanelBottom.SuspendLayout();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarks)).BeginInit();
@@ -57,26 +57,26 @@
       // 
       // PanelBottom
       // 
+      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionImport);
       this.PanelBottom.Controls.Add(this.ActionClose);
-      resources.ApplyResources(this.PanelBottom, "PanelBottom");
       this.PanelBottom.Name = "PanelBottom";
       // 
       // ActionExport
       // 
+      resources.ApplyResources(this.ActionExport, "ActionExport");
       this.ActionExport.AllowDrop = true;
       this.ActionExport.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionExport, "ActionExport");
       this.ActionExport.Name = "ActionExport";
       this.ActionExport.UseVisualStyleBackColor = true;
       this.ActionExport.Click += new System.EventHandler(this.ActionExport_Click);
       // 
       // ActionImport
       // 
+      resources.ApplyResources(this.ActionImport, "ActionImport");
       this.ActionImport.AllowDrop = true;
       this.ActionImport.FlatAppearance.BorderSize = 0;
-      resources.ApplyResources(this.ActionImport, "ActionImport");
       this.ActionImport.Name = "ActionImport";
       this.ActionImport.UseVisualStyleBackColor = true;
       this.ActionImport.Click += new System.EventHandler(this.ActionImport_Click);
@@ -96,15 +96,23 @@
       this.ActionClear.UseVisualStyleBackColor = true;
       this.ActionClear.Click += new System.EventHandler(this.ActionClear_Click);
       // 
+      // SaveBookmarksDialog
+      // 
+      resources.ApplyResources(this.SaveBookmarksDialog, "SaveBookmarksDialog");
+      // 
+      // OpenBookmarksDialog
+      // 
+      resources.ApplyResources(this.OpenBookmarksDialog, "OpenBookmarksDialog");
+      // 
       // panel1
       // 
+      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Controls.Add(this.ActionAdd);
       this.panel1.Controls.Add(this.ActionDelete);
       this.panel1.Controls.Add(this.ActionUndo);
       this.panel1.Controls.Add(this.ActionSave);
       this.panel1.Controls.Add(this.EditBookmarks);
       this.panel1.Controls.Add(this.ActionClear);
-      resources.ApplyResources(this.panel1, "panel1");
       this.panel1.Name = "panel1";
       // 
       // ActionAdd
@@ -141,36 +149,36 @@
       // 
       // EditBookmarks
       // 
+      resources.ApplyResources(this.EditBookmarks, "EditBookmarks");
       this.EditBookmarks.AllowUserToAddRows = false;
       this.EditBookmarks.AllowUserToDeleteRows = false;
       this.EditBookmarks.AllowUserToResizeColumns = false;
       this.EditBookmarks.AllowUserToResizeRows = false;
-      resources.ApplyResources(this.EditBookmarks, "EditBookmarks");
       this.EditBookmarks.AutoGenerateColumns = false;
       this.EditBookmarks.BackgroundColor = System.Drawing.Color.White;
       this.EditBookmarks.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.EditBookmarks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+      dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.EditBookmarks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
       this.EditBookmarks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
       this.EditBookmarks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDate,
             this.ColumnMemo});
       this.EditBookmarks.DataSource = this.BindingSource;
-      dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-      dataGridViewCellStyle3.NullValue = "string.Empty";
-      dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-      dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-      this.EditBookmarks.DefaultCellStyle = dataGridViewCellStyle3;
+      dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+      dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+      dataGridViewCellStyle6.NullValue = "string.Empty";
+      dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.EditBookmarks.DefaultCellStyle = dataGridViewCellStyle6;
       this.EditBookmarks.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
       this.EditBookmarks.EnableHeadersVisualStyles = false;
       this.EditBookmarks.MultiSelect = false;
@@ -186,13 +194,18 @@
       this.EditBookmarks.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.EditBookmarks_DataError);
       this.EditBookmarks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditBookmarks_KeyDown);
       // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DateBookmarkRow);
+      this.BindingSource.Sort = "";
+      // 
       // ColumnDate
       // 
       this.ColumnDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
       this.ColumnDate.DataPropertyName = "Date";
-      dataGridViewCellStyle2.Format = "d";
-      dataGridViewCellStyle2.NullValue = null;
-      this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle5.Format = "d";
+      dataGridViewCellStyle5.NullValue = null;
+      this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle5;
       resources.ApplyResources(this.ColumnDate, "ColumnDate");
       this.ColumnDate.Name = "ColumnDate";
       this.ColumnDate.ReadOnly = true;
@@ -206,11 +219,6 @@
       this.ColumnMemo.Name = "ColumnMemo";
       this.ColumnMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
       this.ColumnMemo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-      // 
-      // BindingSource
-      // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DateBookmarkRow);
-      this.BindingSource.Sort = "";
       // 
       // ManageBookmarksForm
       // 

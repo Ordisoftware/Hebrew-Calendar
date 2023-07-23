@@ -79,7 +79,7 @@ partial class MainForm
     // Weekly parashah study
     ActionWeeklyParashahStudyOnline.Initialize(HebrewGlobals.WebProvidersParashah, (sender, _) =>
     {
-      var weekParashah = Database.GetWeeklyParashah();
+      var weekParashah = DBApp.GetWeeklyParashah();
       if ( weekParashah.Factory is null ) return;
       HebrewTools.OpenParashahProvider((string)( (ToolStripMenuItem)sender ).Tag,
                                        weekParashah.Factory,
@@ -104,7 +104,7 @@ partial class MainForm
 
   private void DoReadParashahWeekly(string url)
   {
-    var weekParashah = Database.GetWeeklyParashah();
+    var weekParashah = DBApp.GetWeeklyParashah();
     if ( weekParashah.Factory is not null )
       HebrewTools.OpenBibleProvider(url, weekParashah.Factory.FullReferenceBegin);
   }

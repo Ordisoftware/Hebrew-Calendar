@@ -23,14 +23,14 @@ sealed partial class ManageBookmarksForm : Form
 
   public ApplicationDatabase DBApp => ApplicationDatabase.Instance;
 
-  static public bool Run()
+  static public void Run()
   {
     bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
     MainForm.Instance.MenuTray.Enabled = false;
     try
     {
       using var form = new ManageBookmarksForm();
-      return form.ShowDialog() == DialogResult.OK;
+      form.ShowDialog();
     }
     finally
     {

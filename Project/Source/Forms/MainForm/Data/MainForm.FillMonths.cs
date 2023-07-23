@@ -442,10 +442,10 @@ partial class MainForm
         }
         catch ( Exception ex )
         {
-          if ( Database.AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
+          if ( DBApp.AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
           {
-            if ( !Globals.IsGenerating && Database.LastGenerationErrors.Count != 0 )
-              Database.ShowLastGenerationErrors(Text);
+            if ( !Globals.IsGenerating && DBApp.LastGenerationErrors.Count != 0 )
+              DBApp.ShowLastGenerationErrors(Text);
             return;
           }
         }

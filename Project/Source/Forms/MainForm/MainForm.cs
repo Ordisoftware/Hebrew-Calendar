@@ -529,7 +529,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionViewParashahInfos_Click(object sender, EventArgs e)
   {
-    Database.ShowWeeklyParashahDescription();
+    DBApp.ShowWeeklyParashahDescription();
   }
 
   /// <summary>
@@ -549,7 +549,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewWordsGoToVerse(Database.GetWeeklyParashah().Factory.FullReferenceBegin);
+    HebrewTools.OpenHebrewWordsGoToVerse(DBApp.GetWeeklyParashah().Factory.FullReferenceBegin);
   }
 
   /// <summary>
@@ -604,7 +604,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowParashot_Click(object sender, EventArgs e)
   {
-    ParashotForm.Run(Database.GetWeeklyParashah().Factory);
+    ParashotForm.Run(DBApp.GetWeeklyParashah().Factory);
   }
 
   /// <summary>
@@ -723,7 +723,7 @@ sealed partial class MainForm : Form
   [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void ActionVacuumDB_Click(object sender, EventArgs e)
   {
-    Settings.VacuumLastDone = Database.Connection
+    Settings.VacuumLastDone = DBApp.Connection
                                       .Optimize(Settings.VacuumLastDone,
                                                 Settings.VacuumAtStartupDaysInterval,
                                                 true);
@@ -1270,10 +1270,22 @@ sealed partial class MainForm : Form
     DoBookmarksMouseUp(sender, e);
   }
 
+  private void ContextMenuDaySaveBookmark_Click(object sender, EventArgs e)
+  {
+    string memo = string.Empty;
+    if ( DisplayManager.QueryValue(SysTranslations.Memo.GetLang(), ref memo) == InputValueResult.Cancelled ) return;
+    var objectview = DBApp.DateBookmarksAsBindingListView.AddNew();
+    objectview.Object.Date = ContextMenuDayCurrentEvent.Date;
+    objectview.Object.Memo = memo;
+    DBApp.Connection.Insert(objectview.Object);
+    DBApp.DateBookmarks.Add(objectview.Object);
+    LoadMenuBookmarks(this);
+  }
+
   private void ActionManageBookmark_Click(object sender, EventArgs e)
   {
-    if ( ManageBookmarksForm.Run() )
-      LoadMenuBookmarks(this);
+    ManageBookmarksForm.Run();
+    LoadMenuBookmarks(this);
   }
 
   private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)

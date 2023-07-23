@@ -35,11 +35,11 @@ public partial class MainForm
 
   static private HebrewDatabase HebrewDatabase => HebrewDatabase.Instance;
 
-  static private ApplicationDatabase Database => ApplicationDatabase.Instance;
+  static private ApplicationDatabase DBApp => ApplicationDatabase.Instance;
 
-  static private List<LunisolarDayRow> LunisolarDays => Database.LunisolarDays;
+  static private List<LunisolarDayRow> LunisolarDays => DBApp.LunisolarDays;
 
-  static private List<DateBookmarkRow> Bookmarks => Database.DateBookmarks;
+  static private List<DateBookmarkRow> Bookmarks => DBApp.DateBookmarks;
 
   static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
 

@@ -131,7 +131,7 @@ partial class MainForm
         WeeklyParashahShownAtNewWeek = false;
       if ( doshow )
       {
-        var dayInfos = Database.GetToday()?.GetWeekLongCelebrationIntermediateDay();
+        var dayInfos = DBApp.GetToday()?.GetWeekLongCelebrationIntermediateDay();
         if ( dayInfos is not null )
         {
           doshow = dayInfos.Value.Event == TorahCelebration.None

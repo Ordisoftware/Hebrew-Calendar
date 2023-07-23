@@ -221,8 +221,8 @@ sealed partial class DatesDifferenceForm : Form
     Enabled = false;
     try
     {
-      if ( ManageBookmarksForm.Run() )
-        LoadMenuBookmarks(this);
+      ManageBookmarksForm.Run();
+      LoadMenuBookmarks(this);
     }
     finally
     {

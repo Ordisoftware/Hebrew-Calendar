@@ -32,23 +32,23 @@ partial class MainForm
     Cursor = Cursors.WaitCursor;
     Globals.ChronoCreateData.Restart();
     LunisolarDaysBindingSource.DataSource = null;
-    Database.BeginTransaction();
+    DBApp.BeginTransaction();
     try
     {
       UpdateButtons();
       LabelSubTitleGPS.Text = SysTranslations.CreatingData.GetLang();
       TextReport.Clear();
       MonthlyCalendar.TheEvents.Clear();
-      Database.EmptyLunisolarDays();
+      DBApp.EmptyLunisolarDays();
       try
       {
         bool success = false;
         if ( Globals.IsGenerating )
-          success = Database.PopulateDays(yearFirst, yearLast);
+          success = DBApp.PopulateDays(yearFirst, yearLast);
         if ( Globals.IsGenerating && success )
           try
           {
-            TextReport.Text = Database.GenerateReport(true);
+            TextReport.Text = DBApp.GenerateReport(true);
           }
           catch ( Exception ex )
           {
@@ -71,14 +71,14 @@ partial class MainForm
           }
           finally
           {
-            Database.Commit();
-            LunisolarDaysBindingSource.DataSource = Database.LunisolarDays;
+            DBApp.Commit();
+            LunisolarDaysBindingSource.DataSource = DBApp.LunisolarDays;
           }
       }
     }
     catch ( Exception ex )
     {
-      Database.Rollback();
+      DBApp.Rollback();
       ex.Manage();
     }
     finally
@@ -90,8 +90,8 @@ partial class MainForm
       SetView(Settings.CurrentView, true);
       UpdateButtons();
     }
-    if ( Database.LastGenerationErrors.Count != 0 )
-      return Database.ShowLastGenerationErrors(Text);
+    if ( DBApp.LastGenerationErrors.Count != 0 )
+      return DBApp.ShowLastGenerationErrors(Text);
     return null;
   }
 

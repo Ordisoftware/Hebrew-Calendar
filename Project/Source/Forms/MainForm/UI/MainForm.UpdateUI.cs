@@ -114,13 +114,13 @@ public partial class MainForm
         LabelSubTitleOmer.Text = TitleOmer;
         // Today
         if ( Settings.MainFormTitleBarShowToday )
-          Text += " - " + ( Database.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
+          Text += " - " + ( DBApp.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
         // Celebration
         if ( Settings.MainFormTitleBarShowCelebration )
         {
           if ( force || TitleCelebration.IsNullOrEmpty() )
           {
-            var today = Database.GetToday();
+            var today = DBApp.GetToday();
             TitleCelebration = today?.GetWeekLongCelebrationIntermediateDay().Text ?? string.Empty;
             if ( !TitleCelebration.IsNullOrEmpty() )
               TitleCelebration = " - " + TitleCelebration;
@@ -132,7 +132,7 @@ public partial class MainForm
         {
           if ( force || TitleParashah.IsNullOrEmpty() )
           {
-            var weekParashah = Database.GetWeeklyParashah();
+            var weekParashah = DBApp.GetWeeklyParashah();
             if ( weekParashah.Factory is not null )
             {
               if ( MenuTools.DropDownItems.Count > 0 )
