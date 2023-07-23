@@ -35,7 +35,8 @@ partial class ApplicationDatabase : SQLiteDatabase
   public List<DateBookmarkRow> DateBookmarks { get; private set; }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
-  public BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView { get; private set; }
+  public BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView
+    => new BindingListView<DateBookmarkRow>(DateBookmarks.OrderBy(row => row.Date).ToList());
 
   private ApplicationDatabase() : base(Globals.ApplicationDatabaseFilePath)
   {
@@ -74,15 +75,28 @@ partial class ApplicationDatabase : SQLiteDatabase
   protected override void DoLoadAll()
   {
     LunisolarDays = Connection.Table<LunisolarDayRow>().ToList();
-    LoadBookmarksAndCreateBindingList();
+    LoadBookmarks();
   }
 
-  public void LoadBookmarksAndCreateBindingList()
+  public void LoadBookmarks()
   {
+    Rollback();
     DateBookmarks = Connection.Table<DateBookmarkRow>().ToList();
-    DateBookmarksAsBindingListView?.Dispose();
-    DateBookmarksAsBindingListView = new BindingListView<DateBookmarkRow>(DateBookmarks);
-    DateBookmarksAsBindingListView.ApplySort(nameof(DateBookmarkRow.Date));
+  }
+
+  public void SaveBookmarks()
+  {
+    CheckConnected();
+    if ( !Connection.IsInTransaction ) return;
+    try
+    {
+      Connection.Commit();
+    }
+    catch
+    {
+      Rollback();
+      throw;
+    }
   }
 
   protected override bool CreateDataIfNotExist(bool reset = false)

@@ -31,7 +31,7 @@ partial class ApplicationDatabase
         Connection.Insert(bookmark);
         DateBookmarks.Add(bookmark);
       }
-      LoadBookmarksAndCreateBindingList();
+      LoadBookmarks();
       if ( DisplayManager.QueryYesNo(AppTranslations.BookmarksFileToTableHasErrorsElseSuccess[hasErrors].GetLang()) )
         SystemManager.RunShell(Path.GetDirectoryName(Program.DateBookmarksFilePath));
       //

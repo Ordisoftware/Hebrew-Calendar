@@ -1714,7 +1714,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("404, 321")]
+        [global::System.Configuration.DefaultSettingValueAttribute("434, 361")]
         public global::System.Drawing.Size ManageDateBookmarksFormClientSize {
             get {
                 return ((global::System.Drawing.Size)(this["ManageDateBookmarksFormClientSize"]));

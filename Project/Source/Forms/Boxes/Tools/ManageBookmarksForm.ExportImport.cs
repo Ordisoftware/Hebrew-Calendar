@@ -32,7 +32,7 @@ partial class ManageBookmarksForm : Form
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   private void DoActionExport()
   {
-    if ( !RunDialog(SaveBookmarksDialog, TableName) ) return;
+    /*if ( !RunDialog(SaveBookmarksDialog, TableName) ) return;
     try
     {
       string extension = Path.GetExtension(SaveBookmarksDialog.FileName);
@@ -69,7 +69,7 @@ partial class ManageBookmarksForm : Form
     catch ( Exception ex )
     {
       DisplayManager.ShowError(ex.Message);
-    }
+    }*/
   }
 
   private void DoActionImport()

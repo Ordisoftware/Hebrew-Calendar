@@ -1252,19 +1252,12 @@ sealed partial class MainForm : Form
 
   private ToolStripMenuItem CurrentBookmarkMenu;
 
-  // TODO refactor
   internal void LoadMenuBookmarks(Form caller)
   {
     DatesDifferenceForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
     if ( caller != DatesDifferenceForm.Instance )
       DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
     MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
-    MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
-    foreach ( ToolStripMenuItem menuitem in ContextMenuDayGoToBookmark.DropDownItems )
-    {
-      //var bookmark = Program.DateBookmarks[(int)menuitem.Tag];
-      //if ( bookmark is null ) menuitem.Enabled = false;
-    }
   }
 
   private void ContextMenuDayGoToBookmark_DropDownOpened(object sender, EventArgs e)

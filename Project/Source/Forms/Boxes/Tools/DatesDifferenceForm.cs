@@ -31,7 +31,7 @@ sealed partial class DatesDifferenceForm : Form
   static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
   {
     items.Clear();
-    var bookmarks = ApplicationDatabase.Instance.DateBookmarks;
+    var bookmarks = ApplicationDatabase.Instance.DateBookmarksAsBindingListView;
     bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
     string digits = bookmarks.Count < 10 ? "0" : bookmarks.Count < 100 ? "00" : bookmarks.Count < 1000 ? "000" : "0000";
     int index = 0;
