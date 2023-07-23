@@ -15,6 +15,7 @@
 namespace Ordisoftware.Hebrew.Calendar;
 
 using SQLite;
+using Equin.ApplicationFramework;
 
 [Serializable]
 [Table("DateBookmarks")]
@@ -53,6 +54,33 @@ public class DateBookmarkRow
   {
     Date = item.Date;
     Memo = item.Memo;
+  }
+
+  static public DateBookmarkRow CreateFromUserInput(DateTime date,
+                                                    bool beginTransaction = false,
+                                                    BindingListView<DateBookmarkRow> list = null)
+  {
+    string memo = string.Empty;
+    string title = SysTranslations.Memo.GetLang();
+    string caption = date.ToLongDateString();
+    if ( DisplayManager.QueryValue(title, caption, ref memo) == InputValueResult.Cancelled ) return null;
+    if ( beginTransaction ) ApplicationDatabase.Instance.BeginTransaction();
+    if ( list is not null )
+    {
+      var objectview = list.AddNew();
+      objectview.Object.Date = date;
+      objectview.Object.Memo = memo;
+      ApplicationDatabase.Instance.Connection.Insert(objectview.Object);
+      ApplicationDatabase.Instance.DateBookmarks.Add(objectview.Object);
+      return objectview.Object;
+    }
+    else
+    {
+      var bookmark = new DateBookmarkRow(date, memo);
+      ApplicationDatabase.Instance.Connection.Insert(bookmark);
+      ApplicationDatabase.Instance.DateBookmarks.Add(bookmark);
+      return bookmark;
+    }
   }
 
 }

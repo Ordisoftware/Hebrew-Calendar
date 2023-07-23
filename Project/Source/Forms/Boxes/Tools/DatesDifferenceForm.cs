@@ -164,7 +164,6 @@ sealed partial class DatesDifferenceForm : Form
     }
   }
 
-  // TODO refactor with mainform
   private void ActionSaveBookmark_Click(object sender, EventArgs e)
   {
     DateTime date;
@@ -175,13 +174,7 @@ sealed partial class DatesDifferenceForm : Form
       date = DateEnd.SelectionStart;
     else
       return;
-    string memo = string.Empty;
-    string title = SysTranslations.Memo.GetLang();
-    string caption = date.ToLongDateString();
-    if ( DisplayManager.QueryValue(title, caption, ref memo) == InputValueResult.Cancelled ) return;
-    var bookmark = new DateBookmarkRow(date, memo);
-    DBApp.Connection.Insert(bookmark);
-    DBApp.DateBookmarks.Add(bookmark);
+    DateBookmarkRow.CreateFromUserInput(date);
     LoadMenuBookmarks(this);
   }
 

@@ -86,11 +86,12 @@ sealed partial class ManageBookmarksForm : Form
     try
     {
       forceEditMode = forceEditMode || EditBookmarks.IsCurrentCellInEditMode;
-      ActionDelete.Enabled = !Globals.IsReadOnly && !forceEditMode && EditBookmarks.Rows.Count > 0;
+      ActionDelete.Enabled = !forceEditMode && EditBookmarks.Rows.Count > 0;
       ActionClear.Enabled = ActionDelete.Enabled;
-      ActionSave.Enabled = Modified && !forceEditMode;
-      ActionUndo.Enabled = ActionSave.Enabled;
-      ActionClose.Enabled = !ActionSave.Enabled;
+      ActionAdd.Enabled = ActionDelete.Enabled;
+      ActionSave.Enabled = Modified;
+      ActionUndo.Enabled = Modified;
+      ActionClose.Enabled = !ActionSave.Enabled && !forceEditMode;
       ActionImport.Enabled = ActionClose.Enabled;
       ActionExport.Enabled = ActionClose.Enabled;
       Globals.AllowClose = ActionClose.Enabled;
@@ -130,16 +131,10 @@ sealed partial class ManageBookmarksForm : Form
       BindingSource.Position = BindingSource.Find("ID", row.ID);
       return;
     }
-    string memo = string.Empty;
-    if ( DisplayManager.QueryValue(ColumnMemo.HeaderText, ref memo) == InputValueResult.Cancelled ) return;
-    DBApp.BeginTransaction();
-    var objectview = ( (BindingListView<DateBookmarkRow>)BindingSource.DataSource ).AddNew();
-    objectview.Object.Date = date;
-    objectview.Object.Memo = memo;
-    DBApp.Connection.Insert(objectview.Object);
-    DBApp.DateBookmarks.Add(objectview.Object);
+    var list = (BindingListView<DateBookmarkRow>)BindingSource.DataSource;
+    var bookmark = DateBookmarkRow.CreateFromUserInput(date, true, list);
     BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
-    BindingSource.Position = BindingSource.Find("ID", objectview.Object.ID);
+    BindingSource.Position = BindingSource.Find("ID", bookmark.ID);
     Modified = true;
     UpdateDataControls();
   }
