@@ -53,11 +53,6 @@ static partial class AppTranslations
     ShowNotice(NoticeCelebrationsTitle, NoticeCelebrations, MessageBoxEx.DefaultWidthMedium);
   }
 
-  static private void ShowFoodNotice()
-  {
-    ShowNotice(NoticeCelebrationsFoodTitle, NoticeCelebrationsFood, MessageBoxEx.DefaultWidthLarge);
-  }
-
   static public void ShowShabatNotice()
   {
     ShowNotice(NoticeShabatTitle, NoticeShabat, MessageBoxEx.DefaultWidthLarge);

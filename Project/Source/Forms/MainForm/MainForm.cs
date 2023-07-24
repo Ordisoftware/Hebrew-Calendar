@@ -503,26 +503,6 @@ sealed partial class MainForm : Form
   #region Menu Tools
 
   /// <summary>
-  /// Event handler. Called by ActionShowTranscriptionGuide for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
-  {
-    Program.TranscriptionGuideForm.Popup();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowGrammarGuide for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
-  {
-    Program.GrammarGuideForm.Popup();
-  }
-
-  /// <summary>
   /// Event handler. Called by ActionViewParashahInfos for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
@@ -559,12 +539,12 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
-    Hebrew.CelebrationVersesBoardForm.Run(TorahCelebration.Pessah,
-                                          nameof(Settings.CelebrationVersesBoardFormLocation),
-                                          nameof(Settings.CelebrationVersesBoardFormClientSize),
-                                          Settings.OpenVerseOnlineURL,
-                                          Settings.DoubleClickOnVerseOpenDefaultReader,
-                                          value => Settings.DoubleClickOnVerseOpenDefaultReader = value);
+    CelebrationVersesBoardForm.Run(TorahCelebration.Pessah,
+                                   nameof(Settings.CelebrationVersesBoardFormLocation),
+                                   nameof(Settings.CelebrationVersesBoardFormClientSize),
+                                   Settings.OpenVerseOnlineURL,
+                                   Settings.DoubleClickOnVerseOpenDefaultReader,
+                                   value => Settings.DoubleClickOnVerseOpenDefaultReader = value);
   }
 
   /// <summary>
@@ -731,6 +711,40 @@ sealed partial class MainForm : Form
     ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
     ApplicationStatistics.UpdateDBFileSizeRequired = true;
     DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
+  }
+
+  #endregion
+
+  #region Menu Help
+
+  /// <summary>
+  /// Event handler. Called by ActionShowTranscriptionGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
+  {
+    Program.TranscriptionGuideForm.Popup();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowGrammarGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+  {
+    Program.GrammarGuideForm.Popup();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowNotices for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowNotices_Click(object sender, EventArgs e)
+  {
+    NoticesForm.Run();
   }
 
   #endregion
@@ -1121,7 +1135,14 @@ sealed partial class MainForm : Form
 
   #region Context Menu
 
-  private bool ContextMenuStripDayNoClose;
+  private bool ContextMenuDenyClosingForEphemeris;
+
+  private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
+  {
+    if ( IsCalendarReady ) return;
+    if ( TimerMutex ) return;
+    MonthlyCalendar.Refresh();
+  }
 
   private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
   {
@@ -1130,14 +1151,14 @@ sealed partial class MainForm : Form
 
   private void ContextMenuDayDate_MouseDown(object sender, MouseEventArgs e)
   {
-    ContextMenuStripDayNoClose = true;
+    ContextMenuDenyClosingForEphemeris = true;
   }
 
   private void ContextMenuStripDay_Closing(object sender, ToolStripDropDownClosingEventArgs e)
   {
-    if ( ContextMenuStripDayNoClose )
+    if ( ContextMenuDenyClosingForEphemeris )
     {
-      ContextMenuStripDayNoClose = false;
+      ContextMenuDenyClosingForEphemeris = false;
       e.Cancel = true;
     }
   }
@@ -1147,18 +1168,13 @@ sealed partial class MainForm : Form
     DoContextMenuStripDay_Opened(sender, e);
   }
 
-  private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
-  {
-    if ( !NavigationForm.Instance.Visible )
-      ActionNavigate.PerformClick();
-    else
-      NavigationForm.Instance.Popup();
-    NavigationForm.Instance.Date = ContextMenuDayCurrentEvent.Date;
-  }
+  #endregion
 
-  private void ActionShowNotices_Click(object sender, EventArgs e)
+  #region Context Menu Torah
+
+  private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)
   {
-    NoticesForm.Run();
+    DoReadParashahSomeWeek(Settings.OpenVerseOnlineURL);
   }
 
   private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
@@ -1199,11 +1215,30 @@ sealed partial class MainForm : Form
         HebrewTools.OpenHebrewWordsGoToVerse(parashah.FullReferenceBegin);
   }
 
-  private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
+  #endregion
+
+  #region Context Menu Days
+
+  private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
   {
-    if ( IsCalendarReady ) return;
-    if ( TimerMutex ) return;
-    MonthlyCalendar.Refresh();
+    if ( !NavigationForm.Instance.Visible )
+      ActionNavigate.PerformClick();
+    else
+      NavigationForm.Instance.Popup();
+    NavigationForm.Instance.Date = ContextMenuDayCurrentEvent.Date;
+  }
+
+  private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)
+  {
+    DateSelected = null;
+  }
+
+  private void ContextMenuDaySelect_Click(object sender, EventArgs e)
+  {
+    DateSelected = ContextMenuDayCurrentEvent.Date;
+    if ( DateSelected is not null )
+      if ( MonthlyCalendar.CalendarDate.Month != DateSelected.Value.Month )
+        GoToDate(DateSelected.Value);
   }
 
   private void ContextMenuDaySetAsActive_Click(object sender, EventArgs e)
@@ -1219,19 +1254,6 @@ sealed partial class MainForm : Form
   private void ContextMenuDayGoToSelected_Click(object sender, EventArgs e)
   {
     GoToDate(DateSelected.Value);
-  }
-
-  private void ContextMenuDaySelect_Click(object sender, EventArgs e)
-  {
-    DateSelected = ContextMenuDayCurrentEvent.Date;
-    if ( DateSelected is not null )
-      if ( MonthlyCalendar.CalendarDate.Month != DateSelected.Value.Month )
-        GoToDate(DateSelected.Value);
-  }
-
-  private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)
-  {
-    DateSelected = null;
   }
 
   private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
@@ -1250,45 +1272,26 @@ sealed partial class MainForm : Form
     DatesDifferenceForm.Run(tuple, ensureOrder: true);
   }
 
-  private ToolStripMenuItem CurrentBookmarkMenu;
+  #endregion
+
+  #region Context Menu Bookmarks
 
   internal void LoadMenuBookmarks(Form caller)
   {
-    DatesDifferenceForm.LoadMenuBookmarks(MenuBookmarks.Items, ContextMenuDayGoToBookmark_MouseUp);
-    if ( caller != DatesDifferenceForm.Instance )
-      DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
+    DateBookmarkRow.LoadMenuBookmarks(MenuBookmarks.Items, ContextMenuDayGoToBookmark_MouseUp);
+    if ( caller != DatesDifferenceForm.Instance ) DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
     MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
   }
 
-  private void ContextMenuDayGoToBookmark_DropDownOpened(object sender, EventArgs e)
-  {
-    CurrentBookmarkMenu = sender as ToolStripMenuItem;
-  }
-
-  // TODO refactor with datesdiff
   private void ContextMenuDayGoToBookmark_MouseUp(object sender, MouseEventArgs e)
   {
-    var menuitem = (ToolStripMenuItem)sender;
-    var control = CurrentBookmarkMenu;
-    var bookmark = (DateBookmarkRow)menuitem.Tag;
-    if ( e.Button == MouseButtons.Right )
-    {
-      string date = bookmark.Date.ToLongDateString();
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
-        return;
-      ApplicationDatabase.Instance.Connection.Delete(bookmark);
-      ApplicationDatabase.Instance.DateBookmarks.Remove(bookmark);
-      LoadMenuBookmarks(this);
-    }
-    else
-    if ( e.Button == MouseButtons.Left )
-      GoToDate(bookmark.Date);
+    var menuItem = (ToolStripMenuItem)sender;
+    DateBookmarkRow.MenuItemMouseUp(this, menuItem, e.Button, LoadMenuBookmarks, bkm => GoToDate(bkm.Date));
   }
 
   private void ContextMenuDaySaveBookmark_Click(object sender, EventArgs e)
   {
-    var date = ContextMenuDayCurrentEvent.Date;
-    DateBookmarkRow.CreateFromUserInput(date);
+    DateBookmarkRow.CreateFromUserInput(ContextMenuDayCurrentEvent.Date);
     LoadMenuBookmarks(this);
   }
 
@@ -1296,11 +1299,6 @@ sealed partial class MainForm : Form
   {
     ManageBookmarksForm.Run();
     LoadMenuBookmarks(this);
-  }
-
-  private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)
-  {
-    DoReadParashahSomeWeek(Settings.OpenVerseOnlineURL);
   }
 
   #endregion

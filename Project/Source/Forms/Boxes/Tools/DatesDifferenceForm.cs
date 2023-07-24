@@ -26,27 +26,6 @@ sealed partial class DatesDifferenceForm : Form
     Instance = new DatesDifferenceForm();
   }
 
-  // TODO refactor
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
-  static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
-  {
-    items.Clear();
-    var bookmarks = DBApp.DateBookmarksAsBindingListView;
-    bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
-    string digits = bookmarks.Count < 10 ? "0" : bookmarks.Count < 100 ? "00" : bookmarks.Count < 1000 ? "000" : "0000";
-    int index = 0;
-    foreach ( var bookmark in bookmarks )
-    {
-      index++;
-      var menuitem = items.Add($"{index.ToString(digits)}. {bookmark}");
-      menuitem.MouseUp += action;
-      menuitem.Tag = bookmark;
-      if ( onlyCalendar )
-        if ( bookmark.Date < MainForm.Instance.DateFirst || bookmark.Date > MainForm.Instance.DateLast )
-          menuitem.Enabled = false;
-    }
-  }
-
   static public void Run(Tuple<DateTime, DateTime> dates = null, bool initOnly = false, bool ensureOrder = false)
   {
     if ( dates is not null )
@@ -98,7 +77,7 @@ sealed partial class DatesDifferenceForm : Form
 
   internal void LoadMenuBookmarks(Form caller)
   {
-    LoadMenuBookmarks(MenuBookmarks.Items, ActionGotoBookmark_MouseUp);
+    DateBookmarkRow.LoadMenuBookmarks(MenuBookmarks.Items, ActionGotoBookmark_MouseUp);
     if ( caller != MainForm.Instance ) MainForm.Instance.LoadMenuBookmarks(this);
   }
 
@@ -139,29 +118,16 @@ sealed partial class DatesDifferenceForm : Form
     Close();
   }
 
-  // TODO refactor with mainform
   private void ActionGotoBookmark_MouseUp(object sender, MouseEventArgs e)
   {
-    var menuitem = (ToolStripMenuItem)sender;
-    var bookmark = (DateBookmarkRow)menuitem.Tag;
-    if ( e.Button == MouseButtons.Right )
-    {
-      string date = bookmark.Date.ToLongDateString();
-      if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
-        return;
-      DBApp.Connection.Delete(bookmark);
-      DBApp.DateBookmarks.Remove(bookmark);
-      LoadMenuBookmarks(this);
-    }
-    else
-    if ( e.Button == MouseButtons.Left )
+    DateBookmarkRow.MenuItemMouseUp(this, (ToolStripMenuItem)sender, e.Button, LoadMenuBookmarks, bookmark =>
     {
       if ( CurrentBookmarkButton == ActionGoToBookmarkStart )
         DateStart.SelectionStart = bookmark.Date;
       else
       if ( CurrentBookmarkButton == ActionGoToBookmarkEnd )
         DateEnd.SelectionStart = bookmark.Date;
-    }
+    });
   }
 
   private void ActionSaveBookmark_Click(object sender, EventArgs e)
@@ -260,8 +226,10 @@ sealed partial class DatesDifferenceForm : Form
     {
       Cursor = cursor;
     }
-    ActionSaveBookmarkStart.Enabled = DBApp.DateBookmarks.Find(item => item.Date == DateStart.SelectionStart) is null;
-    ActionSaveBookmarkEnd.Enabled = DBApp.DateBookmarks.Find(item => item.Date == DateEnd.SelectionStart) is null;
+    var dateStart = DateStart.SelectionStart;
+    var dateEnd = DateEnd.SelectionStart;
+    ActionSaveBookmarkStart.Enabled = DBApp.DateBookmarks.Find(item => item.Date == dateStart) is null;
+    ActionSaveBookmarkEnd.Enabled = DBApp.DateBookmarks.Find(item => item.Date == dateEnd) is null;
   }
 
   private void ActionOpenCalc_Click(object sender, EventArgs e)
