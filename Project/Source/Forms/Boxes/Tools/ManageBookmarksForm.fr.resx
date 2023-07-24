@@ -124,6 +124,9 @@
   <data name="ColumnMemo.HeaderText" xml:space="preserve">
     <value>Mémo</value>
   </data>
+  <data name="Color.HeaderText" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Gestionnaire des signets</value>
   </data>

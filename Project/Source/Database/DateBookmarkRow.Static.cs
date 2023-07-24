@@ -32,6 +32,7 @@ public partial class DateBookmarkRow
     {
       index++;
       var menuitem = items.Add($"{index.ToString(digits)}. {bookmark}");
+      menuitem.ForeColor = bookmark.Color;
       menuitem.MouseUp += action;
       menuitem.Tag = bookmark;
       if ( onlyDatesWithinCalendar )

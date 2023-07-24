@@ -14,6 +14,7 @@
 /// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using System.Windows.Forms;
 using Equin.ApplicationFramework;
 
 sealed partial class ManageBookmarksForm : Form
@@ -187,6 +188,7 @@ sealed partial class ManageBookmarksForm : Form
   private void EditBookmarks_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
   {
     if ( !Globals.IsReady ) return;
+    DBApp.BeginTransaction();
     var cell = EditBookmarks[e.ColumnIndex, e.RowIndex];
     OriginalMemoBeforeEdit = (string)cell.Value;
     UpdateDataControls(true);
@@ -245,6 +247,42 @@ sealed partial class ManageBookmarksForm : Form
     }
     else
       e.Exception.Manage();
+  }
+
+  private void EditBookmarks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( e.RowIndex < 0 || e.ColumnIndex != ColumnColor.Index ) return;
+    ActionEditColor_Click(sender, e);
+  }
+
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
+  private void ActionEditColor_Click(object sender, EventArgs e)
+  {
+    DBApp.BeginTransaction();
+    var row = EditBookmarks.SelectedRows[0];
+    var boundItem = ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object;
+    ColorDialog.Color = boundItem.Color;
+    if ( ColorDialog.ShowDialog() != DialogResult.OK || ColorDialog.Color == boundItem.Color ) return;
+    row.Cells[ColumnColor.Index].Style.BackColor = ColorDialog.Color;
+    row.Cells[ColumnColor.Index].Style.ForeColor = ColorDialog.Color;
+    boundItem.Color = ColorDialog.Color;
+    row.Cells[ColumnColor.Index].Selected = false;
+    row.Cells[0].Selected = true;
+    EditBookmarks.RefreshEdit();
+    Modified = true;
+    UpdateDataControls();
+  }
+
+  private void EditBookmarks_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+  {
+    if ( e.Value is null ) return;
+    if ( e.ColumnIndex == ColumnColor.Index )
+    {
+      var row = EditBookmarks.Rows[e.RowIndex];
+      var boundItem = ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object;
+      e.CellStyle.BackColor = boundItem.Color;
+      e.CellStyle.ForeColor = boundItem.Color;
+    }
   }
 
 }
