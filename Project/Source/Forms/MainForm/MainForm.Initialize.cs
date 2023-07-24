@@ -351,10 +351,10 @@ partial class MainForm
     SaveReportDialog.InitialDirectory = Settings.GetExportDirectory();
     SaveImageDialog.InitialDirectory = Settings.GetExportImagesDirectory();
     SaveGridDialog.InitialDirectory = Settings.GetExportDataDirectory();
-    SaveBoardDialog.InitialDirectory = Settings.GetExportBoardsDirectory();
+    SaveDataBoardDialog.InitialDirectory = Settings.GetExportBoardsDirectory();
     SaveImageDialog.Filter = Program.ImageExportTargets.CreateFilters();
     SaveGridDialog.Filter = Program.GridExportTargets.CreateFilters();
-    SaveBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();
+    SaveDataBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();
   }
 
   /// <summary>
