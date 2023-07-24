@@ -107,7 +107,7 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void CreateBindingLists()
   {
-    // NOP
+    // N/A
   }
 
   protected override void DoSaveAll()
