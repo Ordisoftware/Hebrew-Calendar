@@ -57,9 +57,18 @@ sealed partial class ManageBookmarksForm : Form
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
     BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
-    if ( EditBookmarks.Rows.Count > 0 ) EditBookmarks.Rows[0].Selected = true;
     ActiveControl = EditBookmarks;
     UpdateDataControls();
+  }
+
+  private void ManageBookmarksForm_Shown(object sender, EventArgs e)
+  {
+    if ( EditBookmarks.Rows.Count > 0 )
+    {
+      EditBookmarks.Rows[0].Selected = false;
+      EditBookmarks.Refresh();
+      EditBookmarks.Rows[0].Selected = true;
+    }
   }
 
   private void ManageBookmarksForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -96,6 +105,10 @@ sealed partial class ManageBookmarksForm : Form
       ActionImport.Enabled = ActionClose.Enabled;
       ActionExport.Enabled = ActionClose.Enabled;
       Globals.AllowClose = ActionClose.Enabled;
+      ActionResetColors.Enabled = EditBookmarks.Rows
+                                               .AsIEnumerable()
+                                               .Select(row => ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object)
+                                               .Any(item => item.Color.ToArgb() != SystemColors.ControlText.ToArgb());
     }
     catch ( Exception ex )
     {
@@ -120,6 +133,13 @@ sealed partial class ManageBookmarksForm : Form
     Modified = false;
     UpdateDataControls();
     EditBookmarks.Focus();
+    if ( EditBookmarks.SelectedRows.Count > 0 )
+    {
+      var row = EditBookmarks.SelectedRows[0];
+      row.Selected = false;
+      EditBookmarks.Refresh();
+      row.Selected = true;
+    }
   }
 
   private void ActionAdd_Click(object sender, EventArgs e)
@@ -262,13 +282,13 @@ sealed partial class ManageBookmarksForm : Form
     var row = EditBookmarks.SelectedRows[0];
     var boundItem = ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object;
     ColorDialog.Color = boundItem.Color;
-    if ( ColorDialog.ShowDialog() != DialogResult.OK || ColorDialog.Color == boundItem.Color ) return;
+    var res = ColorDialog.ShowDialog();
+    if ( res != DialogResult.OK || ColorDialog.Color == boundItem.Color ) return;
     row.Cells[ColumnColor.Index].Style.BackColor = ColorDialog.Color;
-    row.Cells[ColumnColor.Index].Style.ForeColor = ColorDialog.Color;
     boundItem.Color = ColorDialog.Color;
-    row.Cells[ColumnColor.Index].Selected = false;
-    row.Cells[0].Selected = true;
-    EditBookmarks.RefreshEdit();
+    row.Selected = false;
+    EditBookmarks.Refresh();
+    row.Selected = true;
     Modified = true;
     UpdateDataControls();
   }
@@ -281,7 +301,26 @@ sealed partial class ManageBookmarksForm : Form
       var row = EditBookmarks.Rows[e.RowIndex];
       var boundItem = ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object;
       e.CellStyle.BackColor = boundItem.Color;
-      e.CellStyle.ForeColor = boundItem.Color;
+    }
+  }
+
+  private void ActionResetColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    DBApp.BeginTransaction();
+    var list = EditBookmarks.Rows
+                            .AsIEnumerable()
+                            .Select(row => ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object);
+    foreach ( var item in list )
+      item.Color = SystemColors.ControlText;
+    EditBookmarks.Refresh();
+    Modified = true;
+    UpdateDataControls();
+    if ( EditBookmarks.SelectedRows.Count > 0 )
+    {
+      var row = EditBookmarks.SelectedRows[0];
+      row.Selected = false;
+      EditBookmarks.Refresh();
+      row.Selected = true;
     }
   }
 

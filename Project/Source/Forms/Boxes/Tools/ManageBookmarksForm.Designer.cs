@@ -29,11 +29,11 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBookmarksForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBookmarksForm));
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionExport = new System.Windows.Forms.Button();
       this.ActionImport = new System.Windows.Forms.Button();
@@ -47,19 +47,21 @@
       this.ActionUndo = new System.Windows.Forms.Button();
       this.ActionSave = new System.Windows.Forms.Button();
       this.EditBookmarks = new System.Windows.Forms.DataGridView();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColorDialog = new System.Windows.Forms.ColorDialog();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnColor = new System.Windows.Forms.DataGridViewButtonColumn();
+      this.ActionResetColors = new System.Windows.Forms.LinkLabel();
       this.PanelBottom.SuspendLayout();
       this.panel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.EditBookmarks)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBookmarks ) ).BeginInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).BeginInit();
       this.SuspendLayout();
       // 
       // PanelBottom
       // 
+      this.PanelBottom.Controls.Add(this.ActionResetColors);
       this.PanelBottom.Controls.Add(this.ActionExport);
       this.PanelBottom.Controls.Add(this.ActionImport);
       this.PanelBottom.Controls.Add(this.ActionClose);
@@ -154,7 +156,7 @@
       this.EditBookmarks.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
       dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
       dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
       dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -168,7 +170,7 @@
       this.EditBookmarks.DataSource = this.BindingSource;
       dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
       dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-      dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ( (byte)( 0 ) ));
       dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
       dataGridViewCellStyle4.NullValue = "string.Empty";
       dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -225,13 +227,24 @@
       dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
       dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent;
       this.ColumnColor.DefaultCellStyle = dataGridViewCellStyle3;
-      this.ColumnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.ColumnColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
       resources.ApplyResources(this.ColumnColor, "ColumnColor");
       this.ColumnColor.Name = "ColumnColor";
       this.ColumnColor.ReadOnly = true;
       this.ColumnColor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
       this.ColumnColor.Text = "";
       this.ColumnColor.UseColumnTextForButtonValue = true;
+      // 
+      // ActionResetColors
+      // 
+      this.ActionResetColors.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionResetColors, "ActionResetColors");
+      this.ActionResetColors.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.ActionResetColors.LinkColor = System.Drawing.Color.Navy;
+      this.ActionResetColors.Name = "ActionResetColors";
+      this.ActionResetColors.TabStop = true;
+      this.ActionResetColors.VisitedLinkColor = System.Drawing.Color.Navy;
+      this.ActionResetColors.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionResetColors_LinkClicked);
       // 
       // ManageBookmarksForm
       // 
@@ -247,10 +260,12 @@
       this.ShowInTaskbar = false;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageBookmarksForm_FormClosing);
       this.Load += new System.EventHandler(this.ManageDateBookmarks_Load);
+      this.Shown += new System.EventHandler(this.ManageBookmarksForm_Shown);
       this.PanelBottom.ResumeLayout(false);
+      this.PanelBottom.PerformLayout();
       this.panel1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.EditBookmarks)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.EditBookmarks ) ).EndInit();
+      ( (System.ComponentModel.ISupportInitialize)( this.BindingSource ) ).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -275,5 +290,6 @@
     private DataGridViewTextBoxColumn ColumnDate;
     private DataGridViewTextBoxColumn ColumnMemo;
     private DataGridViewButtonColumn ColumnColor;
+    private LinkLabel ActionResetColors;
   }
 }
