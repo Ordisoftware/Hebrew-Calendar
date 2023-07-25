@@ -78,6 +78,7 @@ partial class ManageBookmarksForm : Form
     try
     {
       ListBox.Items.Clear();
+      Modified = true;
       string extension = Path.GetExtension(OpenBookmarksDialog.FileName);
       var selected = Program.BoardExportTargets.First(p => p.Value == extension).Key;
       switch ( selected )

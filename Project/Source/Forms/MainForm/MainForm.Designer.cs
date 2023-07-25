@@ -200,7 +200,7 @@
       this.ActionShowGrammarGuide = new System.Windows.Forms.ToolStripMenuItem();
       this.ToolStripTopSeparator6 = new System.Windows.Forms.ToolStripSeparator();
       this.MainMenuSeparatorLeftButtons = new System.Windows.Forms.ToolStripSeparator();
-      this.SaveBoardDialog = new System.Windows.Forms.SaveFileDialog();
+      this.SaveDataBoardDialog = new System.Windows.Forms.SaveFileDialog();
       this.TimerUpdateTitles = new System.Windows.Forms.Timer(this.components);
       this.ContextMenuStripDay = new System.Windows.Forms.ContextMenuStrip(this.components);
       this.ContextMenuDayDate = new System.Windows.Forms.ToolStripMenuItem();
@@ -1959,7 +1959,7 @@
     public System.Windows.Forms.ToolStripSeparator SeparatorMenuWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionOnlineWeather;
     public System.Windows.Forms.ToolStripMenuItem ActionLocalWeather;
-    public System.Windows.Forms.SaveFileDialog SaveBoardDialog;
+    public System.Windows.Forms.SaveFileDialog SaveDataBoardDialog;
     private System.Windows.Forms.Timer TimerUpdateTitles;
     internal System.Windows.Forms.ToolStripMenuItem ActionShowLunarMonths;
     internal System.Windows.Forms.ToolStripMenuItem ActionCalculateDateDiff;

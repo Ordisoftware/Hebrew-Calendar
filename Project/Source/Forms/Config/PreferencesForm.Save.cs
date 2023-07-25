@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Base.Hotkeys;
@@ -31,6 +31,7 @@ partial class PreferencesForm
     Settings.MonthViewNoDaysBackColor = EditMonthViewNoDaysBackColor.BackColor;
     Settings.MonthViewBackColor = EditMonthViewBackColor.BackColor;
     Settings.MonthViewTextColor = EditMonthViewTextColor.BackColor;
+    Settings.DateBookmarkDefaultTextColor = EditDateBookmarkDefaultTextColor.BackColor;
     Settings.DebuggerEnabled = EditDebuggerEnabled.Checked;
     Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
     Settings.VacuumAtStartupDaysInterval = (int)EditVacuumAtStartupInterval.Value;

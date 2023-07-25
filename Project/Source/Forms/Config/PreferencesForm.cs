@@ -112,6 +112,13 @@ sealed partial class PreferencesForm : Form
     if ( IsReady ) MustRefreshMonthView = true;
   }
 
+  private void EditBookmarkDefaultTextColor_Click(object sender, EventArgs e)
+  {
+    DialogColor.Color = EditDateBookmarkDefaultTextColor.BackColor;
+    if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+    EditDateBookmarkDefaultTextColor.BackColor = DialogColor.Color;
+  }
+
   #endregion
 
   #region Export and import

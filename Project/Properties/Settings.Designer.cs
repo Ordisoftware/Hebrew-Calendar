@@ -3500,5 +3500,17 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["NoticesFormFoodPageIndex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlText")]
+        public global::System.Drawing.Color DateBookmarkDefaultTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["DateBookmarkDefaultTextColor"]));
+            }
+            set {
+                this["DateBookmarkDefaultTextColor"] = value;
+            }
+        }
     }
 }

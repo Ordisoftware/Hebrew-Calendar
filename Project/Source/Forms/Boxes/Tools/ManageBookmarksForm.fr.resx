@@ -127,4 +127,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Gestionnaire des signets</value>
   </data>
+  <data name="ColumnColor.HeaderText" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
+  <data name="ActionResetColors.Text" xml:space="preserve">
+    <value>Restaurer les couleurs par défaut</value>
+  </data>
 </root>

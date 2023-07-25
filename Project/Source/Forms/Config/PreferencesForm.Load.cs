@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -28,6 +28,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditMonthViewNoDaysBackColor.BackColor = Settings.MonthViewNoDaysBackColor);
     SystemManager.TryCatch(() => EditMonthViewBackColor.BackColor = Settings.MonthViewBackColor);
     SystemManager.TryCatch(() => EditMonthViewTextColor.BackColor = Settings.MonthViewTextColor);
+    SystemManager.TryCatch(() => EditDateBookmarkDefaultTextColor.BackColor = Settings.DateBookmarkDefaultTextColor);
     SystemManager.TryCatch(() => EditDebuggerEnabled.Checked = Settings.DebuggerEnabled);
     SystemManager.TryCatch(() => EditVacuumAtStartup.Checked = Settings.VacuumAtStartup);
     SystemManager.TryCatch(() => EditVacuumAtStartupInterval.Value = Settings.VacuumAtStartupDaysInterval);

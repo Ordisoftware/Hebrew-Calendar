@@ -14,6 +14,7 @@
 /// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using System.Windows.Forms;
 using Equin.ApplicationFramework;
 
 sealed partial class ManageBookmarksForm : Form
@@ -26,9 +27,9 @@ sealed partial class ManageBookmarksForm : Form
   static public void Run()
   {
     bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
-    MainForm.Instance.MenuTray.Enabled = false;
     try
     {
+      MainForm.Instance.MenuTray.Enabled = false;
       using var form = new ManageBookmarksForm();
       form.ShowDialog();
     }
@@ -56,9 +57,12 @@ sealed partial class ManageBookmarksForm : Form
   {
     this.CheckLocationOrCenterToMainFormElseScreen();
     BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
-    if ( EditBookmarks.Rows.Count > 0 ) EditBookmarks.Rows[0].Selected = true;
     ActiveControl = EditBookmarks;
-    UpdateDataControls();
+  }
+
+  private void ManageBookmarksForm_Shown(object sender, EventArgs e)
+  {
+    UpdateControls();
   }
 
   private void ManageBookmarksForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -68,21 +72,38 @@ sealed partial class ManageBookmarksForm : Form
     if ( !ActionClose.Enabled ) e.Cancel = true;
   }
 
+  private void ManageBookmarksForm_SizeChanged(object sender, EventArgs e)
+  {
+    RefreshGridRow();
+  }
+
   private void ActionExport_Click(object sender, EventArgs e)
   {
     DoActionExport();
-    UpdateDataControls();
+    UpdateControls(false);
   }
 
   private void ActionImport_Click(object sender, EventArgs e)
   {
     DoActionImport();
-    Modified = true;
-    UpdateDataControls();
+    UpdateControls();
   }
 
-  private void UpdateDataControls(bool forceEditMode = false)
+  private void ActionResetColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
+    DBApp.BeginTransaction();
+    var list = EditBookmarks.Rows
+                            .AsIEnumerable()
+                            .Select(row => ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object);
+    foreach ( var item in list )
+      item.Color = Settings.DateBookmarkDefaultTextColor;
+    Modified = true;
+    UpdateControls();
+  }
+
+  private void UpdateControls(bool doGridRowRefresh = true, bool forceEditMode = false)
+  {
+    var color = SystemColors.ControlText.ToArgb();
     try
     {
       forceEditMode = forceEditMode || EditBookmarks.IsCurrentCellInEditMode;
@@ -95,10 +116,31 @@ sealed partial class ManageBookmarksForm : Form
       ActionImport.Enabled = ActionClose.Enabled;
       ActionExport.Enabled = ActionClose.Enabled;
       Globals.AllowClose = ActionClose.Enabled;
+      ActionResetColors.Enabled = EditBookmarks.Rows
+                                               .AsIEnumerable()
+                                               .Select(row => ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object)
+                                               .Any(item => item.Color.ToArgb() != color);
     }
     catch ( Exception ex )
     {
       ex.Manage();
+    }
+    finally
+    {
+      EditBookmarks.Focus();
+      if ( !doGridRowRefresh )
+        RefreshGridRow();
+    }
+  }
+
+  private void RefreshGridRow()
+  {
+    if ( EditBookmarks.SelectedRows.Count > 0 )
+    {
+      var row = EditBookmarks.SelectedRows[0];
+      row.Selected = false;
+      EditBookmarks.Refresh();
+      row.Selected = true;
     }
   }
 
@@ -106,8 +148,7 @@ sealed partial class ManageBookmarksForm : Form
   {
     DBApp.SaveBookmarks();
     Modified = false;
-    UpdateDataControls();
-    EditBookmarks.Focus();
+    UpdateControls(false);
     ApplicationStatistics.UpdateDBFileSizeRequired = true;
     ApplicationStatistics.UpdateDBMemorySizeRequired = true;
   }
@@ -117,8 +158,7 @@ sealed partial class ManageBookmarksForm : Form
     DBApp.LoadBookmarks();
     BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
     Modified = false;
-    UpdateDataControls();
-    EditBookmarks.Focus();
+    UpdateControls();
   }
 
   private void ActionAdd_Click(object sender, EventArgs e)
@@ -136,7 +176,7 @@ sealed partial class ManageBookmarksForm : Form
     BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
     BindingSource.Position = BindingSource.Find("ID", bookmark.ID);
     Modified = true;
-    UpdateDataControls();
+    UpdateControls();
   }
 
   private void ActionDelete_Click(object sender, EventArgs e)
@@ -160,7 +200,7 @@ sealed partial class ManageBookmarksForm : Form
         BindingSource.Position = index;
     }
     Modified = true;
-    UpdateDataControls();
+    UpdateControls();
   }
 
   private void ActionClear_Click(object sender, EventArgs e)
@@ -175,7 +215,7 @@ sealed partial class ManageBookmarksForm : Form
       DBApp.DateBookmarks.RemoveAt(0);
     }
     Modified = true;
-    UpdateDataControls();
+    UpdateControls();
   }
 
   private void EditBookmarks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -187,9 +227,10 @@ sealed partial class ManageBookmarksForm : Form
   private void EditBookmarks_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
   {
     if ( !Globals.IsReady ) return;
+    DBApp.BeginTransaction();
     var cell = EditBookmarks[e.ColumnIndex, e.RowIndex];
     OriginalMemoBeforeEdit = (string)cell.Value;
-    UpdateDataControls(true);
+    UpdateControls(false, true);
   }
 
   private void EditBookmarks_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -200,7 +241,7 @@ sealed partial class ManageBookmarksForm : Form
     if ( str.StartsWith(" ", StringComparison.Ordinal) || str.EndsWith(" ", StringComparison.Ordinal) )
       cell.Value = str.Trim();
     Modified = Modified || OriginalMemoBeforeEdit != str;
-    UpdateDataControls();
+    UpdateControls(false);
   }
 
   private void EditBookmarks_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -209,7 +250,7 @@ sealed partial class ManageBookmarksForm : Form
     if ( e.FormattedValue == DBNull.Value )
       e.Cancel = true;
     else
-      UpdateDataControls();
+      UpdateControls(false);
   }
 
   private void EditBookmarks_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -217,7 +258,7 @@ sealed partial class ManageBookmarksForm : Form
     if ( !Globals.IsReady ) return;
     if ( Globals.IsReadOnly ) return;
     if ( e.ColumnIndex == -1 || e.RowIndex == -1 ) return;
-    UpdateDataControls();
+    UpdateControls(false);
   }
 
   private void EditBookmarks_KeyDown(object sender, KeyEventArgs e)
@@ -231,6 +272,38 @@ sealed partial class ManageBookmarksForm : Form
       return;
     e.Handled = true;
     e.SuppressKeyPress = true;
+  }
+
+  private void EditBookmarks_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+  {
+    if ( e.Value is null ) return;
+    if ( e.ColumnIndex == ColumnColor.Index )
+    {
+      var row = EditBookmarks.Rows[e.RowIndex];
+      var boundItem = ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object;
+      e.CellStyle.BackColor = boundItem.Color;
+    }
+  }
+
+  private void EditBookmarks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+  {
+    if ( e.RowIndex < 0 || e.ColumnIndex != ColumnColor.Index ) return;
+    ActionEditColor_Click(sender, e);
+  }
+
+  [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
+  private void ActionEditColor_Click(object sender, DataGridViewCellEventArgs e)
+  {
+    DBApp.BeginTransaction();
+    var row = EditBookmarks.SelectedRows[0];
+    var boundItem = ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object;
+    ColorDialog.Color = boundItem.Color;
+    var res = ColorDialog.ShowDialog();
+    if ( res != DialogResult.OK || ColorDialog.Color == boundItem.Color ) return;
+    row.Cells[ColumnColor.Index].Style.BackColor = ColorDialog.Color;
+    boundItem.Color = ColorDialog.Color;
+    Modified = true;
+    UpdateControls();
   }
 
   private void EditBookmarks_DataError(object sender, DataGridViewDataErrorEventArgs e)

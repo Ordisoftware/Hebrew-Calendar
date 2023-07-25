@@ -90,6 +90,7 @@ partial class ApplicationDatabase : SQLiteDatabase
     if ( !Connection.IsInTransaction ) return;
     try
     {
+      Connection.UpdateAll(DateBookmarks);
       Connection.Commit();
     }
     catch

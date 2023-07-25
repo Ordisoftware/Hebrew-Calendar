@@ -32,6 +32,22 @@ public partial class DateBookmarkRow
   [NotNull]
   public string Memo { get; set; } = string.Empty;
 
+  [NotNull]
+  [Column("Color")]
+  public int ColorAsInt { get; set; } = Program.Settings.DateBookmarkDefaultTextColor.ToArgb();
+
+  [Ignore]
+  public Color Color
+  {
+    get => Color.FromArgb(ColorAsInt);
+    set
+    {
+      int argb = value.ToArgb();
+      if ( ColorAsInt == argb ) return;
+      ColorAsInt = argb;
+    }
+  }
+
   public override string ToString()
   {
     string result = Date.ToLongDateString();
