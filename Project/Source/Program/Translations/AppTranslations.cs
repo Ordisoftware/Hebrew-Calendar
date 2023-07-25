@@ -72,6 +72,12 @@ static partial class AppTranslations
                     SysTranslations.AskToContinue[Language.FR]
   };
 
+  static public readonly TranslationsDictionary AskToResetColors = new()
+  {
+    [Language.EN] = "Colors will be reseted to default value.",
+    [Language.FR] = "Les couleurs vont être réinitialisées à la valeur par défaut."
+  };
+
   static public readonly TranslationsDictionary LoadingCitiesError = new()
   {
     [Language.EN] = "Error on loading the cities' GPS coordinates." + Globals.NL +

@@ -37,7 +37,7 @@ static public partial class SysTranslations
 
   static public readonly TranslationsDictionary ResetParameter = new()
   {
-    [Language.EN] = "The parameter will be reset to its default value.",
+    [Language.EN] = "The parameter will be reseted to its default value.",
     [Language.FR] = "Le paramètre va être réinitialisé à sa valeur par défaut."
   };
 
