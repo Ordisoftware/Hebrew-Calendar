@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 using SQLite;
 
 [Serializable]
+[DelimitedRecord(";")]
 [Table("DateBookmarks")]
 public partial class DateBookmarkRow
 {
@@ -24,15 +25,18 @@ public partial class DateBookmarkRow
   public const char MemoSeparator = '-';
 
   [PrimaryKey]
+  [FieldHidden]
   public Guid ID { get; set; } = Guid.NewGuid();
 
   [NotNull]
+  [FieldConverter(ConverterKind.Date, "yyyy-MM-dd")]
   public DateTime Date { get; set; } = DateTime.Now;
 
   [NotNull]
   public string Memo { get; set; } = string.Empty;
 
   [NotNull]
+  [FieldHidden]
   [Column("Color")]
   public int ColorAsInt { get; set; } = Program.Settings.DateBookmarkDefaultTextColor.ToArgb();
 
@@ -65,10 +69,18 @@ public partial class DateBookmarkRow
     Memo = memo;
   }
 
+  public DateBookmarkRow(DateTime date, string memo, Color color)
+  {
+    Date = date;
+    Memo = memo;
+    Color = color;
+  }
+
   public DateBookmarkRow(DateBookmarkRow item)
   {
     Date = item.Date;
     Memo = item.Memo;
+    Color = item.Color;
   }
 
 }

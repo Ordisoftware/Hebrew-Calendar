@@ -261,7 +261,7 @@ sealed partial class ParashotForm : Form
     {
       string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
       DoExportTable(filePath);
-      DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
+      DisplayManager.ShowSuccessOrSound(SysTranslations.DataSavedToFile.GetLang(filePath),
                                         Globals.KeyboardSoundFilePath);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(filePath));

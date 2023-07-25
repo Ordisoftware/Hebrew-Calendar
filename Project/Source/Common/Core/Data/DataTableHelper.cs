@@ -40,7 +40,7 @@ static public class DataTableHelper
           }
         break;
       case DataExportTarget.CSV:
-        var options = new CsvOptions("String[,]", Globals.CSVSeparator, table.Rows.Count)
+        var options = new CsvOptions("String[,]", Globals.CSVSeparator, table.Columns.Count)
         {
           IncludeHeaderNames = true,
           DateFormat = "yyyy-MM-dd HH:mm",

@@ -47,10 +47,10 @@ sealed partial class ManageBookmarksForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
+    OpenBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
     SaveBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
-    OpenBookmarksDialog.InitialDirectory = SaveBookmarksDialog.InitialDirectory;
-    SaveBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
-    OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
+    OpenBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
+    SaveBookmarksDialog.Filter = Program.GridExportTargets.CreateFilters();
   }
 
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
@@ -206,7 +206,8 @@ sealed partial class ManageBookmarksForm : Form
 
   private void ActionClear_Click(object sender, EventArgs e)
   {
-    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) ) return;
+    if ( e is not null && !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) )
+      return;
     DBApp.BeginTransaction();
     DBApp.Connection.DeleteAll<DateBookmarkRow>();
     int count = BindingSource.Count;

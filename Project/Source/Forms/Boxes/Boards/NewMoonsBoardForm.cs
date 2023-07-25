@@ -254,7 +254,7 @@ sealed partial class NewMoonsBoardForm : Form
     if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() != DialogResult.OK ) return;
     string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
     Board.Export(filePath, Program.BoardExportTargets);
-    DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
+    DisplayManager.ShowSuccessOrSound(SysTranslations.DataSavedToFile.GetLang(filePath),
                                       Globals.KeyboardSoundFilePath);
     if ( Settings.AutoOpenExportFolder )
       SystemManager.RunShell(Path.GetDirectoryName(filePath));
