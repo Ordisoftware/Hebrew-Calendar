@@ -19,6 +19,14 @@ partial class ManageBookmarksForm : Form
 
   private const string TableName = "Date Bookmarks";
 
+  private const int ExportColumnIndexID = 0;
+  private const int ExportColumnIndexColorAsInt = 3;
+
+  private const int ImportColumnsCount = 3;
+  private const int ImportColumnIndexDate = 0;
+  private const int ImportColumnIndexMemo = 1;
+  private const int ImportColumnIndexColor = 2;
+
   private readonly Regex RegExForStringToColor
     = new(@"A=(?<Alpha>\d+),\s*R=(?<Red>\d+),\s*G=(?<Green>\d+),\s*B=(?<Blue>\d+)",
           RegexOptions.None,
@@ -31,7 +39,9 @@ partial class ManageBookmarksForm : Form
     if ( !SaveBookmarksDialog.Run(TableName, Settings.ExportDataPreferredTarget, Program.GridExportTargets) )
       return;
     string filePath = SaveBookmarksDialog.FileName;
-    using var table = DBApp.DateBookmarks.ToDataTable();
+    using var table = DBApp.DateBookmarks.ToDataTable(ApplicationDatabase.DateBookmarksTableName);
+    table.Columns.RemoveAt(ExportColumnIndexColorAsInt);
+    table.Columns.RemoveAt(ExportColumnIndexID);
     table.Export(SaveBookmarksDialog.FileName, Program.GridExportTargets);
     DisplayManager.ShowSuccessOrSound(SysTranslations.DataSavedToFile.GetLang(filePath),
                                       Globals.KeyboardSoundFilePath);
@@ -54,17 +64,19 @@ partial class ManageBookmarksForm : Form
       switch ( selected )
       {
         case DataExportTarget.TXT:
-          importTXT(File.ReadAllLines(OpenBookmarksDialog.FileName));
+          ImportTXT(File.ReadAllLines(OpenBookmarksDialog.FileName));
           break;
         case DataExportTarget.CSV:
-          importCSV();
+          ImportCSV();
           break;
         case DataExportTarget.JSON:
-          importJSON(JsonConvert.DeserializeObject<DataSet>(File.ReadAllText(OpenBookmarksDialog.FileName)));
+          ImportJSON(JsonConvert.DeserializeObject<DataSet>(File.ReadAllText(OpenBookmarksDialog.FileName)));
           break;
         default:
           throw new AdvNotImplementedException(selected);
       }
+      BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
+      Modified = true;
     }
     catch ( AbortException )
     {
@@ -73,50 +85,68 @@ partial class ManageBookmarksForm : Form
     {
       DisplayManager.ShowError(ex.Message);
     }
-    //
-    void importTXT(string[] lines)
+  }
+
+  private void ImportTXT(string[] lines)
+  {
+    for ( int index = 0; index < lines.Length; index++ )
     {
-      for ( int index = 0; index < lines.Length; index++ )
-      {
-        var date = DateTime.MinValue;
-        try { date = SQLiteDate.ToDateTime(lines[index]); }
-        catch { }
-        //ListBox.Items.Add(new DateBookmarkItem(date, "")); // TODO get memos
-      }
+      var date = DateTime.MinValue;
+      try { date = SQLiteDate.ToDateTime(lines[index]); }
+      catch { }
+      var bookmark = new DateBookmarkRow() { Date = date };
+      DBApp.Connection.Insert(bookmark);
+      DBApp.DateBookmarks.Add(bookmark);
     }
-    //
-    void importCSV()
+  }
+
+  private void ImportCSV()
+  {
+    var options = DataTableHelper.CreateCsvOptions<DateBookmarkRow>(ImportColumnsCount);
+    using var table = CsvEngine.CsvToDataTable(OpenBookmarksDialog.FileName, options);
+    foreach ( DataRow row in table.Rows )
     {
-      var options = DataTableHelper.CreateCsvOptions<DateBookmarkRow>(5);
-      using var table = CsvEngine.CsvToDataTable(OpenBookmarksDialog.FileName, options);
-      foreach ( DataRow row in table.Rows )
+      DateTime.TryParse((string)row[ImportColumnIndexDate], out var date);
+      var bookmark = new DateBookmarkRow
       {
-        DateTime.TryParse((string)row[1], out var date);
-        var memo = (string)row[2];
-        var color = Program.Settings.DateBookmarkDefaultTextColor;
-        var match = RegExForStringToColor.Match((string)row[4]);
-        if ( match.Success )
+        Date = date,
+        Memo = (string)row[ImportColumnIndexMemo]
+      };
+      var match = RegExForStringToColor.Match((string)row[ImportColumnIndexColor]);
+      if ( match.Success )
+        SystemManager.TryCatch(() =>
         {
           int alpha = int.Parse(match.Groups["Alpha"].Value);
           int red = int.Parse(match.Groups["Red"].Value);
           int green = int.Parse(match.Groups["Green"].Value);
           int blue = int.Parse(match.Groups["Blue"].Value);
-          color = Color.FromArgb(alpha, red, green, blue);
-        }
-        var bookmark = new DateBookmarkRow(date, memo, color);
-        DBApp.Connection.Insert(bookmark);
-        DBApp.DateBookmarks.Add(bookmark);
-      }
-      BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
-      Modified = true;
+          bookmark.Color = Color.FromArgb(alpha, red, green, blue);
+        });
+      DBApp.Connection.Insert(bookmark);
+      DBApp.DateBookmarks.Add(bookmark);
     }
-    //
-    void importJSON(DataSet dataset)
+  }
+
+  private void ImportJSON(DataSet dataset)
+  {
+    int count = dataset.Tables[0].Rows.Count;
+    for ( int index = 0; index < count; index++ )
     {
-      int count = dataset.Tables[0].Rows.Count;
-      //for ( int index = 0; index < count; index++ )
-      //  .Add(new DateBookmarkItem((DateTime)dataset.Tables[0].Rows[index][0],
-      //                    (string)dataset.Tables[0].Rows[index][1]));
+      var bookmark = new DateBookmarkRow
+      {
+        Date = (DateTime)dataset.Tables[0].Rows[index][ImportColumnIndexDate],
+        Memo = (string)dataset.Tables[0].Rows[index][ImportColumnIndexMemo],
+      };
+      SystemManager.TryCatch(() =>
+      {
+        string[] rgbComponents = ( (string)dataset.Tables[0].Rows[index][ImportColumnIndexColor] ).Split(',');
+        int red = int.Parse(rgbComponents[0].Trim());
+        int green = int.Parse(rgbComponents[1].Trim());
+        int blue = int.Parse(rgbComponents[2].Trim());
+        bookmark.Color = Color.FromArgb(red, green, blue);
+      });
+      DBApp.Connection.Insert(bookmark);
+      DBApp.DateBookmarks.Add(bookmark);
     }
   }
 

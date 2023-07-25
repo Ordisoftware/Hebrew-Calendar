@@ -50,8 +50,7 @@ static public class DataTableHelper
           }
         break;
       case DataExportTarget.CSV:
-        var options = CreateCsvOptions<DataTable>(table.Columns.Count);
-        CsvEngine.DataTableToCsv(table, filePath, options);
+        CsvEngine.DataTableToCsv(table, filePath, CreateCsvOptions<DataTable>(table.Columns.Count));
         break;
       case DataExportTarget.JSON:
         using ( var dataset = new DataSet(Globals.AssemblyTitle) )
