@@ -48,11 +48,11 @@
       this.ActionUndo = new System.Windows.Forms.Button();
       this.ActionSave = new System.Windows.Forms.Button();
       this.EditBookmarks = new System.Windows.Forms.DataGridView();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.ColorDialog = new System.Windows.Forms.ColorDialog();
       this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnMemo = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.ColumnColor = new System.Windows.Forms.DataGridViewButtonColumn();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ColorDialog = new System.Windows.Forms.ColorDialog();
       this.PanelBottom.SuspendLayout();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarks)).BeginInit();
@@ -205,11 +205,6 @@
       this.EditBookmarks.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.EditBookmarks_DataError);
       this.EditBookmarks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditBookmarks_KeyDown);
       // 
-      // BindingSource
-      // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DateBookmarkRow);
-      this.BindingSource.Sort = "";
-      // 
       // ColumnDate
       // 
       this.ColumnDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -246,6 +241,11 @@
       this.ColumnColor.Text = "";
       this.ColumnColor.UseColumnTextForButtonValue = true;
       // 
+      // BindingSource
+      // 
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DateBookmarkRow);
+      this.BindingSource.Sort = "";
+      // 
       // ManageBookmarksForm
       // 
       resources.ApplyResources(this, "$this");
@@ -261,6 +261,7 @@
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageBookmarksForm_FormClosing);
       this.Load += new System.EventHandler(this.ManageDateBookmarks_Load);
       this.Shown += new System.EventHandler(this.ManageBookmarksForm_Shown);
+      this.SizeChanged += new System.EventHandler(this.ManageBookmarksForm_SizeChanged);
       this.PanelBottom.ResumeLayout(false);
       this.PanelBottom.PerformLayout();
       this.panel1.ResumeLayout(false);

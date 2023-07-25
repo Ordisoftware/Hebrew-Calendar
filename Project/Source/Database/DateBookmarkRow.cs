@@ -34,7 +34,7 @@ public partial class DateBookmarkRow
 
   [NotNull]
   [Column("Color")]
-  public int ColorAsInt { get; set; } = SystemColors.ControlText.ToArgb();
+  public int ColorAsInt { get; set; } = Program.Settings.DateBookmarkDefaultTextColor.ToArgb();
 
   [Ignore]
   public Color Color
