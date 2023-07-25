@@ -77,29 +77,15 @@ sealed partial class ManageBookmarksForm : Form
     RefreshGridRow();
   }
 
-  private void ActionExport_Click(object sender, EventArgs e)
+  private void RefreshGridRow()
   {
-    DoActionExport();
-    UpdateControls(false);
-  }
-
-  private void ActionImport_Click(object sender, EventArgs e)
-  {
-    DoActionImport();
-    UpdateControls();
-  }
-
-  private void ActionResetColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-  {
-    if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetColors.GetLang()) ) return;
-    DBApp.BeginTransaction();
-    var list = EditBookmarks.Rows
-                            .AsIEnumerable()
-                            .Select(row => ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object);
-    foreach ( var item in list )
-      item.Color = Settings.DateBookmarkDefaultTextColor;
-    Modified = true;
-    UpdateControls();
+    if ( EditBookmarks.SelectedRows.Count > 0 )
+    {
+      var row = EditBookmarks.SelectedRows[0];
+      row.Selected = false;
+      EditBookmarks.Refresh();
+      row.Selected = true;
+    }
   }
 
   private void UpdateControls(bool doGridRowRefresh = true, bool forceEditMode = false)
@@ -134,15 +120,29 @@ sealed partial class ManageBookmarksForm : Form
     }
   }
 
-  private void RefreshGridRow()
+  private void ActionExport_Click(object sender, EventArgs e)
   {
-    if ( EditBookmarks.SelectedRows.Count > 0 )
-    {
-      var row = EditBookmarks.SelectedRows[0];
-      row.Selected = false;
-      EditBookmarks.Refresh();
-      row.Selected = true;
-    }
+    DoActionExport();
+    //UpdateControls(false);
+  }
+
+  private void ActionImport_Click(object sender, EventArgs e)
+  {
+    DoActionImport();
+    UpdateControls();
+  }
+
+  private void ActionResetColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetColors.GetLang()) ) return;
+    DBApp.BeginTransaction();
+    var list = EditBookmarks.Rows
+                            .AsIEnumerable()
+                            .Select(row => ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object);
+    foreach ( var item in list )
+      item.Color = Settings.DateBookmarkDefaultTextColor;
+    Modified = true;
+    UpdateControls();
   }
 
   private void ActionSave_Click(object sender, EventArgs e)

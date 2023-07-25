@@ -24,32 +24,15 @@ partial class ManageBookmarksForm : Form
           RegexOptions.None,
           TimeSpan.FromSeconds(1));
 
-  private CsvOptions CsvOptions = new(nameof(DateBookmarkRow), Globals.CSVSeparator, 5)
-  {
-    IncludeHeaderNames = true,
-    DateFormat = "yyyy-MM-dd HH:mm",
-    Encoding = Encoding.UTF8
-  };
-
-  private bool RunDialog(FileDialog dialog, string filename, NullSafeOfStringDictionary<DataExportTarget> board)
-  {
-    dialog.FileName = filename;
-    for ( int index = 0; index < board.Count; index++ )
-      if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-        dialog.FilterIndex = index + 1;
-    return dialog.ShowDialog() == DialogResult.OK;
-  }
-
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   private void DoActionExport()
   {
-    if ( !RunDialog(SaveBookmarksDialog, TableName, Program.GridExportTargets) ) return;
+    if ( !SaveBookmarksDialog.Run(TableName, Settings.ExportDataPreferredTarget, Program.GridExportTargets) )
+      return;
     string filePath = SaveBookmarksDialog.FileName;
-
     using var table = DBApp.DateBookmarks.ToDataTable();
     table.Export(SaveBookmarksDialog.FileName, Program.GridExportTargets);
-
     DisplayManager.ShowSuccessOrSound(SysTranslations.DataSavedToFile.GetLang(filePath),
                                       Globals.KeyboardSoundFilePath);
     if ( Settings.AutoOpenExportFolder )
@@ -61,7 +44,8 @@ partial class ManageBookmarksForm : Form
 
   private void DoActionImport()
   {
-    if ( !RunDialog(OpenBookmarksDialog, string.Empty, Program.BoardExportTargets) ) return;
+    if ( !OpenBookmarksDialog.Run(string.Empty, Settings.ExportDataPreferredTarget, Program.BoardExportTargets) )
+      return;
     try
     {
       ActionClear_Click(this, null);
@@ -81,7 +65,6 @@ partial class ManageBookmarksForm : Form
         default:
           throw new AdvNotImplementedException(selected);
       }
-      UpdateControls();
     }
     catch ( AbortException )
     {
@@ -104,7 +87,8 @@ partial class ManageBookmarksForm : Form
     //
     void importCSV()
     {
-      using var table = CsvEngine.CsvToDataTable(OpenBookmarksDialog.FileName, CsvOptions);
+      var options = DataTableHelper.CreateCsvOptions<DateBookmarkRow>(5);
+      using var table = CsvEngine.CsvToDataTable(OpenBookmarksDialog.FileName, options);
       foreach ( DataRow row in table.Rows )
       {
         DateTime.TryParse((string)row[1], out var date);
@@ -125,7 +109,6 @@ partial class ManageBookmarksForm : Form
       }
       BindingSource.DataSource = DBApp.DateBookmarksAsBindingListView;
       Modified = true;
-      UpdateControls();
     }
     //
     void importJSON(DataSet dataset)

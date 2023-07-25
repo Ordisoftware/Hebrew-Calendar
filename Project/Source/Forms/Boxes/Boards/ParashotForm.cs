@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Calendar.Program;
@@ -252,12 +252,8 @@ sealed partial class ParashotForm : Form
   private void ActionExport_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    string name = HebrewDatabase.Instance.ParashotTableName;
-    MainForm.Instance.SaveDataBoardDialog.FileName = SysTranslations.BoardExportFileName.GetLang(name);
-    for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-      if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-        MainForm.Instance.SaveDataBoardDialog.FilterIndex = index + 1;
-    if ( MainForm.Instance.SaveDataBoardDialog.ShowDialog() == DialogResult.OK )
+    string name = SysTranslations.BoardExportFileName.GetLang(HebrewDatabase.Instance.ParashotTableName);
+    if ( MainForm.Instance.SaveDataBoardDialog.Run(name, Settings.ExportDataPreferredTarget, Program.BoardExportTargets) )
     {
       string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
       DoExportTable(filePath);

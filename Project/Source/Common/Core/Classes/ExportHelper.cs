@@ -114,4 +114,16 @@ static public class ExportHelper
     };
   }
 
+  static public bool Run(this FileDialog dialog,
+                         string filename,
+                         DataExportTarget preferred,
+                         NullSafeOfStringDictionary<DataExportTarget> board)
+  {
+    dialog.FileName = filename;
+    for ( int index = 0; index < board.Count; index++ )
+      if ( board.ElementAt(index).Key == preferred )
+        dialog.FilterIndex = index + 1;
+    return dialog.ShowDialog() == DialogResult.OK;
+  }
+
 }
