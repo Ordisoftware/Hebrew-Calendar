@@ -80,7 +80,7 @@ The date bookmarks system has been updated to be stored in database: earlier ver
 
 - Add help menu.
 - Add window for all notices.
-- Add memos for bookmarks.
+- Add memos and colors for bookmarks.
 - Add previous and next buttons in parashah description box.
 - Add keyboard shortcuts:
     * Alt + H for help menu,
@@ -402,7 +402,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Move date bookmarks in text file to a database table.
 - Add help menu, and Alt + H shortcut.
 - Add window for all notices, and Alt + N shortcut.
-- Add memos to date bookmarks that are now automatically sorted.
+- Add memos and colors to date bookmarks that are now automatically sorted.
 - Add manage bookmarks menu item in Tools, and Alt + B shortcut.
 - Add Alt + Arrows shortcuts to navigate between lunar days.
 - Add previous and next buttons in parashah description box.

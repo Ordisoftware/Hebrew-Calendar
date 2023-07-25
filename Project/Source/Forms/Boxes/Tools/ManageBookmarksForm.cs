@@ -91,6 +91,7 @@ sealed partial class ManageBookmarksForm : Form
 
   private void ActionResetColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
   {
+    if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetColors.GetLang()) ) return;
     DBApp.BeginTransaction();
     var list = EditBookmarks.Rows
                             .AsIEnumerable()
@@ -128,7 +129,7 @@ sealed partial class ManageBookmarksForm : Form
     finally
     {
       EditBookmarks.Focus();
-      if ( !doGridRowRefresh )
+      if ( doGridRowRefresh )
         RefreshGridRow();
     }
   }

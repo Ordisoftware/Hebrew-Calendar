@@ -133,13 +133,13 @@
     <value>69, 8</value>
   </data>
   <data name="ActionResetColors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 13</value>
+    <value>105, 13</value>
   </data>
   <data name="ActionResetColors.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="ActionResetColors.Text" xml:space="preserve">
-    <value>Restore default colors</value>
+    <value>Restore default color</value>
   </data>
   <data name="&gt;&gt;ActionResetColors.Name" xml:space="preserve">
     <value>ActionResetColors</value>
