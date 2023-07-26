@@ -432,6 +432,18 @@
     <Compile Include="Source\Enums\CalendarSection.cs" />
     <Compile Include="Source\Common\Hebrew\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\TorahCelebrationVerses.cs" />
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.ImportJSON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Import.CSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Import.TXT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\Forms\Boxes\Tools\NoticesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -543,7 +555,7 @@
     <Compile Include="Source\Forms\Boxes\Tools\ManageAcquaintanceEventsForm.Designer.cs">
       <DependentUpon>ManageAcquaintanceEventsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.ExportImport.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Export.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Initialize.cs">
