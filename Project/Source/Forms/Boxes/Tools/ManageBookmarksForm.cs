@@ -47,8 +47,8 @@ sealed partial class ManageBookmarksForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    OpenBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
-    SaveBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
+    OpenBookmarksDialog.InitialDirectory = Settings.GetExportBookmarksDirectory();
+    SaveBookmarksDialog.InitialDirectory = Settings.GetExportBookmarksDirectory();
     OpenBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
     SaveBookmarksDialog.Filter = Program.GridExportTargets.CreateFilters();
   }
