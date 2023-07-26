@@ -14,31 +14,28 @@
 /// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
+using Ordisoftware.Hebrew.Calendar.Properties;
 using SQLite;
 
 [Serializable]
-[DelimitedRecord(";")]
 [Table("DateBookmarks")]
 public partial class DateBookmarkRow
 {
 
-  public const char MemoSeparator = '-';
+  static private readonly Properties.Settings Settings = Program.Settings;
 
   [PrimaryKey]
-  [FieldHidden]
   public Guid ID { get; set; } = Guid.NewGuid();
 
   [NotNull]
-  [FieldConverter(ConverterKind.Date, "yyyy-MM-dd")]
   public DateTime Date { get; set; } = DateTime.Now;
 
   [NotNull]
   public string Memo { get; set; } = string.Empty;
 
   [NotNull]
-  [FieldHidden]
   [Column("Color")]
-  public int ColorAsInt { get; set; } = Program.Settings.DateBookmarkDefaultTextColor.ToArgb();
+  public int ColorAsInt { get; set; } = Settings.DateBookmarkDefaultTextColor.ToArgb();
 
   [Ignore]
   public Color Color
@@ -54,9 +51,9 @@ public partial class DateBookmarkRow
 
   public override string ToString()
   {
-    string result = Date.ToLongDateString();
-    if ( !Memo.IsNullOrEmpty() ) result += $" {MemoSeparator} {Memo}";
-    return result;
+    return Memo.IsNullOrEmpty()
+      ? Date.ToLongDateString()
+      : $"{Date.ToLongDateString()} {Settings.DateBookmarkMemoPrefix}{Memo}{Settings.DateBookmarkMemoSuffix}";
   }
 
   public DateBookmarkRow()

@@ -3512,5 +3512,29 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
                 this["DateBookmarkDefaultTextColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("- ")]
+        public string DateBookmarkMemoPrefix {
+            get {
+                return ((string)(this["DateBookmarkMemoPrefix"]));
+            }
+            set {
+                this["DateBookmarkMemoPrefix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DateBookmarkMemoSuffix {
+            get {
+                return ((string)(this["DateBookmarkMemoSuffix"]));
+            }
+            set {
+                this["DateBookmarkMemoSuffix"] = value;
+            }
+        }
     }
 }

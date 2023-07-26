@@ -153,6 +153,8 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditHideLuminarySigns.Checked = Settings.HideLuminarySigns);
     SystemManager.TryCatch(() => EditPrintImageCenterOnPage.Checked = Settings.PrintImageCenterOnPage);
     SystemManager.TryCatch(() => EditOpenVerseOnlineURL.Text = Settings.OpenVerseOnlineURL);
+    SystemManager.TryCatch(() => EditBookmarkMemoPrefix.Text = Settings.DateBookmarkMemoPrefix);
+    SystemManager.TryCatch(() => EditBookmarkMemoSuffix.Text = Settings.DateBookmarkMemoSuffix);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewLatinFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);

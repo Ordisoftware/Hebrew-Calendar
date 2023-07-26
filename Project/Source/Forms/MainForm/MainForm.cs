@@ -358,6 +358,7 @@ sealed partial class MainForm : Form
       MenuTray.Enabled = trayEnabled;
       TimerReminder.Enabled = true;
       EnableReminderTimer();
+      LoadMenuBookmarks(this);
       if ( dateOld is null )
         GoToDate(DateTime.Today);
       else

@@ -1057,4 +1057,15 @@ sealed partial class PreferencesForm : Form
 
   #endregion
 
+  #region Bookmarks
+
+  private void ActionResetBookmarksDefault_Click(object sender, EventArgs e)
+  {
+    EditDateBookmarkDefaultTextColor.BackColor = SystemColors.ControlText;
+    EditBookmarkMemoPrefix.Text = "- ";
+    EditBookmarkMemoSuffix.Text = "";
+  }
+
+  #endregion
+
 }
