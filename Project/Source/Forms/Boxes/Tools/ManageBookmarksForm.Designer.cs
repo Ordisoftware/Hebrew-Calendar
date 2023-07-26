@@ -32,8 +32,8 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBookmarksForm));
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.ActionResetColors = new System.Windows.Forms.LinkLabel();
       this.ActionExport = new System.Windows.Forms.Button();
@@ -48,11 +48,11 @@
       this.ActionUndo = new System.Windows.Forms.Button();
       this.ActionSave = new System.Windows.Forms.Button();
       this.EditBookmarks = new System.Windows.Forms.DataGridView();
-      this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnMemo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.ColumnColor = new System.Windows.Forms.DataGridViewButtonColumn();
-      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ColorDialog = new System.Windows.Forms.ColorDialog();
+      this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ColumnColor = new System.Windows.Forms.DataGridViewButtonColumn();
+      this.ColumnMemo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.ColumnDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.PanelBottom.SuspendLayout();
       this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.EditBookmarks)).BeginInit();
@@ -205,26 +205,10 @@
       this.EditBookmarks.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.EditBookmarks_DataError);
       this.EditBookmarks.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditBookmarks_KeyDown);
       // 
-      // ColumnDate
+      // BindingSource
       // 
-      this.ColumnDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-      this.ColumnDate.DataPropertyName = "Date";
-      dataGridViewCellStyle2.Format = "d";
-      dataGridViewCellStyle2.NullValue = null;
-      this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
-      resources.ApplyResources(this.ColumnDate, "ColumnDate");
-      this.ColumnDate.Name = "ColumnDate";
-      this.ColumnDate.ReadOnly = true;
-      this.ColumnDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-      // 
-      // ColumnMemo
-      // 
-      this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-      this.ColumnMemo.DataPropertyName = "Memo";
-      resources.ApplyResources(this.ColumnMemo, "ColumnMemo");
-      this.ColumnMemo.Name = "ColumnMemo";
-      this.ColumnMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-      this.ColumnMemo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DateBookmarkRow);
+      this.BindingSource.Sort = "";
       // 
       // ColumnColor
       // 
@@ -241,10 +225,27 @@
       this.ColumnColor.Text = "";
       this.ColumnColor.UseColumnTextForButtonValue = true;
       // 
-      // BindingSource
+      // ColumnMemo
       // 
-      this.BindingSource.DataSource = typeof(Ordisoftware.Hebrew.Calendar.DateBookmarkRow);
-      this.BindingSource.Sort = "";
+      this.ColumnMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+      this.ColumnMemo.DataPropertyName = "Memo";
+      resources.ApplyResources(this.ColumnMemo, "ColumnMemo");
+      this.ColumnMemo.Name = "ColumnMemo";
+      this.ColumnMemo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+      this.ColumnMemo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+      // 
+      // ColumnDate
+      // 
+      this.ColumnDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+      this.ColumnDate.DataPropertyName = "Date";
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+      dataGridViewCellStyle2.Format = "d";
+      dataGridViewCellStyle2.NullValue = null;
+      this.ColumnDate.DefaultCellStyle = dataGridViewCellStyle2;
+      resources.ApplyResources(this.ColumnDate, "ColumnDate");
+      this.ColumnDate.Name = "ColumnDate";
+      this.ColumnDate.ReadOnly = true;
+      this.ColumnDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
       // 
       // ManageBookmarksForm
       // 

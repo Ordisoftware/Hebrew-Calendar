@@ -156,6 +156,8 @@ partial class PreferencesForm
     Settings.HideLuminarySigns = EditHideLuminarySigns.Checked;
     Settings.PrintImageCenterOnPage = EditPrintImageCenterOnPage.Checked;
     Settings.OpenVerseOnlineURL = EditOpenVerseOnlineURL.Text;
+    Settings.DateBookmarkMemoPrefix = EditBookmarkMemoPrefix.Text;
+    Settings.DateBookmarkMemoSuffix = EditBookmarkMemoSuffix.Text;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;

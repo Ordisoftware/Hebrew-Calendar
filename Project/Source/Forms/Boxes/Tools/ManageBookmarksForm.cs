@@ -47,10 +47,10 @@ sealed partial class ManageBookmarksForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
+    OpenBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
     SaveBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
-    OpenBookmarksDialog.InitialDirectory = SaveBookmarksDialog.InitialDirectory;
-    SaveBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
-    OpenBookmarksDialog.Filter = SaveBookmarksDialog.Filter;
+    OpenBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
+    SaveBookmarksDialog.Filter = Program.GridExportTargets.CreateFilters();
   }
 
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
@@ -77,29 +77,15 @@ sealed partial class ManageBookmarksForm : Form
     RefreshGridRow();
   }
 
-  private void ActionExport_Click(object sender, EventArgs e)
+  private void RefreshGridRow()
   {
-    DoActionExport();
-    UpdateControls(false);
-  }
-
-  private void ActionImport_Click(object sender, EventArgs e)
-  {
-    DoActionImport();
-    UpdateControls();
-  }
-
-  private void ActionResetColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-  {
-    if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetColors.GetLang()) ) return;
-    DBApp.BeginTransaction();
-    var list = EditBookmarks.Rows
-                            .AsIEnumerable()
-                            .Select(row => ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object);
-    foreach ( var item in list )
-      item.Color = Settings.DateBookmarkDefaultTextColor;
-    Modified = true;
-    UpdateControls();
+    if ( EditBookmarks.SelectedRows.Count > 0 )
+    {
+      var row = EditBookmarks.SelectedRows[0];
+      row.Selected = false;
+      EditBookmarks.Refresh();
+      row.Selected = true;
+    }
   }
 
   private void UpdateControls(bool doGridRowRefresh = true, bool forceEditMode = false)
@@ -134,15 +120,29 @@ sealed partial class ManageBookmarksForm : Form
     }
   }
 
-  private void RefreshGridRow()
+  private void ActionExport_Click(object sender, EventArgs e)
   {
-    if ( EditBookmarks.SelectedRows.Count > 0 )
-    {
-      var row = EditBookmarks.SelectedRows[0];
-      row.Selected = false;
-      EditBookmarks.Refresh();
-      row.Selected = true;
-    }
+    DoActionExport();
+    //UpdateControls(false);
+  }
+
+  private void ActionImport_Click(object sender, EventArgs e)
+  {
+    DoActionImport();
+    UpdateControls();
+  }
+
+  private void ActionResetColors_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    if ( !DisplayManager.QueryYesNo(AppTranslations.AskToResetColors.GetLang()) ) return;
+    DBApp.BeginTransaction();
+    var list = EditBookmarks.Rows
+                            .AsIEnumerable()
+                            .Select(row => ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object);
+    foreach ( var item in list )
+      item.Color = Settings.DateBookmarkDefaultTextColor;
+    Modified = true;
+    UpdateControls();
   }
 
   private void ActionSave_Click(object sender, EventArgs e)
@@ -206,7 +206,8 @@ sealed partial class ManageBookmarksForm : Form
 
   private void ActionClear_Click(object sender, EventArgs e)
   {
-    if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) ) return;
+    if ( e is not null && !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmarkAll.GetLang()) )
+      return;
     DBApp.BeginTransaction();
     DBApp.Connection.DeleteAll<DateBookmarkRow>();
     int count = BindingSource.Count;

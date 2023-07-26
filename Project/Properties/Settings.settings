@@ -875,5 +875,11 @@
     <Setting Name="DateBookmarkDefaultTextColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">ControlText</Value>
     </Setting>
+    <Setting Name="DateBookmarkMemoPrefix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">- </Value>
+    </Setting>
+    <Setting Name="DateBookmarkMemoSuffix" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

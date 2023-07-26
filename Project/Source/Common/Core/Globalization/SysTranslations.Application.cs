@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -199,6 +199,12 @@ static public partial class SysTranslations
   {
     [Language.EN] = "Data have been copied to the clipboard.",
     [Language.FR] = "Les données ont été copiées dans le presse-papier."
+  };
+
+  static public readonly TranslationsDictionary DataSavedToFile = new()
+  {
+    [Language.EN] = $"Data has been saved to :{Globals.NL2}{{0}}",
+    [Language.FR] = $"Les données ont été sauvées dans :{Globals.NL2}{{0}}",
   };
 
   static public readonly TranslationsDictionary ViewSavedToFile = new()
