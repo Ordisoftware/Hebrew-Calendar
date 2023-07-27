@@ -31,7 +31,7 @@ partial class ManageBookmarksForm : Form
           RegexOptions.None,
           TimeSpan.FromSeconds(1));
 
-  private List<string> LastErrors = new();
+  private readonly List<string> LastErrors = new();
 
   private void AddLastEddor(string message)
   {

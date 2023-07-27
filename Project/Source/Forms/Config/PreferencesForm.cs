@@ -1061,9 +1061,12 @@ sealed partial class PreferencesForm : Form
 
   private void ActionResetBookmarksDefault_Click(object sender, EventArgs e)
   {
-    EditDateBookmarkDefaultTextColor.BackColor = SystemColors.ControlText;
-    EditBookmarkMemoPrefix.Text = "- ";
-    EditBookmarkMemoSuffix.Text = "";
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+    {
+      EditDateBookmarkDefaultTextColor.BackColor = SystemColors.ControlText;
+      EditBookmarkMemoPrefix.Text = "- ";
+      EditBookmarkMemoSuffix.Text = "";
+    }
   }
 
   #endregion
