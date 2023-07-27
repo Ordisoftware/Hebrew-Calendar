@@ -22,9 +22,9 @@ partial class ManageBookmarksForm : Form
   private const int ImportColumnIndexMemo = 1;
   private const int ImportColumnIndexColor = 2;
 
-  private string TitleDate = nameof(DateBookmarkRow.Date);
-  private string TitleMemo = nameof(DateBookmarkRow.Memo);
-  private string TitleColor = nameof(DateBookmarkRow.Color);
+  private readonly string TitleDate = nameof(DateBookmarkRow.Date);
+  private readonly string TitleMemo = nameof(DateBookmarkRow.Memo);
+  private readonly string TitleColor = nameof(DateBookmarkRow.Color);
 
   private readonly Regex RegExForStringToColor
     = new(@"A=(?<Alpha>\d+),\s*R=(?<Red>\d+),\s*G=(?<Green>\d+),\s*B=(?<Blue>\d+)",
