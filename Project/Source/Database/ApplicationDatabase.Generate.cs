@@ -37,7 +37,7 @@ partial class ApplicationDatabase
 
   static public int MaxGenerateErrors { get; set; } = Globals.MaxErrorsAllowed;
 
-  private const int ErrorFontSize = 8;
+  public const int ErrorFontSize = 8;
 
   public readonly List<string> LastGenerationErrors = new();
 
@@ -56,14 +56,12 @@ partial class ApplicationDatabase
     LastGenerationErrors.Clear();
     errors = Settings.GetGPSText() + Globals.NL2 + errors;
     DebugManager.Trace(LogTraceEvent.Error, errors);
-    using ( var form = new ShowTextForm(title, errors,
-                                        false, true,
-                                        MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
-                                        false, false) )
-    {
-      form.TextBox.Font = new Font("Courier new", ErrorFontSize);
-      form.ShowDialog();
-    }
+    using var form = new ShowTextForm(title, errors,
+                                      false, true,
+                                      MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
+                                      false, false);
+    form.TextBox.Font = new Font("Courier new", ErrorFontSize);
+    form.ShowDialog();
     if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )
       ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
     return errors;

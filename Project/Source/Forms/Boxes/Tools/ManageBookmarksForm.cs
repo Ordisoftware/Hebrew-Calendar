@@ -47,8 +47,8 @@ sealed partial class ManageBookmarksForm : Form
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    OpenBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
-    SaveBookmarksDialog.InitialDirectory = Settings.GetExportDirectory();
+    OpenBookmarksDialog.InitialDirectory = Settings.GetExportBookmarksDirectory();
+    SaveBookmarksDialog.InitialDirectory = Settings.GetExportBookmarksDirectory();
     OpenBookmarksDialog.Filter = Program.BoardExportTargets.CreateFilters();
     SaveBookmarksDialog.Filter = Program.GridExportTargets.CreateFilters();
   }
@@ -101,7 +101,7 @@ sealed partial class ManageBookmarksForm : Form
       ActionUndo.Enabled = Modified;
       ActionClose.Enabled = !ActionSave.Enabled && !forceEditMode;
       ActionImport.Enabled = ActionClose.Enabled;
-      ActionExport.Enabled = ActionClose.Enabled;
+      ActionExport.Enabled = ActionClose.Enabled && EditBookmarks.Rows.Count > 0;
       Globals.AllowClose = ActionClose.Enabled;
       ActionResetColors.Enabled = EditBookmarks.Rows
                                                .AsIEnumerable()
@@ -123,7 +123,7 @@ sealed partial class ManageBookmarksForm : Form
   private void ActionExport_Click(object sender, EventArgs e)
   {
     DoActionExport();
-    //UpdateControls(false);
+    UpdateControls();
   }
 
   private void ActionImport_Click(object sender, EventArgs e)

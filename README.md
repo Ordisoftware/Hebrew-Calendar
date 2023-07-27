@@ -399,11 +399,12 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 11.0
 
-- Move date bookmarks in text file to a database table.
+- Move date bookmarks stored in a text file to a database table.
+- Add memos and colors to date bookmarks that are now automatically sorted.
+- Add default bookmarks folder.
+- Add manage bookmarks menu item in Tools, and Alt + B shortcut.
 - Add help menu, and Alt + H shortcut.
 - Add window for all notices, and Alt + N shortcut.
-- Add memos and colors to date bookmarks that are now automatically sorted.
-- Add manage bookmarks menu item in Tools, and Alt + B shortcut.
 - Add Alt + Arrows shortcuts to navigate between lunar days.
 - Add previous and next buttons in parashah description box.
 - Add Accuweather.com provider.

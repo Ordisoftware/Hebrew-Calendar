@@ -19,8 +19,25 @@ namespace Ordisoftware.Core;
 /// </summary>
 public enum ShowExceptionMode
 {
+
+  /// <summary>
+  /// No display.
+  /// </summary>
   None,
+
+  /// <summary>
+  /// Standard dialog box with details
+  /// </summary>
   Simple,
+
+  /// <summary>
+  /// Custom dialog box.
+  /// </summary>
   Advanced,
+
+  /// <summary>
+  /// Standard dialog box with only message.
+  /// </summary>
   OnlyMessage
+
 }

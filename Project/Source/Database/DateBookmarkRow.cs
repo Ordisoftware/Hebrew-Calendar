@@ -60,10 +60,28 @@ public partial class DateBookmarkRow
   {
   }
 
+  public DateBookmarkRow(DateBookmarkRow item)
+  {
+    Date = item.Date;
+    Memo = item.Memo;
+    Color = item.Color;
+  }
+
+  public DateBookmarkRow(DateTime date)
+  {
+    Date = date;
+  }
+
   public DateBookmarkRow(DateTime date, string memo)
   {
     Date = date;
     Memo = memo;
+  }
+
+  public DateBookmarkRow(DateTime date, Color color)
+  {
+    Date = date;
+    Color = color;
   }
 
   public DateBookmarkRow(DateTime date, string memo, Color color)
@@ -71,13 +89,6 @@ public partial class DateBookmarkRow
     Date = date;
     Memo = memo;
     Color = color;
-  }
-
-  public DateBookmarkRow(DateBookmarkRow item)
-  {
-    Date = item.Date;
-    Memo = item.Memo;
-    Color = item.Color;
   }
 
 }

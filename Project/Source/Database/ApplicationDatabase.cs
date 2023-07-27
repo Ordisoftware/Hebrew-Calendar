@@ -35,6 +35,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   public List<DateBookmarkRow> DateBookmarks { get; private set; }
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable", Justification = "N/A")]
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP012:Property should not return created disposable", Justification = "N/A")]
   public BindingListView<DateBookmarkRow> DateBookmarksAsBindingListView
     => new(DateBookmarks.OrderBy(row => row.Date).ToList());
 

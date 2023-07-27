@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-01 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Configuration;
@@ -262,6 +262,16 @@ static class SettingsHelper
   static internal string GetExportSettingsDirectory(this Settings settings)
   {
     string result = Path.Combine(settings.GetExportDirectory(), "Settings");
+    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
+    return result;
+  }
+
+  /// <summary>
+  /// Gets the bookmarks export directory.
+  /// </summary>
+  static internal string GetExportBookmarksDirectory(this Settings settings)
+  {
+    string result = Path.Combine(settings.GetExportDirectory(), "Bookmarks");
     if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
     return result;
   }
