@@ -348,10 +348,10 @@ sealed partial class ParashotForm : Form
     if ( e.Control && e.KeyCode == Keys.S )
       ActionSave.PerformClick();
     else
-    if ( e.KeyCode == Keys.F2 || ( e.KeyCode == Keys.Enter && !DataGridView.IsCurrentCellInEditMode ) )
+    if ( !DataGridView.IsCurrentCellInEditMode && ( e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter ) )
       DataGridView.BeginEdit(false);
     else
-    if ( !DataGridView.IsCurrentCellInEditMode && e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z )
+    if ( !DataGridView.IsCurrentCellInEditMode && ( e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z ) )
     {
       EditSearch.Focus();
       EditSearch.AppendText(KeysConverter.ConvertToString(e.KeyValue));

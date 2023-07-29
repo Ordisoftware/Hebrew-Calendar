@@ -49,7 +49,7 @@ Name = (FR) Rav Avraham Ifrah
 URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
 
 Name = (FR) Rav Asher Marciano
-URL = https://www.youtube.com/@lebethhamidrashxveme-bethh4213
+URL = https://www.youtube.com/@RavAsherMarciano
 
 Name = (FR) Rav Yves Marciano
 URL = https://www.youtube.com/channel/UCin_W6_4xI0z0kvXoVHxQtQ
