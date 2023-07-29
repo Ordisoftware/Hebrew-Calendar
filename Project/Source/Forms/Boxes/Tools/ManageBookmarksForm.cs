@@ -265,10 +265,13 @@ sealed partial class ManageBookmarksForm : Form
 
   private void EditBookmarks_KeyDown(object sender, KeyEventArgs e)
   {
+    if ( ( e.Control && e.KeyCode == Keys.Insert ) || ( e.Control && e.KeyCode == Keys.Add ) )
+      ActionAdd.PerformClick();
+    else
     if ( ( e.Control && e.KeyCode == Keys.Delete ) || ( e.Control && e.KeyCode == Keys.Subtract ) )
       ActionDelete.PerformClick();
     else
-    if ( e.KeyCode == Keys.Enter && !EditBookmarks.IsCurrentCellInEditMode )
+    if ( !EditBookmarks.IsCurrentCellInEditMode && ( e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter ) )
       EditBookmarks.BeginEdit(false);
     else
       return;
