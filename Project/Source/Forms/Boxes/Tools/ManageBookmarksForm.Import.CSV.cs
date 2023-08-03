@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class ManageBookmarksForm : Form
 {
 
+  [SuppressMessage("Major Code Smell", "S6580:Use a format provider when parsing date and time", Justification = "N/A")]
   private void ImportCSV()
   {
     DateBookmarkRow bookmark = null;
