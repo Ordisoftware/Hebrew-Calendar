@@ -66,14 +66,20 @@ URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4L374Fjp6EQBlVHI6kCKZxN
 Name = (FR) [Israel Torah] On va sauver notre couple
 URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4LIjxBD0f2USXtDx4cutPdi
 
+Name = (FR) [Israel Torah] Les 613 Commandements
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4JU-Fzk35sLraFAraj5RsEm
+
 Name = (FR) [Israel Torah] Tanya
 URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4Ke5K_TqKh7jodXSzhk9mpM
 
 Name = (FR) [Israel Torah] Parachat
 URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4LvZgtax4J4zhUl1LFuDSRm
 
-Name = (FR) [Israel Torah] Les 613 Commandements
-URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4JU-Fzk35sLraFAraj5RsEm
+Name = (FR) [Israel Torah] Parachat Hassidique
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4ITJHI38eRzOGcJCca5bdLD
+
+Name = (FR) [Israel Torah] Parachat Kabala
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4L5yytz_IzWaguJNg9XKZ9Z
 
 -
 
