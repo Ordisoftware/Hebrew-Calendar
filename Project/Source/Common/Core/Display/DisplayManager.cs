@@ -80,7 +80,7 @@ static public partial class DisplayManager
       throw new ThreadStateException(SysTranslations.ErrorSlot.GetLang().TrimFirstLast());
     Exception exception = null;
     SemaphoreSlim semaphore = null;
-    var processAction = () =>
+    void processAction()
     {
       try
       {
@@ -90,12 +90,12 @@ static public partial class DisplayManager
       {
         exception = ex;
       }
-    };
-    var processActionWait = () =>
+    }
+    void processActionWait()
     {
       processAction();
       semaphore?.Release();
-    };
+    }
     if ( Globals.IsReady && control.InvokeRequired && Thread.CurrentThread != MainThread )
     {
       if ( wait ) semaphore = new SemaphoreSlim(0, 1);

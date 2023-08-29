@@ -100,21 +100,16 @@ static public partial class SystemManager
         if ( !osVersion.IsNullOrEmpty() )
           osVersion = $" v{osVersion}";
         //
-        string dotnet = get(() =>
+        string frameworkName = get(() =>
         {
-          var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
-          var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
-          return result is null
-            ? $".NET {SysTranslations.UndefinedSlot.GetLang()}"
-            : result.NamedArguments[0].TypedValue.Value.ToString();
+          return Assembly.GetExecutingAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkDisplayName
+            ?? $".NET {SysTranslations.UndefinedSlot.GetLang()}";
         });
         //
-        string osType = Environment.Is64BitOperatingSystem
-          ? "64-bits"
-          : "32-bits";
+        string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
         //
         _Platform = $"{osName}{osDisplayVersion} {osType}{osVersion}{Globals.NL}" +
-                    $"{dotnet}{Globals.NL}" +
+                    $"{frameworkName}{Globals.NL}" +
                     $"CLR {Environment.Version}";
       }
       return _Platform;

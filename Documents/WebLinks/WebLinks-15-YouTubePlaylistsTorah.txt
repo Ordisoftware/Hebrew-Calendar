@@ -50,6 +50,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BHHWXJ6_Skb-gFBeAmDlKw
 Name = (FR) Cours de Kabalah
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CoV3JgJLim0FmSsE1MDZJP
 
+Name = (FR) Cours de Zodiaque
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BiSbcNLMwWxuSm-pVn6O7F
+
 Name = (FR) Georges Lahy
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
