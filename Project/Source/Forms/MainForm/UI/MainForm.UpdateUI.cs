@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -182,7 +182,8 @@ public partial class MainForm
     {
       if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
       MenuTray.Enabled = Globals.IsReady && !Globals.IsProcessingData;
-      ToolStrip.Enabled = !Globals.IsProcessingData;
+      ToolStrip.Enabled = MenuTray.Enabled;
+      ContextMenuStripDay.Enabled = MenuTray.Enabled;
       ActionSaveToFile.Enabled = LunisolarDays.Count > 0;
       ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
       ActionPrint.Enabled = ActionSaveToFile.Enabled && Settings.CurrentView != ViewMode.Grid;

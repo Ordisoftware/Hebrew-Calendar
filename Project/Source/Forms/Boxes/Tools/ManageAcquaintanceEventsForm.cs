@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2022-01 </created>
-/// <edited> 2022-01 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class ManageAcquaintanceEventsForm : Form
@@ -23,8 +23,7 @@ sealed partial class ManageAcquaintanceEventsForm : Form
 
   static public bool Run()
   {
-    bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
-    MainForm.Instance.MenuTray.Enabled = false;
+    MainForm.Instance.FreezeUI();
     try
     {
       using var form = new ManageAcquaintanceEventsForm();
@@ -32,7 +31,7 @@ sealed partial class ManageAcquaintanceEventsForm : Form
     }
     finally
     {
-      MainForm.Instance.MenuTray.Enabled = trayEnabled;
+      MainForm.Instance.RestoreUI();
     }
   }
 

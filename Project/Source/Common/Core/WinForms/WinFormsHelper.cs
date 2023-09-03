@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Core;
 
 using System.Drawing.Text;
@@ -349,6 +349,7 @@ static class FormsHelper
     form.TopMost = true;
     form.BringToFront();
     form.TopMost = temp;
+    form.Activate();
   }
 
   /// <summary>
