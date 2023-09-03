@@ -365,7 +365,7 @@ sealed partial class MainForm : Form
       RestoreUI();
       EnableReminderTimer();
       LoadMenuBookmarks(this);
-      GoToDate(dateOld is null ? DateTime.Today : dateOld.Value);
+      GoToDate(dateOld ?? DateTime.Today);
       UpdateTitles(true);
       PreferencesMutex = false;
     }
