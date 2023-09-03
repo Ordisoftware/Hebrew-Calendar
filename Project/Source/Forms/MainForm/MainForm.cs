@@ -179,6 +179,9 @@ sealed partial class MainForm : Form
     DoMenuShowHide_Click(sender, e);
   }
 
+  /// <summary>
+  /// Force hide form to tray icon.
+  /// </summary>
   public void ForceHideToTray()
   {
     if ( Visible )
@@ -187,16 +190,6 @@ sealed partial class MainForm : Form
         MenuShowHide.PerformClick();
       MenuShowHide.PerformClick();
     }
-  }
-
-  /// <summary>
-  /// Event handler. Called by TrayIcon for mouse click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Mouse event information.</param>
-  private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
-  {
-    DoTrayIconMouse_Click(sender, e);
   }
 
   /// <summary>
@@ -210,44 +203,23 @@ sealed partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by TrayIcon for mouse click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Mouse event information.</param>
+  private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
+  {
+    DoTrayIconMouse_Click(sender, e);
+  }
+
+  /// <summary>
   /// Event handler. Called by TrayIcon for mouse move events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
   private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
   {
-    if ( !Globals.IsReady ) return;
-    if ( !MenuTray.Enabled ) return;
-    SystemManager.TryCatch(() =>
-    {
-      if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
-      {
-        // TODO NEXT refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
-        var text = Text.IndexOf('(') >= 0
-          ? new string(Text.ToCharArray().TakeWhile(c => c != '(').ToArray())
-          : Text;
-        var lines = text.Replace(HebrewTranslations.Parashah + " ", "").SplitNoEmptyLines(" - ").ToList();
-        if ( lines.Count >= 3 )
-        {
-          lines.Insert(2, DateTime.Today.ToShortDateString());
-          int index = lines.Count - 1;
-          int pos = lines[index].IndexOf('(');
-          if ( pos != -1 )
-            lines[index] = lines[index].Substring(0, pos - 1);
-        }
-        else
-          lines.Add(DateTime.Today.ToShortDateString());
-        TrayIcon.Text = new string(lines.AsMultiLine().Take(Globals.TrayIconTextLimit).ToArray());
-      }
-      else
-        TrayIcon.Text = string.Empty;
-      if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
-        return;
-      TimerBalloon.Start();
-      TrayIconMouse = Cursor.Position;
-      if ( !TimerTrayMouseMove.Enabled && Settings.BalloonAutoHide )
-        TimerTrayMouseMove.Start();
-    });
+    DoTrayIconMouse_Move(sender, e);
   }
 
   /// <summary>
@@ -308,6 +280,46 @@ sealed partial class MainForm : Form
 
   internal bool PreferencesMutex;
 
+  private bool LastFormEnabled;
+  private bool LastMenuTrayEnabled;
+  private bool LastContextMenuDayEnabled;
+  private bool LastTimerReminderEnabled;
+
+  internal void FreezeUI()
+  {
+    if ( !MenuTray.Enabled ) return;
+    LastFormEnabled = Enabled;
+    LastMenuTrayEnabled = MenuTray.Enabled;
+    LastContextMenuDayEnabled = ContextMenuStripDay.Enabled;
+    LastTimerReminderEnabled = TimerReminder.Enabled;
+    ToolStrip.Enabled = false;
+    MenuTray.Enabled = false;
+    ContextMenuStripDay.Enabled = false;
+    TimerReminder.Enabled = false;
+  }
+
+  internal void RestoreUI()
+  {
+    if ( MenuTray.Enabled ) return;
+    ToolStrip.Enabled = LastFormEnabled;
+    MenuTray.Enabled = LastMenuTrayEnabled;
+    ContextMenuStripDay.Enabled = LastContextMenuDayEnabled;
+    TimerReminder.Enabled = LastTimerReminderEnabled;
+  }
+
+  internal void DoActionWithUIDisabled(Action action)
+  {
+    FreezeUI();
+    try
+    {
+      action?.Invoke();
+    }
+    finally
+    {
+      RestoreUI();
+    }
+  }
+
   /// <summary>
   /// Event handler. Called by ActionPreferences for click events.
   /// </summary>
@@ -317,15 +329,11 @@ sealed partial class MainForm : Form
   internal void ActionPreferences_Click(object sender, EventArgs e)
   {
     if ( !ActionPreferences.Enabled ) return;
-    var dateOld = CurrentDay?.Date;
-    bool formEnabled = Enabled;
-    bool trayEnabled = MenuTray.Enabled;
+    FreezeUI();
     ActionPreferences.Visible = false;
     ActionPreferences.Visible = true;
-    ToolStrip.Enabled = false;
-    TimerReminder.Enabled = false;
-    MenuTray.Enabled = false;
     PreferencesMutex = true;
+    var dateOld = CurrentDay?.Date;
     try
     {
       ClearLists();
@@ -354,15 +362,10 @@ sealed partial class MainForm : Form
     }
     finally
     {
-      ToolStrip.Enabled = formEnabled;
-      MenuTray.Enabled = trayEnabled;
-      TimerReminder.Enabled = true;
+      RestoreUI();
       EnableReminderTimer();
       LoadMenuBookmarks(this);
-      if ( dateOld is null )
-        GoToDate(DateTime.Today);
-      else
-        GoToDate(dateOld.Value);
+      GoToDate(dateOld is null ? DateTime.Today : dateOld.Value);
       UpdateTitles(true);
       PreferencesMutex = false;
     }
@@ -457,10 +460,9 @@ sealed partial class MainForm : Form
   public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
   {
     if ( IsSpecialDay ) return;
-    bool menuEnabled = MenuTray.Enabled;
+    FreezeUI();
     try
     {
-      MenuTray.Enabled = false;
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(ref lastdone,
                                      Settings.CheckUpdateAtStartupDaysInterval,
@@ -475,7 +477,7 @@ sealed partial class MainForm : Form
     }
     finally
     {
-      MenuTray.Enabled = menuEnabled;
+      RestoreUI();
     }
   }
 
@@ -793,7 +795,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSave_Click(object sender, EventArgs e)
   {
-    ExportSave();
+    DoActionWithUIDisabled(ExportSave);
   }
 
   /// <summary>
@@ -803,7 +805,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCopyToClipboard_Click(object sender, EventArgs e)
   {
-    ExportToClipboard();
+    DoActionWithUIDisabled(ExportToClipboard);
   }
 
   /// <summary>
@@ -813,7 +815,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionPrint_Click(object sender, EventArgs e)
   {
-    ExportPrint();
+    DoActionWithUIDisabled(ExportPrint);
   }
 
   #endregion
@@ -827,11 +829,14 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchDay_Click(object sender, EventArgs e)
   {
-    var date = DateTime.Today;
-    if ( sender is not null )
-      if ( !SelectDayForm.Run(null, ref date, false, true, true) )
-        return;
-    GoToDate(date);
+    DoActionWithUIDisabled(() =>
+    {
+      var date = DateTime.Today;
+      if ( sender is not null )
+        if ( !SelectDayForm.Run(null, ref date, false, true, true) )
+          return;
+      GoToDate(date);
+    });
   }
 
   /// <summary>
@@ -841,8 +846,11 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchEvent_Click(object sender, EventArgs e)
   {
-    using var form = new SearchEventForm();
-    form.ShowDialog();
+    DoActionWithUIDisabled(() =>
+    {
+      using var form = new SearchEventForm();
+      form.ShowDialog();
+    });
   }
 
   /// <summary>
@@ -852,8 +860,11 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchMonth_Click(object sender, EventArgs e)
   {
-    using var form = new SearchLunarMonthForm();
-    form.ShowDialog();
+    DoActionWithUIDisabled(() =>
+    {
+      using var form = new SearchLunarMonthForm();
+      form.ShowDialog();
+    });
   }
 
   /// <summary>
@@ -863,8 +874,11 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchGregorianMonth_Click(object sender, EventArgs e)
   {
-    using var form = new SearchGregorianMonthForm();
-    form.ShowDialog();
+    DoActionWithUIDisabled(() =>
+    {
+      using var form = new SearchGregorianMonthForm();
+      form.ShowDialog();
+    });
   }
 
   /// <summary>

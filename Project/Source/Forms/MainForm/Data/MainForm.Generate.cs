@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -67,7 +67,7 @@ partial class MainForm
     try
     {
       if ( e is not null ) TimerReminder.Enabled = false;
-      MenuTray.Enabled = false;
+      FreezeUI();
       try
       {
         int yearFirst;
@@ -98,7 +98,7 @@ partial class MainForm
       }
       finally
       {
-        MenuTray.Enabled = true;
+        RestoreUI();
         LabelSubTitleGPS.Text = string.Empty;
         UpdateButtons();
         if ( e is not null )

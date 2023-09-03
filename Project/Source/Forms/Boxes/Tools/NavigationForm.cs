@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class NavigationForm : Form
@@ -248,6 +248,9 @@ sealed partial class NavigationForm : Form
         return true;
       case Keys.Up:
         ActionSelectDay.PerformClick();
+        return true;
+      case Keys.NumPad0:
+        MainForm.Instance.GoToDate(DateTime.Today);
         return true;
       default:
         return base.ProcessCmdKey(ref msg, keyData);

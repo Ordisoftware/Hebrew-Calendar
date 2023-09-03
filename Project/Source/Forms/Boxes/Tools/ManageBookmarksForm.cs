@@ -26,16 +26,15 @@ sealed partial class ManageBookmarksForm : Form
 
   static public void Run()
   {
-    bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
+    MainForm.Instance.FreezeUI();
     try
     {
-      MainForm.Instance.MenuTray.Enabled = false;
       using var form = new ManageBookmarksForm();
       form.ShowDialog();
     }
     finally
     {
-      MainForm.Instance.MenuTray.Enabled = trayEnabled;
+      MainForm.Instance.RestoreUI();
     }
   }
 
