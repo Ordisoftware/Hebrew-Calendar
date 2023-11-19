@@ -903,6 +903,7 @@ namespace System.Globalization
     }
 
     [SuppressMessage("Performance", "U2U1108:StringBuilders should be initialized with capacity", Justification = "<En attente>")]
+    [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error")]
     public virtual string GetPropitiousHour(DateTime date)
     {
       int jdn = (int)Math.Floor(JulianDayNumber(date));

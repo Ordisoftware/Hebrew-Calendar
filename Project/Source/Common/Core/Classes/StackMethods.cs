@@ -84,6 +84,7 @@ static public class StackMethods
   // From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "N/A")]
   [SuppressMessage("Design", "GCop176:This anonymous method should not contain complex code, Instead call other focused methods to perform the complex logic", Justification = "N/A")]
+  [SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "Analysis error")]
   static public string JustifyParagraph(string text, int width, Font font)
   {
     var result = new StringBuilder(text.Length + 20);

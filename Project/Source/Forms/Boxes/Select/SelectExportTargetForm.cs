@@ -126,6 +126,7 @@ sealed partial class SelectExportTargetForm : Form
   }
 
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  [SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "Analysis error")]
   private void CreateFormatRedioButtons<T>(NullSafeOfStringDictionary<T> list, string setting) where T : Enum
   {
     int posX = 15;

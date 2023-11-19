@@ -411,6 +411,11 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Code refactoring.
 - Update web links.
 
+>- Fix timer which displays parashah description box when the day before is not Shabbat.
+>- Fix calendar context menu is enabled when the top menu is disabled.
+>- Fix Yom Teruh'ah reminder box still showing when finished.
+>- Add submenu for all weather providers
+
 #### 2023.04.05 - Version 10.4
 
 - Fix celebration day context menu for show verses item.

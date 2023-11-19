@@ -104,6 +104,7 @@ static public partial class SystemManager
   /// <summary>
   /// Creates IPC server instance.
   /// </summary>
+  [SuppressMessage("Major Code Smell", "S3966:Objects should not be disposed more than once", Justification = "Analysis error")]
   static public void CreateIPCServer(AsyncCallback ipcRequests)
   {
     if ( ipcRequests is null ) return;

@@ -50,6 +50,7 @@ static public class Localizer
   /// </summary>
   /// <param name="values">The dictionary containing lang>translation.</param>
   /// <param name="parameters">Parameters for the translated string.</param>
+  [SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "Analysis error")]
   static public string GetLang(this TranslationsDictionary values, params object[] parameters)
   {
     return string.Format(values?.GetLang(), parameters) ?? $"{ERR} {parameters.AsMultiComma()}";
