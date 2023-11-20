@@ -31,64 +31,206 @@ static public class HebrewAlphabet
   /// Indicates letters keyboard codes for Hebrew font.
   /// </summary>
   static public readonly string[] KeyCodes =
-  {
-    "a", "b", "g", "d", "h", "v", "z", "x", "u", "y", "k",
-    "l", "m", "n", "c", "i", "p", "j", "q", "r", ">", "t"
-  };
+  [
+    "a",
+    "b",
+    "g",
+    "d",
+    "h",
+    "v",
+    "z",
+    "x",
+    "u",
+    "y",
+    "k",
+    "l",
+    "m",
+    "n",
+    "c",
+    "i",
+    "p",
+    "j",
+    "q",
+    "r",
+    ">",
+    "t"
+  ];
 
   /// <summary>
   /// Indicates letters simple values.
   /// </summary>
   static public readonly int[] ValuesSimple =
-  {
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20,
-    30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400
-  };
+  [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    200,
+    300,
+    400
+  ];
 
   /// <summary>
   /// Indicates letters full values.
   /// </summary>
   static public readonly int[] ValuesFull =
-  {
-    111, 412, 83, 434, 6, 12, 67, 418, 419, 20, 100,
-    74, 90, 106, 120, 130, 81, 104, 186, 510, 360, 406
-  };
+  [
+    111,
+    412,
+    83,
+    434,
+    6,
+    12,
+    67,
+    418,
+    419,
+    20,
+    100,
+    74,
+    90,
+    106,
+    120,
+    130,
+    81,
+    104,
+    186,
+    510,
+    360,
+    406
+  ];
 
   /// <summary>
   /// Indicates letters names in Unicode chars.
   /// </summary>
   static public readonly string[] Unicode =
-  {
+  [
     "",
-    "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל",
-    "מ", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ק", "ר", "ש", "ת",
-  };
+    "א",
+    "ב",
+    "ג",
+    "ד",
+    "ה",
+    "ו",
+    "ז",
+    "ח",
+    "ט",
+    "י",
+    "כ",
+    "ל",
+    "מ",
+    "נ",
+    "ן",
+    "ס",
+    "ע",
+    "פ",
+    "ף",
+    "צ",
+    "ק",
+    "ר",
+    "ש",
+    "ת",
+  ];
 
   /// <summary>
   /// Indicates letters names in Hebrew font chars.
   /// </summary>
   static public readonly string[] Hebrew =
-  {
-    "pla", "tyb", "lmyg", "tld", "ah", "vv", "]yz", "tx", "tu", "dvy", "pk",
-    "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
-  };
+  [
+    "pla",
+    "tyb",
+    "lmyg",
+    "tld",
+    "ah",
+    "vv",
+    "]yz",
+    "tx",
+    "tu",
+    "dvy",
+    "pk",
+    "dml",
+    ",m",
+    "]vn",
+    "!mc",
+    "]yi",
+    "hp",
+    "ydj",
+    "pvq",
+    ">r",
+    "]y>",
+    "vt",
+  ];
 
   /// <summary>
   /// Indicates letters transcriptions in latin chars.
   /// </summary>
   static public readonly NullSafeDictionary<Language, string[]> Transcriptions = new()
   {
-    [Language.EN] = new string[]
-    {
-      "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "T'et", "Yod", "Kaf",
-      "Lamed", "Mem", "Nun", "Samek", "H'ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
-    },
+    [Language.EN] =
+    [
+      "Alef",
+      "Bet",
+      "Gimel",
+      "Dalet",
+      "He",
+      "Vav",
+      "Zayin",
+      "'Het",
+      "T'et",
+      "Yod",
+      "Kaf",
+      "Lamed",
+      "Mem",
+      "Nun",
+      "Samek",
+      "H'ayin",
+      "Pay",
+      "Tsadi",
+      "Qof",
+      "Resh",
+      "Shin",
+      "Tav"
+    ],
 
-    [Language.FR] = new string[]
-    {
-      "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "T'et", "Youd", "Kaf",
-      "Lamed", "Mem", "Noun", "Samek", "H'ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
-    }
+    [Language.FR] =
+    [
+      "Alef",
+      "Bet",
+      "Guimel",
+      "Dalet",
+      "Hé",
+      "Vav",
+      "Zayin",
+      "'Het",
+      "T'et",
+      "Youd",
+      "Kaf",
+      "Lamed",
+      "Mem",
+      "Noun",
+      "Samek",
+      "H'ayin",
+      "Pé",
+      "Tsadi",
+      "Qouf",
+      "Resh",
+      "Shin",
+      "Tav"
+    ]
   };
 
   /// <summary>
@@ -113,25 +255,25 @@ static public class HebrewAlphabet
   /// Indicates final letters disabled keyboard codes for Hebrew font.
   /// </summary>
   static private readonly char[][] FinalDisable =
-  {
-    new char[] { '!', 'k' },
-    new char[] { ',', 'm' },
-    new char[] { ']', 'n' },
-    new char[] { '[', 'p' },
-    new char[] { '/', 'j' }
-  };
+  [
+    ['!', 'k'],
+    [',', 'm'],
+    [']', 'n'],
+    ['[', 'p'],
+    ['/', 'j']
+  ];
 
   /// <summary>
   /// Indicates final letters enabled keyboard codes for Hebrew font.
   /// </summary>
   static private readonly char[][] FinalEnable =
-  {
-    new char[] { 'k', '!' },
-    new char[] { 'm', ',' },
-    new char[] { 'n', ']' },
-    new char[] { 'p', '[' },
-    new char[] { 'j', '/' }
-  };
+  [
+    ['k', '!'],
+    ['m', ','],
+    ['n', ']'],
+    ['p', '['],
+    ['j', '/']
+  ];
 
   /// <summary>
   /// Indicate options for the gematria calculator.

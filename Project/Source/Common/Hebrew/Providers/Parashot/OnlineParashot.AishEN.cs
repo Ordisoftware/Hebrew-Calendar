@@ -20,8 +20,8 @@ static public partial class OnlineParashot
   [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> AishEN = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "bereishit",
       "noach",
       "lech-lecha",
@@ -34,9 +34,9 @@ static public partial class OnlineParashot
       "mikeitz",
       "vayigash",
       "vayechi"
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "shmot",
       "vaeira",
       "bo",
@@ -48,9 +48,9 @@ static public partial class OnlineParashot
       "ki-tisa",
       "vayakhel",
       "pekudei"
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "vayikra",
       "tzav",
       "shmini",
@@ -61,9 +61,9 @@ static public partial class OnlineParashot
       "emor",
       "behar",
       "bechukotai"
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "bamidbar",
       "naso",
       "behalotcha",
@@ -74,9 +74,9 @@ static public partial class OnlineParashot
       "pinchas",
       "matot",
       "masay"
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "devarim",
       "vetchanan",
       "ekev",
@@ -88,7 +88,7 @@ static public partial class OnlineParashot
       "vayelech",
       "haazinu",
       "vZot-haBracha"
-    }
+    ]
   };
 
 }

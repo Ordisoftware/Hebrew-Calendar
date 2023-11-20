@@ -38,7 +38,7 @@ static public partial class SystemManager
   {
     try
     {
-      CommandLineArguments = args.ToList();
+      CommandLineArguments = [.. args];
       var options = CommandLine.Parser.Default.ParseArguments<T>(args);
       if ( options.Tag != CommandLine.ParserResultType.Parsed )
       {

@@ -223,7 +223,7 @@ sealed partial class NewMoonsBoardForm : Form
     string name = AppTranslations.Year.GetLang();
     if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
     Board = new DataTable(TableName);
-    Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
+    Board.PrimaryKey = [Board.Columns.Add(name, typeof(int))];
     int index = 1;
     foreach ( var month in HebrewMonths.Transcriptions.GetLang().Skip(1) )
     {

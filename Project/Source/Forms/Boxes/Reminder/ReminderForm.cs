@@ -255,7 +255,7 @@ sealed partial class ReminderForm : Form
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   private void ReminderForm_Load(object sender, EventArgs e)
   {
-    PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart };
+    PowerAction[] avoid = [PowerAction.LogOff, PowerAction.Restart];
     foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
     {
       var item = (ToolStripMenuItem)ContextMenuLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));

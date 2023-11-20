@@ -75,14 +75,14 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   protected override void DoLoadAll()
   {
-    LunisolarDays = Connection.Table<LunisolarDayRow>().ToList();
+    LunisolarDays = [.. Connection.Table<LunisolarDayRow>()];
     LoadBookmarks();
   }
 
   public void LoadBookmarks()
   {
     Rollback();
-    DateBookmarks = Connection.Table<DateBookmarkRow>().ToList();
+    DateBookmarks = [.. Connection.Table<DateBookmarkRow>()];
   }
 
   public void SaveBookmarks()

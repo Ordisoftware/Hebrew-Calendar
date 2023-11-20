@@ -41,7 +41,7 @@ public partial class MainForm
 
   static private List<DateBookmarkRow> Bookmarks => DBApp.DateBookmarks;
 
-  static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+  static internal List<Parashah> UserParashot { get; set; } = [];
 
   static internal Dictionary<DateTime, CustomEvent[]> CalendarEventsGrouped { get; private set; }
 
@@ -89,17 +89,17 @@ public partial class MainForm
 
   private LunisolarDayRow ContextMenuDayCurrentEvent;
 
-  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = new();
+  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = [];
 
-  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = new();
+  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = [];
 
-  internal readonly NullSafeList<ReminderForm> RemindCelebrationForms = new();
+  internal readonly NullSafeList<ReminderForm> RemindCelebrationForms = [];
 
-  private readonly List<DateTime> RemindCelebrationDates = new();
+  private readonly List<DateTime> RemindCelebrationDates = [];
 
-  private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded = new();
+  private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded = [];
 
-  internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms = new();
+  internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms = [];
 
   private DateTime? LastShabatReminded;
 

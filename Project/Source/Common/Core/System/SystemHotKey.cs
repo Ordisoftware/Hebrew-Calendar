@@ -27,7 +27,7 @@ public class SystemHotKey
 
   static private HotkeyManager _Manager;
 
-  static public readonly List<SystemHotKey> AllActivated = new();
+  static public readonly List<SystemHotKey> AllActivated = [];
 
   private Hotkey _PublicHotKey;
   private int _PublicHotKeyID;

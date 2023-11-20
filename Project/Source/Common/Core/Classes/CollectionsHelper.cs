@@ -19,12 +19,12 @@ static public class CollectionsHelper
 
   static public List<List<T>> Split<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
   {
-    var slices = new List<List<T>> { new List<T>() };
+    var slices = new List<List<T>> { new() };
     foreach ( var item in collection )
     {
       slices[slices.Count - 1].Add(item);
       if ( predicate(item) )
-        slices.Add(new List<T>());
+        slices.Add([]);
     }
     return slices;
   }

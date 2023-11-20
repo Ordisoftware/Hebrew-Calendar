@@ -39,7 +39,7 @@ partial class ApplicationDatabase
 
   public const int ErrorFontSize = 8;
 
-  public readonly List<string> LastGenerationErrors = new();
+  public readonly List<string> LastGenerationErrors = [];
 
   public bool AddGenerateErrorAndCheckIfTooMany(string method, string date, Exception ex)
   {

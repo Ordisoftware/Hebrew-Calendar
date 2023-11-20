@@ -68,7 +68,7 @@ static public partial class ObjectHelper
   /// </returns>
   static public bool CheckIfOneIsTrueAndSomeOthersNot(this bool first, params bool[] others)
   {
-    return CheckIfOneIsTrueAndSomeOthersNot(( new bool[] { first } ).Concat(others).ToArray());
+    return CheckIfOneIsTrueAndSomeOthersNot([.. ( new bool[] { first } ), .. others]);
   }
 
   /// <summary>

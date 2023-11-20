@@ -20,8 +20,8 @@ static public partial class OnlineParashot
   [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> YeshivaCo = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "15",
       "16",
       "17",
@@ -34,9 +34,9 @@ static public partial class OnlineParashot
       "24",
       "25",
       "70"
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "26",
       "27",
       "28",
@@ -48,9 +48,9 @@ static public partial class OnlineParashot
       "34",
       "35",
       "36"
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "37",
       "38",
       "39",
@@ -61,9 +61,9 @@ static public partial class OnlineParashot
       "44",
       "45",
       "46"
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "47",
       "48",
       "49",
@@ -74,9 +74,9 @@ static public partial class OnlineParashot
       "54",
       "55",
       "56"
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "57",
       "58",
       "59",
@@ -88,7 +88,7 @@ static public partial class OnlineParashot
       "65",
       "66",
       "67"
-    }
+    ]
   };
 
 }

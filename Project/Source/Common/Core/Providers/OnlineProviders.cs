@@ -35,14 +35,12 @@ public class OnlineProviders : DataFile
   /// <summary>
   /// Indicates items.
   /// </summary>
-  public List<OnlineProviderItem> Items { get; private set; }
-   = new List<OnlineProviderItem>();
+  public List<OnlineProviderItem> Items { get; private set; } = [];
 
   /// <summary>
   /// Indicates the multilingual title of the list to create a folder
   /// </summary>
-  public TranslationsDictionary Title { get; }
-    = new TranslationsDictionary();
+  public TranslationsDictionary Title { get; } = [];
 
   /// <summary>
   /// Indicates if a separator must be inserted before the folder

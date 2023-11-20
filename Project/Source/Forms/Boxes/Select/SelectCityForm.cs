@@ -19,7 +19,7 @@ sealed partial class SelectCityForm : Form
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS = new();
+  static public readonly SortedAutoDictionary<string, AutoResizedList<CityItem>> GPS = [];
 
   static SelectCityForm()
   {

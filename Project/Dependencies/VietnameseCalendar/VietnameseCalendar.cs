@@ -24,6 +24,7 @@ namespace System.Globalization
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
   [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
+  [SuppressMessage("Style", "IDE0300:Simplifier l'initialisation des collections", Justification = "<En attente>")]
   public class VietnameseCalendar : Calendar
   {
 

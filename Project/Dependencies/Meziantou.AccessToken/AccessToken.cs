@@ -215,13 +215,7 @@ public sealed class AccessToken : IDisposable
     var tp = new Natives.NativeMethods.TOKEN_PRIVILEGES
     {
       PrivilegeCount = 1,
-      Privileges = new Natives.NativeMethods.LUID_AND_ATTRIBUTES[1]
-        {
-                new Natives.NativeMethods.LUID_AND_ATTRIBUTES
-                {
-                    Luid = luid,
-                },
-        },
+      Privileges = [new() { Luid = luid, },]
     };
 
     switch ( operation )

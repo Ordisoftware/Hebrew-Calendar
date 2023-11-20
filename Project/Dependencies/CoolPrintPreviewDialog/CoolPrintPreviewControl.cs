@@ -260,7 +260,7 @@ namespace CoolPrintPreview
     /// Gets a list containing the images of the pages in the document.
     /// </summary>
     [Browsable(false)]
-    public PageImageList PageImages { get; } = new();
+    public PageImageList PageImages { get; } = [];
     /// <summary>
     /// Prints the current document honoring the selected page range.
     /// </summary>

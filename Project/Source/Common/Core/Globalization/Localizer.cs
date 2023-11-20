@@ -75,7 +75,7 @@ static public class Localizer
   /// <param name="values">The dictionary containing lang>list.</param>
   static public NullSafeStringList GetLang(this NullSafeDictionary<Language, NullSafeStringList> values)
   {
-    return values?[Languages.Current] ?? values?[Languages.Default] ?? new NullSafeStringList();
+    return values?[Languages.Current] ?? values?[Languages.Default] ?? [];
   }
 
   /// <summary>
@@ -86,7 +86,7 @@ static public class Localizer
   static public NullSafeList<T> GetLang<T>(this NullSafeDictionary<Language, NullSafeList<T>> values)
   where T : class
   {
-    return values?[Languages.Current] ?? values?[Languages.Default] ?? new NullSafeList<T>();
+    return values?[Languages.Current] ?? values?[Languages.Default] ?? [];
   }
 
   /// <summary>
@@ -95,7 +95,7 @@ static public class Localizer
   /// <param name="values">The dictionary containing lang>translations.</param>
   static public string[] GetLang(this NullSafeDictionary<Language, string[]> values)
   {
-    return values?[Languages.Current] ?? values?[Languages.Default] ?? new string[1] { ERR };
+    return values?[Languages.Current] ?? values?[Languages.Default] ?? [ERR];
   }
 
   /// <summary>

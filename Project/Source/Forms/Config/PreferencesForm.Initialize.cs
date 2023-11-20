@@ -272,7 +272,7 @@ partial class PreferencesForm
   /// </summary>
   private void LoadPowerActions()
   {
-    PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown };
+    PowerAction[] avoid = [PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown];
     foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
     {
       SelectLockSessionDefaultAction.Items.Add(value);

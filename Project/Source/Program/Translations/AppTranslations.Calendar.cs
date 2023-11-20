@@ -268,8 +268,8 @@ static partial class AppTranslations
 
   static public readonly NullSafeDictionary<Language, NullSafeList<string>> WikipediaMonths = new()
   {
-    [Language.EN] = new()
-    {
+    [Language.EN] =
+    [
       "https://en.wikipedia.org/wiki/Hebrew_calendar",
       "https://en.wikipedia.org/wiki/Nisan",
       "https://en.wikipedia.org/wiki/Iyar",
@@ -284,9 +284,9 @@ static partial class AppTranslations
       "https://en.wikipedia.org/wiki/Shevat",
       "https://en.wikipedia.org/wiki/Adar",
       "https://en.wikipedia.org/wiki/Adar"
-    },
-    [Language.FR] = new()
-    {
+    ],
+    [Language.FR] =
+    [
       "https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9bra%C3%AFque",
       "https://fr.wikipedia.org/wiki/Nissan_(mois)",
       "https://fr.wikipedia.org/wiki/Iyar",
@@ -301,7 +301,7 @@ static partial class AppTranslations
       "https://fr.wikipedia.org/wiki/Shevat",
       "https://fr.wikipedia.org/wiki/Adar",
       "https://fr.wikipedia.org/wiki/Adar"
-    }
+    ]
   };
 
 }

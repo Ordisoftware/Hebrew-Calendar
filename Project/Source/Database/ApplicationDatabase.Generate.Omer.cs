@@ -40,7 +40,7 @@ sealed partial class ApplicationDatabase
     DateTime date;
     var chrono = new Stopwatch();
     chrono.Start();
-    var parashot = ParashotFactory.Instance?.All?.ToList() ?? new List<Parashah>();
+    var parashot = ParashotFactory.Instance?.All?.ToList() ?? [];
     try
     {
       foreach ( var day in LunisolarDays )

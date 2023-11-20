@@ -40,9 +40,9 @@ public sealed partial class MessageBoxEx : Form
 
   private const int WidthDeltaMargin = 55;
 
-  static public readonly List<Type> ForceTopMostExcludedForms = new();
+  static public readonly List<Type> ForceTopMostExcludedForms = [];
 
-  static public readonly List<MessageBoxEx> Instances = new();
+  static public readonly List<MessageBoxEx> Instances = [];
 
   [SuppressMessage("Performance", "U2U1210:Do not materialize an IEnumerable<T> unnecessarily", Justification = "N/A")]
   static public void CloseAll()

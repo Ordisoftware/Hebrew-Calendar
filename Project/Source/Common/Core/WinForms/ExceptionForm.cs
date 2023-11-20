@@ -36,7 +36,7 @@ public sealed partial class ExceptionForm : Form
   /// <summary>
   /// Indicates error messages.
   /// </summary>
-  private readonly List<string> ErrorMessages = new();
+  private readonly List<string> ErrorMessages = [];
 
   private bool IsInner;
 
