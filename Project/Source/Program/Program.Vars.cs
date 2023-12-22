@@ -94,17 +94,41 @@ static partial class Program
   /// Indicates big calendar advert levels.
   /// </summary>
   static public readonly int[] BigCalendarLevels =
-  {
-    30, 50, 75, 100, 125
-  };
+  [
+    30,
+    50,
+    75,
+    100,
+    125
+  ];
 
   /// <summary>
   /// Indicates predefined years intervals.
   /// </summary>
   static public readonly int[] PredefinedYearsIntervals =
-  {
-    5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 120, -5, -10, -15, -20, -25, -30, -40, -50, -75, -100
-  };
+  [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50,
+    75,
+    100,
+    120,
+    -5,
+    -10,
+    -15,
+    -20,
+    -25,
+    -30,
+    -40,
+    -50,
+    -75,
+    -100
+  ];
 
   /// <summary>
   /// Indicates file path of application image 64x64.
@@ -179,8 +203,8 @@ static partial class Program
   static Program()
   {
     if ( Globals.IsVisualStudioDesigner ) return;
-    LunarMonthsMeanings = new NullSafeDictionary<Language, LunarMonthsFile>();
-    LunarMonthsLettriqs = new NullSafeDictionary<Language, LunarMonthsFile>();
+    LunarMonthsMeanings = [];
+    LunarMonthsLettriqs = [];
     foreach ( Language lang in Languages.Managed )
     {
       LunarMonthsMeanings.Add(lang, new LunarMonthsFile(LunarMonthsMeaningsFilePath,

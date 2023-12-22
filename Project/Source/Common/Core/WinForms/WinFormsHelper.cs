@@ -22,7 +22,7 @@ using System.Drawing.Text;
 static public class SolidBrushesPool
 {
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Color, SolidBrush> Items = new();
+  static private readonly Dictionary<Color, SolidBrush> Items = [];
   static public void Clear()
   {
     foreach ( var item in Items )
@@ -48,7 +48,7 @@ static public class SolidBrushesPool
 static public class PensPool
 {
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Color, Pen> Items = new();
+  static private readonly Dictionary<Color, Pen> Items = [];
   static public void Clear()
   {
     foreach ( var item in Items )
@@ -76,9 +76,7 @@ static class FormsHelper
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "N/A")]
   static public readonly List<FontFamily> InstalledFonts
-    = new InstalledFontCollection().Families
-                                   .OrderBy(font => font.Name)
-                                   .ToList();
+    = [.. new InstalledFontCollection().Families.OrderBy(font => font.Name),];
 
   /// <summary>
   /// Applies localized resources.
@@ -521,26 +519,26 @@ static class FormsHelper
     int heightDiv2 = control.Height / 2;
     int widthDiv4 = widthDiv2 / 4;
     int heightDiv4 = heightDiv2 / 4;
-    return new List<Point>
-    {
+    return
+    [
       // Center
-      new Point(control.Left + widthDiv2, control.Top + heightDiv2),
+      new(control.Left + widthDiv2, control.Top + heightDiv2),
       // Corners
-      new Point(control.Left + margin, control.Top + margin),
-      new Point(control.Right - margin, control.Top + margin),
-      new Point(control.Left + margin, control.Bottom - margin),
-      new Point(control.Right - margin, control.Bottom - margin),
+      new(control.Left + margin, control.Top + margin),
+      new(control.Right - margin, control.Top + margin),
+      new(control.Left + margin, control.Bottom - margin),
+      new(control.Right - margin, control.Bottom - margin),
       // Borders
-      new Point(control.Left + widthDiv4, control.Top + heightDiv4),
-      new Point(control.Right - widthDiv4, control.Top + heightDiv4),
-      new Point(control.Left + widthDiv4, control.Bottom - heightDiv4),
-      new Point(control.Right - widthDiv4, control.Bottom - heightDiv4),
+      new(control.Left + widthDiv4, control.Top + heightDiv4),
+      new(control.Right - widthDiv4, control.Top + heightDiv4),
+      new(control.Left + widthDiv4, control.Bottom - heightDiv4),
+      new(control.Right - widthDiv4, control.Bottom - heightDiv4),
       // Inner
-      new Point(control.Left + widthDiv2, control.Top + margin),
-      new Point(control.Left + widthDiv2, control.Bottom - margin),
-      new Point(control.Left + margin, control.Top + heightDiv2),
-      new Point(control.Right - margin, control.Top + heightDiv2)
-    };
+      new(control.Left + widthDiv2, control.Top + margin),
+      new(control.Left + widthDiv2, control.Bottom - margin),
+      new(control.Left + margin, control.Top + heightDiv2),
+      new(control.Right - margin, control.Top + heightDiv2)
+    ];
   }
 
 }

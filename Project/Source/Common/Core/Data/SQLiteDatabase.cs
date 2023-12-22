@@ -47,7 +47,7 @@ public abstract class SQLiteDatabase : IDisposable
 
   protected bool AutoLoadAllAtOpen { get; init; } = true;
 
-  protected readonly List<object> ModifiedObjects = new();
+  protected readonly List<object> ModifiedObjects = [];
 
   public bool HasChanges => ModifiedObjects.Count > 0;
 

@@ -24,9 +24,9 @@ sealed class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
 
   static public readonly CalendarDates Instance = new();
 
-  static private readonly Dictionary<int, SortedDictionary<DateTime, SeasonChange>> TorahSeasons = new();
+  static private readonly Dictionary<int, SortedDictionary<DateTime, SeasonChange>> TorahSeasons = [];
 
-  static private readonly SortedDictionary<DateTime, CalendarDateItem> Items = new();
+  static private readonly SortedDictionary<DateTime, CalendarDateItem> Items = [];
 
   public int Count
     => Items.Keys.Count;
@@ -91,7 +91,7 @@ sealed class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
   private void InitializeSeasons(int year)
   {
     if ( !TorahSeasons.ContainsKey(year) )
-      TorahSeasons.Add(year, new SortedDictionary<DateTime, SeasonChange>());
+      TorahSeasons.Add(year, []);
     var aasdate = new AASDate();
     long jdYear = 0, jdMonth = 0, jdDay = 0, jdHour = 0, jdMinute = 0;
     double second = 0;

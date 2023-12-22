@@ -77,7 +77,7 @@ namespace Infralution.Localization
     /// <summary>
     /// Properties to be excluded when applying culture resources
     /// </summary>
-    private List<string> _excludeProperties = new();
+    private List<string> _excludeProperties = [];
 
     /// <summary>
     /// The current auto scale factor
@@ -676,16 +676,16 @@ namespace Infralution.Localization
       // load the resources for this IComponent type into a sorted list
       //
       ComponentResourceManager resourceManager = new(componentType);
-      SortedList<string, object> resources = new();
+      SortedList<string, object> resources = [];
       LoadResources(resourceManager, culture, resources);
 
       // build a lookup table of components indexed by resource name
       //
-      Dictionary<string, IComponent> components = new();
+      Dictionary<string, IComponent> components = [];
 
       // build a lookup table of extender providers indexed by type
       //
-      Dictionary<Type, IExtenderProvider> extenderProviders = new();
+      Dictionary<Type, IExtenderProvider> extenderProviders = [];
 
       bool isVB = IsVBAssembly(componentType.Assembly);
 

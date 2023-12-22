@@ -117,7 +117,7 @@ static partial class DayOfWeekMap
     },
   };
 
-  static public readonly Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText = new();
+  static public readonly Dictionary<Language, Dictionary<DayOfWeek, List<string>>> LocalizedNamesText = [];
 
   static private readonly int CountWeekDays = Enums.GetMemberCount<DayOfWeek>();
 

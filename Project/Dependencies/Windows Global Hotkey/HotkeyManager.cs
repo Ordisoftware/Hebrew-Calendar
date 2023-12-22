@@ -17,8 +17,8 @@ namespace Base.Hotkeys
     public HotkeyManager()
     {
       Active = true;
-      IDs = new Dictionary<int, ushort>();
-      Hotkeys = new Dictionary<ushort, HotkeyAction>();
+      IDs = [];
+      Hotkeys = [];
       Form = new HotkeyForm();
       Form.HotkeyPressed += HotkeyPressed;
     }
@@ -65,6 +65,7 @@ namespace Base.Hotkeys
       return false;
     }
 
+    [SuppressMessage("Performance", "CA1854:Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method", Justification = "N/A")]
     public bool UnregisterHotkey(int id)
     {
       if ( !IDs.ContainsKey(id) ) return true;

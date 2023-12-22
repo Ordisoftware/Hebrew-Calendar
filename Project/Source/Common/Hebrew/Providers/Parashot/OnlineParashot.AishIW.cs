@@ -20,8 +20,8 @@ static public partial class OnlineParashot
   [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> AishIW = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "43907672",
       "43907667",
       "43907662",
@@ -34,9 +34,9 @@ static public partial class OnlineParashot
       "43907617",
       "43907612",
       "43907607"
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "43907602",
       "43907597",
       "43907592",
@@ -48,9 +48,9 @@ static public partial class OnlineParashot
       "43907562",
       "43907557",
       "43907552"
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "43907547",
       "43907542",
       "43907537",
@@ -61,9 +61,9 @@ static public partial class OnlineParashot
       "43907507",
       "43907502",
       "43907492"
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "43907477",
       "43907472",
       "43907467",
@@ -74,9 +74,9 @@ static public partial class OnlineParashot
       "43907442",
       "43907432",
       "43907427"
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "43907422",
       "43907417",
       "43907407",
@@ -88,7 +88,7 @@ static public partial class OnlineParashot
       "43907367",
       "43907362",
       "43907357"
-    }
+    ]
   };
 
 }

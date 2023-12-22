@@ -368,10 +368,10 @@ namespace CodeProjectCalendar.NET
 
       _scrollPanel.RightButtonClicked += ScrollPanelRightButtonClicked;
 
-      TheEvents = new List<IEvent>();
-      _rectangles = new List<Rectangle>();
-      _calendarDays = new Dictionary<int, Point>();
-      CalendarEvents = new List<CalendarEvent>();
+      TheEvents = [];
+      _rectangles = [];
+      _calendarDays = [];
+      CalendarEvents = [];
       _showEventTooltips = true;
       _eventTip = new EventToolTip { Visible = false };
 
@@ -848,7 +848,7 @@ namespace CodeProjectCalendar.NET
 
       dt = new DateTime(_calendarDate.Year, _calendarDate.Month, _calendarDate.Day, 23, 59, 0);
 
-      List<IEvent> evnts = TheEvents.Where(evnt => NeedsRendering(evnt, dt)).OrderBy(d => d.Date).ToList();
+      List<IEvent> evnts = [.. TheEvents.Where(evnt => NeedsRendering(evnt, dt)).OrderBy(d => d.Date)];
 
       xStart = cellHourWidth + 1;
       yStart = 0;

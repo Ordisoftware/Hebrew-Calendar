@@ -27,7 +27,7 @@ public class SystemHotKey
 
   static private HotkeyManager _Manager;
 
-  static public readonly List<SystemHotKey> AllActivated = new();
+  static public readonly List<SystemHotKey> AllActivated = [];
 
   private Hotkey _PublicHotKey;
   private int _PublicHotKeyID;
@@ -164,6 +164,7 @@ public class SystemHotKey
     AllActivated.Remove(this);
   }
 
+  [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error (callback)")]
   public bool IsValid()
   {
     if ( _PublicHotKey is not null ) return true;

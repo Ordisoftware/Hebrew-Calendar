@@ -84,6 +84,7 @@ static public class StackMethods
   // From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "N/A")]
   [SuppressMessage("Design", "GCop176:This anonymous method should not contain complex code, Instead call other focused methods to perform the complex logic", Justification = "N/A")]
+  [SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "Analysis error")]
   static public string JustifyParagraph(string text, int width, Font font)
   {
     var result = new StringBuilder(text.Length + 20);
@@ -125,7 +126,7 @@ static public class StackMethods
     string Justify(string str)
     {
       const char SpaceChar = (char)0x200A;
-      List<string> WordsList = str.Split(' ').ToList();
+      List<string> WordsList = [.. str.Split(' ')];
       if ( WordsList.Capacity < 2 ) return str;
       int NumberOfWords = WordsList.Capacity - 1;
       int WordsWidth = TextRenderer.MeasureText(str.Replace(" ", string.Empty), font).Width;
@@ -456,7 +457,7 @@ static public class StackMethods
   #region Stack Trace
 
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<string, string> AlreadyAcessedVarNames = new();
+  static private readonly Dictionary<string, string> AlreadyAcessedVarNames = [];
 
   // From https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
   static public string NameOfFromStack(int level = 1)

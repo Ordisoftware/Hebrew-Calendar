@@ -20,8 +20,8 @@ static public partial class OnlineParashot
   [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> WikipediaEN = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "Bereshit_(parsha)",
       "Noach_(parsha)",
       "Lech-Lecha",
@@ -34,9 +34,9 @@ static public partial class OnlineParashot
       "Miketz_(parsha)",
       "Vayigash_(parsha)",
       "Vayechi_(parsha)"
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "Shemot_(parsha)",
       "Va%27eira_(parsha)",
       "Bo_(parsha)",
@@ -48,9 +48,9 @@ static public partial class OnlineParashot
       "Ki_Tisa_(parsha)",
       "Vayakhel_(parsha)",
       "Pekudei_(parsha)"
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "Vayikra_(parsha)",
       "Tzav_(parsha)",
       "Shemini_(parsha)",
@@ -61,9 +61,9 @@ static public partial class OnlineParashot
       "Emor_(parsha)",
       "Behar_(parsha)",
       "Bechukotai_(parsha)"
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "Bemidbar_(parsha)",
       "Naso_(parsha)",
       "Behaalotecha_(parsha)",
@@ -74,9 +74,9 @@ static public partial class OnlineParashot
       "Pinchas_(parsha)",
       "Matot_(parsha)",
       "Masei_(parsha)"
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "Devarim_(parsha)",
       "Va%27etchanan_(parsha)",
       "Eikev_(parsha)",
@@ -88,7 +88,7 @@ static public partial class OnlineParashot
       "Vayelech_(parsha)",
       "Haazinu",
       "V%27Zot_HaBerachah",
-    }
+    ]
   };
 
 }

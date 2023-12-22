@@ -274,22 +274,22 @@ static public partial class SysTranslations
 
   static public readonly NullSafeDictionary<Language, NullSafeStringList> MillisecondsFormat = new()
   {
-    [Language.EN] = new NullSafeStringList
-    {
+    [Language.EN] =
+    [
       "{4} ms",
       "{3} s",
       "{2} m {3} s",
       "{1} h {2} m {3} s",
       "{0} d {1} h {2} m {3} s",
-    },
-    [Language.FR] = new NullSafeStringList
-    {
+    ],
+    [Language.FR] =
+    [
       "{4} ms",
       "{3} s",
       "{2} m {3} s",
       "{1} h {2} m {3} s",
       "{0} j {1} h {2} m {3} s"
-    }
+    ]
   };
 
 }

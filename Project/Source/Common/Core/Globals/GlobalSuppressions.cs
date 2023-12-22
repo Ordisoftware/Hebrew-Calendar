@@ -3,6 +3,8 @@
 // Project-level suppressions either have no target or are given 
 // a specific target and scoped to a namespace, type, member, etc.
 
+[assembly: SuppressMessage("Style", "IDE0290:Utiliser le constructeur principal", Justification = "<En attente>", Scope = "module")]
+
 [assembly: SuppressMessage("Critical Code Smell", "S1699:Constructors should only call non-overridable methods", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Critical Code Smell", "S2365:Properties should not make collection or array copies", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Critical Code Smell", "S2696:Instance members should not write to \"static\" fields", Justification = "Opinion", Scope = "module")]

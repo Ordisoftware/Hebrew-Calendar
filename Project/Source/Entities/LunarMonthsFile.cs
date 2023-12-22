@@ -20,7 +20,9 @@ namespace Ordisoftware.Hebrew.Calendar;
 class LunarMonthsFile : DataFile
 {
 
-  public readonly List<string> Items = new();
+  static private readonly char[] Separator = ['='];
+
+  public readonly List<string> Items = [];
 
   public string this[int index]
     => index >= 0 && index < Items.Count ? Items[index] : string.Empty;
@@ -47,7 +49,7 @@ class LunarMonthsFile : DataFile
           continue;
         if ( line.IsCommented() )
           continue;
-        var parts = line.Split(new char[] { '=' }, 2);
+        var parts = line.Split(Separator, 2);
         Items.Add(parts[1].Trim());
       }
     });

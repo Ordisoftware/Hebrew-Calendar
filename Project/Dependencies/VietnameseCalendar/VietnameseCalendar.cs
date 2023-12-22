@@ -24,6 +24,7 @@ namespace System.Globalization
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
   [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
+  [SuppressMessage("Style", "IDE0300:Simplifier l'initialisation des collections", Justification = "<En attente>")]
   public class VietnameseCalendar : Calendar
   {
 
@@ -903,6 +904,7 @@ namespace System.Globalization
     }
 
     [SuppressMessage("Performance", "U2U1108:StringBuilders should be initialized with capacity", Justification = "<En attente>")]
+    [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error")]
     public virtual string GetPropitiousHour(DateTime date)
     {
       int jdn = (int)Math.Floor(JulianDayNumber(date));

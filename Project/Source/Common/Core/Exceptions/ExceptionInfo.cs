@@ -134,12 +134,12 @@ public class ExceptionInfo
   /// <summary>
   /// Indicates the exception stack list.
   /// </summary>
-  public List<string> ExceptionStackList { get; } = new List<string>();
+  public List<string> ExceptionStackList { get; } = [];
 
   /// <summary>
   /// Indicates the thread stack list.
   /// </summary>
-  public List<string> ThreadStackList { get; } = new List<string>();
+  public List<string> ThreadStackList { get; } = [];
 
   /// <summary>
   /// Indicates caller name.
@@ -205,10 +205,10 @@ public class ExceptionInfo
       {
         var method = frame.GetMethod();
         partMethod = method.DeclaringType.FullName;
-        Type[] list = { typeof(DebugManager), typeof(ExceptionInfo) };
+        Type[] list = [typeof(DebugManager), typeof(ExceptionInfo)];
         if ( list.Contains(method.DeclaringType) )
           continue;
-        string[] list2 = { nameof(SystemManager.TryCatchManage), nameof(SystemManager.TryCatch) };
+        string[] list2 = [nameof(SystemManager.TryCatchManage), nameof(SystemManager.TryCatch)];
         if ( method.DeclaringType == typeof(SystemManager) && list2.Contains(method.Name) )
           continue;
         partFileName = Path.GetFileName(frame.GetFileName());

@@ -23,10 +23,10 @@ partial class MainForm
 {
 
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Color, Dictionary<Color, Color>> ColorMixesTwoKeys = new();
+  static private readonly Dictionary<Color, Dictionary<Color, Color>> ColorMixesTwoKeys = [];
 
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Color, Dictionary<Color, Dictionary<Color, Color>>> ColorMixesThreeKeys = new();
+  static private readonly Dictionary<Color, Dictionary<Color, Dictionary<Color, Color>>> ColorMixesThreeKeys = [];
 
   private Brush[,,] DayBrushes;
 
@@ -50,7 +50,7 @@ partial class MainForm
     int g = Math.Min(( color1.G + color2.G ) / 2, 255);
     int b = Math.Min(( color1.B + color2.B ) / 2, 255);
     var color = Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
-    if ( !hasFirstKey ) ColorMixesTwoKeys.Add(color1, new Dictionary<Color, Color>());
+    if ( !hasFirstKey ) ColorMixesTwoKeys.Add(color1, []);
     ColorMixesTwoKeys[color1].Add(color2, color);
     return color;
   }
@@ -68,8 +68,8 @@ partial class MainForm
     int g = Math.Min(( color1.G + color2.G + color3.G ) / 3, 255);
     int b = Math.Min(( color1.B + color2.B + color3.B ) / 3, 255);
     var color = Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
-    if ( !hasFirstKey ) ColorMixesThreeKeys.Add(color1, new Dictionary<Color, Dictionary<Color, Color>>());
-    if ( !hasSecondKey ) ColorMixesThreeKeys[color1].Add(color2, new Dictionary<Color, Color>());
+    if ( !hasFirstKey ) ColorMixesThreeKeys.Add(color1, []);
+    if ( !hasSecondKey ) ColorMixesThreeKeys[color1].Add(color2, []);
     ColorMixesThreeKeys[color1][color2].Add(color3, color);
     return color;
   }

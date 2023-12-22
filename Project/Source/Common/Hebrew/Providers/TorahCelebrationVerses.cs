@@ -19,7 +19,7 @@ public class TorahCelebrationVerses : ProviderSettings
 
   static public readonly TorahCelebrationVerses Instance = new();
 
-  public readonly NullSafeDictionary<TorahCelebration, List<Tuple<TanakBook, string, string>>> Items = new();
+  public readonly NullSafeDictionary<TorahCelebration, List<Tuple<TanakBook, string, string>>> Items = [];
 
   protected override void SetFilePath()
   {
@@ -36,7 +36,7 @@ public class TorahCelebrationVerses : ProviderSettings
     var pair = line.Split(':');
     if ( pair.Length < 2 ) return;
     var celebration = Enums.Parse<TorahCelebration>(pair[0].Trim());
-    if ( Items[celebration] is null ) Items[celebration] = new List<Tuple<TanakBook, string, string>>();
+    if ( Items[celebration] is null ) Items[celebration] = [];
     var items = pair[1].Split('-');
     if ( items.Length < 2 ) return;
     var book = Enums.Parse<TanakBook>(items[0].Trim());

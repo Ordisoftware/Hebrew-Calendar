@@ -58,7 +58,7 @@ static public partial class Globals
   static public void LoadWebLinksProviders()
   {
     if ( !Directory.Exists(WebLinksFolderPath) ) return;
-    WebLinksProviders = new List<OnlineProviders>();
+    WebLinksProviders = [];
     SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
     {
       foreach ( var file in Directory.GetFiles(WebLinksFolderPath, "WebLinks*.txt") )

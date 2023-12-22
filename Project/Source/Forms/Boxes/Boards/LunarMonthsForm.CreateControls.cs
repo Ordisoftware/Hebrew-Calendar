@@ -20,6 +20,7 @@ partial class LunarMonthsForm : Form
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  [SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "Analysis error")]
   public void CreateControls()
   {
     PanelMonths.Controls.Clear();

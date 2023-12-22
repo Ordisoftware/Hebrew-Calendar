@@ -20,8 +20,8 @@ static public partial class OnlineParashot
   [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TorahBox = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "berechit-genese/berechit/",
       "berechit-genese/noah/",
       "berechit-genese/lekh-lekha/",
@@ -34,9 +34,9 @@ static public partial class OnlineParashot
       "berechit-genese/mikets/",
       "berechit-genese/vayigach/",
       "berechit-genese/vayehi/"
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "chemot-exode/chemot/",
       "chemot-exode/vaera/",
       "chemot-exode/bo/",
@@ -48,9 +48,9 @@ static public partial class OnlineParashot
       "chemot-exode/ki-tissa/",
       "chemot-exode/vayakhel/",
       "chemot-exode/pekoude/"
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "vayikra-levitique/vayikra/",
       "vayikra-levitique/tsav/",
       "vayikra-levitique/chemini/",
@@ -61,9 +61,9 @@ static public partial class OnlineParashot
       "vayikra-levitique/emor/",
       "vayikra-levitique/behar/",
       "vayikra-levitique/behoukotai/"
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "bamidbar-nombres/bamidbar/",
       "bamidbar-nombres/nasso/",
       "bamidbar-nombres/behaalotekha/",
@@ -74,9 +74,9 @@ static public partial class OnlineParashot
       "bamidbar-nombres/pinhas/",
       "bamidbar-nombres/matot/",
       "bamidbar-nombres/masse/"
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "devarim-deuteronome/devarim/",
       "devarim-deuteronome/vaethanane/",
       "devarim-deuteronome/ekev/",
@@ -88,7 +88,7 @@ static public partial class OnlineParashot
       "devarim-deuteronome/vayelekh/",
       "devarim-deuteronome/haazinou/",
       "devarim-deuteronome/vezot-haberakha/"
-    }
+    ]
   };
 
 }

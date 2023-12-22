@@ -110,6 +110,7 @@ public class SystemStatistics
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error")]
   public string CPUProcessLoad
   {
     get

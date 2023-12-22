@@ -44,8 +44,8 @@ static partial class AppTranslations
   private const string AskToGenerateBigCalendarFR
     = "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé et peut causer ";
 
-  static public readonly NullSafeList<TranslationsDictionary> AskToGenerateBigCalendar = new()
-  {
+  static public readonly NullSafeList<TranslationsDictionary> AskToGenerateBigCalendar =
+  [
     new TranslationsDictionary
     {
       [Language.EN] = AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL2 +
@@ -102,6 +102,6 @@ static partial class AppTranslations
                       SysTranslations.AskToContinue[Language.FR] + Globals.NL2 +
                       ClickOnIgnoreToDisableOption[Language.FR]
     }
-  };
+  ];
 
 }

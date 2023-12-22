@@ -68,7 +68,7 @@ Name = (IW) Tanak Hebrew Text @ fourmilab.ch
 URL = http://www.fourmilab.ch/etexts/www/hebrew/Bible/
 
 Name = (IW) Tanak Hebrew MP3 @ mechon-mamre.org
-URL = https://www.mechon-mamre.org/p/pt/ptmp3prq.htm
+URL = https://mechon-mamre.org/p/pt/ptmp3prq.htm
 
 -
 
