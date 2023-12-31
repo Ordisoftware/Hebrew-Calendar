@@ -97,6 +97,8 @@
 [assembly: SuppressMessage("Major Code Smell", "S6561:Avoid using \"DateTime.Now\" for benchmarking or timing operations", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Major Code Smell", "S6562:Always set the \"DateTimeKind\" when creating new \"DateTime\" instances", Justification = "Opinion", Scope = "module")]
 
+[assembly: SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A or opinion", Scope = "module")]
+
 // TODO remove if not using .NET Framework
 [assembly: SuppressMessage("Minor Code Smell", "S6603:The collection-specific \"TrueForAll\" method should be used instead of the \"All\" extension", Justification = "N/A for .NET Framework", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S6605:Collection-specific \"Exists\" method should be used instead of the \"Any\" extension", Justification = "N/A for .NET Framework", Scope = "module")]

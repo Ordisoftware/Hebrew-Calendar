@@ -44,7 +44,7 @@ URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/paracha/%TORAHBOX%
 
-Name = (FR) Shuva Israël France
+Name = (FR) Shouva Israël France
 URL = https://www.youtube.com/playlist?list=PLxRqUzrUqpdp1a4pg3znMJB1AYLMmVZHj
 
 Name = (FR) Chabad.org
