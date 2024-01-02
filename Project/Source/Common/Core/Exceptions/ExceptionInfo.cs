@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -267,35 +267,44 @@ public class ExceptionInfo
         Message = "Relayed Exception.";
       }
 
-      FullText = $"Exception: {TypeText}{Globals.NL}" +
-                 $"Module: {ModuleName}{Globals.NL}" +
-                 $"Thread: {ThreadName}{Globals.NL}" +
-                 $"Message: {Globals.NL}" +
-                 Message.Indent(DebugManager.MarginSize);
+      FullText = $"""
+                  Exception: {TypeText}
+                  Module: {ModuleName}
+                  Thread: {ThreadName}
+                  Message:
+                  {Message.Indent(DebugManager.MarginSize)};
+                  """;
 
       try
       {
         if ( DebugManager.UseStack )
-          FullText += Globals.NL +
-                      $"Stack Exception: {Globals.NL}" +
-                      $"{ExceptionStackList.AsMultiLine().Indent(DebugManager.MarginSize)}{Globals.NL}" +
-                      $"Stack Thread: {Globals.NL}" +
-                      ThreadStackList.AsMultiLine().Indent(DebugManager.MarginSize);
+          FullText += $"""
+                        
+                        Stack Exception:
+                        {ExceptionStackList.AsMultiLine().Indent(DebugManager.MarginSize)}
+                        Stack Thread:
+                        {ThreadStackList.AsMultiLine().Indent(DebugManager.MarginSize)}
+                       """;
       }
       catch
       {
       }
 
-      ReadableText = $"{Message}{Globals.NL2}" +
-                     $"Type: {TypeText}{Globals.NL}" +
-                     $"Module: {ModuleName}{Globals.NL}" +
-                     $"Thread: {ThreadName}";
+      ReadableText = $"""
+                      {Message}
+
+                      Type: {TypeText}
+                      Module: {ModuleName}
+                      Thread: {ThreadName}
+                      """;
 
       if ( DebugManager.UseStack )
-        ReadableText += Globals.NL +
-                        $"File: {FileName}{Globals.NL}" +
-                        $"Method: {Namespace}.{ClassName}.{MethodName}{Globals.NL}" +
-                        $"Line: {LineNumber}";
+        ReadableText += $"""
+                          
+                         File: {FileName}
+                         Method: {Namespace}.{ClassName}.{MethodName}
+                         Line: {LineNumber}
+                         """;
 
       SingleLineText = ReadableText.Replace(Globals.NL2, " | ")
                                    .Replace(Globals.NL, " | ")
@@ -325,10 +334,15 @@ public class ExceptionInfo
       {
         ExtractStack(false);
         ExtractStack(true);
-        StackText = "---------- EXCEPTION STACK ----------" + Globals.NL2 +
-                    ExceptionStackText + Globals.NL2 +
-                    "---------- THREAD STACK -------------" + Globals.NL2 +
-                    ThreadStackText;
+        StackText = $"""
+                     ---------- EXCEPTION STACK ----------
+                     
+                     {ExceptionStackText}
+                    
+                     ---------- THREAD STACK -------------
+
+                     {ThreadStackText}
+                     """;
       }
       finally
       {
