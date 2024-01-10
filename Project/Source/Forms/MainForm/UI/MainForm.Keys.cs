@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -37,6 +37,8 @@ partial class MainForm
     return base.ProcessCmdKey(ref msg, keyData);
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   private bool CheckMenusCmdKey(Keys keyData)
   {
     switch ( keyData )
@@ -135,6 +137,8 @@ partial class MainForm
     return false;
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   private bool CheckGregorianNavigationCmdKey(Keys keyData)
   {
     switch ( keyData )
@@ -202,6 +206,8 @@ partial class MainForm
     }
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   private bool CheckLunarNavigationCmdKey(Keys keyData)
   {
     switch ( keyData )

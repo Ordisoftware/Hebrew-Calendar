@@ -1,10 +1,8 @@
-using System.ComponentModel;
-using System.Runtime.InteropServices;
-
 namespace Meziantou.Framework.Win32.Natives;
 
 [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "N/A")]
 [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
+[SuppressMessage("Performance", "SS017:Structs should implement Equals(), GetHashCode(), and ToString().", Justification = "N/A")]
 internal static class NativeMethods
 {
   internal const uint SE_PRIVILEGE_ENABLED_BY_DEFAULT = 1;

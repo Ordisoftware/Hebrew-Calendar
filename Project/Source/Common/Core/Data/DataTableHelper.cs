@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -34,6 +34,8 @@ static public class DataTableHelper
   /// Exports a DataTable to a file depending its extension.
   /// </summary>
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
   {
     string extension = Path.GetExtension(filePath);

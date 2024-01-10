@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -41,7 +41,7 @@ static public class HebrewTools
   {
     string path = getExePath?.Invoke() ?? throw new SystemException($"Delegate not assigned: {nameof(getExePath)}");
     if ( File.Exists(path) )
-      SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () => process(path));
+      SystemManager.TryCatchManage(ShowExceptionMode.Message, () => process(path));
     else
     if ( DisplayManager.QueryYesNo(HebrewTranslations.AskToDownloadHebrewWords.GetLang()) )
       SystemManager.RunShell($"{Globals.AuthorProjectsURL}/{appcode}");
@@ -115,7 +115,7 @@ static public class HebrewTools
   static public void OpenWordProvider(string link, string word)
   {
     if ( word.Length > 1 ) word = HebrewAlphabet.SetFinal(word, true);
-    SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+    SystemManager.TryCatchManage(ShowExceptionMode.Message, () =>
     {
       var wordAnalyzed = RemoveNumberingAndDiacritics(word);
       var items = wordAnalyzed.Word.Split(' ');
@@ -139,7 +139,7 @@ static public class HebrewTools
   static public void OpenWordConcordance(string link, int concordance)
   {
     if ( concordance < 1 ) return;
-    SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+    SystemManager.TryCatchManage(ShowExceptionMode.Message, () =>
     {
       link = link.Replace("%CONCORDANCE%", concordance.ToString());
       SystemManager.RunShell(link);
@@ -151,7 +151,7 @@ static public class HebrewTools
   /// </summary>
   static public void OpenBibleProvider(string url, string reference)
   {
-    SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+    SystemManager.TryCatchManage(ShowExceptionMode.Message, () =>
     {
       int[] list = reference.Split('.').Select(int.Parse).ToArray();
       OpenBibleProvider(url, list[0], list[1], list[2]);
@@ -165,7 +165,7 @@ static public class HebrewTools
   [SuppressMessage("Style", "GCop414:Remove .ToString() as it's unnecessary.", Justification = "Opinion")]
   static public void OpenBibleProvider(string pattern, int book, int chapter, int verse)
   {
-    SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+    SystemManager.TryCatchManage(ShowExceptionMode.Message, () =>
     {
       SystemManager.RunShell(OnlineBookInfos.GetUrl(pattern, book, chapter, verse));
     });
@@ -190,7 +190,7 @@ static public class HebrewTools
     //
     void open(Parashah item)
     {
-      SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+      SystemManager.TryCatchManage(ShowExceptionMode.Message, () =>
       {
         SystemManager.OpenWebLink(OnlineParashot.GetUrl(pattern, item));
       });
@@ -202,7 +202,7 @@ static public class HebrewTools
   /// </summary>
   static public void OpenCelebrationProvider(string pattern, TorahCelebration celebration)
   {
-    SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage, () =>
+    SystemManager.TryCatchManage(ShowExceptionMode.Message, () =>
     {
       SystemManager.OpenWebLink(OnlineCelebration.GetUrl(pattern, celebration));
     });

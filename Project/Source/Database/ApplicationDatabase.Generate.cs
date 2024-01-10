@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -44,9 +44,7 @@ partial class ApplicationDatabase
   public bool AddGenerateErrorAndCheckIfTooMany(string method, string date, Exception ex)
   {
     var einfo = new ExceptionInfo(this, ex);
-    LastGenerationErrors.Add($"{LastGenerationErrors.Count + 1:00}) " +
-                             $"{method,-13} {date} : " +
-                             $"{einfo.SingleLineText}");
+    LastGenerationErrors.Add($"{LastGenerationErrors.Count + 1:00}) {method,-13} {date} : {einfo.SingleLineText}");
     return LastGenerationErrors.Count >= MaxGenerateErrors;
   }
 
@@ -152,15 +150,11 @@ partial class ApplicationDatabase
       day.SunsetAsString = SQLiteDate.ToString(ephemeris.Sunset);
       day.MoonriseAsString = SQLiteDate.ToString(ephemeris.Moonrise);
       day.MoonsetAsString = SQLiteDate.ToString(ephemeris.Moonset);
-      MoonriseOccurring moonrisetype;
-      if ( ephemeris.Moonrise is null )
-        moonrisetype = MoonriseOccurring.NextDay;
-      else
-      if ( ephemeris.Moonrise < ephemeris.Moonset )
-        moonrisetype = MoonriseOccurring.BeforeSet;
-      else
-        moonrisetype = MoonriseOccurring.AfterSet;
-      day.MoonriseOccurring = moonrisetype;
+      day.MoonriseOccurring = ephemeris.Moonrise is null
+        ? MoonriseOccurring.NextDay
+        : ephemeris.Moonrise < ephemeris.Moonset
+          ? MoonriseOccurring.BeforeSet
+          : MoonriseOccurring.AfterSet;
       day.SeasonChange = data.RealSeasonChange;
       day.TorahEvent = TorahCelebrationDay.None;
       day.TorahEventText = string.Empty;

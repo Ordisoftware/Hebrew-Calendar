@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -94,6 +94,7 @@ partial class MainForm
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
+  [SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
   public void FillMonths()
   {
     Globals.ChronoShowData.Restart();

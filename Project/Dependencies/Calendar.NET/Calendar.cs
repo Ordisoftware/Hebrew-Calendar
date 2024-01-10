@@ -14,6 +14,7 @@ namespace CodeProjectCalendar.NET
   /// <summary>
   /// An enumeration describing various ways to view the calendar
   /// </summary>
+  [SuppressMessage("ApiDesign", "SS039:An enum should specify a default value", Justification = "N/A")]
   public enum CalendarViews
   {
     /// <summary>
@@ -522,6 +523,7 @@ namespace CodeProjectCalendar.NET
     }
 
     [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
+    [SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
     private void CalendarMouseMove(object sender, MouseEventArgs e)
     {
       if ( !_showEventTooltips )
@@ -542,7 +544,7 @@ namespace CodeProjectCalendar.NET
           _eventTip.EventToolTipText = z.Event.ToolTipText;
           // ORDISOFTWARE MODIF END
           if ( !z.Event.IgnoreTimeComponent )
-            _eventTip.EventToolTipText += "\n" + z.Event.Date.ToShortTimeString();
+            _eventTip.EventToolTipText += $"\n{z.Event.Date.ToShortTimeString()}";
           _eventTip.Location = new Point(e.X + 5, e.Y - _eventTip.CalculateSize().Height);
           _eventTip.ShouldRender = true;
           _eventTip.Visible = true;

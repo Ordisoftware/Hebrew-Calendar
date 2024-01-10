@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -26,6 +26,11 @@ public enum ShowExceptionMode
   None,
 
   /// <summary>
+  /// Standard dialog box with only message.
+  /// </summary>
+  Message,
+
+  /// <summary>
   /// Standard dialog box with details
   /// </summary>
   Simple,
@@ -33,11 +38,6 @@ public enum ShowExceptionMode
   /// <summary>
   /// Custom dialog box.
   /// </summary>
-  Advanced,
-
-  /// <summary>
-  /// Standard dialog box with only message.
-  /// </summary>
-  OnlyMessage
+  Advanced
 
 }

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -83,7 +83,7 @@ static partial class Program
         NavigationForm.Instance.Relocalize();
         ParashotFactory.Instance.Reset();
         DatesDifferenceForm.Instance.Relocalize();
-        SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage,
+        SystemManager.TryCatchManage(ShowExceptionMode.Message,
                                      () => MainForm.Instance.LoadMenuBookmarks(MainForm.Instance));
       }
       MainForm.Instance.MonthlyCalendar._btnToday.ButtonText = AppTranslations.Today.GetLang();

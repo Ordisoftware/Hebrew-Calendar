@@ -43,7 +43,7 @@
 [assembly: SuppressMessage("Style", "RCS1003:Add braces to if-else (when expression spans over multiple lines).", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "RCS1217:Convert interpolated string to concatenation.", Justification = "Opinion", Scope = "module")]
 
-[assembly: SuppressMessage("Security", "SCS0001:Potential Command Injection vulnerability was found where '{0}' in '{1}' may be tainted by user-controlled data from '{2}' in method '{3}'.", Justification = "N/A for MeteoBlue.com URL as used", Scope = "member", Target = "~M:Ordisoftware.Core.SystemManager.GetRunShell(System.String,System.String,System.Boolean,System.Diagnostics.ProcessWindowStyle)~System.Diagnostics.Process")]
+[assembly: SuppressMessage("Security", "SCS0001:Potential Command Injection vulnerability was found where '{0}' in '{1}' may be tainted by user-controlled data from '{2}' in method '{3}'.", Justification = "N/A for MeteoBlue.com URL as used", Scope = "module")]
 
 [assembly: SuppressMessage("Performance", "U2U1002:Method can be declared static", Justification = "Can be opinion or anti-pattern (analyzer may be improved)", Scope = "module")]
 [assembly: SuppressMessage("Performance", "U2U1010:Internal leaf classes can be sealed", Justification = "Can be opinion", Scope = "module")]
@@ -68,6 +68,7 @@
 [assembly: SuppressMessage("Style", "MA0003:Add parameter name to improve readability", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "MA0007:Add a comma after the last value", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Style", "MA0071:Avoid using redundant else", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Performance", "MA0028:Optimize StringBuilder usage", Justification = "Incorrect for .NET Framework (two calls instead on one)", Scope = "module")]
 
 [assembly: SuppressMessage("CodeSmell", "EPC12:Suspicious exception handling: only Message property is observed in exception block.", Justification = "Opinion based or N/A", Scope = "module")]
 [assembly: SuppressMessage("CodeSmell", "ERP022:Unobserved exception in generic exception handler", Justification = "Opinion", Scope = "module")]
@@ -96,6 +97,15 @@
 
 [assembly: SuppressMessage("Major Code Smell", "S6561:Avoid using \"DateTime.Now\" for benchmarking or timing operations", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("Major Code Smell", "S6562:Always set the \"DateTimeKind\" when creating new \"DateTime\" instances", Justification = "Opinion", Scope = "module")]
+
+[assembly: SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A or opinion", Scope = "module")]
+
+[assembly: SuppressMessage("Correctness", "SS045:A static field relies on the value of another static field which is defined in the same type. Static fields are initialized in order of appearance.", Justification = "N/A or opinion or analysis error on properties", Scope = "module")]
+[assembly: SuppressMessage("Correctness", "SS002:DateTime.Now was referenced", Justification = "N/A", Scope = "module")]
+
+[assembly: SuppressMessage("Correctness", "SS003:The operands of a divisive expression are both integers and result in an implicit rounding.", Justification = "N/A", Scope = "module")]
+[assembly: SuppressMessage("ApiDesign", "SS039:An enum should specify a default value", Justification = "N/A or opinion", Scope = "module")]
+[assembly: SuppressMessage("ApiDesign", "SS036:An enum should explicitly specify its values", Justification = "N/A or opinion", Scope = "module")]
 
 // TODO remove if not using .NET Framework
 [assembly: SuppressMessage("Minor Code Smell", "S6603:The collection-specific \"TrueForAll\" method should be used instead of the \"All\" extension", Justification = "N/A for .NET Framework", Scope = "module")]

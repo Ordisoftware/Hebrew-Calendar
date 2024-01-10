@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -355,15 +355,17 @@ static public partial class DebugManager
         {
           case ShowExceptionMode.None:
             break;
+          case ShowExceptionMode.Message:
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          case ShowExceptionMode.Simple:
+            ShowSimple(eInfo);
+            break;
           case ShowExceptionMode.Advanced:
             ShowAdvanced(eInfo);
             break;
-          case ShowExceptionMode.OnlyMessage:
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            break;
           default:
-            ShowSimple(eInfo);
-            break;
+            throw new AdvNotImplementedException(show);
         }
     }
     if ( ex is not AbortException )

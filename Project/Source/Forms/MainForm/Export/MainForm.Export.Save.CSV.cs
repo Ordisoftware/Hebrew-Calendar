@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -27,13 +27,12 @@ partial class MainForm
     {
       var items = GetDayRows(interval).ToList();
       var lastyear = LunisolarDays.OrderByDescending(p => p.Date).First().Date.Year;
+      var headerTxt = new StringBuilder(100);
       string csvSeparator = Globals.CSVSeparator.ToString();
-      string headerTxt = string.Empty;
       foreach ( var field in Enums.GetValues<ReportFieldCSV>() )
-        headerTxt += field.ToString() + Globals.CSVSeparator;
-      headerTxt = headerTxt.Remove(headerTxt.Length - 1);
+        headerTxt.Append(field.ToString()).Append(Globals.CSVSeparator);
       var result = new StringBuilder(items.Count * headerTxt.Length);
-      result.AppendLine(headerTxt);
+      result.AppendLine(headerTxt.Remove(headerTxt.Length - 1, 1).ToString());
       if ( LunisolarDays.Count == 0 ) return null;
       LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                       items.Count,
