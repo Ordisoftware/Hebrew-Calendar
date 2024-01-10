@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -192,6 +192,9 @@ partial class PreferencesForm
     // TrayIcon
     switch ( Settings.TrayIconClickOpen )
     {
+      case TrayIconClickOpen.MainForm:
+        SelectOpenMainForm.Select();
+        break;
       case TrayIconClickOpen.NavigationForm:
         SelectOpenNavigationForm.Select();
         break;
@@ -199,8 +202,7 @@ partial class PreferencesForm
         SelectOpenNextCelebrationsForm.Select();
         break;
       default:
-        SelectOpenMainForm.Select();
-        break;
+        throw new AdvNotImplementedException(Settings.TrayIconClickOpen);
     }
     // Calendar double click
     switch ( Settings.CalendarDoubleClickAction )
@@ -214,15 +216,17 @@ partial class PreferencesForm
       case CalendarDoubleClickAction.ContextMenu:
         SelectCalendarDoubleClickActionContextMenu.Select();
         break;
-      default:
+      case CalendarDoubleClickAction.Select:
         SelectCalendarDoubleClickActionSelect.Select();
         break;
+      default:
+        throw new AdvNotImplementedException(Settings.CalendarDoubleClickAction);
     }
     // Weather provider
     switch ( Settings.WeatherOnlineProvider )
     {
-      case WeatherProvider.AccuWeatherDotCom:
-        SelectWeatherOnlineAccuWeatherDotCom.Select();
+      case WeatherProvider.MeteoblueDotCom:
+        SelectWeatherOnlineMeteoblueDotCom.Select();
         break;
       case WeatherProvider.MicrosoftNetworkDotCom:
         SelectWeatherOnlineMicrosoftNetworkDotCom.Select();
@@ -230,9 +234,11 @@ partial class PreferencesForm
       case WeatherProvider.WeatherDotCom:
         SelectWeatherOnlineWeatherDotCom.Select();
         break;
-      default:
-        SelectWeatherOnlineMeteoblueDotCom.Select();
+      case WeatherProvider.AccuWeatherDotCom:
+        SelectWeatherOnlineAccuWeatherDotCom.Select();
         break;
+      default:
+        throw new AdvNotImplementedException(Settings.WeatherOnlineProvider);
     }
   }
 

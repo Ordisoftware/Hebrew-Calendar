@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -18,6 +18,7 @@ namespace Ordisoftware.Core;
 /// Provides exception information.
 /// </summary>
 [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "To do")]
+[SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
 public class ExceptionInfo
 {
 
@@ -280,10 +281,10 @@ public class ExceptionInfo
         if ( DebugManager.UseStack )
           FullText += $"""
                         
-                        Stack Exception:
-                        {ExceptionStackList.AsMultiLine().Indent(DebugManager.MarginSize)}
-                        Stack Thread:
-                        {ThreadStackList.AsMultiLine().Indent(DebugManager.MarginSize)}
+                       Stack Exception:
+                       {ExceptionStackList.AsMultiLine().Indent(DebugManager.MarginSize)}
+                       Stack Thread:
+                       {ThreadStackList.AsMultiLine().Indent(DebugManager.MarginSize)}
                        """;
       }
       catch

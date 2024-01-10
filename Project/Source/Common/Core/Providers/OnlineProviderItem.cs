@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -73,11 +73,8 @@ public class OnlineProviderItem
       if ( pos >= 3 )
       {
         lang = name.Substring(0, pos + 1);
-        if ( LanguageImages.TryGetValue(lang, out var filename) )
-        {
+        if ( LanguageImages.TryGetValue(lang, out image) )
           name = name.Substring(pos + 1);
-          image = filename;
-        }
       }
     }
     Language = lang;

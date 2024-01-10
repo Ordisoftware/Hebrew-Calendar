@@ -207,6 +207,8 @@ public sealed class AccessToken : IDisposable
   }
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "<En attente>")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   private void AdjustPrivilege(string privilegeName, PrivilegeOperation operation)
   {
     if ( !Natives.NativeMethods.LookupPrivilegeValueW(lpSystemName: null, privilegeName, out var luid) )

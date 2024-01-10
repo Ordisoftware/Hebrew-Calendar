@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -179,8 +179,9 @@ static public partial class DisplayManager
     {
       Globals.MainForm.SyncUI(() => res = InputBox<T>.Run(title, caption, ref newValue, isPassword, validation));
     }
-    catch
+    catch ( Exception ex )
     {
+      ex.Manage(ShowExceptionMode.None);
     }
     if ( res == InputValueResult.Modified ) value = newValue;
     return res;

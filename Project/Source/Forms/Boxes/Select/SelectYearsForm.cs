@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -127,7 +127,8 @@ sealed partial class SelectYearsForm : Form
         if ( diff > count )
         {
           string text = AppTranslations.AskToGenerateBigCalendar[index].GetLang(count, diff);
-          switch ( DisplayManager.QueryYesNoCancel(text) )
+          var result = DisplayManager.QueryYesNoCancel(text);
+          switch ( result )
           {
             case DialogResult.Yes:
               break;
@@ -138,6 +139,8 @@ sealed partial class SelectYearsForm : Form
               Settings.BigCalendarWarningEnabled = false;
               SystemManager.TryCatchManage(Settings.Save);
               break;
+            default:
+              throw new AdvNotImplementedException(result);
           }
           break;
         }

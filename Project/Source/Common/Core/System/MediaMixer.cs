@@ -139,9 +139,7 @@ static public class MediaMixer
 
 [ComImport]
 [Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")]
-class MMDeviceEnumerator
-{
-}
+class MMDeviceEnumerator;
 
 [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 public enum EDataFlow

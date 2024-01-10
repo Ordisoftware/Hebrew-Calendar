@@ -40,6 +40,8 @@ namespace Infralution.Localization
   [SuppressMessage("Refactoring", "GCop647:Shorten this property by defining it as expression-bodied.", Justification = "<En attente>")]
   [SuppressMessage("Usage", "GCop536:Remove empty xml node documentation", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   public class CultureManager : Component
   {
 

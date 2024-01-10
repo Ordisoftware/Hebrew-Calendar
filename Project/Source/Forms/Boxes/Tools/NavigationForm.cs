@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -196,9 +196,13 @@ sealed partial class NavigationForm : Form
   {
     switch ( DisplayManager.GetTaskBarAnchorStyle() )
     {
+      case AnchorStyles.None:
+        break;
       case AnchorStyles.Top:
+      case AnchorStyles.Right:
         this.SetLocation(ControlLocation.TopRight);
         break;
+      case AnchorStyles.Bottom:
       case AnchorStyles.Left:
         this.SetLocation(ControlLocation.BottomLeft);
         break;
@@ -233,6 +237,7 @@ sealed partial class NavigationForm : Form
     }
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
   {
     switch ( keyData )
