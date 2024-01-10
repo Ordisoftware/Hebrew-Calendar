@@ -139,6 +139,7 @@ partial class MainForm
     }
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   private bool ExportSaveGrid(string filePath, ExportInterval interval)
   {
     string extension = Path.GetExtension(filePath);

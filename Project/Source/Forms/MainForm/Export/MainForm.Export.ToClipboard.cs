@@ -17,6 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class MainForm
 {
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   private void ExportToClipboard()
   {
     var process = new ExportActions

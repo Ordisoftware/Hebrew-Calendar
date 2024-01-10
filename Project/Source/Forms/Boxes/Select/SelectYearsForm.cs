@@ -116,6 +116,7 @@ sealed partial class SelectYearsForm : Form
   }
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   private void ActionOK_Click(object sender, EventArgs e)
   {
     if ( Settings.BigCalendarWarningEnabled )
