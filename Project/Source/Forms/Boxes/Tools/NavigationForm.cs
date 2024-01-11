@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2023-09 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class NavigationForm : Form
@@ -194,21 +194,23 @@ sealed partial class NavigationForm : Form
 
   private void SetLocation()
   {
-    switch ( DisplayManager.GetTaskBarAnchorStyle() )
+    var style = DisplayManager.GetTaskBarAnchorStyle();
+    switch ( style )
     {
       case AnchorStyles.None:
         break;
       case AnchorStyles.Top:
-      case AnchorStyles.Right:
         this.SetLocation(ControlLocation.TopRight);
         break;
-      case AnchorStyles.Bottom:
       case AnchorStyles.Left:
         this.SetLocation(ControlLocation.BottomLeft);
         break;
-      default:
+      case AnchorStyles.Bottom:
+      case AnchorStyles.Right:
         this.SetLocation(ControlLocation.BottomRight);
         break;
+      default:
+        throw new AdvNotImplementedException(style);
     }
   }
 

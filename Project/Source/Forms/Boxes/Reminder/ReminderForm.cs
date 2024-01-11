@@ -193,6 +193,7 @@ sealed partial class ReminderForm : Form
     BringMainForm();
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   static private void SetFormsLocation()
   {
     var list = new List<ReminderForm>();
@@ -327,6 +328,7 @@ sealed partial class ReminderForm : Form
 
   #region Instance User Interactions
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   static private void DoSound()
   {
     switch ( Settings.ReminderBoxSoundSource )

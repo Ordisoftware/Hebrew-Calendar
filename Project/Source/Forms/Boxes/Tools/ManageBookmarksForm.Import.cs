@@ -65,6 +65,7 @@ partial class ManageBookmarksForm : Form
     }
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   private void DoActionImport()
   {
     try
