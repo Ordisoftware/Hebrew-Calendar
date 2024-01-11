@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-07 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -155,6 +155,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditOpenVerseOnlineURL.Text = Settings.OpenVerseOnlineURL);
     SystemManager.TryCatch(() => EditBookmarkMemoPrefix.Text = Settings.DateBookmarkMemoPrefix);
     SystemManager.TryCatch(() => EditBookmarkMemoSuffix.Text = Settings.DateBookmarkMemoSuffix);
+    SystemManager.TryCatch(() => EditBoookmarkDisplayLunarDate.Checked = Settings.BoookmarkDisplayLunarDate);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewLatinFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);

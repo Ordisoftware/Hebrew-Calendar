@@ -87,7 +87,7 @@ public partial class MainForm
     }
   }
 
-  private LunisolarDayRow ContextMenuDayCurrentEvent;
+  internal LunisolarDayRow ContextMenuDayCurrentEvent { get; private set; }
 
   private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = [];
 

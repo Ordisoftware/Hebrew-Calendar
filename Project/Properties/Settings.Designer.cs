@@ -12,7 +12,7 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -3534,6 +3534,18 @@ namespace Ordisoftware.Hebrew.Calendar.Properties {
             }
             set {
                 this["DateBookmarkMemoSuffix"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool BoookmarkDisplayLunarDate {
+            get {
+                return ((bool)(this["BoookmarkDisplayLunarDate"]));
+            }
+            set {
+                this["BoookmarkDisplayLunarDate"] = value;
             }
         }
     }

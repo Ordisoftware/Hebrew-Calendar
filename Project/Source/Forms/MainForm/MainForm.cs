@@ -1281,6 +1281,11 @@ sealed partial class MainForm : Form
     if ( _DateSelected is not null ) ContextMenuDayDatesDiffTo(_DateSelected.Value);
   }
 
+  private void ContextMenuDayDatesDiffToActive_Click(object sender, EventArgs e)
+  {
+    ContextMenuDayDatesDiffTo(CurrentDay.Date);
+  }
+
   private void ContextMenuDayDatesDiffTo(DateTime date)
   {
     var tuple = new Tuple<DateTime, DateTime>(ContextMenuDayCurrentEvent.Date, date);

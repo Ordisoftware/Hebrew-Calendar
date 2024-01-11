@@ -1194,4 +1194,7 @@ Si activé, seul le nom sera recoché.</value>
   <data name="TabPageBookmarks.Text" xml:space="preserve">
     <value>Signets</value>
   </data>
+  <data name="EditBoookmarkDisplayLunarDate.Text" xml:space="preserve">
+    <value>Afficher les dates lunaires des signets</value>
+  </data>
 </root>

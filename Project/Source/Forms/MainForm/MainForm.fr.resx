@@ -692,4 +692,7 @@
   <data name="MenuHelp.Text" xml:space="preserve">
     <value>Aide</value>
   </data>
+  <data name="ContextMenuDayDatesDiffToActive.Text" xml:space="preserve">
+    <value>Diff. de dates d'ici au jour actif</value>
+  </data>
 </root>
