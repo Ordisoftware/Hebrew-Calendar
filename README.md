@@ -409,6 +409,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add previous and next buttons in parashah description box.
 - Add context menu item "Dates diff. from here to active day".
 - Add Accuweather.com provider.
+- Add option to display lunar dates for bookmarks.
 - Fix calendar context menu is enabled when the top menu is disabled.
 - Code refactoring.
 - Update web links.
@@ -417,7 +418,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Fix Yom Teruh'ah reminder box still showing when finished.
 >- Add submenu for all weather providers
 >- Add option to preselect only the previous year, the current year and the next year in boards.
->- Add option to display lunar dates for bookmarks.
 
 #### 2023.04.05 - Version 10.4
 
