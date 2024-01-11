@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-07 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Base.Hotkeys;
@@ -158,6 +158,7 @@ partial class PreferencesForm
     Settings.OpenVerseOnlineURL = EditOpenVerseOnlineURL.Text;
     Settings.DateBookmarkMemoPrefix = EditBookmarkMemoPrefix.Text;
     Settings.DateBookmarkMemoSuffix = EditBookmarkMemoSuffix.Text;
+    Settings.BoookmarkDisplayLunarDate = EditBoookmarkDisplayLunarDate.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;

@@ -281,6 +281,12 @@ sealed partial class ManageBookmarksForm : Form
   private void EditBookmarks_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
     if ( e.Value is null ) return;
+    if ( e.ColumnIndex == ColumnDate.Index && Settings.BoookmarkDisplayLunarDate )
+    {
+      var row = EditBookmarks.Rows[e.RowIndex];
+      var boundItem = ( (ObjectView<DateBookmarkRow>)row.DataBoundItem ).Object;
+      e.Value = boundItem.ToStringForGrid();
+    }
     if ( e.ColumnIndex == ColumnColor.Index )
     {
       var row = EditBookmarks.Rows[e.RowIndex];

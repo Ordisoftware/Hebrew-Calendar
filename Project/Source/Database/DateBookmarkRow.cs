@@ -51,9 +51,28 @@ public partial class DateBookmarkRow
 
   public override string ToString()
   {
-    return Memo.IsNullOrEmpty()
-      ? Date.ToLongDateString()
-      : $"{Date.ToLongDateString()} {Settings.DateBookmarkMemoPrefix}{Memo}{Settings.DateBookmarkMemoSuffix}";
+    string result = Date.ToLongDateString();
+    if ( Settings.BoookmarkDisplayLunarDate )
+    {
+      var row = ApplicationDatabase.Instance.GetDay(Date);
+      if ( row is not null )
+        result += $" ({row.DayAndMonthText}) ";
+    }
+    if ( !Memo.IsNullOrEmpty() )
+      result += $" {Settings.DateBookmarkMemoPrefix}{Memo}{Settings.DateBookmarkMemoSuffix}";
+    return result;
+  }
+
+  public string ToStringForGrid()
+  {
+    string result = Date.ToString("d");
+    if ( Settings.BoookmarkDisplayLunarDate )
+    {
+      var row = ApplicationDatabase.Instance.GetDay(Date);
+      if ( row is not null )
+        result += $" ({row.DayAndMonthText}) ";
+    }
+    return result;
   }
 
   public DateBookmarkRow()

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-07 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -1279,6 +1279,11 @@ sealed partial class MainForm : Form
   private void ContextMenuDayDatesDiffToSelected_Click(object sender, EventArgs e)
   {
     if ( _DateSelected is not null ) ContextMenuDayDatesDiffTo(_DateSelected.Value);
+  }
+
+  private void ContextMenuDayDatesDiffToActive_Click(object sender, EventArgs e)
+  {
+    ContextMenuDayDatesDiffTo(CurrentDay.Date);
   }
 
   private void ContextMenuDayDatesDiffTo(DateTime date)
