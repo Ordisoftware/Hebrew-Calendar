@@ -56,10 +56,22 @@ public partial class DateBookmarkRow
     {
       var row = ApplicationDatabase.Instance.GetDay(Date);
       if ( row is not null )
-        result += $" ({row.DayAndMonthWithYearText}) ";
+        result += $" ({row.DayAndMonthText}) ";
     }
     if ( !Memo.IsNullOrEmpty() )
       result += $" {Settings.DateBookmarkMemoPrefix}{Memo}{Settings.DateBookmarkMemoSuffix}";
+    return result;
+  }
+
+  public string ToStringForGrid()
+  {
+    string result = Date.ToString("d");
+    if ( Settings.BoookmarkDisplayLunarDate )
+    {
+      var row = ApplicationDatabase.Instance.GetDay(Date);
+      if ( row is not null )
+        result += $" ({row.DayAndMonthText}) ";
+    }
     return result;
   }
 
