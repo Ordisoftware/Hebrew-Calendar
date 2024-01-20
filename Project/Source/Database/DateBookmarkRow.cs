@@ -56,7 +56,7 @@ public partial class DateBookmarkRow
     {
       var row = ApplicationDatabase.Instance.GetDay(Date);
       if ( row is not null )
-        result += $" ({row.DayAndMonthText}) ";
+        result += $" ({row.DayAndMonthText})";
     }
     if ( !Memo.IsNullOrEmpty() )
       result += $" {Settings.DateBookmarkMemoPrefix}{Memo}{Settings.DateBookmarkMemoSuffix}";
@@ -70,7 +70,7 @@ public partial class DateBookmarkRow
     {
       var row = ApplicationDatabase.Instance.GetDay(Date);
       if ( row is not null )
-        result += $" ({row.DayAndMonthText}) ";
+        result += $" ({row.DayAndMonthText})";
     }
     return result;
   }

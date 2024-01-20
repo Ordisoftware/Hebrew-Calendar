@@ -55,12 +55,6 @@ URL = https://en.wikipedia.org/wiki/Hebrew_alphabet
 Name = (FR) Alphabet hébreu @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Alphabet_h%C3%A9breu
 
-Name = (EN) Gematria @ en.wikipedia.org
-URL = https://en.wikipedia.org/wiki/Gematria
-
-Name = (FR) Gematria @ fr.wikipedia.org
-URL = https://fr.wikipedia.org/wiki/Gematria
-
 -
 
 Name = (EN) Hebrew Verb Tables @ pealim.com
@@ -71,6 +65,21 @@ URL = https://www.sefaria.org/Klein_Dictionary
 
 Name = (EN) Ancient Hebrew Lexicon @ ancient-hebrew.org
 URL = https://www.ancient-hebrew.org/ahlb/aleph.html
+
+Name = (EN) Prefixes, Suffixes and Infixes @ ancient-hebrew.org
+URL = https://www.ancient-hebrew.org/ahlb/fixes.html
+
+Name = (EN) Prefixes in Hebrew @ wikipedia.org
+URL = https://en.wikipedia.org/wiki/Prefixes_in_Hebrew
+
+Name = (EN) Suffixes in Hebrew @ wikipedia.org
+URL = https://en.wikipedia.org/wiki/Suffixes_in_Hebrew
+
+Name = (EN) Gematria @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Gematria
+
+Name = (FR) Gematria @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Gematria
 
 -
 
