@@ -1178,7 +1178,7 @@
       <Version>2.9.1</Version>
     </PackageReference>
     <PackageReference Include="Enums.NET">
-      <Version>4.0.1</Version>
+      <Version>4.0.2</Version>
     </PackageReference>
     <PackageReference Include="Equin.ApplicationFramework.BindingListView">
       <Version>1.4.5222.35545</Version>
@@ -1241,7 +1241,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Meziantou.Analyzer">
-      <Version>2.0.132</Version>
+      <Version>2.0.136</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

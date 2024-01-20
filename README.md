@@ -414,10 +414,11 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Code refactoring.
 - Update web links.
 
->- Fix timer which displays parashah description box when the day before is not Shabbat.
->- Fix Yom Teruh'ah reminder box still showing when finished.
+>- Add button to add days in the dates difference window.
 >- Add submenu for all weather providers
 >- Add option to preselect only the previous year, the current year and the next year in boards.
+>- Fix timer which displays parashah description box when the day before is not Shabbat.
+>- Fix Yom Teruh'ah reminder box still showing when finished.
 
 #### 2023.04.05 - Version 10.4
 
