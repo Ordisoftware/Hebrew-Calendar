@@ -9,7 +9,7 @@
 [![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
 [![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
 [![Lang: C#](https://img.shields.io/badge/C%23%2012-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
-[![DB: SQLite](https://img.shields.io/badge/SQLite%203.44-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
+[![DB: SQLite](https://img.shields.io/badge/SQLite%203.45-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-calendar)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
@@ -69,7 +69,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Screen 1024x768 or higher
 - Windows 7 SP1 x32/x64 or higher
 - Framework .NET 4.8
-- SQLite 3.44
+- SQLite 3.45
 
 ## Download
 

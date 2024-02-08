@@ -1225,7 +1225,7 @@
       <Version>1.8.116</Version>
     </PackageReference>
     <PackageReference Include="SQLitePCLRaw.bundle_green">
-      <Version>2.1.7</Version>
+      <Version>2.1.8</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
       <Version>6.0.0</Version>
@@ -1241,7 +1241,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Meziantou.Analyzer">
-      <Version>2.0.139</Version>
+      <Version>2.0.140</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -1251,7 +1251,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers">
-      <Version>17.8.14</Version>
+      <Version>17.9.28</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
