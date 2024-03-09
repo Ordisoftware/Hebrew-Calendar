@@ -31,7 +31,7 @@ static public class StackMethods
   [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public T Next<T>(this T value, params T[] skip) where T : Enum
   {
-    var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
+    var result = Enum.GetValues(value.GetType()).Cast<T>().Concat([default])
                      .SkipWhile(e => !value.Equals(e))
                      .Skip(1)
                      .First();
@@ -45,7 +45,7 @@ static public class StackMethods
   [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public T Previous<T>(this T value, params T[] skip) where T : Enum
   {
-    var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
+    var result = Enum.GetValues(value.GetType()).Cast<T>().Concat([default])
                      .Reverse()
                      .SkipWhile(e => !value.Equals(e))
                      .Skip(1)

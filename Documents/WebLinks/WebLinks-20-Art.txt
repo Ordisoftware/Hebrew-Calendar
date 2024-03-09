@@ -35,6 +35,11 @@ URL = http://he.israel-music.com/
 
 -
 
+Name = (NONE) Kazak music YouTube Playlist
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-C62nbeN6M5u8dsoOsS8mCw
+
+-
+
 Name = (NONE) Nature Houses YouTube Playlist
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AISBJs2Va8sGjDnQp1HvSC
 

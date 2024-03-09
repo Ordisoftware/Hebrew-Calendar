@@ -181,7 +181,7 @@ public class SystemHotKey
     try
     {
       Active = true;
-      SystemManager.InputSimulator.Keyboard.ModifiedKeyStroke(modifiers.ToArray(), key);
+      SystemManager.InputSimulator.Keyboard.ModifiedKeyStroke([.. modifiers], key);
       if ( !result )
         for ( int s = 1; s < 100; s++ )
         {
