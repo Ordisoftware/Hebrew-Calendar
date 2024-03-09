@@ -31,8 +31,8 @@ public class TermLettriq
   public string Sentence { get; set; }
   public string Memo { get; set; }
   public List<TermAnalysis> Analyzes
-    => HebrewDatabase.Instance
-                     .TermAnalyzes
-                     .Where(item => item.LettriqID == ID)
-                     .OrderBy(meaning => meaning.Position).ToList();
+    => [.. HebrewDatabase.Instance
+                         .TermAnalyzes
+                         .Where(item => item.LettriqID == ID)
+                         .OrderBy(meaning => meaning.Position)];
 }

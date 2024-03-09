@@ -151,37 +151,34 @@ static class TorahCelebrationSettings
   /// Indicates special celebration days.
   /// </summary>
   static public readonly IEnumerable<TorahCelebrationDay> SpecialDays
-    = new List<TorahCelebrationDay>
-    {
+    = [
         TorahCelebrationDay.PessahD1,
         TorahCelebrationDay.PessahD7,
         TorahCelebrationDay.YomTerouah,
         TorahCelebrationDay.YomHaKipourim,
         TorahCelebrationDay.SoukotD1,
         TorahCelebrationDay.SoukotD8
-    };
+      ];
 
   /// <summary>
   /// Indicates celebration days that starts a week.
   /// </summary>
   static public readonly IEnumerable<TorahCelebrationDay> CelebrationStartWeek
-    = new List<TorahCelebrationDay>
-    {
+    = [
         TorahCelebrationDay.PessahD1,
         TorahCelebrationDay.SoukotD1,
         TorahCelebrationDay.ChavouotDiet
-    };
+      ];
 
   /// <summary>
   /// Indicates celebration days that ends a week.
   /// </summary>
   static public readonly IEnumerable<TorahCelebrationDay> CelebrationEndWeek
-    = new List<TorahCelebrationDay>
-    {
+    = [
         TorahCelebrationDay.PessahD7,
         TorahCelebrationDay.SoukotD8,
         TorahCelebrationDay.Chavouot1
-    };
+      ];
 
   static public TorahCelebration Convert(TorahCelebrationDay torahevent) => torahevent switch
   {
