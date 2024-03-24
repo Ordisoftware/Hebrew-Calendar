@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-03 </created>
-/// <edited> 2023-01 </edited>
+/// <edited> 2024-03 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -66,15 +66,19 @@ static public class OnlineProvidersHelper
   /// Creates a list of menu items.
   /// </summary>
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "N/A")]
-  static private void SetItems(
-    ToolStripItemCollection items,
-    OnlineProviders providers,
-    EventHandler action,
-    Action finished,
-    Action reconstruct)
+  static private void SetItems(ToolStripItemCollection items,
+                               OnlineProviders providers,
+                               EventHandler action,
+                               Action finished,
+                               Action reconstruct,
+                               int countKeepFirstItems)
   {
     if ( providers is null || providers.Items.Count == 0 ) return;
-    items.Clear();
+    if ( countKeepFirstItems == 0 )
+      items.Clear();
+    else
+      while ( items.Count > countKeepFirstItems )
+        items.RemoveAt(countKeepFirstItems);
     string itemsVarName = StackMethods.NameOfFromStack(3).Replace("Globals.", string.Empty);
     foreach ( var item in providers.Items )
       items.Add(item.CreateMenuItem(action));
@@ -93,13 +97,18 @@ static public class OnlineProvidersHelper
   /// <summary>
   /// Creates sub-menu items for providers menu.
   /// </summary>
-  static public void Initialize(
-    this ContextMenuStrip menu,
-    OnlineProviders providers,
-    EventHandler action,
-    Action finished = null)
+  static public void Initialize(this ContextMenuStrip menu,
+                                OnlineProviders providers,
+                                EventHandler action,
+                                Action finished = null,
+                                int countKeepFirstItems = 0)
   {
-    SetItems(menu.Items, providers, action, finished, () => Initialize(menu, providers, action, finished));
+    SetItems(menu.Items,
+             providers,
+             action,
+             finished,
+             () => Initialize(menu, providers, action, finished),
+             countKeepFirstItems);
   }
 
   /// <summary>
@@ -109,10 +118,16 @@ static public class OnlineProvidersHelper
     this ToolStripMenuItem item,
     OnlineProviders providers,
     EventHandler action,
-    Action finished = null)
+    Action finished = null,
+    int countKeepFirstItems = 0)
   {
     if ( providers is null ) return;
-    SetItems(item.DropDownItems, providers, action, finished, () => Initialize(item, providers, action, finished));
+    SetItems(item.DropDownItems,
+             providers,
+             action,
+             finished,
+             () => Initialize(item, providers, action, finished),
+             countKeepFirstItems);
     item.MouseUp += Menu_MouseUp;
   }
 
