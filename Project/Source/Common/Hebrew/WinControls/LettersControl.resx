@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelLetters.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <metadata name="ContextMenuLetter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>25, 19</value>
@@ -228,36 +228,6 @@
   <data name="&gt;&gt;ContextMenuLetter.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="EditCopyWithFinalLetter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EditCopyWithFinalLetter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EditCopyWithFinalLetter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 7</value>
-  </data>
-  <data name="EditCopyWithFinalLetter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
-  </data>
-  <data name="EditCopyWithFinalLetter.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="EditCopyWithFinalLetter.Text" xml:space="preserve">
-    <value>Copy with final letter</value>
-  </data>
-  <data name="&gt;&gt;EditCopyWithFinalLetter.Name" xml:space="preserve">
-    <value>EditCopyWithFinalLetter</value>
-  </data>
-  <data name="&gt;&gt;EditCopyWithFinalLetter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EditCopyWithFinalLetter.Parent" xml:space="preserve">
-    <value>PanelSeparator</value>
-  </data>
-  <data name="&gt;&gt;EditCopyWithFinalLetter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ActionDelLast.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -274,7 +244,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDelLast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>396, 0</value>
+    <value>403, 0</value>
   </data>
   <data name="ActionDelLast.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 28</value>
@@ -295,7 +265,7 @@
     <value>PanelSeparator</value>
   </data>
   <data name="&gt;&gt;ActionDelLast.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="ActionReset.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -310,16 +280,19 @@
     <value>NoControl</value>
   </data>
   <data name="ActionReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 0</value>
+    <value>433, 0</value>
   </data>
   <data name="ActionReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 28</value>
+    <value>23, 28</value>
   </data>
   <data name="ActionReset.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="ActionReset.Text" xml:space="preserve">
     <value>-</value>
+  </data>
+  <data name="ActionReset.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;ActionReset.Name" xml:space="preserve">
     <value>ActionReset</value>
@@ -331,7 +304,79 @@
     <value>PanelSeparator</value>
   </data>
   <data name="&gt;&gt;ActionReset.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ActionReverseWord.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="ActionReverseWord.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ActionReverseWord.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="ActionReverseWord.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="ActionReverseWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionReverseWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 0</value>
+  </data>
+  <data name="ActionReverseWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 28</value>
+  </data>
+  <data name="ActionReverseWord.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="ActionReverseWord.Text" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="ActionReverseWord.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;ActionReverseWord.Name" xml:space="preserve">
+    <value>ActionReverseWord</value>
+  </data>
+  <data name="&gt;&gt;ActionReverseWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionReverseWord.Parent" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;ActionReverseWord.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 7</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="EditCopyWithFinalLetter.Text" xml:space="preserve">
+    <value>Copy with final letter</value>
+  </data>
+  <data name="&gt;&gt;EditCopyWithFinalLetter.Name" xml:space="preserve">
+    <value>EditCopyWithFinalLetter</value>
+  </data>
+  <data name="&gt;&gt;EditCopyWithFinalLetter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditCopyWithFinalLetter.Parent" xml:space="preserve">
+    <value>PanelSeparator</value>
+  </data>
+  <data name="&gt;&gt;EditCopyWithFinalLetter.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="ActionDelFirst.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -349,13 +394,13 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDelFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 0</value>
+    <value>480, 0</value>
   </data>
   <data name="ActionDelFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 28</value>
   </data>
   <data name="ActionDelFirst.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="ActionDelFirst.Text" xml:space="preserve">
     <value>&gt; -</value>
@@ -370,45 +415,6 @@
     <value>PanelSeparator</value>
   </data>
   <data name="&gt;&gt;ActionDelFirst.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ActionRevertWord.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="ActionRevertWord.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ActionRevertWord.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="ActionRevertWord.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="ActionRevertWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ActionRevertWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 0</value>
-  </data>
-  <data name="ActionRevertWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 28</value>
-  </data>
-  <data name="ActionRevertWord.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="ActionRevertWord.Text" xml:space="preserve">
-    <value>/</value>
-  </data>
-  <data name="&gt;&gt;ActionRevertWord.Name" xml:space="preserve">
-    <value>ActionRevertWord</value>
-  </data>
-  <data name="&gt;&gt;ActionRevertWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ActionRevertWord.Parent" xml:space="preserve">
-    <value>PanelSeparator</value>
-  </data>
-  <data name="&gt;&gt;ActionRevertWord.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="PanelSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

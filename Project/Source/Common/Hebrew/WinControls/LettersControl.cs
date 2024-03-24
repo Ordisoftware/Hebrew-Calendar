@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2023-02 </edited>
+/// <edited> 2024-03 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -67,12 +67,17 @@ public partial class LettersControl : UserControl
   /// <summary>
   /// Indicates if the bottom panel is visible
   /// </summary>
-  //[DefaultValue(true)]
-  //public bool ShowBottomPanel
-  //{
-  //  get => PanelBottom.Visible;
-  //  set => PanelBottom.Visible = value;
-  //}
+  [DefaultValue(true)]
+  public bool ShowBottomPanel
+  {
+    get => PanelBottom.Visible;
+    set
+    {
+      if ( PanelBottom.Visible == value ) return;
+      PanelBottom.Visible = value;
+      Redraw();
+    }
+  }
 
   /// <summary>
   /// Indicates if gematria is visible
