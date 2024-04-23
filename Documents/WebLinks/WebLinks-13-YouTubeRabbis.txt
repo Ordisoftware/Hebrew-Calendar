@@ -27,6 +27,9 @@ URL = https://www.youtube.com/watch?v=-xHeO-cpkb0
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/channel/UCdAlxrOJveWBAcyOkilTqeQ
 
+Name = (FR) Rav David Barham
+URL = https://www.youtube.com/@DavidBarham-yq7hx
+
 Name = (FR) Rav Yehia Benchetrit
 URL = https://www.youtube.com/user/TheBenchetrit
 
