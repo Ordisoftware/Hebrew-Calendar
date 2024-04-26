@@ -109,6 +109,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BvAk0qt2lx0tw4A9K8EU5d
 Name = (FR) Shouva Israël France
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AYmwvio4NwcGESr4cqMO8S
 
+Name = (FR) Judaïsme En Mouvement
+URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DhxZ-_MRFcuUusZjp-symN
+
 -
 
 Name = (FR) Rav David Pinto
