@@ -24,6 +24,7 @@ static partial class Program
   /// Updates localization strings to the whole application.
   /// </summary>
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "<En attente>")]
+  [SuppressMessage("Usage", "VSTHRD002:Avoid problematic synchronous waits", Justification = "N/A")]
   static public void UpdateLocalization()
   {
     Globals.ChronoTranslate.Restart();
@@ -87,7 +88,7 @@ static partial class Program
                                      () => MainForm.Instance.LoadMenuBookmarks(MainForm.Instance));
       }
       MainForm.Instance.MonthlyCalendar._btnToday.ButtonText = AppTranslations.Today.GetLang();
-      task?.Wait();
+      task.Wait();
       MainForm.Instance.CreateSystemInformationMenu();
     }
     catch ( Exception ex )

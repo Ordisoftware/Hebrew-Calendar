@@ -10,6 +10,7 @@ namespace Keith_Burnett_moonr2cs
   [SuppressMessage("Naming", "GCop206:Avoid using underscores in {0}", Justification = "<En attente>")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   [SuppressMessage("Refactoring", "GCop628:Maybe define this method on '{0}' class as it's using {1} of its members (compared to {2} from this type)", Justification = "<En attente>")]
+  [SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "<En attente>")]
   public class SunMoon
   {
     public const string AlwaysUp = "****";

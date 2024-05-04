@@ -16,6 +16,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Printing;
 
+[SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "N/A")]
 partial class MainForm
 {
 
