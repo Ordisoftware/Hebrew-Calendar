@@ -127,7 +127,7 @@ public partial class HebrewDatabase : SQLiteDatabase
                 p.Memo = string.Empty;
               });
             if ( memos is not null )
-              for ( int index = 0, indexCheck = 0; index < list.Count && indexCheck < memos.Count; index++ )
+              for ( int index = 0; index < list.Count && index < memos.Count; index++ )
                 list[index].Memo = memos[index];
             Connection.InsertAll(list);
             Connection.Commit();
