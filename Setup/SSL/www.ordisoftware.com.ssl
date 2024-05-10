@@ -1,2 +1,2 @@
-Issuer => CN=Gandi Standard SSL CA 2, O=Gandi, L=Paris, S=Paris, C=FR
-Subject => CN=www.ordisoftware.com
+Issuer => CN=R3, O=Let's Encrypt, C=US
+Subject => CN=ordisoftware.com

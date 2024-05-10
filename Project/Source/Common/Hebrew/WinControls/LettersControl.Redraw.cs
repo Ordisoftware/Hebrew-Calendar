@@ -66,7 +66,8 @@ public partial class LettersControl
       int deltaYAndValuesAndKeys = deltaY + deltaValuesAndKeys + deltaValue2;
       int deltaLine = deltaY + deltaBetweenLines + deltaValues + deltaKeys;
       var colorLabel = Color.DimGray;
-      for ( int index = 0, indexControl = 0; index < countLetters; index++ )
+      int indexControl = 0;
+      for ( int index = 0; index < countLetters; index++ )
       {
         ref string letter = ref HebrewAlphabet.KeyCodes[index];
         // Button letter

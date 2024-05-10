@@ -29,6 +29,7 @@ public delegate void ViewLetterDetails(LettersControl sender, string code);
 /// <summary>
 /// Provides Letters input panel Control.
 /// </summary>
+[SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "N/A")]
 public partial class LettersControl : UserControl
 {
 

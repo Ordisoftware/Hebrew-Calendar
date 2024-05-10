@@ -58,6 +58,7 @@ public class OnlineProviders : DataFile
   /// <summary>
   /// Loads or reload data from disk.
   /// </summary>
+  [SuppressMessage("Major Code Smell", "S127:\"for\" loop stop conditions should be invariant", Justification = "N/A")]
   protected override void DoReLoad(string filePath)
   {
     if ( filePath.IsNullOrEmpty() ) return;

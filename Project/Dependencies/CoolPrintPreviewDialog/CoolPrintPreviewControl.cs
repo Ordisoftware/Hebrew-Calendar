@@ -186,6 +186,7 @@ namespace CoolPrintPreview
     Browsable(false),
     DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
     ]
+    [SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "<En attente>")]
     public double Zoom
     {
       get { return _zoom; }
