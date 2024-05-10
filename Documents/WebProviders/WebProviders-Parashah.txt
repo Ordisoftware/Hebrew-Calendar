@@ -44,15 +44,14 @@ URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
 Name = (FR) Torah-Box.com
 URL = https://www.torah-box.com/paracha/%TORAHBOX%
 
+Name = (FR) Shouva Israël France
+URL = https://www.youtube.com/playlist?list=PLxRqUzrUqpdp1a4pg3znMJB1AYLMmVZHj
+
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/article.aspx?aid=%CHABAD-FR%
 
 Name = (FR) Loubavitch.fr (textes) *
 URL = https://www.loubavitch.fr/etude/paracha
-
-;TODO check if available again
-;Name = (FR) Loubavitch.fr (vidéos) *
-;URL = https://www.loubavitch.fr/multimedia/la-paracha-de-la-semaine
 
 -
 

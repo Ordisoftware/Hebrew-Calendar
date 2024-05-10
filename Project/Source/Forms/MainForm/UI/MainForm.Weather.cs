@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -23,14 +23,17 @@ partial class MainForm
   {
     switch ( Settings.WeatherOnlineProvider )
     {
+      case WeatherProvider.AccuWeatherDotCom:
+        DoAccuWeatherDotCom();
+        break;
       case WeatherProvider.MeteoblueDotCom:
         DoOnlineWeatherMeteoBlueDotCom();
         break;
-      case WeatherProvider.WeatherDotCom:
-        DoOnlineWeatherWeatherDotCom();
-        break;
       case WeatherProvider.MicrosoftNetworkDotCom:
         DoMicrosoftNetworkDotCom();
+        break;
+      case WeatherProvider.WeatherDotCom:
+        DoOnlineWeatherWeatherDotCom();
         break;
       default:
         throw new AdvNotImplementedException(Settings.WeatherOnlineProvider);
@@ -39,7 +42,7 @@ partial class MainForm
 
   static private class WeatherProviders
   {
-    // Meteoblue
+    // Ignore spelling: Meteoblue
     public const string MeteoblueDotComQueryDay = "current";
     public const string MeteoblueDotComQueryWeek = "week";
     public const string MeteoblueDotComQuery = "https://www.meteoblue.com/server/search/query3?query=%LAT%%20%LON%";
@@ -50,6 +53,8 @@ partial class MainForm
     public const string WeatherDotComResult = "https://weather.com/%LANG%/weather/%MODE%/l/%LAT%,%LON%";
     // MSN
     public const string MicrosoftNetworkDotComResult = "https://a.msn.com/54/%LANG%/ct%LAT%,%LON%";
+    // AccuWeather
+    public const string AccuWeatherDotComResult = "https://www.accuweather.com/%LANG%/search-locations?query=%LAT%,%LON%";
   }
 
   private void DoOnlineWeatherWeatherDotCom()
@@ -64,6 +69,7 @@ partial class MainForm
     SystemManager.RunShell(cmd);
   }
 
+  [SuppressMessage("Roslynator", "RCS1146:Use conditional access.", Justification = "N/A")]
   private void DoOnlineWeatherMeteoBlueDotCom()
   {
     string server = new Uri(WeatherProviders.MeteoblueDotComResult).Host;
@@ -90,8 +96,8 @@ partial class MainForm
     }
     string location = string.Empty;
     var results = data["results"];
-    if ( results?.Any() == true )
-      location = results[0]["url"]?.ToString();
+    if ( results is not null && results.Any() )
+      location = results[0]["url"].ToString();
     if ( !string.IsNullOrEmpty(location) )
     {
       string cmd = WeatherProviders.MeteoblueDotComResult
@@ -111,6 +117,15 @@ partial class MainForm
   private void DoMicrosoftNetworkDotCom()
   {
     string cmd = WeatherProviders.MicrosoftNetworkDotComResult
+                                 .Replace("%LANG%", Thread.CurrentThread.CurrentCulture.ToString())
+                                 .Replace("%LAT%", Settings.GPSLatitude)
+                                 .Replace("%LON%", Settings.GPSLongitude);
+    SystemManager.RunShell(cmd);
+  }
+
+  private void DoAccuWeatherDotCom()
+  {
+    string cmd = WeatherProviders.AccuWeatherDotComResult
                                  .Replace("%LANG%", Thread.CurrentThread.CurrentCulture.ToString())
                                  .Replace("%LAT%", Settings.GPSLatitude)
                                  .Replace("%LON%", Settings.GPSLongitude);

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -28,19 +28,19 @@ public sealed partial class TraceForm : Form
     ActiveControl = TabControl;
   }
 
-  public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizepropertyName, string onlyErrorsPropertyName)
+  public TraceForm(string locationPropertyName, string clientSizePropertyName, string fontSizePropertyName, string onlyErrorsPropertyName)
   : this()
   {
     LocationPropertyName = locationPropertyName;
     ClientSizePropertyName = clientSizePropertyName;
-    FontSizepropertyName = fontSizepropertyName;
+    FontSizepropertyName = fontSizePropertyName;
     OnlyErrorsPropertyName = onlyErrorsPropertyName;
     if ( Globals.Settings is not null )
       try
       {
         Location = (Point)Globals.Settings[locationPropertyName];
         ClientSize = (Size)Globals.Settings[clientSizePropertyName];
-        TrackBarFontSize.Value = (int)Globals.Settings[fontSizepropertyName];
+        TrackBarFontSize.Value = (int)Globals.Settings[fontSizePropertyName];
         EditOnlyErrors.Checked = (bool)Globals.Settings[onlyErrorsPropertyName];
       }
       catch

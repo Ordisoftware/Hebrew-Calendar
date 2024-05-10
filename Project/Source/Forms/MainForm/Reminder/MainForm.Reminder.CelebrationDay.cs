@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -32,7 +32,7 @@ partial class MainForm
     if ( row is null ) return result;
     var torahevent = row.TorahEvent;
     if ( row.Date.Day < dateNow.Day )
-      if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccuring == MoonriseOccurring.BeforeSet )
+      if ( Settings.TorahEventsCountAsMoon && row.MoonriseOccurring == MoonriseOccurring.BeforeSet )
         return result;
     var times = row.GetTimesForCelebration(Settings.RemindCelebrationEveryMinutes);
     if ( times is null ) return result;

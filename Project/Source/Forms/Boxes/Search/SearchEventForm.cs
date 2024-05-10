@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -19,9 +19,9 @@ sealed partial class SearchEventForm : Form
 
   private readonly MainForm MainForm = MainForm.Instance;
 
-  private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+  private List<LunisolarDayRow> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
-  public LunisolarDay CurrentDay { get; private set; }
+  public LunisolarDayRow CurrentDay { get; private set; }
 
   private bool GoToDateMutex;
 
@@ -43,7 +43,7 @@ sealed partial class SearchEventForm : Form
     int month = CurrentDay.LunarMonth;
     var item = ListItems.Items
                         .AsIEnumerable()
-                        .FirstOrDefault(item => ( (LunisolarDay)item.Tag ).LunarMonth == month);
+                        .FirstOrDefault(item => ( (LunisolarDayRow)item.Tag ).LunarMonth == month);
     if ( item is null )
       ListItems_SelectedIndexChanged(this, EventArgs.Empty);
     else
@@ -108,7 +108,7 @@ sealed partial class SearchEventForm : Form
   private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
   {
     if ( !GoToDateMutex && ListItems.SelectedItems.Count > 0 )
-      MainForm.GoToDate(( (LunisolarDay)ListItems.SelectedItems[0].Tag ).Date);
+      MainForm.GoToDate(( (LunisolarDayRow)ListItems.SelectedItems[0].Tag ).Date);
   }
 
 }

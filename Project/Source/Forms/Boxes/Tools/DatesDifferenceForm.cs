@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,40 +11,22 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-sealed partial class DatesDiffCalculatorForm : Form
+sealed partial class DatesDifferenceForm : Form
 {
 
-  static private readonly Properties.Settings Settings = Program.Settings;
+  static public DatesDifferenceForm Instance { get; private set; }
 
-  static public DatesDiffCalculatorForm Instance { get; private set; }
+  static private ApplicationDatabase DBApp => ApplicationDatabase.Instance;
 
-  static DatesDiffCalculatorForm()
+  static DatesDifferenceForm()
   {
-    Instance = new DatesDiffCalculatorForm();
+    Instance = new DatesDifferenceForm();
   }
 
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
-  static public void LoadMenuBookmarks(ToolStripItemCollection items, MouseEventHandler action)
-  {
-    bool onlyCalendar = items == MainForm.Instance.MenuBookmarks.Items;
-    items.Clear();
-    for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
-    {
-      var date = Program.DateBookmarks[index];
-      string dateText = date == DateTime.MinValue ? SysTranslations.EmptySlot.GetLang() : date.ToLongDateString();
-      var menuitem = items.Add($"{index + 1:00}. {dateText}");
-      menuitem.MouseUp += action;
-      menuitem.Tag = index;
-      if ( onlyCalendar && date != DateTime.MinValue )
-        if ( date < MainForm.Instance.DateFirst || date > MainForm.Instance.DateLast )
-          menuitem.Enabled = false;
-    }
-  }
-
-  static public void Run(Tuple<DateTime, DateTime> dates = null, bool initonly = false, bool ensureOrder = false)
+  static public void Run(Tuple<DateTime, DateTime> dates = null, bool initOnly = false, bool ensureOrder = false)
   {
     if ( dates is not null )
     {
@@ -66,25 +48,25 @@ sealed partial class DatesDiffCalculatorForm : Form
     Instance.DateStart.Tag = Instance.DateStart.SelectionStart;
     Instance.DateEnd.Tag = Instance.DateEnd.SelectionStart;
     Instance.DateChanged(true);
-    if ( !initonly ) Instance.Popup();
+    if ( !initOnly ) Instance.Popup();
   }
 
-  private DatesDiffItem Stats;
+  private DatesDifferenceItem Stats;
 
   private Button CurrentBookmarkButton;
 
-  private DatesDiffCalculatorForm()
+  private DatesDifferenceForm()
   {
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
-    DateStart.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DateStart.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    DateEnd.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DateEnd.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    DatePickerStart.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DatePickerStart.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
-    DatePickerEnd.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-    DatePickerEnd.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+    DateStart.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+    DateStart.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
+    DateEnd.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+    DateEnd.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
+    DatePickerStart.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+    DatePickerStart.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
+    DatePickerEnd.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+    DatePickerEnd.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
   }
 
   private void DateDiffForm_Load(object sender, EventArgs e)
@@ -95,7 +77,7 @@ sealed partial class DatesDiffCalculatorForm : Form
 
   internal void LoadMenuBookmarks(Form caller)
   {
-    LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
+    DateBookmarkRow.LoadMenuBookmarks(MenuBookmarks.Items, ActionGotoBookmark_MouseUp);
     if ( caller != MainForm.Instance ) MainForm.Instance.LoadMenuBookmarks(this);
   }
 
@@ -108,7 +90,7 @@ sealed partial class DatesDiffCalculatorForm : Form
     var date2 = DateEnd.SelectionStart;
     bool isVisible = Instance.Visible;
     var location = Instance.Location;
-    Instance = new DatesDiffCalculatorForm();
+    Instance = new DatesDifferenceForm();
     Run(new Tuple<DateTime, DateTime>(date1, date2), true);
     Instance.DateStart.Tag = date1;
     Instance.DateEnd.Tag = date2;
@@ -136,61 +118,30 @@ sealed partial class DatesDiffCalculatorForm : Form
     Close();
   }
 
-  private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
+  private void ActionGotoBookmark_MouseUp(object sender, MouseEventArgs e)
   {
-    var menuitem = (ToolStripMenuItem)sender;
-    var control = CurrentBookmarkButton;
-    if ( e.Button == MouseButtons.Right )
+    DateBookmarkRow.MenuItemMouseUp(this, (ToolStripMenuItem)sender, e.Button, LoadMenuBookmarks, bookmark =>
     {
-      if ( control == ActionSetBookmarkStart || control == ActionSetBookmarkEnd )
-        if ( !menuitem.Text.EndsWith(")", StringComparison.Ordinal) )
-        {
-          var date = Program.DateBookmarks[(int)menuitem.Tag].ToLongDateString();
-          if ( !DisplayManager.QueryYesNo(SysTranslations.AskToDeleteBookmark.GetLang(date)) )
-            return;
-          menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {SysTranslations.EmptySlot.GetLang()}";
-          Program.DateBookmarks[(int)menuitem.Tag] = DateTime.MinValue;
-          SystemManager.TryCatch(Settings.Save);
-        }
-    }
+      if ( CurrentBookmarkButton == ActionGoToBookmarkStart )
+        DateStart.SelectionStart = bookmark.Date;
+      else
+      if ( CurrentBookmarkButton == ActionGoToBookmarkEnd )
+        DateEnd.SelectionStart = bookmark.Date;
+    });
+  }
+
+  private void ActionSaveBookmark_Click(object sender, EventArgs e)
+  {
+    DateTime date;
+    if ( sender == ActionSaveBookmarkStart )
+      date = DateStart.SelectionStart;
     else
-    if ( e.Button == MouseButtons.Left )
-    {
-      if ( control == ActionSetBookmarkStart )
-        setBookmark(DateStart);
-      else
-      if ( control == ActionSetBookmarkEnd )
-        setBookmark(DateEnd);
-      else
-      if ( DateTime.TryParse(menuitem.Text.Substring(3), out DateTime date) )
-        if ( control == ActionUseBookmarkStart )
-          DateStart.SelectionStart = date;
-        else
-        if ( control == ActionUseBookmarkEnd )
-          DateEnd.SelectionStart = date;
-    }
-    MainForm.Instance.LoadMenuBookmarks(this);
-    //
-    void setBookmark(MonthCalendar calendar)
-    {
-      var dateNew = calendar.SelectionStart.Date;
-      for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
-      {
-        var date = Program.DateBookmarks[index];
-        if ( dateNew == date ) return;
-      }
-      var dateOld = Program.DateBookmarks[(int)menuitem.Tag];
-      if ( dateOld != DateTime.MinValue )
-      {
-        string date1 = dateOld.ToShortDateString();
-        string date2 = dateNew.ToShortDateString();
-        string msg = SysTranslations.AskToReplaceBookmark.GetLang(date1, date2);
-        if ( !DisplayManager.QueryYesNo(msg) ) return;
-      }
-      menuitem.Text = $"{(int)menuitem.Tag + 1:00}. {dateNew.ToLongDateString()}";
-      Program.DateBookmarks[(int)menuitem.Tag] = dateNew.Date;
-      SystemManager.TryCatch(Settings.Save);
-    }
+      if ( sender == ActionSaveBookmarkEnd )
+      date = DateEnd.SelectionStart;
+    else
+      return;
+    DateBookmarkRow.CreateFromUserInput(date);
+    LoadMenuBookmarks(this);
   }
 
   private void ActionBookmarksButton_Click(object sender, EventArgs e)
@@ -205,8 +156,8 @@ sealed partial class DatesDiffCalculatorForm : Form
     Enabled = false;
     try
     {
-      if ( ManageBookmarksForm.Run() )
-        LoadMenuBookmarks(this);
+      ManageBookmarksForm.Run();
+      LoadMenuBookmarks(this);
     }
     finally
     {
@@ -216,8 +167,8 @@ sealed partial class DatesDiffCalculatorForm : Form
 
   private void ActionHelp_Click(object sender, EventArgs e)
   {
-    MessageBoxEx.ShowDialogOrSystem(AppTranslations.NoticeDatesDiffTitle,
-                                    AppTranslations.NoticeDatesDiff,
+    MessageBoxEx.ShowDialogOrSystem(AppTranslations.NoticeDatesDifferenceTitle,
+                                    AppTranslations.NoticeDatesDifference,
                                     width: MessageBoxEx.DefaultWidthMedium);
   }
 
@@ -262,22 +213,26 @@ sealed partial class DatesDiffCalculatorForm : Form
     {
       if ( Stats is null )
       {
-        Stats = new DatesDiffItem(this, DateStart.SelectionStart, DateEnd.SelectionStart);
-        DatesDiffItemBindingSource.DataSource = Stats;
+        Stats = new DatesDifferenceItem(this, DateStart.SelectionStart, DateEnd.SelectionStart);
+        DatesDifferenceItemBindingSource.DataSource = Stats;
       }
       else
       {
         Stats.SetDates(this, DateStart.SelectionStart, DateEnd.SelectionStart);
-        DatesDiffItemBindingSource.ResetBindings(false);
+        DatesDifferenceItemBindingSource.ResetBindings(false);
       }
     }
     finally
     {
       Cursor = cursor;
     }
+    var dateStart = DateStart.SelectionStart;
+    var dateEnd = DateEnd.SelectionStart;
+    ActionSaveBookmarkStart.Enabled = DBApp.DateBookmarks.Find(item => item.Date == dateStart) is null;
+    ActionSaveBookmarkEnd.Enabled = DBApp.DateBookmarks.Find(item => item.Date == dateEnd) is null;
   }
 
-  private void ActionOpecCalc_Click(object sender, EventArgs e)
+  private void ActionOpenCalc_Click(object sender, EventArgs e)
   {
     MainForm.Instance.ActionOpenCalculator.PerformClick();
   }

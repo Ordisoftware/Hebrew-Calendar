@@ -8,6 +8,7 @@ namespace CodeProjectCalendar.NET
   /// </summary>
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP008:Don't assign member with injected and created disposables", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   public class HolidayEvent : IEvent
   {
     // ORDISOFTWARE MODIF BEGIN

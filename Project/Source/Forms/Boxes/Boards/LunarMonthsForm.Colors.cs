@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -17,8 +17,8 @@ namespace Ordisoftware.Hebrew.Calendar;
 partial class LunarMonthsForm : Form
 {
 
-  private readonly Color[] ColorsSystem = new Color[]
-  {
+  private readonly Color[] ColorsSystem =
+  [
     SystemColors.ControlText,
     SystemColors.ControlText,
     SystemColors.ControlText,
@@ -32,10 +32,10 @@ partial class LunarMonthsForm : Form
     SystemColors.ControlText,
     SystemColors.ControlText,
     SystemColors.ControlText
-  };
+  ];
 
-  private readonly Color[] ColorsPastel = new Color[]
-  {
+  private readonly Color[] ColorsPastel =
+  [
     CustomColor.BananaYellowLight,
     CustomColor.BananaYellowLight,
     CustomColor.BananaYellowLight,
@@ -49,10 +49,10 @@ partial class LunarMonthsForm : Form
     Color.White,
     Color.White,
     Color.White
-  };
+  ];
 
-  private readonly Color[] ColorsFlashy = new Color[]
-  {
+  private readonly Color[] ColorsFlashy =
+  [
     Color.Yellow,
     Color.Yellow,
     Color.Yellow,
@@ -66,6 +66,6 @@ partial class LunarMonthsForm : Form
     Color.White,
     Color.White,
     Color.White
-  };
+  ];
 
 }

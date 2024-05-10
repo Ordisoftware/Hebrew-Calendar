@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -23,10 +23,10 @@ partial class MainForm
 {
 
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Color, Dictionary<Color, Color>> ColorMixesTwoKeys = new();
+  static private readonly Dictionary<Color, Dictionary<Color, Color>> ColorMixesTwoKeys = [];
 
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Color, Dictionary<Color, Dictionary<Color, Color>>> ColorMixesThreeKeys = new();
+  static private readonly Dictionary<Color, Dictionary<Color, Dictionary<Color, Color>>> ColorMixesThreeKeys = [];
 
   private Brush[,,] DayBrushes;
 
@@ -50,7 +50,7 @@ partial class MainForm
     int g = Math.Min(( color1.G + color2.G ) / 2, 255);
     int b = Math.Min(( color1.B + color2.B ) / 2, 255);
     var color = Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
-    if ( !hasFirstKey ) ColorMixesTwoKeys.Add(color1, new Dictionary<Color, Color>());
+    if ( !hasFirstKey ) ColorMixesTwoKeys.Add(color1, []);
     ColorMixesTwoKeys[color1].Add(color2, color);
     return color;
   }
@@ -68,8 +68,8 @@ partial class MainForm
     int g = Math.Min(( color1.G + color2.G + color3.G ) / 3, 255);
     int b = Math.Min(( color1.B + color2.B + color3.B ) / 3, 255);
     var color = Color.FromArgb(Convert.ToByte(r), Convert.ToByte(g), Convert.ToByte(b));
-    if ( !hasFirstKey ) ColorMixesThreeKeys.Add(color1, new Dictionary<Color, Dictionary<Color, Color>>());
-    if ( !hasSecondKey ) ColorMixesThreeKeys[color1].Add(color2, new Dictionary<Color, Color>());
+    if ( !hasFirstKey ) ColorMixesThreeKeys.Add(color1, []);
+    if ( !hasSecondKey ) ColorMixesThreeKeys[color1].Add(color2, []);
     ColorMixesThreeKeys[color1][color2].Add(color3, color);
     return color;
   }
@@ -94,6 +94,7 @@ partial class MainForm
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
+  [SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
   public void FillMonths()
   {
     Globals.ChronoShowData.Restart();
@@ -143,7 +144,7 @@ partial class MainForm
       bool isCelebrationWeekStart = false;
       bool isOmerSun = !Settings.TorahEventsCountAsMoon;
       bool useUnicode = Settings.HebrewNamesInUnicode;
-      var shabatday = (DayOfWeek)Settings.ShabatDay;
+      var shabatDay = (DayOfWeek)Settings.ShabatDay;
       Parashah parashah = null;
       DayBrushes = new Brush[YearsInterval, 13, 35];
       var fontEventHebrew = new Font(Settings.MonthViewFontNameHebrew, Settings.MonthViewHebrewFontSize);
@@ -182,7 +183,7 @@ partial class MainForm
           else
           if ( isCelebrationWeekStart || eventTorah != TorahCelebrationDay.None )
             color2 = colorEventTorah;
-          if ( row.Date.DayOfWeek == shabatday )
+          if ( row.Date.DayOfWeek == shabatDay )
             color3 = colorEventShabat;
           if ( color1 is not null && color2 is not null && color3 is not null )
             color1 = MixColor(color1.Value, color2.Value, color3.Value);
@@ -212,13 +213,13 @@ partial class MainForm
           // Initialize dispatch table
           int rank = 0;
           string strDate = string.Empty;
-          bool hasPreviousSeperator = false;
-          Action addsun = bothTimes ? addSunWithMoon : showSun ? addSunAlone : null;
-          Action addmoon = bothTimes ? addMoonWithSun : showMoon ? addMoonAlone : null;
+          bool hasPreviousSeparator = false;
+          Action addSun = bothTimes ? addSunWithMoon : showSun ? addSunAlone : null;
+          Action addMoon = bothTimes ? addMoonWithSun : showMoon ? addMoonAlone : null;
           addSectionsMethods.Clear();
           addSectionsMethods.Add(Settings.MonthViewLayoutLunarDatePosition, addLunarDateSingleLine);
-          addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisSunPosition, addsun);
-          addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisMoonPosition, addmoon);
+          addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisSunPosition, addSun);
+          addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisMoonPosition, addMoon);
           addSectionsMethods.Add(Settings.MonthViewLayoutSeasonChangePosition, addSeason);
           addSectionsMethods.Add(Settings.MonthViewLayoutCelebrationPosition, addCelebration);
           addSectionsMethods.Add(Settings.MonthViewLayoutParashahNamePosition, addParashahName);
@@ -268,16 +269,16 @@ partial class MainForm
             if ( aloneOneLine )
               addMoonWithSun();
             else
-            if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+            if ( row.MoonriseOccurring == MoonriseOccurring.AfterSet )
             {
               if ( row.Moonset is not null )
                 addLine(colorText, strSet + row.MoonsetAsString, CalendarSection.Ephemeris);
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 addLine(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}", CalendarSection.Ephemeris);
             }
             else
             {
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 addLine(colorEphemeris, $"{strRise}{row.MoonriseAsString}{strDate}", CalendarSection.Ephemeris);
               if ( row.Moonset is not null )
                 addLine(colorText, strSet + row.MoonsetAsString, CalendarSection.Ephemeris);
@@ -306,7 +307,7 @@ partial class MainForm
             string set = $"{strSet}{row.MoonsetAsString}";
             string rise = $"{strRise}{row.MoonriseAsString}";
             string str = string.Empty;
-            if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+            if ( row.MoonriseOccurring == MoonriseOccurring.AfterSet )
               setMoonWithSun_RiseAfterSet();
             else
               setMoonWithSun_RiseBeforeSet();
@@ -322,7 +323,7 @@ partial class MainForm
             {
               if ( row.Moonset is not null )
                 str = $"{set}";
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
               {
                 if ( str.Length != 0 ) str += " - ";
                 str += $"{rise}{strDate}";
@@ -331,7 +332,7 @@ partial class MainForm
             //
             void setMoonWithSun_RiseBeforeSet()
             {
-              if ( row.MoonriseOccuring != MoonriseOccurring.NextDay )
+              if ( row.MoonriseOccurring != MoonriseOccurring.NextDay )
                 str = $"{rise}";
               if ( row.Moonset is not null )
               {
@@ -346,7 +347,7 @@ partial class MainForm
           void addSeason()
           {
             if ( !showSeason ) return;
-            if ( row.SeasonChange != 0 )
+            if ( row.SeasonChange != SeasonChange.None )
             {
               string str = AppTranslations.GetSeasonChangeDisplayText(row.SeasonChange);
               addLine(colorSeason, str, CalendarSection.Ephemeris);
@@ -409,12 +410,12 @@ partial class MainForm
           {
             if ( section == CalendarSection.Separator )
             {
-              if ( hasPreviousSeperator ) return;
-              hasPreviousSeperator = true;
+              if ( hasPreviousSeparator ) return;
+              hasPreviousSeparator = true;
             }
             else
             {
-              hasPreviousSeperator = false;
+              hasPreviousSeparator = false;
             }
             var item = new CustomEvent
             {
@@ -442,10 +443,10 @@ partial class MainForm
         }
         catch ( Exception ex )
         {
-          if ( ApplicationDatabase.Instance.AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
+          if ( DBApp.AddGenerateErrorAndCheckIfTooMany(nameof(FillMonths), row.DateAsString, ex) )
           {
-            if ( !Globals.IsGenerating && ApplicationDatabase.Instance.LastGenerationErrors.Count != 0 )
-              ApplicationDatabase.Instance.ShowLastGenerationErrors(Text);
+            if ( !Globals.IsGenerating && DBApp.LastGenerationErrors.Count != 0 )
+              DBApp.ShowLastGenerationErrors(Text);
             return;
           }
         }
@@ -464,4 +465,3 @@ partial class MainForm
   }
 
 }
-

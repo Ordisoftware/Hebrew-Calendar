@@ -117,48 +117,30 @@ namespace CodeProjectCalendar.NET
 
     public Size CalculateSize()
     {
-      Graphics g = CreateGraphics();
-
+      using var g = CreateGraphics();
       SizeF textSize = g.MeasureString(_eventToolTipText, _eventToolTipFont);
-
       Size = new Size((int)textSize.Width + _eventToolTipMargins.Left + _eventToolTipMargins.Right,
-                                     (int)textSize.Height + _eventToolTipMargins.Top + _eventToolTipMargins.Bottom);
-
-      g.Dispose();
+                      (int)textSize.Height + _eventToolTipMargins.Top + _eventToolTipMargins.Bottom);
       return Size;
     }
 
     private void EventToolTipPaint(object sender, PaintEventArgs e)
     {
-      if ( !_shouldRender )
-        return;
-
+      if ( !_shouldRender ) return;
       SizeF textSize = e.Graphics.MeasureString(_eventToolTipText, _eventToolTipFont);
-
-      Size = new Size((int)textSize.Width + _eventToolTipMargins.Left + _eventToolTipMargins.Right,
-                                     (int)textSize.Height + _eventToolTipMargins.Top + _eventToolTipMargins.Bottom);
-
-      var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
-      Graphics g = Graphics.FromImage(bmp);
-      GraphicsPath gp = RoundedRectangle.Create(0, 0, ClientSize.Width - 1, ClientSize.Height - 1, 5,
-                                                RoundedRectangle.RectangleCorners.All);
-
+      Size = new Size((int)textSize.Width + _eventToolTipMargins.Left + _eventToolTipMargins.Right, (int)textSize.Height + _eventToolTipMargins.Top + _eventToolTipMargins.Bottom);
+      using var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
+      using var g = Graphics.FromImage(bmp);
+      using var gp = RoundedRectangle.Create(0, 0, ClientSize.Width - 1, ClientSize.Height - 1, 5, RoundedRectangle.RectangleCorners.All);
       BackColor = Color.Transparent;
       g.FillPath(SolidBrushesPool.Get(_eventToolTipColor), gp);
       g.DrawPath(PensPool.Get(_eventToolTipBorderColor), gp);
-
       int totHorMargin = _eventToolTipMargins.Left + _eventToolTipMargins.Right;
       int totVerMargin = _eventToolTipMargins.Top + _eventToolTipMargins.Bottom;
-
       g.DrawString(_eventToolTipText, _eventToolTipFont, SolidBrushesPool.Get(_eventToolTipTextColor),
                    ( ClientSize.Width - textSize.Width + totHorMargin ) / 2f - _eventToolTipMargins.Right,
                    ( ClientSize.Height - textSize.Height + totVerMargin ) / 2f - _eventToolTipMargins.Bottom - 1);
-
-
       e.Graphics.DrawImage(bmp, 0, 0);
-      gp.Dispose();
-      g.Dispose();
-      bmp.Dispose();
     }
   }
 

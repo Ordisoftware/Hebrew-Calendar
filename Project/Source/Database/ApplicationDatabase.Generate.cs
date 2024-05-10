@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -16,7 +16,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 
 [Serializable]
 [SuppressMessage("Critical Code Smell", "S3871:Exception types should be \"public\"", Justification = "Analysis error")]
-file class TooManyErrorsException : Exception
+sealed file class TooManyErrorsException : Exception
 {
   public TooManyErrorsException()
   {
@@ -27,7 +27,7 @@ file class TooManyErrorsException : Exception
   public TooManyErrorsException(string message, Exception innerException) : base(message, innerException)
   {
   }
-  protected TooManyErrorsException(SerializationInfo info, StreamingContext context) : base(info, context)
+  private TooManyErrorsException(SerializationInfo info, StreamingContext context) : base(info, context)
   {
   }
 }
@@ -37,16 +37,14 @@ partial class ApplicationDatabase
 
   static public int MaxGenerateErrors { get; set; } = Globals.MaxErrorsAllowed;
 
-  private const int ErrorFontSize = 8;
+  public const int ErrorFontSize = 8;
 
-  public readonly List<string> LastGenerationErrors = new();
+  public readonly List<string> LastGenerationErrors = [];
 
   public bool AddGenerateErrorAndCheckIfTooMany(string method, string date, Exception ex)
   {
     var einfo = new ExceptionInfo(this, ex);
-    LastGenerationErrors.Add($"{LastGenerationErrors.Count + 1:00}) " +
-                             $"{method,-13} {date} : " +
-                             $"{einfo.SingleLineText}");
+    LastGenerationErrors.Add($"{LastGenerationErrors.Count + 1:00}) {method,-13} {date} : {einfo.SingleLineText}");
     return LastGenerationErrors.Count >= MaxGenerateErrors;
   }
 
@@ -56,14 +54,12 @@ partial class ApplicationDatabase
     LastGenerationErrors.Clear();
     errors = Settings.GetGPSText() + Globals.NL2 + errors;
     DebugManager.Trace(LogTraceEvent.Error, errors);
-    using ( var form = new ShowTextForm(title, errors,
-                                        false, true,
-                                        MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
-                                        false, false) )
-    {
-      form.TextBox.Font = new Font("Courier new", ErrorFontSize);
-      form.ShowDialog();
-    }
+    using var form = new ShowTextForm(title, errors,
+                                      false, true,
+                                      MessageBoxEx.DefaultWidthLarge, MessageBoxEx.DefaultHeightLarge,
+                                      false, false);
+    form.TextBox.Font = new Font("Courier new", ErrorFontSize);
+    form.ShowDialog();
     if ( DisplayManager.QueryYesNo(SysTranslations.ContactSupport.GetLang()) )
       ExceptionForm.Run(new ExceptionInfo(this, new TooManyErrorsException(errors)));
     return errors;
@@ -93,7 +89,7 @@ partial class ApplicationDatabase
             try
             {
               LoadingForm.Instance.DoProgress();
-              var row = new LunisolarDay { Date = new DateTime(year, month, day) };
+              var row = new LunisolarDayRow { Date = new DateTime(year, month, day) };
               if ( !InitializeDay(row) ) break;
               LunisolarDays.Add(row);
             }
@@ -120,7 +116,7 @@ partial class ApplicationDatabase
   /// <summary>
   /// Initializes a day.
   /// </summary>
-  private bool InitializeDay(LunisolarDay day)
+  private bool InitializeDay(LunisolarDayRow day)
   {
     try
     {
@@ -154,15 +150,11 @@ partial class ApplicationDatabase
       day.SunsetAsString = SQLiteDate.ToString(ephemeris.Sunset);
       day.MoonriseAsString = SQLiteDate.ToString(ephemeris.Moonrise);
       day.MoonsetAsString = SQLiteDate.ToString(ephemeris.Moonset);
-      MoonriseOccurring moonrisetype;
-      if ( ephemeris.Moonrise is null )
-        moonrisetype = MoonriseOccurring.NextDay;
-      else
-      if ( ephemeris.Moonrise < ephemeris.Moonset )
-        moonrisetype = MoonriseOccurring.BeforeSet;
-      else
-        moonrisetype = MoonriseOccurring.AfterSet;
-      day.MoonriseOccuring = moonrisetype;
+      day.MoonriseOccurring = ephemeris.Moonrise is null
+        ? MoonriseOccurring.NextDay
+        : ephemeris.Moonrise < ephemeris.Moonset
+          ? MoonriseOccurring.BeforeSet
+          : MoonriseOccurring.AfterSet;
       day.SeasonChange = data.RealSeasonChange;
       day.TorahEvent = TorahCelebrationDay.None;
       day.TorahEventText = string.Empty;

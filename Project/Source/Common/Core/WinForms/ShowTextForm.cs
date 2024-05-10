@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -30,7 +30,7 @@ public sealed partial class ShowTextForm : Form
   public ShowTextForm(string title,
                       string text,
                       bool hideOnClose = false,
-                      bool sizeable = true,
+                      bool resizable = true,
                       int width = MessageBoxEx.DefaultWidthSmall,
                       int height = MessageBoxEx.DefaultHeightSmall,
                       bool wrap = true,
@@ -39,12 +39,12 @@ public sealed partial class ShowTextForm : Form
   {
     Text = title;
     if ( !justify ) TextBox.SelectionAlignment = TextAlign.Left;
-    if ( !sizeable ) MaximumSize = new Size(0, 0);
+    if ( !resizable ) MaximumSize = new Size(0, 0);
     TextBox.Text = text;
     Width = width;
     Height = height;
     this.CenterToMainFormElseScreen();
-    if ( !sizeable ) FormBorderStyle = FormBorderStyle.FixedSingle;
+    if ( !resizable ) FormBorderStyle = FormBorderStyle.FixedSingle;
     TextBox.WordWrap = wrap;
     HideOnClose = hideOnClose;
   }
@@ -52,12 +52,12 @@ public sealed partial class ShowTextForm : Form
   public ShowTextForm(TranslationsDictionary title,
                       TranslationsDictionary text,
                       bool hideOnClose = false,
-                      bool sizeable = true,
+                      bool resizable = true,
                       int width = MessageBoxEx.DefaultWidthSmall,
                       int height = MessageBoxEx.DefaultHeightSmall,
                       bool wrap = true,
                       bool justify = true)
-  : this(title.GetLang(), text.GetLang(), hideOnClose, sizeable, width, height, wrap, justify)
+  : this(title.GetLang(), text.GetLang(), hideOnClose, resizable, width, height, wrap, justify)
   {
     LocalizedTitle = title;
     LocalizedText = text;

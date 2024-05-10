@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -40,6 +40,7 @@ partial class ApplicationDatabase
   };
 
   [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
+  [SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   public string GenerateReport(bool processInsert = false)
   {
@@ -68,7 +69,7 @@ partial class ApplicationDatabase
       LoadingForm.Instance.Initialize(AppTranslations.ProgressGenerateReport.GetLang(),
                                       LunisolarDays.Count,
                                       Program.LoadingFormLoadDB);
-      foreach ( LunisolarDay day in LunisolarDays )
+      foreach ( LunisolarDayRow day in LunisolarDays )
         try
         {
           if ( processInsert ) Connection.Insert(day);
@@ -80,7 +81,7 @@ partial class ApplicationDatabase
           string strMonth = day.IsNewMoon && day.LunarMonth != 0
             ? $"{day.LunarMonth:00}"
             : "  ";
-          string strDay = day.MoonriseOccuring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon
+          string strDay = day.MoonriseOccurring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon
             ? "  "
             : $"{day.LunarDay:00}";
           strDay += " ";
@@ -106,7 +107,7 @@ partial class ApplicationDatabase
           string strMoonset = day.Moonset is null
             ? MoonNoText
             : AppTranslations.EphemerisCodes.GetLang(Ephemeris.Set) + day.MoonsetAsString;
-          string strMoon = day.MoonriseOccuring == MoonriseOccurring.BeforeSet
+          string strMoon = day.MoonriseOccurring == MoonriseOccurring.BeforeSet
             ? strMoonrise + ColumnSepInner + strMoonset
             : strMoonset + ColumnSepInner + strMoonrise;
           string textDay = AppTranslations.DaysOfWeek.GetLang(dayDate.DayOfWeek).Substring(0, 3);

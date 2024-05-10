@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -194,7 +194,7 @@ partial class MainForm
       ActionResetReminder.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenNavigation )
       ActionNavigate.PerformClick();
-    if ( ApplicationCommandLine.Instance.OpenDiffDates )
+    if ( ApplicationCommandLine.Instance.OpenDatesDifference )
       ActionCalculateDateDiff.PerformClick();
     if ( ApplicationCommandLine.Instance.OpenCelebrationVersesBoard )
       ActionShowCelebrationVersesBoard.PerformClick();
@@ -214,7 +214,7 @@ partial class MainForm
   /// <summary>
   /// Sets global HotKey combination.
   /// </summary>
-  public void SetGlobalHotKey(bool noactive = false)
+  public void SetGlobalHotKey(bool noActive = false)
   {
     var shortcutKey = DefaultHotKeyKey;
     var shortcutModifiers = DefaultHotKeyModifiers;
@@ -225,7 +225,7 @@ partial class MainForm
     Globals.BringToFrontApplicationHotKey.KeyPressed = BrintToFrontApplicationHotKeyPressed;
     SystemManager.TryCatch(() =>
     {
-      if ( !noactive ) Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled;
+      if ( !noActive ) Globals.BringToFrontApplicationHotKey.Active = Settings.GlobalHotKeyPopupMainFormEnabled;
     });
   }
 
@@ -351,10 +351,10 @@ partial class MainForm
     SaveReportDialog.InitialDirectory = Settings.GetExportDirectory();
     SaveImageDialog.InitialDirectory = Settings.GetExportImagesDirectory();
     SaveGridDialog.InitialDirectory = Settings.GetExportDataDirectory();
-    SaveBoardDialog.InitialDirectory = Settings.GetExportBoardsDirectory();
+    SaveDataBoardDialog.InitialDirectory = Settings.GetExportBoardsDirectory();
     SaveImageDialog.Filter = Program.ImageExportTargets.CreateFilters();
     SaveGridDialog.Filter = Program.GridExportTargets.CreateFilters();
-    SaveBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();
+    SaveDataBoardDialog.Filter = Program.BoardExportTargets.CreateFilters();
   }
 
   /// <summary>

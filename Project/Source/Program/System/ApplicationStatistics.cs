@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -22,7 +22,7 @@ class ApplicationStatistics
 
   static public readonly ApplicationStatistics Instance = new();
 
-  static private List<LunisolarDay> LunisolarDays
+  static private List<LunisolarDayRow> LunisolarDays
     => ApplicationDatabase.Instance.LunisolarDays;
 
   public string StartingTime
@@ -87,7 +87,7 @@ class ApplicationStatistics
   public string DBEventsCount
     => Globals.IsGenerating
        ? SysTranslations.Processing.GetLang()
-       : LunisolarDays?.Count(d => d.TorahEvent != 0 || d.SeasonChange != 0).ToString()
+       : LunisolarDays?.Count(d => d.TorahEvent != TorahCelebrationDay.None || d.SeasonChange != SeasonChange.None).ToString()
          ?? SysTranslations.NullSlot.GetLang();
 
   public string MonthViewEventsCount

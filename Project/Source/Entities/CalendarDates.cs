@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -24,9 +24,9 @@ sealed class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
 
   static public readonly CalendarDates Instance = new();
 
-  static private readonly Dictionary<int, SortedDictionary<DateTime, SeasonChange>> TorahSeasons = new();
+  static private readonly Dictionary<int, SortedDictionary<DateTime, SeasonChange>> TorahSeasons = [];
 
-  static private readonly SortedDictionary<DateTime, CalendarDateItem> Items = new();
+  static private readonly SortedDictionary<DateTime, CalendarDateItem> Items = [];
 
   public int Count
     => Items.Keys.Count;
@@ -63,7 +63,7 @@ sealed class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
       value = new CalendarDateItem
       {
         Date = key,
-        MoonDay = AstronomyHelper.LunisolerCalendar.GetDayOfMonth(key),
+        MoonDay = AstronomyHelper.LunisolarCalendar.GetDayOfMonth(key),
         MoonPhase = key.GetMoonPhase(),
         Ephemeris = key.GetSunMoonEphemeris()
       };
@@ -91,7 +91,7 @@ sealed class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
   private void InitializeSeasons(int year)
   {
     if ( !TorahSeasons.ContainsKey(year) )
-      TorahSeasons.Add(year, new SortedDictionary<DateTime, SeasonChange>());
+      TorahSeasons.Add(year, []);
     var aasdate = new AASDate();
     long jdYear = 0, jdMonth = 0, jdDay = 0, jdHour = 0, jdMinute = 0;
     double second = 0;

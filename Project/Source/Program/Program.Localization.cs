@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -55,13 +55,14 @@ static partial class Program
       new Infralution.Localization.CultureManager().ManagedControl = AboutBox.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = TranscriptionGuideForm;
       new Infralution.Localization.CultureManager().ManagedControl = GrammarGuideForm;
+      new Infralution.Localization.CultureManager().ManagedControl = NoticesForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = NextCelebrationsForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationsBoardForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = CelebrationVersesBoardForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = NewMoonsBoardForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = ParashotForm.Instance;
       new Infralution.Localization.CultureManager().ManagedControl = LunarMonthsForm.Instance;
-      new Infralution.Localization.CultureManager().ManagedControl = DatesDiffCalculatorForm.Instance;
+      new Infralution.Localization.CultureManager().ManagedControl = DatesDifferenceForm.Instance;
       Infralution.Localization.CultureManager.ApplicationUICulture = culture;
       var formsToSkip = new Form[] { DebugManager.TraceForm, AboutBox.Instance, GrammarGuideForm };
       foreach ( Form form in Application.OpenForms.GetAll().Except(formsToSkip) )
@@ -81,8 +82,8 @@ static partial class Program
         LunarMonthsForm.Instance.Relocalize();
         NavigationForm.Instance.Relocalize();
         ParashotFactory.Instance.Reset();
-        DatesDiffCalculatorForm.Instance.Relocalize();
-        SystemManager.TryCatchManage(ShowExceptionMode.OnlyMessage,
+        DatesDifferenceForm.Instance.Relocalize();
+        SystemManager.TryCatchManage(ShowExceptionMode.Message,
                                      () => MainForm.Instance.LoadMenuBookmarks(MainForm.Instance));
       }
       MainForm.Instance.MonthlyCalendar._btnToday.ButtonText = AppTranslations.Today.GetLang();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 
+#pragma warning disable VSSpell001 // Spell Check
 namespace Base.Hotkeys
 {
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
@@ -16,8 +17,8 @@ namespace Base.Hotkeys
     public HotkeyManager()
     {
       Active = true;
-      IDs = new Dictionary<int, ushort>();
-      Hotkeys = new Dictionary<ushort, HotkeyAction>();
+      IDs = [];
+      Hotkeys = [];
       Form = new HotkeyForm();
       Form.HotkeyPressed += HotkeyPressed;
     }
@@ -64,6 +65,7 @@ namespace Base.Hotkeys
       return false;
     }
 
+    [SuppressMessage("Performance", "CA1854:Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method", Justification = "N/A")]
     public bool UnregisterHotkey(int id)
     {
       if ( !IDs.ContainsKey(id) ) return true;
@@ -90,3 +92,4 @@ namespace Base.Hotkeys
   }
 
 }
+#pragma warning restore VSSpell001 // Spell Check

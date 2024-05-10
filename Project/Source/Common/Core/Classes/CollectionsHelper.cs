@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -19,12 +19,12 @@ static public class CollectionsHelper
 
   static public List<List<T>> Split<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
   {
-    var slices = new List<List<T>> { new List<T>() };
+    var slices = new List<List<T>> { new() };
     foreach ( var item in collection )
     {
       slices[slices.Count - 1].Add(item);
       if ( predicate(item) )
-        slices.Add(new List<T>());
+        slices.Add([]);
     }
     return slices;
   }

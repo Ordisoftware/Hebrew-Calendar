@@ -207,6 +207,8 @@ public sealed class AccessToken : IDisposable
   }
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "<En attente>")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   private void AdjustPrivilege(string privilegeName, PrivilegeOperation operation)
   {
     if ( !Natives.NativeMethods.LookupPrivilegeValueW(lpSystemName: null, privilegeName, out var luid) )
@@ -215,13 +217,7 @@ public sealed class AccessToken : IDisposable
     var tp = new Natives.NativeMethods.TOKEN_PRIVILEGES
     {
       PrivilegeCount = 1,
-      Privileges = new Natives.NativeMethods.LUID_AND_ATTRIBUTES[1]
-        {
-                new Natives.NativeMethods.LUID_AND_ATTRIBUTES
-                {
-                    Luid = luid,
-                },
-        },
+      Privileges = [new() { Luid = luid, },]
     };
 
     switch ( operation )

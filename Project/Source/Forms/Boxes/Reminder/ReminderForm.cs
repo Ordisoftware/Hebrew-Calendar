@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -42,7 +42,7 @@ sealed partial class ReminderForm : Form
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   [SuppressMessage("Performance", "U2U1203:Use foreach efficiently", Justification = "The collection is modified")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
-  static public void Run(LunisolarDay row, TorahCelebrationDay celebration, ReminderTimes times)
+  static public void Run(LunisolarDayRow row, TorahCelebrationDay celebration, ReminderTimes times)
   {
     bool isShabat = celebration == TorahCelebrationDay.Shabat;
     bool doLockSession;
@@ -193,6 +193,7 @@ sealed partial class ReminderForm : Form
     BringMainForm();
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   static private void SetFormsLocation()
   {
     var list = new List<ReminderForm>();
@@ -255,7 +256,7 @@ sealed partial class ReminderForm : Form
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "<En attente>")]
   private void ReminderForm_Load(object sender, EventArgs e)
   {
-    PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart };
+    PowerAction[] avoid = [PowerAction.LogOff, PowerAction.Restart];
     foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
     {
       var item = (ToolStripMenuItem)ContextMenuLockout.Items.Add(SysTranslations.PowerActionText.GetLang(value));
@@ -292,9 +293,9 @@ sealed partial class ReminderForm : Form
 
   #region Context Menu Parashah
 
-  private (LunisolarDay Day, Parashah Parashah) GetDayAndParashah()
+  private (LunisolarDayRow Day, Parashah Parashah) GetDayAndParashah()
   {
-    var day = (LunisolarDay)LabelParashahValue.Tag;
+    var day = (LunisolarDayRow)LabelParashahValue.Tag;
     var parashah = ParashotFactory.Instance.Get(day.ParashahID);
     return (day, parashah);
   }
@@ -309,7 +310,7 @@ sealed partial class ReminderForm : Form
 
   private void DoStudy(string url)
   {
-    (LunisolarDay day, Parashah parashah) = GetDayAndParashah();
+    (LunisolarDayRow day, Parashah parashah) = GetDayAndParashah();
     HebrewTools.OpenParashahProvider(url, parashah, day.HasLinkedParashah);
   }
 
@@ -327,6 +328,7 @@ sealed partial class ReminderForm : Form
 
   #region Instance User Interactions
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   static private void DoSound()
   {
     switch ( Settings.ReminderBoxSoundSource )

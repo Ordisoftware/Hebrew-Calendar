@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -24,7 +24,7 @@ static public class HebrewMonths
   /// Indicates Unicode lunar months names.
   /// </summary>
   static public readonly string[] Unicode =
-  {
+  [
     string.Empty,
     "ניסן",
     "איר",
@@ -39,15 +39,15 @@ static public class HebrewMonths
     "שבט",
     "אדר",
     "ואדר"
-  };
+  ];
 
   /// <summary>
   /// Indicates phonetic lunar months names.
   /// </summary>
   static public readonly NullSafeDictionary<Language, string[]> Transcriptions = new()
   {
-    [Language.EN] = new string[]
-    {
+    [Language.EN] =
+    [
       string.Empty,
       "Nisan",
       "Iyar",
@@ -62,9 +62,9 @@ static public class HebrewMonths
       "Shevat'",
       "Adar",
       "VeAdar",
-    },
-    [Language.FR] = new string[]
-    {
+    ],
+    [Language.FR] =
+    [
       string.Empty,
       "Nissan",
       "Iyar",
@@ -79,7 +79,7 @@ static public class HebrewMonths
       "Shevat'",
       "Adar",
       "VeAdar"
-    }
+    ]
   };
 
 }

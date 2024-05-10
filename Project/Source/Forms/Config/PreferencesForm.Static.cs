@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -28,20 +28,70 @@ partial class PreferencesForm
 
   // Mono spaced fonts list
   static private readonly string[] MonoSpacedFonts =
-  {
-    "andalé mono", "bitstream vera sans mono", "consolas", "courier new", "courier",
-    "cutive mono", "dejavu sans mono", "droid sans mono", "droid sans mono", "everson mono", "fixed",
-    "fixedsys", "freemono", "go mono", "inconsolata", "iosevka", "jetbrains mono", "letter gothic",
-    "liberation mono", "lucida console", "menlo", "monaco", "monofur", "monospace", "nimbus mono l",
-    "noto mono", "overpass mono", "oxygen mono", "pragmatapro", "prestige elite", "pro font",
-    "roboto mono", "san francisco mono", "source code pro", "terminal", "terminus",
-    "tex gyre cursor", "ubuntu mono", "um typewriter",
-    "@mingliu_hkscs-extb", "@mingliu-extb", "@ms gothic", "@nsimsun", "@simsun", "@simsun-extb",
-    "cascadia code", "cascadia code extralight", "cascadia code light", "cascadia code semibold",
-    "cascadia code semilight", "cascadia mono", "cascadia mono extralight", "cascadia mono light",
-    "cascadia mono semibold", "cascadia mono semilight", "lucida sans typewriter", "mingliu-extb",
-    "ms gothic", "nsimsun", "ocr a extended", "simsun", "simsun-extb"
-  };
+  [
+    "andalé mono",
+    "bitstream vera sans mono",
+    "consolas",
+    "courier new",
+    "courier",
+    "cutive mono",
+    "dejavu sans mono",
+    "droid sans mono",
+    "droid sans mono",
+    "everson mono",
+    "fixed",
+    "fixedsys",
+    "freemono",
+    "go mono",
+    "inconsolata",
+    "iosevka",
+    "jetbrains mono",
+    "letter gothic",
+    "liberation mono",
+    "lucida console",
+    "menlo",
+    "monaco",
+    "monofur",
+    "monospace",
+    "nimbus mono l",
+    "noto mono",
+    "overpass mono",
+    "oxygen mono",
+    "pragmatapro",
+    "prestige elite",
+    "pro font",
+    "roboto mono",
+    "san francisco mono",
+    "source code pro",
+    "terminal",
+    "terminus",
+    "tex gyre cursor",
+    "ubuntu mono",
+    "um typewriter",
+    "@mingliu_hkscs-extb",
+    "@mingliu-extb",
+    "@ms gothic",
+    "@nsimsun",
+    "@simsun",
+    "@simsun-extb",
+    "cascadia code",
+    "cascadia code extralight",
+    "cascadia code light",
+    "cascadia code semibold",
+    "cascadia code semilight",
+    "cascadia mono",
+    "cascadia mono extralight",
+    "cascadia mono light",
+    "cascadia mono semibold",
+    "cascadia mono semilight",
+    "lucida sans typewriter",
+    "mingliu-extb",
+    "ms gothic",
+    "nsimsun",
+    "ocr a extended",
+    "simsun",
+    "simsun-extb"
+  ];
 
   // Tab pages indexes
   static public int TabIndexApplication { get; private set; }
@@ -59,10 +109,10 @@ partial class PreferencesForm
   static public int TabIndexTextReport { get; private set; }
   static public int TabIndexTrayIcon { get; private set; }
   static public int TabIndexWeather { get; private set; }
+  static public int TabIndexBookmarks { get; private set; }
 
   // Numeric intervals as (Min, Max, Default, Increment)
   static public readonly (int, int, int, int) CheckUpdateInterval = (1, 28, 7, 1);
-  static public readonly (int, int, int, int) DateBookmarksCountInterval = (0, 40, 20, 1);
   static public readonly (int, int, int, int) GenerateIntervalInterval = (10, 200, 120, 5);
   static public readonly (int, int, int, int) LineSpacingInterval = (0, 10, 5, 1);
   static public readonly (int, int, int, int) SeparatorSizeInterval = (0, 10, 3, 1);
@@ -107,6 +157,7 @@ partial class PreferencesForm
     TabIndexTextReport = form.TabControlMain.TabPages.IndexOf(form.TabPageTextReport);
     TabIndexTrayIcon = form.TabControlMain.TabPages.IndexOf(form.TabPageTrayIcon);
     TabIndexWeather = form.TabControlMain.TabPages.IndexOf(form.TabPageWeather);
+    TabIndexBookmarks = form.TabControlMain.TabPages.IndexOf(form.TabPageBookmarks);
     var filter1 = new Regex("(^F[0-9]{1,2}$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
     var filter2 = new Regex("(^[A-Z]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
     var filter3 = new Regex("(^D[0-D9]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -48,7 +48,7 @@ static partial class Program
       if ( cmd.Generate ) action = form.ActionGenerate.PerformClick;
       if ( cmd.ResetReminder ) action = form.ActionResetReminder.PerformClick;
       if ( cmd.OpenNavigation ) action = form.ActionNavigate.PerformClick;
-      if ( cmd.OpenDiffDates ) action = form.ActionCalculateDateDiff.PerformClick;
+      if ( cmd.OpenDatesDifference ) action = form.ActionCalculateDateDiff.PerformClick;
       if ( cmd.OpenCelebrationVersesBoard ) action = form.ActionShowCelebrationVersesBoard.PerformClick;
       if ( cmd.OpenCelebrationsBoard ) action = form.ActionShowCelebrationsBoard.PerformClick;
       if ( cmd.OpenNewMoonsBoard ) action = form.ActionShowNewMoonsBoard.PerformClick;

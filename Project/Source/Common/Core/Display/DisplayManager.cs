@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -33,21 +33,21 @@ static public partial class DisplayManager
     MainThread = Thread.CurrentThread;
   }
 
-  public const int TaskbarWidthCheckTrigger = 250;
+  public const int TaskBarWidthCheckTrigger = 250;
 
   /// <summary>
   /// Gets task bar anchor style.
   /// </summary>
-  static public AnchorStyles GetTaskbarAnchorStyle()
+  static public AnchorStyles GetTaskBarAnchorStyle()
   {
-    var coordonates = StackMethods.GetTaskbarCoordonates();
+    var coordonates = StackMethods.GetTaskbarCoordinates();
     if ( coordonates.Left == 0 && coordonates.Top == 0 )
-      if ( coordonates.Width > TaskbarWidthCheckTrigger )
+      if ( coordonates.Width > TaskBarWidthCheckTrigger )
         return AnchorStyles.Top;
       else
         return AnchorStyles.Left;
     else
-    if ( coordonates.Width > TaskbarWidthCheckTrigger )
+    if ( coordonates.Width > TaskBarWidthCheckTrigger )
       return AnchorStyles.Bottom;
     else
       return AnchorStyles.Right;
@@ -80,7 +80,7 @@ static public partial class DisplayManager
       throw new ThreadStateException(SysTranslations.ErrorSlot.GetLang().TrimFirstLast());
     Exception exception = null;
     SemaphoreSlim semaphore = null;
-    var processAction = () =>
+    void processAction()
     {
       try
       {
@@ -90,12 +90,12 @@ static public partial class DisplayManager
       {
         exception = ex;
       }
-    };
-    var processActionWait = () =>
+    }
+    void processActionWait()
     {
       processAction();
       semaphore?.Release();
-    };
+    }
     if ( Globals.IsReady && control.InvokeRequired && Thread.CurrentThread != MainThread )
     {
       if ( wait ) semaphore = new SemaphoreSlim(0, 1);

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 sealed partial class SelectDayForm : Form
 {
 
-  static public bool Run(string title, ref DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealtime = false)
+  static public bool Run(string title, ref DateTime date, bool topmost = false, bool isOnlyAvailable = false, bool isGotoRealTime = false)
   {
     using var form = new SelectDayForm();
     if ( isOnlyAvailable )
@@ -27,8 +27,8 @@ sealed partial class SelectDayForm : Form
     }
     else
     {
-      form.MonthCalendar.MinDate = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime;
-      form.MonthCalendar.MaxDate = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime;
+      form.MonthCalendar.MinDate = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime;
+      form.MonthCalendar.MaxDate = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime;
     }
     if ( date < form.MonthCalendar.MinDate ) date = form.MonthCalendar.MinDate;
     if ( date > form.MonthCalendar.MaxDate ) date = form.MonthCalendar.MaxDate;
@@ -39,7 +39,7 @@ sealed partial class SelectDayForm : Form
       form.Text = title;
     else
       form.MonthCalendar.SelectionStart = form.CurrentDay.Date;
-    form.IsGotoRealtime = isGotoRealtime;
+    form.IsGotoRealtime = isGotoRealTime;
     form.TopMost = topmost;
     bool result = form.ShowDialog() == DialogResult.OK;
     date = result ? form.MonthCalendar.SelectionStart : DateTime.MinValue;
@@ -48,7 +48,7 @@ sealed partial class SelectDayForm : Form
 
   private bool IsGotoRealtime;
 
-  private LunisolarDay CurrentDay;
+  private LunisolarDayRow CurrentDay;
 
   private SelectDayForm()
   {

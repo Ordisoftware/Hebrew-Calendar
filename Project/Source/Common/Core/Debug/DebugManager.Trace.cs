@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -126,7 +126,7 @@ static public partial class DebugManager
     try { platform = SystemStatistics.Instance.Platform.SplitNoEmptyLines().Join($" {EventSeparator} "); }
     catch { platform = "Unknown platform"; }
     Trace(LogTraceEvent.Start, Globals.AssemblyTitle);
-    Trace(LogTraceEvent.Start, Globals.ApplicationExeFullPath);
+    Trace(LogTraceEvent.Start, Globals.ApplicationExecutableFullPath);
     Trace(LogTraceEvent.Start, platform);
     Trace(LogTraceEvent.Start, $"FreeMem: {SystemStatistics.Instance.PhysicalMemoryFree}" +
                                $" {EventSeparator} RAM: {SystemStatistics.Instance.TotalVisibleMemory}");
@@ -151,7 +151,7 @@ static public partial class DebugManager
     return sortByDateOnly ? list : list.ThenBy(f => new FileInfo(f).CreationTime).ThenBy(f => f);
   }
 
-  static public void ClearTraces(bool norestart = false, bool all = false)
+  static public void ClearTraces(bool noRestart = false, bool all = false)
   {
     try
     {
@@ -184,7 +184,7 @@ static public partial class DebugManager
       }
       finally
       {
-        if ( !norestart && isEnabled )
+        if ( !noRestart && isEnabled )
         {
           Start();
           if ( all ) Trace(LogTraceEvent.Completed, $"{nameof(DebugManager)}.{nameof(ClearTraces)}(all)");

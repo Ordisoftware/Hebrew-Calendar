@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -24,7 +24,7 @@ static public partial class Globals
     = TraceFileRollOverMode.Session;
 
   static public Serilog.RollingInterval SinkFileRollingInterval { get; set; }
-    = IsVisualStudioDesigner ? 0 : Serilog.RollingInterval.Day;
+    = IsVisualStudioDesigner ? Serilog.RollingInterval.Infinite : Serilog.RollingInterval.Day;
 
   static public int SinkFileRetainedFileCountLimit { get; set; }
     = DaysOfWeekCount;
@@ -43,7 +43,8 @@ static public partial class Globals
   static public int SinkFileEventTemplateSize { get; set; }
     = "YYYY-MM-DD HH:MM:SS [P000000:T000000]".Length - 1;
 
-  static private readonly string OldTraceDirectoryName = "Logs";
+  static private readonly string OldTraceDirectoryName
+    = "Logs";
 
   static public string TraceDirectoryName { get; set; }
     = "Serilog";

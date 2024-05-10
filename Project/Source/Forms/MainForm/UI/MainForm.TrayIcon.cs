@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,11 +11,47 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
 {
+
+  private void DoTrayIconMouse_Move(object sender, MouseEventArgs e)
+  {
+    if ( !Globals.IsReady ) return;
+    if ( !MenuTray.Enabled ) return;
+    SystemManager.TryCatch(() =>
+    {
+      if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
+      {
+        // TODO NEXT refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
+        var text = Text.IndexOf('(') >= 0
+          ? new string(Text.ToCharArray().TakeWhile(c => c != '(').ToArray())
+          : Text;
+        var lines = text.Replace(HebrewTranslations.Parashah + " ", "").SplitNoEmptyLines(" - ").ToList();
+        if ( lines.Count >= 3 )
+        {
+          lines.Insert(2, DateTime.Today.ToShortDateString());
+          int index = lines.Count - 1;
+          int pos = lines[index].IndexOf('(');
+          if ( pos != -1 )
+            lines[index] = lines[index].Substring(0, pos - 1);
+        }
+        else
+          lines.Add(DateTime.Today.ToShortDateString());
+        TrayIcon.Text = new string(lines.AsMultiLine().Take(Globals.TrayIconTextLimit).ToArray());
+      }
+      else
+        TrayIcon.Text = string.Empty;
+      if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
+        return;
+      TimerBalloon.Start();
+      TrayIconMouse = Cursor.Position;
+      if ( !TimerTrayMouseMove.Enabled && Settings.BalloonAutoHide )
+        TimerTrayMouseMove.Start();
+    });
+  }
 
   private void DoTrayIconMouse_Click(object sender, MouseEventArgs e)
   {
@@ -27,34 +63,46 @@ partial class MainForm
       if ( e is not null )
       {
         if ( e.Button == MouseButtons.Left )
-          switch ( Settings.TrayIconClickOpen )
+        {
+          if ( !MenuTray.Enabled )
           {
-            case TrayIconClickOpen.MainForm:
-              MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
-              break;
-            case TrayIconClickOpen.NextCelebrationsForm:
-              if ( NextCelebrationsForm.Instance?.Visible == true )
-                NextCelebrationsForm.Instance.Close();
-              else
-                ActionViewNextCelebrations.PerformClick();
-              break;
-            case TrayIconClickOpen.NavigationForm:
-              var form = NavigationForm.Instance;
-              if ( form.Visible )
-                form.Visible = false;
-              else
-                SystemManager.TryCatchManage(() =>
-                {
-                  if ( Settings.MainFormShownGoToToday )
-                    form.Date = DateTime.Today;
-                  else
-                    GoToDate(MonthlyCalendar.CalendarDate.Date);
-                  form.Visible = true;
-                });
-              break;
-            default:
-              throw new AdvNotImplementedException(Settings.TrayIconClickOpen);
+            var forms = Application.OpenForms.GetAll();
+            var form = forms.FirstOrDefault(f => f is PreferencesForm);
+            if ( form?.Visible == true )
+              form.ForceBringToFront();
+            else
+              FormsHelper.GetActiveForm()?.ForceBringToFront();
           }
+          else
+            switch ( Settings.TrayIconClickOpen )
+            {
+              case TrayIconClickOpen.MainForm:
+                MenuShowHide_Click(TrayIcon, MenuTray.Enabled ? EventArgs.Empty : null);
+                break;
+              case TrayIconClickOpen.NextCelebrationsForm:
+                if ( NextCelebrationsForm.Instance?.Visible == true )
+                  NextCelebrationsForm.Instance.Close();
+                else
+                  ActionViewNextCelebrations.PerformClick();
+                break;
+              case TrayIconClickOpen.NavigationForm:
+                var form = NavigationForm.Instance;
+                if ( form.Visible )
+                  form.Visible = false;
+                else
+                  SystemManager.TryCatchManage(() =>
+                  {
+                    if ( Settings.MainFormShownGoToToday )
+                      form.Date = DateTime.Today;
+                    else
+                      GoToDate(MonthlyCalendar.CalendarDate.Date);
+                    form.Visible = true;
+                  });
+                break;
+              default:
+                throw new AdvNotImplementedException(Settings.TrayIconClickOpen);
+            }
+        }
         else
       if ( e.Button == MouseButtons.Right )
           if ( NavigationForm.Instance.Visible )

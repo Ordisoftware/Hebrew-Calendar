@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -33,6 +33,8 @@ public partial class MainForm
   /// Enables double-buffering.
   /// </summary>
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   protected override CreateParams CreateParams
   {
     get
@@ -114,13 +116,13 @@ public partial class MainForm
         LabelSubTitleOmer.Text = TitleOmer;
         // Today
         if ( Settings.MainFormTitleBarShowToday )
-          Text += " - " + ( ApplicationDatabase.Instance.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
+          Text += " - " + ( DBApp.GetToday()?.DayAndMonthWithYearText ?? SysTranslations.NullSlot.GetLang() );
         // Celebration
         if ( Settings.MainFormTitleBarShowCelebration )
         {
           if ( force || TitleCelebration.IsNullOrEmpty() )
           {
-            var today = ApplicationDatabase.Instance.GetToday();
+            var today = DBApp.GetToday();
             TitleCelebration = today?.GetWeekLongCelebrationIntermediateDay().Text ?? string.Empty;
             if ( !TitleCelebration.IsNullOrEmpty() )
               TitleCelebration = " - " + TitleCelebration;
@@ -132,13 +134,13 @@ public partial class MainForm
         {
           if ( force || TitleParashah.IsNullOrEmpty() )
           {
-            var weekParashah = ApplicationDatabase.Instance.GetWeeklyParashah();
+            var weekParashah = DBApp.GetWeeklyParashah();
             if ( weekParashah.Factory is not null )
             {
               if ( MenuTools.DropDownItems.Count > 0 )
                 MenuTools.DropDownItems[0].Enabled = true;
               var parashah = weekParashah.Factory;
-              TitleParashah = parashah.ToStringShort(Program.Settings.ParashahCaptionWithBookAndRef,
+              TitleParashah = parashah.ToStringShort(Settings.ParashahCaptionWithBookAndRef,
                                                      weekParashah.Day.HasLinkedParashah);
               TitleParashah = $"{HebrewTranslations.Parashah} {TitleParashah}";
               ActionWeeklyParashah.Text = $"{HebrewTranslations.Parashah} {parashah.ToStringShort(false, weekParashah.Day.HasLinkedParashah)}";
@@ -182,7 +184,8 @@ public partial class MainForm
     {
       if ( LoadingForm.Instance.Visible ) LoadingForm.Instance.Hide();
       MenuTray.Enabled = Globals.IsReady && !Globals.IsProcessingData;
-      ToolStrip.Enabled = !Globals.IsProcessingData;
+      ToolStrip.Enabled = MenuTray.Enabled;
+      ContextMenuStripDay.Enabled = MenuTray.Enabled;
       ActionSaveToFile.Enabled = LunisolarDays.Count > 0;
       ActionCopyToClipboard.Enabled = ActionSaveToFile.Enabled;
       ActionPrint.Enabled = ActionSaveToFile.Enabled && Settings.CurrentView != ViewMode.Grid;

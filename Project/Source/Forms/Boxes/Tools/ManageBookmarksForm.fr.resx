@@ -117,11 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ActionCancel.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="ActionClose.Text" xml:space="preserve">
+    <value>Fermer</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ColumnMemo.HeaderText" xml:space="preserve">
+    <value>Mémo</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Gestion des signets de date</value>
+    <value>Gestionnaire des signets</value>
+  </data>
+  <data name="ColumnColor.HeaderText" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
+  <data name="ActionResetColors.Text" xml:space="preserve">
+    <value>Restaurer la couleur par défaut</value>
   </data>
 </root>

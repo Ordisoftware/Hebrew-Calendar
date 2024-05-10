@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -21,9 +21,10 @@ partial class ApplicationDatabase : SQLiteDatabase
 
   private DateTime DayChecked = DateTime.MinValue;
 
-  private LunisolarDay LastCheck;
+  private LunisolarDayRow LastCheck;
 
-  public LunisolarDay GetToday()
+  [SuppressMessage("Correctness", "SS004:Implement Equals() and GetHashcode() methods for a type used in a collection.", Justification = "N/A")]
+  public LunisolarDayRow GetToday()
   {
     var now = DateTime.Now;
     var diff = now - DayChecked;
@@ -34,23 +35,23 @@ partial class ApplicationDatabase : SQLiteDatabase
     return LastCheck;
   }
 
-  public LunisolarDay GetDay(DateTime datetime)
+  public LunisolarDayRow GetDay(DateTime date)
   {
     return Settings.TorahEventsCountAsMoon && !Settings.UseSodHaibour
-      ? GetDayMoon(datetime)
-      : GetDaySun(datetime);
+      ? GetDayMoon(date)
+      : GetDaySun(date);
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
-  private LunisolarDay GetDayMoon(DateTime datetime)
+  private LunisolarDayRow GetDayMoon(DateTime datetime)
   {
     var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
     int indexRowCurrent = LunisolarDays.IndexOf(rowCurrent);
     int indexStart = Math.Max(0, indexRowCurrent - Globals.DaysOfWeekCount);
     int indexEnd = Math.Min(indexRowCurrent + Globals.DaysOfWeekCount, LunisolarDays.Count - 1);
     bool isInBounds = false;
-    LunisolarDay rowFirst = null;
-    LunisolarDay rowLast = null;
+    LunisolarDayRow rowFirst = null;
+    LunisolarDayRow rowLast = null;
     var rowPrevious = rowCurrent;
     for ( int index = indexStart; index <= indexEnd; index++ )
     {
@@ -80,10 +81,10 @@ partial class ApplicationDatabase : SQLiteDatabase
         break;
       }
     }
-    if ( rowFirst?.MoonriseOccuring == MoonriseOccurring.AfterSet )
+    if ( rowFirst?.MoonriseOccurring == MoonriseOccurring.AfterSet )
       return rowFirst;
     else
-    if ( rowLast?.MoonriseOccuring == MoonriseOccurring.BeforeSet )
+    if ( rowLast?.MoonriseOccurring == MoonriseOccurring.BeforeSet )
       return rowLast;
     else
     if ( rowFirst is not null && rowLast is not null )
@@ -101,7 +102,7 @@ partial class ApplicationDatabase : SQLiteDatabase
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
-  private LunisolarDay GetDaySun(DateTime datetime)
+  private LunisolarDayRow GetDaySun(DateTime datetime)
   {
     var rowCurrent = LunisolarDays.Find(d => d.Date == datetime.Date);
     if ( datetime < rowCurrent.Sunset )

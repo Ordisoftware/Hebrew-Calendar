@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -17,6 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides input box.
 /// </summary>
+[SuppressMessage("Design", "MA0018:Do not declare static members on generic types", Justification = "Opinion")]
 public sealed partial class InputBox<T> : Form
 where T : IConvertible
 {
@@ -54,10 +55,10 @@ where T : IConvertible
   /// <param name="title">The title.</param>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="ispassword">true to ispassword.</param>
-  static public InputValueResult Run(string title, string caption, ref T value, bool ispassword)
+  /// <param name="isPassword">true to isPassword.</param>
+  static public InputValueResult Run(string title, string caption, ref T value, bool isPassword)
   {
-    return Run(title, caption, ref value, ispassword, null);
+    return Run(title, caption, ref value, isPassword, null);
   }
 
   /// <summary>
@@ -70,9 +71,9 @@ where T : IConvertible
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
   /// <param name="isPassword">true to ispassword.</param>
-  /// <param name="validator">The validator.</param>
+  /// <param name="validation">The validation delegate.</param>
   [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
-  static public InputValueResult Run(string title, string caption, ref T value, bool isPassword, Func<T, bool> validator)
+  static public InputValueResult Run(string title, string caption, ref T value, bool isPassword, Func<T, bool> validation)
   {
     using var form = new InputBox<T>();
     form.TextBox.PasswordChar = isPassword ? '*' : '\0';
@@ -82,7 +83,7 @@ where T : IConvertible
     dx = form.Label.Width - dx;
     if ( dx > 0 ) form.Width = form.Width + dx + 10;
     form.Value = value;
-    form.Validator = validator;
+    form.Validator = validation;
     if ( value is not null ) form.TextBox.Text = value.ToString();
     if ( form.ShowDialog() == DialogResult.Cancel ) return InputValueResult.Cancelled;
     if ( value is not null && form.TextBox.Text == value.ToString() ) return InputValueResult.Unchanged;

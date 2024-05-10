@@ -448,13 +448,13 @@
   <data name="&gt;&gt;ActionHelp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ActionOpecCalc.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionOpenCalc.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionOpecCalc.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionOpenCalc.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAhVJREFUOE+VkT9v01AUxd83AZWVjc/CxIKKqGgTCsyFJjDRtGlVhmy2m6QhDLAi
+        vAAADrwBlbxySQAAAhVJREFUOE+VkT9v01AUxd83AZWVjc/CxIKKqGgTCsyFJjDRtGlVhmy2m6QhDLAi
         2BAjAwKklrYoaRPZsZ3ajv+kLk6dHO599UAKqOJJRz6+7/xubq4Fn8Z2fdCoaWhUVZJyiSjDWWIkzIcL
         b3+M8e7gJ95fIs5wlpkMF+JlTcX2lwS3mxZmmybuvPq7+I4znGUmw4Vo1rew+glY/pigQCr+Q3zHGc4y
         k+H0F+o1FJYfo/hkCUV6PpVawrNM7LnGd5zhLDMZLkS1ugXfD+AOAjhBDCeMMQhChEGAKAyl5xrLpRxn
@@ -466,28 +466,28 @@
         /lPXhRDiF/bqqHmzJXI8AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ActionOpecCalc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionOpenCalc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionOpecCalc.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionOpenCalc.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 1</value>
   </data>
-  <data name="ActionOpecCalc.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionOpenCalc.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="ActionOpecCalc.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionOpenCalc.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
   </data>
-  <data name="&gt;&gt;ActionOpecCalc.Name" xml:space="preserve">
-    <value>ActionOpecCalc</value>
+  <data name="&gt;&gt;ActionOpenCalc.Name" xml:space="preserve">
+    <value>ActionOpenCalc</value>
   </data>
-  <data name="&gt;&gt;ActionOpecCalc.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenCalc.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionOpecCalc.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenCalc.Parent" xml:space="preserve">
     <value>PanelBottom</value>
   </data>
-  <data name="&gt;&gt;ActionOpecCalc.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionOpenCalc.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="ActionClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -629,7 +629,7 @@
   <data name="&gt;&gt;DateEnd.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <metadata name="DatesDiffItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="DatesDifferenceItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="lunationsLabel1.Font" type="System.Drawing.Font, System.Drawing">
@@ -665,6 +665,9 @@
   <data name="&gt;&gt;lunationsLabel1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <metadata name="DatesDifferenceItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="moonDaysLabel1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -863,30 +866,6 @@
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 66</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="label2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
@@ -925,6 +904,42 @@
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 66</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="label2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="DatePickerStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 213</value>
@@ -969,7 +984,7 @@
     <value>6</value>
   </data>
   <metadata name="MenuBookmarks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>221, 17</value>
+    <value>267, 20</value>
   </metadata>
   <data name="MenuBookmarks.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 4</value>
@@ -980,10 +995,10 @@
   <data name="&gt;&gt;MenuBookmarks.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ActionSetBookmarkStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionSaveBookmarkStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionSetBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionSaveBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAoNJREFUOE+Nkz1MU2EUhu9gjMbBRNFI4s6icTBxcLKJJARcDIPRDQddMJEJW/EH
@@ -1000,34 +1015,34 @@
         jsR6KDAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionSetBookmarkStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionSaveBookmarkStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionSetBookmarkStart.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionSaveBookmarkStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>53, 13</value>
   </data>
-  <data name="ActionSetBookmarkStart.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionSaveBookmarkStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="ActionSetBookmarkStart.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionSaveBookmarkStart.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
   </data>
-  <data name="&gt;&gt;ActionSetBookmarkStart.Name" xml:space="preserve">
-    <value>ActionSetBookmarkStart</value>
+  <data name="&gt;&gt;ActionSaveBookmarkStart.Name" xml:space="preserve">
+    <value>ActionSaveBookmarkStart</value>
   </data>
-  <data name="&gt;&gt;ActionSetBookmarkStart.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveBookmarkStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionSetBookmarkStart.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveBookmarkStart.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionSetBookmarkStart.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveBookmarkStart.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="ActionUseBookmarkStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionGoToBookmarkStart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionUseBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionGoToBookmarkStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAZtJREFUOE+Vkk1LG1EUhvMT3EmRuqiFqnGMTVoTzZemEo20Cra0VRQFV12JoBR1
@@ -1040,34 +1055,34 @@
         HOJyXQGkmgOhvnUD5gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionUseBookmarkStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionGoToBookmarkStart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionUseBookmarkStart.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionGoToBookmarkStart.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 13</value>
   </data>
-  <data name="ActionUseBookmarkStart.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionGoToBookmarkStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="ActionUseBookmarkStart.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionGoToBookmarkStart.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
   </data>
-  <data name="&gt;&gt;ActionUseBookmarkStart.Name" xml:space="preserve">
-    <value>ActionUseBookmarkStart</value>
+  <data name="&gt;&gt;ActionGoToBookmarkStart.Name" xml:space="preserve">
+    <value>ActionGoToBookmarkStart</value>
   </data>
-  <data name="&gt;&gt;ActionUseBookmarkStart.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionGoToBookmarkStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionUseBookmarkStart.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionGoToBookmarkStart.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionUseBookmarkStart.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionGoToBookmarkStart.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="ActionUseBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionGoToBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionUseBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionGoToBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAZtJREFUOE+Vkk1LG1EUhvMT3EmRuqiFqnGMTVoTzZemEo20Cra0VRQFV12JoBR1
@@ -1080,34 +1095,34 @@
         HOJyXQGkmgOhvnUD5gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ActionUseBookmarkEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionGoToBookmarkEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionUseBookmarkEnd.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionGoToBookmarkEnd.Location" type="System.Drawing.Point, System.Drawing">
     <value>280, 13</value>
   </data>
-  <data name="ActionUseBookmarkEnd.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionGoToBookmarkEnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="ActionUseBookmarkEnd.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionGoToBookmarkEnd.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
   </data>
-  <data name="&gt;&gt;ActionUseBookmarkEnd.Name" xml:space="preserve">
-    <value>ActionUseBookmarkEnd</value>
+  <data name="&gt;&gt;ActionGoToBookmarkEnd.Name" xml:space="preserve">
+    <value>ActionGoToBookmarkEnd</value>
   </data>
-  <data name="&gt;&gt;ActionUseBookmarkEnd.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionGoToBookmarkEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionUseBookmarkEnd.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionGoToBookmarkEnd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionUseBookmarkEnd.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionGoToBookmarkEnd.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="ActionSetBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ActionSaveBookmarkEnd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="ActionSetBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ActionSaveBookmarkEnd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAoNJREFUOE+Nkz1MU2EUhu9gjMbBRNFI4s6icTBxcLKJJARcDIPRDQddMJEJW/EH
@@ -1124,28 +1139,28 @@
         jsR6KDAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ActionSetBookmarkEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ActionSaveBookmarkEnd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="ActionSetBookmarkEnd.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActionSaveBookmarkEnd.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 13</value>
   </data>
-  <data name="ActionSetBookmarkEnd.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActionSaveBookmarkEnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 26</value>
   </data>
-  <data name="ActionSetBookmarkEnd.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActionSaveBookmarkEnd.TabIndex" type="System.Int32, mscorlib">
     <value>60</value>
   </data>
-  <data name="&gt;&gt;ActionSetBookmarkEnd.Name" xml:space="preserve">
-    <value>ActionSetBookmarkEnd</value>
+  <data name="&gt;&gt;ActionSaveBookmarkEnd.Name" xml:space="preserve">
+    <value>ActionSaveBookmarkEnd</value>
   </data>
-  <data name="&gt;&gt;ActionSetBookmarkEnd.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveBookmarkEnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ActionSetBookmarkEnd.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveBookmarkEnd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ActionSetBookmarkEnd.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActionSaveBookmarkEnd.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="ActionSwapDates.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -1206,14 +1221,14 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Dates difference calculator</value>
   </data>
-  <data name="&gt;&gt;DatesDiffItemBindingSource.Name" xml:space="preserve">
-    <value>DatesDiffItemBindingSource</value>
+  <data name="&gt;&gt;DatesDifferenceItemBindingSource.Name" xml:space="preserve">
+    <value>DatesDifferenceItemBindingSource</value>
   </data>
-  <data name="&gt;&gt;DatesDiffItemBindingSource.Type" xml:space="preserve">
+  <data name="&gt;&gt;DatesDifferenceItemBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>DatesDiffCalculatorForm</value>
+    <value>DatesDifferenceForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

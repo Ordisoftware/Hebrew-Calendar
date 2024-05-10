@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -14,7 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class LunisolarDay
+public partial class LunisolarDayRow
 {
 
   static private readonly int SearchParashahInterval = Globals.DaysOfWeekCount * 2;
@@ -28,9 +28,9 @@ partial class LunisolarDay
       : SysTranslations.UndefinedSlot.GetLang();
   }
 
-  public LunisolarDay GetParashahReadingDay()
+  public LunisolarDayRow GetParashahReadingDay()
   {
-    LunisolarDay result = null;
+    LunisolarDayRow result = null;
     var shabatDay = (DayOfWeek)Settings.ShabatDay;
     int indexStart = Table.IndexOf(this);
     int indexEnd = Math.Min(indexStart + SearchParashahInterval, Table.Count);

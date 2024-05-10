@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -40,7 +40,7 @@ partial class MainForm
   }
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
-  private IEnumerable<LunisolarDay> GetDayRows(ExportInterval interval)
+  private IEnumerable<LunisolarDayRow> GetDayRows(ExportInterval interval)
   {
     if ( !interval.IsDefined ) return LunisolarDays;
     return LunisolarDays.Where(day => day.Date >= interval.Start && day.Date <= interval.End);
@@ -82,6 +82,7 @@ partial class MainForm
 }
 
 [SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
+[SuppressMessage("Performance", "SS017:Structs should implement Equals(), GetHashCode(), and ToString().", Justification = "N/A")]
 [StructLayout(LayoutKind.Auto)]
 struct ExportInterval
 {

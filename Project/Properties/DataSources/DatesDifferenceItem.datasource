@@ -5,8 +5,8 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<GenericObjectDataSource DisplayName="DatesDiffItem" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Ordisoftware.Hebrew.Calendar.DatesDiffItem, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+<GenericObjectDataSource DisplayName="DatesDifferenceItem" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <TypeInfo>Ordisoftware.Hebrew.Calendar.DatesDifferenceItem, Ordisoftware.Hebrew.Calendar, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
    <TypeUISetting>
       <PropertyUISettings>
          <PropertyUISetting Name="DateStart">

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -47,7 +47,7 @@ public abstract class SQLiteDatabase : IDisposable
 
   protected bool AutoLoadAllAtOpen { get; init; } = true;
 
-  protected readonly List<object> ModifiedObjects = new();
+  protected readonly List<object> ModifiedObjects = [];
 
   public bool HasChanges => ModifiedObjects.Count > 0;
 
@@ -223,6 +223,8 @@ public abstract class SQLiteDatabase : IDisposable
   protected abstract void DoSaveAll();
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   protected void ProcessTableUpgrade<TRow, TRowTemp>(
     string nameTable,
     string nameTableTemp,

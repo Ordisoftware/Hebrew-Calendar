@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -14,7 +14,7 @@
 /// <edited> 2022-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
-partial class LunisolarDay
+public partial class LunisolarDayRow
 {
 
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
@@ -37,7 +37,7 @@ partial class LunisolarDay
     else
     if ( useRealDay )
     {
-      if ( day.MoonriseOccuring == MoonriseOccurring.BeforeSet || day.Moonset is null )
+      if ( day.MoonriseOccurring == MoonriseOccurring.BeforeSet || day.Moonset is null )
       {
         int index = Table.IndexOf(day) - 1;
         if ( index < 0 )
@@ -88,13 +88,13 @@ partial class LunisolarDay
       if ( isNotNullCurrentAndNext && rowNext.Date == DateTime.Today )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( isNotNullCurrentAndNext && MoonriseOccuring == MoonriseOccurring.AfterSet )
+      if ( isNotNullCurrentAndNext && MoonriseOccurring == MoonriseOccurring.AfterSet )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( isNotNullCurrentAndNext && MoonriseOccuring == MoonriseOccurring.NextDay )
+      if ( isNotNullCurrentAndNext && MoonriseOccurring == MoonriseOccurring.NextDay )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
       else
-      if ( isNotNullCurrentAndPrevious && MoonriseOccuring == MoonriseOccurring.BeforeSet )
+      if ( isNotNullCurrentAndPrevious && MoonriseOccurring == MoonriseOccurring.BeforeSet )
         times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, Moonset.Value.TimeOfDay, -1, 0, delta3);
       else
       if ( isNotNullPreviousAndNext )

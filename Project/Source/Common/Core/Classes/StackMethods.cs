@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -21,6 +21,7 @@ using MoreLinq;
 [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "N/A")]
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
 [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "N/A")]
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class StackMethods
 {
 
@@ -30,7 +31,7 @@ static public class StackMethods
   [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public T Next<T>(this T value, params T[] skip) where T : Enum
   {
-    var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
+    var result = Enum.GetValues(value.GetType()).Cast<T>().Concat([default])
                      .SkipWhile(e => !value.Equals(e))
                      .Skip(1)
                      .First();
@@ -44,7 +45,7 @@ static public class StackMethods
   [SuppressMessage("Minor Code Smell", "S3267:Loops should be simplified with \"LINQ\" expressions", Justification = "N/A")]
   static public T Previous<T>(this T value, params T[] skip) where T : Enum
   {
-    var result = Enum.GetValues(value.GetType()).Cast<T>().Concat(new[] { default(T) })
+    var result = Enum.GetValues(value.GetType()).Cast<T>().Concat([default])
                      .Reverse()
                      .SkipWhile(e => !value.Equals(e))
                      .Skip(1)
@@ -83,6 +84,7 @@ static public class StackMethods
   // From https://stackoverflow.com/questions/37155195/how-to-justify-text-in-a-label#47470191
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "N/A")]
   [SuppressMessage("Design", "GCop176:This anonymous method should not contain complex code, Instead call other focused methods to perform the complex logic", Justification = "N/A")]
+  [SuppressMessage("Major Bug", "S2583:Conditionally executed code should be reachable", Justification = "Analysis error")]
   static public string JustifyParagraph(string text, int width, Font font)
   {
     var result = new StringBuilder(text.Length + 20);
@@ -124,7 +126,7 @@ static public class StackMethods
     string Justify(string str)
     {
       const char SpaceChar = (char)0x200A;
-      List<string> WordsList = str.Split(' ').ToList();
+      List<string> WordsList = [.. str.Split(' ')];
       if ( WordsList.Capacity < 2 ) return str;
       int NumberOfWords = WordsList.Capacity - 1;
       int WordsWidth = TextRenderer.MeasureText(str.Replace(" ", string.Empty), font).Width;
@@ -169,17 +171,15 @@ static public class StackMethods
     var destRect = new Rectangle(0, 0, width, height);
     var destImage = new Bitmap(width, height);
     destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-    using ( var graphics = Graphics.FromImage(destImage) )
-    {
-      graphics.CompositingMode = CompositingMode.SourceCopy;
-      graphics.CompositingQuality = CompositingQuality.HighQuality;
-      graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-      graphics.SmoothingMode = SmoothingMode.HighQuality;
-      graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-      using var wrapMode = new ImageAttributes();
-      wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-      graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-    }
+    using var graphics = Graphics.FromImage(destImage);
+    graphics.CompositingMode = CompositingMode.SourceCopy;
+    graphics.CompositingQuality = CompositingQuality.HighQuality;
+    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+    graphics.SmoothingMode = SmoothingMode.HighQuality;
+    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+    using var wrapMode = new ImageAttributes();
+    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
     return destImage;
   }
 
@@ -414,16 +414,16 @@ static public class StackMethods
   #region WinTaskBar
 
   /// <summary>
-  /// Gets task bar coordonates.
+  /// Gets task bar coordinates.
   /// </summary>
   /// From https://stackoverflow.com/questions/3677182/taskbar-location
-  static public Rectangle GetTaskbarCoordonates()
+  static public Rectangle GetTaskbarCoordinates()
   {
     var data = new APPBARDATA();
     data.cbSize = System.Runtime.InteropServices.Marshal.SizeOf(data);
     IntPtr retval = SHAppBarMessage(ABM_GETTASKBARPOS, ref data);
     if ( retval == IntPtr.Zero )
-      throw new Win32Exception("Windows Taskbar Error in " + nameof(GetTaskbarCoordonates));
+      throw new Win32Exception("Windows TaskBar Error in " + nameof(GetTaskbarCoordinates));
     return new Rectangle(data.rc.left, data.rc.top, data.rc.right - data.rc.left, data.rc.bottom - data.rc.top);
   }
 
@@ -457,7 +457,7 @@ static public class StackMethods
   #region Stack Trace
 
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<string, string> AlreadyAcessedVarNames = new();
+  static private readonly Dictionary<string, string> AlreadyAcessedVarNames = [];
 
   // From https://stackoverflow.com/questions/72121/finding-the-variable-name-passed-to-a-function/21219225#21219225
   static public string NameOfFromStack(int level = 1)

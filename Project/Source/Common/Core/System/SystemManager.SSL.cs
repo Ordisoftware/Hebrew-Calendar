@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-09 </created>
-/// <edited> 2021-12 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -23,10 +23,10 @@ static public partial class SystemManager
   /// <summary>
   /// Checks the validity of the remote website SSL certificate.
   /// </summary>
-  static public void CheckServerCertificate(string url, bool useGitHib, bool isGitHubContent)
+  static public void CheckServerCertificate(string url, bool useGitHub, bool isGitHubContent)
   {
     var uri = new Uri(url);
-    var certificate = useGitHib
+    var certificate = useGitHub
       ? isGitHubContent
         ? GitHubUserContentSSLCertificate
           : GitHubSSLCertificate
@@ -65,17 +65,17 @@ static public partial class SystemManager
   /// <summary>
   /// Indicates the application website SSL certificate information.
   /// </summary>
-  static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
+  static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = [];
 
   /// <summary>
   /// Indicates the GitHub website SSL certificate information.
   /// </summary>
-  static private readonly NullSafeOfStringDictionary<string> GitHubSSLCertificate = new();
+  static private readonly NullSafeOfStringDictionary<string> GitHubSSLCertificate = [];
 
   /// <summary>
   /// Indicates the GitHub user content website SSL certificate information.
   /// </summary>
-  static private readonly NullSafeOfStringDictionary<string> GitHubUserContentSSLCertificate = new();
+  static private readonly NullSafeOfStringDictionary<string> GitHubUserContentSSLCertificate = [];
 
   /// <summary>
   /// Loads the SSL certificate.
@@ -84,11 +84,11 @@ static public partial class SystemManager
   {
     if ( Globals.IsVisualStudioDesigner ) return;
     if ( File.Exists(Globals.ApplicationHomeSSLFilePath) )
-      AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
+      AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, Globals.KeyValuePairSeparator);
     if ( File.Exists(Globals.GitHubSSLFilePath) )
-      GitHubSSLCertificate.LoadKeyValuePairs(Globals.GitHubSSLFilePath, "=>");
+      GitHubSSLCertificate.LoadKeyValuePairs(Globals.GitHubSSLFilePath, Globals.KeyValuePairSeparator);
     if ( File.Exists(Globals.GitHubUserContentSSLFilePath) )
-      GitHubUserContentSSLCertificate.LoadKeyValuePairs(Globals.GitHubUserContentSSLFilePath, "=>");
+      GitHubUserContentSSLCertificate.LoadKeyValuePairs(Globals.GitHubUserContentSSLFilePath, Globals.KeyValuePairSeparator);
   }
 
 }

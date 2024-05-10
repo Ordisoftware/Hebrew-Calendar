@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -100,21 +100,16 @@ static public partial class SystemManager
         if ( !osVersion.IsNullOrEmpty() )
           osVersion = $" v{osVersion}";
         //
-        string dotnet = get(() =>
+        string frameworkName = get(() =>
         {
-          var attributes = Assembly.GetExecutingAssembly().CustomAttributes;
-          var result = attributes.FirstOrDefault(a => a.AttributeType == typeof(TargetFrameworkAttribute));
-          return result is null
-            ? $".NET {SysTranslations.UndefinedSlot.GetLang()}"
-            : result.NamedArguments[0].TypedValue.Value.ToString();
+          return Assembly.GetExecutingAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkDisplayName
+            ?? $".NET {SysTranslations.UndefinedSlot.GetLang()}";
         });
         //
-        string osType = Environment.Is64BitOperatingSystem
-          ? "64-bits"
-          : "32-bits";
+        string osType = Environment.Is64BitOperatingSystem ? "64-bits" : "32-bits";
         //
         _Platform = $"{osName}{osDisplayVersion} {osType}{osVersion}{Globals.NL}" +
-                    $"{dotnet}{Globals.NL}" +
+                    $"{frameworkName}{Globals.NL}" +
                     $"CLR {Environment.Version}";
       }
       return _Platform;

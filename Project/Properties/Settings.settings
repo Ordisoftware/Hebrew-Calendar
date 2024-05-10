@@ -426,7 +426,7 @@
       <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="ManageDateBookmarksFormClientSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">264, 311</Value>
+      <Value Profile="(Default)">434, 361</Value>
     </Setting>
     <Setting Name="AutoOpenExportedFile" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -859,6 +859,30 @@
     </Setting>
     <Setting Name="DoubleClickOnVerseOpenDefaultReader" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NoticesFormLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">-1, -1</Value>
+    </Setting>
+    <Setting Name="NoticesFormSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">684, 461</Value>
+    </Setting>
+    <Setting Name="NoticesFormMainPageIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="NoticesFormFoodPageIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DateBookmarkDefaultTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">ControlText</Value>
+    </Setting>
+    <Setting Name="DateBookmarkMemoPrefix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">- </Value>
+    </Setting>
+    <Setting Name="DateBookmarkMemoSuffix" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BoookmarkDisplayLunarDate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -34,8 +34,8 @@ class ApplicationCommandLine : SystemCommandLine
   [Option("navigate", Required = false, HelpText = "Open navigation window.")]
   public bool OpenNavigation { get; set; }
 
-  [Option("diffdates", Required = false, HelpText = "Open diff dates calculator.")]
-  public bool OpenDiffDates { get; set; }
+  [Option("diffdates", Required = false, HelpText = "Open dates difference calculator.")]
+  public bool OpenDatesDifference { get; set; }
 
   [Option("celebrationverses", Required = false, HelpText = "Open celebration verses board.")]
   public bool OpenCelebrationVersesBoard { get; set; }

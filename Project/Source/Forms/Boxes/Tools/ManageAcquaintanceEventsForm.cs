@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2022-01 </created>
-/// <edited> 2022-01 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class ManageAcquaintanceEventsForm : Form
@@ -23,8 +23,7 @@ sealed partial class ManageAcquaintanceEventsForm : Form
 
   static public bool Run()
   {
-    bool trayEnabled = MainForm.Instance.MenuTray.Enabled;
-    MainForm.Instance.MenuTray.Enabled = false;
+    MainForm.Instance.FreezeUI();
     try
     {
       using var form = new ManageAcquaintanceEventsForm();
@@ -32,7 +31,7 @@ sealed partial class ManageAcquaintanceEventsForm : Form
     }
     finally
     {
-      MainForm.Instance.MenuTray.Enabled = trayEnabled;
+      MainForm.Instance.RestoreUI();
     }
   }
 
@@ -48,7 +47,7 @@ sealed partial class ManageAcquaintanceEventsForm : Form
 
   private void ManageDateBookmarks_Load(object sender, EventArgs e)
   {
-    this.CenterToFormElseMainFormElseScreen(DatesDiffCalculatorForm.Instance);
+    this.CheckLocationOrCenterToMainFormElseScreen();
     //ListBox.Items.Clear();
     //for ( int index = 0; index < Settings.DateBookmarksCount; index++ )
     //  ListBox.Items.Add(new DateItem { Date = Program.DateBookmarks[index] });

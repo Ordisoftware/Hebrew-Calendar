@@ -20,7 +20,10 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
+
+#pragma warning disable VSSpell001 // Spell Check
 namespace Infralution.Localization
+#pragma warning restore VSSpell001 // Spell Check
 {
   /// <summary>
   /// Defines a component for managing the User Interface culture for
@@ -37,6 +40,8 @@ namespace Infralution.Localization
   [SuppressMessage("Refactoring", "GCop647:Shorten this property by defining it as expression-bodied.", Justification = "<En attente>")]
   [SuppressMessage("Usage", "GCop536:Remove empty xml node documentation", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   public class CultureManager : Component
   {
 
@@ -74,7 +79,7 @@ namespace Infralution.Localization
     /// <summary>
     /// Properties to be excluded when applying culture resources
     /// </summary>
-    private List<string> _excludeProperties = new();
+    private List<string> _excludeProperties = [];
 
     /// <summary>
     /// The current auto scale factor
@@ -122,7 +127,6 @@ namespace Infralution.Localization
       }
     }
 
-
     /// <summary>
     /// If set to true then the <see cref="Thread.CurrentCulture"/> property is changed
     /// to match the current <see cref="UICulture"/>
@@ -160,7 +164,6 @@ namespace Infralution.Localization
         }
       }
     }
-
 
     #endregion
 
@@ -531,8 +534,6 @@ namespace Infralution.Localization
       control.Location = location;
     }
 
-
-
     /// <summary>
     /// Apply a resource for an extender provider to the given control
     /// </summary>
@@ -677,16 +678,16 @@ namespace Infralution.Localization
       // load the resources for this IComponent type into a sorted list
       //
       ComponentResourceManager resourceManager = new(componentType);
-      SortedList<string, object> resources = new();
+      SortedList<string, object> resources = [];
       LoadResources(resourceManager, culture, resources);
 
       // build a lookup table of components indexed by resource name
       //
-      Dictionary<string, IComponent> components = new();
+      Dictionary<string, IComponent> components = [];
 
       // build a lookup table of extender providers indexed by type
       //
-      Dictionary<Type, IExtenderProvider> extenderProviders = new();
+      Dictionary<Type, IExtenderProvider> extenderProviders = [];
 
       bool isVB = IsVBAssembly(componentType.Assembly);
 

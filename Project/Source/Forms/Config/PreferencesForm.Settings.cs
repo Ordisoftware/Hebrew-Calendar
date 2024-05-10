@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -38,14 +38,12 @@ partial class PreferencesForm
     long starttime = Settings.BenchmarkStartingApp;
     long loadtime = Settings.BenchmarkLoadData;
     int Shabat = EditShabatDay.SelectedIndex;
-    int bookmarksCount = Settings.DateBookmarksCount;
     var lastupdate = Settings.CheckUpdateLastDone;
     var lastvacuum = Settings.VacuumLastDone;
     Settings.Reset();
     Settings.SetFirstAndUpgradeFlagsOff();
     Settings.CheckUpdateLastDone = lastupdate;
     Settings.VacuumLastDone = lastvacuum;
-    Settings.DateBookmarksCount = bookmarksCount;
     Settings.GPSCountry = country;
     Settings.GPSCity = city;
     Settings.GPSLatitude = lat;

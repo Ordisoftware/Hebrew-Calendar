@@ -43,7 +43,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\Bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;USEPARASHOT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Debug\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
@@ -58,7 +58,7 @@
     <DebugType>portable</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;USEPARASHOT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Release\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
@@ -412,22 +412,43 @@
     <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.Redraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Source\Database\ApplicationDatabase.ImportFileBookmarks.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Sod.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Report.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Generate.Omer.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.cs" />
-    <Compile Include="Source\Database\LunisolarDay.Parashah.cs" />
-    <Compile Include="Source\Database\LunisolarDay.Helper.cs" />
-    <Compile Include="Source\Database\LunisolarDay.Times.cs" />
+    <Compile Include="Source\Database\DateBookmarkRow.Static.cs" />
+    <Compile Include="Source\Database\LunisolarDayRow.Parashah.cs" />
+    <Compile Include="Source\Database\LunisolarDayRow.Helper.cs" />
+    <Compile Include="Source\Database\LunisolarDayRow.Times.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.LunarDay.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.Parashah.cs" />
     <Compile Include="Source\Database\ApplicationDatabase.LoadBoard.cs" />
-    <Compile Include="Source\Database\LunisolarDay.cs" />
+    <Compile Include="Source\Database\LunisolarDayRow.cs" />
+    <Compile Include="Source\Database\DateBookmarkRow.cs" />
     <Compile Include="Source\Enums\MonthlyViewLayoutSection.cs" />
     <Compile Include="Source\Enums\CalendarSection.cs" />
     <Compile Include="Source\Common\Hebrew\Enums\TorahCelebrationDay.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\TorahCelebrationVerses.cs" />
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.ImportJSON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Import.CSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Import.TXT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\NoticesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\Boxes\Tools\NoticesForm.Designer.cs">
+      <DependentUpon>NoticesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\MainForm\UI\MainForm.SetView.Connectors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -515,7 +536,6 @@
     <Compile Include="Dependencies\DandTSoftware.Timers\MidnightTimer.cs" />
     <Compile Include="Dependencies\VietnameseCalendar\VietnameseCalendar.cs" />
     <Compile Include="Source\Entities\GPS.cs" />
-    <Compile Include="Source\Entities\DateBookmarks.cs" />
     <Compile Include="Source\Forms\Boxes\Select\SelectExportTargetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -534,7 +554,7 @@
     <Compile Include="Source\Forms\Boxes\Tools\ManageAcquaintanceEventsForm.Designer.cs">
       <DependentUpon>ManageAcquaintanceEventsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Save.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.Export.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\Config\PreferencesForm.Initialize.cs">
@@ -576,9 +596,6 @@
     <Compile Include="Source\Forms\MainForm\Export\MainForm.Export.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\MainForm\UI\MainForm.Bookmarks.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Source\Forms\MainForm\MainForm.Initialize.Menus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -599,14 +616,14 @@
     <Compile Include="Source\Entities\YearsIntervalItem.cs" />
     <Compile Include="Source\Entities\CalendarDateItem.cs" />
     <Compile Include="Source\Entities\CalendarDates.cs" />
-    <Compile Include="Source\Entities\DatesDiffItem.cs" />
+    <Compile Include="Source\Entities\DatesDifferenceItem.cs" />
     <Compile Include="Source\Entities\SuspendDelayItem.cs" />
     <Compile Include="Source\Entities\LunarMonthsFile.cs" />
-    <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.cs">
+    <Compile Include="Source\Forms\Boxes\Tools\DatesDifferenceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.Designer.cs">
-      <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\Boxes\Tools\DatesDifferenceForm.Designer.cs">
+      <DependentUpon>DatesDifferenceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\Boxes\Tools\ManageBookmarksForm.cs">
       <SubType>Form</SubType>
@@ -964,11 +981,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.fr.resx">
-      <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDifferenceForm.fr.resx">
+      <DependentUpon>DatesDifferenceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDiffCalculatorForm.resx">
-      <DependentUpon>DatesDiffCalculatorForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\DatesDifferenceForm.resx">
+      <DependentUpon>DatesDifferenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Boards\ParashotForm.fr.resx">
       <DependentUpon>ParashotForm.cs</DependentUpon>
@@ -1000,6 +1017,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Boxes\Select\SelectSoundForm.resx">
       <DependentUpon>SelectSoundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\NoticesForm.fr.resx">
+      <DependentUpon>NoticesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\Boxes\Tools\NoticesForm.resx">
+      <DependentUpon>NoticesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\Config\StatisticsForm.fr.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
@@ -1110,8 +1133,9 @@
     </None>
     <None Include=".editorconfig" />
     <None Include="Properties\DataSources\ApplicationStatistics.datasource" />
-    <None Include="Properties\DataSources\DatesDiffItem.datasource" />
-    <None Include="Properties\DataSources\LunisolarDay.datasource" />
+    <None Include="Properties\DataSources\DateBookmarkRow.datasource" />
+    <None Include="Properties\DataSources\DatesDifferenceItem.datasource" />
+    <None Include="Properties\DataSources\LunisolarDayRow.datasource" />
     <None Include="Properties\DataSources\Ordisoftware.Core.SystemStatistics.datasource" />
     <None Include="Properties\DataSources\Ordisoftware.Hebrew.Parashah.datasource" />
     <None Include="Properties\Settings.settings">
@@ -1154,7 +1178,7 @@
       <Version>2.9.1</Version>
     </PackageReference>
     <PackageReference Include="Enums.NET">
-      <Version>4.0.1</Version>
+      <Version>4.0.2</Version>
     </PackageReference>
     <PackageReference Include="Equin.ApplicationFramework.BindingListView">
       <Version>1.4.5222.35545</Version>
@@ -1173,17 +1197,20 @@
     <PackageReference Include="GregsStack.InputSimulatorStandard">
       <Version>1.3.5</Version>
     </PackageReference>
-    <PackageReference Include="Markdig">
-      <Version>0.31.0</Version>
-    </PackageReference>
     <PackageReference Include="morelinq">
-      <Version>3.4.2</Version>
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="NaturalStringExtensions">
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.3</Version>
     </PackageReference>
+    <PackageReference Include="Ookii.Dialogs.WinForms">
+      <Version>4.0.0</Version>
+    </PackageReference>
     <PackageReference Include="Serilog">
-      <Version>2.12.0</Version>
+      <Version>3.1.1</Version>
     </PackageReference>
     <PackageReference Include="Serilog.Sinks.File">
       <Version>5.0.0</Version>
@@ -1195,10 +1222,10 @@
       <Version>1.1.31</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
-      <Version>1.8.116</Version>
+      <Version>1.9.172</Version>
     </PackageReference>
     <PackageReference Include="SQLitePCLRaw.bundle_green">
-      <Version>2.1.4</Version>
+      <Version>2.1.8</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
       <Version>6.0.0</Version>
@@ -1209,22 +1236,22 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="IDisposableAnalyzers">
-      <Version>4.0.4</Version>
+      <Version>4.0.7</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Meziantou.Analyzer">
-      <Version>2.0.29</Version>
+      <Version>2.0.146</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
-      <Version>7.0.1</Version>
+      <Version>8.0.0</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers">
-      <Version>17.5.22</Version>
+      <Version>17.9.28</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -1234,7 +1261,6 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

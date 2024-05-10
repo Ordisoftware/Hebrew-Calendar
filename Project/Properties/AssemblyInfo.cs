@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ordisoftware")]
 [assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-calendar")]
-[assembly: AssemblyCopyright("Copyright 2016-2023 Olivier Rogier")]
+[assembly: AssemblyCopyright("Copyright 2016-2024 Olivier Rogier")]
 [assembly: AssemblyTrademark("www.ordisoftware.com")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: NeutralResourcesLanguage("en")]
-[assembly: AssemblyVersion("10.4.0.0")]
-[assembly: AssemblyFileVersion("10.4.0.0")]
+[assembly: AssemblyVersion("11.0.0.0")]
+[assembly: AssemblyFileVersion("11.0.0.0")]

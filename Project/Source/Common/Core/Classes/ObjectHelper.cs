@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -68,7 +68,7 @@ static public partial class ObjectHelper
   /// </returns>
   static public bool CheckIfOneIsTrueAndSomeOthersNot(this bool first, params bool[] others)
   {
-    return CheckIfOneIsTrueAndSomeOthersNot(( new bool[] { first } ).Concat(others).ToArray());
+    return CheckIfOneIsTrueAndSomeOthersNot([.. ( new bool[] { first } ), .. others]);
   }
 
   /// <summary>

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -29,8 +29,10 @@ static public partial class Globals
   static public readonly string NL4 = NL3 + NL;
   static public readonly string NL5 = NL4 + NL;
 
+#pragma warning disable VSSpell001 // Spell Check
   public const int WS_EX_COMPOSITED = 0x02000000;
   public const int WS_CLIPCHILDREN = ~0x02000000;
+#pragma warning restore VSSpell001 // Spell Check
 
   public const int MaxErrorsAllowed = 20;
   public const int MaxFilesAllowed = 20;
@@ -62,6 +64,11 @@ static public partial class Globals
   /// Indicates CSV separator.
   /// </summary>
   static public char CSVSeparator { get; set; } = ';';
+
+  /// <summary>
+  /// Indicates CSV separator.
+  /// </summary>
+  static public string KeyValuePairSeparator { get; set; } = "=>";
 
   /// <summary>
   /// Indicates if SSL certificate is preloaded.

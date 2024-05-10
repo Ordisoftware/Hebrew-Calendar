@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,9 +11,10 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-04 </edited>
 namespace Ordisoftware.Hebrew;
 
+using System.Reflection;
 using EllisWeb.Gematria;
 
 /// <summary>
@@ -30,64 +31,206 @@ static public class HebrewAlphabet
   /// Indicates letters keyboard codes for Hebrew font.
   /// </summary>
   static public readonly string[] KeyCodes =
-  {
-    "a", "b", "g", "d", "h", "v", "z", "x", "u", "y", "k",
-    "l", "m", "n", "c", "i", "p", "j", "q", "r", ">", "t"
-  };
+  [
+    "a",
+    "b",
+    "g",
+    "d",
+    "h",
+    "v",
+    "z",
+    "x",
+    "u",
+    "y",
+    "k",
+    "l",
+    "m",
+    "n",
+    "c",
+    "i",
+    "p",
+    "j",
+    "q",
+    "r",
+    ">",
+    "t"
+  ];
 
   /// <summary>
   /// Indicates letters simple values.
   /// </summary>
   static public readonly int[] ValuesSimple =
-  {
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20,
-    30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400
-  };
+  [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    200,
+    300,
+    400
+  ];
 
   /// <summary>
   /// Indicates letters full values.
   /// </summary>
   static public readonly int[] ValuesFull =
-  {
-    111, 412, 83, 434, 6, 12, 67, 418, 419, 20, 100,
-    74, 90, 106, 120, 130, 81, 104, 186, 510, 360, 406
-  };
+  [
+    111,
+    412,
+    83,
+    434,
+    6,
+    12,
+    67,
+    418,
+    419,
+    20,
+    100,
+    74,
+    90,
+    106,
+    120,
+    130,
+    81,
+    104,
+    186,
+    510,
+    360,
+    406
+  ];
 
   /// <summary>
   /// Indicates letters names in Unicode chars.
   /// </summary>
   static public readonly string[] Unicode =
-  {
+  [
     "",
-    "א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל",
-    "מ", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ק", "ר", "ש", "ת",
-  };
+    "א",
+    "ב",
+    "ג",
+    "ד",
+    "ה",
+    "ו",
+    "ז",
+    "ח",
+    "ט",
+    "י",
+    "כ",
+    "ל",
+    "מ",
+    "נ",
+    "ן",
+    "ס",
+    "ע",
+    "פ",
+    "ף",
+    "צ",
+    "ק",
+    "ר",
+    "ש",
+    "ת",
+  ];
 
   /// <summary>
   /// Indicates letters names in Hebrew font chars.
   /// </summary>
   static public readonly string[] Hebrew =
-  {
-    "pla", "tyb", "lmyg", "tld", "ah", "vv", "]yz", "tx", "tu", "dvy", "pk",
-    "dml", ",m", "]vn", "!mc", "]yi", "hp", "ydj", "pvq", ">r", "]y>", "vt",
-  };
+  [
+    "pla",
+    "tyb",
+    "lmyg",
+    "tld",
+    "ah",
+    "vv",
+    "]yz",
+    "tx",
+    "tu",
+    "dvy",
+    "pk",
+    "dml",
+    ",m",
+    "]vn",
+    "!mc",
+    "]yi",
+    "hp",
+    "ydj",
+    "pvq",
+    ">r",
+    "]y>",
+    "vt",
+  ];
 
   /// <summary>
   /// Indicates letters transcriptions in latin chars.
   /// </summary>
   static public readonly NullSafeDictionary<Language, string[]> Transcriptions = new()
   {
-    [Language.EN] = new string[]
-    {
-      "Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "'Het", "T'et", "Yod", "Kaf",
-      "Lamed", "Mem", "Nun", "Samek", "H'ayin", "Pay", "Tsadi", "Qof", "Resh", "Shin", "Tav"
-    },
+    [Language.EN] =
+    [
+      "Alef",
+      "Bet",
+      "Gimel",
+      "Dalet",
+      "He",
+      "Vav",
+      "Zayin",
+      "'Het",
+      "T'et",
+      "Yod",
+      "Kaf",
+      "Lamed",
+      "Mem",
+      "Nun",
+      "Samek",
+      "H'ayin",
+      "Pay",
+      "Tsadi",
+      "Qof",
+      "Resh",
+      "Shin",
+      "Tav"
+    ],
 
-    [Language.FR] = new string[]
-    {
-      "Alef", "Bet", "Guimel", "Dalet", "Hé", "Vav", "Zayin", "'Het", "T'et", "Youd", "Kaf",
-      "Lamed", "Mem", "Noun", "Samek", "H'ayin", "Pé", "Tsadi", "Qouf", "Resh", "Shin", "Tav"
-    }
+    [Language.FR] =
+    [
+      "Alef",
+      "Bet",
+      "Guimel",
+      "Dalet",
+      "Hé",
+      "Vav",
+      "Zayin",
+      "'Het",
+      "T'et",
+      "Youd",
+      "Kaf",
+      "Lamed",
+      "Mem",
+      "Noun",
+      "Samek",
+      "H'ayin",
+      "Pé",
+      "Tsadi",
+      "Qouf",
+      "Resh",
+      "Shin",
+      "Tav"
+    ]
   };
 
   /// <summary>
@@ -112,25 +255,25 @@ static public class HebrewAlphabet
   /// Indicates final letters disabled keyboard codes for Hebrew font.
   /// </summary>
   static private readonly char[][] FinalDisable =
-  {
-    new char[] { '!', 'k' },
-    new char[] { ',', 'm' },
-    new char[] { ']', 'n' },
-    new char[] { '[', 'p' },
-    new char[] { '/', 'j' }
-  };
+  [
+    ['!', 'k'],
+    [',', 'm'],
+    [']', 'n'],
+    ['[', 'p'],
+    ['/', 'j']
+  ];
 
   /// <summary>
   /// Indicates final letters enabled keyboard codes for Hebrew font.
   /// </summary>
   static private readonly char[][] FinalEnable =
-  {
-    new char[] { 'k', '!' },
-    new char[] { 'm', ',' },
-    new char[] { 'n', ']' },
-    new char[] { 'p', '[' },
-    new char[] { 'j', '/' }
-  };
+  [
+    ['k', '!'],
+    ['m', ','],
+    ['n', ']'],
+    ['p', '['],
+    ['j', '/']
+  ];
 
   /// <summary>
   /// Indicate options for the gematria calculator.
@@ -148,7 +291,6 @@ static public class HebrewAlphabet
   /// <summary>
   /// Converts an integer to its representation using Hebrew letters.
   /// </summary>
-  /// <param name="value"></param>
   static public string IntToUnicode(int value)
   {
     return Calculator.ConvertToGematriaNumericString(value, GematriaOptions);
@@ -246,10 +388,11 @@ static public class HebrewAlphabet
   static public string ToHebrewFont(string unicode)
   {
     if ( unicode.IsNullOrEmpty() ) return string.Empty;
-    string result = string.Empty;
+    int index = unicode.Length;
+    var letters = new char[index];
     foreach ( char c in unicode.RemoveDiacritics().ToLower() )
-      result = UnicodeToHebrew(c) + result;
-    return result;
+      letters[--index] = UnicodeToHebrew(c);
+    return new string(letters);
   }
 
   /// <summary>
@@ -259,10 +402,11 @@ static public class HebrewAlphabet
   static public string ToUnicodeChars(string str)
   {
     if ( str.IsNullOrEmpty() ) return string.Empty;
-    string result = string.Empty;
+    int index = str.Length;
+    var letters = new char[index];
     foreach ( char c in str.RemoveDiacritics().ToLower() )
-      result = HebrewToUnicode(c) + result;
-    return result;
+      letters[--index] = HebrewToUnicode(c);
+    return new string(letters);
   }
 
   /// <summary>

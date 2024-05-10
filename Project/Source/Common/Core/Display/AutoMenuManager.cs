@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -19,9 +19,9 @@ class AutoMenuManager
 
   static public string ExitMessage { get; set; } = "Goodbye.";
 
-  static public int SeperatorLength { get; set; } = 100;
+  static public int SeparatorLength { get; set; } = 100;
 
-  static public string Separator => new('-', SeperatorLength);
+  static public string Separator => new('-', SeparatorLength);
 
   public AutoMenu Root { get; init; }
 

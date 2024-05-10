@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using CodeProjectCalendar.NET;
@@ -33,9 +33,15 @@ public partial class MainForm
 
   static private readonly Properties.Settings Settings = Program.Settings;
 
-  static private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+  static private HebrewDatabase HebrewDatabase => HebrewDatabase.Instance;
 
-  static internal List<Parashah> UserParashot { get; set; } = new List<Parashah>();
+  static private ApplicationDatabase DBApp => ApplicationDatabase.Instance;
+
+  static private List<LunisolarDayRow> LunisolarDays => DBApp.LunisolarDays;
+
+  static private List<DateBookmarkRow> Bookmarks => DBApp.DateBookmarks;
+
+  static internal List<Parashah> UserParashot { get; set; } = [];
 
   static internal Dictionary<DateTime, CustomEvent[]> CalendarEventsGrouped { get; private set; }
 
@@ -64,7 +70,7 @@ public partial class MainForm
   public int YearsInterval { get; private set; }
   public int[] YearsIntervalArray { get; private set; }
 
-  public LunisolarDay CurrentDay { get; private set; }
+  public LunisolarDayRow CurrentDay { get; private set; }
 
   public int CurrentDayYear => CurrentDay?.Date.Year ?? 0;
 
@@ -81,19 +87,19 @@ public partial class MainForm
     }
   }
 
-  private LunisolarDay ContextMenuDayCurrentEvent;
+  internal LunisolarDayRow ContextMenuDayCurrentEvent { get; private set; }
 
-  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = new();
+  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindList = [];
 
-  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = new();
+  private readonly Dictionary<TorahCelebrationDay, bool> TorahEventRemindDayList = [];
 
-  internal readonly NullSafeList<ReminderForm> RemindCelebrationForms = new();
+  internal readonly NullSafeList<ReminderForm> RemindCelebrationForms = [];
 
-  private readonly List<DateTime> RemindCelebrationDates = new();
+  private readonly List<DateTime> RemindCelebrationDates = [];
 
-  private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded = new();
+  private readonly Dictionary<TorahCelebrationDay, DateTime?> LastCelebrationReminded = [];
 
-  internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms = new();
+  internal readonly Dictionary<TorahCelebrationDay, ReminderForm> RemindCelebrationDayForms = [];
 
   private DateTime? LastShabatReminded;
 
@@ -103,19 +109,21 @@ public partial class MainForm
   [SuppressMessage("Performance", "U2U1210:Do not materialize an IEnumerable<T> unnecessarily", Justification = "N/A")]
   public void ClearLists()
   {
+    if ( Globals.IsExiting ) return;
     SystemManager.TryCatchManage(() =>
     {
       Text = Globals.AssemblyTitle;
       TrayIcon.Icon = TrayIcons[!IsReminderPaused][Settings.TrayIconUseSpecialDayIcon && IsSpecialDay];
       Application.OpenForms.GetAll(f => f is ManageBookmarksForm)?.ToList().ForEach(f => f.Close());
+      NoticesForm.Instance?.Close();
       ParashotForm.Instance?.Close();
       CelebrationsBoardForm.Instance?.Close();
       CelebrationVersesBoardForm.Instance?.Close();
       NewMoonsBoardForm.Instance?.Close();
       NextCelebrationsForm.Instance?.Hide();
-      TorahEventRemindList.Clear();
-      TorahEventRemindDayList.Clear();
-      RemindCelebrationDates.Clear();
+      TorahEventRemindList?.Clear();
+      TorahEventRemindDayList?.Clear();
+      RemindCelebrationDates?.Clear();
       LastShabatReminded = null;
       ShabatForm?.Close();
       LockSessionForm.Instance?.Close();

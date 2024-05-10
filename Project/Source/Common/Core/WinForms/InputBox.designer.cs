@@ -50,9 +50,9 @@ namespace Ordisoftware.Core
       // 
       // ActionOK
       // 
-      this.ActionOK.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right ) ) );
+      this.ActionOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.ActionOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-      this.ActionOK.Location = new System.Drawing.Point(79, 5);
+      this.ActionOK.Location = new System.Drawing.Point(119, 5);
       this.ActionOK.Name = "ActionOK";
       this.ActionOK.Size = new System.Drawing.Size(75, 23);
       this.ActionOK.TabIndex = 0;
@@ -62,9 +62,9 @@ namespace Ordisoftware.Core
       // 
       // ActionCancel
       // 
-      this.ActionCancel.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right ) ) );
+      this.ActionCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.ActionCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.ActionCancel.Location = new System.Drawing.Point(160, 5);
+      this.ActionCancel.Location = new System.Drawing.Point(200, 5);
       this.ActionCancel.Name = "ActionCancel";
       this.ActionCancel.Size = new System.Drawing.Size(75, 23);
       this.ActionCancel.TabIndex = 1;
@@ -79,16 +79,16 @@ namespace Ordisoftware.Core
       this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.panel1.Location = new System.Drawing.Point(0, 63);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(244, 35);
+      this.panel1.Size = new System.Drawing.Size(284, 35);
       this.panel1.TabIndex = 1;
       // 
       // TextBox
       // 
-      this.TextBox.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
-            | System.Windows.Forms.AnchorStyles.Right ) ) );
+      this.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.TextBox.Location = new System.Drawing.Point(12, 29);
       this.TextBox.Name = "TextBox";
-      this.TextBox.Size = new System.Drawing.Size(220, 20);
+      this.TextBox.Size = new System.Drawing.Size(260, 20);
       this.TextBox.TabIndex = 0;
       // 
       // Label
@@ -106,7 +106,7 @@ namespace Ordisoftware.Core
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.ActionCancel;
-      this.ClientSize = new System.Drawing.Size(244, 98);
+      this.ClientSize = new System.Drawing.Size(284, 98);
       this.Controls.Add(this.Label);
       this.Controls.Add(this.TextBox);
       this.Controls.Add(this.panel1);

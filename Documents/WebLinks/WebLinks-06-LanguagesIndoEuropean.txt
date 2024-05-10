@@ -46,6 +46,9 @@ URL = https://en.wikipedia.org/wiki/Greek_language
 Name = (FR) Grec @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Grec
 
+Name = (EN) Kata Biblon Greek Lexicon @ katabiblon.com
+URL = https://lexicon.katabiblon.com
+
 -
 
 Name = (FR) Précis de grammaire grecque @ bcs.fltr.ucl.ac.be

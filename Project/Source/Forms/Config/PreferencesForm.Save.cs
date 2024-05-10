@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using Base.Hotkeys;
@@ -31,6 +31,7 @@ partial class PreferencesForm
     Settings.MonthViewNoDaysBackColor = EditMonthViewNoDaysBackColor.BackColor;
     Settings.MonthViewBackColor = EditMonthViewBackColor.BackColor;
     Settings.MonthViewTextColor = EditMonthViewTextColor.BackColor;
+    Settings.DateBookmarkDefaultTextColor = EditDateBookmarkDefaultTextColor.BackColor;
     Settings.DebuggerEnabled = EditDebuggerEnabled.Checked;
     Settings.VacuumAtStartup = EditVacuumAtStartup.Checked;
     Settings.VacuumAtStartupDaysInterval = (int)EditVacuumAtStartupInterval.Value;
@@ -128,7 +129,6 @@ partial class PreferencesForm
     Settings.WeeklyParashahShowAtStartup = EditWeeklyParashahShowAtStartup.Checked;
     Settings.WeeklyParashahShowAtNewWeek = EditWeeklyParashahShowAtNewWeek.Checked;
     Settings.CustomWebSearch = EditCustomWebSearch.Text;
-    Settings.AutoSortBookmarks = EditAutoSortBookmarks.Checked;
     Settings.UseTwoDaysForLastPessahDayOutside = EditUseTwoDaysForLastPessahDayOutside.Checked;
     Settings.BoxesRetakeFocusAfterDateClick = EditReminderBoxRetakeFocusAfterDateClick.Checked;
     Settings.CalendarHebrewDateSingleLine = EditCalendarHebrewDateSingleLine.Checked;
@@ -156,6 +156,9 @@ partial class PreferencesForm
     Settings.HideLuminarySigns = EditHideLuminarySigns.Checked;
     Settings.PrintImageCenterOnPage = EditPrintImageCenterOnPage.Checked;
     Settings.OpenVerseOnlineURL = EditOpenVerseOnlineURL.Text;
+    Settings.DateBookmarkMemoPrefix = EditBookmarkMemoPrefix.Text;
+    Settings.DateBookmarkMemoSuffix = EditBookmarkMemoSuffix.Text;
+    Settings.BoookmarkDisplayLunarDate = EditBoookmarkDisplayLunarDate.Checked;
     // Moon/Sun/Sod
     Settings.UseSodHaibour = SelectUseSodHaibour.Checked;
     Settings.TorahEventsCountAsMoon = SelectOmerMoon.Checked;
@@ -232,8 +235,15 @@ partial class PreferencesForm
     else
     if ( SelectCalendarDoubleClickActionContextMenu.Checked )
       Settings.CalendarDoubleClickAction = CalendarDoubleClickAction.ContextMenu;
-    // Double buffering
-    DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
+    // Weather provider
+    if ( SelectWeatherOnlineAccuWeatherDotCom.Checked )
+      Settings.WeatherOnlineProvider = WeatherProvider.AccuWeatherDotCom;
+    if ( SelectWeatherOnlineMeteoblueDotCom.Checked )
+      Settings.WeatherOnlineProvider = WeatherProvider.MeteoblueDotCom;
+    if ( SelectWeatherOnlineMicrosoftNetworkDotCom.Checked )
+      Settings.WeatherOnlineProvider = WeatherProvider.MicrosoftNetworkDotCom;
+    if ( SelectWeatherOnlineWeatherDotCom.Checked )
+      Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
   }
 
 }

@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
+#pragma warning disable VSSpell001 // Spell Check
 namespace MostafaKaisoun
 {
 
@@ -53,6 +54,7 @@ namespace MostafaKaisoun
       //Calculate the approximate phase of the moon
       ip = ( j + 4.867 ) / 29.53059;
       ip -= Math.Floor(ip);
+      //
       //After several trials I've seen to add the following lines, 
       //which gave the result was not bad
       //if ( ip < 0.5 )
@@ -61,23 +63,16 @@ namespace MostafaKaisoun
       //  ag = ip * 29.53059 - 29.53059 / 2;
       //// Moon's age in days
       //ag = Math.Floor(ag) + 1;
-
+      //
       int Xpos, Ypos, Rpos;
       int Xpos1, Xpos2;
       double Phase = ip;
-
-      // Width of 'ImageToDraw' Object = Width of 'PicMoon' control
       int PageWidth = width;
-      // Height of 'ImageToDraw' Object = Height of 'PicMoon' control
       int PageHeight = height;
-      // Initiate 'ImageToDraw' Object with size = size of control 'PicMoon' control
       Bitmap ImageToDraw = new(PageWidth, PageHeight);
-      // Create graphics object for alteration.
-      Graphics newGraphics = Graphics.FromImage(ImageToDraw);
-
-      Pen PenB = new(Color.Black); // For darkness part of the moon
-      Pen PenW = new(Color.White); // For the lighted part of the moon
-
+      using Graphics newGraphics = Graphics.FromImage(ImageToDraw);
+      using Pen PenB = new(Color.Black); // For darkness part of the moon
+      using Pen PenW = new(Color.White); // For the lighted part of the moon
       for ( Ypos = 0; Ypos <= 45; Ypos++ )
       {
         Xpos = (int)( Math.Sqrt(45 * 45 - Ypos * Ypos) );
@@ -108,14 +103,10 @@ namespace MostafaKaisoun
         newGraphics.DrawLine(PenW, pW1, pW2);
         newGraphics.DrawLine(PenW, pW3, pW4);
       }
-      // Display the bitmap in the picture box.
-      // Release graphics object
-      PenB.Dispose();
-      PenW.Dispose();
-      newGraphics.Dispose();
       return ImageToDraw;
     }
 
   }
 
 }
+#pragma warning restore VSSpell001 // Spell Check

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -17,10 +17,11 @@ namespace Ordisoftware.Hebrew;
 static public partial class OnlineParashot
 {
 
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> AishFR = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "128670448",
       "128670513",
       "128670563",
@@ -33,9 +34,9 @@ static public partial class OnlineParashot
       "133863073",
       "133863083",
       "133863113"
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "135569193",
       "136498813",
       "137081823",
@@ -47,9 +48,9 @@ static public partial class OnlineParashot
       "137165523",
       "137165603",
       "137165673"
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "139626293",
       "139626323",
       "139626353",
@@ -60,9 +61,9 @@ static public partial class OnlineParashot
       "139626423",
       "139626463",
       "139626523"
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "124262214",
       "124262149",
       "124262074",
@@ -73,9 +74,9 @@ static public partial class OnlineParashot
       "125473398",
       "125806033",
       "125806228"
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "126480063",
       "127515668",
       "127991783",
@@ -87,7 +88,7 @@ static public partial class OnlineParashot
       "128670283",
       "130550483",
       "128670388"
-    }
+    ]
   };
 
 }

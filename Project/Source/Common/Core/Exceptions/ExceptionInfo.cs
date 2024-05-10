@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,13 +11,14 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2007-05 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
 /// Provides exception information.
 /// </summary>
 [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "To do")]
+[SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
 public class ExceptionInfo
 {
 
@@ -134,12 +135,12 @@ public class ExceptionInfo
   /// <summary>
   /// Indicates the exception stack list.
   /// </summary>
-  public List<string> ExceptionStackList { get; } = new List<string>();
+  public List<string> ExceptionStackList { get; } = [];
 
   /// <summary>
   /// Indicates the thread stack list.
   /// </summary>
-  public List<string> ThreadStackList { get; } = new List<string>();
+  public List<string> ThreadStackList { get; } = [];
 
   /// <summary>
   /// Indicates caller name.
@@ -205,10 +206,10 @@ public class ExceptionInfo
       {
         var method = frame.GetMethod();
         partMethod = method.DeclaringType.FullName;
-        Type[] list = { typeof(DebugManager), typeof(ExceptionInfo) };
+        Type[] list = [typeof(DebugManager), typeof(ExceptionInfo)];
         if ( list.Contains(method.DeclaringType) )
           continue;
-        string[] list2 = { nameof(SystemManager.TryCatchManage), nameof(SystemManager.TryCatch) };
+        string[] list2 = [nameof(SystemManager.TryCatchManage), nameof(SystemManager.TryCatch)];
         if ( method.DeclaringType == typeof(SystemManager) && list2.Contains(method.Name) )
           continue;
         partFileName = Path.GetFileName(frame.GetFileName());
@@ -267,35 +268,44 @@ public class ExceptionInfo
         Message = "Relayed Exception.";
       }
 
-      FullText = $"Exception: {TypeText}{Globals.NL}" +
-                 $"Module: {ModuleName}{Globals.NL}" +
-                 $"Thread: {ThreadName}{Globals.NL}" +
-                 $"Message: {Globals.NL}" +
-                 Message.Indent(DebugManager.MarginSize);
+      FullText = $"""
+                  Exception: {TypeText}
+                  Module: {ModuleName}
+                  Thread: {ThreadName}
+                  Message:
+                  {Message.Indent(DebugManager.MarginSize)};
+                  """;
 
       try
       {
         if ( DebugManager.UseStack )
-          FullText += Globals.NL +
-                      $"Stack Exception: {Globals.NL}" +
-                      $"{ExceptionStackList.AsMultiLine().Indent(DebugManager.MarginSize)}{Globals.NL}" +
-                      $"Stack Thread: {Globals.NL}" +
-                      ThreadStackList.AsMultiLine().Indent(DebugManager.MarginSize);
+          FullText += $"""
+                        
+                       Stack Exception:
+                       {ExceptionStackList.AsMultiLine().Indent(DebugManager.MarginSize)}
+                       Stack Thread:
+                       {ThreadStackList.AsMultiLine().Indent(DebugManager.MarginSize)}
+                       """;
       }
       catch
       {
       }
 
-      ReadableText = $"{Message}{Globals.NL2}" +
-                     $"Type: {TypeText}{Globals.NL}" +
-                     $"Module: {ModuleName}{Globals.NL}" +
-                     $"Thread: {ThreadName}";
+      ReadableText = $"""
+                      {Message}
+
+                      Type: {TypeText}
+                      Module: {ModuleName}
+                      Thread: {ThreadName}
+                      """;
 
       if ( DebugManager.UseStack )
-        ReadableText += Globals.NL +
-                        $"File: {FileName}{Globals.NL}" +
-                        $"Method: {Namespace}.{ClassName}.{MethodName}{Globals.NL}" +
-                        $"Line: {LineNumber}";
+        ReadableText += $"""
+                          
+                         File: {FileName}
+                         Method: {Namespace}.{ClassName}.{MethodName}
+                         Line: {LineNumber}
+                         """;
 
       SingleLineText = ReadableText.Replace(Globals.NL2, " | ")
                                    .Replace(Globals.NL, " | ")
@@ -325,10 +335,15 @@ public class ExceptionInfo
       {
         ExtractStack(false);
         ExtractStack(true);
-        StackText = "---------- EXCEPTION STACK ----------" + Globals.NL2 +
-                    ExceptionStackText + Globals.NL2 +
-                    "---------- THREAD STACK -------------" + Globals.NL2 +
-                    ThreadStackText;
+        StackText = $"""
+                     ---------- EXCEPTION STACK ----------
+                     
+                     {ExceptionStackText}
+                    
+                     ---------- THREAD STACK -------------
+
+                     {ThreadStackText}
+                     """;
       }
       finally
       {

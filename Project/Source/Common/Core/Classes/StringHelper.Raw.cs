@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -44,9 +44,9 @@ static public partial class StringHelper
   /// True if it succeeds, false if it fails.
   /// </returns>
   /// <param name="str">The string to act on.</param>
-  /// <param name="substr">The substring.</param>
-  static public int RawIndexOf(this string str, string substr)
-    => RawComparer.IndexOf(str, substr, RawContainsFlags);
+  /// <param name="subStr">The substring.</param>
+  static public int RawIndexOf(this string str, string subStr)
+    => RawComparer.IndexOf(str, subStr, RawContainsFlags);
 
   /// <summary>
   /// Indicates if a string contains a substring ignoring case, diacritics and symbols.
@@ -55,9 +55,9 @@ static public partial class StringHelper
   /// True if it succeeds, false if it fails.
   /// </returns>
   /// <param name="str">The string to act on.</param>
-  /// <param name="substr">The substring.</param>
-  static public bool RawContains(this string str, string substr)
-    => str.RawIndexOf(substr) >= 0;
+  /// <param name="subStr">The substring.</param>
+  static public bool RawContains(this string str, string subStr)
+    => str.RawIndexOf(subStr) >= 0;
 
   /// <summary>
   /// Indicates if a string starts with a substring ignoring case, diacritics and symbols.
@@ -66,8 +66,8 @@ static public partial class StringHelper
   /// True if it succeeds, false if it fails.
   /// </returns>
   /// <param name="str">The string to act on.</param>
-  /// <param name="substr">The substring.</param>
-  static public bool RawStartsWith(this string str, string substr)
-    => str.RawIndexOf(substr) == 0;
+  /// <param name="subStr">The substring.</param>
+  static public bool RawStartsWith(this string str, string subStr)
+    => str.RawIndexOf(subStr) == 0;
 
 }

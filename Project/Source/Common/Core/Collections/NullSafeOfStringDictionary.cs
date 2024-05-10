@@ -1,7 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
-/// <license>
+﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -72,27 +71,38 @@ public class NullSafeOfStringDictionary<T> : Dictionary<T, string>
 static class NullSafeOfStringDictionaryHelper
 {
 
-  static public bool LoadKeyValuePairs(
-    this NullSafeOfStringDictionary<string> list,
-    string filePath,
-    string separator,
-    bool showError = true)
+  static public bool LoadKeyValuePairs(this NullSafeOfStringDictionary<string> collection,
+                                       string filePath,
+                                       string separator,
+                                       bool showError = true)
   {
     try
     {
-      list.Clear();
+      collection.Clear();
       foreach ( string line in File.ReadAllLines(filePath) )
         if ( !line.IsCommented() )
         {
           var parts = line.SplitNoEmptyLines(separator);
           if ( parts.Length == 1 )
-            list.Add(parts[0].Trim(), string.Empty);
+          {
+            string key = parts[0].Trim();
+            if ( !collection.ContainsKey(key) )
+              collection.Add(key, string.Empty);
+          }
           else
           if ( parts.Length == 2 )
-            list.Add(parts[0].Trim(), parts[1].Trim());
+          {
+            string key = parts[0].Trim();
+            if ( !collection.ContainsKey(key) )
+              collection.Add(key, parts[1].Trim());
+          }
           else
           if ( parts.Length > 2 )
-            list.Add(parts[0].Trim(), parts.Skip(1).Join(separator));
+          {
+            string key = parts[0].Trim();
+            if ( !collection.ContainsKey(key) )
+              collection.Add(key, parts.Skip(1).Join(separator));
+          }
         }
       return true;
     }
@@ -116,7 +126,7 @@ static class NullSafeOfStringDictionaryHelper
     }
   }
 
-  static public bool SaveKeyValuePairs(this NullSafeOfStringDictionary<string> list,
+  static public bool SaveKeyValuePairs(this NullSafeOfStringDictionary<string> collection,
                                        string filePath,
                                        string separator,
                                        bool showError = true)
@@ -124,7 +134,7 @@ static class NullSafeOfStringDictionaryHelper
     using var stream = File.CreateText(filePath);
     try
     {
-      foreach ( var item in list )
+      foreach ( var item in collection )
         if ( item.Key.IsCommented() )
           stream.WriteLine(item.Key);
         else

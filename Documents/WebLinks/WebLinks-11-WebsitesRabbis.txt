@@ -51,6 +51,12 @@ URL = https://www.theyeshiva.net
 Name = (EN) Rabbi Adin Steinsaltz
 URL = https://steinsaltz.org
 
+Name = (EN) Steinsaltz Center
+URL = https://steinsaltz-center.org/portal/library
+
+Name = (IW) Steinsaltz Center
+URL = https://steinsaltz-center.org/he/portal/library
+
 -
 
 Name = (EN) Rabbi Itshak Ginsburgh

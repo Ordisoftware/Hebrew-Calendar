@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -95,9 +95,9 @@ static public partial class DebugManager
   static public bool UserCanTerminate { get; set; } = true;
 
   /// <summary>
-  /// Indicates if a specialized form is used to show Exception.
+  /// Indicates default showing exception mode
   /// </summary>
-  static public ShowExceptionMode DeaultShowExceptionMode { get; set; }
+  static public ShowExceptionMode DefaultShowExceptionMode { get; set; }
     = ShowExceptionMode.Advanced;
 
   /// <summary>
@@ -114,7 +114,13 @@ static public partial class DebugManager
       if ( value )
       {
         if ( Directory.Exists(Globals.OldTraceFolderPath) )
-          try { Directory.Delete(Globals.OldTraceFolderPath, true); } catch { }
+          try
+          {
+            Directory.Delete(Globals.OldTraceFolderPath, true);
+          }
+          catch
+          {
+          }
         ClearTraces(true, false);
       }
       else
@@ -125,7 +131,13 @@ static public partial class DebugManager
       }
       _TraceEnabled = value;
       Enabled = isEnabled;
-      try { TraceEnabledChanged?.Invoke(value); } catch { }
+      try
+      {
+        TraceEnabledChanged?.Invoke(value);
+      }
+      catch
+      {
+      }
     }
   }
   static private bool _TraceEnabled = false;
@@ -202,7 +214,7 @@ static public partial class DebugManager
   /// <summary>
   /// Indicates if the debug manager is enabled or not.
   /// </summary>
-  static private bool _Enabled = false;
+  static private bool _Enabled;
 
   /// <summary>
   /// Starts the debug manager.
@@ -258,7 +270,7 @@ static public partial class DebugManager
   /// <param name="ex">The Exception to act on.</param>
   static public void Manage(this Exception ex)
   {
-    Manage(ex, null, DeaultShowExceptionMode);
+    Manage(ex, null, DefaultShowExceptionMode);
   }
 
   /// <summary>
@@ -280,7 +292,7 @@ static public partial class DebugManager
   [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   static public void Manage(this Exception ex, object sender)
   {
-    Manage(ex, sender, DeaultShowExceptionMode);
+    Manage(ex, sender, DefaultShowExceptionMode);
   }
 
   /// <summary>
@@ -306,7 +318,7 @@ static public partial class DebugManager
   /// <param name="ex">The ex.</param>
   static private void ManageInternal(object sender, Exception ex)
   {
-    ManageInternal(sender, ex, DeaultShowExceptionMode);
+    ManageInternal(sender, ex, DefaultShowExceptionMode);
   }
 
   /// <summary>
@@ -318,94 +330,95 @@ static public partial class DebugManager
   static private void ManageInternal(object sender, Exception ex, ShowExceptionMode show)
   {
     bool process = true;
-    var einfo = new ExceptionInfo(sender, ex);
+    var eInfo = new ExceptionInfo(sender, ex);
     if ( !_Enabled )
     {
       if ( ex is not AbortException && show != ShowExceptionMode.None )
-        ShowSimple(einfo);
+        ShowSimple(eInfo);
       return;
     }
     if ( ex is not AbortException )
       try
       {
-        BeforeShowException?.Invoke(sender, einfo, ref process);
+        BeforeShowException?.Invoke(sender, eInfo, ref process);
       }
       catch ( Exception err )
       {
         if ( show != ShowExceptionMode.None )
-          DisplayManager.ShowError("Error on BeforeShowException :" + Globals.NL2 + err.Message);
+          DisplayManager.ShowError($"Error on BeforeShowException :{Globals.NL2}{err.Message}");
       }
     if ( process )
     {
-      Trace(LogTraceEvent.Exception, einfo.FullText);
+      Trace(LogTraceEvent.Exception, eInfo.FullText);
       if ( ex is not AbortException )
         switch ( show )
         {
           case ShowExceptionMode.None:
             break;
-          case ShowExceptionMode.Advanced:
-            ShowAdvanced(einfo);
-            break;
-          case ShowExceptionMode.OnlyMessage:
+          case ShowExceptionMode.Message:
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             break;
-          default:
-            ShowSimple(einfo);
+          case ShowExceptionMode.Simple:
+            ShowSimple(eInfo);
             break;
+          case ShowExceptionMode.Advanced:
+            ShowAdvanced(eInfo);
+            break;
+          default:
+            throw new AdvNotImplementedException(show);
         }
     }
     if ( ex is not AbortException )
       try
       {
-        AfterShowException?.Invoke(sender, einfo, process);
+        AfterShowException?.Invoke(sender, eInfo, process);
       }
       catch ( Exception err )
       {
         if ( show != ShowExceptionMode.None )
-          DisplayManager.ShowError("Error on AfterShowException :" + Globals.NL2 + err.Message);
+          DisplayManager.ShowError($"Error on AfterShowException :{Globals.NL2}{err.Message}");
       }
   }
 
   /// <summary>
   /// Shows an exception with the exception form else a message box.
   /// </summary>
-  /// <param name="einfo">The exception information.</param>
-  static private void ShowAdvanced(ExceptionInfo einfo)
+  /// <param name="eInfo">The exception information.</param>
+  static private void ShowAdvanced(ExceptionInfo eInfo)
   {
-    if ( einfo.Instance is AbortException ) return;
+    if ( eInfo.Instance is AbortException ) return;
     try
     {
       if ( SubstituteShowException is not null )
-        SubstituteShowException.Invoke(einfo.Sender, einfo);
+        SubstituteShowException.Invoke(eInfo.Sender, eInfo);
       else
         try
         {
-          ExceptionForm.Run(einfo);
+          ExceptionForm.Run(eInfo);
         }
         catch
         {
-          ShowSimple(einfo);
+          ShowSimple(eInfo);
         }
     }
     catch ( Exception ex )
     {
-      ShowCrash(ex, einfo);
+      ShowCrash(ex, eInfo);
     }
   }
 
   /// <summary>
   /// Shows an exception with a message box.
   /// </summary>
-  /// <param name="einfo">The exception information.</param>
-  static private void ShowSimple(ExceptionInfo einfo)
+  /// <param name="eInfo">The exception information.</param>
+  static private void ShowSimple(ExceptionInfo eInfo)
   {
-    if ( einfo.Instance is AbortException ) return;
+    if ( eInfo.Instance is AbortException ) return;
     try
     {
-      string message = SysTranslations.UnhandledException.GetLang(
-        einfo.Emitter,
-        einfo.ModuleName,
-        einfo.Instance.ToStringReadableWithInners());
+      string message = SysTranslations.UnhandledException.GetLang(eInfo.Emitter,
+                                                                  eInfo.ModuleName,
+                                                                  eInfo.Instance.ToStringReadableWithInners());
       if ( UserCanTerminate )
         message += Globals.NL2 + SysTranslations.AskToContinueOrTerminate.GetLang();
       var goal = UserCanTerminate ? MessageBoxButtons.YesNo : MessageBoxButtons.OK;
@@ -414,7 +427,7 @@ static public partial class DebugManager
     }
     catch ( Exception ex )
     {
-      ShowCrash(ex, einfo);
+      ShowCrash(ex, eInfo);
     }
   }
 
@@ -422,19 +435,23 @@ static public partial class DebugManager
   /// Shows a message when an error occurs on showing an exception.
   /// </summary>
   /// <param name="ex">The exception.</param>
-  /// <param name="einfo">The exception information.</param>
-  static private void ShowCrash(Exception ex, ExceptionInfo einfo)
+  /// <param name="eInfo">The exception information.</param>
+  static private void ShowCrash(Exception ex, ExceptionInfo eInfo)
   {
     try
     {
-      string message = "Error on displaying Exception :" + Globals.NL2 +
-                       ( einfo?.Instance?.Message ?? "null" ) + Globals.NL2 +
-                       "(" + ex.Message + ")";
+      string message = $"""
+                        Error on displaying Exception :
+                        
+                        {eInfo?.Instance?.Message ?? "null"}
+
+                        {"(" + ex.Message + ")"}
+                        """;
       DisplayManager.ShowError(message);
     }
     catch ( Exception err )
     {
-      MessageBox.Show("DebugManager crash :" + Globals.NL2 + err.Message);
+      MessageBox.Show($"DebugManager crash :{Globals.NL2}{err.Message}");
       SystemManager.Terminate();
     }
   }
@@ -446,7 +463,7 @@ static public partial class DebugManager
   /// <param name="sender">The sender object</param>
   static public string ToStringWithInners(this Exception ex, object sender = null)
   {
-    return ex.Parse(sender, einfo => einfo.FullText);
+    return ex.Parse(sender, eInfo => eInfo.FullText);
   }
 
   /// <summary>
@@ -456,7 +473,7 @@ static public partial class DebugManager
   /// <param name="sender">The sender object</param>
   static public string ToStringFullText(this Exception ex, object sender = null)
   {
-    return ex.Parse(sender, einfo => einfo.FullText);
+    return ex.Parse(sender, eInfo => eInfo.FullText);
   }
 
   /// <summary>
@@ -466,7 +483,7 @@ static public partial class DebugManager
   /// <param name="sender">The sender object</param>
   static public string ToStringReadableWithInners(this Exception ex, object sender = null)
   {
-    return ex.Parse(sender, einfo => einfo.ReadableText);
+    return ex.Parse(sender, eInfo => eInfo.ReadableText);
   }
 
   /// <summary>
@@ -477,13 +494,13 @@ static public partial class DebugManager
   /// <param name="getText">The gettext iteration.</param>
   static private string Parse(this Exception ex, object sender, Func<ExceptionInfo, string> getText)
   {
-    var einfo = new ExceptionInfo(sender, ex);
-    var list = new List<string> { getText(einfo) };
-    einfo = einfo.InnerInfo;
-    while ( einfo is not null )
+    var eInfo = new ExceptionInfo(sender, ex);
+    var list = new List<string> { getText(eInfo) };
+    eInfo = eInfo.InnerInfo;
+    while ( eInfo is not null )
     {
-      list.Add($"[Inner] {getText(einfo)}");
-      einfo = einfo.InnerInfo;
+      list.Add($"[Inner] {getText(eInfo)}");
+      eInfo = eInfo.InnerInfo;
     }
     return list.AsMultiDoubleLine();
   }

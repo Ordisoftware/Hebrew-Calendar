@@ -1,5 +1,6 @@
 namespace Meziantou.Framework.Win32;
 
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 public static class Privileges
 {
   public const string SE_ASSIGNPRIMARYTOKEN_NAME = "SeAssignPrimaryTokenPrivilege";

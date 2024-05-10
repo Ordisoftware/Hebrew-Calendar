@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -17,10 +17,11 @@ namespace Ordisoftware.Hebrew;
 static public partial class OnlineParashot
 {
 
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> WikipediaFR = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "Bereshit_(parasha)",
       "Noa%27h_(parasha)",
       "Lekh_Lekha",
@@ -33,9 +34,9 @@ static public partial class OnlineParashot
       "Miketz",
       "Vayigash",
       "Vaye%27hi"
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "Shemot_(parasha)",
       "Va%27era",
       "Bo_(parasha)",
@@ -47,9 +48,9 @@ static public partial class OnlineParashot
       "Ki_Tissa",
       "Vayaqhel",
       "Peqoudei"
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "Vayikra_(parasha)",
       "Tzav",
       "Shemini",
@@ -60,9 +61,9 @@ static public partial class OnlineParashot
       "Emor",
       "Behar",
       "Be%27houkota%C3%AF"
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "Bemidbar_(parasha)",
       "Nasso",
       "Beha%27alot%27kha",
@@ -73,9 +74,9 @@ static public partial class OnlineParashot
       "Pin%27has_(parasha)",
       "Matot",
       "Massei"
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "Devarim_(parasha)",
       "Va%27et%27hanan",
       "Eikev",
@@ -87,7 +88,7 @@ static public partial class OnlineParashot
       "Vayelekh",
       "Haazinou",
       "V%C3%A8zot_HaBerakha"
-    }
+    ]
   };
 
 }

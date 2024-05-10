@@ -66,16 +66,25 @@ URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4L374Fjp6EQBlVHI6kCKZxN
 Name = (FR) [Israel Torah] On va sauver notre couple
 URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4LIjxBD0f2USXtDx4cutPdi
 
+Name = (FR) [Israel Torah] Les 613 Commandements
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4JU-Fzk35sLraFAraj5RsEm
+
 Name = (FR) [Israel Torah] Tanya
 URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4Ke5K_TqKh7jodXSzhk9mpM
 
 Name = (FR) [Israel Torah] Parachat
 URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4LvZgtax4J4zhUl1LFuDSRm
 
-Name = (FR) [Israel Torah] Les 613 Commandements
-URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4JU-Fzk35sLraFAraj5RsEm
+Name = (FR) [Israel Torah] Parachat Hassidique
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4ITJHI38eRzOGcJCca5bdLD
+
+Name = (FR) [Israel Torah] Parachat Kabala
+URL = https://www.youtube.com/playlist?list=PLwBYFmSjHB4L5yytz_IzWaguJNg9XKZ9Z
 
 -
+
+Name = (FR) [Shouva Israël France] Pensée Juive
+URL = https://www.youtube.com/playlist?list=PLxRqUzrUqpdoj8lqgx2Y9mu4RyUqvkao4
 
 Name = (FR) [Beit Ha-Zohar] Le Mystère des sacrifices et la prière de Rabbi Shimon Bar Yohay
 URL = https://www.youtube.com/playlist?list=PL86uz8xgnyq6WC8AlR4DkqLVCKNutJMgM

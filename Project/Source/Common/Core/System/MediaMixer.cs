@@ -9,6 +9,7 @@ using static Ordisoftware.Core.NativeMethods;
 [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "N/A")]
 [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "N/A")]
 [SuppressMessage("Naming", "GCop201:Use camelCasing when declaring {0}", Justification = "N/A")]
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class MediaMixer
 {
 
@@ -138,9 +139,7 @@ static public class MediaMixer
 
 [ComImport]
 [Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")]
-class MMDeviceEnumerator
-{
-}
+class MMDeviceEnumerator;
 
 [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
 public enum EDataFlow

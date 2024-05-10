@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -40,9 +40,9 @@ public sealed partial class MessageBoxEx : Form
 
   private const int WidthDeltaMargin = 55;
 
-  static public readonly List<Type> ForceTopMostExcludedForms = new();
+  static public readonly List<Type> ForceTopMostExcludedForms = [];
 
-  static public readonly List<MessageBoxEx> Instances = new();
+  static public readonly List<MessageBoxEx> Instances = [];
 
   [SuppressMessage("Performance", "U2U1210:Do not materialize an IEnumerable<T> unnecessarily", Justification = "N/A")]
   static public void CloseAll()
@@ -211,6 +211,7 @@ public sealed partial class MessageBoxEx : Form
       Close();
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   public void SetIcon(MessageBoxIcon icon)
   {
     switch ( icon )

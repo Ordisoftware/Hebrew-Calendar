@@ -633,7 +633,7 @@
     <value>Aller au signet</value>
   </data>
   <data name="ContextMenuDayManageBookmark.Text" xml:space="preserve">
-    <value>Gérer les signets</value>
+    <value>Gestionnaire des signets</value>
   </data>
   <data name="ContextMenuDaySaveBookmark.Text" xml:space="preserve">
     <value>Sauver le signet</value>
@@ -682,5 +682,17 @@
   </data>
   <data name="ContextMenuParashahReadDefault.Text" xml:space="preserve">
     <value>Lecture par défaut</value>
+  </data>
+  <data name="ActionManageBookmarks.Text" xml:space="preserve">
+    <value>Gestionnaire des signets de dates</value>
+  </data>
+  <data name="ActionShowNotices.Text" xml:space="preserve">
+    <value>Notices du calendrier</value>
+  </data>
+  <data name="MenuHelp.Text" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="ContextMenuDayDatesDiffToActive.Text" xml:space="preserve">
+    <value>Diff. de dates d'ici au jour actif</value>
   </data>
 </root>

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2024 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -19,6 +19,49 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// </summary>
 static partial class AppTranslations
 {
+
+  /// <summary>
+  /// Shows a notice.
+  /// </summary>
+  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
+  static public void ShowNotice(TranslationsDictionary title, TranslationsDictionary text, int width)
+  {
+    switch ( DisplayManager.FormStyle )
+    {
+      case MessageBoxFormStyle.System:
+        DisplayManager.Show(title.GetLang(), text.GetLang());
+        break;
+      case MessageBoxFormStyle.Advanced:
+        string titleTranslated = title.GetLang();
+        var form = MessageBoxEx.Instances.Find(f => f.Text == titleTranslated)
+                   ?? new MessageBoxEx(title, text, width: width);
+        form.ShowInTaskbar = true;
+        form.Popup(null, true);
+        break;
+      default:
+        throw new AdvNotImplementedException(DisplayManager.FormStyle);
+    }
+  }
+
+  static public void ShowMonthsAndDaysNotice()
+  {
+    ShowNotice(NoticeMonthsAndDaysTitle, NoticeMonthsAndDays, MessageBoxEx.DefaultWidthMedium);
+  }
+
+  static public void ShowCelebrationsNotice()
+  {
+    ShowNotice(NoticeCelebrationsTitle, NoticeCelebrations, MessageBoxEx.DefaultWidthMedium);
+  }
+
+  static public void ShowShabatNotice()
+  {
+    ShowNotice(NoticeShabatTitle, NoticeShabat, MessageBoxEx.DefaultWidthLarge);
+  }
+
+  static public void ShowParashahNotice()
+  {
+    ShowNotice(NoticeParashahTitle, NoticeParashah, MessageBoxEx.DefaultWidthMedium);
+  }
 
   static public readonly TranslationsDictionary NoticeMonthsAndDaysTitle = new()
   {
@@ -75,7 +118,7 @@ static partial class AppTranslations
 
                     If you use moon omer then celebrations dates will be calculated according to seasons and there will be an inversion between north and south hemispheres. In this case, a day is from one moon set to the next set.
 
-                    You can use traditional sun days by modifying the option of the generator, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.",
+                    You can use traditional sun days by modifying the option of the generator, hence celebrations will be same in north and south. In this case, a day is from one sun set to the next set.
                     """,
 
     [Language.FR] = """
@@ -87,7 +130,7 @@ static partial class AppTranslations
 
                     Si vous utilisez le omer de la lune alors les dates des célébrations seront calculées selon les saisons et il y aura une inversion entre les hémisphères nord et sud. Dans ce cas, un jour est du coucher de la lune au suivant.
 
-                    Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option du générateur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant."
+                    Vous pouvez utiliser les jours solaires traditionnels en modifiant l'option du générateur, alors les célébrations seront les mêmes pour le nord et le sud. Dans ce cas, un jour est du coucher du soleil au suivant.
                     """,
   };
 
@@ -100,7 +143,7 @@ static partial class AppTranslations
   static public readonly TranslationsDictionary NoticeCelebrationsFood = new()
   {
     [Language.EN] = """
-                    A description of Torah recipes for celebrations will be available with version 9.30: 
+                    A description of Torah recipes for celebrations will be available later: 
 
                     • Grilled Lamb for Pessa'h.
 
@@ -108,15 +151,15 @@ static partial class AppTranslations
 
                     • Lamb stew or burger with wine for Shavuh'ot 1 after the first Omer of seven weeks.
 
-                    • Lamb and veal hotpot with a kind of white beer for Shavouh'ot 2 after the second Omer.
+                    • Lamb and veal hotpot with a kind of beer for Shavouh'ot 2 after the second Omer.
 
                     • Lamb, veal and deer burgers for Teruh'ah, HaKipurim and Sukkot.
 
-                    Regarding the author's current understanding of the main themes, the Torah describing many other more complex things.",
+                    Regarding the author's current understanding of the main themes, the Torah describing many other more complex things.
                     """,
 
     [Language.FR] = """
-                    Une description des recettes de la Torah pour les célébrations sera disponible avec la version 9.30 :
+                    Une description des recettes de la Torah pour les célébrations sera disponible prochainement :
 
                     • Agneau grillé non saignant sans os coupé et non bouilli pour Pessa'h.
 
@@ -124,11 +167,11 @@ static partial class AppTranslations
 
                     • Ragoût ou burger d'agneau au vin pour Shavouh'ot 1 après le premier Omer.
 
-                    • Potée d'agneau et veau avec une sorte de bière blanche pour Shavouh'ot 2 après le deuxième Omer.
+                    • Potée d'agneau et veau avec une sorte de bière pour Shavouh'ot 2 après le deuxième Omer.
 
                     • Burgers d'agneau, de veau et de cerf pour Terouh'ah, HaKipourim et Soukot.
 
-                    Concernant la compréhension actuelle de l'auteur au sujet des thèmes principaux, la Torah décrivant beaucoup d'autres choses plus complexes."
+                    Concernant la compréhension actuelle de l'auteur au sujet des thèmes principaux, la Torah décrivant beaucoup d'autres choses plus complexes.
                     """,
   };
 
@@ -149,7 +192,7 @@ static partial class AppTranslations
 
                     If the man were born between midnight and the sunset, the Shabat is the day before. Between sunset and midnight, the Shabat is that day. This day is from previous day (or previous previous day) at sunset to this day (or previous day) at sunset. The day of the Shabat goes from sunset on the previous calendar day to sunset of that day, with 3% of natural margin that to say about one hour. The day before, either the man keeps without going out and strengthens the couple during the Shabat, or he goes out and lights up the couple for Shabat, but on Shabat he does not go out of his temple, and except in case of emergency we do not produce, transform and destroys nothing, we don't plan anything, we don't work, we don't cook, we don't shave, we don't cut, we don't make fire, we don't care about information, etc. But we can for example take part in sports, study science and play with children.
 
-                    If you prefer to use the traditional group Shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.",
+                    If you prefer to use the traditional group Shabat, select for example Saturday for Judaism, Sunday for Christianity or Friday for Islam.
                     """,
 
     [Language.FR] = """
@@ -161,7 +204,7 @@ static partial class AppTranslations
 
                     Si l'homme est né entre minuit et le coucher du soleil, le Shabat est la veille. Entre le coucher du soleil et minuit, le Shabat est ce jour. Ce jour est de la veille (ou veille veille) au coucher à ce jour (ou veille) au coucher. Le jour du Shabat va du coucher du soleil lors du jour calendaire précédent au coucher de ce jour, avec 3% de marge naturelle soit environ plus ou moins une heure. La veille, soit l'homme garde sans sortir et renforce le couple lors du Shabat, soit il sort et illumine le couple pour Shabat, mais à Shabat il ne sort pas de son temple, et sauf cas d'urgence on ne produit, transforme et détruit rien, on ne planifie rien, on ne travaille pas, on ne cuisine pas, on ne rase pas, on ne coupe pas, on ne fait pas de feu, on ne s’intéresse pas aux informations, etc. Mais on peut par exemple faire du sport, étudier la science et jouer avec les enfants.
 
-                    Si vous préférez utiliser le Shabat de groupe traditionnel, sélectionnez par exemple le samedi pour le Judaïsme, le dimanche pour le Christianisme ou le vendredi pour l'Islam."
+                    Si vous préférez utiliser le Shabat de groupe traditionnel, sélectionnez par exemple le samedi pour le Judaïsme, le dimanche pour le Christianisme ou le vendredi pour l'Islam.
                     """,
   };
 
@@ -182,7 +225,7 @@ static partial class AppTranslations
 
                     The number of Parashot is 54 that is to say נד which is the Power of the Student, and that root means Passing from the world of malevolence to that of benevolence.
 
-                    The generation of Parashot relating to Shabatot with the omer of the moon or the sun without the Sod HaH'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.",
+                    The generation of Parashot relating to Shabatot with the omer of the moon or the sun without the Sod HaH'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
                     """,
 
     [Language.FR] = """
@@ -194,7 +237,7 @@ static partial class AppTranslations
 
                     Le nombre de Parashot est 54 soit נד qui est le Pouvoir de l'Étudiant, et cette racine signifie Passer du monde de la malveillance à celui de la bienveillance.
 
-                    La génération des Parashot relatives aux Shabatot avec le omer de la lune ou du soleil sans le Sod HaH'ibour n'est pas garantie pour être traditionnelle d'autant que l'application génère des dates, quoi que basé sur le cycle lunaire, pouvant parfois un peu varier des calendriers officiels, surtout si on utilise le omer de la lune et encore plus avec le Shabat personnel."
+                    La génération des Parashot relatives aux Shabatot avec le omer de la lune ou du soleil sans le Sod HaH'ibour n'est pas garantie pour être traditionnelle d'autant que l'application génère des dates, quoi que basé sur le cycle lunaire, pouvant parfois un peu varier des calendriers officiels, surtout si on utilise le omer de la lune et encore plus avec le Shabat personnel.
                     """,
   };
 
@@ -215,13 +258,13 @@ static partial class AppTranslations
     [Language.EN] = """
                     A positive value generates the next years.
 
-                    A negative value generates the years before and after now.",
+                    A negative value generates the years before and after now.
                     """,
 
     [Language.FR] = """
                     Une valeur positive permet de générer les prochaines années.
 
-                    Une valeur négative permet de générer les années avant et après maintenant."
+                    Une valeur négative permet de générer les années avant et après maintenant.
                     """,
   };
 
@@ -232,7 +275,7 @@ static partial class AppTranslations
 
                     %MONTHNAME% : moon month name
                     %MONTHNUM% : moon month number
-                    %DAYNUM% : moon day number",
+                    %DAYNUM% : moon day number"
                     """,
 
     [Language.FR] = """
@@ -240,17 +283,17 @@ static partial class AppTranslations
 
                     %MONTHNAME% : nom du mois lunaire
                     %MONTHNUM% : numéro du mois lunaire
-                    %DAYNUM% : numéro du jour lunaire"
+                    %DAYNUM% : numéro du jour lunaire
                     """,
   };
 
-  static public readonly TranslationsDictionary NoticeDatesDiffTitle = new()
+  static public readonly TranslationsDictionary NoticeDatesDifferenceTitle = new()
   {
     [Language.EN] = "Dates difference notice",
     [Language.FR] = "Notice de différence de dates"
   };
 
-  static public readonly TranslationsDictionary NoticeDatesDiff = new()
+  static public readonly TranslationsDictionary NoticeDatesDifference = new()
   {
     [Language.EN] = """
                     The values shown include the current periods.
@@ -272,7 +315,7 @@ static partial class AppTranslations
 
                     It is the same for the solar years.
 
-                    Regarding lunar days, the moon regularly jumps on a solar day which therefore happens to be straddling two lunar days, such as 08/10/2020 which is not counted because there is no sunrise. moon on that solar day.",
+                    Regarding lunar days, the moon regularly jumps on a solar day which therefore happens to be straddling two lunar days, such as 08/10/2020 which is not counted because there is no sunrise. moon on that solar day.
                     """,
 
     [Language.FR] = """
@@ -295,7 +338,7 @@ static partial class AppTranslations
 
                     Il en est de même pour les années solaires.
 
-                    Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là."
+                    Concernant les jours lunaires, la lune saute régulièrement un jour solaire qui se trouve donc être à cheval entre deux jours lunaires, comme par exemple le 10/08/2020 qui n'est pas compté car il n'y a pas de lever de la lune ce jour solaire-là.
                     """,
   };
 
@@ -311,7 +354,7 @@ static partial class AppTranslations
                     Rouge - azur ou pourpre = éclat de l'étincelle de feu = inspir | T(U)
                     Vert = air = action | A
                     Blanc = eau = expir | C
-                    Jaune = terre = repos | G",
+                    Jaune = terre = repos | G
                     """,
 
     [Language.FR] = """

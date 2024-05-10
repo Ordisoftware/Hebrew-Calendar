@@ -142,8 +142,8 @@ namespace CodeProjectCalendar.NET
 
     private void CoolButtonPaint(object sender, PaintEventArgs e)
     {
-      var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
-      Graphics g = Graphics.FromImage(bmp);
+      using var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
+      using Graphics g = Graphics.FromImage(bmp);
 
       if ( !_mouseOver )
       {
@@ -173,8 +173,8 @@ namespace CodeProjectCalendar.NET
         Color a2 = Color.FromArgb(128, CustomColor.NeonSilverDark);
         Color a3 = Color.FromArgb(64, CustomColor.NeonSilverDark);
 
-        var shadowBmp = new Bitmap(1, 3);
-        var shadowBmp2 = new Bitmap(3, 1);
+        using var shadowBmp = new Bitmap(1, 3);
+        using var shadowBmp2 = new Bitmap(3, 1);
         shadowBmp.SetPixel(0, 0, a1);
         shadowBmp.SetPixel(0, 1, a2);
         shadowBmp.SetPixel(0, 2, a3);
@@ -193,9 +193,7 @@ namespace CodeProjectCalendar.NET
         }
         g.DrawPath(Focused ? PensPool.Get(_focusColor) : PensPool.Get(_borderColor), path);
       }
-
       e.Graphics.DrawImage(bmp, 0, 0, ClientSize.Width, ClientSize.Height);
-      //bmp.Dispose();
     }
 
     private void CoolButtonMouseEnter(object sender, EventArgs e)
