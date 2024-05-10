@@ -1,4 +1,4 @@
-#define MyAppVersion "10.4"
+#define MyAppVersion "10.4.1"
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
 #define MyAppExeName "Ordisoftware.Hebrew.Calendar.exe"
@@ -50,15 +50,15 @@ Name: {group}\{#MyAppName}\{cm:ToolsMenu_msg}\{cm:Weeklyparashah_msg}; Filename:
 [CustomMessages]
 #include "Scripts\Messages.iss"
 english.Resetreminder_msg=Reset reminder
-french.Resetreminder_msg=Réinitialiser le rappeleur
+french.Resetreminder_msg=Rï¿½initialiser le rappeleur
 english.Navigationwindow_msg=Navigation window
-french.Navigationwindow_msg=Fenêtre de navigation
+french.Navigationwindow_msg=Fenï¿½tre de navigation
 english.Datesdifferencecalculator_msg=Dates difference calculator
-french.Datesdifferencecalculator_msg=Calculateur de différence de dates
+french.Datesdifferencecalculator_msg=Calculateur de diffï¿½rence de dates
 english.Celebrationversesboard_msg=Celebration verses board
-french.Celebrationversesboard_msg=Tableau des versets des célébrations
+french.Celebrationversesboard_msg=Tableau des versets des cï¿½lï¿½brations
 english.Celebrationsboard_msg=Celebrations board
-french.Celebrationsboard_msg=Tableau des célébrations
+french.Celebrationsboard_msg=Tableau des cï¿½lï¿½brations
 english.Newmoonsboard_msg=New moons board
 french.Newmoonsboard_msg=Tableau des nouvelles lunes
 english.Lunarmonthsboard_msg=Lunar months board
