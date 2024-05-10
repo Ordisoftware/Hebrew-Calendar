@@ -422,6 +422,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Fix timer which displays parashah description box when the day before is not Shabbat.
 >- Fix Yom Teruh'ah reminder box still showing when finished.
 
+#### 2024.05.10 - Version 10.4.1
+
+- Update SSL certificate data for the web update checker.
+
 #### 2023.04.05 - Version 10.4
 
 - Fix celebration day context menu for show verses item.
