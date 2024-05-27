@@ -454,8 +454,7 @@ namespace CodeProjectCalendar.NET
       // 
       // _contextMenuStrip1
       // 
-      _contextMenuStrip.Items.AddRange(new ToolStripItem[] {
-            miProperties});
+      _contextMenuStrip.Items.AddRange([miProperties]);
       _contextMenuStrip.Name = "_contextMenuStrip1";
       _contextMenuStrip.Size = new Size(137, 26);
       // 

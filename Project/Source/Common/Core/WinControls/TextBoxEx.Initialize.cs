@@ -72,18 +72,9 @@ public partial class TextBoxEx
     ActionDelete.Name = "ActionDelete";
     ActionDelete.Text = "Delete";
     Relocalize();
-    ContextMenuEdit.Items.AddRange(new ToolStripItem[]
-                                   {
-                                       ActionUndo,
-                                       ActionRedo,
-                                       Separator1,
-                                       ActionCut,
-                                       ActionCopy,
-                                       ActionPaste,
-                                       Separator2,
-                                       ActionSelectAll,
-                                       ActionDelete
-                                   });
+    ContextMenuEdit.Items.AddRange([ActionUndo, ActionRedo, Separator1,
+                                    ActionCut, ActionCopy, ActionPaste, Separator2,
+                                    ActionSelectAll, ActionDelete]);
   }
 
   static public void Relocalize()
