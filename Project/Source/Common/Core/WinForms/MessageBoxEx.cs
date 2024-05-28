@@ -38,7 +38,7 @@ public sealed partial class MessageBoxEx : Form
   public const int DefaultHeightHuge = 500;
   public const int DefaultHeightVeryHuge = 600;
 
-  private const int WidthDeltaMargin = 55;
+  private const int WidthOffsetMargin = 55;
 
   static public readonly List<Type> ForceTopMostExcludedForms = [];
 
@@ -98,7 +98,7 @@ public sealed partial class MessageBoxEx : Form
     SetButtons(buttons);
     int labelInitialTop = Label.Top;
     int labelInitialHeight = Label.Height;
-    LabelMaxWidth = width - WidthDeltaMargin;
+    LabelMaxWidth = width - WidthOffsetMargin;
     if ( icon == MessageBoxIcon.None && DisplayManager.IconStyle == MessageBoxIconStyle.ForceInformation )
       icon = MessageBoxIcon.Information;
     else

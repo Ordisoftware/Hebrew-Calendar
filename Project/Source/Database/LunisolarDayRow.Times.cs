@@ -50,7 +50,7 @@ public partial class LunisolarDayRow
       return day.Moonrise.Value;
   }
 
-  internal ReminderTimes GetTimesForShabat(decimal delta3)
+  internal ReminderTimes GetTimesForShabat(decimal offset3)
   {
     var times = new ReminderTimes();
     var dateRow = Date;
@@ -59,14 +59,14 @@ public partial class LunisolarDayRow
     if ( rowPrevious is null )
       return null;
     if ( Settings.RemindShabatOnlyLight )
-      times.Set(dateRow, Sunrise.Value.TimeOfDay, Sunset.Value.TimeOfDay, 0, 0, delta3);
+      times.Set(dateRow, Sunrise.Value.TimeOfDay, Sunset.Value.TimeOfDay, 0, 0, offset3);
     else
-      times.Set(dateRow, rowPrevious.Sunset.Value.TimeOfDay, Sunset.Value.TimeOfDay, -1, 0, delta3);
+      times.Set(dateRow, rowPrevious.Sunset.Value.TimeOfDay, Sunset.Value.TimeOfDay, -1, 0, offset3);
     return times;
   }
 
   [SuppressMessage("Performance", "U2U1017:Initialized locals should be used", Justification = "Analysis error")]
-  internal ReminderTimes GetTimesForCelebration(decimal delta3)
+  internal ReminderTimes GetTimesForCelebration(decimal offset3)
   {
     var times = new ReminderTimes();
     var dateRow = Date;
@@ -86,19 +86,19 @@ public partial class LunisolarDayRow
       bool isNotNullCurrentAndNext = isCurrentNotNull && isNextNotNull;
       bool isNotNullPreviousAndNext = isCurrentNotNull && isPreviousNotNull && isNextNotNull;
       if ( isNotNullCurrentAndNext && rowNext.Date == DateTime.Today )
-        times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
+        times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, offset3);
       else
       if ( isNotNullCurrentAndNext && MoonriseOccurring == MoonriseOccurring.AfterSet )
-        times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
+        times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, offset3);
       else
       if ( isNotNullCurrentAndNext && MoonriseOccurring == MoonriseOccurring.NextDay )
-        times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, delta3);
+        times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, offset3);
       else
       if ( isNotNullCurrentAndPrevious && MoonriseOccurring == MoonriseOccurring.BeforeSet )
-        times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, Moonset.Value.TimeOfDay, -1, 0, delta3);
+        times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, Moonset.Value.TimeOfDay, -1, 0, offset3);
       else
       if ( isNotNullPreviousAndNext )
-        times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, -1, 1, delta3);
+        times.Set(dateRow, rowPrevious.Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, -1, 1, offset3);
       else
         throw new Exception(AppTranslations.CelebrationMoonDatesAndTimesError.GetLang() + Globals.NL2 +
                             $"    {nameof(isPreviousNotNull)}: {isPreviousNotNull}{Globals.NL}" +
@@ -113,7 +113,7 @@ public partial class LunisolarDayRow
     }
     else
     if ( rowPrevious.Sunset.HasValue && Sunset.HasValue )
-      times.Set(dateRow, rowPrevious.Sunset.Value.TimeOfDay, Sunset.Value.TimeOfDay, -1, 0, delta3);
+      times.Set(dateRow, rowPrevious.Sunset.Value.TimeOfDay, Sunset.Value.TimeOfDay, -1, 0, offset3);
     else
       throw new Exception(AppTranslations.CelebrationSunDatesAndTimesError.GetLang() + Globals.NL2 +
                           $"    Previous.{nameof(rowPrevious.Sunset)}: {rowPrevious.Sunset}{Globals.NL}" +

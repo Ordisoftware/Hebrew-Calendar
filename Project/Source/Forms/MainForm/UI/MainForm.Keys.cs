@@ -229,26 +229,26 @@ partial class MainForm
     }
     return false;
     //
-    void moveToYearOfLunarDay(DateTime date, int deltaYear)
+    void moveToYearOfLunarDay(DateTime date, int offsetYear)
     {
       var row = LunisolarDays.Find(day => day.Date == date);
       if ( row is null ) return;
       int dayLunar = row.LunarDay;
       int monthLunar = row.LunarMonth;
-      int year = row.Date.Year + deltaYear;
+      int year = row.Date.Year + offsetYear;
       row = LunisolarDays.Find(day => day.LunarDay == dayLunar && day.LunarMonth == monthLunar && day.Date.Year == year);
       if ( row is not null ) GoToDate(row.Date);
     }
     //
-    void moveToMonthOfLunarDay(DateTime date, int deltaMonth)
+    void moveToMonthOfLunarDay(DateTime date, int offsetMonth)
     {
       var row = LunisolarDays.Find(day => day.Date == date);
       if ( row is null ) return;
       int dayLunar = row.LunarDay;
       int index = LunisolarDays.FindIndex(day => day.Date == date);
       if ( index == -1 ) return;
-      int indexEnd = deltaMonth > 0 ? LunisolarDays.Count : -1;
-      index += deltaMonth;
+      int indexEnd = offsetMonth > 0 ? LunisolarDays.Count : -1;
+      index += offsetMonth;
       if ( !index.IsInRange(0, LunisolarDays.Count - 1) ) return;
       do
       {
@@ -258,7 +258,7 @@ partial class MainForm
           GoToDate(row.Date);
           break;
         }
-        index += deltaMonth;
+        index += offsetMonth;
       }
       while ( index != indexEnd );
     }

@@ -20,12 +20,12 @@ public partial class LunisolarDayRow
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   public (TorahCelebration Event, int Index, string Text) GetWeekLongCelebrationIntermediateDay(bool onlyPessah = false)
   {
-    int deltaPessah = Settings.TorahEventsCountAsMoon ? 0 : -1;
-    if ( MoonriseOccurring != MoonriseOccurring.NextDay || deltaPessah != 0 )
+    int offsetPessah = Settings.TorahEventsCountAsMoon ? 0 : -1;
+    if ( MoonriseOccurring != MoonriseOccurring.NextDay || offsetPessah != 0 )
       if ( LunarMonth == TorahCelebrationSettings.PessahMonth )
       {
-        int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + deltaPessah
-          ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + deltaPessah
+        int day = LunarDay >= TorahCelebrationSettings.PessahStartDay + offsetPessah
+          ? LunarDay - TorahCelebrationSettings.PessahStartDay + 1 + offsetPessah
           : -1;
         if ( day > 0 && day <= TorahCelebrationSettings.PessahLength )
           return (TorahCelebration.Pessah, day, AppTranslations.GetPessahDayDisplayText(day));

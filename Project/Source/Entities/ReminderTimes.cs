@@ -27,15 +27,15 @@ class ReminderTimes
   public void Set(DateTime date,
                   TimeSpan timeStart,
                   TimeSpan timeEnd,
-                  int deltaDayStart,
-                  int deltaDayEnd,
-                  decimal deltaRemindBefore)
+                  int offsetDayStart,
+                  int offsetDayEnd,
+                  decimal offsetRemindBefore)
   {
     TimeStart = timeStart;
     TimeEnd = timeEnd;
-    DateStart = date.AddDays(deltaDayStart).AddHours(timeStart.Hours).AddMinutes(timeStart.Minutes);
-    DateStartCheck = DateStart.AddMinutes((double)-deltaRemindBefore);
-    DateEnd = date.AddDays(deltaDayEnd).AddHours(timeEnd.Hours).AddMinutes(timeEnd.Minutes);
+    DateStart = date.AddDays(offsetDayStart).AddHours(timeStart.Hours).AddMinutes(timeStart.Minutes);
+    DateStartCheck = DateStart.AddMinutes((double)-offsetRemindBefore);
+    DateEnd = date.AddDays(offsetDayEnd).AddHours(timeEnd.Hours).AddMinutes(timeEnd.Minutes);
   }
 
 }

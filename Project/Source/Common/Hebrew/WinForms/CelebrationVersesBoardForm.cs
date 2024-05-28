@@ -213,10 +213,10 @@ sealed public partial class CelebrationVersesBoardForm : Form
       case Keys.Enter:
         if ( sender is ListView control && control.FocusedItem is not null )
         {
-          int delta = (int)( control.Font.SizeInPoints * FontFactor );
+          int offset = (int)( control.Font.SizeInPoints * FontFactor );
           var pos = control.PointToScreen(control.FocusedItem.Position);
-          pos.X += delta;
-          pos.Y += delta;
+          pos.X += offset;
+          pos.Y += offset;
           control.ContextMenuStrip.Show(pos);
           e.Handled = true;
         }

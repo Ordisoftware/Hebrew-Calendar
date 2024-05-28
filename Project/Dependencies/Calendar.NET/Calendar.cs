@@ -1337,7 +1337,7 @@ namespace CodeProjectCalendar.NET
           int countEvents = list.Length;
           int countEventsPrev = list[countEvents - 1].IsSeparator ? countEvents - 2 : countEvents - 1;
           if ( list.All(v => v.IsSeparator) ) continue;
-          int deltaLine = -5 + linespacing;
+          int offsetLine = -5 + linespacing;
           var sample = Array.Find(list, e => !e.EventText.IsNullOrEmpty());
           if ( sample is null ) continue;
           SizeF sz = g.MeasureString(sample.EventText, sample.EventFont);
@@ -1413,7 +1413,7 @@ namespace CodeProjectCalendar.NET
                 };
                 _calendarEvents.Add(ev);
               }*/
-              renderOffsetY += (int)sz.Height + deltaLine;
+              renderOffsetY += (int)sz.Height + offsetLine;
             }
           }
         }
