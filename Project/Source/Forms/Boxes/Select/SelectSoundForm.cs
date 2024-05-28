@@ -53,8 +53,8 @@ sealed partial class SelectSoundForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     //
-    SelectApplicationSound.Items.AddRange(SoundItem.GetApplicationSounds().ToArray());
-    SelectWindowsSound.Items.AddRange(SoundItem.GetWindowsSounds().ToArray());
+    SelectApplicationSound.Items.AddRange([.. SoundItem.GetApplicationSounds()]);
+    SelectWindowsSound.Items.AddRange([.. SoundItem.GetWindowsSounds()]);
     SelectDialogSound.Items.Add(MessageBoxIcon.Information);
     SelectDialogSound.Items.Add(MessageBoxIcon.Question);
     SelectDialogSound.Items.Add(MessageBoxIcon.Exclamation);

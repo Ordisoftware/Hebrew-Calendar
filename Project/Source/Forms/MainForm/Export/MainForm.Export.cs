@@ -19,9 +19,9 @@ partial class MainForm
 
   private void DoExport(ExportAction action, ExportActions process, Action<ViewMode> after)
   {
-    DateTime check(int year, int delta)
+    DateTime check(int year, int offset)
     {
-      return LunisolarDays.Find(day => day.Date.Year == year && day.IsNewYear)?.Date.AddDays(delta)
+      return LunisolarDays.Find(day => day.Date.Year == year && day.IsNewYear)?.Date.AddDays(offset)
              ?? DateTime.MinValue;
     }
     var interval = new ExportInterval();

@@ -51,20 +51,20 @@ public partial class LettersControl
       const int lettersPerLine = 11;
       int lineLetterCount = 1;
       int width = PanelLetters.Width - 10;
-      int deltaY = TextRenderer.MeasureText("a", fontLetter).Height + 5;
-      int deltaX = -(int)Math.Round(( width + 10 - ( deltaY / 2.0 ) ) / 11, MidpointRounding.AwayFromZero);
-      var sizeLabelValue = new Size(deltaY, 8);
-      var sizeLabelKey = new Size(deltaY, 13);
-      const int deltaValue2 = 2;
-      const int deltaValue5 = 5;
-      const int deltaBetweenLines = 15;
-      int posX = width + deltaX + deltaValue2 - _MarginX;
-      int posY = _MarginY + deltaValue5;
-      int deltaValues = _ShowValues ? sizeLabelValue.Height : -deltaValue2;
-      int deltaKeys = _ShowKeys ? sizeLabelKey.Height : -deltaValue2;
-      int deltaValuesAndKeys = _ShowValues && _ShowKeys ? deltaValues + deltaValue5 : deltaValues;
-      int deltaYAndValuesAndKeys = deltaY + deltaValuesAndKeys + deltaValue2;
-      int deltaLine = deltaY + deltaBetweenLines + deltaValues + deltaKeys;
+      int offsetY = TextRenderer.MeasureText("a", fontLetter).Height + 5;
+      int offsetX = -(int)Math.Round(( width + 10 - ( offsetY / 2.0 ) ) / 11, MidpointRounding.AwayFromZero);
+      var sizeLabelValue = new Size(offsetY, 8);
+      var sizeLabelKey = new Size(offsetY, 13);
+      const int offsetValue2 = 2;
+      const int offsetValue5 = 5;
+      const int offsetBetweenLines = 15;
+      int posX = width + offsetX + offsetValue2 - _MarginX;
+      int posY = _MarginY + offsetValue5;
+      int offsetValues = _ShowValues ? sizeLabelValue.Height : -offsetValue2;
+      int offsetKeys = _ShowKeys ? sizeLabelKey.Height : -offsetValue2;
+      int offsetValuesAndKeys = _ShowValues && _ShowKeys ? offsetValues + offsetValue5 : offsetValues;
+      int offsetYAndValuesAndKeys = offsetY + offsetValuesAndKeys + offsetValue2;
+      int offsetLine = offsetY + offsetBetweenLines + offsetValues + offsetKeys;
       var colorLabel = Color.DimGray;
       int indexControl = 0;
       for ( int index = 0; index < countLetters; index++ )
@@ -74,7 +74,7 @@ public partial class LettersControl
         var buttonLetter = new Button
         {
           Location = new Point(posX, posY),
-          Size = new Size(deltaY, deltaY),
+          Size = new Size(offsetY, offsetY),
           TabStop = false,
           Cursor = Cursors.Hand,
           Font = fontLetter,
@@ -92,7 +92,7 @@ public partial class LettersControl
         {
           controls[indexControl++] = new Label
           {
-            Location = new Point(posX, posY + deltaY),
+            Location = new Point(posX, posY + offsetY),
             Size = sizeLabelKey,
             Font = fontValue,
             ForeColor = colorLabel,
@@ -106,7 +106,7 @@ public partial class LettersControl
         {
           controls[indexControl++] = new Label
           {
-            Location = new Point(posX, posY + deltaYAndValuesAndKeys),
+            Location = new Point(posX, posY + offsetYAndValuesAndKeys),
             Font = fontKey,
             Size = sizeLabelKey,
             Text = letter,
@@ -119,16 +119,16 @@ public partial class LettersControl
         lineLetterCount++;
         if ( lineLetterCount <= lettersPerLine )
         {
-          posX += deltaX;
+          posX += offsetX;
         }
         else
         {
-          posX = width + deltaX - _MarginX;
-          posY += deltaLine;
+          posX = width + offsetX - _MarginX;
+          posY += offsetLine;
           lineLetterCount = 0;
         }
       }
-      Height = posY + deltaBetweenLines + deltaY + deltaValues + deltaKeys + deltaValue5
+      Height = posY + offsetBetweenLines + offsetY + offsetValues + offsetKeys + offsetValue5
              + PanelSeparator.Height + TextBox.Height;
       if ( PanelBottom.Visible ) Height += PanelBottom.Height;
       PanelLetters.Controls.AddRange(controls);

@@ -96,7 +96,7 @@ partial class MainForm
         using var bitmap = MonthlyCalendar.GetBitmap();
         int marginLeft = 0;
         int marginTop = 0;
-        int secondImageHeightDelta = !isSecondImage ? 0 : maxHeight;
+        int secondImageHeightOffset = !isSecondImage ? 0 : maxHeight;
         if ( centerImage )
         {
           marginLeft = ( maxWidth - bounds.Width ) / 2;
@@ -104,7 +104,7 @@ partial class MainForm
         }
         e.Graphics.DrawImage(bitmap,
                              marginTopLeft + marginLeft,
-                             marginTopLeft + marginTop + secondImageHeightDelta,
+                             marginTopLeft + marginTop + secondImageHeightOffset,
                              bounds.Width - marginRightBottom,
                              bounds.Height - marginRightBottom);
         if ( multi )

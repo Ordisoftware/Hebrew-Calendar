@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 sealed partial class ApplicationDatabase
 {
 
-  private const int EquinoxeDayDelta = 30;
+  private const int EquinoxeDayOffset = 30;
 
   /// <summary>
   /// Creates the calendar items using moon or sun omer.
@@ -28,7 +28,7 @@ sealed partial class ApplicationDatabase
                                     progressCount,
                                     Program.LoadingFormGenerate);
     int month = 0;
-    int delta = 0;
+    int offset = 0;
     int indexParashah = -1;
     var shabatDay = (DayOfWeek)Settings.ShabatDay;
     bool shabatMutex = false;
@@ -52,10 +52,10 @@ sealed partial class ApplicationDatabase
             break;
           day.LunarMonth = month;
           if ( day.IsNewMoon )
-            delta = 0;
+            offset = 0;
           if ( day.MoonriseOccurring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon )
-            delta = 1;
-          day.LunarDay -= delta;
+            offset = 1;
+          day.LunarDay -= offset;
           checkParashah(day);
           if ( day.TorahEvent != TorahCelebrationDay.None )
             day.TorahEventText = AppTranslations.GetCelebrationDayDisplayText(day.TorahEvent);
@@ -174,21 +174,21 @@ sealed partial class ApplicationDatabase
       if ( dayEquinoxe < 1 )
       {
         monthExuinoxe--;
-        dayEquinoxe += EquinoxeDayDelta;
+        dayEquinoxe += EquinoxeDayOffset;
       }
       bool isNewYear = ( dayDate.Month == monthExuinoxe && dayDate.Day >= dayEquinoxe )
                     || ( dayDate.Month == monthExuinoxe + 1 );
       if ( isNewYear && ( monthMoon == 0 || monthMoon >= 12 ) )
       {
         monthMoon = 1;
-        int delta = Settings.TorahEventsCountAsMoon ? 0 : 1;
+        int offset = Settings.TorahEventsCountAsMoon ? 0 : 1;
         calculate(dayDate, 0, TorahCelebrationDay.NewYearD1, false);
         calculate(dayDate, TorahCelebrationSettings.NewLambDay - 1, TorahCelebrationDay.NewYearD10, false);
-        dayDate = calculate(dayDate, TorahCelebrationSettings.PessahStartDay - 1 + delta, TorahCelebrationDay.PessahD1, false);
+        dayDate = calculate(dayDate, TorahCelebrationSettings.PessahStartDay - 1 + offset, TorahCelebrationDay.PessahD1, false);
         int lengthPessah = TorahCelebrationSettings.PessahLength;
         if ( !Settings.UseTwoDaysForLastPessahDayOutside ) lengthPessah--;
         calculate(dayDate, lengthPessah, TorahCelebrationDay.PessahD7, false);
-        dayDate = calculate(dayDate, TorahCelebrationSettings.ChavouotLength - 1 - delta, TorahCelebrationDay.ChavouotDiet, true);
+        dayDate = calculate(dayDate, TorahCelebrationSettings.ChavouotLength - 1 - offset, TorahCelebrationDay.ChavouotDiet, true);
         var shabatDay = (DayOfWeek)Settings.ShabatDay;
         while ( dayDate.DayOfWeek != shabatDay )
           dayDate = dayDate.AddDays(1);

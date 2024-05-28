@@ -24,14 +24,14 @@ sealed partial class NavigationForm : Form
   static public NavigationForm Instance { get; private set; }
 
   static readonly private int PanelAllExceptParashahTopDefault;
-  static readonly private int PanelAllExceptParashahDelta;
+  static readonly private int PanelAllExceptParashahOffset;
 
   static NavigationForm()
   {
     Instance = new NavigationForm();
     Instance.Relocalize();
     PanelAllExceptParashahTopDefault = Instance.PanelAllExceptParashah.Top;
-    PanelAllExceptParashahDelta = PanelAllExceptParashahTopDefault - Instance.LabelParashah.Top;
+    PanelAllExceptParashahOffset = PanelAllExceptParashahTopDefault - Instance.LabelParashah.Top;
   }
 
   private List<LunisolarDayRow> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
@@ -140,8 +140,8 @@ sealed partial class NavigationForm : Form
         }
         if ( Settings.CalendarShowParashah && !LabelParashah.Enabled )
         {
-          Top -= PanelAllExceptParashahDelta;
-          Height += PanelAllExceptParashahDelta;
+          Top -= PanelAllExceptParashahOffset;
+          Height += PanelAllExceptParashahOffset;
           LabelParashah.Enabled = true;
           LabelParashah.Visible = true;
           LabelParashahValue.Visible = true;
@@ -154,8 +154,8 @@ sealed partial class NavigationForm : Form
           LabelParashah.Enabled = false;
           LabelParashahValue.Visible = false;
           PanelAllExceptParashah.Top = LabelParashah.Top;
-          Height -= PanelAllExceptParashahDelta;
-          Top += PanelAllExceptParashahDelta;
+          Height -= PanelAllExceptParashahOffset;
+          Top += PanelAllExceptParashahOffset;
         }
         _Date = value;
       }

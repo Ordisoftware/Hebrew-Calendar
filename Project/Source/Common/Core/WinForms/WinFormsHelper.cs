@@ -410,7 +410,7 @@ static class FormsHelper
         if ( item is ToolStripSeparator )
           items.Add(new ToolStripSeparator());
     destination.DropDownItems.Clear();
-    destination.DropDownItems.AddRange(items.ToArray());
+    destination.DropDownItems.AddRange([.. items]);
   }
 
   /// <summary>
@@ -431,7 +431,7 @@ static class FormsHelper
         if ( item is ToolStripSeparator )
           items.Add(new ToolStripSeparator());
     destination.DropDownItems.Clear();
-    destination.DropDownItems.AddRange(items.ToArray());
+    destination.DropDownItems.AddRange([.. items]);
   }
 
   /// <summary>

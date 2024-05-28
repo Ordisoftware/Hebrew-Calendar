@@ -40,7 +40,7 @@ sealed partial class SelectSuspendDelayForm : Form
       this.CenterToMainFormElseScreen();
     else
       this.SetLocation(ControlLocation.BottomRight);
-    SelectDelay.Items.AddRange(AppTranslations.SuspendReminderDelays.GetLang().ToArray());
+    SelectDelay.Items.AddRange([.. AppTranslations.SuspendReminderDelays.GetLang()]);
     SelectDelay.SelectedIndex = -1;
     foreach ( SuspendDelayItem item in SelectDelay.Items )
       if ( Settings.LastSuspendDelaySelected == item.Minutes )
