@@ -421,8 +421,8 @@ sealed partial class MainForm : Form
     DisplayManager.IconStyle = DisplayManager.FormStyle switch
     {
       MessageBoxFormStyle.System => EditSoundsEnabled.Checked
-        ? MessageBoxIconStyle.ForceInformation
-        : MessageBoxIconStyle.ForceNone,
+                                    ? MessageBoxIconStyle.ForceInformation
+                                    : MessageBoxIconStyle.ForceNone,
       MessageBoxFormStyle.Advanced => MessageBoxIconStyle.ForceInformation,
       _ => throw new AdvNotImplementedException(DisplayManager.FormStyle),
     };

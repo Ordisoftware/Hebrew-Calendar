@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2024-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.IO.Pipes;
@@ -60,6 +60,14 @@ static partial class Program
                                                : null;
       if ( action is not null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
     }
+    catch ( EndOfStreamException ex )
+    {
+      ex.Manage(ShowExceptionMode.None);
+    }
+    catch ( Exception ex ) when ( ex is ObjectDisposedException || ex is IOException )
+    {
+      ex.Manage();
+    }
     finally
     {
       server.Close();
@@ -81,7 +89,7 @@ static partial class Program
         CheckSettingsReset(true);
       }
       else
-      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions?.HideMainForm == true )
+      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions.HideMainForm )
         Globals.ForceStartupHide = true;
     }
     catch ( Exception ex )

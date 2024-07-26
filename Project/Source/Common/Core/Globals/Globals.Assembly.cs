@@ -44,7 +44,7 @@ static public partial class Globals
   /// Gets the assembly version.
   /// </summary>
   static public string AssemblyVersion
-    => Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
+    => Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
 
   /// <summary>
   /// Gets the assembly title with version.

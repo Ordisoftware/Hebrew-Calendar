@@ -417,6 +417,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Add omer day number for shavou'hot part one in the textual and visual calendar.
 >- Add button to add days in the dates difference window.
 >- Add submenu for all weather providers
+>- Add save screenshot to file
 >- Add option to preselect only the previous year, the current year and the next year in boards.
 >- Improve shavouh'ot diet reminder box to indicate full length and not only the first day.
 >- Fix timer which displays parashah description box when the day before is not Shabbat.
