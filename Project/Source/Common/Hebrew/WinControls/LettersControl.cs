@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2024-03 </edited>
+/// <edited> 2024-08 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -209,6 +209,25 @@ public partial class LettersControl : UserControl
     }
   }
   private bool _ShowValues = true;
+
+  /// <summary>
+  /// Indicates if letters final values must be shown.
+  /// </summary>
+  /// <remark>
+  /// Final values are shown only if values are shown.
+  /// </remark>
+  [DefaultValue(true)]
+  public bool ShowFinalValues
+  {
+    get => _ShowFinalValues;
+    set
+    {
+      if ( _ShowFinalValues == value ) return;
+      _ShowFinalValues = value;
+      Redraw();
+    }
+  }
+  private bool _ShowFinalValues = true;
 
   /// <summary>
   /// Indicates if keys codes must be shown.
