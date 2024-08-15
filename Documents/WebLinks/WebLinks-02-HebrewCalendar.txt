@@ -50,7 +50,7 @@ Name = (FR) Chabad.org
 URL = https://fr.chabad.org/calendar/view/month.htm
 
 Name = (FR) Chiourim.com
-URL = http://www.chiourim.com/cal/calendrier_hebraique.php
+URL = https://chiourim.com/cal/calendrier_hebraique/
 
 Name = (FR) IsraelTorah.com
 URL = https://www.israeltorah.com/calendrier
