@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;PanelLetters.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="ContextMenuLetter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>25, 19</value>
@@ -441,6 +441,66 @@
   <data name="&gt;&gt;PanelSeparator.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="LabelGematriaFinal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="LabelGematriaFinal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelGematriaFinal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="LabelGematriaFinal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelGematriaFinal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 0</value>
+  </data>
+  <data name="LabelGematriaFinal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="LabelGematriaFinal.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="LabelGematriaFinal.Text" xml:space="preserve">
+    <value>Value Final</value>
+  </data>
+  <data name="&gt;&gt;LabelGematriaFinal.Name" xml:space="preserve">
+    <value>LabelGematriaFinal</value>
+  </data>
+  <data name="&gt;&gt;LabelGematriaFinal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelGematriaFinal.Parent" xml:space="preserve">
+    <value>PanelGematria</value>
+  </data>
+  <data name="&gt;&gt;LabelGematriaFinal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="EditGematriaFinal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="EditGematriaFinal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 18</value>
+  </data>
+  <data name="EditGematriaFinal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="EditGematriaFinal.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;EditGematriaFinal.Name" xml:space="preserve">
+    <value>EditGematriaFinal</value>
+  </data>
+  <data name="&gt;&gt;EditGematriaFinal.Type" xml:space="preserve">
+    <value>Ordisoftware.Core.TextBoxEx, Ordisoftware.Hebrew.Letters, Version=7.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;EditGematriaFinal.Parent" xml:space="preserve">
+    <value>PanelGematria</value>
+  </data>
+  <data name="&gt;&gt;EditGematriaFinal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="LabelGematriaSimple.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -475,13 +535,13 @@
     <value>PanelGematria</value>
   </data>
   <data name="&gt;&gt;LabelGematriaSimple.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="EditGematriaFull.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="EditGematriaFull.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 18</value>
+    <value>160, 18</value>
   </data>
   <data name="EditGematriaFull.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -499,7 +559,7 @@
     <value>PanelGematria</value>
   </data>
   <data name="&gt;&gt;EditGematriaFull.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="LabelGematriaFull.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -514,7 +574,7 @@
     <value>NoControl</value>
   </data>
   <data name="LabelGematriaFull.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 0</value>
+    <value>158, 0</value>
   </data>
   <data name="LabelGematriaFull.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -535,7 +595,7 @@
     <value>PanelGematria</value>
   </data>
   <data name="&gt;&gt;LabelGematriaFull.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="EditGematriaSimple.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -559,7 +619,7 @@
     <value>PanelGematria</value>
   </data>
   <data name="&gt;&gt;EditGematriaSimple.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="PanelGematria.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>

@@ -61,6 +61,8 @@
       this.ToolTipClipboard = new System.Windows.Forms.ToolTip(this.components);
       this.PanelTextBox = new System.Windows.Forms.Panel();
       this.TextBox = new Ordisoftware.Core.TextBoxEx();
+      this.LabelGematriaFinal = new System.Windows.Forms.Label();
+      this.EditGematriaFinal = new Ordisoftware.Core.TextBoxEx();
       this.ContextMenuLetter.SuspendLayout();
       this.PanelSeparator.SuspendLayout();
       this.PanelBottom.SuspendLayout();
@@ -181,6 +183,8 @@
       // 
       // PanelGematria
       // 
+      this.PanelGematria.Controls.Add(this.LabelGematriaFinal);
+      this.PanelGematria.Controls.Add(this.EditGematriaFinal);
       this.PanelGematria.Controls.Add(this.LabelGematriaSimple);
       this.PanelGematria.Controls.Add(this.EditGematriaFull);
       this.PanelGematria.Controls.Add(this.LabelGematriaFull);
@@ -299,6 +303,21 @@
       this.TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_KeyPress);
       this.TextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_KeyUp);
       // 
+      // LabelGematriaFinal
+      // 
+      resources.ApplyResources(this.LabelGematriaFinal, "LabelGematriaFinal");
+      this.LabelGematriaFinal.Name = "LabelGematriaFinal";
+      // 
+      // EditGematriaFinal
+      // 
+      resources.ApplyResources(this.EditGematriaFinal, "EditGematriaFinal");
+      this.EditGematriaFinal.BackColor = System.Drawing.Color.LavenderBlush;
+      this.EditGematriaFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditGematriaFinal.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditGematriaFinal.Name = "EditGematriaFinal";
+      this.EditGematriaFinal.ReadOnly = true;
+      this.EditGematriaFinal.SpellCheckAllowed = false;
+      // 
       // LettersControl
       // 
       resources.ApplyResources(this, "$this");
@@ -356,5 +375,7 @@
     public Button ActionClear;
     private Panel PanelGematria;
     public Button ActionReverseWord;
+    internal Label LabelGematriaFinal;
+    public TextBoxEx EditGematriaFinal;
   }
 }

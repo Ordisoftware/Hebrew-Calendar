@@ -75,7 +75,7 @@ partial class MainForm
     string server = new Uri(WeatherProviders.MeteoblueDotComResult).Host;
     string url = WeatherProviders.MeteoblueDotComQuery;
     url = url.Replace("%LAT%", Settings.GPSLatitude).Replace("%LON%", Settings.GPSLongitude);
-    using var client = new WebClient();
+    using var client = new WebClientEx();
     JObject data = null;
     string json = string.Empty;
     try

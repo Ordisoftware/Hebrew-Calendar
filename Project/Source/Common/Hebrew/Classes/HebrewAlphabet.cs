@@ -11,10 +11,9 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2024-08 </edited>
 namespace Ordisoftware.Hebrew;
 
-using System.Reflection;
 using EllisWeb.Gematria;
 
 /// <summary>
@@ -113,6 +112,18 @@ static public class HebrewAlphabet
     360,
     406
   ];
+
+  /// <summary>
+  /// Indicates letters final values.
+  /// </summary>
+  static public readonly Dictionary<string, int> ValuesFinal = new()
+  {
+    ["k"] = 500,
+    ["m"] = 600,
+    ["n"] = 700,
+    ["p"] = 800,
+    ["j"] = 900
+  };
 
   /// <summary>
   /// Indicates letters names in Unicode chars.

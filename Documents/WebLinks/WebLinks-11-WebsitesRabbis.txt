@@ -82,7 +82,7 @@ URL = http://halachayomit.co.il/he/default.aspx
 -
 
 Name = (FR) Chiourim.com (Rav Dov Roth Lumbroso)
-URL = https://www.chiourim.com
+URL = https://chiourim.com
 
 Name = (FR) Chiourim AlloRav
 URL = https://allorav.com

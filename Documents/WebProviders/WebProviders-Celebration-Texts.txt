@@ -53,7 +53,7 @@ Name = (FR) Chabad.org
 URL = https://fr.chabad.org/library/article_cdo/aid/%CHABAD-FR%
 
 Name = (FR) Chiourim.com
-URL = https://www.chiourim.com/rubrique/fetes/%CHIOURIM%/
+URL = https://chiourim.com/decouvrir/fetes-juives/%CHIOURIM%/
 
 Name = (FR) Loubavitch.fr
 URL = https://www.loubavitch.fr/pratique/%LOUBAVITCH%

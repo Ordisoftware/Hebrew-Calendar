@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2022-08 </edited>
+/// <edited> 2024-08 </edited>
 namespace Ordisoftware.Hebrew;
 
 /// <summary>
@@ -90,6 +90,9 @@ public partial class LettersControl
         // Label value
         if ( _ShowValues )
         {
+          string textValue = HebrewAlphabet.ValuesSimple[index].ToString();
+          if ( _ShowFinalValues && HebrewAlphabet.ValuesFinal.ContainsKey(letter) )
+            textValue += $" | {HebrewAlphabet.ValuesFinal[letter].ToString()}";
           controls[indexControl++] = new Label
           {
             Location = new Point(posX, posY + offsetY),
@@ -97,7 +100,7 @@ public partial class LettersControl
             Font = fontValue,
             ForeColor = colorLabel,
             BackColor = Color.Transparent,
-            Text = HebrewAlphabet.ValuesSimple[index].ToString(),
+            Text = textValue,
             TextAlign = ContentAlignment.MiddleCenter
           };
         }
