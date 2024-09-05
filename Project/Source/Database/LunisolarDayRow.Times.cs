@@ -84,7 +84,7 @@ public partial class LunisolarDayRow
       bool isNextNotNull = rowNext.Moonset.HasValue;
       bool isNotNullCurrentAndPrevious = isCurrentNotNull && isPreviousNotNull;
       bool isNotNullCurrentAndNext = isCurrentNotNull && isNextNotNull;
-      bool isNotNullPreviousAndNext = isCurrentNotNull && isPreviousNotNull && isNextNotNull;
+      bool isNotNullPreviousAndNext = !isCurrentNotNull && isPreviousNotNull && isNextNotNull;
       if ( isNotNullCurrentAndNext && rowNext.Date == DateTime.Today )
         times.Set(dateRow, Moonset.Value.TimeOfDay, rowNext.Moonset.Value.TimeOfDay, 0, 1, offset3);
       else
