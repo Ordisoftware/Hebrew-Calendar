@@ -437,6 +437,7 @@ static public class StackMethods
   [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   [SuppressMessage("Vulnerability", "SEC0112:Unvalidated File Path", Justification = "N/A")]
   [SuppressMessage("Design", "MA0060:The value returned by Stream.Read/Stream.ReadAsync is not used", Justification = "N/A")]
+  [SuppressMessage("Minor Bug", "S2674:The length returned from a stream read should be checked", Justification = "N/A")]
   static public DateTime GetLinkerTime(this Assembly assembly, TimeZoneInfo target = null)
   {
     var filePath = assembly.Location;

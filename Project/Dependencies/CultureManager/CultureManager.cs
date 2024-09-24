@@ -720,9 +720,9 @@ namespace Infralution.Localization
 
             // if this component is an extender provider then keep track of it
             //
-            if ( childComponent is IExtenderProvider )
+            if ( childComponent is IExtenderProvider provider )
             {
-              extenderProviders[childComponent.GetType()] = childComponent as IExtenderProvider;
+              extenderProviders[childComponent.GetType()] = provider;
             }
           }
         }
