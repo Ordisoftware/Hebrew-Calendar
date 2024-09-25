@@ -57,6 +57,9 @@ URL = https://www.youtube.com/channel/UC33ZSc-6eR7TlWw66Ll-TJA
 Name = (FR) Rav Avraham Ifrah
 URL = https://www.youtube.com/channel/UCNxmzrYvmlJFXO_Zci2a86g
 
+Name = (FR) Rav Pr F.H. Lumbroso
+URL = https://www.youtube.com/@lescoursduprf.hlumbroso3319
+
 Name = (FR) Rav Asher Marciano
 URL = https://www.youtube.com/@RavAsherMarciano
 

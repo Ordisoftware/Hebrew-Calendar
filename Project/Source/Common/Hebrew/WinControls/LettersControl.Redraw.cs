@@ -90,9 +90,10 @@ public partial class LettersControl
         // Label value
         if ( _ShowValues )
         {
-          string textValue = HebrewAlphabet.ValuesSimple[index].ToString();
-          if ( _ShowFinalValues && HebrewAlphabet.ValuesFinal.ContainsKey(letter) )
-            textValue += $" | {HebrewAlphabet.ValuesFinal[letter].ToString()}";
+          var textValue = new StringBuilder(9);
+          textValue.Append(HebrewAlphabet.ValuesSimple[index]);
+          if ( _ShowFinalValues && HebrewAlphabet.ValuesFinal.TryGetValue(letter, out int letterValue) )
+            textValue.Append($" | {letterValue}");
           controls[indexControl++] = new Label
           {
             Location = new Point(posX, posY + offsetY),
@@ -100,7 +101,7 @@ public partial class LettersControl
             Font = fontValue,
             ForeColor = colorLabel,
             BackColor = Color.Transparent,
-            Text = textValue,
+            Text = textValue.ToString(),
             TextAlign = ContentAlignment.MiddleCenter
           };
         }
