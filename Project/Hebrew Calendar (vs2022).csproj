@@ -386,7 +386,6 @@
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.Sefaria.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.MechaTranslation.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.StudyBible.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Books\OnlineBookInfos.TorahBox.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot..cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.MyJewishLearning.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.TheYeshivaNet.cs" />
@@ -402,7 +401,6 @@
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.ChabadEN.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.AishFR.cs" />
     <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.ChabadFR.cs" />
-    <Compile Include="Source\Common\Hebrew\Providers\Parashot\OnlineParashot.TorahBox.cs" />
     <Compile Include="Source\Common\Hebrew\WinControls\LettersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

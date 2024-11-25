@@ -35,7 +35,6 @@ static public class OnlineCelebration
       { "%REFORMJUDAISM%", ReformJudaism[celebration]},
       { "%THETORAHCOM%", TheTorahCom[celebration]},
       { "%THEYESHIVA%", TheYeshiva[celebration]},
-      { "%TORAHBOX%", TorahBox[celebration]},
       { "%TORAHJEWS%", TrueTorahJews[celebration]},
       { "%TORAHORG%", TorahOrg[celebration]},
       { "%WIKIPEDIA-EN%", WikipediaEN[celebration]},
@@ -171,16 +170,6 @@ static public class OnlineCelebration
     { TorahCelebration.YomTerouah, "c83/torah/holidays/rosh-hashanah" },
     { TorahCelebration.YomHaKipourim, "c84/torah/holidays/yom-kippur" },
     { TorahCelebration.Soukot, "c90/torah/holidays/sukkot" }
-  };
-
-  static public readonly Dictionary<TorahCelebration, string> TorahBox = new()
-  {
-    { TorahCelebration.Shabat, "mitsvot/chabbath" },
-    { TorahCelebration.Pessah, "fetes/pessah" },
-    { TorahCelebration.Chavouot, "fetes/chavouot" },
-    { TorahCelebration.YomTerouah, "fetes/roch-hachana" },
-    { TorahCelebration.YomHaKipourim, "fetes/yom-kippour" },
-    { TorahCelebration.Soukot, "fetes/souccot" }
   };
 
   static public readonly Dictionary<TorahCelebration, string> TorahOrg = new()

@@ -16,12 +16,6 @@ Lang/FR = Art et musique
 Name = (FR) Danses et chants d'Israël @ dansesdisrael.fr
 URL = https://dansesdisrael.fr
 
-Name = (FR) Musique juive @ torah-box.com
-URL = https://www.torah-box.com/music
-
-Name = (FR) Comilations musicales @ torah-box.com
-URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0hDHGO6Dt8WXPqPOCvCEp-d
-
 -
 
 Name = (FR) Musique et films juifs @ israel-music.com

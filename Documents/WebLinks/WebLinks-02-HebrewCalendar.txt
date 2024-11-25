@@ -60,6 +60,3 @@ URL = https://www.loubavitch.fr/pratique/calendriers/jewish-calendar/calendrierm
 
 Name = (FR) Loubavitch-boulogne.com
 URL = https://www.loubavitch-boulogne.com/calendar/view/month.htm
-
-Name = (FR) Torah-box.com
-URL = https://www.torah-box.com/calendrier

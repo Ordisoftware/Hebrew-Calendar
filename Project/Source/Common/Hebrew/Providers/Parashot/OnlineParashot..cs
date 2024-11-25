@@ -30,7 +30,6 @@ static public partial class OnlineParashot
       { "%MYJEWISHLEARNING%", MyJewishLearning[parashah.Book][parashah.Number - 1] },
       { "%THETORAHCOM%", TheTorahCom[parashah.Book][parashah.Number - 1] },
       { "%THEYESHIVA%", TheYeshivaNet[parashah.Book][parashah.Number - 1] },
-      { "%TORAHBOX%", TorahBox[parashah.Book][parashah.Number - 1] },
       { "%TORAHJEWS%", TorahJews[parashah.Book][parashah.Number - 1] },
       { "%TORAHORG%", TorahOrg[parashah.Book][parashah.Number - 1] },
       { "%WIKIPEDIA-EN%", WikipediaEN[parashah.Book][parashah.Number - 1] },
