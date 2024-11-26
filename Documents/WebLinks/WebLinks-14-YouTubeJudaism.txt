@@ -19,9 +19,6 @@ URL = https://www.youtube.com/channel/UC0iLLG9ha8yShk7BPXvDXJw
 Name = (FR) Beit Ha-Zohar 
 URL = https://www.youtube.com/channel/UCcy6coS9yFqYlcxxNYkgWvQ
 
-Name = (FR) Chiourim.com
-URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
-
 Name = (FR) Espace Torah
 URL = https://www.youtube.com/channel/UCS3TXWo_jE-_hzG5tCzfTkA
 

@@ -28,7 +28,6 @@ static public class OnlineCelebration
       { "%AISH-IW%", AishIW[celebration]},
       { "%CHABAD-EN%", ChabadEN[celebration]},
       { "%CHABAD-FR%", ChabadFR[celebration]},
-      { "%CHIOURIM%", Chiourim[celebration]},
       { "%LOUBAVITCH%", Loubavitch[celebration]},
       { "%MYJEWISHLEARNING%", MyJewishLearning[celebration]},
       { "%RAVABDELHAK%", RavAbdelhak[celebration]},
@@ -100,16 +99,6 @@ static public class OnlineCelebration
     { TorahCelebration.YomTerouah, "565037/jewish/Roch-Hachana.htm" },
     { TorahCelebration.YomHaKipourim, "567990/jewish/Yom-Kippour.htm" },
     { TorahCelebration.Soukot, "3753669/jewish/Soukkot-et-Simhat-Torah.htm" }
-  };
-
-  static public readonly Dictionary<TorahCelebration, string> Chiourim = new()
-  {
-    { TorahCelebration.Shabat, "" },
-    { TorahCelebration.Pessah, "pessah" },
-    { TorahCelebration.Chavouot, "chavouot" },
-    { TorahCelebration.YomTerouah, "eloul" },
-    { TorahCelebration.YomHaKipourim, "eloul" },
-    { TorahCelebration.Soukot, "tichri" }
   };
 
   static public readonly Dictionary<TorahCelebration, string> Loubavitch = new()
