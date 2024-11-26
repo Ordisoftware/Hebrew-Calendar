@@ -56,12 +56,6 @@ URL = http://halakhah.com
 Name = (EN) Judaism @ sacred-texts.com
 URL = https://www.sacred-texts.com/jud/
 
-Name = (FR/IW) Torah et Talmud avec commentaires @ torah-box.com
-URL = https://www.torah-box.com/torah-pdf/
-
-Name = (FR/IW) Parashah avec commentaires @ torah-box.com
-URL = https://www.torah-box.com/paracha/
-
 -
 
 Name = (IW) Tanak Hebrew Text @ fourmilab.ch

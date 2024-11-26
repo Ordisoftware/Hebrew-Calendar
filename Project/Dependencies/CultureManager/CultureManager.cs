@@ -702,7 +702,7 @@ namespace Infralution.Localization
         //
         if ( isVB )
         {
-          fieldName = fieldName.Substring(1, fieldName.Length - 1);
+          fieldName = fieldName.Substring(1);
         }
 
         // check whether this field is a localized component of the parent

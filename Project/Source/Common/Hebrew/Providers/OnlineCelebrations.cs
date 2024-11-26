@@ -28,14 +28,12 @@ static public class OnlineCelebration
       { "%AISH-IW%", AishIW[celebration]},
       { "%CHABAD-EN%", ChabadEN[celebration]},
       { "%CHABAD-FR%", ChabadFR[celebration]},
-      { "%CHIOURIM%", Chiourim[celebration]},
       { "%LOUBAVITCH%", Loubavitch[celebration]},
       { "%MYJEWISHLEARNING%", MyJewishLearning[celebration]},
       { "%RAVABDELHAK%", RavAbdelhak[celebration]},
       { "%REFORMJUDAISM%", ReformJudaism[celebration]},
       { "%THETORAHCOM%", TheTorahCom[celebration]},
       { "%THEYESHIVA%", TheYeshiva[celebration]},
-      { "%TORAHBOX%", TorahBox[celebration]},
       { "%TORAHJEWS%", TrueTorahJews[celebration]},
       { "%TORAHORG%", TorahOrg[celebration]},
       { "%WIKIPEDIA-EN%", WikipediaEN[celebration]},
@@ -103,16 +101,6 @@ static public class OnlineCelebration
     { TorahCelebration.Soukot, "3753669/jewish/Soukkot-et-Simhat-Torah.htm" }
   };
 
-  static public readonly Dictionary<TorahCelebration, string> Chiourim = new()
-  {
-    { TorahCelebration.Shabat, "" },
-    { TorahCelebration.Pessah, "pessah" },
-    { TorahCelebration.Chavouot, "chavouot" },
-    { TorahCelebration.YomTerouah, "eloul" },
-    { TorahCelebration.YomHaKipourim, "eloul" },
-    { TorahCelebration.Soukot, "tichri" }
-  };
-
   static public readonly Dictionary<TorahCelebration, string> Loubavitch = new()
   {
     { TorahCelebration.Shabat, "chabbat" },
@@ -171,16 +159,6 @@ static public class OnlineCelebration
     { TorahCelebration.YomTerouah, "c83/torah/holidays/rosh-hashanah" },
     { TorahCelebration.YomHaKipourim, "c84/torah/holidays/yom-kippur" },
     { TorahCelebration.Soukot, "c90/torah/holidays/sukkot" }
-  };
-
-  static public readonly Dictionary<TorahCelebration, string> TorahBox = new()
-  {
-    { TorahCelebration.Shabat, "mitsvot/chabbath" },
-    { TorahCelebration.Pessah, "fetes/pessah" },
-    { TorahCelebration.Chavouot, "fetes/chavouot" },
-    { TorahCelebration.YomTerouah, "fetes/roch-hachana" },
-    { TorahCelebration.YomHaKipourim, "fetes/yom-kippour" },
-    { TorahCelebration.Soukot, "fetes/souccot" }
   };
 
   static public readonly Dictionary<TorahCelebration, string> TorahOrg = new()

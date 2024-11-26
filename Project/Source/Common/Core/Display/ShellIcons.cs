@@ -29,7 +29,7 @@ static public class ShellIcons
   static public readonly Bitmap Question;
   static ShellIcons()
   {
-    var sii = new SHSTOCKICONINFO { cbSize = (uint)Marshal.SizeOf(typeof(SHSTOCKICONINFO)) };
+    var sii = new SHSTOCKICONINFO { cbSize = (uint)Marshal.SizeOf<SHSTOCKICONINFO>() };
     Information = process(SHSTOCKICONID.SIID_INFO);
     Question = process(SHSTOCKICONID.SIID_HELP);
     Warning = process(SHSTOCKICONID.SIID_WARNING);

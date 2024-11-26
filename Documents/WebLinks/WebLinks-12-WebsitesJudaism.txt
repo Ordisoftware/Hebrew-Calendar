@@ -53,9 +53,6 @@ URL = http://yechiva.com
 Name = (FR) Pureté Juive
 URL = https://www.puretejuive.com
 
-Name = (FR) Torah Box
-URL = https://www.torah-box.com
-
 Name = (FR) Torah de Vie
 URL = http://www.torahdevie.com
 

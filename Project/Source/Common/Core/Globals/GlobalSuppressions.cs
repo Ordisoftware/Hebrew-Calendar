@@ -111,3 +111,4 @@
 // TODO remove if not using .NET Framework
 [assembly: SuppressMessage("Minor Code Smell", "S6603:The collection-specific \"TrueForAll\" method should be used instead of the \"All\" extension", Justification = "N/A for .NET Framework", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S6605:Collection-specific \"Exists\" method should be used instead of the \"Any\" extension", Justification = "N/A for .NET Framework", Scope = "module")]
+[assembly: SuppressMessage("Reliability", "CA2022:Éviter les lectures incorrectes avec « Stream.Read »", Justification = "N/A for .NET Framework", Scope = "module")]

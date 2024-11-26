@@ -45,7 +45,6 @@ sealed partial class NewMoonsBoardForm : Form
   {
     InitializeComponent();
     Text += $" ({Settings.GPSCountry}, {Settings.GPSCity})";
-    Text += $" - Shabat : {AppTranslations.DaysOfWeek.GetLang((DayOfWeek)Settings.ShabatDay)}";
     Title = $"{Text} - ";
     Icon = MainForm.Instance.Icon;
     EditUseRealDays.Checked = Settings.NewMoonsBoardFormUseRealDays;

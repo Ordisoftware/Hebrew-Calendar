@@ -44,9 +44,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AiSB_UbS8L_f1yc8x7Vjnp
 Name = (FR) Cours de Tehilim
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DiKeomxWIcsjEX4kBjLEpO
 
-Name = (FR) Cours de Talmud
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BHHWXJ6_Skb-gFBeAmDlKw
-
 Name = (FR) Cours de Kabalah
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CoV3JgJLim0FmSsE1MDZJP
 
@@ -60,9 +57,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Cjlu1jQW7_xO1R03bCaKhs
 
 Name = (FR) Rav Menahem Altabe
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B8WqPCwLWyBC0gDQAoA2OZ
-
-Name = (FR/EN) Rav Shlomoh Amar
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DP-nvpbjUq-Bjlug7TjxgU
 
 Name = (FR) Rav Yehia Benchetrit
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BGZKgCVDgtZqHZCpU8ieK2
@@ -82,9 +76,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-CVfZ2azPtXh8pXSwBNA_gV
 Name = (FR) Rav Azriel Cohen-Arazi
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DFccHjtdA5k4KuCAaZdpg9
 
-Name = (FR) Rav Yeshaya Dalsace
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-D0XDobwdfCgNw0Azx30bT5
-	
 Name = (FR) Rav Yossef Hay
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-D124Or8KY9XHz4e76McKBT
 
@@ -93,9 +84,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BtjVoIn7xLBlPJbUsNcc3Z
 
 Name = (FR) Rav Yves Marciano
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BYiFkGEEVWJit3dAj1qGDR
-
-Name = (FR) Rav Baroukh Rosenblum
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BbVVE9N2yVMwb4_NzMmFRn
 
 Name = (FR) Rav Raphaël Sadin
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AryezXSAL8QUeyImAGzaPF

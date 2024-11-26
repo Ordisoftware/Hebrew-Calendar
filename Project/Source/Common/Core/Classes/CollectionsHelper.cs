@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2024-11 </edited>
 namespace Ordisoftware.Core;
 
 static public class CollectionsHelper
@@ -46,6 +46,17 @@ static public class CollectionsHelper
   /// <typeparam name="T">Generic type parameter.</typeparam>
   /// <param name="collection">The collection.</param>
   static public IEnumerable<T> AsIEnumerable<T>(this ListBox.ObjectCollection collection)
+  {
+    foreach ( T item in collection )
+      yield return item;
+  }
+
+  /// <summary>
+  /// Gets an IEnumerable<typeparamref name="T"/> from a CheckedListBox.Items collection.
+  /// </summary>
+  /// <typeparam name="T">Generic type parameter.</typeparam>
+  /// <param name="collection">The collection.</param>
+  static public IEnumerable<T> AsIEnumerable<T>(this CheckedListBox.ObjectCollection collection)
   {
     foreach ( T item in collection )
       yield return item;

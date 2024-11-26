@@ -73,6 +73,6 @@ static public partial class StringHelper
   /// <param name="separator">The separator.</param>
   /// <param name="stringSplitOptions">Options for controlling the operation.</param>
   static public string[] Split(this string str, string separator, StringSplitOptions stringSplitOptions)
-    => str.Split(new string[] { separator }, stringSplitOptions);
+    => str.Split([separator], stringSplitOptions);
 
 }

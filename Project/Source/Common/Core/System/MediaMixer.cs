@@ -42,7 +42,7 @@ static public class MediaMixer
       ExtraInfo = IntPtr.Zero
     };
     var inputs = new INPUT[] { input };
-    SendInput(1, inputs, Marshal.SizeOf(typeof(INPUT)));
+    SendInput(1, inputs, Marshal.SizeOf<INPUT>());
   }
 
   static public void MuteVolume(IntPtr? handle = null)

@@ -564,7 +564,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### 2022.03.01 - Version 9.26
 
 - Fix and improve Tools menu.
-- Add read online using Torah-Box.
 - Update web links with more resources on hieroglyphs.
 
 #### 2022.02.22 - Version 9.25
@@ -1084,7 +1083,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Fix view log menu item not disabled when app started when log is disabled.
 - Fix view log icon not disabled in stats form when log is disabled.
 - Fix small defect with Tray Icon images.
-- Update web links to improve playlists and add the calendar of Torah-box.
+- Update web links to improve playlists.
 
 #### 2020.11.18 - Version 5.7
 

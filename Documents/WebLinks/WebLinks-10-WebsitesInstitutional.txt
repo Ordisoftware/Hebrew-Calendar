@@ -15,6 +15,14 @@ FOLDER-SEPARATOR
 Lang/EN = Institutional websites
 Lang/FR = Sites Web institutionnels
 
+Name = (FR) Vaad haRabanim	
+URL = https://www.vaadharabanim.org
+
+Name = (EN) Vaad haRabanim	
+URL = https://www.vaadharabanim.com
+
+-
+
 Name = (FR/EN) Conference of European Rabbis
 URL = https://rabbiscer.org
 

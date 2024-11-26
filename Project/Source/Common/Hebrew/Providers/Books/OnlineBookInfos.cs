@@ -40,7 +40,6 @@ static public partial class OnlineBookInfos
       { "%BOOKNUM%", book.ToString() },
       { "%BOOKSB%", StudyBible[(TanakBook)book] },
       { "%BOOKSEFARIA%", Sefaria[(TanakBook)book] },
-      { "%BOOKTORAHBOX%", TorahBox[(TanakBook)book] },
       { "%CHAPTERNUM#2%", chapter.ToString("00") },
       { "%CHAPTERNUM%", chapterString },
       { "%VERSENUM#2%", verse.ToString("00") },

@@ -60,6 +60,7 @@ static public partial class SystemManager
   /// Checks if a file is an executable.
   /// </summary>
   [SuppressMessage("Design", "MA0060:The value returned by Stream.Read/Stream.ReadAsync is not used", Justification = "N/A")]
+  [SuppressMessage("Minor Bug", "S2674:The length returned from a stream read should be checked", Justification = "N/A")]
   static public bool CheckIfFileIsExecutable(string filePath)
   {
     try
