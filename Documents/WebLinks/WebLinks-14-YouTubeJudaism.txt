@@ -37,9 +37,6 @@ URL = https://www.youtube.com/@OhelTV
 Name = (FR) La Yéchiva des étudiants
 URL = https://www.youtube.com/@yechivaetudiants
 
-Name = (FR) Torah Box
-URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
-
 Name = (FR) Torah de Vie
 URL = https://www.youtube.com/channel/UC89piZNg765Z9kz_BC3-pow
 
