@@ -85,9 +85,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BtjVoIn7xLBlPJbUsNcc3Z
 Name = (FR) Rav Yves Marciano
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BYiFkGEEVWJit3dAj1qGDR
 
-Name = (FR) Rav Raphaël Sadin
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AryezXSAL8QUeyImAGzaPF
-
 Name = (FR/EN) Rav Menachem Mendel Schneerson
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-A4y254NHmPIg4Eca-Dei2I
 
