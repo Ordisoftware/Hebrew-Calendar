@@ -4,9 +4,9 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar)](#)&nbsp;
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/tree/main/Project)&nbsp;
 [![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/tree/main/Project)&nbsp;<br/>
-[![OS: Windows](https://img.shields.io/badge/Windows%207%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
+[![OS: Windows](https://img.shields.io/badge/Windows%2010%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
 [![UI: WinForms](https://img.shields.io/badge/WinForms-279CE8?label=ui)](https://github.com/dotnet/winforms)&nbsp;
-[![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
+[![Framework: .Net](https://img.shields.io/badge/.NET%204.8.1-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
 [![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
 [![Lang: C#](https://img.shields.io/badge/C%23%2012-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
 [![DB: SQLite](https://img.shields.io/badge/SQLite%203.46-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
@@ -67,9 +67,9 @@ A libre and open-source software written in C# that allows to generate a calenda
 ## Requirements
 
 - Screen 1024x768 or higher
-- Windows 7 SP1 x32/x64 or higher
-- Framework .NET 4.8
-- SQLite 3.46
+- Windows 10 x32/x64 or higher
+- Framework .NET 4.8.1
+- SQLite 3.46.1
 
 ## Download
 
