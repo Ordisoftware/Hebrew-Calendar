@@ -119,12 +119,12 @@ public abstract class SQLiteDatabase : IDisposable
     if ( Initialized ) return;
     UpgradeSchema();
     CreateTables();
-    Vacuum();
+    AutoVacuum();
     Initialized = true;
     if ( AutoLoadAllAtOpen ) LoadAll(true);
   }
 
-  protected virtual void Vacuum(bool force = false) { }
+  protected virtual void AutoVacuum() { }
 
   protected virtual void UpgradeSchema() { }
 
