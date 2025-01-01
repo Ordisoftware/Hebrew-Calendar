@@ -399,6 +399,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### In progress - Version 11.0
 
+- Upgrade to framework 4.8.1 and discontinuation of Windows 7 support.
 - Move date bookmarks stored in a text file to a database table.
 - Add memos and colors to date bookmarks that are now automatically sorted.
 - Add default bookmarks folder.
