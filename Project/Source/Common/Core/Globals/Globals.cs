@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-04 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -89,6 +89,7 @@ static public partial class Globals
   static public readonly Stopwatch ChronoCreateData = new();
   static public readonly Stopwatch ChronoShowData = new();
   static public readonly Stopwatch ChronoRendering = new();
+  static public readonly Stopwatch ChronoProcess = new();
 
   /// <summary>
   /// Indicates keyboard shortcuts notice form.

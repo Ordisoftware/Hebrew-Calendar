@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -57,5 +57,19 @@ static public partial class StringHelper
   /// <param name="str">The string to act on.</param>
   static public string Titleize(this string str)
     => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
+
+  /// <summary>
+  /// Gets a TimeSpan as 1d 1h 1m 1s (only 0s if none available).
+  /// </summary>
+  /// <param name="elapsed">The TimeSpan</param>
+  static public string AsReadable(this TimeSpan elapsed)
+  {
+    List<string> parts = new List<string>();
+    if ( elapsed.Days > 0 ) parts.Add($"{elapsed.Days}d");
+    if ( elapsed.Hours > 0 ) parts.Add($"{elapsed.Hours}h");
+    if ( elapsed.Minutes > 0 ) parts.Add($"{elapsed.Minutes}m");
+    if ( elapsed.Seconds > 0 || elapsed.TotalSeconds == 0 ) parts.Add($"{elapsed.Seconds}s");
+    return parts.Count == 0 ? "0s" : string.Join(" ", parts);
+  }
 
 }
