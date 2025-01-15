@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -78,6 +78,18 @@ static public partial class SysTranslations
   {
     [Language.EN] = "Database vacuum succeeded.",
     [Language.FR] = "Succès du vacuum de la base de données."
+  };
+
+  static public readonly TranslationsDictionary DatabaseSetTempDirError = new()
+  {
+    [Language.EN] = "Database set temporary directory failed.",
+    [Language.FR] = "Échec de définition du dossier temporaire de la base de données."
+  };
+
+  static public readonly TranslationsDictionary DatabaseSetCacheSizeError = new()
+  {
+    [Language.EN] = "Database set cache size failed.",
+    [Language.FR] = "Échec de définition de la taille du cache de la base de données."
   };
 
   static public readonly TranslationsDictionary DatabaseNoProcessConcurrency = new()

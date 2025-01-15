@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 using MoreLinq;
@@ -145,6 +145,36 @@ public class SQLiteNetORM : SQLiteConnection
     catch ( Exception ex )
     {
       throw new SQLiteException(SysTranslations.DatabaseVacuumError.GetLang(), ex);
+    }
+  }
+
+  /// <summary>
+  /// Sets the database temp dir.
+  /// </summary>
+  public void SetTempDir(string path)
+  {
+    try
+    {
+      Execute($"PRAGMA temp_store_directory = '{path}'");
+    }
+    catch ( Exception ex )
+    {
+      throw new SQLiteException(SysTranslations.DatabaseSetTempDirError.GetLang(), ex);
+    }
+  }
+
+  /// <summary>
+  /// Sets the database cache dir in KB, 0 for default 8192.
+  /// </summary>
+  public void SetCacheSize(int size)
+  {
+    try
+    {
+      Execute($"PRAGMA cache_size = -{( size == 0 ? 8192 : size )};");
+    }
+    catch ( Exception ex )
+    {
+      throw new SQLiteException(SysTranslations.DatabaseSetTempDirError.GetLang(), ex);
     }
   }
 

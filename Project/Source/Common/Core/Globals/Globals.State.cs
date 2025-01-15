@@ -73,7 +73,7 @@ static public partial class Globals
   /// <summary>
   /// Indicates if data is being processed.
   /// </summary>
-  static public bool IsInProcess { get; set; }
+  static public bool IsInBatch { get; set; }
 
   /// <summary>
   /// Indicates if data is being printed.
