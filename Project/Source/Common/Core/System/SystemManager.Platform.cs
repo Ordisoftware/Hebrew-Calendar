@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 using System.Management;
@@ -124,18 +124,45 @@ static public partial class SystemManager
   static private string _Platform;
 
   /// <summary>
+  /// Indicates the free physical memory in bytes.
+  /// </summary>
+  static public ulong PhysicalMemoryFreeValue
+  {
+    get
+    {
+      var value = GetWin32OperatingSystemValue("FreePhysicalMemory");
+      return value is null ? 0 : (ulong)value * 1024;
+    }
+  }
+
+  /// <summary>
   /// Indicates the free physical memory formatted.
   /// </summary>
   static public string PhysicalMemoryFree
   {
     get
     {
-      var value = GetWin32OperatingSystemValue("FreePhysicalMemory");
-      return value is not null
-        ? ( (ulong)value * 1024 ).FormatBytesSize()
-        : SysTranslations.UndefinedSlot.GetLang();
+      ulong value = PhysicalMemoryFreeValue;
+      return value != 0 ? value.FormatBytesSize() : SysTranslations.UndefinedSlot.GetLang();
     }
   }
+
+  /// <summary>
+  /// Indicates the total physical memory in bytes.
+  /// </summary>
+  static public ulong TotalVisibleMemoryValue
+  {
+    get
+    {
+      if ( _TotalVisibleMemoryValue == 0 )
+      {
+        var value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
+        _TotalVisibleMemoryValue = value is null ? 0 : (ulong)value * 1024;
+      }
+      return _TotalVisibleMemoryValue;
+    }
+  }
+  static private ulong _TotalVisibleMemoryValue;
 
   /// <summary>
   /// Indicates the total physical memory formatted.
@@ -146,10 +173,9 @@ static public partial class SystemManager
     {
       if ( _TotalVisibleMemory.IsNullOrEmpty() )
       {
-        var value = GetWin32OperatingSystemValue("TotalVisibleMemorySize");
-        _TotalVisibleMemory = value is not null
-          ? ( (ulong)value * 1024 ).FormatBytesSize()
-          : SysTranslations.UndefinedSlot.GetLang();
+        ulong value = TotalVisibleMemoryValue;
+        _TotalVisibleMemory = value != 0 ? value.FormatBytesSize() : SysTranslations.UndefinedSlot.GetLang();
+
       }
       return _TotalVisibleMemory;
     }

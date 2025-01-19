@@ -14,6 +14,7 @@
 /// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
+using System;
 using MoreLinq;
 using SQLite;
 
@@ -128,7 +129,7 @@ public class SQLiteNetORM : SQLiteConnection
       string result = ExecuteScalar<string>("SELECT integrity_check FROM pragma_integrity_check()");
       if ( result != "ok" )
       {
-        throw new SQLiteException(result);
+        throw new AdvSQLiteException(result);
       }
     });
   }
@@ -144,7 +145,7 @@ public class SQLiteNetORM : SQLiteConnection
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DatabaseVacuumError.GetLang(), ex);
+      throw new AdvSQLiteException(SysTranslations.DatabaseVacuumError.GetLang(), ex);
     }
   }
 
@@ -159,7 +160,7 @@ public class SQLiteNetORM : SQLiteConnection
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DatabaseSetTempDirError.GetLang(), ex);
+      throw new AdvSQLiteException(SysTranslations.DatabaseSetTempDirError.GetLang(), ex);
     }
   }
 
@@ -174,7 +175,55 @@ public class SQLiteNetORM : SQLiteConnection
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DatabaseSetTempDirError.GetLang(), ex);
+      throw new AdvSQLiteException(SysTranslations.DatabaseSetTempDirError.GetLang(), ex);
+    }
+  }
+
+  public void SetTempStoreInMemory(bool enabled)
+  {
+    try
+    {
+      if ( enabled )
+        Execute("PRAGMA temp_store = MEMORY;");
+      else
+        Execute("PRAGMA temp_store = DEFAULT;");
+    }
+    catch ( Exception ex )
+    {
+      throw; // TODO new AdvSQLiteException(SysTranslations.DatabaseSetTempStoreError.GetLang(), ex);
+    }
+  }
+
+  public void SetSynchronous(bool enabled)
+  {
+    try
+    {
+      if ( enabled )
+        Execute("PRAGMA synchronous = FULL;");
+      else
+        Execute("PRAGMA synchronous = OFF;");
+    }
+    catch ( Exception ex )
+    {
+      throw; // TODO new AdvSQLiteException(SysTranslations.DatabaseSetSynchronousError.GetLang(), ex);
+    }
+  }
+
+  public void SetJournal(bool enabled)
+  {
+    try
+    {
+      if ( enabled )
+        Execute("PRAGMA journal_mode = DELETE;");
+      else
+        Execute("PRAGMA journal_mode = OFF;");
+    }
+    catch ( SQLiteException ex ) when ( ex.Message == "not an error" )
+    {
+    }
+    catch ( Exception ex )
+    {
+      throw; // TODO new AdvSQLiteException(SysTranslations.DatabaseSetSynchronousError.GetLang(), ex);
     }
   }
 
@@ -190,7 +239,7 @@ public class SQLiteNetORM : SQLiteConnection
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DBDropTableError.GetLang(table), ex);
+      throw new AdvSQLiteException(SysTranslations.DBDropTableError.GetLang(table), ex);
     }
   }
 
@@ -209,7 +258,7 @@ public class SQLiteNetORM : SQLiteConnection
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DBRenameTableError.GetLang(tableOldName, tableNewName), ex);
+      throw new AdvSQLiteException(SysTranslations.DBRenameTableError.GetLang(tableOldName, tableNewName), ex);
     }
   }
 
@@ -232,7 +281,7 @@ public class SQLiteNetORM : SQLiteConnection
     catch ( Exception ex )
     {
       string message = SysTranslations.DBRenameTableError.GetLang(tableName, columnOldName, columnNewName);
-      throw new SQLiteException(message, ex);
+      throw new AdvSQLiteException(message, ex);
     }
   }
 
@@ -256,12 +305,12 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(table, UnFormatSQL(sql)), ex);
+          throw new AdvSQLiteException(SysTranslations.DBCreateTableError.GetLang(table, UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(CheckTable)}", ex);
+      throw new AdvSQLiteException($"Error in {nameof(CheckTable)}", ex);
     }
     return false;
   }
@@ -286,12 +335,12 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateIndexError.GetLang(index, UnFormatSQL(sql)), ex);
+          throw new AdvSQLiteException(SysTranslations.DBCreateIndexError.GetLang(index, UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(CheckIndex)}", ex);
+      throw new AdvSQLiteException($"Error in {nameof(CheckIndex)}", ex);
     }
     return false;
   }
@@ -322,12 +371,12 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnFormatSQL(sql)), ex);
+          throw new AdvSQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(CheckColumn)}", ex);
+      throw new AdvSQLiteException($"Error in {nameof(CheckColumn)}", ex);
     }
     return false;
   }
@@ -377,7 +426,7 @@ public class SQLiteNetORM : SQLiteConnection
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(CountRows)}", ex);
+      throw new AdvSQLiteException($"Error in {nameof(CountRows)}", ex);
     }
   }
 

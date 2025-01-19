@@ -105,4 +105,14 @@ static public partial class Globals
   /// </summary>
   static public bool CancelRequired { get; set; }
 
+  /// <summary>
+  /// Indicates if current processing can be paused.
+  /// </summary>
+  static public bool CanPause { get; set; } = true;
+
+  /// <summary>
+  /// Indicates if current processing can be canceled.
+  /// </summary>
+  static public bool CanCancel { get; set; } = true;
+
 }

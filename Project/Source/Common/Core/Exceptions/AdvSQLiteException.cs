@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -19,11 +19,11 @@ namespace Ordisoftware.Core;
 /// </summary>
 [Serializable]
 [SuppressMessage("Major Code Smell", "S3925:\"ISerializable\" should be implemented correctly", Justification = "<En attente>")]
-public class SQLiteException : System.Data.Common.DbException
+public class AdvSQLiteException : System.Data.Common.DbException
 {
-  public SQLiteException() { }
-  public SQLiteException(string message) : base(message) { }
-  public SQLiteException(string message, Exception innerException) : base(message, innerException) { }
-  public SQLiteException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-  public SQLiteException(string message, int errorCode) : base(message, errorCode) { }
+  public AdvSQLiteException() { }
+  public AdvSQLiteException(string message) : base(message) { }
+  public AdvSQLiteException(string message, Exception innerException) : base(message, innerException) { }
+  public AdvSQLiteException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+  public AdvSQLiteException(string message, int errorCode) : base(message, errorCode) { }
 }
