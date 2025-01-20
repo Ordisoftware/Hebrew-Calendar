@@ -65,23 +65,22 @@ static public partial class StringHelper
   static public string AsReadable(this TimeSpan elapsed)
   {
     bool skip = true;
-    List<string> parts = new List<string>();
+    List<string> parts = [];
     if ( elapsed.Days > 0 )
     {
-      parts.Add($"{elapsed.Days.ToString("00")}d");
+      parts.Add($"{elapsed.Days:00}d");
       skip = false;
     }
     if ( !skip || elapsed.Hours > 0 )
     {
-      parts.Add($"{elapsed.Hours.ToString("00")}h");
+      parts.Add($"{elapsed.Hours:00}h");
       skip = false;
     }
     if ( !skip || elapsed.Minutes > 0 )
     {
-      parts.Add($"{elapsed.Minutes.ToString("00")}m");
-      skip = false;
+      parts.Add($"{elapsed.Minutes:00}m");
     }
-    parts.Add($"{elapsed.Seconds.ToString("00")}s");
+    parts.Add($"{elapsed.Seconds:00}s");
     return parts.Count == 0 ? "00s" : string.Join(" ", parts);
   }
 

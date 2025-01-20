@@ -3,3 +3,5 @@
 "hebrew_letters.ico" is a custom icon made with Axialis IconWorkshop.
 
 "hebrew_words.ico" is a custom icon made with Axialis IconWorkshop.
+
+"hebrew_pi.ico" is a custom icon made with Axialis IconWorkshop using Fatcow "pi_math.ico"
