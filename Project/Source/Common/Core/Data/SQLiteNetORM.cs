@@ -179,14 +179,11 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetTempStoreInMemory(bool enabled)
+  public void SetTempStoreInMemory(SQLiteTempStoreMode mode)
   {
     try
     {
-      if ( enabled )
-        Execute("PRAGMA temp_store = MEMORY;");
-      else
-        Execute("PRAGMA temp_store = DEFAULT;");
+      Execute($"PRAGMA temp_store = {mode};");
     }
     catch ( Exception ex )
     {
@@ -194,14 +191,14 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetSynchronous(bool enabled)
+  public void SetLocking(SQLiteLockingMode mode)
   {
     try
     {
-      if ( enabled )
-        Execute("PRAGMA synchronous = FULL;");
-      else
-        Execute("PRAGMA synchronous = OFF;");
+      Execute($"PRAGMA locking_mode = {mode};");
+    }
+    catch ( SQLiteException ex ) when ( ex.Message == "not an error" )
+    {
     }
     catch ( Exception ex )
     {
@@ -209,17 +206,38 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetJournal(bool enabled)
+  public void SetSynchronous(SQLiteSynchronousMode mode)
   {
     try
     {
-      if ( enabled )
-        Execute("PRAGMA journal_mode = DELETE;");
-      else
-        Execute("PRAGMA journal_mode = OFF;");
+      Execute($"PRAGMA synchronous = {mode};");
+    }
+    catch ( Exception ex )
+    {
+      throw; // TODO new AdvSQLiteException(SysTranslations.DatabaseSetSynchronousError.GetLang(), ex);
+    }
+  }
+
+  public void SetJournal(SQLiteJournalMode mode)
+  {
+    try
+    {
+      Execute($"PRAGMA journal_mode = {mode};");
     }
     catch ( SQLiteException ex ) when ( ex.Message == "not an error" )
     {
+    }
+    catch ( Exception ex )
+    {
+      throw; // TODO new AdvSQLiteException(SysTranslations.DatabaseSetJournalModeError.GetLang(), ex);
+    }
+  }
+
+  public void SetPageSize(SQLitePageSize mode)
+  {
+    try
+    {
+      Execute($"PRAGMA page_size = {(int)mode};");
     }
     catch ( Exception ex )
     {
