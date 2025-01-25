@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2011-12 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2025-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -51,6 +51,14 @@ static public partial class DisplayManager
       return AnchorStyles.Bottom;
     else
       return AnchorStyles.Right;
+  }
+
+  static public void SyncUISimple(this Control control, Action action)
+  {
+    if ( control.InvokeRequired )
+      control.Invoke(action);
+    else
+      action();
   }
 
   /// <summary>

@@ -199,11 +199,12 @@
     <Compile Include="Source\Common\Core\Enums\PowerActions.cs" />
     <Compile Include="Source\Common\Core\Enums\ShowExceptionMode.cs" />
     <Compile Include="Source\Common\Core\Enums\SoundSource.cs" />
+    <Compile Include="Source\Common\Core\Enums\SQLiteModes.cs" />
     <Compile Include="Source\Common\Core\Enums\TraceFileRollOverMode.cs" />
     <Compile Include="Source\Common\Core\Exceptions\AbortException.cs" />
     <Compile Include="Source\Common\Core\Exceptions\ExceptionInfo.cs" />
     <Compile Include="Source\Common\Core\Exceptions\AdvNotImplementedException.cs" />
-    <Compile Include="Source\Common\Core\Exceptions\SQLiteException.cs" />
+    <Compile Include="Source\Common\Core\Exceptions\AdvSQLiteException.cs" />
     <Compile Include="Source\Common\Core\Globalization\Languages.cs" />
     <Compile Include="Source\Common\Core\Globalization\Localizer.cs" />
     <Compile Include="Source\Common\Core\Globalization\SysTranslations.Application.cs" />

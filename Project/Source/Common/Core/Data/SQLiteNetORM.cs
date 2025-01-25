@@ -160,7 +160,7 @@ public class SQLiteNetORM : SQLiteConnection
   /// <summary>
   /// Sets the database cache dir in KB, 0 for default 8192.
   /// </summary>
-  public void SetCacheSize(int size)
+  public void SetCacheSize(long size)
   {
     try
     {
@@ -177,6 +177,18 @@ public class SQLiteNetORM : SQLiteConnection
     try
     {
       Execute($"PRAGMA temp_store = {mode};");
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
+    }
+  }
+
+  public void SetCacheSpill(bool enabled)
+  {
+    try
+    {
+      Execute($"PRAGMA temp_store = {Convert.ToInt32(enabled)};");
     }
     catch ( Exception ex )
     {
