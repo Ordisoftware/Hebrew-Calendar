@@ -145,11 +145,12 @@ public class SQLiteNetORM : SQLiteConnection
   /// <summary>
   /// Sets the database temp dir.
   /// </summary>
-  public void SetTempDir(string path)
+  public void SetTempDir(string path, string attached = null)
   {
     try
     {
       Execute($"PRAGMA temp_store_directory = '{path}'");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.temp_store_directory = '{path}'");
     }
     catch ( Exception ex )
     {
@@ -160,11 +161,12 @@ public class SQLiteNetORM : SQLiteConnection
   /// <summary>
   /// Sets the database cache dir in KB, 0 for default 8192.
   /// </summary>
-  public void SetCacheSize(long size)
+  public void SetCacheSize(long size, string attached = null)
   {
     try
     {
       Execute($"PRAGMA cache_size = -{( size == 0 ? 8192 : size )};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.cache_size = -{( size == 0 ? 8192 : size )};");
     }
     catch ( Exception ex )
     {
@@ -172,11 +174,12 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetTempStoreMode(SQLiteTempStoreMode mode)
+  public void SetTempStore(SQLiteTempStoreMode mode, string attached = null)
   {
     try
     {
       Execute($"PRAGMA temp_store = {mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.temp_store = {mode};");
     }
     catch ( Exception ex )
     {
@@ -184,11 +187,12 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetCacheSpill(bool enabled)
+  public void SetCacheSpill(bool enabled, string attached = null)
   {
     try
     {
-      Execute($"PRAGMA temp_store = {Convert.ToInt32(enabled)};");
+      Execute($"PRAGMA cache_spill = {Convert.ToInt32(enabled)};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.cache_spill = {Convert.ToInt32(enabled)};");
     }
     catch ( Exception ex )
     {
@@ -196,11 +200,12 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetLocking(SQLiteLockingMode mode)
+  public void SetLocking(SQLiteLockingMode mode, string attached = null)
   {
     try
     {
       Execute($"PRAGMA locking_mode = {mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.locking_mode = {mode};");
     }
     catch ( SQLiteException ex ) when ( ex.Message == "not an error" )
     {
@@ -211,11 +216,12 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetSynchronous(SQLiteSynchronousMode mode)
+  public void SetSynchronous(SQLiteSynchronousMode mode, string attached = null)
   {
     try
     {
       Execute($"PRAGMA synchronous = {mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.synchronous = {mode};");
     }
     catch ( Exception ex )
     {
@@ -223,11 +229,12 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetJournal(SQLiteJournalMode mode)
+  public void SetJournal(SQLiteJournalMode mode, string attached = null)
   {
     try
     {
       Execute($"PRAGMA journal_mode = {mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.journal_mode = {mode};");
     }
     catch ( SQLiteException ex ) when ( ex.Message == "not an error" )
     {
@@ -238,11 +245,12 @@ public class SQLiteNetORM : SQLiteConnection
     }
   }
 
-  public void SetPageSize(SQLitePageSize mode)
+  public void SetPageSize(SQLitePageSize mode, string attached = null)
   {
     try
     {
       Execute($"PRAGMA page_size = {(int)mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.page_size = {(int)mode};");
     }
     catch ( Exception ex )
     {
@@ -258,7 +266,7 @@ public class SQLiteNetORM : SQLiteConnection
     if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
     try
     {
-      Execute($"DROP TABLE IF EXISTS [{table}]");
+      Execute($"DROP TABLE IF EXISTS {table}");
     }
     catch ( Exception ex )
     {
@@ -277,7 +285,7 @@ public class SQLiteNetORM : SQLiteConnection
     if ( tableNewName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(tableNewName));
     try
     {
-      Execute($"ALTER TABLE IF EXISTS [{tableOldName}] RENAME TO [{tableNewName}];");
+      Execute($"ALTER TABLE IF EXISTS {tableOldName} RENAME TO {tableNewName};");
     }
     catch ( Exception ex )
     {
@@ -299,7 +307,7 @@ public class SQLiteNetORM : SQLiteConnection
     try
     {
       if ( CheckColumn(tableName, columnOldName) )
-        Execute($"ALTER TABLE [{tableName}] RENAME COLUMN [{columnOldName}] TO [{columnNewName}];");
+        Execute($"ALTER TABLE {tableName} RENAME COLUMN {columnOldName} TO {columnNewName};");
     }
     catch ( Exception ex )
     {
@@ -314,12 +322,15 @@ public class SQLiteNetORM : SQLiteConnection
   /// <param name="table">The table name.</param>
   /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
   /// <returns>True if the table exists else false even if created.</returns>
-  public bool CheckTable(string table, string sql = "")
+  public bool CheckTable(string table, string sql = null, string attached = null)
   {
     try
     {
       if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
-      const string sqlSelect = "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
+
+      string sqlSelect = attached.IsNullOrEmpty()
+        ? "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?"
+        : $"SELECT count(*) FROM {attached}.sqlite_master WHERE type = 'table' AND name = ?";
       if ( ExecuteScalar<long>(sqlSelect, table) != 0 ) return true;
       if ( !sql.IsNullOrEmpty() )
         try
@@ -344,7 +355,7 @@ public class SQLiteNetORM : SQLiteConnection
   /// <param name="index">The index name.</param>
   /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
   /// <returns>True if the index exists else false even if created.</returns>
-  public bool CheckIndex(string index, string sql = "")
+  public bool CheckIndex(string index, string sql = null)
   {
     try
     {
@@ -378,7 +389,7 @@ public class SQLiteNetORM : SQLiteConnection
   /// <param name="column">The column name.</param>
   /// <param name="sql">The sql query to create the column, can be empty to only check</param>
   /// <returns>True if the column exists else false even if created.</returns>
-  public bool CheckColumn(string table, string column, string sql = "")
+  public bool CheckColumn(string table, string column, string sql = null)
   {
     try
     {
@@ -445,7 +456,7 @@ public class SQLiteNetORM : SQLiteConnection
   {
     try
     {
-      return ExecuteScalar<long>($"SELECT count(*) FROM [{table}]");
+      return ExecuteScalar<long>($"SELECT count(*) FROM {table}");
     }
     catch ( Exception ex )
     {

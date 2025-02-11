@@ -167,7 +167,7 @@ static public partial class SystemManager
   static public Encoding GetTextFileEncoding(string filePath)
   {
     byte[] bom = new byte[4];
-    using FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+    using FileStream fs = new(filePath, FileMode.Open, FileAccess.Read);
     if ( fs.Read(bom, 0, 4) < 4 ) return Encoding.Default;
     return bom[0] switch
     {
