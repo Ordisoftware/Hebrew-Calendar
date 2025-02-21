@@ -141,7 +141,7 @@ public class OnlineProviders : DataFile
         slice.Insert(index++, item);
       }
     }
-    Items = slices.SelectMany(item => item).ToList();
+    Items = [.. slices.SelectMany(item => item)];
   }
 
 }

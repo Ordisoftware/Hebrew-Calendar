@@ -89,7 +89,7 @@ partial class MainForm
       YearLast = DateLast.Year;
     }
     YearsInterval = DateLast.Year - DateFirst.Year + 1;
-    YearsIntervalArray = Enumerable.Range(DateFirst.Year, YearsInterval).ToArray();
+    YearsIntervalArray = [.. Enumerable.Range(DateFirst.Year, YearsInterval)];
   }
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]

@@ -146,7 +146,7 @@ sealed public partial class CelebrationVersesBoardForm : Form
                      .Skip(1)
                      .Select(v => new ListViewItem(HebrewTranslations.GetCelebrationDisplayText(v)) { Tag = v });
     ListBoxCelebrations.Items.Clear();
-    ListBoxCelebrations.Items.AddRange(items.ToArray());
+    ListBoxCelebrations.Items.AddRange([.. items]);
   }
 
   private void CelebrationVersesBoardForm_Deactivate(object sender, EventArgs e)

@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2024-01 </edited>
+/// <edited> 2025-02 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -83,14 +83,14 @@ static public partial class Globals
   /// <summary>
   /// Indicates StopWatches.
   /// </summary>
-  static public readonly Stopwatch ChronoStartingApp = new();
-  static public readonly Stopwatch ChronoTranslate = new();
-  static public readonly Stopwatch ChronoLoadData = new();
-  static public readonly Stopwatch ChronoCreateData = new();
-  static public readonly Stopwatch ChronoShowData = new();
-  static public readonly Stopwatch ChronoRendering = new();
-  static public readonly Stopwatch ChronoBatch = new();
-  static public readonly Stopwatch ChronoSubBatch = new();
+  static public readonly AdvStopwatch ChronoStartingApp = new();
+  static public readonly AdvStopwatch ChronoTranslate = new();
+  static public readonly AdvStopwatch ChronoLoadData = new();
+  static public readonly AdvStopwatch ChronoCreateData = new();
+  static public readonly AdvStopwatch ChronoShowData = new();
+  static public readonly AdvStopwatch ChronoRendering = new();
+  static public readonly AdvStopwatch ChronoBatch = new();
+  static public readonly AdvStopwatch ChronoSubBatch = new();
 
   /// <summary>
   /// Indicates keyboard shortcuts notice form.

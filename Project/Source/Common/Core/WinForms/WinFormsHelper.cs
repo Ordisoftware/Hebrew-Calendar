@@ -105,11 +105,11 @@ static class FormsHelper
   /// </summary>
   static public void CloseAll(Func<Form, bool> keep = null)
   {
-    var list = keep is null
-      ? Application.OpenForms.GetAll(form => form.Visible).Reverse().ToList()
-      : Application.OpenForms.GetAll(form => form.Visible && !keep(form)).Reverse().ToList();
+    List<Form> list = keep is null
+      ? [.. Application.OpenForms.GetAll(form => form.Visible).Reverse()]
+      : [.. Application.OpenForms.GetAll(form => form.Visible && !keep(form)).Reverse()];
     foreach ( Form form in list )
-      SystemManager.TryCatch(() => form.Close());
+      SystemManager.TryCatch(form.Close);
   }
 
   /// <summary>
@@ -305,8 +305,7 @@ static class FormsHelper
     if ( form.IsDisposed ) return;
     if ( form.InvokeRequired )
     {
-      var method = new PopupMethod(Popup);
-      form.Invoke(method, form, sender, dialog);
+      form.Invoke(new PopupMethod(Popup), form, sender, dialog);
       return;
     }
     if ( form.Visible )

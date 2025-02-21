@@ -86,9 +86,9 @@ public class SQLiteNetORM : SQLiteConnection
     else
     {
       string version = vernum.ToString();
-      string build = int.Parse(new string(version.TakeLast(3).ToArray())).ToString();
-      string minor = int.Parse(new string(version.SkipLast(3).TakeLast(3).ToArray())).ToString();
-      string major = int.Parse(new string(version.SkipLast(6).ToArray())).ToString();
+      string build = int.Parse(new string([.. version.TakeLast(3)])).ToString();
+      string minor = int.Parse(new string([.. version.SkipLast(3).TakeLast(3)])).ToString();
+      string major = int.Parse(new string([.. version.SkipLast(6)])).ToString();
       EngineNameAndVersion = $"SQLite {major}.{minor}.{build}";
     }
   }
@@ -321,6 +321,7 @@ public class SQLiteNetORM : SQLiteConnection
   /// </summary>
   /// <param name="table">The table name.</param>
   /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
+  /// <param name="attached">The attached database</param>
   /// <returns>True if the table exists else false even if created.</returns>
   public bool CheckTable(string table, string sql = null, string attached = null)
   {

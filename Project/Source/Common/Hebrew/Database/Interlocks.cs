@@ -84,7 +84,7 @@ static public class Interlocks
         dictionary[item]++;
       else
         dictionary.Add(item, 1);
-    return dictionary.Select(pair => $"{pair.Key} ({pair.Value})").ToList();
+    return [.. dictionary.Select(pair => $"{pair.Key} ({pair.Value})")];
   }
 
 }

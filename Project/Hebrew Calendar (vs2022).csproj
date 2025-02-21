@@ -163,6 +163,7 @@
     <Compile Include="Source\Common\Core\Classes\StringHelper.Format.cs" />
     <Compile Include="Source\Common\Core\Classes\WebCheckUpdate.cs" />
     <Compile Include="Source\Common\Core\Collections\AutoResizedList.cs" />
+    <Compile Include="Source\Common\Core\Classes\AdvStopwatch.cs" />
     <Compile Include="Source\Common\Core\Classes\CollectionsHelper.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeDictionary.cs" />
     <Compile Include="Source\Common\Core\Collections\NullSafeList.cs" />
@@ -1242,7 +1243,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers">
-      <Version>17.12.19</Version>
+      <Version>17.13.2</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

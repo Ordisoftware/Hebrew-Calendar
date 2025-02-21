@@ -67,7 +67,7 @@ public partial class HebrewDatabase : SQLiteDatabase
       SaveParashot();
       IsParashotUpgradedV10 = false;
     }
-    ParashotAsBindingList = new BindingList<Parashah>(Parashot);
+    ParashotAsBindingList = [.. Parashot];
     return Parashot;
   }
 

@@ -140,7 +140,7 @@ static public class WebCheckUpdate
     try
     {
       string path = useGitHub ? Globals.CheckUpdateGitHubURL : Globals.CheckUpdateURL;
-      lines = client.DownloadString(path).SplitNoEmptyLines(useGitHub).Take(2).ToList();
+      lines = [.. client.DownloadString(path).SplitNoEmptyLines(useGitHub).Take(2)];
     }
     catch ( Exception ex )
     {
@@ -165,7 +165,7 @@ static public class WebCheckUpdate
       version = partsVersion.Length switch
       {
         2 => new Version(Convert.ToInt32(partsVersion[0]),
-                                         Convert.ToInt32(partsVersion[1])),
+                         Convert.ToInt32(partsVersion[1])),
         3 => new Version(Convert.ToInt32(partsVersion[0]),
                          Convert.ToInt32(partsVersion[1]),
                          Convert.ToInt32(partsVersion[2])),

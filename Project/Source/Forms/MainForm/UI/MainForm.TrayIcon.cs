@@ -40,7 +40,7 @@ partial class MainForm
         }
         else
           lines.Add(DateTime.Today.ToShortDateString());
-        TrayIcon.Text = new string(lines.AsMultiLine().Take(Globals.TrayIconTextLimit).ToArray());
+        TrayIcon.Text = new string([.. lines.AsMultiLine().Take(Globals.TrayIconTextLimit)]);
       }
       else
         TrayIcon.Text = string.Empty;

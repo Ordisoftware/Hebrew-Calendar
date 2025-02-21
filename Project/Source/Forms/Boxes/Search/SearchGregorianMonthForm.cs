@@ -86,7 +86,7 @@ sealed partial class SearchGregorianMonthForm : Form
     if ( ListItems.SelectedIndices.Count <= 0 ) return;
     SelectDay.Items.Clear();
     var listDays = Enumerable.Range(1, DateTime.DaysInMonth(SelectYear.Value, ListItems.SelectedIndices[0] + 1));
-    SelectDay.Items.AddRange(listDays.Cast<object>().ToArray());
+    SelectDay.Items.AddRange([.. listDays.Cast<object>()]);
     if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
     if ( CurrentDayIndex >= SelectDay.Items.Count )
       CurrentDayIndex = SelectDay.Items.Count - 1;

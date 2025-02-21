@@ -643,7 +643,7 @@ public partial class LettersControl : UserControl
 
   private void ActionRevertWord_Click(object sender, EventArgs e)
   {
-    TextBox.Text = new string(TextBox.Text.Reverse().ToArray());
+    TextBox.Text = new string([.. TextBox.Text.Reverse()]);
   }
 
 }
