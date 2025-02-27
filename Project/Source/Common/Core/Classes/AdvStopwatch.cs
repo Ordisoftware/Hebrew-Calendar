@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2025-02 </created>
-/// <edited> 2025-12 </edited>
+/// <edited> 2025-02 </edited>
 namespace Ordisoftware.Core;
 
 public class AdvStopwatch
@@ -21,15 +21,23 @@ public class AdvStopwatch
 
   private TimeSpan _Offset;
 
+  public void Reset()
+  {
+    _Offset = TimeSpan.Zero;
+    _Stopwatch.Reset();
+  }
+
+  public void Restart()
+  {
+    _Offset = TimeSpan.Zero;
+    _Stopwatch.Restart();
+  }
+
+  public void AddElapsed(TimeSpan additionalTime) => _Offset += additionalTime;
+
   public void Start() => _Stopwatch.Start();
 
   public void Stop() => _Stopwatch.Stop();
-
-  public void Reset() { _Stopwatch.Reset(); _Offset = TimeSpan.Zero; }
-
-  public void Restart() => _Stopwatch.Restart();
-
-  public void AddElapsed(TimeSpan additionalTime) => _Offset += additionalTime;
 
   public TimeSpan Elapsed => _Stopwatch.Elapsed + _Offset;
 
