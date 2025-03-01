@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 using System.Configuration;
@@ -159,6 +159,25 @@ static public partial class SystemManager
     long result = -1;
     TryCatch(() => { if ( File.Exists(filePath) ) result = new FileInfo(filePath).Length; });
     return result;
+  }
+
+  /// <summary>
+  /// Gets a text file encoding.
+  /// </summary>
+  static public Encoding GetTextFileEncoding(string filePath)
+  {
+    byte[] bom = new byte[4];
+    using FileStream fs = new(filePath, FileMode.Open, FileAccess.Read);
+    if ( fs.Read(bom, 0, 4) < 4 ) return Encoding.Default;
+    return bom[0] switch
+    {
+      0xEF when bom[1] == 0xBB && bom[2] == 0xBF => Encoding.UTF8,
+      0xFF when bom[1] == 0xFE => Encoding.Unicode,
+      0xFE when bom[1] == 0xFF => Encoding.BigEndianUnicode,
+      0x00 when bom[1] == 0x00 && bom[2] == 0xFE && bom[3] == 0xFF => Encoding.UTF32,
+      0xFF when bom[1] == 0xFE && bom[2] == 0x00 && bom[3] == 0x00 => Encoding.UTF32,
+      _ => Encoding.Default
+    };
   }
 
   /// <summary>

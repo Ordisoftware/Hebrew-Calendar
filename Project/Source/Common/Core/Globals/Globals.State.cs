@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -71,6 +71,11 @@ static public partial class Globals
   static public bool IsRendering { get; set; }
 
   /// <summary>
+  /// Indicates if data is being processed.
+  /// </summary>
+  static public bool IsInBatch { get; set; }
+
+  /// <summary>
   /// Indicates if data is being printed.
   /// </summary>
   static public bool IsPrinting { get; set; }
@@ -91,8 +96,23 @@ static public partial class Globals
   static public bool AllowClose { get; set; } = true;
 
   /// <summary>
-  /// Indicates if current processing must be cancelled.
+  /// Indicates if current processing must be paused.
+  /// </summary>
+  static public bool PauseRequired { get; set; }
+
+  /// <summary>
+  /// Indicates if current processing must be canceled.
   /// </summary>
   static public bool CancelRequired { get; set; }
+
+  /// <summary>
+  /// Indicates if current processing can be paused.
+  /// </summary>
+  static public bool CanPause { get; set; } = true;
+
+  /// <summary>
+  /// Indicates if current processing can be canceled.
+  /// </summary>
+  static public bool CanCancel { get; set; } = true;
 
 }

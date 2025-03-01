@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
 /// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -146,7 +146,7 @@ sealed public partial class CelebrationVersesBoardForm : Form
                      .Skip(1)
                      .Select(v => new ListViewItem(HebrewTranslations.GetCelebrationDisplayText(v)) { Tag = v });
     ListBoxCelebrations.Items.Clear();
-    ListBoxCelebrations.Items.AddRange(items.ToArray());
+    ListBoxCelebrations.Items.AddRange([.. items]);
   }
 
   private void CelebrationVersesBoardForm_Deactivate(object sender, EventArgs e)

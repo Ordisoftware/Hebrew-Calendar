@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
 /// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -643,7 +643,7 @@ public partial class LettersControl : UserControl
 
   private void ActionRevertWord_Click(object sender, EventArgs e)
   {
-    TextBox.Text = new string(TextBox.Text.Reverse().ToArray());
+    TextBox.Text = new string([.. TextBox.Text.Reverse()]);
   }
 
 }

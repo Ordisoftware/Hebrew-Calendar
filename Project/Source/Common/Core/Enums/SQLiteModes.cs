@@ -10,20 +10,38 @@
 /// relevant directory) where a recipient would be likely to look for such a notice.
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
-/// <created> 2020-08 </created>
-/// <edited> 2020-08 </edited>
+/// <created> 2025-01 </created>
+/// <edited> 2025-01 </edited>
 namespace Ordisoftware.Core;
 
-/// <summary>
-/// Provides SQLite exception.
-/// </summary>
-[Serializable]
-[SuppressMessage("Major Code Smell", "S3925:\"ISerializable\" should be implemented correctly", Justification = "<En attente>")]
-public class SQLiteException : System.Data.Common.DbException
+public enum SQLitePageSize
 {
-  public SQLiteException() { }
-  public SQLiteException(string message) : base(message) { }
-  public SQLiteException(string message, Exception innerException) : base(message, innerException) { }
-  public SQLiteException(SerializationInfo info, StreamingContext context) : base(info, context) { }
-  public SQLiteException(string message, int errorCode) : base(message, errorCode) { }
+  _00512 = 512,
+  _01024 = 1024,
+  _02048 = 2048,
+  _04096 = 4096,
+  _08192 = 8192,
+  _16384 = 16384,
+  _32768 = 32768,
+  _65536 = 65536
+}
+
+public enum SQLiteLockingMode
+{
+  NORMAL, EXCLUSIVE
+}
+
+public enum SQLiteTempStoreMode
+{
+  DEFAULT, FILE, MEMORY
+}
+
+public enum SQLiteSynchronousMode
+{
+  OFF, NORMAL, FULL, EXTRA
+}
+
+public enum SQLiteJournalMode
+{
+  DELETE, TRUNCATE, PERSIST, MEMORY, WAL, OFF
 }

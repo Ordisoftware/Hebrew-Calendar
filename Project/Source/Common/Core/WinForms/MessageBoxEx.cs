@@ -91,7 +91,8 @@ public sealed partial class MessageBoxEx : Form
                       MessageBoxIcon icon = MessageBoxIcon.None,
                       int width = DefaultWidthSmall,
                       bool justify = DefaultJustifyEnabled,
-                      bool sound = true)
+                      bool sound = true,
+                      bool showInTaskBar = false)
   : this()
   {
     Text = title;
@@ -131,6 +132,7 @@ public sealed partial class MessageBoxEx : Form
     Instances.Add(this);
     IconStyle = icon;
     DoShownSound = sound;
+    ShowInTaskbar = showInTaskBar;
   }
 
   public MessageBoxEx(TranslationsDictionary title,
@@ -139,8 +141,9 @@ public sealed partial class MessageBoxEx : Form
                       MessageBoxIcon icon = MessageBoxIcon.None,
                       int width = DefaultWidthSmall,
                       bool justify = DefaultJustifyEnabled,
-                      bool sound = true)
-  : this(title.GetLang(), text.GetLang(), buttons, icon, width, justify, sound)
+                      bool sound = true,
+                      bool showInTaskBar = false)
+  : this(title.GetLang(), text.GetLang(), buttons, icon, width, justify, sound, showInTaskBar)
   {
     LocalizedTitle = title;
     LocalizedText = text;

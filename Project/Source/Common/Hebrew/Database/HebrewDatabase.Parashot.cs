@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
 /// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -67,7 +67,7 @@ public partial class HebrewDatabase : SQLiteDatabase
       SaveParashot();
       IsParashotUpgradedV10 = false;
     }
-    ParashotAsBindingList = new BindingList<Parashah>(Parashot);
+    ParashotAsBindingList = [.. Parashot];
     return Parashot;
   }
 

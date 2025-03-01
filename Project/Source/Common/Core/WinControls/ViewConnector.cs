@@ -17,10 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides panel view connector for a component.
 /// </summary>
-public readonly record struct ViewConnector<TComponent>(
-  TComponent Component,
-  Panel Panel,
-  Control Focused)
+public readonly record struct ViewConnector<TComponent>(TComponent Component, Panel Panel, Control Focused)
 where TComponent : Component;
 
 /// <summary>

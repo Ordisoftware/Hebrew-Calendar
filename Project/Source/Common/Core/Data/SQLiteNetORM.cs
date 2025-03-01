@@ -11,9 +11,11 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2025-01 </edited>
 namespace Ordisoftware.Core;
 
+using System;
+using System.Runtime.CompilerServices;
 using MoreLinq;
 using SQLite;
 
@@ -46,6 +48,9 @@ public class SQLiteNetORM : SQLiteConnection
 
   public SQLiteNetORM(string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = true)
     : base(databasePath, openFlags, storeDateTimeAsTicks) { }
+
+  public string GetClassAndMethodName([CallerMemberName] string methodName = "")
+    => $"{GetType().Name}.{methodName}";
 
   /// <summary>
   /// Gets a single line of a string.
@@ -81,23 +86,12 @@ public class SQLiteNetORM : SQLiteConnection
     else
     {
       string version = vernum.ToString();
-      string build = int.Parse(new string(version.TakeLast(3).ToArray())).ToString();
-      string minor = int.Parse(new string(version.SkipLast(3).TakeLast(3).ToArray())).ToString();
-      string major = int.Parse(new string(version.SkipLast(6).ToArray())).ToString();
+      string build = int.Parse(new string([.. version.TakeLast(3)])).ToString();
+      string minor = int.Parse(new string([.. version.SkipLast(3).TakeLast(3)])).ToString();
+      string major = int.Parse(new string([.. version.SkipLast(6)])).ToString();
       EngineNameAndVersion = $"SQLite {major}.{minor}.{build}";
     }
   }
-
-  /// <summary>
-  /// Creates a SQL command.
-  /// </summary>
-  public SQLiteCommand CreateCommand() => new(this);
-
-  /// <summary>
-  /// Creates a SQL command.
-  /// </summary>
-  /// <param name="sql">The query.</param>
-  public SQLiteCommand CreateCommand(string sql) => new(this) { CommandText = sql };
 
   /// <summary>
   /// Optimizes the database.
@@ -128,7 +122,7 @@ public class SQLiteNetORM : SQLiteConnection
       string result = ExecuteScalar<string>("SELECT integrity_check FROM pragma_integrity_check()");
       if ( result != "ok" )
       {
-        throw new SQLiteException(result);
+        throw new AdvSQLiteException(SysTranslations.DatabaseIntegrityError.GetLang(result));
       }
     });
   }
@@ -144,7 +138,123 @@ public class SQLiteNetORM : SQLiteConnection
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DatabaseVacuumError.GetLang(), ex);
+      throw new AdvSQLiteException(SysTranslations.DatabaseVacuumError.GetLang(), ex);
+    }
+  }
+
+  /// <summary>
+  /// Sets the database temp dir.
+  /// </summary>
+  public void SetTempDir(string path, string attached = null)
+  {
+    try
+    {
+      Execute($"PRAGMA temp_store_directory = '{path}'");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.temp_store_directory = '{path}'");
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
+    }
+  }
+
+  /// <summary>
+  /// Sets the database cache dir in KB, 0 for default 8192.
+  /// </summary>
+  public void SetCacheSize(long size, string attached = null)
+  {
+    try
+    {
+      Execute($"PRAGMA cache_size = -{( size == 0 ? 8192 : size )};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.cache_size = -{( size == 0 ? 8192 : size )};");
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
+    }
+  }
+
+  public void SetTempStore(SQLiteTempStoreMode mode, string attached = null)
+  {
+    try
+    {
+      Execute($"PRAGMA temp_store = {mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.temp_store = {mode};");
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
+    }
+  }
+
+  public void SetCacheSpill(bool enabled, string attached = null)
+  {
+    try
+    {
+      Execute($"PRAGMA cache_spill = {Convert.ToInt32(enabled)};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.cache_spill = {Convert.ToInt32(enabled)};");
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
+    }
+  }
+
+  public void SetLocking(SQLiteLockingMode mode, string attached = null)
+  {
+    try
+    {
+      Execute($"PRAGMA locking_mode = {mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.locking_mode = {mode};");
+    }
+    catch ( SQLiteException ex ) when ( ex.Message == "not an error" )
+    {
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
+    }
+  }
+
+  public void SetSynchronous(SQLiteSynchronousMode mode, string attached = null)
+  {
+    try
+    {
+      Execute($"PRAGMA synchronous = {mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.synchronous = {mode};");
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
+    }
+  }
+
+  public void SetJournal(SQLiteJournalMode mode, string attached = null)
+  {
+    try
+    {
+      Execute($"PRAGMA journal_mode = {mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.journal_mode = {mode};");
+    }
+    catch ( SQLiteException ex ) when ( ex.Message == "not an error" )
+    {
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
+    }
+  }
+
+  public void SetPageSize(SQLitePageSize mode, string attached = null)
+  {
+    try
+    {
+      Execute($"PRAGMA page_size = {(int)mode};");
+      if ( attached is not null ) Execute($"PRAGMA {attached}.page_size = {(int)mode};");
+    }
+    catch ( Exception ex )
+    {
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
     }
   }
 
@@ -156,11 +266,11 @@ public class SQLiteNetORM : SQLiteConnection
     if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
     try
     {
-      Execute($"DROP TABLE IF EXISTS [{table}]");
+      Execute($"DROP TABLE IF EXISTS {table}");
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DBDropTableError.GetLang(table), ex);
+      throw new AdvSQLiteException(SysTranslations.DBDropTableError.GetLang(table), ex);
     }
   }
 
@@ -175,11 +285,11 @@ public class SQLiteNetORM : SQLiteConnection
     if ( tableNewName.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(tableNewName));
     try
     {
-      Execute($"ALTER TABLE IF EXISTS [{tableOldName}] RENAME TO [{tableNewName}];");
+      Execute($"ALTER TABLE IF EXISTS {tableOldName} RENAME TO {tableNewName};");
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException(SysTranslations.DBRenameTableError.GetLang(tableOldName, tableNewName), ex);
+      throw new AdvSQLiteException(SysTranslations.DBRenameTableError.GetLang(tableOldName, tableNewName), ex);
     }
   }
 
@@ -197,12 +307,12 @@ public class SQLiteNetORM : SQLiteConnection
     try
     {
       if ( CheckColumn(tableName, columnOldName) )
-        Execute($"ALTER TABLE [{tableName}] RENAME COLUMN [{columnOldName}] TO [{columnNewName}];");
+        Execute($"ALTER TABLE {tableName} RENAME COLUMN {columnOldName} TO {columnNewName};");
     }
     catch ( Exception ex )
     {
       string message = SysTranslations.DBRenameTableError.GetLang(tableName, columnOldName, columnNewName);
-      throw new SQLiteException(message, ex);
+      throw new AdvSQLiteException(message, ex);
     }
   }
 
@@ -211,13 +321,17 @@ public class SQLiteNetORM : SQLiteConnection
   /// </summary>
   /// <param name="table">The table name.</param>
   /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
+  /// <param name="attached">The attached database</param>
   /// <returns>True if the table exists else false even if created.</returns>
-  public bool CheckTable(string table, string sql = "")
+  public bool CheckTable(string table, string sql = null, string attached = null)
   {
     try
     {
       if ( table.IsNullOrEmpty() ) throw new ArgumentNullException(nameof(table));
-      const string sqlSelect = "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?";
+
+      string sqlSelect = attached.IsNullOrEmpty()
+        ? "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = ?"
+        : $"SELECT count(*) FROM {attached}.sqlite_master WHERE type = 'table' AND name = ?";
       if ( ExecuteScalar<long>(sqlSelect, table) != 0 ) return true;
       if ( !sql.IsNullOrEmpty() )
         try
@@ -226,12 +340,12 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateTableError.GetLang(table, UnFormatSQL(sql)), ex);
+          throw new AdvSQLiteException(SysTranslations.DBCreateTableError.GetLang(table, UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(CheckTable)}", ex);
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), table), ex);
     }
     return false;
   }
@@ -242,7 +356,7 @@ public class SQLiteNetORM : SQLiteConnection
   /// <param name="index">The index name.</param>
   /// <param name="sql">The sql query to create the table, can be empty to only check.</param>
   /// <returns>True if the index exists else false even if created.</returns>
-  public bool CheckIndex(string index, string sql = "")
+  public bool CheckIndex(string index, string sql = null)
   {
     try
     {
@@ -256,12 +370,12 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateIndexError.GetLang(index, UnFormatSQL(sql)), ex);
+          throw new AdvSQLiteException(SysTranslations.DBCreateIndexError.GetLang(index, UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(CheckIndex)}", ex);
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
     }
     return false;
   }
@@ -276,7 +390,7 @@ public class SQLiteNetORM : SQLiteConnection
   /// <param name="column">The column name.</param>
   /// <param name="sql">The sql query to create the column, can be empty to only check</param>
   /// <returns>True if the column exists else false even if created.</returns>
-  public bool CheckColumn(string table, string column, string sql = "")
+  public bool CheckColumn(string table, string column, string sql = null)
   {
     try
     {
@@ -292,12 +406,12 @@ public class SQLiteNetORM : SQLiteConnection
         }
         catch ( Exception ex )
         {
-          throw new SQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnFormatSQL(sql)), ex);
+          throw new AdvSQLiteException(SysTranslations.DBCreateColumnError.GetLang(UnFormatSQL(sql)), ex);
         }
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(CheckColumn)}", ex);
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
     }
     return false;
   }
@@ -343,11 +457,11 @@ public class SQLiteNetORM : SQLiteConnection
   {
     try
     {
-      return ExecuteScalar<long>($"SELECT count(*) FROM [{table}]");
+      return ExecuteScalar<long>($"SELECT count(*) FROM {table}");
     }
     catch ( Exception ex )
     {
-      throw new SQLiteException($"Error in {nameof(CountRows)}", ex);
+      throw new AdvSQLiteException(SysTranslations.ErrorInMethod.GetLang(GetClassAndMethodName(), ex.Message), ex);
     }
   }
 

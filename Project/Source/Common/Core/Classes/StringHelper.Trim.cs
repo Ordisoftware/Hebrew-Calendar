@@ -48,6 +48,6 @@ static public partial class StringHelper
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string TrimFirstLast(this string str)
-    => new(str.Skip(1).SkipLast(1).ToArray());
+    => new([.. str.Skip(1).SkipLast(1)]);
 
 }

@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
 /// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
@@ -96,7 +96,7 @@ static public class HebrewTools
         var wordAnalyzed = RemoveNumberingAndDiacritics(word);
         var items = wordAnalyzed.Word.Split(' ');
         if ( wordAnalyzed.IsUnicode )
-          items = items.Reverse().ToArray();
+          items = [.. items.Reverse()];
         foreach ( string item in items )
         {
           SystemManager.RunShell(path, item);
@@ -120,7 +120,7 @@ static public class HebrewTools
       var wordAnalyzed = RemoveNumberingAndDiacritics(word);
       var items = wordAnalyzed.Word.Split(' ');
       if ( !wordAnalyzed.IsUnicode )
-        items = items.Select(w => HebrewAlphabet.ToUnicodeChars(HebrewAlphabet.SetFinal(w, true))).ToArray();
+        items = [.. items.Select(w => HebrewAlphabet.ToUnicodeChars(HebrewAlphabet.SetFinal(w, true)))];
       foreach ( string item in items )
         if ( item.Length > 0 )
         {
@@ -153,7 +153,7 @@ static public class HebrewTools
   {
     SystemManager.TryCatchManage(ShowExceptionMode.Message, () =>
     {
-      int[] list = reference.Split('.').Select(int.Parse).ToArray();
+      int[] list = [.. reference.Split('.').Select(int.Parse)];
       OpenBibleProvider(url, list[0], list[1], list[2]);
     });
   }

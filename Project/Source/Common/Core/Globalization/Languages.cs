@@ -66,7 +66,7 @@ static public class Languages
   {
     try
     {
-      Managed = Enums.GetValues<Language>().Skip(1).ToArray();
+      Managed = [.. Enums.GetValues<Language>().Skip(1)];
       Codes = new NullSafeOfStringDictionary<Language>(Managed.ToDictionary(v => v, v => v.ToString().ToLower()));
       Values = new NullSafeOfEnumDictionary<string, Language>(Codes.ToDictionary(v => v.Value, v => v.Key));
     }
