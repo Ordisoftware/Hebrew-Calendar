@@ -1,10 +1,9 @@
+[![OS: Windows](https://img.shields.io/badge/Windows%2010%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
 [![License MPL 2.0](https://img.shields.io/github/license/ordisoftware/hebrew-calendar)](LICENSE)&nbsp;
 [![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-calendar/total)](https://github.com/Ordisoftware/Hebrew-Calendar/releases)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar)](#)&nbsp;
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/tree/main/Project)&nbsp;
-[![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/tree/main/Project)&nbsp;<br/>
-[![OS: Windows](https://img.shields.io/badge/Windows%2010%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/tree/main/Project)&nbsp;<br/>
 [![UI: WinForms](https://img.shields.io/badge/WinForms-279CE8?label=ui)](https://github.com/dotnet/winforms)&nbsp;
 [![Framework: .Net](https://img.shields.io/badge/.NET%204.8.1-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
 [![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
