@@ -1225,7 +1225,7 @@
       <Version>1.9.172</Version>
     </PackageReference>
     <PackageReference Include="SQLitePCLRaw.bundle_green">
-      <Version>2.1.10</Version>
+      <Version>2.1.11</Version>
     </PackageReference>
     <PackageReference Include="ErrorProne.NET.CoreAnalyzers">
       <Version>0.1.2</Version>
