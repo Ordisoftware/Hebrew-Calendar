@@ -98,11 +98,21 @@ URL = https://www.dict.com/hebreu-francais/%WORD%
 
 -
 
-Name = (NONE) Google Search
+Name = (NONE) Google Search Concordance
 URL = https://www.google.com/search?q=hebrew+strong+%WORD%
 
-Name = (NONE) Bing Search
+Name = (NONE) Google Search Lexicon
+URL = https://www.google.com/search?q=hebrew+lexicon+%WORD%
+
+-
+
+Name = (NONE) Bing Search Concordance
 URL = http://www.bing.com/search?q=hebrew+strong+%WORD%
+
+Name = (NONE) Bing Search Lexicon
+URL = http://www.bing.com/search?q=hebrew+lexicon+%WORD%
+
+-
 
 Name = (NONE) Custom Search
 URL = %CUSTOM%
