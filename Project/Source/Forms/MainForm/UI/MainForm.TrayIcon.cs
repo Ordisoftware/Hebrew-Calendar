@@ -27,7 +27,7 @@ partial class MainForm
       {
         // TODO NEXT refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
         var text = Text.IndexOf('(') >= 0
-          ? new string(Text.ToCharArray().TakeWhile(c => c != '(').ToArray())
+          ? new string([.. Text.ToCharArray().TakeWhile(c => c != '(')])
           : Text;
         var lines = text.Replace(HebrewTranslations.Parashah + " ", "").SplitNoEmptyLines(" - ").ToList();
         if ( lines.Count >= 3 )
