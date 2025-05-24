@@ -117,7 +117,7 @@ sealed partial class SearchLunarMonthForm : Form
     SelectDay.Items.Clear();
     int year = SelectYear.Value;
     var days = LunisolarDays.Where(day => day.Date.Year == year && day.LunarMonth == row.LunarMonth);
-    SelectDay.Items.AddRange(days.ToArray());
+    SelectDay.Items.AddRange([.. days]);
     if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
     if ( CurrentDayIndex >= SelectDay.Items.Count )
       CurrentDayIndex = SelectDay.Items.Count - 1;
