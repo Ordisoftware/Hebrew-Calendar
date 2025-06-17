@@ -422,6 +422,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Improve shavouh'ot diet reminder box to indicate full length and not only the first day.
 >- Fix timer which displays parashah description box when the day before is not Shabbat.
 >- Fix Yom Teruh'ah reminder box still showing when finished.
+>- Fix Shavouh'ot Lamb reminder box still showing when finished.
 
 #### 2024.05.10 - Version 10.4.1
 
