@@ -88,9 +88,6 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BYiFkGEEVWJit3dAj1qGDR
 Name = (FR/EN) Rav Menachem Mendel Schneerson
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-A4y254NHmPIg4Eca-Dei2I
 
-Name = (FR) Rav David Touitou
-URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-BvAk0qt2lx0tw4A9K8EU5d
-
 Name = (FR) Shouva Israël France
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AYmwvio4NwcGESr4cqMO8S
 

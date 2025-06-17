@@ -40,9 +40,6 @@ URL = https://www.darkeihaim.com
 Name = (FR) Rav Yakov Sitruk
 URL = https://www.alef-ledoroth.com
 
-Name = (FR) Rav David Touitou
-URL = https://torathaim.net
-
 -
 
 Name = (EN) Rabbi Yosef Yitzchak Jacobson
