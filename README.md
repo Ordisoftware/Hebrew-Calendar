@@ -387,6 +387,15 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 >- Check and fix weekly parashah generation with Soukot.
 >- Check and Fix reminder behavior with Sim'hat Torah.
 
+#### 2025.08.03 - Version 10.4.2
+
+- Fix SSL certificate data for the web update checker.
+- Update and fix web links and providers.
+
+#### 2024.10.05 - Version 10.4.1
+
+- Fix SSL certificate data for the web update checker.
+
 #### 2023.04.05 - Version 10.4
 
 - Fix celebration day context menu for show verses item.
@@ -524,7 +533,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 #### 2022.03.01 - Version 9.26
 
 - Fix and improve Tools menu.
-- Add read online using Torah-Box.
 - Update web links with more resources on hieroglyphs.
 
 #### 2022.02.22 - Version 9.25
@@ -1044,7 +1052,6 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Fix view log menu item not disabled when app started when log is disabled.
 - Fix view log icon not disabled in stats form when log is disabled.
 - Fix small defect with Tray Icon images.
-- Update web links to improve playlists and add the calendar of Torah-box.
 
 #### 2020.11.18 - Version 5.7
 
