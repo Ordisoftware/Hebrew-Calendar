@@ -1,4 +1,4 @@
-#define MyAppVersion "10.4"
+#define MyAppVersion "10.4.2"
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
 #define MyAppExeName "Ordisoftware.Hebrew.Calendar.exe"
@@ -8,7 +8,7 @@
 [Setup]
 MinVersion=0,6.1sp1
 LicenseFile=..\Project\Licenses\MPL 2.0.rtf
-AppCopyright=Copyright 2016-2022 Olivier Rogier
+AppCopyright=Copyright 2016-2025 Olivier Rogier
 AppId={{EA196B80-7F9C-4E31-8337-61CE9A8B4FA9}
 ;AppMutex=39d572b4-36da-4964-ba85-51bc5909c69b
 #include "Scripts\Setup.iss"
@@ -50,15 +50,15 @@ Name: {group}\{#MyAppName}\{cm:ToolsMenu_msg}\{cm:Weeklyparashah_msg}; Filename:
 [CustomMessages]
 #include "Scripts\Messages.iss"
 english.Resetreminder_msg=Reset reminder
-french.Resetreminder_msg=Réinitialiser le rappeleur
+french.Resetreminder_msg=RÃ©initialiser le rappeleur
 english.Navigationwindow_msg=Navigation window
-french.Navigationwindow_msg=Fenêtre de navigation
+french.Navigationwindow_msg=FenÃªtre de navigation
 english.Datesdifferencecalculator_msg=Dates difference calculator
-french.Datesdifferencecalculator_msg=Calculateur de différence de dates
+french.Datesdifferencecalculator_msg=Calculateur de diffÃ©rence de dates
 english.Celebrationversesboard_msg=Celebration verses board
-french.Celebrationversesboard_msg=Tableau des versets des célébrations
+french.Celebrationversesboard_msg=Tableau des versets des cÃ©lÃ©brations
 english.Celebrationsboard_msg=Celebrations board
-french.Celebrationsboard_msg=Tableau des célébrations
+french.Celebrationsboard_msg=Tableau des cÃ©lÃ©brations
 english.Newmoonsboard_msg=New moons board
 french.Newmoonsboard_msg=Tableau des nouvelles lunes
 english.Lunarmonthsboard_msg=Lunar months board
