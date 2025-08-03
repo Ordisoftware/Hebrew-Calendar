@@ -184,4 +184,7 @@
   <data name="ActionShowTranscriptionGuide.Text" xml:space="preserve">
     <value>Guide de transcription</value>
   </data>
+  <data name="ActionSearchWikipedia.Text" xml:space="preserve">
+    <value>Chercher sur Wikipédia</value>
+  </data>
 </root>

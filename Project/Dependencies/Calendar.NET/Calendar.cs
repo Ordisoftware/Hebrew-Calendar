@@ -14,6 +14,7 @@ namespace CodeProjectCalendar.NET
   /// <summary>
   /// An enumeration describing various ways to view the calendar
   /// </summary>
+  [SuppressMessage("ApiDesign", "SS039:An enum should specify a default value", Justification = "N/A")]
   public enum CalendarViews
   {
     /// <summary>
@@ -42,6 +43,7 @@ namespace CodeProjectCalendar.NET
   [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "<En attente>")]
   [SuppressMessage("Refactoring", "GCop616:Reverse your IF criteria and use 'continue'. That will eliminate the need for a big IF block and make the code more readable.", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop202:Don’t end the name of {0} with the same name as the {1}", Justification = "<En attente>")]
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   public class Calendar : UserControl
   {
     private DateTime _calendarDate;
@@ -112,7 +114,6 @@ namespace CodeProjectCalendar.NET
         else Refresh();
       }
     }
-
 
     /// <summary>
     /// Indicates the type of calendar to render, Month or Day view
@@ -368,10 +369,10 @@ namespace CodeProjectCalendar.NET
 
       _scrollPanel.RightButtonClicked += ScrollPanelRightButtonClicked;
 
-      TheEvents = new List<IEvent>();
-      _rectangles = new List<Rectangle>();
-      _calendarDays = new Dictionary<int, Point>();
-      CalendarEvents = new List<CalendarEvent>();
+      TheEvents = [];
+      _rectangles = [];
+      _calendarDays = [];
+      CalendarEvents = [];
       _showEventTooltips = true;
       _eventTip = new EventToolTip { Visible = false };
 
@@ -453,8 +454,7 @@ namespace CodeProjectCalendar.NET
       // 
       // _contextMenuStrip1
       // 
-      _contextMenuStrip.Items.AddRange(new ToolStripItem[] {
-            miProperties});
+      _contextMenuStrip.Items.AddRange([miProperties]);
       _contextMenuStrip.Name = "_contextMenuStrip1";
       _contextMenuStrip.Size = new Size(137, 26);
       // 
@@ -522,6 +522,7 @@ namespace CodeProjectCalendar.NET
     }
 
     [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "N/A")]
+    [SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
     private void CalendarMouseMove(object sender, MouseEventArgs e)
     {
       if ( !_showEventTooltips )
@@ -542,7 +543,7 @@ namespace CodeProjectCalendar.NET
           _eventTip.EventToolTipText = z.Event.ToolTipText;
           // ORDISOFTWARE MODIF END
           if ( !z.Event.IgnoreTimeComponent )
-            _eventTip.EventToolTipText += "\n" + z.Event.Date.ToShortTimeString();
+            _eventTip.EventToolTipText += $"\n{z.Event.Date.ToShortTimeString()}";
           _eventTip.Location = new Point(e.X + 5, e.Y - _eventTip.CalculateSize().Height);
           _eventTip.ShouldRender = true;
           _eventTip.Visible = true;
@@ -801,7 +802,6 @@ namespace CodeProjectCalendar.NET
     //  return lastDay.AddDays(diff);
     //}
 
-
     //private int Max(params float[] value)
     //{
     //  return (int)value.Max(i => Math.Ceiling(i));
@@ -824,7 +824,8 @@ namespace CodeProjectCalendar.NET
       const int cellHourWidth = 60;
       const int cellHourHeight = 30;
       var bmp = new Bitmap(ClientSize.Width, cellHourWidth * 24);
-      Graphics g = Graphics.FromImage(bmp);
+
+      using var g = Graphics.FromImage(bmp);
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
 
       var dt = new DateTime(_calendarDate.Year, _calendarDate.Month, _calendarDate.Day, 0, 0, 0);
@@ -848,7 +849,7 @@ namespace CodeProjectCalendar.NET
 
       dt = new DateTime(_calendarDate.Year, _calendarDate.Month, _calendarDate.Day, 23, 59, 0);
 
-      List<IEvent> evnts = TheEvents.Where(evnt => NeedsRendering(evnt, dt)).OrderBy(d => d.Date).ToList();
+      List<IEvent> evnts = [.. TheEvents.Where(evnt => NeedsRendering(evnt, dt)).OrderBy(d => d.Date)];
 
       xStart = cellHourWidth + 1;
       yStart = 0;
@@ -885,7 +886,6 @@ namespace CodeProjectCalendar.NET
         yStart += cellHourHeight;
       }
 
-      g.Dispose();
       return bmp;
     }
 
@@ -942,8 +942,8 @@ namespace CodeProjectCalendar.NET
       bool selectedBoxOnlyCurrent = Program.Settings.SelectedDayBoxColorOnlyCurrent;
       _calendarDays.Clear();
       CalendarEvents.Clear();
-      var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
-      Graphics g = Graphics.FromImage(bmp);
+      using var bmp = new Bitmap(ClientSize.Width, ClientSize.Height);
+      using var g = Graphics.FromImage(bmp);
       e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
       SizeF sunSize = g.MeasureString("Sun", _dayOfWeekFont);
@@ -1337,7 +1337,7 @@ namespace CodeProjectCalendar.NET
           int countEvents = list.Length;
           int countEventsPrev = list[countEvents - 1].IsSeparator ? countEvents - 2 : countEvents - 1;
           if ( list.All(v => v.IsSeparator) ) continue;
-          int deltaLine = -5 + linespacing;
+          int offsetLine = -5 + linespacing;
           var sample = Array.Find(list, e => !e.EventText.IsNullOrEmpty());
           if ( sample is null ) continue;
           SizeF sz = g.MeasureString(sample.EventText, sample.EventFont);
@@ -1413,16 +1413,14 @@ namespace CodeProjectCalendar.NET
                 };
                 _calendarEvents.Add(ev);
               }*/
-              renderOffsetY += (int)sz.Height + deltaLine;
+              renderOffsetY += (int)sz.Height + offsetLine;
             }
           }
         }
       // ORDISOFTWARE MODIF END
 
       _rectangles.Clear();
-      g.Dispose();
       e.Graphics.DrawImage(bmp, 0, 0, ClientSize.Width, ClientSize.Height);
-      bmp.Dispose();
     }
 
     private bool NeedsRendering(IEvent evnt, DateTime day)

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -49,6 +49,7 @@ static partial class AppTranslations
                     Alt + V : View menu
                     Alt + T : Tools menu
                     Alt + L : Web links menu
+                    Alt + H : Help menu
                     Alt + I : Information menu
                     Alt + S : Settings menu
                     Alt + E : Export folder
@@ -58,11 +59,14 @@ static partial class AppTranslations
                     Alt + W : Online weather
                     Alt + G : Generate calendar
                     Alt + P : Show online parashah menu
+                    Alt + B : Manage bookmarks
+                    Alt + N : Notice window
                     Ctrl + F1 : Parashot board
                     Ctrl + F2 : Celebration verses board
                     Ctrl + F3 : Celebrations board
                     Ctrl + F4 : New moons board
                     Ctrl + F5 : Lunar months board
+                    Ctrl + Shift + S : Verses on Shabat
                     Ctrl + Shift + D : Dates difference calculator
                     Home : First month available in the database
                     End : Last month available in the database
@@ -78,6 +82,10 @@ static partial class AppTranslations
                     Shit + Down : Previous week
                     Shit + Left : Next week
                     Shit + Right : Next day
+                    Alt + Left : Previous lunar month
+                    Alt + Right : Next lunar month
+                    Alt + Up (or PageUp) : Previous lunar year
+                    Alt + Down (or PageDown) : Next lunar year
                     Add or Sub : Change active day
                     Shift + Click : Set active day
                     Ctrl + Click : Select day
@@ -110,6 +118,7 @@ static partial class AppTranslations
                     Alt + V : Menu des vues
                     Alt + T : Menu des outils
                     Alt + L : Menu des liens web
+                    Alt + H : Menu de l'aide
                     Alt + I : Menu des informations
                     Alt + S : Menu des paramètres
                     Alt + E : Dossier d'export
@@ -119,11 +128,14 @@ static partial class AppTranslations
                     Alt + W : Météo en ligne
                     Alt + G : Génère le calendrier
                     Alt + P : Affiche le menu de la parashah en ligne
+                    Alt + B : Gérer les favoris
+                    Alt + N : Fenêtre des notices
                     Ctrl + F1 : Tableau des parashot
                     Ctrl + F2 : Tableau des versets des célébrations
                     Ctrl + F3 : Tableau des célébrations
                     Ctrl + F4 : Tableau des nouvelles lunes
                     Ctrl + F5 : Tableau des mois lunaires
+                    Ctrl + Maj + S : Versets sur le Shabat
                     Ctrl + Maj + D : Calculateur de différence de dates
                     Début : Premier mois disponible dans la base de données
                     Fin : Dernier mois disponible dans la base de données
@@ -139,6 +151,10 @@ static partial class AppTranslations
                     Maj + Bas : Semaine suivante
                     Maj + Gauche : Jour précédent
                     Maj + Droite : Jour suivant
+                    Alt + Gauche : Mois lunaire précédent
+                    Alt + Droite : Mois lunaire suivant
+                    Alt + Haut (or PagePrec) : Année lunaire précédente
+                    Alt + bas (or PageSuiv) : Année lunaire suivante
                     Plus ou Moins : Changer de jour actif
                     Maj + Clic : Définir jour actif
                     Ctrl + Clic : Sélectionner jour

@@ -19,11 +19,11 @@ URL = https://www.youtube.com/channel/UC0iLLG9ha8yShk7BPXvDXJw
 Name = (FR) Beit Ha-Zohar 
 URL = https://www.youtube.com/channel/UCcy6coS9yFqYlcxxNYkgWvQ
 
-Name = (FR) Chiourim.com
-URL = https://www.youtube.com/channel/UCGtRAjg1uXlrRB5f6qDKFHg
-
 Name = (FR) Espace Torah
 URL = https://www.youtube.com/channel/UCS3TXWo_jE-_hzG5tCzfTkA
+
+Name = (FR) Inspiration Juive
+URL = https://www.youtube.com/@InspirationJuive
 
 Name = (FR) Israël Torah
 URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
@@ -31,11 +31,11 @@ URL = https://www.youtube.com/channel/UCo2YNHOaw9qMfPM4V4ha2dg
 Name = (FR) Judaïsme En Mouvement
 URL = https://www.youtube.com/channel/UC4OMlfV7DUiQhZDbCYdFyEQ
 
+Name = (FR) Ohel TV
+URL = https://www.youtube.com/@OhelTV
+
 Name = (FR) La Yéchiva des étudiants
 URL = https://www.youtube.com/@yechivaetudiants
-
-Name = (FR) Torah Box
-URL = https://www.youtube.com/channel/UCNgEEqkr9UeSqxJAHxe6-KA
 
 Name = (FR) Torah de Vie
 URL = https://www.youtube.com/channel/UC89piZNg765Z9kz_BC3-pow
@@ -45,6 +45,14 @@ URL = https://www.youtube.com/user/laparacha
 
 Name = (FR) Tsarfat
 URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
+
+-
+
+Name = (FR) Shuva Israël France (diction en français)
+URL = https://www.youtube.com/@shuvaisraelfrance
+
+Name = (FR) Shouva Israël France (hébreu sous-titré)
+URL = https://www.youtube.com/@shouvaisrael-france7166
 
 -
 

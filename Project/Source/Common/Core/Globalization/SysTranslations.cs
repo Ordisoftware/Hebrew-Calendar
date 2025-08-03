@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -216,7 +216,7 @@ static public partial class SysTranslations
     [Language.FR] = "Valeur incorrecte"
   };
 
-  static public readonly TranslationsDictionary NonthingSlot = new()
+  static public readonly TranslationsDictionary NothingSlot = new()
   {
     [Language.EN] = "(nothing)",
     [Language.FR] = "(aucun)"
@@ -274,22 +274,22 @@ static public partial class SysTranslations
 
   static public readonly NullSafeDictionary<Language, NullSafeStringList> MillisecondsFormat = new()
   {
-    [Language.EN] = new NullSafeStringList
-    {
+    [Language.EN] =
+    [
       "{4} ms",
       "{3} s",
       "{2} m {3} s",
       "{1} h {2} m {3} s",
       "{0} d {1} h {2} m {3} s",
-    },
-    [Language.FR] = new NullSafeStringList
-    {
+    ],
+    [Language.FR] =
+    [
       "{4} ms",
       "{3} s",
       "{2} m {3} s",
       "{1} h {2} m {3} s",
       "{0} j {1} h {2} m {3} s"
-    }
+    ]
   };
 
 }

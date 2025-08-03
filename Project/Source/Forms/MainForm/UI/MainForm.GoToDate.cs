@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -25,7 +25,7 @@ partial class MainForm
                        bool bringToFront = false,
                        bool onlyIfOpened = true,
                        bool onlyIfNotMinimized = false,
-                       Form regetFocus = null,
+                       Form retakeFocus = null,
                        ViewScrollOverride scroll = ViewScrollOverride.None)
   {
     if ( !Globals.IsReady ) return;
@@ -50,7 +50,7 @@ partial class MainForm
         if ( position >= 0 )
         {
           LunisolarDaysBindingSource.Position = position;
-          CurrentDay = (LunisolarDay)LunisolarDaysBindingSource.Current;
+          CurrentDay = (LunisolarDayRow)LunisolarDaysBindingSource.Current;
         }
       });
       // Visual month and text report
@@ -97,8 +97,8 @@ partial class MainForm
           else
           if ( Visible && !this.IsVisibleOnTop(Globals.WindowDetectionMargin) )
             this.Popup();
-          if ( regetFocus is not null )
-            regetFocus.Popup();
+          if ( retakeFocus is not null )
+            retakeFocus.Popup();
           else
             this.Popup();
         });

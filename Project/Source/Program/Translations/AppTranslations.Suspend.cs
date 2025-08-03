@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -22,42 +22,42 @@ static partial class AppTranslations
 
   static public readonly NullSafeDictionary<Language, NullSafeList<SuspendDelayItem>> SuspendReminderDelays = new()
   {
-    [Language.EN] = new NullSafeList<SuspendDelayItem>
-    {
-      new SuspendDelayItem("None", 0),
-      new SuspendDelayItem("5 minutes", 5),
-      new SuspendDelayItem("10 minutes", 10),
-      new SuspendDelayItem("15 minutes", 15),
-      new SuspendDelayItem("30 minutes", 30),
-      new SuspendDelayItem("1 hour", 60),
-      new SuspendDelayItem("2 hours", 120),
-      new SuspendDelayItem("3 hours", 180),
-      new SuspendDelayItem("4 hours", 240),
-      new SuspendDelayItem("6 hours", 360),
-      new SuspendDelayItem("8 hours", 480),
-      new SuspendDelayItem("10 hours", 600),
-      new SuspendDelayItem("12 hours", 720),
-      new SuspendDelayItem("1 day", 1440),
-      new SuspendDelayItem("Custom", -1)
-    },
-    [Language.FR] = new NullSafeList<SuspendDelayItem>
-    {
-      new SuspendDelayItem("Aucun", 0),
-      new SuspendDelayItem("5 minutes", 5),
-      new SuspendDelayItem("10 minutes", 10),
-      new SuspendDelayItem("15 minutes", 15),
-      new SuspendDelayItem("30 minutes", 30),
-      new SuspendDelayItem("1 heure", 60),
-      new SuspendDelayItem("2 heures", 120),
-      new SuspendDelayItem("3 heures", 180),
-      new SuspendDelayItem("4 heures", 240),
-      new SuspendDelayItem("6 heures", 360),
-      new SuspendDelayItem("8 heures", 480),
-      new SuspendDelayItem("10 heures", 600),
-      new SuspendDelayItem("12 heures", 720),
-      new SuspendDelayItem("1 jour", 1440),
-      new SuspendDelayItem("Personnalisé", -1)
-    }
+    [Language.EN] =
+    [
+      new("None", 0),
+      new("5 minutes", 5),
+      new("10 minutes", 10),
+      new("15 minutes", 15),
+      new("30 minutes", 30),
+      new("1 hour", 60),
+      new("2 hours", 120),
+      new("3 hours", 180),
+      new("4 hours", 240),
+      new("6 hours", 360),
+      new("8 hours", 480),
+      new("10 hours", 600),
+      new("12 hours", 720),
+      new("1 day", 1440),
+      new("Custom", -1)
+    ],
+    [Language.FR] =
+    [
+      new("Aucun", 0),
+      new("5 minutes", 5),
+      new("10 minutes", 10),
+      new("15 minutes", 15),
+      new("30 minutes", 30),
+      new("1 heure", 60),
+      new("2 heures", 120),
+      new("3 heures", 180),
+      new("4 heures", 240),
+      new("6 heures", 360),
+      new("8 heures", 480),
+      new("10 heures", 600),
+      new("12 heures", 720),
+      new("1 jour", 1440),
+      new("Personnalisé", -1)
+    ]
   };
 
 }

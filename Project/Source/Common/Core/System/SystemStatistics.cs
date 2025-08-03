@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -32,7 +32,7 @@ public class SystemStatistics
     get
     {
       var list = Process.GetProcessesByName(Globals.ProcessName);
-      return list.Length >= 1 ? list[0].PriorityClass : 0;
+      return list.Length >= 1 ? list[0].PriorityClass : ProcessPriorityClass.Normal;
     }
   }
 
@@ -110,6 +110,7 @@ public class SystemStatistics
 
   [SuppressMessage("Performance", "U2U1212:Capture intermediate results in lambda expressions", Justification = "N/A")]
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "N/A")]
+  [SuppressMessage("Major Code Smell", "S2589:Boolean expressions should not be gratuitous", Justification = "Analysis error")]
   public string CPUProcessLoad
   {
     get
@@ -151,21 +152,21 @@ public class SystemStatistics
         PerformanceCounterCPUProcessLoad?.Dispose();
         PerformanceCounterCPUProcessLoad = null;
       }
-      if ( value > _CPUProcessLoadMax && value <= 100 ) _CPUProcessLoadMax = value;
-      _CPUprocessLoadCount++;
-      _CPUProcessLoadAverage += (ulong)value;
+      if ( value > _CpuProcessLoadMax && value <= 100 ) _CpuProcessLoadMax = value;
+      _CpuProcessLoadCount++;
+      _CpuProcessLoadAverage += (ulong)value;
       return $"{value}%";
     }
   }
-  static private int _CPUProcessLoadMax;
-  static private ulong _CPUprocessLoadCount;
-  static private ulong _CPUProcessLoadAverage;
+  static private int _CpuProcessLoadMax;
+  static private ulong _CpuProcessLoadCount;
+  static private ulong _CpuProcessLoadAverage;
 
   public string CPUProcessLoadAverage
-    => _CPUprocessLoadCount == 0 ? "-" : $"{_CPUProcessLoadAverage / _CPUprocessLoadCount}%";
+    => _CpuProcessLoadCount == 0 ? "-" : $"{_CpuProcessLoadAverage / _CpuProcessLoadCount}%";
 
   public string CPUProcessLoadMax
-    => $"{_CPUProcessLoadMax}%";
+    => $"{_CpuProcessLoadMax}%";
 
   static private bool CPULoadInitMutex;
 

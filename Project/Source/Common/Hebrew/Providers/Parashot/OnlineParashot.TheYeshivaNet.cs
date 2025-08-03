@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -17,10 +17,11 @@ namespace Ordisoftware.Hebrew;
 static public partial class OnlineParashot
 {
 
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TheYeshivaNet = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "c7/torah/parsha/bereshit/bereshit",
       "c8/torah/parsha/bereshit/noach",
       "c9/torah/parsha/bereshit/lech-lecha",
@@ -33,9 +34,9 @@ static public partial class OnlineParashot
       "c12/torah/parsha/bereshit/miketz",
       "c17/torah/parsha/bereshit/vayigash",
       "c14/torah/parsha/bereshit/vayechi",
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "c25/torah/parsha/shemot/shemot",
       "c28/torah/parsha/shemot/vaera",
       "c21/torah/parsha/shemot/bo",
@@ -47,9 +48,9 @@ static public partial class OnlineParashot
       "c22/torah/parsha/shemot/ki-tisa",
       "c29/torah/parsha/shemot/vayakhel",
       "c24/torah/parsha/shemot/pekudei",
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "c41/torah/parsha/vayikra/vayikra",
       "c40/torah/parsha/vayikra/tzav",
       "c38/torah/parsha/vayikra/shmini",
@@ -60,9 +61,9 @@ static public partial class OnlineParashot
       "c35/torah/parsha/vayikra/emor",
       "c34/torah/parsha/vayikra/behar",
       "c33/torah/parsha/vayikra/bechukotai",
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "c44/torah/parsha/bamidbar/bamidbar",
       "c50/torah/parsha/bamidbar/nasso",
       "c45/torah/parsha/bamidbar/behaalotcha",
@@ -73,9 +74,9 @@ static public partial class OnlineParashot
       "c51/torah/parsha/bamidbar/pinchas",
       "c49/torah/parsha/bamidbar/matot",
       "c48/torah/parsha/bamidbar/maasei",
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "c55/torah/parsha/devarim/devarim",
       "c63/torah/parsha/devarim/vaetchanan",
       "c56/torah/parsha/devarim/eikev",
@@ -87,7 +88,7 @@ static public partial class OnlineParashot
       "c64/torah/parsha/devarim/vayeilech",
       "c57/torah/parsha/devarim/haazinu",
       "c65/torah/parsha/devarim/vezot-haberakhah",
-    }
+    ]
   };
 
 }

@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+#pragma warning disable VSSpell001 // Spell Check
 namespace Base.Hotkeys
 {
+
   public class HotkeyAction
   {
 
@@ -25,3 +27,4 @@ namespace Base.Hotkeys
   }
 
 }
+#pragma warning restore VSSpell001 // Spell Check

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -103,6 +103,11 @@ sealed partial class MainForm : Form
     EditScreenNone.PerformClick();
   }
 
+  private void MainForm_Resize(object sender, EventArgs e)
+  {
+    MainMenuSeparatorLeftButtons.Visible = Width < MinimumSize.Width + 50;
+  }
+
   #endregion
 
   #region Top Menu Tool-Tips
@@ -174,6 +179,9 @@ sealed partial class MainForm : Form
     DoMenuShowHide_Click(sender, e);
   }
 
+  /// <summary>
+  /// Force hide form to tray icon.
+  /// </summary>
   public void ForceHideToTray()
   {
     if ( Visible )
@@ -182,16 +190,6 @@ sealed partial class MainForm : Form
         MenuShowHide.PerformClick();
       MenuShowHide.PerformClick();
     }
-  }
-
-  /// <summary>
-  /// Event handler. Called by TrayIcon for mouse click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Mouse event information.</param>
-  private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
-  {
-    DoTrayIconMouse_Click(sender, e);
   }
 
   /// <summary>
@@ -205,44 +203,23 @@ sealed partial class MainForm : Form
   }
 
   /// <summary>
+  /// Event handler. Called by TrayIcon for mouse click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Mouse event information.</param>
+  private void TrayIcon_MouseClick(object sender, MouseEventArgs e)
+  {
+    DoTrayIconMouse_Click(sender, e);
+  }
+
+  /// <summary>
   /// Event handler. Called by TrayIcon for mouse move events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
   private void TrayIcon_MouseMove(object sender, MouseEventArgs e)
   {
-    if ( !Globals.IsReady ) return;
-    if ( !MenuTray.Enabled ) return;
-    SystemManager.TryCatch(() =>
-    {
-      if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
-      {
-        // TODO refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
-        var text = Text.IndexOf('(') >= 0
-          ? new string(Text.ToCharArray().TakeWhile(c => c != '(').ToArray())
-          : Text;
-        var lines = text.Replace(HebrewTranslations.Parashah + " ", "").SplitNoEmptyLines(" - ").ToList();
-        if ( lines.Count >= 3 )
-        {
-          lines.Insert(2, DateTime.Today.ToShortDateString());
-          int index = lines.Count - 1;
-          int pos = lines[index].IndexOf('(');
-          if ( pos != -1 )
-            lines[index] = lines[index].Substring(0, pos - 1);
-        }
-        else
-          lines.Add(DateTime.Today.ToShortDateString());
-        TrayIcon.Text = new string(lines.AsMultiLine().Take(Globals.TrayIconTextLimit).ToArray());
-      }
-      else
-        TrayIcon.Text = string.Empty;
-      if ( !Settings.BalloonEnabled || Settings.TrayIconClickOpen == TrayIconClickOpen.NavigationForm )
-        return;
-      TimerBalloon.Start();
-      TrayIconMouse = Cursor.Position;
-      if ( !TimerTrayMouseMove.Enabled && Settings.BalloonAutoHide )
-        TimerTrayMouseMove.Start();
-    });
+    DoTrayIconMouse_Move(sender, e);
   }
 
   /// <summary>
@@ -303,6 +280,46 @@ sealed partial class MainForm : Form
 
   internal bool PreferencesMutex;
 
+  private bool LastFormEnabled;
+  private bool LastMenuTrayEnabled;
+  private bool LastContextMenuDayEnabled;
+  private bool LastTimerReminderEnabled;
+
+  internal void FreezeUI()
+  {
+    if ( !MenuTray.Enabled ) return;
+    LastFormEnabled = Enabled;
+    LastMenuTrayEnabled = MenuTray.Enabled;
+    LastContextMenuDayEnabled = ContextMenuStripDay.Enabled;
+    LastTimerReminderEnabled = TimerReminder.Enabled;
+    ToolStrip.Enabled = false;
+    MenuTray.Enabled = false;
+    ContextMenuStripDay.Enabled = false;
+    TimerReminder.Enabled = false;
+  }
+
+  internal void RestoreUI()
+  {
+    if ( MenuTray.Enabled ) return;
+    ToolStrip.Enabled = LastFormEnabled;
+    MenuTray.Enabled = LastMenuTrayEnabled;
+    ContextMenuStripDay.Enabled = LastContextMenuDayEnabled;
+    TimerReminder.Enabled = LastTimerReminderEnabled;
+  }
+
+  internal void DoActionWithUIDisabled(Action action)
+  {
+    FreezeUI();
+    try
+    {
+      action?.Invoke();
+    }
+    finally
+    {
+      RestoreUI();
+    }
+  }
+
   /// <summary>
   /// Event handler. Called by ActionPreferences for click events.
   /// </summary>
@@ -312,15 +329,11 @@ sealed partial class MainForm : Form
   internal void ActionPreferences_Click(object sender, EventArgs e)
   {
     if ( !ActionPreferences.Enabled ) return;
-    var dateOld = CurrentDay?.Date;
-    bool formEnabled = Enabled;
-    bool trayEnabled = MenuTray.Enabled;
+    FreezeUI();
     ActionPreferences.Visible = false;
     ActionPreferences.Visible = true;
-    ToolStrip.Enabled = false;
-    TimerReminder.Enabled = false;
-    MenuTray.Enabled = false;
     PreferencesMutex = true;
+    var dateOld = CurrentDay?.Date;
     try
     {
       ClearLists();
@@ -349,14 +362,10 @@ sealed partial class MainForm : Form
     }
     finally
     {
-      ToolStrip.Enabled = formEnabled;
-      MenuTray.Enabled = trayEnabled;
-      TimerReminder.Enabled = true;
+      RestoreUI();
       EnableReminderTimer();
-      if ( dateOld is null )
-        GoToDate(DateTime.Today);
-      else
-        GoToDate(dateOld.Value);
+      LoadMenuBookmarks(this);
+      GoToDate(dateOld ?? DateTime.Today);
       UpdateTitles(true);
       PreferencesMutex = false;
     }
@@ -412,8 +421,8 @@ sealed partial class MainForm : Form
     DisplayManager.IconStyle = DisplayManager.FormStyle switch
     {
       MessageBoxFormStyle.System => EditSoundsEnabled.Checked
-        ? MessageBoxIconStyle.ForceInformation
-        : MessageBoxIconStyle.ForceNone,
+                                    ? MessageBoxIconStyle.ForceInformation
+                                    : MessageBoxIconStyle.ForceNone,
       MessageBoxFormStyle.Advanced => MessageBoxIconStyle.ForceInformation,
       _ => throw new AdvNotImplementedException(DisplayManager.FormStyle),
     };
@@ -451,10 +460,9 @@ sealed partial class MainForm : Form
   public void ActionWebCheckUpdate_Click(object sender, EventArgs e)
   {
     if ( IsSpecialDay ) return;
-    bool menuEnabled = MenuTray.Enabled;
+    FreezeUI();
     try
     {
-      MenuTray.Enabled = false;
       var lastdone = Settings.CheckUpdateLastDone;
       bool exit = WebCheckUpdate.Run(ref lastdone,
                                      Settings.CheckUpdateAtStartupDaysInterval,
@@ -469,7 +477,7 @@ sealed partial class MainForm : Form
     }
     finally
     {
-      MenuTray.Enabled = menuEnabled;
+      RestoreUI();
     }
   }
 
@@ -498,121 +506,13 @@ sealed partial class MainForm : Form
   #region Menu Tools
 
   /// <summary>
-  /// Shows a notice.
-  /// </summary>
-  [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP001:Dispose created", Justification = "N/A")]
-  private void ShowNotice(object sender, TranslationsDictionary title, TranslationsDictionary text, int width)
-  {
-    switch ( DisplayManager.FormStyle )
-    {
-      case MessageBoxFormStyle.System:
-        DisplayManager.Show(title.GetLang(), text.GetLang());
-        break;
-      case MessageBoxFormStyle.Advanced:
-        string titleTranslated = title.GetLang();
-        var form = MessageBoxEx.Instances.Find(f => f.Text == titleTranslated)
-                   ?? new MessageBoxEx(title, text, width: width);
-        form.ShowInTaskbar = true;
-        form.Popup(null, sender is null);
-        break;
-      default:
-        throw new AdvNotImplementedException(DisplayManager.FormStyle);
-    }
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowMonthsAndDaysNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowMonthsAndDaysNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeMonthsAndDaysTitle,
-               AppTranslations.NoticeMonthsAndDays,
-               MessageBoxEx.DefaultWidthMedium);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowCelebrationsNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowCelebrationsNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeCelebrationsTitle,
-               AppTranslations.NoticeCelebrations,
-               MessageBoxEx.DefaultWidthMedium);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowFoodNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionShowFoodNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeCelebrationsFoodTitle,
-               AppTranslations.NoticeCelebrationsFood,
-               MessageBoxEx.DefaultWidthLarge);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowShabatNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowShabatNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeShabatTitle,
-               AppTranslations.NoticeShabat,
-               MessageBoxEx.DefaultWidthLarge);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowParashahNotice for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  public void ActionShowParashahNotice_Click(object sender, EventArgs e)
-  {
-    ShowNotice(sender,
-               AppTranslations.NoticeParashahTitle,
-               AppTranslations.NoticeParashah,
-               MessageBoxEx.DefaultWidthMedium);
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowTranscriptionGuide for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
-  {
-    Program.TranscriptionGuideForm.Popup();
-  }
-
-  /// <summary>
-  /// Event handler. Called by ActionShowGrammarGuide for click events.
-  /// </summary>
-  /// <param name="sender">Source of the event.</param>
-  /// <param name="e">Event information.</param>
-  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
-  {
-    Program.GrammarGuideForm.Popup();
-  }
-
-  /// <summary>
   /// Event handler. Called by ActionViewParashahInfos for click events.
   /// </summary>
   /// <param name="sender">Source of the event.</param>
   /// <param name="e">Event information.</param>
   private void ActionViewParashahInfos_Click(object sender, EventArgs e)
   {
-    ApplicationDatabase.Instance.ShowWeeklyParashahDescription();
+    DBApp.ShowWeeklyParashahDescription();
   }
 
   /// <summary>
@@ -632,7 +532,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    HebrewTools.OpenHebrewWordsGoToVerse(ApplicationDatabase.Instance.GetWeeklyParashah().Factory.FullReferenceBegin);
+    HebrewTools.OpenHebrewWordsGoToVerse(DBApp.GetWeeklyParashah().Factory.FullReferenceBegin);
   }
 
   /// <summary>
@@ -642,12 +542,12 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowCelebrationVersesBoard_Click(object sender, EventArgs e)
   {
-    Hebrew.CelebrationVersesBoardForm.Run(TorahCelebration.Pessah,
-                                          nameof(Settings.CelebrationVersesBoardFormLocation),
-                                          nameof(Settings.CelebrationVersesBoardFormClientSize),
-                                          Settings.OpenVerseOnlineURL,
-                                          Settings.DoubleClickOnVerseOpenDefaultReader,
-                                          value => Settings.DoubleClickOnVerseOpenDefaultReader = value);
+    CelebrationVersesBoardForm.Run(TorahCelebration.Pessah,
+                                   nameof(Settings.CelebrationVersesBoardFormLocation),
+                                   nameof(Settings.CelebrationVersesBoardFormClientSize),
+                                   Settings.OpenVerseOnlineURL,
+                                   Settings.DoubleClickOnVerseOpenDefaultReader,
+                                   value => Settings.DoubleClickOnVerseOpenDefaultReader = value);
   }
 
   /// <summary>
@@ -687,7 +587,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionShowParashot_Click(object sender, EventArgs e)
   {
-    ParashotForm.Run(ApplicationDatabase.Instance.GetWeeklyParashah().Factory);
+    ParashotForm.Run(DBApp.GetWeeklyParashah().Factory);
   }
 
   /// <summary>
@@ -717,7 +617,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCalculateDateDiff_Click(object sender, EventArgs e)
   {
-    DatesDiffCalculatorForm.Run();
+    DatesDifferenceForm.Run();
   }
 
   /// <summary>
@@ -806,15 +706,48 @@ sealed partial class MainForm : Form
   [SuppressMessage("Usage", "GCop517:'{0}()' returns a value but doesn't change the object. It's meaningless to call it without using the returned result.", Justification = "N/A")]
   private void ActionVacuumDB_Click(object sender, EventArgs e)
   {
-    Settings.VacuumLastDone = ApplicationDatabase.Instance
-                                                 .Connection
-                                                 .Optimize(Settings.VacuumLastDone,
-                                                           Settings.VacuumAtStartupDaysInterval,
-                                                           true);
-    HebrewDatabase.Instance.Connection.Optimize(DateTime.MinValue, force: true);
+    Settings.VacuumLastDone = DBApp.Connection
+                                      .Optimize(Settings.VacuumLastDone,
+                                                Settings.VacuumAtStartupDaysInterval,
+                                                true);
+    HebrewDatabase.Connection.Optimize(DateTime.MinValue, force: true);
     ApplicationStatistics.UpdateDBCommonFileSizeRequired = true;
     ApplicationStatistics.UpdateDBFileSizeRequired = true;
     DisplayManager.Show(SysTranslations.DatabaseVacuumSuccess.GetLang());
+  }
+
+  #endregion
+
+  #region Menu Help
+
+  /// <summary>
+  /// Event handler. Called by ActionShowTranscriptionGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowTranscriptionGuide_Click(object sender, EventArgs e)
+  {
+    Program.TranscriptionGuideForm.Popup();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowGrammarGuide for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowGrammarGuide_Click(object sender, EventArgs e)
+  {
+    Program.GrammarGuideForm.Popup();
+  }
+
+  /// <summary>
+  /// Event handler. Called by ActionShowNotices for click events.
+  /// </summary>
+  /// <param name="sender">Source of the event.</param>
+  /// <param name="e">Event information.</param>
+  private void ActionShowNotices_Click(object sender, EventArgs e)
+  {
+    NoticesForm.Run();
   }
 
   #endregion
@@ -862,7 +795,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSave_Click(object sender, EventArgs e)
   {
-    ExportSave();
+    DoActionWithUIDisabled(ExportSave);
   }
 
   /// <summary>
@@ -872,7 +805,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionCopyToClipboard_Click(object sender, EventArgs e)
   {
-    ExportToClipboard();
+    DoActionWithUIDisabled(ExportToClipboard);
   }
 
   /// <summary>
@@ -882,7 +815,7 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionPrint_Click(object sender, EventArgs e)
   {
-    ExportPrint();
+    DoActionWithUIDisabled(ExportPrint);
   }
 
   #endregion
@@ -896,11 +829,14 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchDay_Click(object sender, EventArgs e)
   {
-    var date = DateTime.Today;
-    if ( sender is not null )
-      if ( !SelectDayForm.Run(null, ref date, false, true, true) )
-        return;
-    GoToDate(date);
+    DoActionWithUIDisabled(() =>
+    {
+      var date = DateTime.Today;
+      if ( sender is not null )
+        if ( !SelectDayForm.Run(null, ref date, false, true, true) )
+          return;
+      GoToDate(date);
+    });
   }
 
   /// <summary>
@@ -910,8 +846,11 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchEvent_Click(object sender, EventArgs e)
   {
-    using var form = new SearchEventForm();
-    form.ShowDialog();
+    DoActionWithUIDisabled(() =>
+    {
+      using var form = new SearchEventForm();
+      form.ShowDialog();
+    });
   }
 
   /// <summary>
@@ -921,8 +860,11 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchMonth_Click(object sender, EventArgs e)
   {
-    using var form = new SearchLunarMonthForm();
-    form.ShowDialog();
+    DoActionWithUIDisabled(() =>
+    {
+      using var form = new SearchLunarMonthForm();
+      form.ShowDialog();
+    });
   }
 
   /// <summary>
@@ -932,8 +874,11 @@ sealed partial class MainForm : Form
   /// <param name="e">Event information.</param>
   private void ActionSearchGregorianMonth_Click(object sender, EventArgs e)
   {
-    using var form = new SearchGregorianMonthForm();
-    form.ShowDialog();
+    DoActionWithUIDisabled(() =>
+    {
+      using var form = new SearchGregorianMonthForm();
+      form.ShowDialog();
+    });
   }
 
   /// <summary>
@@ -1113,7 +1058,7 @@ sealed partial class MainForm : Form
   private void CalendarGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
   {
     if ( e.ColumnIndex == GridColumnMoonriseOccuring.Index )
-      e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurings);
+      e.Value = ( (MoonriseOccurring)e.Value ).ToStringExport(AppTranslations.MoonriseOccurrences);
     else
     if ( e.ColumnIndex == GridColumnNewMoon.Index || e.ColumnIndex == GridColumnFullMoon.Index )
       e.Value = (bool)e.Value
@@ -1150,7 +1095,7 @@ sealed partial class MainForm : Form
     SystemManager.TryCatch(() =>
     {
       if ( LunisolarDaysBindingSource.Current is not null )
-        GoToDate(( (LunisolarDay)LunisolarDaysBindingSource.Current ).Date);
+        GoToDate(( (LunisolarDayRow)LunisolarDaysBindingSource.Current ).Date);
     });
   }
 
@@ -1205,7 +1150,14 @@ sealed partial class MainForm : Form
 
   #region Context Menu
 
-  private bool ContextMenuStripDayNoClose;
+  private bool ContextMenuDenyClosingForEphemeris;
+
+  private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
+  {
+    if ( IsCalendarReady ) return;
+    if ( TimerMutex ) return;
+    MonthlyCalendar.Refresh();
+  }
 
   private void CalendarMonth_MouseClick(object sender, MouseEventArgs e)
   {
@@ -1214,14 +1166,14 @@ sealed partial class MainForm : Form
 
   private void ContextMenuDayDate_MouseDown(object sender, MouseEventArgs e)
   {
-    ContextMenuStripDayNoClose = true;
+    ContextMenuDenyClosingForEphemeris = true;
   }
 
   private void ContextMenuStripDay_Closing(object sender, ToolStripDropDownClosingEventArgs e)
   {
-    if ( ContextMenuStripDayNoClose )
+    if ( ContextMenuDenyClosingForEphemeris )
     {
-      ContextMenuStripDayNoClose = false;
+      ContextMenuDenyClosingForEphemeris = false;
       e.Cancel = true;
     }
   }
@@ -1231,13 +1183,13 @@ sealed partial class MainForm : Form
     DoContextMenuStripDay_Opened(sender, e);
   }
 
-  private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
+  #endregion
+
+  #region Context Menu Torah
+
+  private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)
   {
-    if ( !NavigationForm.Instance.Visible )
-      ActionNavigate.PerformClick();
-    else
-      NavigationForm.Instance.Popup();
-    NavigationForm.Instance.Date = ContextMenuDayCurrentEvent.Date;
+    DoReadParashahSomeWeek(Settings.OpenVerseOnlineURL);
   }
 
   private void ContextMenuDayCelebrationVersesBoard_Click(object sender, EventArgs e)
@@ -1262,7 +1214,7 @@ sealed partial class MainForm : Form
 
   private void ContextMenuDayParashah_Click(object sender, EventArgs e)
   {
-    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
+    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDayRow day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
         if ( sender == ContextMenuDayParashahDescription )
           UserParashot.ShowDescription(parashah, day.HasLinkedParashah, () => ParashotForm.Run(parashah));
@@ -1273,16 +1225,35 @@ sealed partial class MainForm : Form
 
   private void ContextMenuOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDay day )
+    if ( ContextMenuDayCurrentEvent.GetParashahReadingDay() is LunisolarDayRow day )
       if ( ParashotFactory.Instance.Get(day.ParashahID) is Parashah parashah )
         HebrewTools.OpenHebrewWordsGoToVerse(parashah.FullReferenceBegin);
   }
 
-  private void CalendarMonth_MouseMove(object sender, MouseEventArgs e)
+  #endregion
+
+  #region Context Menu Days
+
+  private void ContextMenuDayNavigation_Click(object sender, EventArgs e)
   {
-    if ( IsCalendarReady ) return;
-    if ( TimerMutex ) return;
-    MonthlyCalendar.Refresh();
+    if ( !NavigationForm.Instance.Visible )
+      ActionNavigate.PerformClick();
+    else
+      NavigationForm.Instance.Popup();
+    NavigationForm.Instance.Date = ContextMenuDayCurrentEvent.Date;
+  }
+
+  private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)
+  {
+    DateSelected = null;
+  }
+
+  private void ContextMenuDaySelect_Click(object sender, EventArgs e)
+  {
+    DateSelected = ContextMenuDayCurrentEvent.Date;
+    if ( DateSelected is not null )
+      if ( MonthlyCalendar.CalendarDate.Month != DateSelected.Value.Month )
+        GoToDate(DateSelected.Value);
   }
 
   private void ContextMenuDaySetAsActive_Click(object sender, EventArgs e)
@@ -1300,19 +1271,6 @@ sealed partial class MainForm : Form
     GoToDate(DateSelected.Value);
   }
 
-  private void ContextMenuDaySelect_Click(object sender, EventArgs e)
-  {
-    DateSelected = ContextMenuDayCurrentEvent.Date;
-    if ( DateSelected is not null )
-      if ( MonthlyCalendar.CalendarDate.Month != DateSelected.Value.Month )
-        GoToDate(DateSelected.Value);
-  }
-
-  private void ContextMenuDayClearSelection_Click(object sender, EventArgs e)
-  {
-    DateSelected = null;
-  }
-
   private void ContextMenuDayDatesDiffToToday_Click(object sender, EventArgs e)
   {
     ContextMenuDayDatesDiffTo(DateTime.Today);
@@ -1323,46 +1281,44 @@ sealed partial class MainForm : Form
     if ( _DateSelected is not null ) ContextMenuDayDatesDiffTo(_DateSelected.Value);
   }
 
+  private void ContextMenuDayDatesDiffToActive_Click(object sender, EventArgs e)
+  {
+    ContextMenuDayDatesDiffTo(CurrentDay.Date);
+  }
+
   private void ContextMenuDayDatesDiffTo(DateTime date)
   {
     var tuple = new Tuple<DateTime, DateTime>(ContextMenuDayCurrentEvent.Date, date);
-    DatesDiffCalculatorForm.Run(tuple, ensureOrder: true);
+    DatesDifferenceForm.Run(tuple, ensureOrder: true);
   }
 
-  private ToolStripMenuItem CurrentBookmarkMenu;
+  #endregion
+
+  #region Context Menu Bookmarks
 
   internal void LoadMenuBookmarks(Form caller)
   {
-    DatesDiffCalculatorForm.LoadMenuBookmarks(MenuBookmarks.Items, Bookmarks_MouseUp);
-    if ( caller != DatesDiffCalculatorForm.Instance )
-      DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+    DateBookmarkRow.LoadMenuBookmarks(MenuBookmarks.Items, ContextMenuDayGoToBookmark_MouseUp);
+    if ( caller != DatesDifferenceForm.Instance ) DatesDifferenceForm.Instance.LoadMenuBookmarks(this);
     MenuBookmarks.DuplicateTo(ContextMenuDayGoToBookmark);
-    MenuBookmarks.DuplicateTo(ContextMenuDaySaveBookmark);
-    foreach ( ToolStripMenuItem menuitem in ContextMenuDayGoToBookmark.DropDownItems )
-    {
-      var value = Program.DateBookmarks[(int)menuitem.Tag];
-      if ( value == DateTime.MinValue ) menuitem.Enabled = false;
-    }
   }
 
-  private void ContextMenuDayGoToBookmark_DropDownOpened(object sender, EventArgs e)
+  private void ContextMenuDayGoToBookmark_MouseUp(object sender, MouseEventArgs e)
   {
-    CurrentBookmarkMenu = sender as ToolStripMenuItem;
+    var menuItem = (ToolStripMenuItem)sender;
+    DateBookmarkRow.MenuItemMouseUp(this, menuItem, e.Button, LoadMenuBookmarks, bkm => GoToDate(bkm.Date));
   }
 
-  private void Bookmarks_MouseUp(object sender, MouseEventArgs e)
+  private void ContextMenuDaySaveBookmark_Click(object sender, EventArgs e)
   {
-    DoBookmarksMouseUp(sender, e);
+    DateBookmarkRow.CreateFromUserInput(ContextMenuDayCurrentEvent.Date);
+    LoadMenuBookmarks(this);
   }
 
-  private void ContextMenuDayManageBookmark_Click(object sender, EventArgs e)
+  private void ActionManageBookmark_Click(object sender, EventArgs e)
   {
-    if ( ManageBookmarksForm.Run() ) LoadMenuBookmarks(this);
-  }
-
-  private void ContextMenuParashahReadDefault_Click(object sender, EventArgs e)
-  {
-    DoReadParashahSomeWeek(Settings.OpenVerseOnlineURL);
+    ManageBookmarksForm.Run();
+    LoadMenuBookmarks(this);
   }
 
   #endregion

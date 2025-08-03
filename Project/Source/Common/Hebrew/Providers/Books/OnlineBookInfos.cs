@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -40,7 +40,6 @@ static public partial class OnlineBookInfos
       { "%BOOKNUM%", book.ToString() },
       { "%BOOKSB%", StudyBible[(TanakBook)book] },
       { "%BOOKSEFARIA%", Sefaria[(TanakBook)book] },
-      { "%BOOKTORAHBOX%", TorahBox[(TanakBook)book] },
       { "%CHAPTERNUM#2%", chapter.ToString("00") },
       { "%CHAPTERNUM%", chapterString },
       { "%VERSENUM#2%", verse.ToString("00") },

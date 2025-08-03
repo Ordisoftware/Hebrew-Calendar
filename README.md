@@ -1,15 +1,14 @@
+[![OS: Windows](https://img.shields.io/badge/Windows%2010%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
 [![License MPL 2.0](https://img.shields.io/github/license/ordisoftware/hebrew-calendar)](LICENSE)&nbsp;
 [![GitHub all releases downloads](https://img.shields.io/github/downloads/ordisoftware/hebrew-calendar/total)](https://github.com/Ordisoftware/Hebrew-Calendar/releases)&nbsp;
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)&nbsp;
 [![GitHub repo size](https://img.shields.io/github/repo-size/ordisoftware/hebrew-calendar)](#)&nbsp;
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/tree/master/Project)&nbsp;
-[![Lines of code](https://img.shields.io/tokei/lines/github/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/tree/master/Project)&nbsp;<br/>
-[![OS: Windows](https://img.shields.io/badge/Windows%207%2B-279CE8?label=os)](https://www.microsoft.com/windows/)&nbsp;
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ordisoftware/hebrew-calendar)](https://github.com/Ordisoftware/Hebrew-Calendar/tree/main/Project)&nbsp;<br/>
 [![UI: WinForms](https://img.shields.io/badge/WinForms-279CE8?label=ui)](https://github.com/dotnet/winforms)&nbsp;
-[![Framework: .Net](https://img.shields.io/badge/.NET%204.8-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
+[![Framework: .Net](https://img.shields.io/badge/.NET%204.8.1-6E5FA6?label=framework)](https://dotnet.microsoft.com)&nbsp;
 [![IDE: Visual Studio](https://img.shields.io/badge/Visual%20Studio%202022-6E5FA6.svg?label=ide)](https://visualstudio.microsoft.com)&nbsp;
-[![Lang: C#](https://img.shields.io/badge/C%23%2011-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
-[![DB: SQLite](https://img.shields.io/badge/SQLite%203.40-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
+[![Lang: C#](https://img.shields.io/badge/C%23%2012-%23239120.svg?label=lang)](https://docs.microsoft.com/dotnet/csharp/)&nbsp;
+[![DB: SQLite](https://img.shields.io/badge/SQLite%203.49-darkgoldenrod.svg?label=db)](https://www.sqlite.org)&nbsp;<br/>
 [![Ordisoftware.com Project](https://img.shields.io/badge/-Ordisoftware.com%20Project-355F90?logo=WordPress&logoColor=white)](https://www.ordisoftware.com/hebrew-calendar)&nbsp;
 [![Manufacturing Software Guidelines](https://img.shields.io/badge/-Manufacturing%20Software%20Guidelines-355F90?logo=MicrosoftWord&logoColor=white)](https://github.com/Ordisoftware/Guidelines)&nbsp;
 
@@ -67,23 +66,28 @@ A libre and open-source software written in C# that allows to generate a calenda
 ## Requirements
 
 - Screen 1024x768 or higher
-- Windows 7 SP1 x32/x64 or higher
-- Framework .NET 4.8
-- SQLite 3.40.1
+- Windows 10 x32/x64 or higher
+- Framework .NET 4.8.1
+- SQLite 3.49.1
 
 ## Download
 
-**What's new in the latest version 10**
+**What's new in the latest version 11**
 
-- Adar II was renamed in VeAdar.
-- Added Shabat references in celebration verses board.
-- Added options for the data layout in the monthly view : to put the lunar date on a single line before the ephemeris, to display the book name with references of parashah, to set text alignment, and to insert separator between sections.
-- Added option to select data layout order and sections to show in the monthly view.
-- Added options to display Hebrew names in Unicode chars or Latin transcription, and to keep Arabic numerals in case of Unicode.
-- Fixed image printing.
-- Some fixes and improvements.
-- Optimized and refactored code.
-- Updated web links.
+WARNING
+The date bookmarks system has been updated to be stored in database: earlier versions of the software will not be able to load them.
+
+- Add help menu.
+- Add window for all notices.
+- Add memos and colors for bookmarks.
+- Add previous and next buttons in parashah description box.
+- Add keyboard shortcuts:
+    * Alt + H for help menu,
+    * Alt + N for notices window,
+    * Alt + B for bookmarks manager,
+    * Alt + Arrows to navigate between lunar days.
+- Some improvements.
+- Update web links.
 
 [Last release](https://github.com/Ordisoftware/Hebrew-Calendar/releases/latest)
 
@@ -117,7 +121,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 
 |IDE Extension|Project NuGet| 
 |-|-|
-|[SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)<br>[Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)<br>[F0.Analyzers](https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS)<br>[Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)<br>[Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)<br>[AsyncFixer](https://marketplace.visualstudio.com/items?itemName=SemihOkur.AsyncFixer2022)<br>[Async Method Name Fixer](https://marketplace.visualstudio.com/items?itemName=PRIYANSHUAGRAWAL92.AsyncMethodNameFixer)<br>[U2U Consult Performance Analyzers](https://marketplace.visualstudio.com/items?itemName=vs-publisher-363830.U2UConsultPerformanceCodeAnalyzersforC7)<br>[TSQL Analyzer](https://github.com/Zefek/TSQLAnalyzer)<br>[Serilog Analyzer](https://github.com/Suchiman/SerilogAnalyzer)<br>[Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)<br>[Puma Scan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)<br>[Inclusiveness Analyzer](https://github.com/microsoft/InclusivenessAnalyzerVisualStudio)|[Microsoft.CodeAnalysis.NetAnalyzers](https://github.com/dotnet/roslyn-analyzers)<br>[Microsoft.VisualStudio.Threading.Analyzers](https://github.com/microsoft/vs-threading)<br>[MultithreadingAnalyzer](https://github.com/cezarypiatek/MultithreadingAnalyzer)<br>[Meziantou.Analyzer](https://github.com/meziantou/Meziantou.Analyzer)<br>[GCop.All.Common](https://github.com/Geeksltd/GCop)<br>[ReflectionAnalyzers](https://github.com/DotNetAnalyzers/ReflectionAnalyzers)<br>[IDisposableAnalyzers](https://github.com/DotNetAnalyzers/IDisposableAnalyzers)<br>[ErrorProne.NET.CoreAnalyzers](https://github.com/SergeyTeplyakov/ErrorProne.NET)<br>[ErrorProne.NET.Structs](https://github.com/SergeyTeplyakov/ErrorProne.NET)<br><br><br><br><br>|
+|[SonarLint](https://marketplace.visualstudio.com/items?itemName=SonarSource.SonarLintforVisualStudio2022)<br>[Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)<br>[F0.Analyzers](https://marketplace.visualstudio.com/items?itemName=Flash0Ware.F0-Analyzers-VS)<br>[Parallel Helper](https://marketplace.visualstudio.com/items?itemName=camrein.ParallelHelper)<br>[Parallel Checker](https://marketplace.visualstudio.com/items?itemName=LBHSR.ParallelChecker)<br>[AsyncFixer](https://marketplace.visualstudio.com/items?itemName=SemihOkur.AsyncFixer2022)<br>[Async Method Name Fixer](https://marketplace.visualstudio.com/items?itemName=PRIYANSHUAGRAWAL92.AsyncMethodNameFixer)<br>[U2U Consult Performance Analyzers](https://marketplace.visualstudio.com/items?itemName=vs-publisher-363830.U2UConsultPerformanceCodeAnalyzersforC7)<br>[TSQL Analyzer](https://github.com/Zefek/TSQLAnalyzer)<br>[Serilog Analyzer](https://github.com/Suchiman/SerilogAnalyzer)<br>[Security Code Scan](https://marketplace.visualstudio.com/items?itemName=JaroslavLobacevski.SecurityCodeScanVS2019)<br>[Puma Scan](https://marketplace.visualstudio.com/items?itemName=PumaSecurity.PumaScan)<br>[SharpSource](https://github.com/Vannevelj/SharpSource)<br>[Inclusiveness Analyzer](https://github.com/microsoft/InclusivenessAnalyzerVisualStudio)|[Microsoft.CodeAnalysis.NetAnalyzers](https://github.com/dotnet/roslyn-analyzers)<br>[Microsoft.VisualStudio.Threading.Analyzers](https://github.com/microsoft/vs-threading)<br>[MultithreadingAnalyzer](https://github.com/cezarypiatek/MultithreadingAnalyzer)<br>[Meziantou.Analyzer](https://github.com/meziantou/Meziantou.Analyzer)<br>[GCop.All.Common](https://github.com/Geeksltd/GCop)<br>[ReflectionAnalyzers](https://github.com/DotNetAnalyzers/ReflectionAnalyzers)<br>[IDisposableAnalyzers](https://github.com/DotNetAnalyzers/IDisposableAnalyzers)<br>[ErrorProne.NET.CoreAnalyzers](https://github.com/SergeyTeplyakov/ErrorProne.NET)<br>[ErrorProne.NET.Structs](https://github.com/SergeyTeplyakov/ErrorProne.NET)<br><br><br><br><br><br>|
 
 #### What to do if the check update tells that the SSL certificate is wrong or expired?
 
@@ -307,9 +311,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Ctrl + C | Copy current view to clipboard |
 | Ctrl + P | Print current view |
 | Ctrl + Shift + C | Copy the text report selection to clipboard |
-| Alt + V | Show view menu |
+| Alt + V | View menu |
 | Alt + T | Tools menu |
 | Alt + L | Web links menu |
+| Alt + H | Help menu |
 | Alt + S | Settings menu |
 | Alt + I | Information menu |
 | Alt + E | Export folder |
@@ -319,11 +324,14 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Alt + W | Online weather |
 | Alt + G | Generate calendar |
 | Alt + P | Show online parashah menu |
+| Alt + B | Manage bookmarks |
+| Alt + N | Notices window |
 | Ctrl + F1 | Parashot board |
 | Ctrl + F2 | Celebration verses board |
 | Ctrl + F3 | Celebrations board |
 | Ctrl + F4 | New moons board |
 | Ctrl + F5 | Lunar months board |
+| Ctrl + Shift + S | Verses on Shabat |
 | Ctrl + Shift + D | Dates difference calculator |
 | Home | First month available in the database |
 | End | Last month available in the database |
@@ -339,6 +347,10 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 | Shit + Down | Previous week |
 | Shit + Left | Previous day |
 | Shit + Right | Next day |
+| Alt + Left : Previous lunar month |
+| Alt + Right : Next lunar month |
+| Alt + Up (or PageUp) : Previous lunar year |
+| Alt + Down (or PageDown) : Next lunar year |
 | Add or Sub | Change active day |
 | Shift + Click | Set active day |
 | Ctrl + Click | Select day |
@@ -351,6 +363,17 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Future improvements
 
+#### Priority
+
+- Add auto backup bookmarks.
+- Add import parashot board.
+- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
+- Add command-line option `--lunarmonths` to show the lunar months board.
+- Improve food notice with details and cooking recipes.
+- Improve notices to be in only one window having a page control like preferences.
+- Improve weekly parashah description box to have access to the tools for the study.
+- Improve weekly parashah description box to have a screenshot button.
+
 #### Application
 
 - Add option to set primary source for check update between author's website or GitHub.
@@ -358,14 +381,13 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add dark theme for monthly view.
 - Add print boards.
 - Add option to generate a fixed interval (if the current year is within).
-- Improve notices to be in only one window having a page control like preferences.
-- Improve food notice with details and cooking recipes.
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
+- Check and fix weekly parashah generation with Soukot.
+- Check and Fix reminder behavior with Sim'hat Torah.
 - Rewrite the reminder.
 
 #### Data
 
-- Add import parashot board.
 - Add user reminders for other people's events like birthday and yahrzeit.
 - Add user reminders for personal solar and lunar anniversary of birth.
 - Add user reminders for small religious festivals.
@@ -374,18 +396,36 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 ## Changelog
 
-#### TO DO Next
+#### In progress - Version 11.0
 
->- Add previous and next buttons to parashah description box.
->- Add lunar months board with Hebrew names, meanings, lettriqs and tools.
->- Add command-line option `--lunarmonths` to show the lunar months board.
->- Add comments to bookmarks.
->- Add auto sort bookmarks.
->- Add auto backup bookmarks.
->- Improve weekly parashah description box to have access to the tools for the study.
->- Improve weekly parashah description box to have a screenshot button.
->- Check and fix weekly parashah generation with Soukot.
->- Check and Fix reminder behavior with Sim'hat Torah.
+- Upgrade to framework 4.8.1 and discontinuation of Windows 7 support.
+- Move date bookmarks stored in a text file to a database table.
+- Add memos and colors to date bookmarks that are now automatically sorted.
+- Add default bookmarks folder.
+- Add manage bookmarks menu item in Tools, and Alt + B shortcut.
+- Add help menu, and Alt + H shortcut.
+- Add window for all notices, and Alt + N shortcut.
+- Add Alt + Arrows shortcuts to navigate between lunar days.
+- Add previous and next buttons in parashah description box.
+- Add context menu item "Dates diff. from here to active day".
+- Add Accuweather.com provider.
+- Add option to display lunar dates for bookmarks.
+- Fix calendar context menu is enabled when the top menu is disabled.
+- Code refactoring.
+- Update web links.
+
+>- Add omer day number for shavou'hot part one in the textual and visual calendar.
+>- Add button to add days in the dates difference window.
+>- Add submenu for all weather providers
+>- Add save screenshot to file
+>- Add option to preselect only the previous year, the current year and the next year in boards.
+>- Improve shavouh'ot diet reminder box to indicate full length and not only the first day.
+>- Fix timer which displays parashah description box when the day before is not Shabbat.
+>- Fix Yom Teruh'ah reminder box still showing when finished.
+
+#### 2024.05.10 - Version 10.4.1
+
+- Update SSL certificate data for the web update checker.
 
 #### 2025.08.03 - Version 10.4.2
 
@@ -1052,6 +1092,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Fix view log menu item not disabled when app started when log is disabled.
 - Fix view log icon not disabled in stats form when log is disabled.
 - Fix small defect with Tray Icon images.
+- Update web links to improve playlists.
 
 #### 2020.11.18 - Version 5.7
 

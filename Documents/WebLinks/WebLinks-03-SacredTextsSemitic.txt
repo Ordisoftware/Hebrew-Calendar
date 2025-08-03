@@ -56,19 +56,13 @@ URL = http://halakhah.com
 Name = (EN) Judaism @ sacred-texts.com
 URL = https://www.sacred-texts.com/jud/
 
-Name = (FR/IW) Torah et Talmud avec commentaires @ torah-box.com
-URL = https://www.torah-box.com/torah-pdf/
-
-Name = (FR/IW) Parashah avec commentaires @ torah-box.com
-URL = https://www.torah-box.com/paracha/
-
 -
 
 Name = (IW) Tanak Hebrew Text @ fourmilab.ch
 URL = http://www.fourmilab.ch/etexts/www/hebrew/Bible/
 
 Name = (IW) Tanak Hebrew MP3 @ mechon-mamre.org
-URL = https://www.mechon-mamre.org/p/pt/ptmp3prq.htm
+URL = https://mechon-mamre.org/p/pt/ptmp3prq.htm
 
 -
 
@@ -110,6 +104,9 @@ URL = http://corpus.quran.com/wordbyword.jsp
 
 Name = (FR) Quran Interlinéaire @ coran-seul.com
 URL = http://coran-seul.com/index.php/home
+
+Name = (FR) Quran en français @ coran-en-ligne.com
+URL = http://www.coran-en-ligne.com/coran-en-francais.html
 
 Name = (FR/EN) Quran arabic lecture @ notequran.com
 URL = https://www.notequran.com

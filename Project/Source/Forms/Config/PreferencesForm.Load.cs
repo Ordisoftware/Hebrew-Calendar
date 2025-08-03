@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -28,6 +28,7 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditMonthViewNoDaysBackColor.BackColor = Settings.MonthViewNoDaysBackColor);
     SystemManager.TryCatch(() => EditMonthViewBackColor.BackColor = Settings.MonthViewBackColor);
     SystemManager.TryCatch(() => EditMonthViewTextColor.BackColor = Settings.MonthViewTextColor);
+    SystemManager.TryCatch(() => EditDateBookmarkDefaultTextColor.BackColor = Settings.DateBookmarkDefaultTextColor);
     SystemManager.TryCatch(() => EditDebuggerEnabled.Checked = Settings.DebuggerEnabled);
     SystemManager.TryCatch(() => EditVacuumAtStartup.Checked = Settings.VacuumAtStartup);
     SystemManager.TryCatch(() => EditVacuumAtStartupInterval.Value = Settings.VacuumAtStartupDaysInterval);
@@ -125,7 +126,6 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditWeeklyParashahShowAtStartup.Checked = Settings.WeeklyParashahShowAtStartup);
     SystemManager.TryCatch(() => EditWeeklyParashahShowAtNewWeek.Checked = Settings.WeeklyParashahShowAtNewWeek);
     SystemManager.TryCatch(() => EditCustomWebSearch.Text = Settings.CustomWebSearch);
-    SystemManager.TryCatch(() => EditAutoSortBookmarks.Checked = Settings.AutoSortBookmarks);
     SystemManager.TryCatch(() => EditUseTwoDaysForLastPessahDayOutside.Checked = Settings.UseTwoDaysForLastPessahDayOutside);
     SystemManager.TryCatch(() => EditReminderBoxRetakeFocusAfterDateClick.Checked = Settings.BoxesRetakeFocusAfterDateClick);
     SystemManager.TryCatch(() => EditCalendarHebrewDateSingleLine.Checked = Settings.CalendarHebrewDateSingleLine);
@@ -153,10 +153,12 @@ partial class PreferencesForm
     SystemManager.TryCatch(() => EditHideLuminarySigns.Checked = Settings.HideLuminarySigns);
     SystemManager.TryCatch(() => EditPrintImageCenterOnPage.Checked = Settings.PrintImageCenterOnPage);
     SystemManager.TryCatch(() => EditOpenVerseOnlineURL.Text = Settings.OpenVerseOnlineURL);
+    SystemManager.TryCatch(() => EditBookmarkMemoPrefix.Text = Settings.DateBookmarkMemoPrefix);
+    SystemManager.TryCatch(() => EditBookmarkMemoSuffix.Text = Settings.DateBookmarkMemoSuffix);
+    SystemManager.TryCatch(() => EditBoookmarkDisplayLunarDate.Checked = Settings.BoookmarkDisplayLunarDate);
     // Assigned by the form on user action
     SystemManager.TryCatch(() => EditMonthViewLatinFontSize.Value = Settings.MonthViewFontSize);
     SystemManager.TryCatch(() => EditMonthViewHebrewFontSize.Value = Settings.MonthViewHebrewFontSize);
-    SystemManager.TryCatch(() => EditDateBookmarksCount.Value = Settings.DateBookmarksCount);
     SystemManager.TryCatch(() => EditWeatherOnlineUseDay.Checked = Settings.WeatherOnlineUseDay);
     // Special
     SystemManager.TryCatch(() => LabelLastStartupCheckDate.Text = Settings.CheckUpdateLastDone.ToShortDateString() + " " + Settings.CheckUpdateLastDone.ToShortTimeString());
@@ -184,22 +186,16 @@ partial class PreferencesForm
     // System
     EditStartWithWindows.Checked = SystemManager.StartWithWindowsUserRegistry;
     EditLogEnabled.Enabled = DebugManager.Enabled;
-    // Weather online provider
-    switch ( Settings.WeatherOnlineProvider )
-    {
-      case WeatherProvider.WeatherDotCom:
-        SelectWeatherOnlineWeatherDotCom.Select();
-        break;
-      case WeatherProvider.MicrosoftNetworkDotCom:
-        SelectWeatherOnlineMicrosoftNetworkDotCom.Select();
-        break;
-      default:
-        SelectWeatherOnlineMeteoblueDotCom.Select();
-        break;
-    }
+    // GPS
+    if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
+      ActionGetGPS_LinkClicked(null, null);
+    EditTimeZone.Text = Settings.GetGPSText();
     // TrayIcon
     switch ( Settings.TrayIconClickOpen )
     {
+      case TrayIconClickOpen.MainForm:
+        SelectOpenMainForm.Select();
+        break;
       case TrayIconClickOpen.NavigationForm:
         SelectOpenNavigationForm.Select();
         break;
@@ -207,8 +203,7 @@ partial class PreferencesForm
         SelectOpenNextCelebrationsForm.Select();
         break;
       default:
-        SelectOpenMainForm.Select();
-        break;
+        throw new AdvNotImplementedException(Settings.TrayIconClickOpen);
     }
     // Calendar double click
     switch ( Settings.CalendarDoubleClickAction )
@@ -222,14 +217,30 @@ partial class PreferencesForm
       case CalendarDoubleClickAction.ContextMenu:
         SelectCalendarDoubleClickActionContextMenu.Select();
         break;
-      default:
+      case CalendarDoubleClickAction.Select:
         SelectCalendarDoubleClickActionSelect.Select();
         break;
+      default:
+        throw new AdvNotImplementedException(Settings.CalendarDoubleClickAction);
     }
-    // GPS
-    if ( Settings.GPSLatitude.IsNullOrEmpty() || Settings.GPSLongitude.IsNullOrEmpty() )
-      ActionGetGPS_LinkClicked(null, null);
-    EditTimeZone.Text = Settings.GetGPSText();
+    // Weather provider
+    switch ( Settings.WeatherOnlineProvider )
+    {
+      case WeatherProvider.MeteoblueDotCom:
+        SelectWeatherOnlineMeteoblueDotCom.Select();
+        break;
+      case WeatherProvider.MicrosoftNetworkDotCom:
+        SelectWeatherOnlineMicrosoftNetworkDotCom.Select();
+        break;
+      case WeatherProvider.WeatherDotCom:
+        SelectWeatherOnlineWeatherDotCom.Select();
+        break;
+      case WeatherProvider.AccuWeatherDotCom:
+        SelectWeatherOnlineAccuWeatherDotCom.Select();
+        break;
+      default:
+        throw new AdvNotImplementedException(Settings.WeatherOnlineProvider);
+    }
   }
 
 }

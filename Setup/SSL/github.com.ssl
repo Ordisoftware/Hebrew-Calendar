@@ -1,2 +1,1 @@
-Issuer => CN=DigiCert High Assurance TLS Hybrid ECC SHA256 2020 CA1, O="DigiCert, Inc.", C=US
 Subject => CN=github.com, O="GitHub, Inc.", L=San Francisco, S=California, C=US

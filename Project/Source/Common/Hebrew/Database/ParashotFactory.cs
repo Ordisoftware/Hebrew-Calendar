@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -21,7 +21,7 @@ public class ParashotFactory : ProviderSettings
 
   static public readonly ParashotFactory Instance = new();
 
-  public readonly NullSafeDictionary<TorahBook, NullSafeList<Parashah>> Items = new();
+  public readonly NullSafeDictionary<TorahBook, NullSafeList<Parashah>> Items = [];
 
   public IEnumerable<Parashah> All
     => Items.SelectMany(item => item.Value);
@@ -40,7 +40,7 @@ public class ParashotFactory : ProviderSettings
     var pair = line.Split(':');
     if ( pair.Length < 2 ) return;
     var book = Enums.Parse<TorahBook>(pair[0].Trim());
-    if ( Items[book] is null ) Items[book] = new NullSafeList<Parashah>();
+    if ( Items[book] is null ) Items[book] = [];
     var items = pair[1].Split('-');
     if ( items.Length != DataColumnsCount ) return;
     Items[book].Add(new Parashah(book,

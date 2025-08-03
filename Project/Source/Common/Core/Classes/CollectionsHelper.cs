@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-09 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2024-11 </edited>
 namespace Ordisoftware.Core;
 
 static public class CollectionsHelper
@@ -19,12 +19,12 @@ static public class CollectionsHelper
 
   static public List<List<T>> Split<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
   {
-    var slices = new List<List<T>> { new List<T>() };
+    var slices = new List<List<T>> { new() };
     foreach ( var item in collection )
     {
       slices[slices.Count - 1].Add(item);
       if ( predicate(item) )
-        slices.Add(new List<T>());
+        slices.Add([]);
     }
     return slices;
   }
@@ -46,6 +46,17 @@ static public class CollectionsHelper
   /// <typeparam name="T">Generic type parameter.</typeparam>
   /// <param name="collection">The collection.</param>
   static public IEnumerable<T> AsIEnumerable<T>(this ListBox.ObjectCollection collection)
+  {
+    foreach ( T item in collection )
+      yield return item;
+  }
+
+  /// <summary>
+  /// Gets an IEnumerable<typeparamref name="T"/> from a CheckedListBox.Items collection.
+  /// </summary>
+  /// <typeparam name="T">Generic type parameter.</typeparam>
+  /// <param name="collection">The collection.</param>
+  static public IEnumerable<T> AsIEnumerable<T>(this CheckedListBox.ObjectCollection collection)
   {
     foreach ( T item in collection )
       yield return item;

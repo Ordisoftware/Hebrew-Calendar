@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-04 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -57,5 +57,31 @@ static public partial class StringHelper
   /// <param name="str">The string to act on.</param>
   static public string Titleize(this string str)
     => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
+
+  /// <summary>
+  /// Gets a TimeSpan as 01d 01h 01m 01s.
+  /// </summary>
+  /// <param name="elapsed">The TimeSpan</param>
+  static public string AsReadable(this TimeSpan elapsed)
+  {
+    bool skip = true;
+    List<string> parts = [];
+    if ( elapsed.Days > 0 )
+    {
+      parts.Add($"{elapsed.Days:00}d");
+      skip = false;
+    }
+    if ( !skip || elapsed.Hours > 0 )
+    {
+      parts.Add($"{elapsed.Hours:00}h");
+      skip = false;
+    }
+    if ( !skip || elapsed.Minutes > 0 )
+    {
+      parts.Add($"{elapsed.Minutes:00}m");
+    }
+    parts.Add($"{elapsed.Seconds:00}s");
+    return parts.Count == 0 ? "00s" : string.Join(" ", parts);
+  }
 
 }

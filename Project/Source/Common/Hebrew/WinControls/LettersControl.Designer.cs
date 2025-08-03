@@ -38,9 +38,10 @@
       this.MenuItemSeparator = new System.Windows.Forms.ToolStripSeparator();
       this.ActionLetterViewDetails = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelSeparator = new System.Windows.Forms.Panel();
-      this.EditCopyWithFinalLetter = new System.Windows.Forms.CheckBox();
       this.ActionDelLast = new System.Windows.Forms.Button();
       this.ActionReset = new System.Windows.Forms.Button();
+      this.ActionReverseWord = new System.Windows.Forms.Button();
+      this.EditCopyWithFinalLetter = new System.Windows.Forms.CheckBox();
       this.ActionDelFirst = new System.Windows.Forms.Button();
       this.PanelBottom = new System.Windows.Forms.Panel();
       this.PanelGematria = new System.Windows.Forms.Panel();
@@ -60,7 +61,8 @@
       this.ToolTipClipboard = new System.Windows.Forms.ToolTip(this.components);
       this.PanelTextBox = new System.Windows.Forms.Panel();
       this.TextBox = new Ordisoftware.Core.TextBoxEx();
-      this.ActionReverseWord = new System.Windows.Forms.Button();
+      this.LabelGematriaFinal = new System.Windows.Forms.Label();
+      this.EditGematriaFinal = new Ordisoftware.Core.TextBoxEx();
       this.ContextMenuLetter.SuspendLayout();
       this.PanelSeparator.SuspendLayout();
       this.PanelBottom.SuspendLayout();
@@ -118,20 +120,13 @@
       // 
       // PanelSeparator
       // 
-      this.PanelSeparator.Controls.Add(this.EditCopyWithFinalLetter);
       this.PanelSeparator.Controls.Add(this.ActionDelLast);
       this.PanelSeparator.Controls.Add(this.ActionReset);
-      this.PanelSeparator.Controls.Add(this.ActionDelFirst);
       this.PanelSeparator.Controls.Add(this.ActionReverseWord);
+      this.PanelSeparator.Controls.Add(this.EditCopyWithFinalLetter);
+      this.PanelSeparator.Controls.Add(this.ActionDelFirst);
       resources.ApplyResources(this.PanelSeparator, "PanelSeparator");
       this.PanelSeparator.Name = "PanelSeparator";
-      // 
-      // EditCopyWithFinalLetter
-      // 
-      resources.ApplyResources(this.EditCopyWithFinalLetter, "EditCopyWithFinalLetter");
-      this.EditCopyWithFinalLetter.Checked = true;
-      this.EditCopyWithFinalLetter.CheckState = System.Windows.Forms.CheckState.Checked;
-      this.EditCopyWithFinalLetter.Name = "EditCopyWithFinalLetter";
       // 
       // ActionDelLast
       // 
@@ -148,6 +143,21 @@
       this.ActionReset.Name = "ActionReset";
       this.ActionReset.UseVisualStyleBackColor = true;
       this.ActionReset.Click += new System.EventHandler(this.ActionReset_Click);
+      // 
+      // ActionReverseWord
+      // 
+      resources.ApplyResources(this.ActionReverseWord, "ActionReverseWord");
+      this.ActionReverseWord.FlatAppearance.BorderSize = 0;
+      this.ActionReverseWord.Name = "ActionReverseWord";
+      this.ActionReverseWord.UseVisualStyleBackColor = true;
+      this.ActionReverseWord.Click += new System.EventHandler(this.ActionRevertWord_Click);
+      // 
+      // EditCopyWithFinalLetter
+      // 
+      resources.ApplyResources(this.EditCopyWithFinalLetter, "EditCopyWithFinalLetter");
+      this.EditCopyWithFinalLetter.Checked = true;
+      this.EditCopyWithFinalLetter.CheckState = System.Windows.Forms.CheckState.Checked;
+      this.EditCopyWithFinalLetter.Name = "EditCopyWithFinalLetter";
       // 
       // ActionDelFirst
       // 
@@ -173,6 +183,8 @@
       // 
       // PanelGematria
       // 
+      this.PanelGematria.Controls.Add(this.LabelGematriaFinal);
+      this.PanelGematria.Controls.Add(this.EditGematriaFinal);
       this.PanelGematria.Controls.Add(this.LabelGematriaSimple);
       this.PanelGematria.Controls.Add(this.EditGematriaFull);
       this.PanelGematria.Controls.Add(this.LabelGematriaFull);
@@ -291,13 +303,20 @@
       this.TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_KeyPress);
       this.TextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_KeyUp);
       // 
-      // ActionRevertWord
+      // LabelGematriaFinal
       // 
-      resources.ApplyResources(this.ActionReverseWord, "ActionRevertWord");
-      this.ActionReverseWord.FlatAppearance.BorderSize = 0;
-      this.ActionReverseWord.Name = "ActionRevertWord";
-      this.ActionReverseWord.UseVisualStyleBackColor = true;
-      this.ActionReverseWord.Click += new System.EventHandler(this.ActionRevertWord_Click);
+      resources.ApplyResources(this.LabelGematriaFinal, "LabelGematriaFinal");
+      this.LabelGematriaFinal.Name = "LabelGematriaFinal";
+      // 
+      // EditGematriaFinal
+      // 
+      resources.ApplyResources(this.EditGematriaFinal, "EditGematriaFinal");
+      this.EditGematriaFinal.BackColor = System.Drawing.Color.LavenderBlush;
+      this.EditGematriaFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.EditGematriaFinal.CaretAfterPaste = Ordisoftware.Core.CaretPositionAfterPaste.Ending;
+      this.EditGematriaFinal.Name = "EditGematriaFinal";
+      this.EditGematriaFinal.ReadOnly = true;
+      this.EditGematriaFinal.SpellCheckAllowed = false;
       // 
       // LettersControl
       // 
@@ -356,5 +375,7 @@
     public Button ActionClear;
     private Panel PanelGematria;
     public Button ActionReverseWord;
+    internal Label LabelGematriaFinal;
+    public TextBoxEx EditGematriaFinal;
   }
 }

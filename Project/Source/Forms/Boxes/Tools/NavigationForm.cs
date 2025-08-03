@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2024-01 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class NavigationForm : Form
@@ -24,17 +24,17 @@ sealed partial class NavigationForm : Form
   static public NavigationForm Instance { get; private set; }
 
   static readonly private int PanelAllExceptParashahTopDefault;
-  static readonly private int PanelAllExceptParashahDelta;
+  static readonly private int PanelAllExceptParashahOffset;
 
   static NavigationForm()
   {
     Instance = new NavigationForm();
     Instance.Relocalize();
     PanelAllExceptParashahTopDefault = Instance.PanelAllExceptParashah.Top;
-    PanelAllExceptParashahDelta = PanelAllExceptParashahTopDefault - Instance.LabelParashah.Top;
+    PanelAllExceptParashahOffset = PanelAllExceptParashahTopDefault - Instance.LabelParashah.Top;
   }
 
-  private List<LunisolarDay> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
+  private List<LunisolarDayRow> LunisolarDays => ApplicationDatabase.Instance.LunisolarDays;
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
@@ -124,7 +124,7 @@ sealed partial class NavigationForm : Form
         //
         var image = MostafaKaisoun.MoonPhaseImage.Draw(value.Year, value.Month, value.Day, 200, 200);
         PictureMoon.Image = image.Resize(100, 100);
-        if ( row.MoonriseOccuring == MoonriseOccurring.AfterSet )
+        if ( row.MoonriseOccurring == MoonriseOccurring.AfterSet )
         {
           LabelMoonrise.Top = 125;
           LabelMoonriseValue.Top = 125;
@@ -140,8 +140,8 @@ sealed partial class NavigationForm : Form
         }
         if ( Settings.CalendarShowParashah && !LabelParashah.Enabled )
         {
-          Top -= PanelAllExceptParashahDelta;
-          Height += PanelAllExceptParashahDelta;
+          Top -= PanelAllExceptParashahOffset;
+          Height += PanelAllExceptParashahOffset;
           LabelParashah.Enabled = true;
           LabelParashah.Visible = true;
           LabelParashahValue.Visible = true;
@@ -154,8 +154,8 @@ sealed partial class NavigationForm : Form
           LabelParashah.Enabled = false;
           LabelParashahValue.Visible = false;
           PanelAllExceptParashah.Top = LabelParashah.Top;
-          Height -= PanelAllExceptParashahDelta;
-          Top += PanelAllExceptParashahDelta;
+          Height -= PanelAllExceptParashahOffset;
+          Top += PanelAllExceptParashahOffset;
         }
         _Date = value;
       }
@@ -194,17 +194,23 @@ sealed partial class NavigationForm : Form
 
   private void SetLocation()
   {
-    switch ( DisplayManager.GetTaskbarAnchorStyle() )
+    var style = DisplayManager.GetTaskBarAnchorStyle();
+    switch ( style )
     {
+      case AnchorStyles.None:
+        break;
       case AnchorStyles.Top:
         this.SetLocation(ControlLocation.TopRight);
         break;
       case AnchorStyles.Left:
         this.SetLocation(ControlLocation.BottomLeft);
         break;
-      default:
+      case AnchorStyles.Bottom:
+      case AnchorStyles.Right:
         this.SetLocation(ControlLocation.BottomRight);
         break;
+      default:
+        throw new AdvNotImplementedException(style);
     }
   }
 
@@ -233,6 +239,7 @@ sealed partial class NavigationForm : Form
     }
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
   {
     switch ( keyData )
@@ -249,6 +256,9 @@ sealed partial class NavigationForm : Form
       case Keys.Up:
         ActionSelectDay.PerformClick();
         return true;
+      case Keys.NumPad0:
+        MainForm.Instance.GoToDate(DateTime.Today);
+        return true;
       default:
         return base.ProcessCmdKey(ref msg, keyData);
     }
@@ -261,9 +271,9 @@ sealed partial class NavigationForm : Form
     Hide();
   }
 
-  private (LunisolarDay Day, Parashah Parashah) GetDayAndParashah()
+  private (LunisolarDayRow Day, Parashah Parashah) GetDayAndParashah()
   {
-    var day = (LunisolarDay)LabelParashahValue.Tag;
+    var day = (LunisolarDayRow)LabelParashahValue.Tag;
     var parashah = ParashotFactory.Instance.Get(day.ParashahID);
     return (day, parashah);
   }
@@ -278,7 +288,7 @@ sealed partial class NavigationForm : Form
 
   private void DoStudy(string url)
   {
-    (LunisolarDay day, Parashah parashah) = GetDayAndParashah();
+    (LunisolarDayRow day, Parashah parashah) = GetDayAndParashah();
     HebrewTools.OpenParashahProvider(url, parashah, day.HasLinkedParashah);
   }
 
@@ -325,7 +335,7 @@ sealed partial class NavigationForm : Form
 
   private void ActionViewParashahDescription_Click(object sender, EventArgs e)
   {
-    if ( LabelParashahValue.Tag is LunisolarDay day )
+    if ( LabelParashahValue.Tag is LunisolarDayRow day )
     {
       var parashah = ParashotFactory.Instance.Get(day.ParashahID);
       MainForm.UserParashot.ShowDescription(parashah, day.HasLinkedParashah, () => ParashotForm.Run(parashah));
@@ -334,13 +344,13 @@ sealed partial class NavigationForm : Form
 
   private void ActionViewParashot_Click(object sender, EventArgs e)
   {
-    if ( LabelParashahValue.Tag is LunisolarDay day )
+    if ( LabelParashahValue.Tag is LunisolarDayRow day )
       ParashotForm.Run(ParashotFactory.Instance.Get(day.ParashahID));
   }
 
   private void ActionOpenHebrewWordsVerse_Click(object sender, EventArgs e)
   {
-    if ( LabelParashahValue.Tag is LunisolarDay day )
+    if ( LabelParashahValue.Tag is LunisolarDayRow day )
       HebrewTools.OpenHebrewWordsGoToVerse(ParashotFactory.Instance.Get(day.ParashahID).FullReferenceBegin);
   }
 
@@ -363,7 +373,7 @@ sealed partial class NavigationForm : Form
   private void ActionDatesDiff_Click(object sender, EventArgs e)
   {
     ActiveControl = LabelDate;
-    DatesDiffCalculatorForm.Run();
+    DatesDifferenceForm.Run();
   }
 
   private void ActionSettings_Click(object sender, EventArgs e)

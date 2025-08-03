@@ -101,7 +101,6 @@ namespace CoolPrintPreview
           _doc.EndPrint += _doc_EndPrint;
         }
 
-
         // don't assign document to preview until this form becomes visible
         if ( Visible )
         {

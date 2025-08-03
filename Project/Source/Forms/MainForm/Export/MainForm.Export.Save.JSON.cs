@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -34,7 +34,7 @@ partial class MainForm
         day.Sunset,
         day.Moonrise,
         day.Moonset,
-        MoonRiseType = day.MoonriseOccuring.ToStringExport(AppTranslations.MoonriseOccurings),
+        MoonRiseType = day.MoonriseOccurring.ToStringExport(AppTranslations.MoonriseOccurrences),
         MoonPhase = day.MoonPhase.ToStringExport(AppTranslations.MoonPhases),
         SeasonChange = day.SeasonChange.ToStringExport(AppTranslations.SeasonChanges),
         TorahEvent = day.TorahEvent.ToStringExport(AppTranslations.CelebrationDays),

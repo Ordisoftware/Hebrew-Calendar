@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -128,8 +128,8 @@ partial class PreferencesForm
     if ( Settings.FirstLaunch )
     {
       changed = true;
-      MainForm.Instance.ActionShowMonthsAndDaysNotice_Click(null, null);
-      MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+      AppTranslations.ShowMonthsAndDaysNotice();
+      AppTranslations.ShowCelebrationsNotice();
       // TODO when ready : update query for sod
       Settings.TorahEventsCountAsMoon = DisplayManager.QueryYesNo(AppTranslations.AskToUseMoonOmer.GetLang());
       if ( Settings.UseSodHaibour )
@@ -147,7 +147,7 @@ partial class PreferencesForm
         Settings.MonthViewLayoutEphemerisSunEnabled = true;
         SunChecked = true;
       }
-      MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+      AppTranslations.ShowShabatNotice();
       if ( DisplayManager.QueryYesNo(AppTranslations.AskToSetupPersonalShabat.GetLang()) )
         ActionUsePersonalShabat_LinkClicked(null, null);
       string msg = AppTranslations.AskToSetupPessahLastDayForTwo.GetLang();
@@ -158,8 +158,8 @@ partial class PreferencesForm
       changed = true;
       if ( Settings.FirstLaunchV7_0 )
       {
-        MainForm.Instance.ActionShowParashahNotice_Click(null, null);
-        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSukotForSimhatTorah.GetLang(),
+        AppTranslations.ShowParashahNotice();
+        DisplayManager.QueryYesNo(AppTranslations.AskToUseLastDayOfSoukotForSimhatTorah.GetLang(),
                                   () => EditUseSimhatTorahOutside.Checked = false,
                                   () => EditUseSimhatTorahOutside.Checked = true);
       }
@@ -223,12 +223,6 @@ partial class PreferencesForm
     InitializeNumericInterval(EditMaxYearsInterval, LabelMaxYearsIntervalInfo, GenerateIntervalInterval);
     InitializeNumericInterval(EditCalendarLineSpacing, LabelCalendarLineSpacingInfo, LineSpacingInterval);
     InitializeNumericInterval(EditMonthViewSeparatorSize, LabelMonthViewSeparatorSizeInfo, SeparatorSizeInterval);
-    InitializeNumericInterval(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo, DateBookmarksCountInterval);
-    int countBookmarks = Program.DateBookmarks.MaxCount;
-    if ( countBookmarks == -1 ) countBookmarks = DateBookmarksCountInterval.Item1;
-    LabelDateBookmarksCountIntervalInfo.Text = countBookmarks.ToString();
-    EditDateBookmarksCount.Minimum = countBookmarks;
-    SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
   }
 
   /// <summary>
@@ -278,7 +272,7 @@ partial class PreferencesForm
   /// </summary>
   private void LoadPowerActions()
   {
-    PowerAction[] avoid = { PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown };
+    PowerAction[] avoid = [PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown];
     foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
     {
       SelectLockSessionDefaultAction.Items.Add(value);

@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -19,6 +19,7 @@ static public partial class OnlineBookInfos
 
   // TODO need to take each chapter number from the web site for french AND english
 
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly Dictionary<TanakBook, int> Chabad = new()
   {
     // Torah

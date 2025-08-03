@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -17,7 +17,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 sealed partial class ApplicationDatabase
 {
 
-  private const int EquinoxeDayDelta = 30;
+  private const int EquinoxeDayOffset = 30;
 
   /// <summary>
   /// Creates the calendar items using moon or sun omer.
@@ -28,19 +28,19 @@ sealed partial class ApplicationDatabase
                                     progressCount,
                                     Program.LoadingFormGenerate);
     int month = 0;
-    int delta = 0;
+    int offset = 0;
     int indexParashah = -1;
     var shabatDay = (DayOfWeek)Settings.ShabatDay;
     bool shabatMutex = false;
     int simhatTorah = TorahCelebrationSettings.SimhatTorah;
     if ( Settings.UseSimhatTorahOutside ) simhatTorah++;
     int simhatTorahRoot = simhatTorah;
-    LunisolarDay dayRemapStart = null;
-    LunisolarDay dayRemapEnd = null;
+    LunisolarDayRow dayRemapStart = null;
+    LunisolarDayRow dayRemapEnd = null;
     DateTime date;
     var chrono = new Stopwatch();
     chrono.Start();
-    var parashot = ParashotFactory.Instance?.All?.ToList() ?? new List<Parashah>();
+    var parashot = ParashotFactory.Instance?.All?.ToList() ?? [];
     try
     {
       foreach ( var day in LunisolarDays )
@@ -52,10 +52,10 @@ sealed partial class ApplicationDatabase
             break;
           day.LunarMonth = month;
           if ( day.IsNewMoon )
-            delta = 0;
-          if ( day.MoonriseOccuring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon )
-            delta = 1;
-          day.LunarDay -= delta;
+            offset = 0;
+          if ( day.MoonriseOccurring == MoonriseOccurring.NextDay && Settings.TorahEventsCountAsMoon )
+            offset = 1;
+          day.LunarDay -= offset;
           checkParashah(day);
           if ( day.TorahEvent != TorahCelebrationDay.None )
             day.TorahEventText = AppTranslations.GetCelebrationDayDisplayText(day.TorahEvent);
@@ -75,7 +75,7 @@ sealed partial class ApplicationDatabase
     }
     return true;
     //
-    void checkParashah(LunisolarDay day)
+    void checkParashah(LunisolarDayRow day)
     {
       if ( day.TorahEvent == TorahCelebrationDay.PessahD1 )
         shabatMutex = true;
@@ -102,7 +102,7 @@ sealed partial class ApplicationDatabase
         shabatMutex = false;
     }
     //
-    void remap(LunisolarDay day)
+    void remap(LunisolarDayRow day)
     {
       if ( indexParashah > 0 && indexParashah < parashot.Count )
       {
@@ -131,7 +131,7 @@ sealed partial class ApplicationDatabase
   /// <summary>
   /// Analyzes a day.
   /// </summary>
-  private bool AnalyzeDayOmer(LunisolarDay day, DateTime dayDate, ref int monthMoon)
+  private bool AnalyzeDayOmer(LunisolarDayRow day, DateTime dayDate, ref int monthMoon)
   {
     DateTime calculate(DateTime thedate, int daysToAdd, TorahCelebrationDay type, bool forceSunOmer)
     {
@@ -145,12 +145,12 @@ sealed partial class ApplicationDatabase
           var rowStart = LunisolarDays.Find(d => d.Date == thedate);
           int index = LunisolarDays.IndexOf(rowStart);
           for ( int indexToAdd = 0; indexToAdd < daysToAdd; indexToAdd++, count++ )
-            if ( LunisolarDays[index + indexToAdd].MoonriseOccuring == MoonriseOccurring.NextDay )
+            if ( LunisolarDays[index + indexToAdd].MoonriseOccurring == MoonriseOccurring.NextDay )
               count++;
         }
         thedate = thedate.AddDays(count);
         var row = LunisolarDays.Find(d => d.Date == thedate);
-        if ( row?.MoonriseOccuring == MoonriseOccurring.NextDay )
+        if ( row?.MoonriseOccurring == MoonriseOccurring.NextDay )
           thedate = thedate.AddDays(1);
       }
       else
@@ -162,7 +162,7 @@ sealed partial class ApplicationDatabase
     }
     try
     {
-      bool check(LunisolarDay row)
+      bool check(LunisolarDayRow row)
       {
         var dateRow = row.Date;
         return dateRow.Year == dayDate.Year && CalendarDates.Instance[dateRow].TorahSeasonChange == SeasonChange.SpringEquinox;
@@ -174,28 +174,28 @@ sealed partial class ApplicationDatabase
       if ( dayEquinoxe < 1 )
       {
         monthExuinoxe--;
-        dayEquinoxe += EquinoxeDayDelta;
+        dayEquinoxe += EquinoxeDayOffset;
       }
       bool isNewYear = ( dayDate.Month == monthExuinoxe && dayDate.Day >= dayEquinoxe )
                     || ( dayDate.Month == monthExuinoxe + 1 );
       if ( isNewYear && ( monthMoon == 0 || monthMoon >= 12 ) )
       {
         monthMoon = 1;
-        int delta = Settings.TorahEventsCountAsMoon ? 0 : 1;
+        int offset = Settings.TorahEventsCountAsMoon ? 0 : 1;
         calculate(dayDate, 0, TorahCelebrationDay.NewYearD1, false);
         calculate(dayDate, TorahCelebrationSettings.NewLambDay - 1, TorahCelebrationDay.NewYearD10, false);
-        dayDate = calculate(dayDate, TorahCelebrationSettings.PessahStartDay - 1 + delta, TorahCelebrationDay.PessahD1, false);
-        int lengthPessah = TorahCelebrationSettings.PessahLenght;
+        dayDate = calculate(dayDate, TorahCelebrationSettings.PessahStartDay - 1 + offset, TorahCelebrationDay.PessahD1, false);
+        int lengthPessah = TorahCelebrationSettings.PessahLength;
         if ( !Settings.UseTwoDaysForLastPessahDayOutside ) lengthPessah--;
         calculate(dayDate, lengthPessah, TorahCelebrationDay.PessahD7, false);
-        dayDate = calculate(dayDate, TorahCelebrationSettings.ChavouotLenght - 1 - delta, TorahCelebrationDay.ChavouotDiet, true);
+        dayDate = calculate(dayDate, TorahCelebrationSettings.ChavouotLength - 1 - offset, TorahCelebrationDay.ChavouotDiet, true);
         var shabatDay = (DayOfWeek)Settings.ShabatDay;
         while ( dayDate.DayOfWeek != shabatDay )
           dayDate = dayDate.AddDays(1);
         SystemManager.TryCatch(() =>
         {
           calculate(dayDate, 1, TorahCelebrationDay.Chavouot1, true);
-          calculate(dayDate, 1 + TorahCelebrationSettings.ChavouotLenght - 1, TorahCelebrationDay.Chavouot2, true);
+          calculate(dayDate, 1 + TorahCelebrationSettings.ChavouotLength - 1, TorahCelebrationDay.Chavouot2, true);
         });
       }
       else
@@ -206,7 +206,7 @@ sealed partial class ApplicationDatabase
         dayDate = calculate(dayDate, TorahCelebrationSettings.YomTerouahDay - 1, TorahCelebrationDay.YomTerouah, false);
         calculate(dayDate, TorahCelebrationSettings.YomHaKipourimDay - 1, TorahCelebrationDay.YomHaKipourim, false);
         dayDate = calculate(dayDate, TorahCelebrationSettings.SoukotStartDay - 1, TorahCelebrationDay.SoukotD1, false);
-        calculate(dayDate, TorahCelebrationSettings.SoukotLenght - 1, TorahCelebrationDay.SoukotD8, false);
+        calculate(dayDate, TorahCelebrationSettings.SoukotLength - 1, TorahCelebrationDay.SoukotD8, false);
       }
     }
     catch ( Exception ex )

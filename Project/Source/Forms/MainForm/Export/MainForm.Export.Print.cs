@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Printing;
@@ -47,6 +47,7 @@ partial class MainForm
   [SuppressMessage("Style", "GCop408:Flag or switch parameters (bool) should go after all non-optional parameters. If the boolean parameter is not a flag or switch, split the method into two different methods, each doing one thing.", Justification = "Opinion")]
   private void ExportPrintRun(bool landscape, PrintPageEventHandler action)
   {
+    FreezeUI();
     try
     {
       Globals.IsPrinting = true;
@@ -54,8 +55,6 @@ partial class MainForm
       MonthlyCalendar.ShowArrowControls = false;
       ActionPrint.Visible = false;
       ActionPrint.Visible = true;
-      ToolStrip.Enabled = false;
-      MenuTray.Enabled = false;
       ExportPrintRunAction(landscape, (s, e) => action(s, e));
     }
     finally
@@ -63,8 +62,7 @@ partial class MainForm
       Globals.IsPrinting = false;
       MonthlyCalendar.ShowTodayButton = true;
       MonthlyCalendar.ShowArrowControls = true;
-      ToolStrip.Enabled = true;
-      MenuTray.Enabled = true;
+      RestoreUI();
     }
   }
 

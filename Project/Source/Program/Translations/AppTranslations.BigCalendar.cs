@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -22,7 +22,7 @@ static partial class AppTranslations
 
   static public readonly TranslationsDictionary ClickOnIgnoreToDisableOption = new()
   {
-    [Language.EN] = "Click Cancel to process and disable this option.",
+    [Language.EN] = "Click Cancel to procfess and disable this option.",
 
     [Language.FR] = "Cliquez sur Annuler pour valider et désactiver cette option.",
   };
@@ -44,8 +44,8 @@ static partial class AppTranslations
   private const string AskToGenerateBigCalendarFR
     = "Générer un calendrier pour plus de {0} ({1}) ans n'est pas recommandé et peut causer ";
 
-  static public readonly NullSafeList<TranslationsDictionary> AskToGenerateBigCalendar = new()
-  {
+  static public readonly NullSafeList<TranslationsDictionary> AskToGenerateBigCalendar =
+  [
     new TranslationsDictionary
     {
       [Language.EN] = AskToGenerateBigCalendarEN + "a slight slowdown." + Globals.NL2 +
@@ -102,6 +102,6 @@ static partial class AppTranslations
                       SysTranslations.AskToContinue[Language.FR] + Globals.NL2 +
                       ClickOnIgnoreToDisableOption[Language.FR]
     }
-  };
+  ];
 
 }

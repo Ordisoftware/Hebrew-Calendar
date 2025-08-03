@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -72,18 +72,9 @@ public partial class TextBoxEx
     ActionDelete.Name = "ActionDelete";
     ActionDelete.Text = "Delete";
     Relocalize();
-    ContextMenuEdit.Items.AddRange(new ToolStripItem[]
-                                   {
-                                       ActionUndo,
-                                       ActionRedo,
-                                       Separator1,
-                                       ActionCut,
-                                       ActionCopy,
-                                       ActionPaste,
-                                       Separator2,
-                                       ActionSelectAll,
-                                       ActionDelete
-                                   });
+    ContextMenuEdit.Items.AddRange([ActionUndo, ActionRedo, Separator1,
+                                    ActionCut, ActionCopy, ActionPaste, Separator2,
+                                    ActionSelectAll, ActionDelete]);
   }
 
   static public void Relocalize()

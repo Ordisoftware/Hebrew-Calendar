@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -46,9 +46,9 @@ partial class MainForm
 
   private void DisableReminderTimer()
   {
+    FreezeUI();
     try
     {
-      MenuTray.Enabled = false;
       var delay = SelectSuspendDelayForm.Run();
       if ( delay is null ) return;
       IsReminderPaused = true;
@@ -76,7 +76,7 @@ partial class MainForm
     }
     finally
     {
-      MenuTray.Enabled = true;
+      RestoreUI();
     }
   }
 

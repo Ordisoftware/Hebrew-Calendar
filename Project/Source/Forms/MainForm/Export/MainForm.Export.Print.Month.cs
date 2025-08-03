@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -96,7 +96,7 @@ partial class MainForm
         using var bitmap = MonthlyCalendar.GetBitmap();
         int marginLeft = 0;
         int marginTop = 0;
-        int secondImageHeightDelta = !isSecondImage ? 0 : maxHeight;
+        int secondImageHeightOffset = !isSecondImage ? 0 : maxHeight;
         if ( centerImage )
         {
           marginLeft = ( maxWidth - bounds.Width ) / 2;
@@ -104,7 +104,7 @@ partial class MainForm
         }
         e.Graphics.DrawImage(bitmap,
                              marginTopLeft + marginLeft,
-                             marginTopLeft + marginTop + secondImageHeightDelta,
+                             marginTopLeft + marginTop + secondImageHeightOffset,
                              bounds.Width - marginRightBottom,
                              bounds.Height - marginRightBottom);
         if ( multi )

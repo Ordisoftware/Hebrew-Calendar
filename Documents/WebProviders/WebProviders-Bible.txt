@@ -29,16 +29,13 @@ URL = https://www.chabad.org/library/bible_cdo/aid/%BOOKCHABAD%/
 Name = (EN/IW) Sefaria.org (With contextual dictionary)
 URL = https://www.sefaria.org/%BOOKSEFARIA%.%CHAPTERNUM%.%VERSENUM%?lang=bi&with=all&lang2=en
 
-Name = (FR/IW) Torah-Box.com (L'un ou l'autre, avec Rachi)
-URL = https://www.torah-box.com/torah-pdf/%BOOKTORAHBOX%/%CHAPTERNUM%.html
-
 -
 
 Name = (EN/IW) Mechon-Mamre.org (Side-by-side)
-URL = https://www.mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
+URL = https://mechon-mamre.org/p/pt/pt%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
 
 Name = (FR/IW) Mechon-Mamre.org (Côte-à-côte)
-URL = https://www.mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
+URL = https://mechon-mamre.org/f/ft/ft%BOOKMM%%CHAPTERNUM#2%.htm#%VERSENUM%
 
 -
 

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -112,11 +112,11 @@ public sealed partial class CommonMenusControl : UserControl
     if ( form is null )
     {
       string str = notice.Value.GetLang() + Globals.NL2 + SysTranslations.NavigationTip.GetLang();
-      form = new MessageBoxEx(title, str, width: MessageBoxEx.DefaultWidthMedium, justify: false)
-      {
-        DoShownSound = false,
-        ShowInTaskbar = true
-      };
+      form = new MessageBoxEx(title, str,
+                              width: MessageBoxEx.DefaultWidthMedium,
+                              justify: false,
+                              sound: false,
+                              showInTaskBar: true);
       if ( !Globals.MainForm.Visible || Globals.MainForm.WindowState == FormWindowState.Minimized )
         form.StartPosition = FormStartPosition.CenterScreen;
       form.ActionOK.Text = SysTranslations.ActionClose.GetLang();
@@ -163,6 +163,8 @@ public sealed partial class CommonMenusControl : UserControl
       }
     }
     //
+    [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+    [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
     void onKeyUp(object senderOnKeyUp, KeyEventArgs eOnKeyUp)
     {
       switch ( eOnKeyUp.KeyCode )
@@ -218,7 +220,7 @@ public sealed partial class CommonMenusControl : UserControl
 
   private void ActionGitHubRepo_Click(object sender, EventArgs e)
   {
-    SystemManager.OpenGitHupRepo();
+    SystemManager.OpenGitHubRepo();
   }
 
   private void ActionSubmitBug_Click(object sender, EventArgs e)
@@ -239,21 +241,7 @@ public sealed partial class CommonMenusControl : UserControl
 
   private void ActionReadme_Click(object sender, EventArgs e)
   {
-    SystemManager.RunShell(Globals.ApplicationReadmeHtmlPath);
-    /* TODO remove that and markdig
-    var fileLines = Markdown.ToHtml(File.ReadAllText(Globals.ApplicationReadmeMDPath),
-                                    new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
-    string filePath = Path.Combine(Path.GetTempPath(), $"{Globals.ApplicationCode}-README.html");
-    File.WriteAllText(filePath, fileLines, Encoding.UTF8);
-    SystemManager.RunShell(filePath);
-    var timer = new System.Windows.Forms.Timer { Interval = Globals.MilliSecondsInOneMinute };
-    timer.Tick += (_, _) =>
-    {
-      timer.Stop();
-      SystemManager.TryCatch(() => File.Delete(filePath));
-      timer.Dispose();
-    };
-    timer.Start();*/
+    SystemManager.RunShell(Globals.ApplicationReadMeHtmlPath);
   }
 
   private void ActionAbout_Click(object sender, EventArgs e)

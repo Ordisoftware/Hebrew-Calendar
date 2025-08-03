@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -121,17 +121,17 @@ partial class MainForm
     void ShowNewParashah()
     {
       bool doshow = false;
-      if ( Program.Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtStartup && !IsSpecialDay && !WeeklyParashahShownAtStartup )
+      if ( Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtStartup && !IsSpecialDay && !WeeklyParashahShownAtStartup )
         doshow = true;
       else
-      if ( Program.Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtNewWeek && !WeeklyParashahShownAtNewWeek && !IsSpecialDay )
+      if ( Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtNewWeek && !WeeklyParashahShownAtNewWeek && !IsSpecialDay )
         doshow = true;
       else
       if ( IsSpecialDay )
         WeeklyParashahShownAtNewWeek = false;
       if ( doshow )
       {
-        var dayInfos = ApplicationDatabase.Instance.GetToday()?.GetWeekLongCelebrationIntermediateDay();
+        var dayInfos = DBApp.GetToday()?.GetWeekLongCelebrationIntermediateDay();
         if ( dayInfos is not null )
         {
           doshow = dayInfos.Value.Event == TorahCelebration.None

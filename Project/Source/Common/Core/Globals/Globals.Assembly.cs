@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -25,10 +25,7 @@ static public partial class Globals
   /// </summary>
   static private T GetAttribute<T>() where T : Attribute
   {
-    var attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(T), false);
-    return attributes.Length > 0
-      ? (T)attributes[0]
-      : null;
+    return Assembly.GetEntryAssembly()?.GetCustomAttribute<T>();
   }
 
   /// <summary>
@@ -38,10 +35,8 @@ static public partial class Globals
   {
     get
     {
-      var attribute = GetAttribute<AssemblyTitleAttribute>();
-      return attribute is not null && attribute.Title.Length != 0
-        ? attribute.Title
-        : Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+      return GetAttribute<AssemblyTitleAttribute>()?.Title
+        ?? Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
     }
   }
 
@@ -49,7 +44,7 @@ static public partial class Globals
   /// Gets the assembly version.
   /// </summary>
   static public string AssemblyVersion
-    => Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
+    => Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
 
   /// <summary>
   /// Gets the assembly title with version.

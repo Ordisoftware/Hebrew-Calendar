@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2012-10 </created>
-/// <edited> 2023-02 </edited>
+/// <edited> 2024-08 </edited>
 namespace Ordisoftware.Hebrew;
 
 public enum LettersControlFocusSelect
@@ -29,6 +29,7 @@ public delegate void ViewLetterDetails(LettersControl sender, string code);
 /// <summary>
 /// Provides Letters input panel Control.
 /// </summary>
+[SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "N/A")]
 public partial class LettersControl : UserControl
 {
 
@@ -58,7 +59,7 @@ public partial class LettersControl : UserControl
   /// <summary>
   /// Indicates the initial word.
   /// </summary>
-  public string InititialWord
+  public string InitialWord
   {
     get;
     set;
@@ -67,12 +68,17 @@ public partial class LettersControl : UserControl
   /// <summary>
   /// Indicates if the bottom panel is visible
   /// </summary>
-  //[DefaultValue(true)]
-  //public bool ShowBottomPanel
-  //{
-  //  get => PanelBottom.Visible;
-  //  set => PanelBottom.Visible = value;
-  //}
+  [DefaultValue(true)]
+  public bool ShowBottomPanel
+  {
+    get => PanelBottom.Visible;
+    set
+    {
+      if ( PanelBottom.Visible == value ) return;
+      PanelBottom.Visible = value;
+      Redraw();
+    }
+  }
 
   /// <summary>
   /// Indicates if gematria is visible
@@ -203,6 +209,25 @@ public partial class LettersControl : UserControl
     }
   }
   private bool _ShowValues = true;
+
+  /// <summary>
+  /// Indicates if letters final values must be shown.
+  /// </summary>
+  /// <remark>
+  /// Final values are shown only if values are shown.
+  /// </remark>
+  [DefaultValue(true)]
+  public bool ShowFinalValues
+  {
+    get => _ShowFinalValues;
+    set
+    {
+      if ( _ShowFinalValues == value ) return;
+      _ShowFinalValues = value;
+      Redraw();
+    }
+  }
+  private bool _ShowFinalValues = true;
 
   /// <summary>
   /// Indicates if keys codes must be shown.
@@ -533,7 +558,7 @@ public partial class LettersControl : UserControl
 
   private void ActionReset_Click(object sender, EventArgs e)
   {
-    TextBox.Text = InititialWord;
+    TextBox.Text = InitialWord;
     Focus(LettersControlFocusSelect.None);
   }
 
@@ -587,7 +612,7 @@ public partial class LettersControl : UserControl
   public bool UpdateControls()
   {
     bool enabled = TextBox.Text.Length >= 1;
-    ActionReset.Enabled = !InititialWord.IsNullOrEmpty();
+    ActionReset.Enabled = !InitialWord.IsNullOrEmpty();
     ActionReset.Text = ActionReset.Enabled ? "-" : string.Empty;
     ActionClear.Enabled = enabled;
     ActionDelFirst.Enabled = enabled;
@@ -618,7 +643,7 @@ public partial class LettersControl : UserControl
 
   private void ActionRevertWord_Click(object sender, EventArgs e)
   {
-    TextBox.Text = new string(TextBox.Text.Reverse().ToArray());
+    TextBox.Text = new string([.. TextBox.Text.Reverse()]);
   }
 
 }
@@ -629,5 +654,5 @@ public partial class LettersControl : UserControl
 public class LetterEventArgs : EventArgs
 {
   public string LetterCode { get; }
-  public LetterEventArgs(string lettercode) { LetterCode = lettercode; }
+  public LetterEventArgs(string letterCode) { LetterCode = letterCode; }
 }

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -16,6 +16,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Drawing.Printing;
 
+[SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "N/A")]
 partial class MainForm
 {
 

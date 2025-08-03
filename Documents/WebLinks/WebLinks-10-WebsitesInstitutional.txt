@@ -15,6 +15,14 @@ FOLDER-SEPARATOR
 Lang/EN = Institutional websites
 Lang/FR = Sites Web institutionnels
 
+Name = (FR) Vaad haRabanim	
+URL = https://www.vaadharabanim.org
+
+Name = (EN) Vaad haRabanim	
+URL = https://www.vaadharabanim.com
+
+-
+
 Name = (FR/EN) Conference of European Rabbis
 URL = https://rabbiscer.org
 
@@ -35,8 +43,11 @@ URL = https://www.massorti.com
 Name = (FR) Hassidout
 URL = http://hassidout.org
 
-Name = (FR) Loubavitch France-Europe
+Name = (FR) 'Habad Loubavitch France-Europe
 URL = https://www.loubavitchfrance.fr
+
+Name = (FR) Rabbinat du Loubavitch de France
+URL = https://vaad.fr
 
 Name = (FR) Dossier sur Le Rabbi de Loubavitch
 URL = https://fr.chabad.org/library/article_cdo/aid/527991/jewish/Le-Rabbi.htm

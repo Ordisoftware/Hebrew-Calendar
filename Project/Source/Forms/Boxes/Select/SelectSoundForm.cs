@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -53,8 +53,8 @@ sealed partial class SelectSoundForm : Form
     InitializeComponent();
     Icon = MainForm.Instance.Icon;
     //
-    SelectApplicationSound.Items.AddRange(SoundItem.GetApplicationSounds().ToArray());
-    SelectWindowsSound.Items.AddRange(SoundItem.GetWindowsSounds().ToArray());
+    SelectApplicationSound.Items.AddRange([.. SoundItem.GetApplicationSounds()]);
+    SelectWindowsSound.Items.AddRange([.. SoundItem.GetWindowsSounds()]);
     SelectDialogSound.Items.Add(MessageBoxIcon.Information);
     SelectDialogSound.Items.Add(MessageBoxIcon.Question);
     SelectDialogSound.Items.Add(MessageBoxIcon.Exclamation);

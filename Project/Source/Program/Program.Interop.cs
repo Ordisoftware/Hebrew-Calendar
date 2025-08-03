@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2024-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.IO.Pipes;
@@ -48,7 +48,7 @@ static partial class Program
       if ( cmd.Generate ) action = form.ActionGenerate.PerformClick;
       if ( cmd.ResetReminder ) action = form.ActionResetReminder.PerformClick;
       if ( cmd.OpenNavigation ) action = form.ActionNavigate.PerformClick;
-      if ( cmd.OpenDiffDates ) action = form.ActionCalculateDateDiff.PerformClick;
+      if ( cmd.OpenDatesDifference ) action = form.ActionCalculateDateDiff.PerformClick;
       if ( cmd.OpenCelebrationVersesBoard ) action = form.ActionShowCelebrationVersesBoard.PerformClick;
       if ( cmd.OpenCelebrationsBoard ) action = form.ActionShowCelebrationsBoard.PerformClick;
       if ( cmd.OpenNewMoonsBoard ) action = form.ActionShowNewMoonsBoard.PerformClick;
@@ -59,6 +59,14 @@ static partial class Program
                                                ? form.ActionShowLunarMonths.PerformClick
                                                : null;
       if ( action is not null ) SystemManager.TryCatch(() => form.ToolStrip.SyncUI(action));
+    }
+    catch ( EndOfStreamException ex )
+    {
+      ex.Manage(ShowExceptionMode.None);
+    }
+    catch ( Exception ex ) when ( ex is ObjectDisposedException || ex is IOException )
+    {
+      ex.Manage();
     }
     finally
     {
@@ -81,7 +89,7 @@ static partial class Program
         CheckSettingsReset(true);
       }
       else
-      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions?.HideMainForm == true )
+      if ( !Settings.FirstLaunch && SystemManager.CommandLineOptions.HideMainForm )
         Globals.ForceStartupHide = true;
     }
     catch ( Exception ex )

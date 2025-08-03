@@ -49,9 +49,6 @@ URL = http://www.calj.net
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/calendar/view/month.htm
 
-Name = (FR) Chiourim.com
-URL = http://www.chiourim.com/cal/calendrier_hebraique.php
-
 Name = (FR) IsraelTorah.com
 URL = https://www.israeltorah.com/calendrier
 
@@ -60,6 +57,3 @@ URL = https://www.loubavitch.fr/pratique/calendriers/jewish-calendar/calendrierm
 
 Name = (FR) Loubavitch-boulogne.com
 URL = https://www.loubavitch-boulogne.com/calendar/view/month.htm
-
-Name = (FR) Torah-box.com
-URL = https://www.torah-box.com/calendrier

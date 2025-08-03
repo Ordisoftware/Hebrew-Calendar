@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -18,6 +18,7 @@ namespace Ordisoftware.Hebrew.Calendar;
 /// Provides sun and moon rise and set structure.
 /// </summary>
 [SuppressMessage("Performance", "U2U1004:Public value types should implement equality", Justification = "N/A")]
+[SuppressMessage("Performance", "SS017:Structs should implement Equals(), GetHashCode(), and ToString().", Justification = "N/A")]
 [StructLayout(LayoutKind.Auto)]
 struct SunAndMoonRiseAndSet
 {

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-12 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 sealed partial class CelebrationsBoardForm : Form
@@ -229,7 +229,7 @@ sealed partial class CelebrationsBoardForm : Form
     string name = AppTranslations.Year.GetLang();
     if ( EditColumnUpperCase.Checked ) name = name.ToUpper();
     Board = new DataTable(TableName);
-    Board.PrimaryKey = new DataColumn[] { Board.Columns.Add(name, typeof(int)) };
+    Board.PrimaryKey = [Board.Columns.Add(name, typeof(int))];
     foreach ( var value in TorahCelebrationSettings.ManagedEvents )
     {
       name = value.ToStringExport(AppTranslations.CelebrationDays, EditEnglishTitles.Checked);
@@ -250,25 +250,23 @@ sealed partial class CelebrationsBoardForm : Form
 
   private void ActionExport_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.SaveBoardDialog.FileName = SysTranslations.BoardExportFileName.GetLang(TableName) + " "
-                                                   + AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon][Language.EN];
-    if ( Settings.TorahEventsCountAsMoon )
-      MainForm.Instance.SaveBoardDialog.FileName += EditUseRealDays.Checked ? " Moonset" : " Moonrise";
-    else
-      MainForm.Instance.SaveBoardDialog.FileName += EditUseRealDays.Checked ? " Sunset" : " Sunrise";
-    MainForm.Instance.SaveBoardDialog.FileName += $" {SelectYear1.Value}-{SelectYear2.Value}";
-    for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-      if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-        MainForm.Instance.SaveBoardDialog.FilterIndex = index + 1;
-    if ( MainForm.Instance.SaveBoardDialog.ShowDialog() != DialogResult.OK ) return;
-    string filePath = MainForm.Instance.SaveBoardDialog.FileName;
-    Board.Export(filePath, Program.BoardExportTargets);
-    DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
-                                      Globals.KeyboardSoundFilePath);
-    if ( Settings.AutoOpenExportFolder )
-      SystemManager.RunShell(Path.GetDirectoryName(filePath));
-    if ( Settings.AutoOpenExportedFile )
-      SystemManager.RunShell(filePath);
+    string fileName = SysTranslations.BoardExportFileName.GetLang(TableName) + " "
+                    + AppTranslations.MainFormSubTitleOmer[Settings.TorahEventsCountAsMoon][Language.EN]
+                    + ( Settings.TorahEventsCountAsMoon
+                        ? EditUseRealDays.Checked ? " Moonset" : " Moonrise"
+                        : EditUseRealDays.Checked ? " Sunset" : " Sunrise" )
+                    + $" {SelectYear1.Value}-{SelectYear2.Value}";
+    if ( MainForm.Instance.SaveDataBoardDialog.Run(fileName, Settings.ExportDataPreferredTarget, Program.BoardExportTargets) )
+    {
+      string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
+      Board.Export(filePath, Program.BoardExportTargets);
+      DisplayManager.ShowSuccessOrSound(SysTranslations.DataSavedToFile.GetLang(filePath),
+                                        Globals.KeyboardSoundFilePath);
+      if ( Settings.AutoOpenExportFolder )
+        SystemManager.RunShell(Path.GetDirectoryName(filePath));
+      if ( Settings.AutoOpenExportedFile )
+        SystemManager.RunShell(filePath);
+    }
   }
 
 }

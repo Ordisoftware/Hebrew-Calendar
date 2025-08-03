@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -24,6 +24,8 @@ using System.Runtime.InteropServices;
 [SuppressMessage("Major Code Smell", "S4200:Native methods should be wrapped", Justification = "N/A")]
 [SuppressMessage("Major Code Smell", "S4214:\"P/Invoke\" methods should not be visible", Justification = "N/A")]
 [SuppressMessage("Interoperability", "CA1401:Les P/Invoke ne doivent pas être visibles", Justification = "N/A")]
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
+[SuppressMessage("Performance", "SS017:Structs should implement Equals(), GetHashCode(), and ToString().", Justification = "N/A")]
 static public class NativeMethods
 {
 

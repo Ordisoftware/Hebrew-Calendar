@@ -16,8 +16,16 @@
 Name = (EN) Pealim Hebrew Verb Tables
 URL = https://www.pealim.com/search/?q=%WORD%
 
-Name = (EN) Ancient Hebrew Lexicon
+-
+
+Name = (EN) Ancient Hebrew AHLB
+URL = https://www.google.com/search?q=%WORD%+AHLB+site%3Aancient-hebrew.org
+
+Name = (EN) Ancient Hebrew Website
 URL = https://www.google.com/search?q=%WORD%+site%3Aancient-hebrew.org
+
+Name = (EN) Mechanical Translation
+URL = https://www.google.com/search?q=%WORD%+site%3Amechanical-translation.org
 
 -
 
@@ -90,11 +98,21 @@ URL = https://www.dict.com/hebreu-francais/%WORD%
 
 -
 
-Name = (NONE) Google Search
+Name = (NONE) Google Search Concordance
 URL = https://www.google.com/search?q=hebrew+strong+%WORD%
 
-Name = (NONE) Bing Search
+Name = (NONE) Google Search Lexicon
+URL = https://www.google.com/search?q=hebrew+lexicon+%WORD%
+
+-
+
+Name = (NONE) Bing Search Concordance
 URL = http://www.bing.com/search?q=hebrew+strong+%WORD%
+
+Name = (NONE) Bing Search Lexicon
+URL = http://www.bing.com/search?q=hebrew+lexicon+%WORD%
+
+-
 
 Name = (NONE) Custom Search
 URL = %CUSTOM%

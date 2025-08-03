@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -67,7 +67,7 @@ public partial class HebrewDatabase : SQLiteDatabase
       SaveParashot();
       IsParashotUpgradedV10 = false;
     }
-    ParashotAsBindingList = new BindingList<Parashah>(Parashot);
+    ParashotAsBindingList = [.. Parashot];
     return Parashot;
   }
 
@@ -88,10 +88,10 @@ public partial class HebrewDatabase : SQLiteDatabase
     }
   }
 
-  public void DeleteParashot(bool nocheckaccess = false)
+  public void DeleteParashot(bool noCheckAccess = false)
   {
     CheckConnected();
-    if ( !nocheckaccess ) CheckAccess(Parashot, nameof(Parashot));
+    if ( !noCheckAccess ) CheckAccess(Parashot, nameof(Parashot));
     Connection.DeleteAll<Parashah>();
     Parashot?.Clear();
   }
@@ -127,7 +127,7 @@ public partial class HebrewDatabase : SQLiteDatabase
                 p.Memo = string.Empty;
               });
             if ( memos is not null )
-              for ( int index = 0, indexCheck = 0; index < list.Count && indexCheck < memos.Count; index++ )
+              for ( int index = 0; index < list.Count && index < memos.Count; index++ )
                 list[index].Memo = memos[index];
             Connection.InsertAll(list);
             Connection.Commit();

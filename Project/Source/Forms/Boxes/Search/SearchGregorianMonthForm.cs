@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -19,7 +19,7 @@ sealed partial class SearchGregorianMonthForm : Form
 
   private readonly MainForm MainForm = MainForm.Instance;
 
-  public LunisolarDay CurrentDay { get; private set; }
+  public LunisolarDayRow CurrentDay { get; private set; }
 
   private int CurrentDayIndex = -1;
 
@@ -86,7 +86,7 @@ sealed partial class SearchGregorianMonthForm : Form
     if ( ListItems.SelectedIndices.Count <= 0 ) return;
     SelectDay.Items.Clear();
     var listDays = Enumerable.Range(1, DateTime.DaysInMonth(SelectYear.Value, ListItems.SelectedIndices[0] + 1));
-    SelectDay.Items.AddRange(listDays.Cast<object>().ToArray());
+    SelectDay.Items.AddRange([.. listDays.Cast<object>()]);
     if ( CurrentDayIndex == -1 ) CurrentDayIndex = 0;
     if ( CurrentDayIndex >= SelectDay.Items.Count )
       CurrentDayIndex = SelectDay.Items.Count - 1;

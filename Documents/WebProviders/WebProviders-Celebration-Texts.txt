@@ -46,14 +46,8 @@ Name = (EN) ReformJudaism.org
 URL = https://reformjudaism.org/jewish-holidays/%REFORMJUDAISM%
 
 
-Name = (FR) Torah-Box.com
-URL = https://www.torah-box.com/vie-juive/%TORAHBOX%/
-
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/library/article_cdo/aid/%CHABAD-FR%
-
-Name = (FR) Chiourim.com
-URL = https://www.chiourim.com/rubrique/fetes/%CHIOURIM%/
 
 Name = (FR) Loubavitch.fr
 URL = https://www.loubavitch.fr/pratique/%LOUBAVITCH%

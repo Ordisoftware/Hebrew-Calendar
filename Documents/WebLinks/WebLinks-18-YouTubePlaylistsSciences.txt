@@ -30,3 +30,9 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-B3m_jadFZi3rvJx9LPhHeG
 
 Name = (FR) Documentaires et sujets de société
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-DfPB3GAU-e6hLSzJIjVc18
+
+-
+
+Name = (FR) [France Université Numérique] Conférence IA et éducation
+URL = https://www.youtube.com/playlist?list=PLT8Nmhc5co7ob1PvPNfxQx7puDQ_ng6ji
+

@@ -54,6 +54,8 @@ namespace CoolPrintPreview
   [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop204:Rename the variable '{0}' to something clear and meaningful.", Justification = "<En attente>")]
   [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "<En attente>")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "<En attente>")]
   internal class CoolPrintPreviewControl : UserControl
   {
     //-------------------------------------------------------------
@@ -184,6 +186,7 @@ namespace CoolPrintPreview
     Browsable(false),
     DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)
     ]
+    [SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "<En attente>")]
     public double Zoom
     {
       get { return _zoom; }
@@ -260,7 +263,7 @@ namespace CoolPrintPreview
     /// Gets a list containing the images of the pages in the document.
     /// </summary>
     [Browsable(false)]
-    public PageImageList PageImages { get; } = new();
+    public PageImageList PageImages { get; } = [];
     /// <summary>
     /// Prints the current document honoring the selected page range.
     /// </summary>

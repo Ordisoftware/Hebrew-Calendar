@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-06 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 /// <summary>
@@ -73,9 +73,9 @@ static partial class Program
   public const int LoadingFormGenerate = 5000;
 
   /// <summary>
-  /// Indicates minimum items for calc dates diff to show the loading form.
+  /// Indicates minimum items for calc dates difference to show the loading form.
   /// </summary>
-  public const int LoadingFormDatesDiff = 15 * 365;
+  public const int LoadingFormDatesDifference = 15 * 365;
 
   /// <summary>
   /// Indicates minimum torah years interval that can be generated.
@@ -94,17 +94,41 @@ static partial class Program
   /// Indicates big calendar advert levels.
   /// </summary>
   static public readonly int[] BigCalendarLevels =
-  {
-    30, 50, 75, 100, 125
-  };
+  [
+    30,
+    50,
+    75,
+    100,
+    125
+  ];
 
   /// <summary>
   /// Indicates predefined years intervals.
   /// </summary>
   static public readonly int[] PredefinedYearsIntervals =
-  {
-    5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 120, -5, -10, -15, -20, -25, -30, -40, -50, -75, -100
-  };
+  [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50,
+    75,
+    100,
+    120,
+    -5,
+    -10,
+    -15,
+    -20,
+    -25,
+    -30,
+    -40,
+    -50,
+    -75,
+    -100
+  ];
 
   /// <summary>
   /// Indicates file path of application image 64x64.
@@ -127,14 +151,11 @@ static partial class Program
   /// <summary>
   /// Indicates file path of date bookmarks.
   /// </summary>
+  /// <remarks>
+  /// Obsolete : replaced by a db table.
+  /// </remarks>
   static public string DateBookmarksFilePath
     => Path.Combine(Globals.UserDataFolderPath, "DateBookmarks.txt");
-
-  /// <summary>
-  /// Indicates date bookmarks.
-  /// </summary>
-  static public readonly DateBookmarks DateBookmarks
-    = new(DateBookmarksFilePath);
 
   /// <summary>
   /// Indicates world cities documents folder.
@@ -182,8 +203,8 @@ static partial class Program
   static Program()
   {
     if ( Globals.IsVisualStudioDesigner ) return;
-    LunarMonthsMeanings = new NullSafeDictionary<Language, LunarMonthsFile>();
-    LunarMonthsLettriqs = new NullSafeDictionary<Language, LunarMonthsFile>();
+    LunarMonthsMeanings = [];
+    LunarMonthsLettriqs = [];
     foreach ( Language lang in Languages.Managed )
     {
       LunarMonthsMeanings.Add(lang, new LunarMonthsFile(LunarMonthsMeaningsFilePath,

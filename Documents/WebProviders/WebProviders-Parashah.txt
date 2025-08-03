@@ -41,18 +41,14 @@ URL = https://www.yeshiva.co/midrash/category/%YESHIVACO%
 
 -
 
-Name = (FR) Torah-Box.com
-URL = https://www.torah-box.com/paracha/%TORAHBOX%
+Name = (FR) Shouva Israël France
+URL = https://www.youtube.com/playlist?list=PLxRqUzrUqpdp1a4pg3znMJB1AYLMmVZHj
 
 Name = (FR) Chabad.org
 URL = https://fr.chabad.org/article.aspx?aid=%CHABAD-FR%
 
 Name = (FR) Loubavitch.fr (textes) *
 URL = https://www.loubavitch.fr/etude/paracha
-
-;TODO check if available again
-;Name = (FR) Loubavitch.fr (vidéos) *
-;URL = https://www.loubavitch.fr/multimedia/la-paracha-de-la-semaine
 
 -
 
@@ -94,17 +90,6 @@ URL = http://www.torahdevie.com/category/paracha/
 
 Name = (FR) Rav Yossef Hay **
 URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAHGuYil7Axs_rpPf9sxMNJt
-
-- 
-
-Name = (FR) Torah-Box : La Paracha en 1 minute **
-URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0i8Gd-lMeXTbpo4_6iDlIbn
-
-Name = (FR) Torah-Box : Le Message de la Paracha **
-URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0gARoETxiTu_ZN5o0SEHygj
-
-Name = (FR) Torah-Box : Vision 'Hassidique de la Paracha **
-URL = https://www.youtube.com/playlist?list=PLVGiOPy_aH0j3ki0dNfQb7rmPBkOid_ev
 
 - 
 

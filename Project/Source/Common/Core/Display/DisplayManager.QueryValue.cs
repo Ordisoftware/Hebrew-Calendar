@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -45,11 +45,11 @@ static public partial class DisplayManager
   /// <typeparam name="T">Generic type parameter.</typeparam>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="validator">The validator.</param>
-  static public InputValueResult QueryValue<T>(string caption, ref T value, Func<T, bool> validator)
+  /// <param name="validation">The validation.</param>
+  static public InputValueResult QueryValue<T>(string caption, ref T value, Func<T, bool> validation)
   where T : IConvertible
   {
-    return QueryValue(caption, ref value, false, validator);
+    return QueryValue(caption, ref value, false, validation);
   }
 
   /// <summary>
@@ -61,11 +61,11 @@ static public partial class DisplayManager
   /// <typeparam name="T">Generic type parameter.</typeparam>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="ispassword">true to ispassword.</param>
-  static public InputValueResult QueryValue<T>(string caption, ref T value, bool ispassword)
+  /// <param name="isPassword">true to isPassword.</param>
+  static public InputValueResult QueryValue<T>(string caption, ref T value, bool isPassword)
   where T : IConvertible
   {
-    return QueryValue(caption, ref value, ispassword, null);
+    return QueryValue(caption, ref value, isPassword, null);
   }
 
   /// <summary>
@@ -77,12 +77,12 @@ static public partial class DisplayManager
   /// <typeparam name="T">Generic type parameter.</typeparam>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="ispassword">true to ispassword.</param>
-  /// <param name="validator">The validator.</param>
-  static public InputValueResult QueryValue<T>(string caption, ref T value, bool ispassword, Func<T, bool> validator)
+  /// <param name="isPassword">true to isPassword.</param>
+  /// <param name="validation">The validation.</param>
+  static public InputValueResult QueryValue<T>(string caption, ref T value, bool isPassword, Func<T, bool> validation)
   where T : IConvertible
   {
-    return QueryValue("ValueRequested", caption, ref value, ispassword, validator);
+    return QueryValue("ValueRequested", caption, ref value, isPassword, validation);
   }
 
   /// <summary>
@@ -111,11 +111,11 @@ static public partial class DisplayManager
   /// <param name="title">The title.</param>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="validator">The validator.</param>
-  static public InputValueResult QueryValue<T>(string title, string caption, ref T value, Func<T, bool> validator)
+  /// <param name="validation">The validation.</param>
+  static public InputValueResult QueryValue<T>(string title, string caption, ref T value, Func<T, bool> validation)
   where T : IConvertible
   {
-    return QueryValue(title, caption, ref value, false, validator);
+    return QueryValue(title, caption, ref value, false, validation);
   }
 
   /// <summary>
@@ -128,11 +128,11 @@ static public partial class DisplayManager
   /// <param name="title">The title.</param>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="ispassword">true to ispassword.</param>
-  static public InputValueResult QueryValue<T>(string title, string caption, ref T value, bool ispassword)
+  /// <param name="isPassword">true to isPassword.</param>
+  static public InputValueResult QueryValue<T>(string title, string caption, ref T value, bool isPassword)
   where T : IConvertible
   {
-    return QueryValue(title, caption, ref value, ispassword, null);
+    return QueryValue(title, caption, ref value, isPassword, null);
   }
 
   /// <summary>
@@ -145,12 +145,12 @@ static public partial class DisplayManager
   /// <param name="title">The title.</param>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="ispassword">true to ispassword.</param>
-  /// <param name="validator">The validator.</param>
-  static public InputValueResult QueryValue<T>(string title, string caption, ref T value, bool ispassword, Func<T, bool> validator)
+  /// <param name="isPassword">true to isPassword.</param>
+  /// <param name="validation">The validation.</param>
+  static public InputValueResult QueryValue<T>(string title, string caption, ref T value, bool isPassword, Func<T, bool> validation)
   where T : IConvertible
   {
-    return QueryValueWinForms(title, caption, ref value, ispassword, validator);
+    return QueryValueWinForms(title, caption, ref value, isPassword, validation);
   }
 
   /// <summary>
@@ -163,26 +163,27 @@ static public partial class DisplayManager
   /// <param name="title">The title.</param>
   /// <param name="caption">The caption.</param>
   /// <param name="value">[in,out] The value.</param>
-  /// <param name="ispassword">true to ispassword.</param>
-  /// <param name="validator">The validator.</param>
+  /// <param name="isPassword">true to isPassword.</param>
+  /// <param name="validation">The validation.</param>
   static private InputValueResult QueryValueWinForms<T>(
     string title,
     string caption,
     ref T value,
-    bool ispassword,
-    Func<T, bool> validator)
+    bool isPassword,
+    Func<T, bool> validation)
   where T : IConvertible
   {
     var res = InputValueResult.Unchanged;
-    var newvalue = value;
+    var newValue = value;
     try
     {
-      Globals.MainForm.SyncUI(() => res = InputBox<T>.Run(title, caption, ref newvalue, ispassword, validator));
+      Globals.MainForm.SyncUI(() => res = InputBox<T>.Run(title, caption, ref newValue, isPassword, validation));
     }
-    catch
+    catch ( Exception ex )
     {
+      ex.Manage(ShowExceptionMode.None);
     }
-    if ( res == InputValueResult.Modified ) value = newvalue;
+    if ( res == InputValueResult.Modified ) value = newValue;
     return res;
   }
 

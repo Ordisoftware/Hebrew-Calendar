@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -30,7 +30,6 @@ static public partial class OnlineParashot
       { "%MYJEWISHLEARNING%", MyJewishLearning[parashah.Book][parashah.Number - 1] },
       { "%THETORAHCOM%", TheTorahCom[parashah.Book][parashah.Number - 1] },
       { "%THEYESHIVA%", TheYeshivaNet[parashah.Book][parashah.Number - 1] },
-      { "%TORAHBOX%", TorahBox[parashah.Book][parashah.Number - 1] },
       { "%TORAHJEWS%", TorahJews[parashah.Book][parashah.Number - 1] },
       { "%TORAHORG%", TorahOrg[parashah.Book][parashah.Number - 1] },
       { "%WIKIPEDIA-EN%", WikipediaEN[parashah.Book][parashah.Number - 1] },

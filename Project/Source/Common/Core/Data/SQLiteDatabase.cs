@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -47,7 +47,7 @@ public abstract class SQLiteDatabase : IDisposable
 
   protected bool AutoLoadAllAtOpen { get; init; } = true;
 
-  protected readonly List<object> ModifiedObjects = new();
+  protected readonly List<object> ModifiedObjects = [];
 
   public bool HasChanges => ModifiedObjects.Count > 0;
 
@@ -103,14 +103,14 @@ public abstract class SQLiteDatabase : IDisposable
 
   protected void CheckConnected()
   {
-    if ( Connection is null ) throw new SQLiteException(SysTranslations.NotConnected.GetLang());
+    if ( Connection is null ) throw new AdvSQLiteException(SysTranslations.NotConnected.GetLang());
   }
 
   [SuppressMessage("Performance", "U2U1012:Parameter types should be specific", Justification = "Polymorphism needed")]
   [SuppressMessage("CodeQuality", "IDE0079:Retirer la suppression inutile", Justification = "N/A")]
   protected void CheckAccess(object table, string name)
   {
-    if ( table is null ) throw new SQLiteException("Table is not loaded: " + name);
+    if ( table is null ) throw new AdvSQLiteException("Table is not loaded: " + name);
   }
 
   public virtual void Open()
@@ -119,12 +119,12 @@ public abstract class SQLiteDatabase : IDisposable
     if ( Initialized ) return;
     UpgradeSchema();
     CreateTables();
-    Vacuum();
+    AutoVacuum();
     Initialized = true;
     if ( AutoLoadAllAtOpen ) LoadAll(true);
   }
 
-  protected virtual void Vacuum(bool force = false) { }
+  protected virtual void AutoVacuum() { }
 
   protected virtual void UpgradeSchema() { }
 
@@ -223,6 +223,8 @@ public abstract class SQLiteDatabase : IDisposable
   protected abstract void DoSaveAll();
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   protected void ProcessTableUpgrade<TRow, TRowTemp>(
     string nameTable,
     string nameTableTemp,
@@ -247,7 +249,7 @@ public abstract class SQLiteDatabase : IDisposable
           Connection.DropTableIfExists(nameTableTemp);
           break;
         case DialogResult.Abort:
-          throw new SQLiteException(error);
+          throw new AdvSQLiteException(error);
       }
     }
     Connection.Execute("PRAGMA foreign_keys = 0;");

@@ -151,4 +151,13 @@
   <data name="EditCopyWithFinalLetter.Text" xml:space="preserve">
     <value>Copier avec lettre finale</value>
   </data>
+  <data name="LabelGematriaFinal.Text" xml:space="preserve">
+    <value>Valeur Finale</value>
+  </data>
+  <data name="LabelGematriaSimple.Text" xml:space="preserve">
+    <value>Valeur Simple</value>
+  </data>
+  <data name="LabelGematriaFull.Text" xml:space="preserve">
+    <value>Valeur Pleine</value>
+  </data>
 </root>

@@ -29,8 +29,8 @@ URL = https://fr.wikipedia.org/wiki/Sanskrit
 
 -
 
-Name = (EN) Sanskrit Dictionary @ spokensanskrit.org
-URL = https://spokensanskrit.org
+Name = (EN) Sanskrit Dictionary @ learnsanskrit.cc
+URL = https://www.learnsanskrit.cc
 
 Name = (EN) Sanskrit Monier-Williams Dictionary @ sanskrit.inria.fr
 URL = https://sanskrit.inria.fr/DICO/index.en.html
@@ -45,6 +45,9 @@ URL = https://en.wikipedia.org/wiki/Greek_language
 
 Name = (FR) Grec @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Grec
+
+Name = (EN) Kata Biblon Greek Lexicon @ katabiblon.com
+URL = https://lexicon.katabiblon.com
 
 -
 

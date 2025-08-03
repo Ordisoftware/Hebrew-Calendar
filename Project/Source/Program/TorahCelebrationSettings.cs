@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -19,6 +19,7 @@ using MoreLinq;
 /// <summary>
 /// Torah celebrations days and durations.
 /// </summary>
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static class TorahCelebrationSettings
 {
 
@@ -40,17 +41,17 @@ static class TorahCelebrationSettings
   /// <summary>
   /// Pessa'h length.
   /// </summary>
-  static public readonly int PessahLenght = 7;
+  static public readonly int PessahLength = 7;
 
   /// <summary>
   /// Pessa'h last day.
   /// </summary>
-  static public readonly int PessahEndDay = PessahStartDay + PessahLenght - 1;
+  static public readonly int PessahEndDay = PessahStartDay + PessahLength - 1;
 
   /// <summary>
   /// Shavouh'ot length.
   /// </summary>
-  static public readonly int ChavouotLenght = 50;
+  static public readonly int ChavouotLength = 50;
 
   /// <summary>
   /// 'Hanouka month.
@@ -80,12 +81,12 @@ static class TorahCelebrationSettings
   /// <summary>
   /// Soukot length.
   /// </summary>
-  static public readonly int SoukotLenght = 7 + 1;
+  static public readonly int SoukotLength = 7 + 1;
 
   /// <summary>
   /// Soukot last day.
   /// </summary>
-  static public readonly int SoukotEndDay = SoukotStartDay + SoukotLenght - 1;
+  static public readonly int SoukotEndDay = SoukotStartDay + SoukotLength - 1;
 
   /// <summary>
   /// Pessa'h month.
@@ -105,7 +106,7 @@ static class TorahCelebrationSettings
   /// <summary>
   /// 'Hanouka length.
   /// </summary>
-  static public readonly int HanoukaLenght = 7 + 1;
+  static public readonly int HanoukaLength = 7 + 1;
 
   /// <summary>
   /// 'Hanouka last day.
@@ -150,37 +151,34 @@ static class TorahCelebrationSettings
   /// Indicates special celebration days.
   /// </summary>
   static public readonly IEnumerable<TorahCelebrationDay> SpecialDays
-    = new List<TorahCelebrationDay>
-    {
+    = [
         TorahCelebrationDay.PessahD1,
         TorahCelebrationDay.PessahD7,
         TorahCelebrationDay.YomTerouah,
         TorahCelebrationDay.YomHaKipourim,
         TorahCelebrationDay.SoukotD1,
         TorahCelebrationDay.SoukotD8
-    };
+      ];
 
   /// <summary>
   /// Indicates celebration days that starts a week.
   /// </summary>
   static public readonly IEnumerable<TorahCelebrationDay> CelebrationStartWeek
-    = new List<TorahCelebrationDay>
-    {
+    = [
         TorahCelebrationDay.PessahD1,
         TorahCelebrationDay.SoukotD1,
         TorahCelebrationDay.ChavouotDiet
-    };
+      ];
 
   /// <summary>
   /// Indicates celebration days that ends a week.
   /// </summary>
   static public readonly IEnumerable<TorahCelebrationDay> CelebrationEndWeek
-    = new List<TorahCelebrationDay>
-    {
+    = [
         TorahCelebrationDay.PessahD7,
         TorahCelebrationDay.SoukotD8,
         TorahCelebrationDay.Chavouot1
-    };
+      ];
 
   static public TorahCelebration Convert(TorahCelebrationDay torahevent) => torahevent switch
   {

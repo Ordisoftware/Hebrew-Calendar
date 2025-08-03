@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -13,6 +13,8 @@
 /// <created> 2012-10 </created>
 /// <edited> 2021-09 </edited>
 namespace Ordisoftware.Hebrew;
+
+#pragma warning disable VSSpell001 // Spell Check
 
 public enum TanakBook
 {
@@ -79,3 +81,5 @@ public enum KetouvimBook
   Divrei_HaYamim_I = TanakBook.Divrei_HaYamim_I,
   Divrei_HaYamim_II = TanakBook.Divrei_HaYamim_II
 };
+
+#pragma warning restore VSSpell001 // Spell Check

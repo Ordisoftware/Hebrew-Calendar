@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-01 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Configuration;
@@ -267,6 +267,16 @@ static class SettingsHelper
   }
 
   /// <summary>
+  /// Gets the bookmarks export directory.
+  /// </summary>
+  static internal string GetExportBookmarksDirectory(this Settings settings)
+  {
+    string result = Path.Combine(settings.GetExportDirectory(), "Bookmarks");
+    if ( !Directory.Exists(result) ) Directory.CreateDirectory(result);
+    return result;
+  }
+
+  /// <summary>
   /// Gets the images export directory.
   /// </summary>
   static internal string GetExportImagesDirectory(this Settings settings)
@@ -322,7 +332,7 @@ static class SettingsHelper
   {
     if ( settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )
     {
-      var anchor = DisplayManager.GetTaskbarAnchorStyle();
+      var anchor = DisplayManager.GetTaskBarAnchorStyle();
       settings.ReminderBoxDesktopLocation = anchor switch
       {
         AnchorStyles.Top => ControlLocation.TopRight,

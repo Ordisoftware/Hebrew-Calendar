@@ -1,6 +1,6 @@
 /// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -65,17 +65,17 @@ static public partial class SystemManager
   /// <summary>
   /// Indicates the application website SSL certificate information.
   /// </summary>
-  static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = new();
+  static private readonly NullSafeOfStringDictionary<string> AuthorWebsiteSSLCertificate = [];
 
   /// <summary>
   /// Indicates the GitHub website SSL certificate information.
   /// </summary>
-  static private readonly NullSafeOfStringDictionary<string> GitHubSSLCertificate = new();
+  static private readonly NullSafeOfStringDictionary<string> GitHubSSLCertificate = [];
 
   /// <summary>
   /// Indicates the GitHub user content website SSL certificate information.
   /// </summary>
-  static private readonly NullSafeOfStringDictionary<string> GitHubUserContentSSLCertificate = new();
+  static private readonly NullSafeOfStringDictionary<string> GitHubUserContentSSLCertificate = [];
 
   /// <summary>
   /// Loads the SSL certificate.

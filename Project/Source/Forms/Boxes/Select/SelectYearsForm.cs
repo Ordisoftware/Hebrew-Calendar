@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -46,8 +46,8 @@ sealed partial class SelectYearsForm : Form
   private void SelectYearsRangeForm_Load(object sender, EventArgs e)
   {
     Mutex = true;
-    int yearMin = AstronomyHelper.LunisolerCalendar.MinSupportedDateTime.Year;
-    int yearMax = AstronomyHelper.LunisolerCalendar.MaxSupportedDateTime.Year;
+    int yearMin = AstronomyHelper.LunisolarCalendar.MinSupportedDateTime.Year;
+    int yearMax = AstronomyHelper.LunisolarCalendar.MaxSupportedDateTime.Year;
     const int min = Program.GenerateIntervalMinimum;
     int max = Settings.GenerateIntervalMaximum;
     CurrentYear = DateTime.Today.AddYears(-Program.GenerateIntervalPreviousYears).Year;
@@ -116,6 +116,7 @@ sealed partial class SelectYearsForm : Form
   }
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   private void ActionOK_Click(object sender, EventArgs e)
   {
     if ( Settings.BigCalendarWarningEnabled )
@@ -127,7 +128,8 @@ sealed partial class SelectYearsForm : Form
         if ( diff > count )
         {
           string text = AppTranslations.AskToGenerateBigCalendar[index].GetLang(count, diff);
-          switch ( DisplayManager.QueryYesNoCancel(text) )
+          var result = DisplayManager.QueryYesNoCancel(text);
+          switch ( result )
           {
             case DialogResult.Yes:
               break;
@@ -138,6 +140,8 @@ sealed partial class SelectYearsForm : Form
               Settings.BigCalendarWarningEnabled = false;
               SystemManager.TryCatchManage(Settings.Save);
               break;
+            default:
+              throw new AdvNotImplementedException(result);
           }
           break;
         }

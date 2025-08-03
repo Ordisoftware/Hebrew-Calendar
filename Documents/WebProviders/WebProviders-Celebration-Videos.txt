@@ -16,6 +16,9 @@ URL = http://www.torahdevie.com/category/service-de-d-ieu/les-fetes-juives/
 Name = (FR) TorahDeVie.com : Le Chabbat
 URL = https://www.torahdevie.com/category/service-de-d-ieu/le-chabbat/
 
+Name = (FR) Shouva Israël France
+URL = https://www.youtube.com/playlist?list=PLxRqUzrUqpdoA0ghI_acdqixq1MBKl85i
+
 Name = (FR) Rav Yossef Hay
 URL = https://www.youtube.com/playlist?list=PLl4PXR7UyOAEofZFfLuRetOEcVKOOLGbm
 

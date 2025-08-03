@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -146,7 +146,7 @@ sealed public partial class CelebrationVersesBoardForm : Form
                      .Skip(1)
                      .Select(v => new ListViewItem(HebrewTranslations.GetCelebrationDisplayText(v)) { Tag = v });
     ListBoxCelebrations.Items.Clear();
-    ListBoxCelebrations.Items.AddRange(items.ToArray());
+    ListBoxCelebrations.Items.AddRange([.. items]);
   }
 
   private void CelebrationVersesBoardForm_Deactivate(object sender, EventArgs e)
@@ -196,6 +196,8 @@ sealed public partial class CelebrationVersesBoardForm : Form
   }
 
   [SuppressMessage("Design", "GCop135:{0}", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
   private void ListBoxes_KeyDown(object sender, KeyEventArgs e)
   {
     switch ( e.KeyCode )
@@ -211,10 +213,10 @@ sealed public partial class CelebrationVersesBoardForm : Form
       case Keys.Enter:
         if ( sender is ListView control && control.FocusedItem is not null )
         {
-          int delta = (int)( control.Font.SizeInPoints * FontFactor );
+          int offset = (int)( control.Font.SizeInPoints * FontFactor );
           var pos = control.PointToScreen(control.FocusedItem.Position);
-          pos.X += delta;
-          pos.Y += delta;
+          pos.X += offset;
+          pos.Y += offset;
           control.ContextMenuStrip.Show(pos);
           e.Handled = true;
         }

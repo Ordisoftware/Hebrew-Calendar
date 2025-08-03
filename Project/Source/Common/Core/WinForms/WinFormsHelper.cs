@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2023-09 </edited>
 namespace Ordisoftware.Core;
 
 using System.Drawing.Text;
@@ -22,7 +22,7 @@ using System.Drawing.Text;
 static public class SolidBrushesPool
 {
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Color, SolidBrush> Items = new();
+  static private readonly Dictionary<Color, SolidBrush> Items = [];
   static public void Clear()
   {
     foreach ( var item in Items )
@@ -48,7 +48,7 @@ static public class SolidBrushesPool
 static public class PensPool
 {
   [SuppressMessage("Performance", "U2U1211:Avoid memory leaks", Justification = "N/A")]
-  static private readonly Dictionary<Color, Pen> Items = new();
+  static private readonly Dictionary<Color, Pen> Items = [];
   static public void Clear()
   {
     foreach ( var item in Items )
@@ -76,9 +76,7 @@ static class FormsHelper
 
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable", Justification = "N/A")]
   static public readonly List<FontFamily> InstalledFonts
-    = new InstalledFontCollection().Families
-                                   .OrderBy(font => font.Name)
-                                   .ToList();
+    = [.. new InstalledFontCollection().Families.OrderBy(font => font.Name),];
 
   /// <summary>
   /// Applies localized resources.
@@ -107,11 +105,11 @@ static class FormsHelper
   /// </summary>
   static public void CloseAll(Func<Form, bool> keep = null)
   {
-    var list = keep is null
-      ? Application.OpenForms.GetAll(form => form.Visible).Reverse().ToList()
-      : Application.OpenForms.GetAll(form => form.Visible && !keep(form)).Reverse().ToList();
+    List<Form> list = keep is null
+      ? [.. Application.OpenForms.GetAll(form => form.Visible).Reverse()]
+      : [.. Application.OpenForms.GetAll(form => form.Visible && !keep(form)).Reverse()];
     foreach ( Form form in list )
-      SystemManager.TryCatch(() => form.Close());
+      SystemManager.TryCatch(form.Close);
   }
 
   /// <summary>
@@ -247,10 +245,11 @@ static class FormsHelper
   /// </summary>
   /// <param name="form">The form.</param>
   /// <param name="source">The source form.</param>
+  [SuppressMessage("Roslynator", "RCS1146:Use conditional access.", Justification = "N/A")]
   static public void CenterToFormElseMainFormElseScreen(this Form form, Form source)
   {
     if ( form is null ) return;
-    if ( source?.Visible == true && source.WindowState != FormWindowState.Minimized )
+    if ( source is not null && source.Visible && source.WindowState != FormWindowState.Minimized )
       form.Center(source.Bounds);
     else
       form.CenterToMainFormElseScreen();
@@ -302,11 +301,11 @@ static class FormsHelper
   /// <param name="dialog">True if show dialog.</param>
   static public void Popup(this Form form, Form sender = null, bool dialog = false)
   {
-    if ( form?.IsDisposed != false ) return;
+    if ( form is null ) return;
+    if ( form.IsDisposed ) return;
     if ( form.InvokeRequired )
     {
-      var method = new PopupMethod(Popup);
-      form.Invoke(method, form, sender, dialog);
+      form.Invoke(new PopupMethod(Popup), form, sender, dialog);
       return;
     }
     if ( form.Visible )
@@ -347,6 +346,7 @@ static class FormsHelper
     form.TopMost = true;
     form.BringToFront();
     form.TopMost = temp;
+    form.Activate();
   }
 
   /// <summary>
@@ -394,7 +394,7 @@ static class FormsHelper
   /// <summary>
   /// Duplicate menu subitems.
   /// </summary>
-  static public void DuplicateTo(this ToolStripDropDownItem source, ToolStripMenuItem destination, bool noshortcuts = true)
+  static public void DuplicateTo(this ToolStripDropDownItem source, ToolStripMenuItem destination, bool noShortcuts = true)
   {
     var items = new List<ToolStripItem>();
     foreach ( ToolStripItem item in source.DropDownItems )
@@ -402,20 +402,20 @@ static class FormsHelper
         if ( item is ToolStripMenuItem menuItem )
         {
           var newitem = menuItem.Clone();
-          if ( noshortcuts ) newitem.ShortcutKeys = Keys.None;
+          if ( noShortcuts ) newitem.ShortcutKeys = Keys.None;
           items.Add(newitem);
         }
         else
         if ( item is ToolStripSeparator )
           items.Add(new ToolStripSeparator());
     destination.DropDownItems.Clear();
-    destination.DropDownItems.AddRange(items.ToArray());
+    destination.DropDownItems.AddRange([.. items]);
   }
 
   /// <summary>
   /// Duplicate menu sub-items.
   /// </summary>
-  static public void DuplicateTo(this ContextMenuStrip source, ToolStripMenuItem destination, bool noshortcuts = true)
+  static public void DuplicateTo(this ContextMenuStrip source, ToolStripMenuItem destination, bool noShortcuts = true)
   {
     var items = new List<ToolStripItem>();
     foreach ( ToolStripItem item in source.Items )
@@ -423,14 +423,14 @@ static class FormsHelper
         if ( item is ToolStripMenuItem menuItem )
         {
           var newitem = menuItem.Clone();
-          if ( noshortcuts ) newitem.ShortcutKeys = Keys.None;
+          if ( noShortcuts ) newitem.ShortcutKeys = Keys.None;
           items.Add(newitem);
         }
         else
         if ( item is ToolStripSeparator )
           items.Add(new ToolStripSeparator());
     destination.DropDownItems.Clear();
-    destination.DropDownItems.AddRange(items.ToArray());
+    destination.DropDownItems.AddRange([.. items]);
   }
 
   /// <summary>
@@ -518,26 +518,26 @@ static class FormsHelper
     int heightDiv2 = control.Height / 2;
     int widthDiv4 = widthDiv2 / 4;
     int heightDiv4 = heightDiv2 / 4;
-    return new List<Point>
-    {
+    return
+    [
       // Center
-      new Point(control.Left + widthDiv2, control.Top + heightDiv2),
+      new(control.Left + widthDiv2, control.Top + heightDiv2),
       // Corners
-      new Point(control.Left + margin, control.Top + margin),
-      new Point(control.Right - margin, control.Top + margin),
-      new Point(control.Left + margin, control.Bottom - margin),
-      new Point(control.Right - margin, control.Bottom - margin),
+      new(control.Left + margin, control.Top + margin),
+      new(control.Right - margin, control.Top + margin),
+      new(control.Left + margin, control.Bottom - margin),
+      new(control.Right - margin, control.Bottom - margin),
       // Borders
-      new Point(control.Left + widthDiv4, control.Top + heightDiv4),
-      new Point(control.Right - widthDiv4, control.Top + heightDiv4),
-      new Point(control.Left + widthDiv4, control.Bottom - heightDiv4),
-      new Point(control.Right - widthDiv4, control.Bottom - heightDiv4),
+      new(control.Left + widthDiv4, control.Top + heightDiv4),
+      new(control.Right - widthDiv4, control.Top + heightDiv4),
+      new(control.Left + widthDiv4, control.Bottom - heightDiv4),
+      new(control.Right - widthDiv4, control.Bottom - heightDiv4),
       // Inner
-      new Point(control.Left + widthDiv2, control.Top + margin),
-      new Point(control.Left + widthDiv2, control.Bottom - margin),
-      new Point(control.Left + margin, control.Top + heightDiv2),
-      new Point(control.Right - margin, control.Top + heightDiv2)
-    };
+      new(control.Left + widthDiv2, control.Top + margin),
+      new(control.Left + widthDiv2, control.Bottom - margin),
+      new(control.Left + margin, control.Top + heightDiv2),
+      new(control.Right - margin, control.Top + heightDiv2)
+    ];
   }
 
 }

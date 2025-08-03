@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -93,11 +93,8 @@ partial class MainForm
       },
       [ViewMode.Grid] = (interval) =>
       {
-        SaveGridDialog.FileName = GetExportDataFilename(interval);
-        for ( int index = 0; index < Program.GridExportTargets.Count; index++ )
-          if ( Program.GridExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-            SaveGridDialog.FilterIndex = index + 1;
-        if ( SaveGridDialog.ShowDialog() != DialogResult.OK ) return false;
+        if ( !SaveGridDialog.Run(GetExportDataFilename(interval), Settings.ExportDataPreferredTarget, Program.GridExportTargets) )
+          return false;
         filePath = SaveGridDialog.FileName;
         return ExportSaveGrid(filePath, interval);
       }
@@ -142,6 +139,7 @@ partial class MainForm
     }
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   private bool ExportSaveGrid(string filePath, ExportInterval interval)
   {
     string extension = Path.GetExtension(filePath);

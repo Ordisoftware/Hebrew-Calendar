@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -113,17 +113,17 @@ static public partial class HebrewGlobals
   /// <summary>
   /// Indicates Calendar executable path.
   /// </summary>
-  static public Func<string> GetHebrewCalendarExePath { get; set; }
+  static public Func<string> GetHebrewCalendarExecutablePath { get; set; }
 
   /// <summary>
   /// Indicates Letters executable path.
   /// </summary>
-  static public Func<string> GetHebrewLettersExePath { get; set; }
+  static public Func<string> GetHebrewLettersExecutablePath { get; set; }
 
   /// <summary>
   /// Indicates Words executable path.
   /// </summary>
-  static public Func<string> GetHebrewWordsExePath { get; set; }
+  static public Func<string> GetHebrewWordsExecutablePath { get; set; }
 
   /// <summary>
   /// Indicates custom web search pattern.

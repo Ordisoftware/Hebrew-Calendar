@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -48,6 +48,6 @@ static public partial class StringHelper
   /// </summary>
   /// <param name="str">The string to act on.</param>
   static public string TrimFirstLast(this string str)
-    => new(str.Skip(1).SkipLast(1).ToArray());
+    => new([.. str.Skip(1).SkipLast(1)]);
 
 }

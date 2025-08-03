@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar and Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,13 +11,12 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2022-09 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Calendar.Program;
 using Properties = Calendar.Properties;
 using MainForm = Calendar.MainForm;
-using System.Windows.Forms;
 
 sealed partial class ParashotForm : Form
 {
@@ -129,7 +128,7 @@ sealed partial class ParashotForm : Form
     EditFontSize_ValueChanged(null, null);
   }
 
-  private void Select(Parashah parashah)
+  public void Select(Parashah parashah)
   {
     if ( parashah is null ) return;
     foreach ( DataGridViewRow row in DataGridView.Rows )
@@ -253,16 +252,12 @@ sealed partial class ParashotForm : Form
   private void ActionExport_Click(object sender, EventArgs e)
   {
     ActionSave.PerformClick();
-    string name = HebrewDatabase.Instance.ParashotTableName;
-    MainForm.Instance.SaveBoardDialog.FileName = SysTranslations.BoardExportFileName.GetLang(name);
-    for ( int index = 0; index < Program.BoardExportTargets.Count; index++ )
-      if ( Program.BoardExportTargets.ElementAt(index).Key == Settings.ExportDataPreferredTarget )
-        MainForm.Instance.SaveBoardDialog.FilterIndex = index + 1;
-    if ( MainForm.Instance.SaveBoardDialog.ShowDialog() == DialogResult.OK )
+    string name = SysTranslations.BoardExportFileName.GetLang(HebrewDatabase.Instance.ParashotTableName);
+    if ( MainForm.Instance.SaveDataBoardDialog.Run(name, Settings.ExportDataPreferredTarget, Program.BoardExportTargets) )
     {
-      string filePath = MainForm.Instance.SaveBoardDialog.FileName;
+      string filePath = MainForm.Instance.SaveDataBoardDialog.FileName;
       DoExportTable(filePath);
-      DisplayManager.ShowSuccessOrSound(SysTranslations.ViewSavedToFile.GetLang(filePath),
+      DisplayManager.ShowSuccessOrSound(SysTranslations.DataSavedToFile.GetLang(filePath),
                                         Globals.KeyboardSoundFilePath);
       if ( Settings.AutoOpenExportFolder )
         SystemManager.RunShell(Path.GetDirectoryName(filePath));
@@ -353,10 +348,10 @@ sealed partial class ParashotForm : Form
     if ( e.Control && e.KeyCode == Keys.S )
       ActionSave.PerformClick();
     else
-    if ( e.KeyCode == Keys.F2 || ( e.KeyCode == Keys.Enter && !DataGridView.IsCurrentCellInEditMode ) )
+    if ( !DataGridView.IsCurrentCellInEditMode && ( e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter ) )
       DataGridView.BeginEdit(false);
     else
-    if ( !DataGridView.IsCurrentCellInEditMode && e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z )
+    if ( !DataGridView.IsCurrentCellInEditMode && ( e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z ) )
     {
       EditSearch.Focus();
       EditSearch.AppendText(KeysConverter.ConvertToString(e.KeyValue));
@@ -411,8 +406,8 @@ sealed partial class ParashotForm : Form
   private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
   {
     if ( DataGridView.ReadOnly ) return;
-    if ( e.RowIndex < 0 || e.ColumnIndex != ColumnMemo.Index ) return;
-    ActionEditMemo.PerformClick();
+    if ( e.RowIndex >= 0 && e.ColumnIndex == ColumnMemo.Index )
+      ActionEditMemo.PerformClick();
   }
 
   [SuppressMessage("Refactoring", "GCop622:Reverse your IF condition and return. Then move the nested statements to after the IF.", Justification = "Opinion")]
@@ -483,15 +478,6 @@ sealed partial class ParashotForm : Form
     Program.TranscriptionGuideForm.Popup();
   }
 
-  private void ActionGoToNextParashah_Click(object sender, EventArgs e)
-  {
-    string id = CurrentDataBoundItem.ID;
-    var today = DateTime.Today;
-    var days = Calendar.ApplicationDatabase.Instance.LunisolarDays;
-    var day = days.Find(item => item.Date >= today && item.ParashahID == id);
-    if ( day is not null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
-  }
-
   private void ActionClearSearch_Click(object sender, EventArgs e)
   {
     EditSearch.Clear();
@@ -518,6 +504,15 @@ sealed partial class ParashotForm : Form
     DataGridView.Focus();
     e.Handled = true;
     e.SuppressKeyPress = true;
+  }
+
+  private void ActionGoToNextParashah_Click(object sender, EventArgs e)
+  {
+    string id = CurrentDataBoundItem.ID;
+    var today = DateTime.Today;
+    var days = Calendar.ApplicationDatabase.Instance.LunisolarDays;
+    var day = days.Find(item => item.Date >= today && item.ParashahID == id);
+    if ( day is not null ) MainForm.Instance.GoToDate(day.Date, true, false, false);
   }
 
 }

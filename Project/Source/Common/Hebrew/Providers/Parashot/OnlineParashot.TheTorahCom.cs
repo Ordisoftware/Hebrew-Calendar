@@ -1,6 +1,6 @@
 ﻿/// <license>
-/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words.
-/// Copyright 2012-2023 Olivier Rogier.
+/// This file is part of Ordisoftware Hebrew Calendar/Letters/Words/Pi.
+/// Copyright 2012-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -17,10 +17,11 @@ namespace Ordisoftware.Hebrew;
 static public partial class OnlineParashot
 {
 
+  [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
   static public readonly NullSafeDictionary<TorahBook, NullSafeList<string>> TheTorahCom = new()
   {
-    [TorahBook.Bereshit] = new NullSafeList<string>
-    {
+    [TorahBook.Bereshit] =
+    [
       "bereshit",
       "noach",
       "lech-lecha",
@@ -33,9 +34,9 @@ static public partial class OnlineParashot
       "miketz",
       "vayigash",
       "vayechi"
-    },
-    [TorahBook.Shemot] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Shemot] =
+    [
       "shemot",
       "vaera",
       "bo",
@@ -47,9 +48,9 @@ static public partial class OnlineParashot
       "ki-tisa",
       "vayakhel",
       "pekudei"
-    },
-    [TorahBook.Vayiqra] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Vayiqra] =
+    [
       "vayikra",
       "tzav",
       "shmini",
@@ -60,9 +61,9 @@ static public partial class OnlineParashot
       "emor",
       "behar",
       "bechukotai"
-    },
-    [TorahBook.Bamidbar] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Bamidbar] =
+    [
       "bamidbar",
       "nasso",
       "behaalotcha",
@@ -73,9 +74,9 @@ static public partial class OnlineParashot
       "pinchas",
       "matot",
       "masei"
-    },
-    [TorahBook.Devarim] = new NullSafeList<string>
-    {
+    ],
+    [TorahBook.Devarim] =
+    [
       "devarim",
       "vaetchanan",
       "eikev",
@@ -87,7 +88,7 @@ static public partial class OnlineParashot
       "vayeilech",
       "haazinu",
       "vezot-haberachah"
-    }
+    ]
   };
 
 }

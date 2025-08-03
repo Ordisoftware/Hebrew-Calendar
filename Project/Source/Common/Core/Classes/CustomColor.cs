@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -14,6 +14,7 @@
 /// <edited> 2022-03 </edited>
 namespace Ordisoftware.Core;
 
+[SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
 static public class CustomColor
 {
   static public readonly Color BlackLight = Color.FromArgb(20, 20, 20);

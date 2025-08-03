@@ -1,4 +1,5 @@
 // http://samik26.webgarden.cz/temata/class-sun-moonrise-set
+#pragma warning disable VSSpell001 // Spell Check
 namespace Keith_Burnett_moonr2cs
 {
 
@@ -9,9 +10,21 @@ namespace Keith_Burnett_moonr2cs
   [SuppressMessage("Naming", "GCop206:Avoid using underscores in {0}", Justification = "<En attente>")]
   [SuppressMessage("Design", "GCop179:Do not hardcode numbers, strings or other values. Use constant fields, enums, config files or database as appropriate.", Justification = "<En attente>")]
   [SuppressMessage("Refactoring", "GCop628:Maybe define this method on '{0}' class as it's using {1} of its members (compared to {2} from this type)", Justification = "<En attente>")]
+  [SuppressMessage("Major Bug", "S1244:Floating point numbers should not be tested for equality", Justification = "<En attente>")]
   public class SunMoon
   {
-    string outstring;
+    public const string AlwaysUp = "****";
+    public const string AlwaysDown = "....";
+    public const string NoneText = "----";
+
+    public const string AlwaysUpWithSpace = " " + AlwaysUp;
+    public const string AlwaysDownWithSpace = " " + AlwaysDown;
+    public const string NoneTextWithSpace = " " + NoneText;
+
+    readonly StringBuilder builderSun = new(40);
+    readonly StringBuilder builderMoon = new(10);
+    readonly StringBuilder builderGet = new(60);
+
     double[] quadout = new double[8];
     readonly double[] suneq = new double[8];
     readonly double[] mooneq = new double[8];
@@ -310,6 +323,7 @@ namespace Keith_Burnett_moonr2cs
     [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
     string Find_sun_and_twi_events_for_date(double mjd, double tz, double glong, double glat)
     {
+      builderSun.Clear();
       //
       //	this is my attempt to encapsulate most of the program in a function
       //	then this function can be generalised to find all the Sun events.
@@ -321,11 +335,6 @@ namespace Keith_Burnett_moonr2cs
       int j;
       utrise = utset = 0;
       double[] sinho = new double[6];
-      string always_up;
-      string always_down;
-      always_up = " ****";
-      always_down = " ....";
-      outstring = "";
       //
       //	Set up the array with the 4 values of sinho needed for the 4
       //      kinds of sun event
@@ -409,22 +418,23 @@ namespace Keith_Burnett_moonr2cs
         //
         if ( rise || sett )
         {
-          if ( rise ) { outstring += " "; outstring += Hrsmin(utrise); } //(outstring += " " + hrsmin(utrise);
-          else outstring += " ----";//outstring += " ----";
-          if ( sett ) { outstring += " "; outstring += Hrsmin(utset); }//outstring += " " + hrsmin(utset);
-          else outstring += " ----";//outstring += " ----";
+          if ( rise ) { builderSun.Append(' '); builderSun.Append(Hrsmin(utrise)); } //(outstring += " " + hrsmin(utrise);
+          else builderSun.Append(NoneTextWithSpace);//outstring += " ----";
+          if ( sett ) { builderSun.Append(' '); builderSun.Append(Hrsmin(utset)); }//outstring += " " + hrsmin(utset);
+          else builderSun.Append(NoneTextWithSpace);//outstring += " ----";
         }
         else
         {
-          if ( above ) { outstring += always_up; outstring += always_up; }//outstring += always_up + always_up;
-          else { outstring += always_down; outstring += always_down; }//outstring += always_down + always_down;
+          if ( above ) { builderSun.Append(AlwaysUpWithSpace); builderSun.Append(AlwaysUpWithSpace); }//outstring += always_up + always_up;
+          else { builderSun.Append(AlwaysDownWithSpace); builderSun.Append(AlwaysDownWithSpace); }//outstring += always_down + always_down;
         }
       } // end of for loop - next condition
-      return outstring;
+      return builderSun.ToString();
     }
 
     string Find_moonrise_set(double mjd, double tz, double glong, double glat)
     {
+      builderMoon.Clear();
       //
       //	Im using a separate function for moonrise/set to allow for different tabulations
       //  of moonrise and sun events ie weekly for sun and daily for moon. The logic of
@@ -436,11 +446,6 @@ namespace Keith_Burnett_moonr2cs
       double sinho;
       bool rise, sett, above;
       utrise = utset = 0;
-      string always_up;
-      string always_down;
-      always_up = " ****";
-      always_down = " ....";
-      outstring = "";
       sinho = Math.Sin(rads * 8 / 60);		//moonrise taken as centre of moon at +8 arcmin
       sglat = Math.Sin(rads * glat);
       cglat = Math.Cos(rads * glat);
@@ -496,24 +501,23 @@ namespace Keith_Burnett_moonr2cs
       } // end of while loop
       if ( rise || sett )
       {
-        if ( rise ) { outstring += " "; outstring += Hrsmin(utrise); }//outstring += " " + hrsmin(utrise);
-        else outstring += " ----"; //outstring += " ----";
-        if ( sett ) { outstring += " "; outstring += Hrsmin(utset); }//outstring += " " + hrsmin(utset);
-        else outstring += " ----"; //outstring += " ----";
+        if ( rise ) { builderMoon.Append(' '); builderMoon.Append(Hrsmin(utrise)); }//outstring += " " + hrsmin(utrise);
+        else builderMoon.Append(NoneTextWithSpace); //outstring += " ----";
+        if ( sett ) { builderMoon.Append(' '); builderMoon.Append(Hrsmin(utset)); }//outstring += " " + hrsmin(utset);
+        else builderMoon.Append(NoneTextWithSpace); //outstring += " ----";
       }
       else
       {
-        if ( above ) { outstring += always_up; outstring += always_up; }//outstring += always_up + always_up;
-        else { outstring += always_down; outstring += always_down; }// outstring += always_down + always_down;
+        if ( above ) { builderMoon.Append(AlwaysUpWithSpace); builderMoon.Append(AlwaysUpWithSpace); }//outstring += always_up + always_up;
+        else { builderMoon.Append(AlwaysDownWithSpace); builderMoon.Append(AlwaysDownWithSpace); }// outstring += always_down + always_down;
       }
 
-      return outstring;
+      return builderMoon.ToString();
     }
 
-    [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "<En attente>")]
     public string Get(int iiy, int iim, int iid, float flat, float flong, float fzone, int iinum)
     {
-      string OutString = "";
+      builderGet.Clear();
       // parse the form to make sure the numbers are numbers and not strings!
       //
       double y = iiy;//2008;//parseInt(InForm.Year.value, 10);
@@ -537,15 +541,16 @@ namespace Keith_Burnett_moonr2cs
       for ( i = 0; i < numday; i++ )
       {
         po = Caldat(mj + i);
-        OutString += po;
-        OutString += " ";
-        OutString += Find_sun_and_twi_events_for_date(mj + i, tz, glong, glat);
-        OutString += " ";
-        OutString += Find_moonrise_set(mj + i, tz, glong, glat);
+        builderGet.Append(po);
+        builderGet.Append(' ');
+        builderGet.Append(Find_sun_and_twi_events_for_date(mj + i, tz, glong, glat));
+        builderGet.Append(' ');
+        builderGet.Append(Find_moonrise_set(mj + i, tz, glong, glat));
         //if(numday>1)
         //OutString+="\n";
       }
-      return OutString;
+      return builderGet.ToString();
     } // end of main program
   }
 }
+#pragma warning restore VSSpell001 // Spell Check

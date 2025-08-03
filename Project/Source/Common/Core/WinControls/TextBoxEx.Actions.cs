@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2023 Olivier Rogier.
+/// Copyright 2004-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -35,29 +35,32 @@ public partial class TextBoxEx
       var form = FormsHelper.GetActiveForm();
       if ( form is not null )
       {
-        if ( form.ActiveControl is TextBoxEx )
-          control = form.ActiveControl as TextBoxEx;
+        if ( form.ActiveControl is TextBoxEx textBoxEx )
+          control = textBoxEx;
         else
-        if ( form.ActiveControl is UserControl )
-          control = ( form.ActiveControl as UserControl )?.ActiveControl as TextBoxEx;
+        if ( form.ActiveControl is UserControl userControl )
+          control = userControl.ActiveControl as TextBoxEx;
       }
     }
-    if ( doFocus && control?.Enabled == true && !control.Focused )
-      control.Focus();
+    if ( control is not null )
+      if ( doFocus && control.Enabled && !control.Focused )
+        control.Focus();
     return control;
   }
 
   static private void ActionSelectAll_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     textbox.SelectAll();
   }
 
   static private void ActionCopy_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.SelectedText.IsNullOrEmpty() ) return;
     Clipboard.SetText(textbox.SelectedText);
   }
@@ -65,7 +68,8 @@ public partial class TextBoxEx
   static private void ActionCut_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     if ( textbox.SelectedText.IsNullOrEmpty() ) return;
     try
@@ -86,7 +90,8 @@ public partial class TextBoxEx
   static private void ActionDelete_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     if ( textbox.SelectedText.IsNullOrEmpty() ) return;
     try
@@ -107,7 +112,8 @@ public partial class TextBoxEx
   static private void ActionPaste_Click(object sender, EventArgs e)
   {
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     if ( Clipboard.GetText().IsNullOrEmpty() ) return;
     try
@@ -161,7 +167,8 @@ public partial class TextBoxEx
     //}
 
     var textbox = GetTextBoxAndFocus(sender);
-    if ( textbox?.Enabled != true ) return;
+    if ( textbox is null ) return;
+    if ( !textbox.Enabled ) return;
     if ( textbox.ReadOnly ) return;
     //if ( textbox.UndoStack.Count == 0 ) return;
     try

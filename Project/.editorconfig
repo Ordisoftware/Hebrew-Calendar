@@ -4,7 +4,13 @@
 [*.cs]
 MA0051.maximum_lines_per_method = 120
 MA0051.maximum_statements_per_method = 60
-MA0051.skip_local_functions = false # skip local functions when counting statements
+MA0051.skip_local_functions = true # skip local functions when counting statements
 
 # MA0037: Remove empty statement
 dotnet_diagnostic.MA0037.severity = warning
+
+# MT1012: Acquiring lock without guarantee of releasing
+dotnet_diagnostic.MT1012.severity = warning
+
+# MT1013: Releasing lock without guarantee of execution
+dotnet_diagnostic.MT1013.severity = warning

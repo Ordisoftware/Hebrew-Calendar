@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2023 Olivier Rogier.
+/// Copyright 2016-2025 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2022-11 </edited>
+/// <edited> 2023-07 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using KVPDataExportTarget = KeyValuePair<DataExportTarget, string>;
@@ -112,6 +112,13 @@ sealed partial class PreferencesForm : Form
     if ( IsReady ) MustRefreshMonthView = true;
   }
 
+  private void EditBookmarkDefaultTextColor_Click(object sender, EventArgs e)
+  {
+    DialogColor.Color = EditDateBookmarkDefaultTextColor.BackColor;
+    if ( DialogColor.ShowDialog() == DialogResult.Cancel ) return;
+    EditDateBookmarkDefaultTextColor.BackColor = DialogColor.Color;
+  }
+
   #endregion
 
   #region Export and import
@@ -137,22 +144,22 @@ sealed partial class PreferencesForm : Form
 
   private void ActionCountAsMoonHelp_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionShowCelebrationsNotice_Click(null, null);
+    AppTranslations.ShowCelebrationsNotice();
   }
 
   private void ActionParashahHelp_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionShowParashahNotice_Click(null, null);
+    AppTranslations.ShowParashahNotice();
   }
 
   private void ActionAstronomyInfo_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionShowMonthsAndDaysNotice_Click(null, null);
+    AppTranslations.ShowMonthsAndDaysNotice();
   }
 
   private void ActionPersonalShabatHelp_Click(object sender, EventArgs e)
   {
-    MainForm.Instance.ActionShowShabatNotice_Click(null, null);
+    AppTranslations.ShowShabatNotice();
   }
 
   private void ActionHotKeyInfo_Click(object sender, EventArgs e)
@@ -236,23 +243,9 @@ sealed partial class PreferencesForm : Form
       StatisticsForm.Instance.Close();
   }
 
-  private void ActionManageBookmarks_Click(object sender, EventArgs e)
+  private void EditWindowsDoubleBufferingEnabled_CheckedChanged(object sender, EventArgs e)
   {
-    if ( !ManageBookmarksForm.Run() ) return;
-    int countBookmarks = Math.Max(Program.DateBookmarks.MaxCount, DateBookmarksCountInterval.Item1);
-    if ( countBookmarks == -1 ) countBookmarks = DateBookmarksCountInterval.Item1;
-    DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
-    EditDateBookmarksCount.Minimum = countBookmarks;
-    EditDateBookmarksCount.Value = Settings.DateBookmarksCount;
-    SetNumericLabelText(EditDateBookmarksCount, LabelDateBookmarksCountIntervalInfo);
-  }
-
-  private void EditDateBookmarksCount_ValueChanged(object sender, EventArgs e)
-  {
-    if ( !IsReady ) return;
-    Settings.DateBookmarksCount = (int)EditDateBookmarksCount.Value;
-    Program.DateBookmarks.Resize(Settings.DateBookmarksCount);
-    DatesDiffCalculatorForm.Instance.LoadMenuBookmarks(this);
+    DisplayManager.DoubleBufferingEnabled = Settings.WindowsDoubleBufferingEnabled;
   }
 
   private void EditVolume_ValueChanged(object sender, EventArgs e)
@@ -353,7 +346,7 @@ sealed partial class PreferencesForm : Form
 
   private void PredefinedYearsItem_Click(object sender, EventArgs e)
   {
-    var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag ).OriginalValue;
+    var value = ( (YearsIntervalItem)( sender as ToolStripMenuItem )?.Tag )?.OriginalValue ?? -1;
     EditAutoGenerateYearsInterval.Text = value.ToString();
   }
 
@@ -932,15 +925,15 @@ sealed partial class PreferencesForm : Form
       EditCustomWebSearch.Text = (string)Settings.Properties[nameof(Settings.CustomWebSearch)].DefaultValue;
   }
 
+  private void SelectWeatherOnlineAccuWeatherDotCom_CheckedChanged(object sender, EventArgs e)
+  {
+    Settings.WeatherOnlineProvider = WeatherProvider.AccuWeatherDotCom;
+    EditWeatherOnlineUseDay.Enabled = false;
+  }
+
   private void SelectWeatherOnlineMeteoblueDotCom_CheckedChanged(object sender, EventArgs e)
   {
     Settings.WeatherOnlineProvider = WeatherProvider.MeteoblueDotCom;
-    EditWeatherOnlineUseDay.Enabled = true;
-  }
-
-  private void SelectWeatherOnlineWeatherDotCom_CheckedChanged(object sender, EventArgs e)
-  {
-    Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
     EditWeatherOnlineUseDay.Enabled = true;
   }
 
@@ -948,6 +941,12 @@ sealed partial class PreferencesForm : Form
   {
     Settings.WeatherOnlineProvider = WeatherProvider.MicrosoftNetworkDotCom;
     EditWeatherOnlineUseDay.Enabled = false;
+  }
+
+  private void SelectWeatherOnlineWeatherDotCom_CheckedChanged(object sender, EventArgs e)
+  {
+    Settings.WeatherOnlineProvider = WeatherProvider.WeatherDotCom;
+    EditWeatherOnlineUseDay.Enabled = true;
   }
 
   private void EditWeatherOnlineUseDay_CheckedChanged(object sender, EventArgs e)
@@ -1054,6 +1053,20 @@ sealed partial class PreferencesForm : Form
     MainForm.Instance.ActionOnlineWeather.Enabled = enabled;
     MainForm.Instance.SeparatorMenuWeather.Enabled = enabled;
     PanelWeatherOnline.Enabled = enabled;
+  }
+
+  #endregion
+
+  #region Bookmarks
+
+  private void ActionResetBookmarksDefault_Click(object sender, EventArgs e)
+  {
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToResetParameter.GetLang()) )
+    {
+      EditDateBookmarkDefaultTextColor.BackColor = SystemColors.ControlText;
+      EditBookmarkMemoPrefix.Text = "- ";
+      EditBookmarkMemoSuffix.Text = "";
+    }
   }
 
   #endregion
