@@ -1,4 +1,4 @@
-﻿/// <license>
+/// <license>
 /// This file is part of Ordisoftware Core Library.
 /// Copyright 2004-2023 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
@@ -39,8 +39,8 @@ static public partial class SystemManager
     request.Timeout = WebClientEx.DefaultTimeOutSeconds * 1000;
     using ( var response = request.GetResponse() ) { }
     point.CloseConnectionGroup(id);
-    if ( certificate["Issuer"] != point.Certificate.Issuer
-      || certificate["Subject"] != point.Certificate.Subject
+    if ( /*certificate["Issuer"] != point.Certificate.Issuer
+      ||*/ certificate["Subject"] != point.Certificate.Subject
       /*|| certificate["Serial"] != point.Certificate.GetSerialNumberString()
       || certificate["PublicKey"] != point.Certificate.GetPublicKeyString()*/ )
     {
