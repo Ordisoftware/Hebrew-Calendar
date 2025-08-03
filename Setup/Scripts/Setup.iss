@@ -23,8 +23,8 @@ InternalCompressLevel=normal
 
 PrivilegesRequired=admin
 ;PrivilegesRequiredOverridesAllowed=commandline dialog
-ArchitecturesAllowed=x86 x64 ia64 arm64
-ArchitecturesInstallIn64BitMode=x64 ia64 arm64
+ArchitecturesAllowed=x86compatible x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 
 WizardStyle=Modern
 DisableStartupPrompt=false
