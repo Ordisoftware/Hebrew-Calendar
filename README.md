@@ -427,6 +427,15 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 - Update SSL certificate data for the web update checker.
 
+#### 2025.08.03 - Version 10.4.2
+
+- Fix SSL certificate data for the web update checker.
+- Update and fix web links and providers.
+
+#### 2024.10.05 - Version 10.4.1
+
+- Fix SSL certificate data for the web update checker.
+
 #### 2023.04.05 - Version 10.4
 
 - Fix celebration day context menu for show verses item.
