@@ -11,7 +11,7 @@
 ; --------------------------------------------------------------------------------------------------
 
 Name = (EN) StudyBible.org
-URL = https://studybible.info/strongs/H%CONCORDANCE%.html
+URL = https://studybible.info/strongs/H%CONCORDANCE%
 
 Name = (EN) BibleHub.com
 URL = https://biblehub.com/hebrew/%CONCORDANCE%.htm
