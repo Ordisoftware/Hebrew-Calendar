@@ -1172,7 +1172,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AASharp">
-      <Version>2.12.0</Version>
+      <Version>[2.12.0, 2.12.0]</Version>
     </PackageReference>
     <PackageReference Include="CommandLineParser">
       <Version>2.9.1</Version>
@@ -1204,7 +1204,7 @@
       <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.3</Version>
+      <Version>13.0.4</Version>
     </PackageReference>
     <PackageReference Include="Ookii.Dialogs.WinForms">
       <Version>4.0.0</Version>
@@ -1216,7 +1216,7 @@
       <Version>7.0.0</Version>
     </PackageReference>
     <PackageReference Include="Serilog.Sinks.WinForms">
-      <Version>2.4.3</Version>
+      <Version>[2.4.3, 2.4.3]</Version>
     </PackageReference>
     <PackageReference Include="SmartAnalyzers.MultithreadingAnalyzer">
       <Version>1.1.31</Version>
