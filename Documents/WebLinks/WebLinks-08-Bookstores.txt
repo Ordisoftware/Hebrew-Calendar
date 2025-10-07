@@ -78,5 +78,13 @@ URL = https://silverstore.fr
 
 -
 
+Name = (FR) Tzivot HaChem Boutique
+URL = https://store.tsivothachem.fr/
+
+Name = (EN) Hachai Publishing
+URL = https://www.tzivoshashem.org
+
+-
+
 Name = (FR) Editions Lahy
 URL = http://editions-lahy.e-monsite.com
