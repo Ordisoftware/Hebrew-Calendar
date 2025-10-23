@@ -1252,6 +1252,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.core">
+      <Version>3.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl">
+      <Version>3.0.2</Version>
+    </PackageReference>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
       <Version>6.1.2</Version>
     </PackageReference>
