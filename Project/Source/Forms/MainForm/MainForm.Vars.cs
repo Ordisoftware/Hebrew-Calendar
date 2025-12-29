@@ -127,7 +127,6 @@ public partial class MainForm
       LastShabatReminded = null;
       ShabatForm?.Close();
       LockSessionForm.Instance?.Close();
-      CurrentDay = null;
       foreach ( var form in RemindCelebrationForms.ToList() ) form.Close();
       foreach ( var form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
       foreach ( var value in TorahCelebrationSettings.ManagedEvents )
