@@ -29,6 +29,9 @@ URL = http://librairiegallia.fr
 
 -
 
+Name = (FR) Editions Joy Galam
+URL = https://www.joygalam.com/boutique
+
 Name = (FR) Editions La Délivrance
 URL = http://www.ladelivrance.org
 
