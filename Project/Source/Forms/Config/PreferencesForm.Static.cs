@@ -164,10 +164,10 @@ partial class PreferencesForm
     var filter4 = new Regex("(^NumPad[0-D9]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
     AvailableHotKeyKeys =
     [
-      .. Enums.GetValues<Keys>().Where(x => filter1.Match(x.ToString()).Success),
-      .. Enums.GetValues<Keys>().Where(x => filter2.Match(x.ToString()).Success),
-      .. Enums.GetValues<Keys>().Where(x => filter3.Match(x.ToString()).Success),
-      .. Enums.GetValues<Keys>().Where(x => filter4.Match(x.ToString()).Success),
+      .. Enums.GetValues<Keys>().Where(x => filter1.IsMatch(x.ToString())),
+      .. Enums.GetValues<Keys>().Where(x => filter2.IsMatch(x.ToString())),
+      .. Enums.GetValues<Keys>().Where(x => filter3.IsMatch(x.ToString())),
+      .. Enums.GetValues<Keys>().Where(x => filter4.IsMatch(x.ToString())),
     ];
   }
 

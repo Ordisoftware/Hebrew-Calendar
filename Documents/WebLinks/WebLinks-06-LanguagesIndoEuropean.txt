@@ -90,3 +90,11 @@ URL = https://en.wikipedia.org/wiki/Younger_Futhark
 
 Name = (FR) Runes scandinaves @ fr.wikipedia.org
 URL = https://fr.wikipedia.org/wiki/Runes_scandinaves
+
+-
+
+Name = (EN) Old Turkic Orkhon script @ en.wikipedia.org
+URL = https://en.wikipedia.org/wiki/Old_Turkic_script
+
+Name = (FR) Alphabet de l'Orkhon @ fr.wikipedia.org
+URL = https://fr.wikipedia.org/wiki/Alphabet_de_l%27Orkhon

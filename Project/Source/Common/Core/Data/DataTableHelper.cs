@@ -36,6 +36,7 @@ static public class DataTableHelper
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
   [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS004:Implement Equals() and GetHashcode() methods for a type used in a collection.", Justification = "Analysis error")]
   static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
   {
     string extension = Path.GetExtension(filePath);

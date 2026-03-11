@@ -29,7 +29,7 @@ URL = http://he.israel-music.com/
 
 -
 
-Name = (NONE) Kazak music YouTube Playlist
+Name = (NONE) Orkhon Karlouk Kipchak Music YouTube Playlist
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-C62nbeN6M5u8dsoOsS8mCw
 
 -
@@ -54,5 +54,5 @@ URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-Ch3woxzwZJLLNOW8PITKpF
 
 -
 
-Name = (NONE) Ordisoftware Experimental Techno Tracks and compositions
+Name = (NONE) Ordisoftware Experimental Techno Tracks and Compositions
 URL = https://www.youtube.com/playlist?list=PLSn7yTHwEx-AM0eS58bdkRw1_QkQ9yu3N
