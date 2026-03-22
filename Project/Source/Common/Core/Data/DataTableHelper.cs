@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Core Library.
-/// Copyright 2004-2025 Olivier Rogier.
+/// Copyright 2004-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -36,6 +36,7 @@ static public class DataTableHelper
   [SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP017:Prefer using", Justification = "N/A (switch)")]
   [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
+  [SuppressMessage("Correctness", "SS004:Implement Equals() and GetHashcode() methods for a type used in a collection.", Justification = "Analysis error")]
   static public void Export(this DataTable table, string filePath, NullSafeOfStringDictionary<DataExportTarget> targets)
   {
     string extension = Path.GetExtension(filePath);

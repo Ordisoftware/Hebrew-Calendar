@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2025 Olivier Rogier.
+/// Copyright 2016-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -129,7 +129,7 @@ partial class ApplicationDatabase
       }
       else
       if ( CalendarDates.Instance[day.Date.AddDays(1)].Ephemeris.Moonrise is null )
-        if ( ephemeris.Moonrise == new TimeSpan(0) )
+        if ( ephemeris.Moonrise == TimeSpan.FromSeconds(0) )
         {
           DelayMoonrise = ephemeris.Moonrise;
           ephemeris.Moonrise = null;

@@ -37,7 +37,6 @@ public class MidnightTimer : IDisposable
   /// </summary>
   public event TimeReachedEventHandler TimeReached;
 
-
   /// <summary>
   /// Creates an instance of the Midnight Timer
   /// </summary>
@@ -57,8 +56,14 @@ public class MidnightTimer : IDisposable
 
   protected virtual void Dispose(bool disposing)
   {
-    if ( !DisposedValue && disposing ) Stop();
-    DisposedValue = true;
+    // ORDISOFTWARE MODIF BEGIN
+    if ( !DisposedValue && disposing )
+    {
+      Stop();
+      Timer.Dispose();
+      DisposedValue = true;
+    }
+    // ORDISOFTWARE MODIF END
   }
 
   public void Dispose()

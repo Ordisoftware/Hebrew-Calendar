@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
 // https://social.msdn.microsoft.com/Forums/windows/en-US/6b6f71af-902f-440d-8b33-8d57403300eb/add-check-box-to-binding-navigator-control?forum=winforms
+[SuppressMessage("Performance", "SS066:Disposable Field Is Not Disposed", Justification = "N/A")]
 [DefaultBindingProperty("CheckState")]
 [DefaultEvent("CheckedChanged")]
 [DefaultProperty("Checked")]

@@ -6,7 +6,7 @@
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ordisoftware")]
 [assembly: AssemblyProduct("www.ordisoftware.com/projects/hebrew-calendar")]
-[assembly: AssemblyCopyright("Copyright 2016-2025 Olivier Rogier")]
+[assembly: AssemblyCopyright("Copyright 2016-2026 Olivier Rogier")]
 [assembly: AssemblyTrademark("www.ordisoftware.com")]
 [assembly: AssemblyCulture("")]
 

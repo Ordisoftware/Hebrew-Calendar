@@ -44,6 +44,7 @@ namespace CodeProjectCalendar.NET
   [SuppressMessage("Refactoring", "GCop616:Reverse your IF criteria and use 'continue'. That will eliminate the need for a big IF block and make the code more readable.", Justification = "<En attente>")]
   [SuppressMessage("Naming", "GCop202:Don’t end the name of {0} with the same name as the {1}", Justification = "<En attente>")]
   [SuppressMessage("Naming", "VSSpell001:Spell Check", Justification = "N/A")]
+  [SuppressMessage("Performance", "SS066:Disposable Field Is Not Disposed", Justification = "N/A")]
   public class Calendar : UserControl
   {
     private DateTime _calendarDate;

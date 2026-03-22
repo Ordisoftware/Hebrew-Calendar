@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2025 Olivier Rogier.
+/// Copyright 2016-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -164,10 +164,10 @@ partial class PreferencesForm
     var filter4 = new Regex("(^NumPad[0-D9]$)", RegexOptions.ExplicitCapture, TimeSpan.FromSeconds(1));
     AvailableHotKeyKeys =
     [
-      .. Enums.GetValues<Keys>().Where(x => filter1.Match(x.ToString()).Success),
-      .. Enums.GetValues<Keys>().Where(x => filter2.Match(x.ToString()).Success),
-      .. Enums.GetValues<Keys>().Where(x => filter3.Match(x.ToString()).Success),
-      .. Enums.GetValues<Keys>().Where(x => filter4.Match(x.ToString()).Success),
+      .. Enums.GetValues<Keys>().Where(x => filter1.IsMatch(x.ToString())),
+      .. Enums.GetValues<Keys>().Where(x => filter2.IsMatch(x.ToString())),
+      .. Enums.GetValues<Keys>().Where(x => filter3.IsMatch(x.ToString())),
+      .. Enums.GetValues<Keys>().Where(x => filter4.IsMatch(x.ToString())),
     ];
   }
 

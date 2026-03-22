@@ -29,6 +29,9 @@ URL = http://librairiegallia.fr
 
 -
 
+Name = (FR) Editions Joy Galam
+URL = https://www.joygalam.com/boutique
+
 Name = (FR) Editions La Délivrance
 URL = http://www.ladelivrance.org
 
@@ -75,6 +78,14 @@ URL = https://www.librairiedutemple.fr
 
 Name = (FR) Silver Store
 URL = https://silverstore.fr
+
+-
+
+Name = (FR) Tzivot HaChem Boutique
+URL = https://store.tsivothachem.fr/
+
+Name = (EN) Hachai Publishing
+URL = https://www.tzivoshashem.org
 
 -
 

@@ -1,6 +1,6 @@
 ﻿/// <license>
 /// This file is part of Ordisoftware Hebrew Calendar.
-/// Copyright 2016-2025 Olivier Rogier.
+/// Copyright 2016-2026 Olivier Rogier.
 /// See www.ordisoftware.com for more information.
 /// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 /// If a copy of the MPL was not distributed with this file, You can obtain one at
@@ -127,7 +127,6 @@ public partial class MainForm
       LastShabatReminded = null;
       ShabatForm?.Close();
       LockSessionForm.Instance?.Close();
-      CurrentDay = null;
       foreach ( var form in RemindCelebrationForms.ToList() ) form.Close();
       foreach ( var form in RemindCelebrationDayForms.Values.ToList() ) form.Close();
       foreach ( var value in TorahCelebrationSettings.ManagedEvents )
