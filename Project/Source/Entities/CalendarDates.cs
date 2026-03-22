@@ -55,6 +55,7 @@ sealed class CalendarDates : IReadOnlyDictionary<DateTime, CalendarDateItem>
     Items.Clear();
   }
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   public CalendarDateItem this[DateTime key]
   {
     get

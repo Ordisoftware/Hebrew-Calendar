@@ -328,6 +328,7 @@ static class SettingsHelper
   /// <summary>
   /// Sets reminder boxes location.
   /// </summary>
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   static internal void InitializeReminderBoxDesktopLocation(this Settings settings)
   {
     if ( settings.ReminderBoxDesktopLocation == ControlLocation.Fixed )

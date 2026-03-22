@@ -42,6 +42,7 @@ namespace Infralution.Localization
   [SuppressMessage("Naming", "GCop209:Use PascalCasing for {0} names", Justification = "<En attente>")]
   [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "N/A")]
+  [SuppressMessage("Performance", "SS066:Disposable Field Is Not Disposed", Justification = "N/A")]
   public class CultureManager : Component
   {
 

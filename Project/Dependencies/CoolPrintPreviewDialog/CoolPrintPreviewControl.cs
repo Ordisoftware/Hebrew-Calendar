@@ -56,6 +56,7 @@ namespace CoolPrintPreview
   [SuppressMessage("Refactoring", "GCop638:Shorten this method by defining it as expression-bodied.", Justification = "<En attente>")]
   [SuppressMessage("Correctness", "SS019:Switch should have default label.", Justification = "<En attente>")]
   [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "<En attente>")]
+  [SuppressMessage("Performance", "SS066:Disposable Field Is Not Disposed", Justification = "N/A")]
   internal class CoolPrintPreviewControl : UserControl
   {
     //-------------------------------------------------------------

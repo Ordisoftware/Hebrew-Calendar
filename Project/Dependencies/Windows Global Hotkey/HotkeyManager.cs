@@ -6,6 +6,7 @@ using System.Threading;
 namespace Base.Hotkeys
 {
   [SuppressMessage("Design", "GCop132:Since the type is inferred, use 'var' instead", Justification = "<En attente>")]
+  [SuppressMessage("Performance", "SS066:Disposable Field Is Not Disposed", Justification = "N/A")]
   public class HotkeyManager : IDisposable
   {
 

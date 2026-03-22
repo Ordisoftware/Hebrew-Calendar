@@ -180,6 +180,7 @@ static class TorahCelebrationSettings
         TorahCelebrationDay.Chavouot1
       ];
 
+  [SuppressMessage("Correctness", "SS018:Add cases for missing enum member.", Justification = "N/A")]
   static public TorahCelebration Convert(TorahCelebrationDay torahevent) => torahevent switch
   {
     TorahCelebrationDay.NewYearD10 => TorahCelebration.Pessah,
