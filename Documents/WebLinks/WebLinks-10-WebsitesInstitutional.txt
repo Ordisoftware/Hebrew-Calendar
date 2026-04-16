@@ -21,6 +21,9 @@ URL = https://www.vaadharabanim.org
 Name = (EN) Vaad haRabanim	
 URL = https://www.vaadharabanim.com
 
+Name = (EN) Voice of Rabbis
+URL = https://www.voiceofrabbis.org
+
 -
 
 Name = (FR/EN) Conference of European Rabbis

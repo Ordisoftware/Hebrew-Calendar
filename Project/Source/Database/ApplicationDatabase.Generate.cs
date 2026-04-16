@@ -129,7 +129,7 @@ partial class ApplicationDatabase
       }
       else
       if ( CalendarDates.Instance[day.Date.AddDays(1)].Ephemeris.Moonrise is null )
-        if ( ephemeris.Moonrise == TimeSpan.FromSeconds(0) )
+        if ( ephemeris.Moonrise == TimeSpan.Zero )
         {
           DelayMoonrise = ephemeris.Moonrise;
           ephemeris.Moonrise = null;

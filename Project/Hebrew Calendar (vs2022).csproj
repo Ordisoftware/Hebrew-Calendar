@@ -1198,7 +1198,7 @@
       <Version>1.3.5</Version>
     </PackageReference>
     <PackageReference Include="Meziantou.Analyzer">
-      <Version>3.0.25</Version>
+      <Version>3.0.47</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
