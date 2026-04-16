@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-02 </created>
-/// <edited> 2023-07 </edited>
+/// <edited> 2026-04 </edited>
 namespace Ordisoftware.Hebrew;
 
 using Program = Calendar.Program;
@@ -221,7 +221,7 @@ sealed partial class ParashotForm : Form
 
   private void ActionSaveAsDefaults_Click(object sender, EventArgs e)
   {
-    if ( DisplayManager.QueryYesNo("Overwrite default files?") )
+    if ( DisplayManager.QueryYesNo(SysTranslations.AskToOverwriteDefaultFiles.GetLang()) )
     {
       var listTranslations = new NullSafeOfStringDictionary<string>();
       var listLettriqs = new NullSafeOfStringDictionary<string>();

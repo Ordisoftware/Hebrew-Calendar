@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-01 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2026-04 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 partial class MainForm
@@ -120,6 +120,7 @@ partial class MainForm
     //
     void ShowNewParashah()
     {
+      if ( !TimerReminder.Enabled ) return;
       bool doshow = false;
       if ( Settings.CalendarShowParashah && Settings.WeeklyParashahShowAtStartup && !IsSpecialDay && !WeeklyParashahShownAtStartup )
         doshow = true;
