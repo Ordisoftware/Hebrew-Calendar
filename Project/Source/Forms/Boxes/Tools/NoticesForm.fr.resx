@@ -132,4 +132,25 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Notices du calendrier</value>
   </data>
+  <data name="TabPageFoodMain.Text" xml:space="preserve">
+    <value>Principes</value>
+  </data>
+  <data name="TabPageFoodShavuhotDiet.Text" xml:space="preserve">
+    <value>Diète de Shavouh'ot</value>
+  </data>
+  <data name="TabPageFoodShavuhotLamb.Text" xml:space="preserve">
+    <value>Agneau de Shavouh'ot</value>
+  </data>
+  <data name="TabPageFoodShavuotEnd.Text" xml:space="preserve">
+    <value>Fin de Shavouh'ot</value>
+  </data>
+  <data name="TabPageFoodSukot.Text" xml:space="preserve">
+    <value>Soukot</value>
+  </data>
+  <data name="TabPageFoodKipur.Text" xml:space="preserve">
+    <value>Yom HaKipourim</value>
+  </data>
+  <data name="TabPageFoodTeruhah.Text" xml:space="preserve">
+    <value>Yom Terouh'ah</value>
+  </data>
 </root>

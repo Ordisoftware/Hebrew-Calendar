@@ -223,7 +223,7 @@ static partial class AppTranslations
 
                     Israël is the conceptual worldwide land of the righteous benevolent whose body+spirit, and therefore DNA, is to some notable extent free from ignorance and evil. Shim'hat Torah means "Joy [bestowed by the] Torah" and a Lettriq of Shim'hat is "Sharing of the Service which Sustains the Matter": it is therefore the joy resulting from the beneficial help of the Torah and those which follow the laws of the country where one lives and the Doctrine of YHVH which have for one and only fundamental purpose to protect the life and the goods of the people without harming even the wicked and the criminals.
 
-                    The number of Parashot is 54 that is to say נד which is the Power of the Student, and that root means Passing from the world of malevolence to that of benevolence.
+                    The number of Parashot is 54 that is to say נד which is the Power of the Student, and that root means "Passing from the world of malevolence to that of benevolence".
 
                     The generation of Parashot relating to Shabatot with the omer of the moon or the sun without the Sod HaH'ibur is not guaranteed to be traditional especially as the application generates dates, although based on the lunar cycle, which can sometimes vary a little from official calendars, especially if the moon omer is used and even more with the personal Shabat.
                     """,
@@ -235,7 +235,7 @@ static partial class AppTranslations
 
                     Israël est le pays conceptuel mondial des justes bienveillants dont le corps+esprit, et donc l'ADN, est dans une certaine mesure notable libéré de l'ignorance et du mal. Shim'hat Torah signifie "Joie [prodiguée par la] Torah" et une lettrique de Shim'hat est "Partage du Service qui Soutien la Matière" : c'est donc la joie résultant de l'aide bénéfique de la Torah et de ceux qui suivent les lois du pays où l'on vit et de la Doctrine de YHVH qui ont pour seul et unique but fondamental de protéger la vie et les biens des personnes sans nuire même aux méchants et aux criminels.
 
-                    Le nombre de Parashot est 54 soit נד qui est le Pouvoir de l'Étudiant, et cette racine signifie Passer du monde de la malveillance à celui de la bienveillance.
+                    Le nombre de Parashot est 54 soit נד qui est le Pouvoir de l'Étudiant, et cette racine signifie "Passer du monde de la malveillance à celui de la bienveillance".
 
                     La génération des Parashot relatives aux Shabatot avec le omer de la lune ou du soleil sans le Sod HaH'ibour n'est pas garantie pour être traditionnelle d'autant que l'application génère des dates, quoi que basé sur le cycle lunaire, pouvant parfois un peu varier des calendriers officiels, surtout si on utilise le omer de la lune et encore plus avec le Shabat personnel.
                     """,

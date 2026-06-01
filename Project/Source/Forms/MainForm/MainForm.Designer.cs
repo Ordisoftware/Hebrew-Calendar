@@ -31,7 +31,7 @@
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
       this.SaveReportDialog = new System.Windows.Forms.SaveFileDialog();
       this.PanelMainOuter1 = new System.Windows.Forms.Panel();
       this.PanelMainOuter2 = new System.Windows.Forms.Panel();
@@ -241,11 +241,11 @@
       this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayDatesDiffToToday = new System.Windows.Forms.ToolStripMenuItem();
       this.ContextMenuDayDatesDiffToSelected = new System.Windows.Forms.ToolStripMenuItem();
+      this.ContextMenuDayDatesDiffToActive = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
       this.ContextMenuDayNavigation = new System.Windows.Forms.ToolStripMenuItem();
       this.ImageListRisesAndSets = new System.Windows.Forms.ImageList(this.components);
       this.MenuBookmarks = new System.Windows.Forms.ContextMenuStrip(this.components);
-      this.ContextMenuDayDatesDiffToActive = new System.Windows.Forms.ToolStripMenuItem();
       this.PanelMainOuter1.SuspendLayout();
       this.PanelMainOuter2.SuspendLayout();
       this.PanelMainInner1.SuspendLayout();
@@ -397,14 +397,14 @@
       this.DataGridView.AllowUserToDeleteRows = false;
       this.DataGridView.AllowUserToResizeRows = false;
       this.DataGridView.AutoGenerateColumns = false;
-      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-      dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GridColumnDate,
@@ -1814,6 +1814,12 @@
       this.ContextMenuDayDatesDiffToSelected.Name = "ContextMenuDayDatesDiffToSelected";
       this.ContextMenuDayDatesDiffToSelected.Click += new System.EventHandler(this.ContextMenuDayDatesDiffToSelected_Click);
       // 
+      // ContextMenuDayDatesDiffToActive
+      // 
+      resources.ApplyResources(this.ContextMenuDayDatesDiffToActive, "ContextMenuDayDatesDiffToActive");
+      this.ContextMenuDayDatesDiffToActive.Name = "ContextMenuDayDatesDiffToActive";
+      this.ContextMenuDayDatesDiffToActive.Click += new System.EventHandler(this.ContextMenuDayDatesDiffToActive_Click);
+      // 
       // toolStripSeparator17
       // 
       this.toolStripSeparator17.Name = "toolStripSeparator17";
@@ -1839,12 +1845,6 @@
       this.MenuBookmarks.Name = "MenuBookmarks";
       this.MenuBookmarks.ShowImageMargin = false;
       resources.ApplyResources(this.MenuBookmarks, "MenuBookmarks");
-      // 
-      // ContextMenuDayDatesDiffToActive
-      // 
-      resources.ApplyResources(this.ContextMenuDayDatesDiffToActive, "ContextMenuDayDatesDiffToActive");
-      this.ContextMenuDayDatesDiffToActive.Name = "ContextMenuDayDatesDiffToActive";
-      this.ContextMenuDayDatesDiffToActive.Click += new System.EventHandler(this.ContextMenuDayDatesDiffToActive_Click);
       // 
       // MainForm
       // 
