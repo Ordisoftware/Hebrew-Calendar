@@ -67,6 +67,9 @@ URL = https://www.tsarfat.com
 Name = (EN) My Jewish Learning
 URL = https://www.myjewishlearning.com
 
+Name = (EN) Orthodox Union Torah
+URL = http://www.outorah.org
+
 Name = (EN) TheTorah.com
 URL = https://www.thetorah.com
 
@@ -78,6 +81,9 @@ URL = https://www.torahanytime.com
 
 Name = (EN) Torah Café
 URL = https://www.torahcafe.com
+
+Name = (EN) Torah Jews
+URL = https://www.truetorahjews.org
 
 Name = (EN) Torah Jews
 URL = https://www.truetorahjews.org

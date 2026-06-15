@@ -321,6 +321,7 @@ namespace Keith_Burnett_moonr2cs
 
     [SuppressMessage("Minor Code Smell", "S1643:Strings should not be concatenated using '+' in a loop", Justification = "<En attente>")]
     [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+    [SuppressMessage("Design", "S3776:Method is too long", Justification = "N/A")]
     string Find_sun_and_twi_events_for_date(double mjd, double tz, double glong, double glat)
     {
       builderSun.Clear();
@@ -432,6 +433,7 @@ namespace Keith_Burnett_moonr2cs
       return builderSun.ToString();
     }
 
+    [SuppressMessage("Design", "S3776:Method is too long", Justification = "N/A")]
     string Find_moonrise_set(double mjd, double tz, double glong, double glat)
     {
       builderMoon.Clear();

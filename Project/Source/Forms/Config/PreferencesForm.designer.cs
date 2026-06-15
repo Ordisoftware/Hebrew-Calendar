@@ -170,7 +170,7 @@
       this.EditAskRegenerateIfIntervalGreater = new System.Windows.Forms.CheckBox();
       this.EditAutoRegenerate = new System.Windows.Forms.CheckBox();
       this.ActionAutoGenerateHelp = new System.Windows.Forms.Button();
-      this.LabelChangeOmerInfo = new System.Windows.Forms.LinkLabel();
+      this.LabelChangeOmerInfo = new System.Windows.Forms.Label();
       this.EditGPSLatitude = new Ordisoftware.Core.TextBoxEx();
       this.EditTimeZone = new Ordisoftware.Core.TextBoxEx();
       this.EditGPSLongitude = new Ordisoftware.Core.TextBoxEx();
@@ -1625,13 +1625,10 @@
       // 
       // LabelChangeOmerInfo
       // 
-      this.LabelChangeOmerInfo.ActiveLinkColor = System.Drawing.Color.Navy;
+      this.LabelChangeOmerInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
       resources.ApplyResources(this.LabelChangeOmerInfo, "LabelChangeOmerInfo");
-      this.LabelChangeOmerInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-      this.LabelChangeOmerInfo.LinkColor = System.Drawing.SystemColors.ControlDarkDark;
       this.LabelChangeOmerInfo.Name = "LabelChangeOmerInfo";
       this.LabelChangeOmerInfo.TabStop = true;
-      this.LabelChangeOmerInfo.VisitedLinkColor = System.Drawing.SystemColors.ControlDarkDark;
       // 
       // EditGPSLatitude
       // 
@@ -4165,7 +4162,7 @@
     private Button ActionSetAllAlignmentsLeft;
     private CheckBox EditEphemerisSignBeforeElseAfter;
     private CheckBox EditMonthViewSeparatorForGregorianDay;
-    private LinkLabel LabelChangeOmerInfo;
+    private Label LabelChangeOmerInfo;
     private LinkLabel ActionSwitchToMonthViewLayoutSettings;
     private LinkLabel ActionSwitchToOmerSettings;
     private CheckBox EditHideLuminarySigns;

@@ -33,7 +33,7 @@ namespace CodeProjectCalendar.NET
       p.StartFigure();
 
       //Top Left Corner
-      if ( ( RectangleCorners.TopLeft & corners ) == RectangleCorners.TopLeft )
+      if ( corners.HasFlag(RectangleCorners.TopLeft) )
       {
         p.AddArc(x, y, r2, r2, 180, 90);
       }
@@ -47,7 +47,7 @@ namespace CodeProjectCalendar.NET
       p.AddLine(xr, y, xwr, y);
 
       //Top Right Corner
-      if ( ( RectangleCorners.TopRight & corners ) == RectangleCorners.TopRight )
+      if ( corners.HasFlag(RectangleCorners.TopRight) )
       {
         p.AddArc(xwr2, y, r2, r2, 270, 90);
       }
@@ -61,7 +61,7 @@ namespace CodeProjectCalendar.NET
       p.AddLine(xw, yr, xw, yhr);
 
       //Bottom Right Corner
-      if ( ( RectangleCorners.BottomRight & corners ) == RectangleCorners.BottomRight )
+      if ( corners.HasFlag(RectangleCorners.BottomRight) )
       {
         p.AddArc(xwr2, yhr2, r2, r2, 0, 90);
       }
@@ -75,7 +75,7 @@ namespace CodeProjectCalendar.NET
       p.AddLine(xwr, yh, xr, yh);
 
       //Bottom Left Corner
-      if ( ( RectangleCorners.BottomLeft & corners ) == RectangleCorners.BottomLeft )
+      if ( corners.HasFlag(RectangleCorners.BottomLeft) )
       {
         p.AddArc(x, yhr2, r2, r2, 90, 90);
       }
