@@ -17,7 +17,7 @@ namespace Ordisoftware.Core;
 /// <summary>
 /// Provides object helper.
 /// </summary>
-static public partial class ObjectHelper
+static public class ObjectHelper
 {
 
   /// <summary>
