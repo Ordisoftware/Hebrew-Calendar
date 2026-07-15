@@ -81,6 +81,7 @@ internal static class NativeMethods
     throw new Win32Exception(Marshal.GetLastWin32Error());
   }
 
+  /* Not used
   internal enum SID_NAME_USE
   {
     SidTypeUser = 1,
@@ -92,7 +93,7 @@ internal static class NativeMethods
     SidTypeInvalid,
     SidTypeUnknown,
     SidTypeComputer,
-  }
+  }*/
 
   [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
   internal struct TOKEN_ELEVATION

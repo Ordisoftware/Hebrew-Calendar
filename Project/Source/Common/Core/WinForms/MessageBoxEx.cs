@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2020-08 </created>
-/// <edited> 2022-06 </edited>
+/// <edited> 2026-07 </edited>
 namespace Ordisoftware.Core;
 
 public sealed partial class MessageBoxEx : Form
@@ -92,7 +92,8 @@ public sealed partial class MessageBoxEx : Form
                       int width = DefaultWidthSmall,
                       bool justify = DefaultJustifyEnabled,
                       bool sound = true,
-                      bool showInTaskBar = false)
+                      bool showInTaskBar = false,
+                      bool topMost = false)
   : this()
   {
     Text = title;
@@ -133,6 +134,7 @@ public sealed partial class MessageBoxEx : Form
     IconStyle = icon;
     DoShownSound = sound;
     ShowInTaskbar = showInTaskBar;
+    TopMost = topMost;
   }
 
   public MessageBoxEx(TranslationsDictionary title,
@@ -142,8 +144,9 @@ public sealed partial class MessageBoxEx : Form
                       int width = DefaultWidthSmall,
                       bool justify = DefaultJustifyEnabled,
                       bool sound = true,
-                      bool showInTaskBar = false)
-  : this(title.GetLang(), text.GetLang(), buttons, icon, width, justify, sound, showInTaskBar)
+                      bool showInTaskBar = false,
+                      bool topMost = false)
+  : this(title.GetLang(), text.GetLang(), buttons, icon, width, justify, sound, showInTaskBar, topMost)
   {
     LocalizedTitle = title;
     LocalizedText = text;

@@ -93,6 +93,7 @@ partial class MainForm
   }
 
   [SuppressMessage("Design", "MA0051:Method is too long", Justification = "N/A")]
+  [SuppressMessage("Design", "S3776:Method is too long", Justification = "N/A")]
   [SuppressMessage("Performance", "GCop317:This code is repeated {0} times in this method. If its value remains the same during the method execution, store it in a variable. Otherwise define a method (or Func<T> variable) instead of repeating the expression. [{1}]", Justification = "N/A")]
   [SuppressMessage("Performance", "SS058:A string was concatenated in a loop which introduces intermediate allocations. Consider using a StringBuilder or pre-allocated string instead.", Justification = "N/A")]
   public void FillMonths()
@@ -217,7 +218,7 @@ partial class MainForm
           Action addSun = bothTimes ? addSunWithMoon : showSun ? addSunAlone : null;
           Action addMoon = bothTimes ? addMoonWithSun : showMoon ? addMoonAlone : null;
           addSectionsMethods.Clear();
-          addSectionsMethods.Add(Settings.MonthViewLayoutLunarDatePosition, addLunarDateSingleLine);
+          addSectionsMethods.Add(Settings.MonthViewLayoutLunarDatePosition, addLunarDate);
           addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisSunPosition, addSun);
           addSectionsMethods.Add(Settings.MonthViewLayoutEphemerisMoonPosition, addMoon);
           addSectionsMethods.Add(Settings.MonthViewLayoutSeasonChangePosition, addSeason);
@@ -230,9 +231,9 @@ partial class MainForm
           for ( int index = 0; index < addSectionsMethods.Count; index++ )
             addSectionsMethods[index]?.Invoke();
           //
-          // Date on single line
+          // Lunar Date
           //
-          void addLunarDateSingleLine()
+          void addLunarDate()
           {
             if ( !showLunarDate ) return;
             if ( dateOnSingleLine )
@@ -241,6 +242,12 @@ partial class MainForm
               {
                 var color = row.IsNewMoon ? colorTorahEvent : colorEphemeris;
                 addLine(color, row.DayAndMonthFormattedText, CalendarSection.Date, useUnicode, dateInItalic);
+                addSeparator(sepLunarDate);
+              }
+              else
+              if ( row.Moonrise is null )
+              {
+                addLine(colorEphemeris, string.Empty, CalendarSection.Date, useUnicode, dateInItalic);
                 addSeparator(sepLunarDate);
               }
             }
