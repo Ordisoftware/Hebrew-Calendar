@@ -20,6 +20,9 @@ namespace Ordisoftware.Hebrew.Calendar;
 static partial class Program
 {
 
+  private const string SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml";
+  private const string AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
+
   /// <summary>
   /// Process startup method.
   /// </summary>
@@ -32,8 +35,8 @@ static partial class Program
       Application.SetCompatibleTextRenderingDefault(false);
       //
       Globals.ChronoStartingApp.Start();
-      Globals.SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml";
-      Globals.AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
+      Globals.SoftpediaURL = SoftpediaURL;
+      Globals.AlternativeToURL = AlternativeToURL;
       CommonMenusControl.PreviewFunctions = AppTranslations.PreviewFunctions;
       //
       var lang = Settings.LanguageSelected;
