@@ -29,7 +29,7 @@ InternalCompressLevel=normal
 
 PrivilegesRequired=admin
 ;PrivilegesRequiredOverridesAllowed=commandline dialog
-ArchitecturesAllowed=x86compatible x64compatible
+ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 MinVersion=10.0
 
