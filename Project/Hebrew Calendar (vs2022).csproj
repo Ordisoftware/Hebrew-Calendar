@@ -87,6 +87,31 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;USEPARASHOT</DefineConstants>
+    <DocumentationFile>..\Bin\Debug\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
+    <NoWarn>1587, 1591, 0649</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE;USEPARASHOT</DefineConstants>
+    <DocumentationFile>..\Bin\Release\Ordisoftware.Hebrew.Calendar.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>1587, 1591, 0649</NoWarn>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -1228,12 +1253,6 @@
     <PackageReference Include="SmartAnalyzers.MultithreadingAnalyzer">
       <Version>1.1.31</Version>
     </PackageReference>
-    <PackageReference Include="sqlite-net-pcl">
-      <Version>[1.9.172, 1.9.172]</Version>
-    </PackageReference>
-    <PackageReference Include="SQLitePCLRaw.bundle_green">
-      <Version>2.1.11</Version>
-    </PackageReference>
     <PackageReference Include="ErrorProne.NET.CoreAnalyzers">
       <Version>0.1.2</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -1259,11 +1278,17 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="SQLitePCLRaw.core">
-      <Version>3.0.3</Version>
+    <PackageReference Include="SourceGear.sqlite3">
+      <Version>3.53.3</Version>
     </PackageReference>
-    <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl">
-      <Version>3.0.3</Version>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.11.285</Version>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.core">
+      <Version>3.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.provider.e_sqlite3">
+      <Version>3.0.4</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
       <Version>6.1.2</Version>
