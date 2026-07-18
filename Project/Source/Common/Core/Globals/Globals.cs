@@ -115,7 +115,7 @@ static public partial class Globals
   /// <summary>
   /// Indicates programming language version.
   /// </summary>
-  static public readonly string DevLanguageVersion = "11.0";
+  static public readonly string DevLanguageVersion = "12";
 
   /// <summary>
   /// Indicates IDE name and version.

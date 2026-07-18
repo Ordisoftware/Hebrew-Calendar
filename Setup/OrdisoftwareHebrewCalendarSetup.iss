@@ -1,14 +1,12 @@
-#define MyAppVersion "10.4.2"
+#define MyAppVersion "11.0"
+#define MyAppCopyright="Copyright 2016-2026 Olivier Rogier"
+#define MyAppPublisher "Ordisoftware"
 #define MyAppName "Hebrew Calendar"
 #define MyAppNameNoSpace "HebrewCalendar"
 #define MyAppExeName "Ordisoftware.Hebrew.Calendar.exe"
-#define MyAppPublisher "Ordisoftware"
 #define MyAppURL "https://www.ordisoftware.com/projects/hebrew-calendar"
 
 [Setup]
-MinVersion=0,6.1sp1
-LicenseFile=..\Project\Licenses\MPL 2.0.rtf
-AppCopyright=Copyright 2016-2026 Olivier Rogier
 AppId={{EA196B80-7F9C-4E31-8337-61CE9A8B4FA9}
 ;AppMutex=39d572b4-36da-4964-ba85-51bc5909c69b
 #include "Scripts\Setup.iss"

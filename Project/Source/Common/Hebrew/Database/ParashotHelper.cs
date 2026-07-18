@@ -121,10 +121,10 @@ static public class ParashotHelper
     //
     async void openBoard(object sender, EventArgs e)
     {
-      Form form = null;
-      SystemManager.TryCatchManage(() => form = runBoard?.Invoke());
+      Form board = null;
+      SystemManager.TryCatchManage(() => board = runBoard?.Invoke());
       await Task.Delay(1000).ConfigureAwait(false);
-      if ( form is not null ) SystemManager.TryCatchManage(() => form.Popup());
+      if ( board is not null ) SystemManager.TryCatchManage(() => board.Popup());
     }
     //
     void copyToClipboard(object sender, EventArgs e)
