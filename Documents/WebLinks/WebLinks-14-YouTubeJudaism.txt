@@ -46,6 +46,9 @@ URL = https://www.youtube.com/user/laparacha
 Name = (FR) Tsarfat
 URL = https://www.youtube.com/channel/UC1GkeNRskJahD-H5qf0cACw
 
+Name = (EN) Voice of Rabbis
+URL = https://www.youtube.com/@VoiceOfRabbis
+
 -
 
 Name = (FR) Shuva Israël France (diction en français)
