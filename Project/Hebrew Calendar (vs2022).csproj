@@ -1225,7 +1225,7 @@
       <Version>1.3.5</Version>
     </PackageReference>
     <PackageReference Include="Meziantou.Analyzer">
-      <Version>3.0.123</Version>
+      <Version>3.0.189</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -1264,7 +1264,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
-      <Version>10.0.302</Version>
+      <Version>10.0.400</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -1279,16 +1279,16 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="SourceGear.sqlite3">
-      <Version>3.53.3</Version>
+      <Version>3.53.4</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.11.285</Version>
     </PackageReference>
     <PackageReference Include="SQLitePCLRaw.core">
-      <Version>3.0.4</Version>
+      <Version>3.0.5</Version>
     </PackageReference>
     <PackageReference Include="SQLitePCLRaw.provider.e_sqlite3">
-      <Version>3.0.4</Version>
+      <Version>3.0.5</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
       <Version>6.1.2</Version>

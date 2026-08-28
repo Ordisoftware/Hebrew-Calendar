@@ -68,7 +68,7 @@ A libre and open-source software written in C# that allows to generate a calenda
 - Screen 1024x768 or higher
 - Windows 10 21H2 x64 or higher
 - Framework .NET 4.8.1
-- SQLite 3.53.3
+- SQLite 3.53.4
 
 ## Download
 
