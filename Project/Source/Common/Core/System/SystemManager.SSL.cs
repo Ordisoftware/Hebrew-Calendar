@@ -82,7 +82,8 @@ static public partial class SystemManager
   /// </summary>
   static public void LoadSSLCertificate()
   {
-    if ( Globals.IsVisualStudioDesigner ) return;
+    if ( Globals.IsVisualStudioDesigner )
+      return;
     if ( File.Exists(Globals.ApplicationHomeSSLFilePath) )
       AuthorWebsiteSSLCertificate.LoadKeyValuePairs(Globals.ApplicationHomeSSLFilePath, "=>");
     if ( File.Exists(Globals.GitHubSSLFilePath) )
