@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2022-05 </edited>
+/// <edited> 2026-10 </edited>
 namespace Ordisoftware.Core;
 
 using System.Runtime.InteropServices;
@@ -27,13 +27,25 @@ static public partial class SystemManager
 
   static public List<PowerAction> GetAvailablePowerActions()
   {
-    var list = new List<PowerAction> { PowerAction.LockSession };
+    var list = new List<PowerAction>();
+    if ( CanRunScreensaver ) list.Add(PowerAction.None);
+    list.Add(PowerAction.LockSession);
     if ( CanStandby ) list.Add(PowerAction.StandBy);
     if ( CanHibernate ) list.Add(PowerAction.Hibernate);
     list.Add(PowerAction.LogOff);
     list.Add(PowerAction.Restart);
     list.Add(PowerAction.Shutdown);
     return list;
+  }
+
+  static public bool CanRunScreensaver
+  {
+    get
+    {
+      using var key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop");
+      var value = key?.GetValue("SCRNSAVE.EXE") as string;
+      return !string.IsNullOrWhiteSpace(value);
+    }
   }
 
   static public bool CanStandby
@@ -92,6 +104,15 @@ static public partial class SystemManager
     return rectangle.Contains(screen.Bounds);
   }
 
+  static public bool RunSystemScreensaver()
+  {
+    Task.Run(() => NativeMethods.SendMessage(new HandleRef(null, new IntPtr(NativeMethods.HWND_BROADCAST)),
+                                             NativeMethods.WM_SYSCOMMAND,
+                                             new IntPtr(NativeMethods.SC_SCREENSAVE),
+                                             IntPtr.Zero));
+    return true;
+  }
+
   static public bool LockWorkStation()
   {
     return NativeMethods.LockWorkStation();
@@ -133,7 +154,7 @@ static public partial class SystemManager
   {
     return action switch
     {
-      PowerAction.None => true,
+      PowerAction.None => RunSystemScreensaver(),
       PowerAction.LockSession => LockWorkStation(),
       PowerAction.StandBy => StandBy(),
       PowerAction.Hibernate => Hibernate(),

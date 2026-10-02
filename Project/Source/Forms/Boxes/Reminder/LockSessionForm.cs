@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2022-03 </edited>
+/// <edited> 2026-10 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Runtime.InteropServices;
@@ -41,13 +41,16 @@ sealed partial class LockSessionForm : Form
     int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 10;
     if ( width > Width ) Width = width;
     ActionOk.Text = SysTranslations.PowerActionText.GetLang(Program.Settings.LockSessionDefaultAction);
+    ActionScreensaver.Text = SysTranslations.PowerActionText.GetLang(PowerAction.None);
     ActionLock.Text = SysTranslations.PowerActionText.GetLang(PowerAction.LockSession);
     ActionStandby.Text = SysTranslations.PowerActionText.GetLang(PowerAction.StandBy);
     ActionHibernate.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Hibernate);
     ActionShutdown.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Shutdown);
+    ActionLock.Left = ActionScreensaver.Left + ActionScreensaver.Width + 5;
     ActionStandby.Left = ActionLock.Left + ActionLock.Width + 5;
     ActionHibernate.Left = ActionStandby.Left + ActionStandby.Width + 5;
     ActionShutdown.Left = ActionHibernate.Left + ActionHibernate.Width + 5;
+    ActionScreensaver.Enabled = SystemManager.CanRunScreensaver;
     ActionHibernate.Enabled = SystemManager.CanHibernate;
     ActionStandby.Enabled = SystemManager.CanStandby;
     CenterToScreen();
@@ -86,12 +89,21 @@ sealed partial class LockSessionForm : Form
   {
     var actions = new NullSafeDictionary<PowerAction, Delegate>
     {
+      [PowerAction.None] = ActionScreensaver_LinkClicked,
       [PowerAction.LockSession] = ActionLock_LinkClicked,
       [PowerAction.StandBy] = ActionStandby_LinkClicked,
       [PowerAction.Hibernate] = ActionHibernate_LinkClicked,
       [PowerAction.Shutdown] = ActionShutdown_LinkClicked
     };
     actions[Program.Settings.LockSessionDefaultAction]?.DynamicInvoke(null, null);
+  }
+
+  private void ActionScreensaver_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+  {
+    Close();
+    DoMediaPlayingAndVolumeAction();
+    if ( !SystemManager.IsForegroundFullScreenOrScreensaverRunning && !SystemManager.RunSystemScreensaver() )
+      MessageBox.Show(SysTranslations.ScreensaverError.GetLang(Marshal.GetLastWin32Error()));
   }
 
   private void ActionLock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
