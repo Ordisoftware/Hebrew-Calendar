@@ -104,6 +104,7 @@ static public partial class SystemManager
     return rectangle.Contains(screen.Bounds);
   }
 
+  [SuppressMessage("Usage", "VSTHRD002:Avoid problematic synchronous waits", Justification = "N/A")]
   static public bool RunSystemScreensaver()
   {
     Task.Run(() => NativeMethods.SendMessage(new HandleRef(null, new IntPtr(NativeMethods.HWND_BROADCAST)),

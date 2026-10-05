@@ -29,6 +29,8 @@ using System.Runtime.InteropServices;
 static public class NativeMethods
 {
 
+#pragma warning disable S2342
+
   #region WorkStation
 
   public const int WM_QUERYENDSESSION = 0x11;
@@ -404,5 +406,7 @@ static public class NativeMethods
   static public extern int SendMessage(HandleRef hWnd, int msg, int wParam, ref PARAFORMAT lp);
 
   #endregion
+
+#pragma warning restore S2342
 
 }

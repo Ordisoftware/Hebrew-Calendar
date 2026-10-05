@@ -20,8 +20,10 @@ namespace Ordisoftware.Hebrew.Calendar;
 static partial class Program
 {
 
+#pragma warning disable S1075
   private const string SoftpediaURL = "https://www.softpedia.com/get/Others/Home-Education/Hebrew-Calendar-Olivier-Rogier.shtml";
   private const string AlternativeToURL = "https://alternativeto.net/software/hebrew-calendar/about/";
+#pragma warning restore S1075
 
   /// <summary>
   /// Process startup method.
