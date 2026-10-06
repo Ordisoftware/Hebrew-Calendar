@@ -84,25 +84,13 @@ static class NullSafeOfStringDictionaryHelper
         {
           var parts = line.SplitNoEmptyLines(separator);
           if ( parts.Length == 1 )
-          {
-            string key = parts[0].Trim();
-            if ( !collection.ContainsKey(key) )
-              collection.Add(key, string.Empty);
-          }
+            collection.Add(parts[0].Trim(), string.Empty);
           else
           if ( parts.Length == 2 )
-          {
-            string key = parts[0].Trim();
-            if ( !collection.ContainsKey(key) )
-              collection.Add(key, parts[1].Trim());
-          }
+            collection.Add(parts[0].Trim(), parts[1].Trim());
           else
           if ( parts.Length > 2 )
-          {
-            string key = parts[0].Trim();
-            if ( !collection.ContainsKey(key) )
-              collection.Add(key, parts.Skip(1).Join(separator));
-          }
+            collection.Add(parts[0].Trim(), parts.Skip(1).Join(separator));
         }
       return true;
     }

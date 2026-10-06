@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2024-01 </edited>
+/// <edited> 2026-10 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -281,6 +281,11 @@ static public partial class SysTranslations
 
   static public readonly NullSafeDictionary<PowerAction, TranslationsDictionary> PowerActionText = new()
   {
+    [PowerAction.None] = new TranslationsDictionary
+    {
+      [Language.EN] = "Screensaver",
+      [Language.FR] = "Écran de veille"
+    },
     [PowerAction.Hibernate] = new TranslationsDictionary
     {
       [Language.EN] = "Hibernate",

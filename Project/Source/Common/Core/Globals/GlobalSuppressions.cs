@@ -27,6 +27,7 @@
 [assembly: SuppressMessage("Minor Code Smell", "S2386:Mutable fields should not be \"public static\"", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S4663:Comments should not be empty", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S2325:Methods and properties that don't access instance data should be static", Justification = "Opinion", Scope = "module")]
+[assembly: SuppressMessage("Code Smell", "S3776:Cognitive Complexity of functions with lambda functions", Justification = "Opinion", Scope = "module")]
 [assembly: SuppressMessage("Minor Bug", "S3887:Mutable, non-private fields should not be \"readonly\"", Justification = "Opinion", Scope = "module")]
 
 [assembly: SuppressMessage("Style", "IDE0008:Utiliser un type explicite", Justification = "Opinion", Scope = "module")]
@@ -107,8 +108,11 @@
 [assembly: SuppressMessage("Correctness", "SS003:The operands of a divisive expression are both integers and result in an implicit rounding.", Justification = "N/A", Scope = "module")]
 [assembly: SuppressMessage("ApiDesign", "SS039:An enum should specify a default value", Justification = "N/A or opinion", Scope = "module")]
 [assembly: SuppressMessage("ApiDesign", "SS036:An enum should explicitly specify its values", Justification = "N/A or opinion", Scope = "module")]
+[assembly: SuppressMessage("Code Smell", "SS066:DisposableFieldIsNotDisposed", Justification = "N/A", Scope = "module")]
 
-// TODO remove if not using .NET Framework
+[assembly: SuppressMessage("Security", "SEC0116:Path Tampering Unvalidated File Path", Justification = "N/A", Scope = "module")]
+
+// TODO remove if not using .NET Framework ?
 [assembly: SuppressMessage("Minor Code Smell", "S6603:The collection-specific \"TrueForAll\" method should be used instead of the \"All\" extension", Justification = "N/A for .NET Framework", Scope = "module")]
 [assembly: SuppressMessage("Minor Code Smell", "S6605:Collection-specific \"Exists\" method should be used instead of the \"Any\" extension", Justification = "N/A for .NET Framework", Scope = "module")]
 [assembly: SuppressMessage("Reliability", "CA2022:Éviter les lectures incorrectes avec « Stream.Read »", Justification = "N/A for .NET Framework", Scope = "module")]

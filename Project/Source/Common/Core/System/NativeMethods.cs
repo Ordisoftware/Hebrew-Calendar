@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2021-10 </edited>
+/// <edited> 2026-10 </edited>
 namespace Ordisoftware.Core;
 
 using System.Runtime.InteropServices;
@@ -28,6 +28,8 @@ using System.Runtime.InteropServices;
 [SuppressMessage("Performance", "SS017:Structs should implement Equals(), GetHashCode(), and ToString().", Justification = "N/A")]
 static public class NativeMethods
 {
+
+#pragma warning disable S2342
 
   #region WorkStation
 
@@ -137,20 +139,26 @@ static public class NativeMethods
   }
 
   [DllImport("user32.dll")]
-  static public extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+  static public extern int ShowWindow(IntPtr hWnd, uint Msg);
+
+  [DllImport("user32.dll")]
+  [return: MarshalAs(UnmanagedType.Bool)]
+  static public extern bool GetCursorPos(out Point lpPoint);
+
+  [DllImport("user32.dll")]
+  static public extern IntPtr WindowFromPoint(PointStruct Point);
+
+  [DllImport("user32.dll")]
+  static public extern IntPtr GetDesktopWindow();
 
   [DllImport("user32.dll", SetLastError = true)]
   static public extern uint SendInput(uint numberOfInputs, INPUT[] inputs, int sizeOfInputStructure);
 
   [DllImport("user32.dll")]
-  static public extern int ShowWindow(IntPtr hWnd, uint Msg);
+  static public extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
 
   [DllImport("user32.dll")]
-  [return: MarshalAs(UnmanagedType.Bool)]
-  static public extern bool GetCursorPos(out System.Drawing.Point lpPoint);
-
-  [DllImport("user32.dll")]
-  static public extern IntPtr WindowFromPoint(PointStruct Point);
+  static public extern IntPtr SendMessage(HandleRef hWnd, int Msg, IntPtr wParam, IntPtr lParam);
 
   #endregion
 
@@ -168,6 +176,7 @@ static public class NativeMethods
 
   public const int WM_SYSCOMMAND = 0x0112;
   public const int SC_SCREENSAVE = 0xF140;
+  public const int HWND_BROADCAST = 0xFFFF;
   public const int SPI_GETSCREENSAVERRUNNING = 0x0072;
 
   [DllImport("user32.dll")]
@@ -397,5 +406,7 @@ static public class NativeMethods
   static public extern int SendMessage(HandleRef hWnd, int msg, int wParam, ref PARAFORMAT lp);
 
   #endregion
+
+#pragma warning restore S2342
 
 }

@@ -187,7 +187,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionDisable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 156</value>
+    <value>165, 156</value>
   </data>
   <data name="ActionDisable.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
@@ -217,10 +217,10 @@
     <value>NoControl</value>
   </data>
   <data name="ActionOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 156</value>
+    <value>69, 156</value>
   </data>
   <data name="ActionOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
+    <value>90, 24</value>
   </data>
   <data name="ActionOk.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -244,7 +244,7 @@
     <value>True</value>
   </data>
   <data name="ActionShutdown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 100</value>
+    <value>241, 100</value>
   </data>
   <data name="ActionShutdown.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -277,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionHibernate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 100</value>
+    <value>182, 100</value>
   </data>
   <data name="ActionHibernate.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -310,7 +310,7 @@
     <value>NoControl</value>
   </data>
   <data name="ActionStandby.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 100</value>
+    <value>130, 100</value>
   </data>
   <data name="ActionStandby.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -334,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionStandby.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="LabelMessage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -368,7 +368,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LabelMessage.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <metadata name="Timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -410,7 +410,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>NoControl</value>
   </data>
   <data name="ActionLock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 100</value>
+    <value>93, 100</value>
   </data>
   <data name="ActionLock.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -434,7 +434,7 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ActionLock.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="ActionPreferences.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -445,16 +445,16 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
   <data name="ActionPreferences.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAgJJREFUOE+1kstqU1EYhTPItApVn0JR8AWEzn0JEXHig0hFaaht2hi1aW1sbic3
-        O4qU2JSAJsZUrFFqYkxitGIujVBny/3tcyw6cOgPC37W+tbO7u7x/a/xpzO5bDqbl5XZ8dzo3+NPOdl8
-        ysl8M/t0POno6OinFTseGQwshT/HvxFLbL6oVLX7+o2iG3EViyV1ep+t2PHIYGDpuFV3pmLx5KD2qq7h
-        cKTBYKDJ5Idq9V0rdjwyGFg6btWdE0YXVx9FVa3Vtd9s6dn2jpJOWk4mZ3c8MhhYr2PHH1ldz0XWoioU
-        tvSx/UnbpbIBHysYXLZixyODgTU6foupyNq6Ds01h6OR9t425KSzWgqFNTMzcx2xxxOO9hoNw4wtS4cu
-        B5x5GFlVt9vTh2ZT797vy7y2VoxnslOIHY8MBpYOXXvAwuJS8d79Ffv3NlttPTcvHQo/4LGs2PHIYGDp
-        /D6Aa5y7cvXajcVgyPxCS+12R5VqTYmUo2g0psrLmvXIYGDpeF37EKeDy+HvpZ2y+v0D81gd9Xp9dT2x
-        45HBwNLxunZOzgXubhUKTy0wF5hX/smmvnw9sEqZfyceGQwsHbfqDlc5P3v7TjkwvzA2+2UK48OJFTse
-        GQys1zkersKDEPCRXLg5e6tEEbHjeRkM7F+fMoPBqXxh00ZnjS55Yscjg/HKPt8vP8vX6xDYbTcAAAAA
-        SUVORK5CYII=
+        vwAADr8BOAVTJAAAAgZJREFUOE+1k91qE0Ecxecit61Q7VMoCr6AkHtfQop444NIRWmobdoYtbtp1+Zj
+        Z3cTexUpsSmBNumaijVKu+maxGjFfDSFenfkDLulRG8dOPDnnN8ZdoZZIf7Tilh23rGcApTsvENvHBpf
+        EVM6BVPaP4UQU5mcxPn5byXO9JiR+ddmkfV0dmO3WsP+h48w1jMolcpodb4pcabHjAzZ8U0m0plcz31f
+        R78/QK/Xw2h0Bre+r8SZHjMyZNm5vMGkEOK2vmqg5tZx6DXxbmsbOWlB2nk102NGhmzQUSui6Wt5LWWg
+        WNzEsf8VW+UK9NXXiMeXlTjTY0aGrJYyLu5iQkut4XR0hv5ggINPDUjLwVIiiWg0+oDinMlKHDQa6A+G
+        imUnPMb0K01Hu93Bkefh85dDmNLGiqYTuEpxpseMDFl22FUbLCwulZ6/WFHn9Zo+dqo1JJIveVlKnOkx
+        I0OWnXADfsaNezP3Hy7GEzjymvD9Fqo1F1lTwjDSqO65ymNGhiw74RF4Edfiy8lf5e0Kut0THPstdDpd
+        tANxpseMDFl2Lr+FK3OxZ5vF4lsFzMXmUXizge8/TpRMaSmPGRmy7ITl8Bg3Z588rcTmF4ZCiLssDE9H
+        SpzpMSNDdvwh8VN4IQz4SG49mn1cZpHiTC/IyJD9+38IduULmxJCXBdC3AnEmR4zMhflPz/L1+uOuUwC
+        AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="ActionPreferences.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -480,6 +480,39 @@ Press Lock to do it now or Cancel to ignore this alert.</value>
   </data>
   <data name="&gt;&gt;ActionPreferences.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="ActionScreensaver.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ActionScreensaver.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ActionScreensaver.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 100</value>
+  </data>
+  <data name="ActionScreensaver.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="ActionScreensaver.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ActionScreensaver.Text" xml:space="preserve">
+    <value>Screensaver</value>
+  </data>
+  <data name="ActionScreensaver.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;ActionScreensaver.Name" xml:space="preserve">
+    <value>ActionScreensaver</value>
+  </data>
+  <data name="&gt;&gt;ActionScreensaver.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ActionScreensaver.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ActionScreensaver.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

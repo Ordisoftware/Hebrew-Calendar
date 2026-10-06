@@ -42,6 +42,7 @@
       this.EditMediaStop = new System.Windows.Forms.CheckBox();
       this.ActionLock = new System.Windows.Forms.LinkLabel();
       this.ActionPreferences = new System.Windows.Forms.Button();
+      this.ActionScreensaver = new System.Windows.Forms.LinkLabel();
       this.SuspendLayout();
       // 
       // LabelCountDown
@@ -134,6 +135,15 @@
       this.ActionPreferences.UseVisualStyleBackColor = true;
       this.ActionPreferences.Click += new System.EventHandler(this.ActionPreferences_Click);
       // 
+      // ActionScreensaver
+      // 
+      this.ActionScreensaver.ActiveLinkColor = System.Drawing.Color.MediumBlue;
+      resources.ApplyResources(this.ActionScreensaver, "ActionScreensaver");
+      this.ActionScreensaver.LinkColor = System.Drawing.Color.DarkBlue;
+      this.ActionScreensaver.Name = "ActionScreensaver";
+      this.ActionScreensaver.TabStop = true;
+      this.ActionScreensaver.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ActionScreensaver_LinkClicked);
+      // 
       // LockSessionForm
       // 
       this.AcceptButton = this.ActionOk;
@@ -147,6 +157,7 @@
       this.Controls.Add(this.ActionDisable);
       this.Controls.Add(this.ActionHibernate);
       this.Controls.Add(this.ActionOk);
+      this.Controls.Add(this.ActionScreensaver);
       this.Controls.Add(this.ActionLock);
       this.Controls.Add(this.ActionStandby);
       this.Controls.Add(this.LabelMessage);
@@ -175,5 +186,6 @@
     private System.Windows.Forms.Button ActionDisable;
     private System.Windows.Forms.LinkLabel ActionLock;
     private System.Windows.Forms.Button ActionPreferences;
+    private LinkLabel ActionScreensaver;
   }
 }

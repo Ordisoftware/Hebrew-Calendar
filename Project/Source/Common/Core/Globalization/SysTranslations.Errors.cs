@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2025-01 </edited>
+/// <edited> 2026-10 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -96,6 +96,12 @@ static public partial class SysTranslations
   {
     [Language.EN] = "The HotKey combination is captured by another application",
     [Language.FR] = "La combinaison du HotKey est capturée par une autre application"
+  };
+
+  static public readonly TranslationsDictionary ScreensaverError = new()
+  {
+    [Language.EN] = $"Screen saver error:{Globals.NL2}{{0}}",
+    [Language.FR] = $"Erreur de l'écran de veille :{Globals.NL2}{{0}}"
   };
 
   static public readonly TranslationsDictionary LockSessionError = new()
