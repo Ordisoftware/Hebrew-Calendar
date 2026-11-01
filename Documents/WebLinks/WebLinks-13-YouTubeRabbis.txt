@@ -74,6 +74,9 @@ URL = https://www.youtube.com/@rabbizushesilberstein
 Name = (FR) Rav Raphaël Pinto
 URL = https://www.youtube.com/channel/UCV_bHFntJqDOAY4GXbNDTiQ
 
+Name = (FR) Rav Yoel Pinto
+URL = https://www.youtube.com/@RabbiYoelPinto
+
 Name = (FR) Hevrat Pinto (Rav David Pinto)
 URL = https://www.youtube.com/user/HEVRATPINTO
 
