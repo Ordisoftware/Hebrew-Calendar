@@ -381,6 +381,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 - Add dark theme for monthly view.
 - Add print boards.
 - Add option to generate a fixed interval (if the current year is within).
+- Add option to gracefully close (WM_CLOSE) a list of processes when reminders for the current Sabbath are triggered.
 - Improve auto-hide navigation window after a delay when it was displayed by tray icon popup and no interaction.
 - Check and fix weekly parashah generation with Soukot.
 - Check and Fix reminder behavior with Sim'hat Torah.
