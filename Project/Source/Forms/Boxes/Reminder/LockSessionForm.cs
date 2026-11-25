@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2026-10 </edited>
+/// <edited> 2026-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Runtime.InteropServices;
@@ -41,7 +41,7 @@ sealed partial class LockSessionForm : Form
     int width = LabelMessage.Width + LabelMessage.Left + LabelMessage.Left + 10;
     if ( width > Width ) Width = width;
     ActionOk.Text = SysTranslations.PowerActionText.GetLang(Program.Settings.LockSessionDefaultAction);
-    ActionScreensaver.Text = SysTranslations.PowerActionText.GetLang(PowerAction.None);
+    ActionScreensaver.Text = SysTranslations.PowerActionText.GetLang(PowerAction.ScreenSaver);
     ActionLock.Text = SysTranslations.PowerActionText.GetLang(PowerAction.LockSession);
     ActionStandby.Text = SysTranslations.PowerActionText.GetLang(PowerAction.StandBy);
     ActionHibernate.Text = SysTranslations.PowerActionText.GetLang(PowerAction.Hibernate);
@@ -89,7 +89,8 @@ sealed partial class LockSessionForm : Form
   {
     var actions = new NullSafeDictionary<PowerAction, Delegate>
     {
-      [PowerAction.None] = ActionScreensaver_LinkClicked,
+      [PowerAction.None] = null, // TODO^ mieux gérer ce cas avec box en mode manuel timer désactivé
+      [PowerAction.ScreenSaver] = ActionScreensaver_LinkClicked,
       [PowerAction.LockSession] = ActionLock_LinkClicked,
       [PowerAction.StandBy] = ActionStandby_LinkClicked,
       [PowerAction.Hibernate] = ActionHibernate_LinkClicked,

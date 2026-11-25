@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2026-10 </edited>
+/// <edited> 2026-11 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -283,28 +283,43 @@ static public partial class SysTranslations
   {
     [PowerAction.None] = new TranslationsDictionary
     {
+      [Language.EN] = "None",
+      [Language.FR] = "Aucune"
+    },
+    [PowerAction.ScreenSaver] = new TranslationsDictionary
+    {
       [Language.EN] = "Screensaver",
       [Language.FR] = "Écran de veille"
-    },
-    [PowerAction.Hibernate] = new TranslationsDictionary
-    {
-      [Language.EN] = "Hibernate",
-      [Language.FR] = "Hiberner"
     },
     [PowerAction.LockSession] = new TranslationsDictionary
     {
       [Language.EN] = "Lock",
       [Language.FR] = "Verrouiller"
     },
-    [PowerAction.Shutdown] = new TranslationsDictionary
-    {
-      [Language.EN] = "Shutdown",
-      [Language.FR] = "Éteindre"
-    },
     [PowerAction.StandBy] = new TranslationsDictionary
     {
       [Language.EN] = "Standby",
       [Language.FR] = "Veille"
+    },
+    [PowerAction.Hibernate] = new TranslationsDictionary
+    {
+      [Language.EN] = "Hibernate",
+      [Language.FR] = "Hiberner"
+    },
+    [PowerAction.LogOff] = new TranslationsDictionary
+    {
+      [Language.EN] = "Log off",
+      [Language.FR] = "Déconnexion"
+    },
+    [PowerAction.Restart] = new TranslationsDictionary
+    {
+      [Language.EN] = "Restart",
+      [Language.FR] = "Redémarrer"
+    },
+    [PowerAction.Shutdown] = new TranslationsDictionary
+    {
+      [Language.EN] = "Shutdown",
+      [Language.FR] = "Éteindre"
     }
   };
 

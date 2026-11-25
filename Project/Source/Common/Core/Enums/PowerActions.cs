@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2021-05 </created>
-/// <edited> 2021-05 </edited>
+/// <edited> 2026-11 </edited>
 namespace Ordisoftware.Core;
 
 /// <summary>
@@ -20,6 +20,7 @@ namespace Ordisoftware.Core;
 public enum PowerAction
 {
   None,
+  ScreenSaver,
   LockSession,
   StandBy,
   Hibernate,
