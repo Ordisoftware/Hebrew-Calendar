@@ -25,7 +25,7 @@ partial class MainForm
     {
       if ( !Settings.BalloonEnabled || ( Settings.BalloonOnlyIfMainFormIsHidden && Visible ) )
       {
-        // TODO NEXT refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
+        // TODO^ refactor in UpdateUI and do a clean formatting with gregorian date before hebrew
         var text = Text.IndexOf('(') >= 0
           ? new string([.. Text.ToCharArray().TakeWhile(c => c != '(')])
           : Text;

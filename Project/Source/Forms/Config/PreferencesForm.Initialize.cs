@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2016-04 </created>
-/// <edited> 2023-07 </edited>
+/// <edited> 2026-11 </edited>
 namespace Ordisoftware.Hebrew.Calendar;
 
 using System.Xml;
@@ -268,17 +268,19 @@ partial class PreferencesForm
   }
 
   /// <summary>
-  /// Loads week days.
+  /// Loads power actions.
   /// </summary>
   private void LoadPowerActions()
   {
-    PowerAction[] avoid = [PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown];
+    PowerAction[] avoid = [PowerAction.LogOff, PowerAction.Restart, PowerAction.Shutdown]; // Too dangerous in auto-mode
     foreach ( var value in SystemManager.GetAvailablePowerActions().Where(a => !avoid.Contains(a)) )
     {
       SelectLockSessionDefaultAction.Items.Add(value);
       if ( Settings.LockSessionDefaultAction == value )
         SelectLockSessionDefaultAction.SelectedItem = value;
     }
+    if ( SelectLockSessionDefaultAction.SelectedItem == null && SelectLockSessionDefaultAction.Items.Count > 0 )
+      SelectLockSessionDefaultAction.SelectedIndex = 0;
   }
 
   /// <summary>

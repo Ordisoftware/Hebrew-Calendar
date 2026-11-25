@@ -376,6 +376,7 @@ It is therefore possible to use [AutoHotKey](https://www.autohotkey.com) to defi
 
 #### Application
 
+- Add link menu item to auto-open an IA Chat page to study a word.
 - Add option to set primary source for check update between author's website or GitHub.
 - Add preference tab to setup keyboard shortcuts.
 - Add dark theme for monthly view.

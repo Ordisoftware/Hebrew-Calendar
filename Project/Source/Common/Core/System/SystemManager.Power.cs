@@ -11,7 +11,7 @@
 /// You may add additional accurate notices of copyright ownership.
 /// </license>
 /// <created> 2019-11 </created>
-/// <edited> 2026-10 </edited>
+/// <edited> 2026-11 </edited>
 namespace Ordisoftware.Core;
 
 using System.Runtime.InteropServices;
@@ -27,8 +27,8 @@ static public partial class SystemManager
 
   static public List<PowerAction> GetAvailablePowerActions()
   {
-    var list = new List<PowerAction>();
-    if ( CanRunScreensaver ) list.Add(PowerAction.None);
+    List<PowerAction> list = [PowerAction.None];
+    // TODO remove: if ( CanRunScreensaver ) list.Add(PowerAction.);
     list.Add(PowerAction.LockSession);
     if ( CanStandby ) list.Add(PowerAction.StandBy);
     if ( CanHibernate ) list.Add(PowerAction.Hibernate);
